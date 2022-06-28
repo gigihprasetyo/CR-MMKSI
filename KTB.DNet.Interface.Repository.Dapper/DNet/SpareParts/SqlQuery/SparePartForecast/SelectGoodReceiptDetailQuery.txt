@@ -1,0 +1,39 @@
+﻿select 
+	/**PagingIndexQuery**/
+	ID
+	, SONumber
+	, Discount
+	, PartNumber
+	, PartName
+	, Qty
+	, Tax
+	, RetailPrice
+	, RowStatus
+	, LastUpdateby
+	, LastUpdateTime
+	/**EndPagingIndexQuery**/
+from 
+(
+	select 
+		  a.ID
+		, a.SONumber
+		, 0 as Discount
+		, c.PartNumber
+		, c.PartName
+		, a.ApprovedQty as Qty
+		, 0 as Tax
+		, 0 as RetailPrice
+		, a.Rowstatus
+		, case when a.LastUpdatedby is null then a.Createdby else a.LastUpdatedby end as LastUpdateby
+		, case when a.LastUpdatedtime is null then a.CreatedTime else a.LastUpdatedtime end as LastUpdateTime
+		, a.SparePartForecastHeaderID
+		, a.DONumber
+	from SparePartForecastDetail a with(nolock)
+	left join Sparepartforecastmaster b with(nolock)
+	on a.SparePartForecastMasterID = b.ID
+	left join SparePartMaster c with(nolock)
+	on b.SparepartMasterID = c.ID
+	where b.RowStatus = 0
+		and c.RowStatus = 0
+) GoodReceiptDetail
+{0}

@@ -1,0 +1,228 @@
+Imports System.IO
+Imports System.Text
+
+Imports KTB.DNet.BusinessFacade.IndentPartEquipment
+Imports KTB.DNet.BusinessFacade.IndentPart
+Imports Ktb.DNet.BusinessFacade.SparePart
+Imports KTB.DNet.Domain.Search
+Imports KTB.DNet.Domain
+Imports KTB.DNet.Security
+Imports KTB.DNet.Utility
+Imports KTB.DNet.BusinessFacade.FinishUnit
+Imports KTB.DNet.BusinessFacade.General
+Imports KTB.DNet.Parser
+Imports KTB.DNet.Lib
+
+Public Class IndentPartEquipmentPO
+    Inherits Job
+
+    Protected Overrides Function executeJob() As Boolean
+        '1)Automatic daily email to certain KTB PIC list of estimation order that already due 14 days and dealer cant order 
+        '2)KTB already confirmed order but dealer hasn’t submit order at H-11 after Confirmation date
+        '3)Dealer already submit order but haven't send Deposit B receipt at H-11 after they submit
+
+        LogHelper.WriteLog("executeJob- start...")
+        Dim Sql As StringBuilder
+        Dim dt As DateTime = Now
+        Dim crit As CriteriaComposite
+        Dim srt As SortCollection
+        Dim oEEHFac As New EstimationEquipHeaderFacade(User)
+        Dim aEEHs As ArrayList
+        Dim oEEH As EstimationEquipHeader
+        Dim oIPHFac As New IndentPartHeaderFacade(User)
+        Dim aIPHs As ArrayList
+        Dim oIPH As IndentPartHeader
+        Dim str As StringBuilder
+        Dim tab As Char = Chr(9)
+        Dim line As String = "<br>" ' Environment.NewLine
+        Dim sRow As String
+        Dim sTo As String = Me.EmailTo, sCC As String = Me.EmailCC
+        Dim aDs As ArrayList
+        Dim oDFac As New DealerFacade(User)
+        Dim cD As CriteriaComposite
+        '1)Automatic daily email to certain KTB PIC list of estimation order that already due 14 days and dealer cant order 
+        Try
+            dt = Now.AddDays(-14)
+
+            Sql = New StringBuilder
+            Sql.Append(" select ID from EstimationEquipHeader eeh ")
+            Sql.Append(" join EstimationEquipDetail eed on eeh.ID=eed.EstimationEquipHeaderID ")
+            Sql.Append(" where eeh.RowStatus=0 ")
+            Sql.Append(" and eeh.CreatedTime>='" & dt.ToString("yyyy/MM/dd") & "' ")
+            Sql.Append(" and eeh.CreatedTime<'" & dt.AddDays(1).ToString("yyyy/MM/dd") & "' ")
+            Sql.Append(" and eed.ID not in ( ")
+            Sql.Append(" select eepo.EstimationEquipDetailID ")
+            Sql.Append(" from EstimationEquipPO eepo ")
+            Sql.Append(" where 1=1 ")
+            Sql.Append(" and eepo.RowStatus=0 ")
+            Sql.Append(" ) ")
+
+            crit = New CriteriaComposite(New Criteria(GetType(EstimationEquipHeader), "ID", MatchType.InSet, "(" & Sql.ToString() & ")"))
+
+            srt = New SortCollection
+            srt.Add(New Sort(GetType(EstimationEquipHeader), "CreatedTime", Sort.SortDirection.ASC))
+            aEEHs = oEEHFac.Retrieve(crit, srt)
+
+            'LogHelper.WriteLog("EstimationEquipHeader.Count = " & aEEHs.Count.ToString())
+            'sRow = "<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td><td>{4}</td></tr>"
+            'str = New StringBuilder
+            'str.Append("Daftar Estimasi Yang Sudah Lewat 14 Hari Dan Belum Mengajukan Order:" & line)
+            'str.Append(line)
+            'str.Append("<table cellspacing=0 cellpadding=1 border=1 width='100%'>")
+            'str.Append(String.Format(sRow, "No", "Dealer", "Kota", "No.Estimasi", "Tgl Pengajuan"))
+            'For i As Integer = 0 To aEEHs.Count - 1
+            '    oEEH = aEEHs(i)
+            '    str.Append(String.Format(sRow, (i + 1).ToString(), oEEH.Dealer.DealerCode, oEEH.Dealer.City.CityName, oEEH.EstimationNumber, oEEH.CreatedTime.ToString("yyyy/MM/dd")))
+            'Next
+            'str.Append("</table>")
+            'str.Append(line & line)
+
+            str = New StringBuilder
+            For i As Integer = 0 To aEEHs.Count - 1
+                oEEH = aEEHs(i)
+                str.Append("<tr><td>" & (i + 1).ToString() & "</td><td>" & oEEH.EstimationNumber & "</td><td>" & oEEH.CreatedTime.ToString("dd MMM yyyy") & "</td><td>" & oEEH.TotalQty.ToString() & "</td><td>" & FormatNumber(oEEH.TotalAmount, 3) & "</td></tr>")
+            Next
+            CommonFunction.SetIndentPartEmailRecipient(EquipUser.EquipUserGroup.Pengajuan_Estimasi, sTo, sCC, New Dealer)
+
+            'Me.SendEmail(Me.EmailTo, Me.EmailCC, "[Indent Part Equipment] Daftar Estimasi Yang Sudah 14 Hari Dan Belum Melakukan Order", str.ToString())
+
+            Dim sContents() As String = {str.ToString(), Now.ToString("dd MMMM yyyy")}
+            Me.SendEmail(Me.EmailTo, Me.EmailCC, "[Indent Part Equipment] Daftar Estimasi Yang Sudah 14 Hari Dan Belum Melakukan Order", str.ToString())
+
+            LogHelper.WriteLog("Send Email IndentPartEquipmentPO (1) Success")
+        Catch ex As Exception
+            LogHelper.WriteLog(ex.Message)
+        End Try
+
+        '2)KTB already confirmed order but dealer hasn’t submit order at H+7 after Confirmation date
+        dt = Now.AddDays(-7)
+
+        Sql = New StringBuilder
+        Sql.Append(" select DealerID ")
+        Sql.Append(" from EstimationEquipHeader eeh ")
+        Sql.Append(" join EstimationEquipDetail eed on eed.EstimationEquipHeaderID=eeh.ID")
+        Sql.Append(" where eeh.RowStatus=0 ")
+        Sql.Append(" and eed.RowStatus=0 ")
+        Sql.Append(" and eed.ConfirmedDate>='" & dt.ToString("yyyy/MM/dd") & "' ")
+        Sql.Append(" and eed.ConfirmedDate<'" & dt.AddDays(1).ToString("yyyy/MM/dd") & "' ")
+        Sql.Append(" and eed.ID not in (")
+        Sql.Append(" select eed.EstimationEquipDetailID ")
+        Sql.Append(" from EstimationEquipPO eepo ")
+        Sql.Append(" where 1=1")
+        Sql.Append(" and eepo.RowStatus=0")
+        Sql.Append(" )")
+        cD = New CriteriaComposite(New Criteria(GetType(Dealer), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        cD.opAnd(New Criteria(GetType(Dealer), "ID", MatchType.InSet, "(" & Sql.ToString() & ")"))
+        aDs = oDFac.Retrieve(cD)
+
+        For Each oD As Dealer In aDs
+            Sql = New StringBuilder
+            Sql.Append(" select ID ")
+            Sql.Append(" from EstimationEquipHeader eeh ")
+            Sql.Append(" join EstimationEquipDetail eed on eed.EstimationEquipHeaderID=eeh.ID")
+            Sql.Append(" where eeh.RowStatus=0 ")
+            Sql.Append(" and eeh.DealerID=" & od.ID.ToString() & " ")
+            Sql.Append(" and eed.RowStatus=0 ")
+            Sql.Append(" and eed.ConfirmedDate>='" & dt.ToString("yyyy/MM/dd") & "' ")
+            Sql.Append(" and eed.ConfirmedDate<'" & dt.AddDays(1).ToString("yyyy/MM/dd") & "' ")
+            Sql.Append(" and eeh.ID not in (")
+            Sql.Append(" select eepo.EstimationEquipDetailID ")
+            Sql.Append(" from EstimationEquipPO eepo ")
+            Sql.Append(" where 1=1")
+            Sql.Append(" and eepo.RowStatus=0")
+            Sql.Append(" )")
+            crit = New CriteriaComposite(New Criteria(GetType(EstimationEquipHeader), "ID", MatchType.InSet, "(" & Sql.ToString() & ")"))
+
+            srt = New SortCollection
+            srt.Add(New Sort(GetType(EstimationEquipHeader), "CreatedTime", Sort.SortDirection.ASC))
+            aEEHs = oEEHFac.Retrieve(crit, srt)
+
+            'LogHelper.WriteLog("EstimationEquipHeader.Count = " & aEEHs.Count.ToString())
+            sRow = "<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>"
+            str = New StringBuilder
+            str.Append("Dealer : " & oD.DealerCode & line)
+            str.Append("Nama : " & oD.DealerName & line)
+            str.Append("Kota : " & oD.City.CityName & line)
+            str.Append(line)
+            str.Append("Daftar Estimasi Yang Sudah 7 Hari Setelah Konfirmasi Belum Diajukan Order:" & line)
+            str.Append(line)
+            str.Append("<table cellspacing=0 cellpadding=1 border=1 width='100%'>")
+            str.Append(String.Format(sRow, "No", "No.Estimasi", "Tgl Pengajuan"))
+            For i As Integer = 0 To aEEHs.Count - 1
+                oEEH = aEEHs(i)
+                str.Append(String.Format(sRow, (i + 1).ToString(), oEEH.EstimationNumber, oEEH.CreatedTime.ToString("yyyy/MM/dd")))
+            Next
+            str.Append("</table>")
+            str.Append(line & line)
+
+            CommonFunction.SetIndentPartEmailRecipient(EquipUser.EquipUserGroup.Pengajuan_Estimasi, sTo, sCC, oD)
+
+            Me.SendEmail(Me.EmailTo, Me.EmailCC, "[Indent Part Equipment] (" & oD.DealerCode & ") Daftar Estimasi Yang Sudah 7 Hari Dikonfirmasi Dan Belum Melakukan Order", str.ToString())
+        Next
+        LogHelper.WriteLog("Send Email IndentPartEquipmentPO (2) Success")
+
+        '3)Dealer already submit order but haven't send Deposit B receipt at H-11 after they submit
+        dt = Now.AddDays(-7)
+
+        Sql = New StringBuilder
+        Sql.Append(" select iph.DealerID ")
+        Sql.Append(" from IndentPartHeader iph ")
+        Sql.Append(" where iph.RowStatus=0 ")
+        Sql.Append(" and iph.RequestDate>='" & dt.ToString("yyyy/MM/dd") & "' ")
+        Sql.Append(" and iph.RequestDate<'" & dt.AddDays(1).ToString("yyyy/MM/dd") & "' ")
+        Sql.Append(" and iph.StatusKTB=" & CType(EnumIndentPartEquipStatus.EnumStatusKTB.Baru, Short).ToString())
+
+        cD = New CriteriaComposite(New Criteria(GetType(Dealer), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        cD.opAnd(New Criteria(GetType(Dealer), "ID", MatchType.InSet, "(" & Sql.ToString() & ")"))
+        aDs = oDFac.Retrieve(cD)
+
+        For Each oD As Dealer In aDs
+            Sql = New StringBuilder
+
+            Sql.Append(" select iph.ID ")
+            Sql.Append(" from IndentPartHeader iph ")
+            Sql.Append(" where iph.RowStatus=0 ")
+            Sql.Append(" and iph.DealerID=" & od.ID.ToString() & " ")
+            Sql.Append(" and iph.RequestDate>='" & dt.ToString("yyyy/MM/dd") & "' ")
+            Sql.Append(" and iph.RequestDate<'" & dt.AddDays(1).ToString("yyyy/MM/dd") & "' ")
+            Sql.Append(" and iph.StatusKTB=" & CType(EnumIndentPartEquipStatus.EnumStatusKTB.Baru, Short).ToString())
+
+
+            crit = New CriteriaComposite(New Criteria(GetType(IndentPartHeader), "ID", MatchType.InSet, "(" & Sql.ToString() & ")"))
+
+            srt = New SortCollection
+            srt.Add(New Sort(GetType(IndentPartHeader), "CreatedTime", Sort.SortDirection.ASC))
+            aIPHs = oIPHFac.Retrieve(crit, srt)
+
+
+            'LogHelper.WriteLog("EstimationEquipHeader.Count = " & aEEHs.Count.ToString())
+            sRow = "<tr><td>{0}</td><td>{1}</td><td>{2}</td></tr>"
+            str = New StringBuilder
+            str.Append("Dealer : " & oD.DealerCode & line)
+            str.Append("Nama : " & oD.DealerName & line)
+            str.Append("Kota : " & oD.City.CityName & line)
+            str.Append(line)
+            str.Append("Daftar Estimasi Yang Sudah 7 Hari Setelah Konfirmasi Belum Diajukan Order:" & line)
+            str.Append(line)
+            str.Append("<table cellspacing=0 cellpadding=1 border=1 width='100%'>")
+            str.Append(String.Format(sRow, "No", "No.Estimasi", "Tgl Pengajuan"))
+            For i As Integer = 0 To aEEHs.Count - 1
+                oEEH = aEEHs(i)
+                str.Append(String.Format(sRow, (i + 1).ToString(), oEEH.EstimationNumber, oEEH.CreatedTime.ToString("yyyy/MM/dd")))
+            Next
+            str.Append("</table>")
+            str.Append(line & line)
+
+            CommonFunction.SetIndentPartEmailRecipient(EquipUser.EquipUserGroup.Pengajuan_Estimasi, sTo, sCC, oD)
+            'Dim sContents() As String = {"", "", "", str.ToString(), Now.ToString("dd MMMM yyyy")}
+            'Me.SendEmail(Me.EmailTo, Me.EmailCC, "[Indent Part Equipment] (" & oD.DealerCode & ") Daftar Estimasi Yang Belum Melakukan Order", sContents)
+        Next
+        LogHelper.WriteLog("Send Email IndentPartEquipmentPO (2) Success")
+    End Function
+
+    Protected Overrides ReadOnly Property ModuleName() As String
+        Get
+            Return Me.GetType.Name
+        End Get
+    End Property
+End Class

@@ -1,0 +1,53 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, xts_location
+	, xts_allowdeliveryordername
+	, statecode
+	, xts_blockedname
+	, statecodename
+	, xts_warehouseidname
+	, createdonbehalfby
+	, xts_volume
+	, xts_depth
+	, xts_pkcombinationkey
+	, xts_warehouseid
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, xts_blocked
+	, xts_width
+	, xts_aisleid
+	, xts_manualupdatename
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, xts_absoluteheight
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, createdby
+	, timezoneruleversionnumber
+	, xts_locationtype
+	, xts_maximumweight
+	, statuscodename
+	, xts_manualupdate
+	, xts_company
+	, xts_aisleidname
+	, modifiedon
+	, xts_locationid
+	, xts_allowdeliveryorder
+	, xts_entitytag
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, xts_maximumvolume
+	, createdonbehalfbyname
+	, xts_height
+	, modifiedonbehalfbyname
+	, xts_locationtypename
+	, overriddencreatedon
+FROM [dbo].[CRM_xts_location] as VWI_CRM_xts_location with(nolock)
+WHERE xts_locationid = @Id

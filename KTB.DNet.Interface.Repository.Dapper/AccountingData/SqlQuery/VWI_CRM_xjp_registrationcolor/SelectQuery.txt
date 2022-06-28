@@ -1,0 +1,38 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xjp_registrationcolor.createdonbehalfbyyominame
+	, VWI_CRM_xjp_registrationcolor.modifiedonbehalfby
+	, VWI_CRM_xjp_registrationcolor.statecode
+	, VWI_CRM_xjp_registrationcolor.statecodename
+	, VWI_CRM_xjp_registrationcolor.xjp_registrationcolordescription
+	, VWI_CRM_xjp_registrationcolor.createdonbehalfby
+	, VWI_CRM_xjp_registrationcolor.xjp_globalcoloridname
+	, VWI_CRM_xjp_registrationcolor.importsequencenumber
+	, VWI_CRM_xjp_registrationcolor.organizationidname
+	, VWI_CRM_xjp_registrationcolor.modifiedbyyominame
+	, VWI_CRM_xjp_registrationcolor.xjp_globalcolordescription
+	, VWI_CRM_xjp_registrationcolor.utcconversiontimezonecode
+	, VWI_CRM_xjp_registrationcolor.createdbyyominame
+	, VWI_CRM_xjp_registrationcolor.modifiedbyname
+	, VWI_CRM_xjp_registrationcolor.versionnumber
+	, VWI_CRM_xjp_registrationcolor.modifiedby
+	, VWI_CRM_xjp_registrationcolor.xjp_locking
+	, VWI_CRM_xjp_registrationcolor.createdby
+	, VWI_CRM_xjp_registrationcolor.timezoneruleversionnumber
+	, VWI_CRM_xjp_registrationcolor.statuscodename
+	, VWI_CRM_xjp_registrationcolor.xjp_registrationcolorid
+	, VWI_CRM_xjp_registrationcolor.modifiedon
+	, VWI_CRM_xjp_registrationcolor.modifiedonbehalfbyyominame
+	, VWI_CRM_xjp_registrationcolor.statuscode
+	, VWI_CRM_xjp_registrationcolor.createdbyname
+	, VWI_CRM_xjp_registrationcolor.createdon
+	, VWI_CRM_xjp_registrationcolor.organizationid
+	, VWI_CRM_xjp_registrationcolor.createdonbehalfbyname
+	, VWI_CRM_xjp_registrationcolor.xjp_globalcolorid
+	, VWI_CRM_xjp_registrationcolor.modifiedonbehalfbyname
+	, VWI_CRM_xjp_registrationcolor.xjp_registrationcolor
+	, VWI_CRM_xjp_registrationcolor.overriddencreatedon
+	/**EndPagingIndexQuery**/
+FROM CRM_xjp_registrationcolor as VWI_CRM_xjp_registrationcolor with (nolock)  
+{0}

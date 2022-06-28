@@ -1,0 +1,96 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_accountreceivablereceiptotherexpense.company
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.businessunitcode
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.createdby
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.createdbyname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.createdbyyominame
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.createdon
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.createdonbehalfby
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.createdonbehalfbyname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.createdonbehalfbyyominame
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.exchangerate
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.importsequencenumber
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.ktb_invoiceid
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.ktb_invoiceidname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.ktb_type
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.ktb_typename
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.modifiedby
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.modifiedbyname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.modifiedbyyominame
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.modifiedon
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.modifiedonbehalfby
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.modifiedonbehalfbyname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.overriddencreatedon
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.ownerid
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.owneridname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.owneridtype
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.owneridyominame
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.owningbusinessunit
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.owningteam
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.owninguser
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.RowStatus
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.statecode
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.statecodename
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.statuscode
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.statuscodename
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.timezoneruleversionnumber
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.transactioncurrencyid
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.transactioncurrencyidname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.utcconversiontimezonecode
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.versionnumber
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_accountreceivablereceiptid
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_accountreceivablereceiptidname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_accountreceivablereceiptotherexpense
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_accountreceivablereceiptotherexpenseid
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_businessunitid
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_businessunitidname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_description
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension10id
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension10idname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension1id
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension1idname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension2id
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension2idname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension3id
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension3idname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension4id
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension4idname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension5id
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension5idname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension6id
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension6idname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension7id
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension7idname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension8id
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension8idname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension9id
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_dimension9idname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_exchangerateamount
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_exchangeratedate
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_exchangeratetype
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_exchangeratetypename
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_invoiceid
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_invoiceidname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_otherexpenseaccountid
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_otherexpenseaccountidname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_otherexpenseamount
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_otherexpenseamount_base
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_parentbusinessunitid
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_parentbusinessunitidname
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_reasoncodeid
+	, VWI_CRM_xts_accountreceivablereceiptotherexpense.xts_reasoncodeidname
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_accountreceivablereceiptotherexpense a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_accountreceivablereceiptotherexpense  

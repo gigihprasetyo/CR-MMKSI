@@ -1,0 +1,62 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_subsidyanddiscount.company
+    , VWI_CRM_xts_subsidyanddiscount.businessunitcode
+    , VWI_CRM_xts_subsidyanddiscount.createdonbehalfbyyominame
+    , VWI_CRM_xts_subsidyanddiscount.modifiedonbehalfby
+    , VWI_CRM_xts_subsidyanddiscount.owningteam
+    , VWI_CRM_xts_subsidyanddiscount.xts_locking
+    , VWI_CRM_xts_subsidyanddiscount.statecode
+    , VWI_CRM_xts_subsidyanddiscount.xts_businessunitidname
+    , VWI_CRM_xts_subsidyanddiscount.owneridname
+    , VWI_CRM_xts_subsidyanddiscount.statecodename
+    , VWI_CRM_xts_subsidyanddiscount.owninguser
+    , VWI_CRM_xts_subsidyanddiscount.createdonbehalfby
+    , VWI_CRM_xts_subsidyanddiscount.xts_startdate
+    , VWI_CRM_xts_subsidyanddiscount.xts_pkcombinationkey
+    , VWI_CRM_xts_subsidyanddiscount.xts_subsidyanddiscount
+    , VWI_CRM_xts_subsidyanddiscount.xts_subsidyanddiscountid
+    , VWI_CRM_xts_subsidyanddiscount.xts_currencyidname
+    , VWI_CRM_xts_subsidyanddiscount.importsequencenumber
+    , VWI_CRM_xts_subsidyanddiscount.xts_enddate
+    , VWI_CRM_xts_subsidyanddiscount.utcconversiontimezonecode
+    , VWI_CRM_xts_subsidyanddiscount.createdbyyominame
+    , VWI_CRM_xts_subsidyanddiscount.owningbusinessunit
+    , VWI_CRM_xts_subsidyanddiscount.modifiedbyname
+    , VWI_CRM_xts_subsidyanddiscount.versionnumber
+    , VWI_CRM_xts_subsidyanddiscount.modifiedby
+    , VWI_CRM_xts_subsidyanddiscount.modifiedbyyominame
+    , VWI_CRM_xts_subsidyanddiscount.createdby
+    , VWI_CRM_xts_subsidyanddiscount.timezoneruleversionnumber
+    , VWI_CRM_xts_subsidyanddiscount.owneridtype
+    , VWI_CRM_xts_subsidyanddiscount.statuscodename
+    , VWI_CRM_xts_subsidyanddiscount.owneridyominame
+    , VWI_CRM_xts_subsidyanddiscount.modifiedon
+    , VWI_CRM_xts_subsidyanddiscount.xts_type
+    , VWI_CRM_xts_subsidyanddiscount.modifiedonbehalfbyname
+    , VWI_CRM_xts_subsidyanddiscount.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_subsidyanddiscount.statuscode
+    , VWI_CRM_xts_subsidyanddiscount.createdbyname
+    , VWI_CRM_xts_subsidyanddiscount.createdon
+    , VWI_CRM_xts_subsidyanddiscount.xts_businessunitid
+    , VWI_CRM_xts_subsidyanddiscount.createdonbehalfbyname
+    , VWI_CRM_xts_subsidyanddiscount.xts_currencyid
+    , VWI_CRM_xts_subsidyanddiscount.xts_typename
+    , VWI_CRM_xts_subsidyanddiscount.xts_description
+    , VWI_CRM_xts_subsidyanddiscount.ownerid
+    , VWI_CRM_xts_subsidyanddiscount.overriddencreatedon
+    , VWI_CRM_xts_subsidyanddiscount.RowStatus
+    , VWI_CRM_xts_subsidyanddiscount.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_subsidyanddiscount a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_subsidyanddiscount 

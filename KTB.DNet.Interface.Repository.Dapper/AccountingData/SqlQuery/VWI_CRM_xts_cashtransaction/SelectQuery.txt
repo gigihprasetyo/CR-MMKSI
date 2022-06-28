@@ -1,0 +1,76 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_cashtransaction.company
+	, VWI_CRM_xts_cashtransaction.businessunitcode
+	, VWI_CRM_xts_cashtransaction.createdonbehalfbyyominame
+	, VWI_CRM_xts_cashtransaction.owninguser
+	, VWI_CRM_xts_cashtransaction.transactioncurrencyidname
+	, VWI_CRM_xts_cashtransaction.xts_locking
+	, VWI_CRM_xts_cashtransaction.statecode
+	, VWI_CRM_xts_cashtransaction.xts_businessunitidname
+	, VWI_CRM_xts_cashtransaction.xts_totaltransactionamount_base
+	, VWI_CRM_xts_cashtransaction.owneridname
+	, VWI_CRM_xts_cashtransaction.xts_totalcontrolamount_base
+	, VWI_CRM_xts_cashtransaction.statecodename
+	, VWI_CRM_xts_cashtransaction.createdonbehalfby
+	, VWI_CRM_xts_cashtransaction.transactioncurrencyid
+	, VWI_CRM_xts_cashtransaction.xts_handlingname
+	, VWI_CRM_xts_cashtransaction.xts_cashtransactionid
+	, VWI_CRM_xts_cashtransaction.xts_parentbusinessunitid
+	, VWI_CRM_xts_cashtransaction.xts_cashandbankid
+	, VWI_CRM_xts_cashtransaction.importsequencenumber
+	, VWI_CRM_xts_cashtransaction.xts_cashandbankidname
+	, VWI_CRM_xts_cashtransaction.modifiedbyyominame
+	, VWI_CRM_xts_cashtransaction.xts_totaltransactionamount
+	, VWI_CRM_xts_cashtransaction.xts_cashtransactiondate
+	, VWI_CRM_xts_cashtransaction.xts_handling
+	, VWI_CRM_xts_cashtransaction.utcconversiontimezonecode
+	, VWI_CRM_xts_cashtransaction.createdbyyominame
+	, VWI_CRM_xts_cashtransaction.owningbusinessunit
+	, VWI_CRM_xts_cashtransaction.modifiedbyname
+	, VWI_CRM_xts_cashtransaction.owningteam
+	, VWI_CRM_xts_cashtransaction.modifiedby
+	, VWI_CRM_xts_cashtransaction.createdby
+	, VWI_CRM_xts_cashtransaction.timezoneruleversionnumber
+	, VWI_CRM_xts_cashtransaction.owneridtype
+	, VWI_CRM_xts_cashtransaction.statuscodename
+	, VWI_CRM_xts_cashtransaction.exchangerate
+	, VWI_CRM_xts_cashtransaction.xts_totalcontrolamount
+	, VWI_CRM_xts_cashtransaction.xts_hascancelledname
+	, VWI_CRM_xts_cashtransaction.xts_cashtransactiontype
+	, VWI_CRM_xts_cashtransaction.xts_cashtransactiontypename
+	, VWI_CRM_xts_cashtransaction.owneridyominame
+	, VWI_CRM_xts_cashtransaction.xts_cashtransactionreferenceid
+	, VWI_CRM_xts_cashtransaction.modifiedon
+	, VWI_CRM_xts_cashtransaction.xts_hascancelled
+	, VWI_CRM_xts_cashtransaction.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_cashtransaction.statuscode
+	, VWI_CRM_xts_cashtransaction.createdbyname
+	, VWI_CRM_xts_cashtransaction.createdon
+	, VWI_CRM_xts_cashtransaction.xts_businessunitid
+	, VWI_CRM_xts_cashtransaction.xts_cashtransaction
+	, VWI_CRM_xts_cashtransaction.createdonbehalfbyname
+	, VWI_CRM_xts_cashtransaction.xts_status
+	, VWI_CRM_xts_cashtransaction.modifiedonbehalfbyname
+	, VWI_CRM_xts_cashtransaction.xts_cashtransactionreferenceidname
+	, VWI_CRM_xts_cashtransaction.xts_parentbusinessunitidname
+	, VWI_CRM_xts_cashtransaction.versionnumber
+	, VWI_CRM_xts_cashtransaction.modifiedonbehalfby
+	, VWI_CRM_xts_cashtransaction.xts_statusname
+	, VWI_CRM_xts_cashtransaction.ownerid
+	, VWI_CRM_xts_cashtransaction.overriddencreatedon
+	, VWI_CRM_xts_cashtransaction.xts_description
+	, VWI_CRM_xts_cashtransaction.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_cashtransaction a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_cashtransaction 

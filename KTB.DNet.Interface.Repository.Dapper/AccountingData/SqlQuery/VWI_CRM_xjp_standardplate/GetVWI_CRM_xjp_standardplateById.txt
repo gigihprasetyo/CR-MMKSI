@@ -1,0 +1,37 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, statecode
+	, statecodename
+	, createdonbehalfby
+	, xjp_registrationofficeid
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, xjp_locking
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, createdby
+	, timezoneruleversionnumber
+	, statuscodename
+	, xjp_stampauthorityname
+	, xjp_description
+	, xjp_standardplateid
+	, modifiedon
+	, xjp_registrationofficeidname
+	, xjp_aliasname
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, modifiedonbehalfbyname
+	, xjp_standardplate
+	, overriddencreatedon
+FROM CRM_xjp_standardplate as VWI_CRM_xjp_standardplate with (nolock) 
+WHERE xjp_standardplateid = @Id

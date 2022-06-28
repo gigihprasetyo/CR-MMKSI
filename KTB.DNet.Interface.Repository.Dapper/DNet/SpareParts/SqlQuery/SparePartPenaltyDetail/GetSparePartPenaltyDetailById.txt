@@ -1,0 +1,28 @@
+
+SELECT 
+	  ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow,
+	  SparePartPenaltyDetail.ID,
+	  SparePartPenaltyDetail.TOPSPPenaltyID,
+	  SparePartPenaltyDetail.AmountPenalty,
+	  SparePartPenaltyDetail.BillingNumber,
+	  SparePartPenaltyDetail.DoNumber
+FROM
+(SELECT
+	  TOPSPPenaltyDetail.ID,
+	  TOPSPPenaltyDetail.TOPSPPenaltyID,
+	  TOPSPPenaltyDetail.AmountPenalty,
+	  SparePartBilling.BillingNumber,
+	  SparePartDO.DoNumber
+FROM
+	  TOPSPPenaltyDetail 
+	  join SparePartBilling on SparePartBilling.ID = TOPSPPenaltyDetail.SparePartBillingID
+	  join SparePartBillingDetail on SparePartBillingDetail.SparePartBillingID = SparePartBilling.ID
+	  join SparePartDODetail on SparePartDODetail.ID = SparePartBillingDetail.SparePartDODetailID
+	  join SparePartDO on SparePartDO.ID = SparePartDODetail.SparePartDOID
+GROUP BY
+	  TOPSPPenaltyDetail.ID,
+	  TOPSPPenaltyDetail.TOPSPPenaltyID,
+	  TOPSPPenaltyDetail.AmountPenalty,
+	  SparePartBilling.BillingNumber,
+	  SparePartDO.DoNumber
+)SparePartPenaltyDetail WHERE ID = @Id

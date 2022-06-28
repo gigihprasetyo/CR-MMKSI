@@ -1,0 +1,138 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_accountreceivableinvoice.company
+	, VWI_CRM_xts_accountreceivableinvoice.businessunitcode
+	, VWI_CRM_xts_accountreceivableinvoice.versionnumber
+	, VWI_CRM_xts_accountreceivableinvoice.createdon
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_spkidname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_ordernumber
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_parentbusinessunitid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_financingcompanyinvoiceamount
+	, VWI_CRM_xts_accountreceivableinvoice.xts_originalreferencenumberidname
+	, VWI_CRM_xts_accountreceivableinvoice.statuscodename
+	, VWI_CRM_xts_accountreceivableinvoice.xts_status
+	, VWI_CRM_xts_accountreceivableinvoice.xts_customerid
+	, VWI_CRM_xts_accountreceivableinvoice.modifiedbyyominame
+	, VWI_CRM_xts_accountreceivableinvoice.owneridtype
+	, VWI_CRM_xts_accountreceivableinvoice.xts_type
+	, VWI_CRM_xts_accountreceivableinvoice.xts_billabletype
+	, VWI_CRM_xts_accountreceivableinvoice.xts_taxregistrationnumber
+	, VWI_CRM_xts_accountreceivableinvoice.createdonbehalfby
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_origarinvoicenumber
+	, VWI_CRM_xts_accountreceivableinvoice.xts_financingcompanyidname
+	, VWI_CRM_xts_accountreceivableinvoice.modifiedbyname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_salesorderid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_newvehiclesalesorderid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_salesorderidname
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_sourcetypenumbering
+	, VWI_CRM_xts_accountreceivableinvoice.owneridname
+	, VWI_CRM_xts_accountreceivableinvoice.overriddencreatedon
+	, VWI_CRM_xts_accountreceivableinvoice.xts_deliveryorderid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_newvehicledeliveryorderidname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_totalreceiptamount_base
+	, VWI_CRM_xts_accountreceivableinvoice.xts_financingcompanynumber
+	, VWI_CRM_xts_accountreceivableinvoice.createdonbehalfbyyominame
+	, VWI_CRM_xts_accountreceivableinvoice.modifiedonbehalfby
+	, VWI_CRM_xts_accountreceivableinvoice.exchangerate
+	, VWI_CRM_xts_accountreceivableinvoice.xts_workorderidname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_usedvehiclesalesorderid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_customeridyominame
+	, VWI_CRM_xts_accountreceivableinvoice.owningteam
+	, VWI_CRM_xts_accountreceivableinvoice.xts_taxinvoicenumber
+	, VWI_CRM_xts_accountreceivableinvoice.xts_termofpayment
+	, VWI_CRM_xts_accountreceivableinvoice.xts_newvehicledeliveryorderid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_financingcompanybalance
+	, VWI_CRM_xts_accountreceivableinvoice.statecode
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_sourcetypenumberingname
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_spkid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_sourcetype
+	, VWI_CRM_xts_accountreceivableinvoice.timezoneruleversionnumber
+	, VWI_CRM_xts_accountreceivableinvoice.xts_serviceproportionalinvoiceid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_financingcompanybalance_base
+	, VWI_CRM_xts_accountreceivableinvoice.xts_writeoffbalanceid
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_productid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_locking
+	, VWI_CRM_xts_accountreceivableinvoice.xts_handling
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_chassisnumber
+	, VWI_CRM_xts_accountreceivableinvoice.xts_customernumber
+	, VWI_CRM_xts_accountreceivableinvoice.xts_reversingname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_originalreferencenumber
+	, VWI_CRM_xts_accountreceivableinvoice.xts_usedvehicledeliveryorderid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_accountreceivableinvoice
+	, VWI_CRM_xts_accountreceivableinvoice.createdonbehalfbyname
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_ordertypeidname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_newvehiclesalesorderidname
+	, VWI_CRM_xts_accountreceivableinvoice.utcconversiontimezonecode
+	, VWI_CRM_xts_accountreceivableinvoice.xts_billabletypename
+	, VWI_CRM_xts_accountreceivableinvoice.xts_financingcompanyreceiptamount_base
+	, VWI_CRM_xts_accountreceivableinvoice.xts_deliveryordernumber
+	, VWI_CRM_xts_accountreceivableinvoice.xts_statusname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_typename
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_enginenumber
+	, VWI_CRM_xts_accountreceivableinvoice.ownerid
+	, VWI_CRM_xts_accountreceivableinvoice.modifiedon
+	, VWI_CRM_xts_accountreceivableinvoice.importsequencenumber
+	, VWI_CRM_xts_accountreceivableinvoice.owneridyominame
+	, VWI_CRM_xts_accountreceivableinvoice.xts_writeoffbalanceidname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_balance
+	, VWI_CRM_xts_accountreceivableinvoice.xts_customeridname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_transactiondate
+	, VWI_CRM_xts_accountreceivableinvoice.xts_invoiceamount
+	, VWI_CRM_xts_accountreceivableinvoice.xts_workorderid
+	, VWI_CRM_xts_accountreceivableinvoice.createdbyname
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_ordertypeid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_businessunitid
+	, VWI_CRM_xts_accountreceivableinvoice.modifiedonbehalfbyname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_duedate
+	, VWI_CRM_xts_accountreceivableinvoice.xts_balance_base
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_productidname
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_interfaceprocessname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_handlingname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_originalreferencenumberid
+	, VWI_CRM_xts_accountreceivableinvoice.xts_serviceproportionalinvoiceidname
+	, VWI_CRM_xts_accountreceivableinvoice.transactioncurrencyid
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_customerdescription
+	, VWI_CRM_xts_accountreceivableinvoice.xts_usedvehicledeliveryorderidname
+	, VWI_CRM_xts_accountreceivableinvoice.createdby
+	, VWI_CRM_xts_accountreceivableinvoice.xts_deliveryorderidname
+	, VWI_CRM_xts_accountreceivableinvoice.modifiedby
+	, VWI_CRM_xts_accountreceivableinvoice.xts_financingcompanyinvoiceamount_base
+	, VWI_CRM_xts_accountreceivableinvoice.xts_reversing
+	, VWI_CRM_xts_accountreceivableinvoice.createdbyyominame
+	, VWI_CRM_xts_accountreceivableinvoice.owninguser
+	, VWI_CRM_xts_accountreceivableinvoice.transactioncurrencyidname
+	, VWI_CRM_xts_accountreceivableinvoice.owningbusinessunit
+	, VWI_CRM_xts_accountreceivableinvoice.xts_financingcompanyid
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_vehicleproductionyear
+	, VWI_CRM_xts_accountreceivableinvoice.xts_invoiceamount_base
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_vehiclecolordescription
+	, VWI_CRM_xts_accountreceivableinvoice.xts_sourcetypename
+	, VWI_CRM_xts_accountreceivableinvoice.xts_accountreceivableinvoiceid
+	, VWI_CRM_xts_accountreceivableinvoice.statuscode
+	, VWI_CRM_xts_accountreceivableinvoice.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_parentbusinessunitidname
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_say
+	, VWI_CRM_xts_accountreceivableinvoice.xts_totalreceiptamount
+	, VWI_CRM_xts_accountreceivableinvoice.xts_financingcompanyidyominame
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_interfaceprocess
+	, VWI_CRM_xts_accountreceivableinvoice.xts_usedvehiclesalesorderidname
+	, VWI_CRM_xts_accountreceivableinvoice.statecodename
+	, VWI_CRM_xts_accountreceivableinvoice.xts_businessunitidname
+	, VWI_CRM_xts_accountreceivableinvoice.xts_financingcompanyreceiptamount
+	, VWI_CRM_xts_accountreceivableinvoice.RowStatus
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_isallowcancel
+	, VWI_CRM_xts_accountreceivableinvoice.ktb_externalcode
+	, VWI_CRM_xts_accountreceivableinvoice.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT  
+		b.ktb_bucompany company
+		, b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xts_accountreceivableinvoice a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	{0}
+) VWI_CRM_xts_accountreceivableinvoice 

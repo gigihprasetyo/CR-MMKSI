@@ -1,0 +1,52 @@
+﻿select 
+	/**PagingIndexQuery**/ 
+	ID
+	, DealerCode
+	, DMSPRNo
+	, PONumber
+	, SONumber
+	, SODate
+	, DocumentType
+	, TermOfPaymentValue
+	, TermOfPaymentCode
+	, TermOfPaymentDesc
+	, AmountC2
+	, Rowstatus
+	, LastUpdatedby
+	, LastUpdateTime
+	/**EndPagingIndexQuery**/
+from 
+(
+	select distinct
+		  a.ID
+		, c.DealerCode
+		, DMSPRNo
+		, a.PoNumber as PONumber
+		--, SONumber = ltrim(STUFF((
+	    --        SELECT distinct case when isnull(SONumber, '') = '' then null else ', ' + SONumber end
+	    --        FROM SparePartForecastDetail b with(nolock)
+		--		where b.SparePartForecastHeaderID = a.ID 
+		--			and b.RowStatus = 0
+	    --        FOR XML PATH('')
+	    --        ), 1, 1, ''))
+		, b.SONumber
+		, b.SendDate as SODate
+		, 'N' as DocumentType
+		, 0 as TermOfPaymentValue
+		, 'Z000' as TermOfPaymentCode
+		, 'COD' as TermOfPaymentDesc
+		, 0 as AmountC2
+		, a.Rowstatus
+		, case when a.LastUpdatedby is null then a.Createdby else a.LastUpdatedby end as LastUpdatedby
+		, case when a.LastUpdatedtime is null then a.CreatedTime else a.LastUpdatedtime end as LastUpdateTime
+	from SparePartForecastHeader a with(nolock)
+	left join Dealer c with(nolock) 
+	on c.ID = a.DealerID
+	left join SparePartForecastDetail b with(nolock)
+	on b.SparePartForecastHeaderID = a.ID 
+	where c.RowStatus = 0
+		and b.RowStatus = 0
+		and b.Status <> 5
+		and isnull(b.SONumber, '') != ''
+) POEstimate
+{0}

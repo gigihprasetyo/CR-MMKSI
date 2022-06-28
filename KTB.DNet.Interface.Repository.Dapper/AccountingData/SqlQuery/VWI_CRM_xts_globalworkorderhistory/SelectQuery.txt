@@ -1,0 +1,84 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_globalworkorderhistory.company
+	, VWI_CRM_xts_globalworkorderhistory.businessunitcode
+	, VWI_CRM_xts_globalworkorderhistory.xts_parentbusinessunitid
+	, VWI_CRM_xts_globalworkorderhistory.versionnumber
+	, VWI_CRM_xts_globalworkorderhistory.createdon
+	, VWI_CRM_xts_globalworkorderhistory.ktb_servicetype
+	, VWI_CRM_xts_globalworkorderhistory.xts_scheduledarrivaldateandtime
+	, VWI_CRM_xts_globalworkorderhistory.statuscodename
+	, VWI_CRM_xts_globalworkorderhistory.xts_productsegment14
+	, VWI_CRM_xts_globalworkorderhistory.xts_servicepersoninchargedescription
+	, VWI_CRM_xts_globalworkorderhistory.modifiedbyname
+	, VWI_CRM_xts_globalworkorderhistory.xts_platenumber
+	, VWI_CRM_xts_globalworkorderhistory.xts_vehiclemodelname
+	, VWI_CRM_xts_globalworkorderhistory.xts_vehiclepubliclinkidname
+	, VWI_CRM_xts_globalworkorderhistory.overriddencreatedon
+	, VWI_CRM_xts_globalworkorderhistory.ktb_serviceincdnetcode
+	, VWI_CRM_xts_globalworkorderhistory.xts_address2
+	, VWI_CRM_xts_globalworkorderhistory.xts_lastmileage
+	, VWI_CRM_xts_globalworkorderhistory.createdonbehalfbyyominame
+	, VWI_CRM_xts_globalworkorderhistory.xts_vehiclepubliclinkid
+	, VWI_CRM_xts_globalworkorderhistory.ktb_servicelayanan
+	, VWI_CRM_xts_globalworkorderhistory.ktb_hasilinterfacename
+	, VWI_CRM_xts_globalworkorderhistory.xts_address4
+	, VWI_CRM_xts_globalworkorderhistory.xts_ordertype
+	, VWI_CRM_xts_globalworkorderhistory.statecode
+	, VWI_CRM_xts_globalworkorderhistory.timezoneruleversionnumber
+	, VWI_CRM_xts_globalworkorderhistory.xts_locking
+	, VWI_CRM_xts_globalworkorderhistory.xts_customernumber
+	, VWI_CRM_xts_globalworkorderhistory.ktb_createdonworkorder
+	, VWI_CRM_xts_globalworkorderhistory.xts_manufacturer
+	, VWI_CRM_xts_globalworkorderhistory.createdonbehalfbyname
+	, VWI_CRM_xts_globalworkorderhistory.xts_serviceadvisor
+	, VWI_CRM_xts_globalworkorderhistory.createdonbehalfby
+	, VWI_CRM_xts_globalworkorderhistory.utcconversiontimezonecode
+	, VWI_CRM_xts_globalworkorderhistory.modifiedon
+	, VWI_CRM_xts_globalworkorderhistory.importsequencenumber
+	, VWI_CRM_xts_globalworkorderhistory.xts_actualfinishdateandtime
+	, VWI_CRM_xts_globalworkorderhistory.xts_transactiondate
+	, VWI_CRM_xts_globalworkorderhistory.xts_servicecategory
+	, VWI_CRM_xts_globalworkorderhistory.xts_businessunit
+	, VWI_CRM_xts_globalworkorderhistory.createdbyname
+	, VWI_CRM_xts_globalworkorderhistory.modifiedonbehalfbyname
+	, VWI_CRM_xts_globalworkorderhistory.xts_address3
+	, VWI_CRM_xts_globalworkorderhistory.xts_technicaladvisor
+	, VWI_CRM_xts_globalworkorderhistory.ktb_kindcode
+	, VWI_CRM_xts_globalworkorderhistory.ktb_hasilinterface
+	, VWI_CRM_xts_globalworkorderhistory.createdby
+	, VWI_CRM_xts_globalworkorderhistory.modifiedby
+	, VWI_CRM_xts_globalworkorderhistory.xts_address1
+	, VWI_CRM_xts_globalworkorderhistory.ktb_actualservicefinishdateandtime
+	, VWI_CRM_xts_globalworkorderhistory.xts_vehicleidentificationnumber
+	, VWI_CRM_xts_globalworkorderhistory.xts_actualarrivaldateandtime
+	, VWI_CRM_xts_globalworkorderhistory.createdbyyominame
+	, VWI_CRM_xts_globalworkorderhistory.xts_customer
+	, VWI_CRM_xts_globalworkorderhistory.modifiedonbehalfby
+	, VWI_CRM_xts_globalworkorderhistory.modifiedbyyominame
+	, VWI_CRM_xts_globalworkorderhistory.xts_customerpubliclinkidname
+	, VWI_CRM_xts_globalworkorderhistory.xts_parentbusinessunitidname
+	, VWI_CRM_xts_globalworkorderhistory.organizationidname
+	, VWI_CRM_xts_globalworkorderhistory.xts_workorder
+	, VWI_CRM_xts_globalworkorderhistory.statuscode
+	, VWI_CRM_xts_globalworkorderhistory.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_globalworkorderhistory.xts_globalworkorderhistoryid
+	, VWI_CRM_xts_globalworkorderhistory.organizationid
+	, VWI_CRM_xts_globalworkorderhistory.xts_customerpubliclinkid
+	, VWI_CRM_xts_globalworkorderhistory.statecodename
+	, VWI_CRM_xts_globalworkorderhistory.xts_globalworkorderhistory
+	, VWI_CRM_xts_globalworkorderhistory.RowStatus
+	, VWI_CRM_xts_globalworkorderhistory.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+    SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_globalworkorderhistory a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON TRIM(B.ktb_dealercode) = TRIM(A.xts_businessunit)
+    {0}
+) VWI_CRM_xts_globalworkorderhistory

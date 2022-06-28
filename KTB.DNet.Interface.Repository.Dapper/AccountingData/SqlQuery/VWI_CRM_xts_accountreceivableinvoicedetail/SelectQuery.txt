@@ -1,0 +1,96 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_accountreceivableinvoicedetail.company
+	, VWI_CRM_xts_accountreceivableinvoicedetail.businessunitcode
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_accountreceivableinvoicedetail
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_accountidname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.versionnumber
+	, VWI_CRM_xts_accountreceivableinvoicedetail.createdon
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_amount
+	, VWI_CRM_xts_accountreceivableinvoicedetail.owninguser
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension8id
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_eventdata
+	, VWI_CRM_xts_accountreceivableinvoicedetail.statuscodename
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_description
+	, VWI_CRM_xts_accountreceivableinvoicedetail.modifiedbyyominame
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension5id
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_reasonid
+	, VWI_CRM_xts_accountreceivableinvoicedetail.createdonbehalfby
+	, VWI_CRM_xts_accountreceivableinvoicedetail.modifiedbyname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_accountreceivableinvoiceidname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension2id
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension7idname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.overriddencreatedon
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension6idname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_accountreceivableinvoicedetail.modifiedonbehalfby
+	, VWI_CRM_xts_accountreceivableinvoicedetail.exchangerate
+	, VWI_CRM_xts_accountreceivableinvoicedetail.owningteam
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension4id
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_withholdingtaxamount
+	, VWI_CRM_xts_accountreceivableinvoicedetail.statecode
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension9idname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.owneridname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_withholdingtaxpaymentmethodname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.timezoneruleversionnumber
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension10idname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_withholdingtaxid
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_locking
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_amount_base
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_withholdingtaxidname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.createdonbehalfbyname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension1id
+	, VWI_CRM_xts_accountreceivableinvoicedetail.utcconversiontimezonecode
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension5idname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension3idname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.ownerid
+	, VWI_CRM_xts_accountreceivableinvoicedetail.modifiedon
+	, VWI_CRM_xts_accountreceivableinvoicedetail.importsequencenumber
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension6id
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension7id
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension2idname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension8idname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.createdbyname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_businessunitid
+	, VWI_CRM_xts_accountreceivableinvoicedetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.transactioncurrencyid
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_accountreceivableinvoiceid
+	, VWI_CRM_xts_accountreceivableinvoicedetail.createdby
+	, VWI_CRM_xts_accountreceivableinvoicedetail.modifiedby
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_accountreceivableinvoicedetailid
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension10id
+	, VWI_CRM_xts_accountreceivableinvoicedetail.createdbyyominame
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension4idname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.transactioncurrencyidname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_reasonidname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.owningbusinessunit
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension1idname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension9id
+	, VWI_CRM_xts_accountreceivableinvoicedetail.owneridtype
+	, VWI_CRM_xts_accountreceivableinvoicedetail.statuscode
+	, VWI_CRM_xts_accountreceivableinvoicedetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_accountid
+	, VWI_CRM_xts_accountreceivableinvoicedetail.owneridyominame
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_withholdingtaxamount_base
+	, VWI_CRM_xts_accountreceivableinvoicedetail.statecodename
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_withholdingtaxpaymentmethod
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_dimension3id
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_businessunitidname
+	, VWI_CRM_xts_accountreceivableinvoicedetail.RowStatus
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_whtperiodto
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_whtperiodfrom
+	, VWI_CRM_xts_accountreceivableinvoicedetail.xts_whtcollectionpostdate
+	, VWI_CRM_xts_accountreceivableinvoicedetail.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT  
+		b.ktb_bucompany company
+		, b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xts_accountreceivableinvoicedetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	{0}
+) VWI_CRM_xts_accountreceivableinvoicedetail

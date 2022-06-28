@@ -1,0 +1,10 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SLS_DailyActivityMonitoring_VDO.businessunitcode
+	,VWI_CRM_SLS_DailyActivityMonitoring_VDO.personincharge
+	,VWI_CRM_SLS_DailyActivityMonitoring_VDO.salesperson
+	,VWI_CRM_SLS_DailyActivityMonitoring_VDO.xts_newvehicledeliveryordernumber
+	,VWI_CRM_SLS_DailyActivityMonitoring_VDO.xts_newvehiclesalesordernumber
+	,VWI_CRM_SLS_DailyActivityMonitoring_VDO.xts_productsegment2id
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SLS_DailyActivityMonitoring_VDO WITH (NOLOCK) {0}

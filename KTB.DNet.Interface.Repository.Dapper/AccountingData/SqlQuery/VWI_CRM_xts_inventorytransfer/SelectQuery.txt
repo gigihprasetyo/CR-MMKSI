@@ -1,0 +1,94 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_inventorytransfer.company
+	, VWI_CRM_xts_inventorytransfer.businessunitcode
+	, VWI_CRM_xts_inventorytransfer.xts_transactiontypename
+	, VWI_CRM_xts_inventorytransfer.xts_transferstatus
+	, VWI_CRM_xts_inventorytransfer.versionnumber
+	, VWI_CRM_xts_inventorytransfer.createdon
+	, VWI_CRM_xts_inventorytransfer.xts_tositeid
+	, VWI_CRM_xts_inventorytransfer.xts_referencenumber
+	, VWI_CRM_xts_inventorytransfer.xts_receiptidname
+	, VWI_CRM_xts_inventorytransfer.statuscodename
+	, VWI_CRM_xts_inventorytransfer.xts_status
+	, VWI_CRM_xts_inventorytransfer.modifiedbyyominame
+	, VWI_CRM_xts_inventorytransfer.xts_inventorytransferid
+	, VWI_CRM_xts_inventorytransfer.owneridtype
+	, VWI_CRM_xts_inventorytransfer.xts_receiptid
+	, VWI_CRM_xts_inventorytransfer.xts_log
+	, VWI_CRM_xts_inventorytransfer.ktb_isclaim
+	, VWI_CRM_xts_inventorytransfer.xts_personinchargeid
+	, VWI_CRM_xts_inventorytransfer.createdonbehalfby
+	, VWI_CRM_xts_inventorytransfer.modifiedbyname
+	, VWI_CRM_xts_inventorytransfer.xts_transferstep
+	, VWI_CRM_xts_inventorytransfer.ktb_purchasereceiptidname
+	, VWI_CRM_xts_inventorytransfer.owneridname
+	, VWI_CRM_xts_inventorytransfer.overriddencreatedon
+	, VWI_CRM_xts_inventorytransfer.xts_inventorytransfernumber
+	, VWI_CRM_xts_inventorytransfer.xts_searchvehicle
+	, VWI_CRM_xts_inventorytransfer.createdonbehalfbyyominame
+	, VWI_CRM_xts_inventorytransfer.modifiedonbehalfby
+	, VWI_CRM_xts_inventorytransfer.xts_workorderidname
+	, VWI_CRM_xts_inventorytransfer.xts_receiptdate
+	, VWI_CRM_xts_inventorytransfer.owningteam
+	, VWI_CRM_xts_inventorytransfer.ktb_isclaimname
+	, VWI_CRM_xts_inventorytransfer.statecode
+	, VWI_CRM_xts_inventorytransfer.xts_tositeidname
+	, VWI_CRM_xts_inventorytransfer.xts_transactiontype
+	, VWI_CRM_xts_inventorytransfer.timezoneruleversionnumber
+	, VWI_CRM_xts_inventorytransfer.xts_itemtypefortransfer
+	, VWI_CRM_xts_inventorytransfer.ktb_parentbusinessunitid
+	, VWI_CRM_xts_inventorytransfer.xts_locking
+	, VWI_CRM_xts_inventorytransfer.xts_handling
+	, VWI_CRM_xts_inventorytransfer.xts_fromsiteid
+	, VWI_CRM_xts_inventorytransfer.ktb_actualreceiptdate
+	, VWI_CRM_xts_inventorytransfer.createdonbehalfbyname
+	, VWI_CRM_xts_inventorytransfer.createdbyyominame
+	, VWI_CRM_xts_inventorytransfer.utcconversiontimezonecode
+	, VWI_CRM_xts_inventorytransfer.xts_statusname
+	, VWI_CRM_xts_inventorytransfer.ktb_actualtransferdate
+	, VWI_CRM_xts_inventorytransfer.ownerid
+	, VWI_CRM_xts_inventorytransfer.modifiedon
+	, VWI_CRM_xts_inventorytransfer.importsequencenumber
+	, VWI_CRM_xts_inventorytransfer.owneridyominame
+	, VWI_CRM_xts_inventorytransfer.xts_itemtypefortransfername
+	, VWI_CRM_xts_inventorytransfer.xts_personinchargeidname
+	, VWI_CRM_xts_inventorytransfer.xts_tobusinessunitid
+	, VWI_CRM_xts_inventorytransfer.xts_transactiondate
+	, VWI_CRM_xts_inventorytransfer.xts_fromsiteidname
+	, VWI_CRM_xts_inventorytransfer.xts_workorderid
+	, VWI_CRM_xts_inventorytransfer.createdbyname
+	, VWI_CRM_xts_inventorytransfer.xts_businessunitid
+	, VWI_CRM_xts_inventorytransfer.modifiedonbehalfbyname
+	, VWI_CRM_xts_inventorytransfer.ktb_purchasereceiptid
+	, VWI_CRM_xts_inventorytransfer.ktb_ribbondataproductwarehouse
+	, VWI_CRM_xts_inventorytransfer.xts_handlingname
+	, VWI_CRM_xts_inventorytransfer.xts_sourcedata
+	, VWI_CRM_xts_inventorytransfer.createdby
+	, VWI_CRM_xts_inventorytransfer.modifiedby
+	, VWI_CRM_xts_inventorytransfer.xts_transferstepname
+	, VWI_CRM_xts_inventorytransfer.owninguser
+	, VWI_CRM_xts_inventorytransfer.owningbusinessunit
+	, VWI_CRM_xts_inventorytransfer.xts_tobusinessunitidname
+	, VWI_CRM_xts_inventorytransfer.statuscode
+	, VWI_CRM_xts_inventorytransfer.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_inventorytransfer.ktb_parentbusinessunitidname
+	, VWI_CRM_xts_inventorytransfer.ktb_description
+	, VWI_CRM_xts_inventorytransfer.statecodename
+	, VWI_CRM_xts_inventorytransfer.xts_businessunitidname
+	, VWI_CRM_xts_inventorytransfer.xts_transferstatusname
+	, VWI_CRM_xts_inventorytransfer.RowStatus
+	, VWI_CRM_xts_inventorytransfer.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.*  
+        , b.msdyn_companycode
+    FROM CRM_xts_inventorytransfer a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_inventorytransfer

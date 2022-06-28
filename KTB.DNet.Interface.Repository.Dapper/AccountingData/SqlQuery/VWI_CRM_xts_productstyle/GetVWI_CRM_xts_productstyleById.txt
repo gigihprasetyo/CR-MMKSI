@@ -1,0 +1,39 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, xts_styleidname
+	, statecode
+	, statecodename
+	, createdonbehalfby
+	, xts_pkcombinationkey
+	, xts_styleid
+	, organizationid
+	, importsequencenumber
+	, organizationidname
+	, xts_productstyleid
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedby
+	, modifiedbyname
+	, versionnumber
+	, xts_productstyle
+	, modifiedbyyominame
+	, createdby
+	, timezoneruleversionnumber
+	, xts_eventdata
+	, statuscodename
+	, xts_sharedproductidname
+	, xts_sharedproductid
+	, modifiedon
+	, modifiedonbehalfbyname
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, xts_entitytag
+	, createdonbehalfbyname
+	, xts_description
+	, modifiedonbehalfby
+	, overriddencreatedon
+FROM [dbo].[CRM_xts_productstyle] as VWI_CRM_xts_productstyle with(nolock)
+WHERE xts_productstyleid = @Id

@@ -1,0 +1,116 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_nvsoaccessories.company
+	, VWI_CRM_xts_nvsoaccessories.businessunitcode
+	, VWI_CRM_xts_nvsoaccessories.xts_parentbusinessunitid
+	, VWI_CRM_xts_nvsoaccessories.versionnumber
+	, VWI_CRM_xts_nvsoaccessories.xts_consumptiontax2idname
+	, VWI_CRM_xts_nvsoaccessories.createdon
+	, VWI_CRM_xts_nvsoaccessories.xts_nvsoaccessoriesid
+	, VWI_CRM_xts_nvsoaccessories.xts_consumptiontax1id
+	, VWI_CRM_xts_nvsoaccessories.xts_eventdata
+	, VWI_CRM_xts_nvsoaccessories.statuscodename
+	, VWI_CRM_xts_nvsoaccessories.xts_pluginflag
+	, VWI_CRM_xts_nvsoaccessories.xts_unitprice
+	, VWI_CRM_xts_nvsoaccessories.xts_description
+	, VWI_CRM_xts_nvsoaccessories.modifiedbyyominame
+	, VWI_CRM_xts_nvsoaccessories.owneridtype
+	, VWI_CRM_xts_nvsoaccessories.xts_discountamountbeforetax
+	, VWI_CRM_xts_nvsoaccessories.createdonbehalfby
+	, VWI_CRM_xts_nvsoaccessories.modifiedbyname
+	, VWI_CRM_xts_nvsoaccessories.xjp_accessoriesestimatedcost
+	, VWI_CRM_xts_nvsoaccessories.xts_totaldiscountamount
+	, VWI_CRM_xts_nvsoaccessories.owneridname
+	, VWI_CRM_xts_nvsoaccessories.overriddencreatedon
+	, VWI_CRM_xts_nvsoaccessories.xts_nvsqaccessoriesid
+	, VWI_CRM_xts_nvsoaccessories.xts_nvsqaccessoriesidname
+	, VWI_CRM_xts_nvsoaccessories.createdonbehalfbyyominame
+	, VWI_CRM_xts_nvsoaccessories.modifiedonbehalfby
+	, VWI_CRM_xts_nvsoaccessories.exchangerate
+	, VWI_CRM_xts_nvsoaccessories.xts_totalconsumptiontaxamount_base
+	, VWI_CRM_xts_nvsoaccessories.xts_mandatoryaccessoriesname
+	, VWI_CRM_xts_nvsoaccessories.xts_transactionamount_base
+	, VWI_CRM_xts_nvsoaccessories.xts_consumptiontax2id
+	, VWI_CRM_xts_nvsoaccessories.xts_newvehiclesalesorderid
+	, VWI_CRM_xts_nvsoaccessories.xts_totalbaseamount
+	, VWI_CRM_xts_nvsoaccessories.xts_accessoriesinstallationcategoryidname
+	, VWI_CRM_xts_nvsoaccessories.xts_pricetype
+	, VWI_CRM_xts_nvsoaccessories.xts_totalprice
+	, VWI_CRM_xts_nvsoaccessories.statecode
+	, VWI_CRM_xts_nvsoaccessories.xts_totaldiscountamount_base
+	, VWI_CRM_xts_nvsoaccessories.xts_nvsoaccessories
+	, VWI_CRM_xts_nvsoaccessories.xts_consumptiontax1amount_base
+	, VWI_CRM_xts_nvsoaccessories.timezoneruleversionnumber
+	, VWI_CRM_xts_nvsoaccessories.xts_acquisitiontaxprice
+	, VWI_CRM_xts_nvsoaccessories.xts_warehouseidname
+	, VWI_CRM_xts_nvsoaccessories.xts_totalconsumptiontaxamount
+	, VWI_CRM_xts_nvsoaccessories.xts_locking
+	, VWI_CRM_xts_nvsoaccessories.xts_totalamountbeforediscount
+	, VWI_CRM_xts_nvsoaccessories.xjp_pdidetailid
+	, VWI_CRM_xts_nvsoaccessories.xts_quantity
+	, VWI_CRM_xts_nvsoaccessories.xts_consumptiontax1idname
+	, VWI_CRM_xts_nvsoaccessories.xts_purchaseorderdetailidname
+	, VWI_CRM_xts_nvsoaccessories.xts_accessoriesid
+	, VWI_CRM_xts_nvsoaccessories.xts_accessoriesinstallationcategoryid
+	, VWI_CRM_xts_nvsoaccessories.xts_newvehiclesalesorderidname
+	, VWI_CRM_xts_nvsoaccessories.xts_totalbaseamount_base
+	, VWI_CRM_xts_nvsoaccessories.xts_accessoriesidname
+	, VWI_CRM_xts_nvsoaccessories.utcconversiontimezonecode
+	, VWI_CRM_xts_nvsoaccessories.xts_warehouseid
+	, VWI_CRM_xts_nvsoaccessories.xts_totalprice_base
+	, VWI_CRM_xts_nvsoaccessories.xts_freetype
+	, VWI_CRM_xts_nvsoaccessories.xts_vendoridname
+	, VWI_CRM_xts_nvsoaccessories.ownerid
+	, VWI_CRM_xts_nvsoaccessories.modifiedon
+	, VWI_CRM_xts_nvsoaccessories.importsequencenumber
+	, VWI_CRM_xts_nvsoaccessories.owneridyominame
+	, VWI_CRM_xts_nvsoaccessories.xjp_pdidetailidname
+	, VWI_CRM_xts_nvsoaccessories.xjp_accessoriesestimatedcost_base
+	, VWI_CRM_xts_nvsoaccessories.xts_acquisitiontaxprice_base
+	, VWI_CRM_xts_nvsoaccessories.xts_siteid
+	, VWI_CRM_xts_nvsoaccessories.createdbyname
+	, VWI_CRM_xts_nvsoaccessories.xts_businessunitid
+	, VWI_CRM_xts_nvsoaccessories.createdonbehalfbyname
+	, VWI_CRM_xts_nvsoaccessories.modifiedonbehalfbyname
+	, VWI_CRM_xts_nvsoaccessories.xts_pricetypename
+	, VWI_CRM_xts_nvsoaccessories.xts_consumptiontax2amount
+	, VWI_CRM_xts_nvsoaccessories.transactioncurrencyid
+	, VWI_CRM_xts_nvsoaccessories.owningteam
+	, VWI_CRM_xts_nvsoaccessories.createdby
+	, VWI_CRM_xts_nvsoaccessories.modifiedby
+	, VWI_CRM_xts_nvsoaccessories.xts_unitprice_base
+	, VWI_CRM_xts_nvsoaccessories.xts_mandatoryaccessories
+	, VWI_CRM_xts_nvsoaccessories.xts_parentbusinessunitidname
+	, VWI_CRM_xts_nvsoaccessories.createdbyyominame
+	, VWI_CRM_xts_nvsoaccessories.owninguser
+	, VWI_CRM_xts_nvsoaccessories.transactioncurrencyidname
+	, VWI_CRM_xts_nvsoaccessories.owningbusinessunit
+	, VWI_CRM_xts_nvsoaccessories.xts_locationid
+	, VWI_CRM_xts_nvsoaccessories.xts_consumptiontax1amount
+	, VWI_CRM_xts_nvsoaccessories.xts_consumptiontax2amount_base
+	, VWI_CRM_xts_nvsoaccessories.xts_transactionamount
+	, VWI_CRM_xts_nvsoaccessories.xts_vendorid
+	, VWI_CRM_xts_nvsoaccessories.xts_discountamountbeforetax_base
+	, VWI_CRM_xts_nvsoaccessories.statuscode
+	, VWI_CRM_xts_nvsoaccessories.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_nvsoaccessories.xts_siteidname
+	, VWI_CRM_xts_nvsoaccessories.xts_purchaseorderdetailid
+	, VWI_CRM_xts_nvsoaccessories.xts_freetypename
+	, VWI_CRM_xts_nvsoaccessories.xts_totalamountbeforediscount_base
+	, VWI_CRM_xts_nvsoaccessories.xts_locationidname
+	, VWI_CRM_xts_nvsoaccessories.statecodename
+	, VWI_CRM_xts_nvsoaccessories.xts_businessunitidname
+	, VWI_CRM_xts_nvsoaccessories.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_nvsoaccessories a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK)
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_nvsoaccessories 

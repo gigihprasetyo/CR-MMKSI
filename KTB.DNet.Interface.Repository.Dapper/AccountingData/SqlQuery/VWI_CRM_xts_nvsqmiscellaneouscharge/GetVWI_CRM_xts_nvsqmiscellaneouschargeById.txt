@@ -1,0 +1,82 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,xts_parentbusinessunitid
+	,versionnumber
+	,xts_consumptiontaxid
+	,createdon
+	,xts_amount
+	,xts_nvsqmiscellaneouscharge
+	,statuscodename
+	,xts_baseamount_base
+	,xts_consumptiontaxidname
+	,xts_miscellaneouschargetemplatereferenceidname
+	,owneridtype
+	,xts_nvsqmiscellaneouschargeid
+	,createdonbehalfby
+	,modifiedbyname
+	,owneridname
+	,ktb_caroseriesname
+	,overriddencreatedon
+	,ktb_caroseries
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_miscellaneouschargeid
+	,owningteam
+	,xts_estimatedmiscellaneouschargecost_base
+	,xts_newvehiclesalesquoteid
+	,statecode
+	,timezoneruleversionnumber
+	,xts_taxablename
+	,ktb_karoseriname
+	,xts_locking
+	,xts_miscellaneouschargeidname
+	,xts_amount_base
+	,xts_totalamount_base
+	,createdonbehalfbyname
+	,xts_pluginflag
+	,xts_consumptiontaxamount
+	,utcconversiontimezonecode
+	,xts_estimatedmiscellaneouschargecost
+	,xts_newvehiclesalesquoteidname
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,xts_consumptiontaxamount_base
+	,createdbyname
+	,ktb_miscchargedescription
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_baseamount
+	,transactioncurrencyid
+	,createdby
+	,modifiedby
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,owningbusinessunit
+	,modifiedbyyominame
+	,xts_parentbusinessunitidname
+	,xts_totalamount
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_miscellaneouschargetemplatereferenceid
+	,owneridyominame
+	,xts_taxable
+	,statecodename
+	,xts_businessunitidname
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_nvsqmiscellaneouscharge a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_nvsqmiscellaneouschargeid = @Id
+) VWI_CRM_xts_nvsqmiscellaneouscharge

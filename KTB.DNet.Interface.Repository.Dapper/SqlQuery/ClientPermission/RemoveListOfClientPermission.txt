@@ -1,0 +1,1 @@
+﻿DELETE FROM APIClientPermission WHERE ClientId = @clientId AND PermissionId IN @listOfPermissionId

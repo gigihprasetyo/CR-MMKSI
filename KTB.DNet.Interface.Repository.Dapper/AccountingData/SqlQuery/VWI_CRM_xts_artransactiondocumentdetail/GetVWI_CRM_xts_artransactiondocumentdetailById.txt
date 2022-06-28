@@ -1,0 +1,64 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,statecode
+	,owneridname
+	,statecodename
+	,createdonbehalfby
+	,transactioncurrencyid
+	,xts_transactiontype
+	,xts_customertransactionnumber
+	,xts_gljournaldetailreference
+	,xts_transactiontypename
+	,importsequencenumber
+	,xts_creditamount
+	,modifiedbyyominame
+	,xts_artransactiondocumentidname
+	,xts_gljournalnumber
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,xts_creditamount_base
+	,owneridyominame
+	,xts_debitamount
+	,modifiedon
+	,exchangerate
+	,xts_artransactiondocumentdetailid
+	,xts_debitamount_base
+	,xts_artransactiondocumentid
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,xts_artransactiondocumentdetailnumber
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+     FROM CRM_xts_artransactiondocumentdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    WHERE xts_artransactiondocumentdetailid = @Id
+) VWI_CRM_xts_artransactiondocumentdetail
+

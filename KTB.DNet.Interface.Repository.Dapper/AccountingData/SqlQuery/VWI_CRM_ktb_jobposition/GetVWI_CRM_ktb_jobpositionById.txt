@@ -1,0 +1,38 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, ktb_dnetid
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, statecode
+	, statecodename
+	, ktb_jobposition
+	, ktb_position1
+	, createdonbehalfby
+	, ktb_position1name
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, ktb_sequencenumber
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, ktb_positionname
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, createdby
+	, timezoneruleversionnumber
+	, ktb_description
+	, statuscodename
+	, ktb_jobpositionid
+	, modifiedon
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, modifiedonbehalfbyname
+	, ktb_position
+	, overriddencreatedon
+FROM [dbo].[CRM_ktb_jobposition] as VWI_CRM_ktb_jobposition with(nolock)
+WHERE ktb_jobpositionid = @Id

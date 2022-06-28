@@ -1,0 +1,13 @@
+SELECT 
+	COUNT(1)
+from (
+	SELECT      
+		c.ktb_bucompany company    
+		, c.ktb_dealercode businessunitcode    
+		, a.*  
+		, c.msdyn_companycode    
+	FROM CRM_ktb_lkppdetail a (NOLOCK) 
+	inner join CRM_ktb_lkpp b on a.ktb_lkppid = b.ktb_lkppid
+	LEFT JOIN CRM_businessunit c WITH(NOLOCK) ON c.businessunitid = b .ktb_businessunitid   
+	{0}
+) as VWI_CRM_ktb_lkppdetail

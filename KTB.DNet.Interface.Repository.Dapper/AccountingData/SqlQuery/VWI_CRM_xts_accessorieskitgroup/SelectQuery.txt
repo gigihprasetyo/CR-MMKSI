@@ -1,0 +1,54 @@
+SELECT 
+    /**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_xts_accessorieskitgroup.[company]
+    , VWI_CRM_xts_accessorieskitgroup.[businessunitcode]
+    , VWI_CRM_xts_accessorieskitgroup.[createdonbehalfbyyominame]
+    , VWI_CRM_xts_accessorieskitgroup.[modifiedonbehalfby]
+    , VWI_CRM_xts_accessorieskitgroup.[owningteam]
+    , VWI_CRM_xts_accessorieskitgroup.[xts_locking]
+    , VWI_CRM_xts_accessorieskitgroup.[statecode]
+    , VWI_CRM_xts_accessorieskitgroup.[xts_businessunitidname]
+    , VWI_CRM_xts_accessorieskitgroup.[owneridname]
+    , VWI_CRM_xts_accessorieskitgroup.[statecodename]
+    , VWI_CRM_xts_accessorieskitgroup.[owninguser]
+    , VWI_CRM_xts_accessorieskitgroup.[createdonbehalfby]
+    , VWI_CRM_xts_accessorieskitgroup.[xts_accessorieskitgroupid]
+    , VWI_CRM_xts_accessorieskitgroup.[importsequencenumber]
+    , VWI_CRM_xts_accessorieskitgroup.[utcconversiontimezonecode]
+    , VWI_CRM_xts_accessorieskitgroup.[createdbyyominame]
+    , VWI_CRM_xts_accessorieskitgroup.[owningbusinessunit]
+    , VWI_CRM_xts_accessorieskitgroup.[modifiedbyname]
+    , VWI_CRM_xts_accessorieskitgroup.[xts_accessorieskitgroup]
+    , VWI_CRM_xts_accessorieskitgroup.[modifiedby]
+    , VWI_CRM_xts_accessorieskitgroup.[modifiedbyyominame]
+    , VWI_CRM_xts_accessorieskitgroup.[createdby]
+    , VWI_CRM_xts_accessorieskitgroup.[timezoneruleversionnumber]
+    , VWI_CRM_xts_accessorieskitgroup.[owneridtype]
+    , VWI_CRM_xts_accessorieskitgroup.[statuscodename]
+    , VWI_CRM_xts_accessorieskitgroup.[owneridyominame]
+    , VWI_CRM_xts_accessorieskitgroup.[modifiedon]
+    , VWI_CRM_xts_accessorieskitgroup.[modifiedonbehalfbyname]
+    , VWI_CRM_xts_accessorieskitgroup.[modifiedonbehalfbyyominame]
+    , VWI_CRM_xts_accessorieskitgroup.[statuscode]
+    , VWI_CRM_xts_accessorieskitgroup.[createdbyname]
+    , VWI_CRM_xts_accessorieskitgroup.[createdon]
+    , VWI_CRM_xts_accessorieskitgroup.[xts_businessunitid]
+    , VWI_CRM_xts_accessorieskitgroup.[createdonbehalfbyname]
+    , VWI_CRM_xts_accessorieskitgroup.[xts_description]
+    , VWI_CRM_xts_accessorieskitgroup.[versionnumber]
+    , VWI_CRM_xts_accessorieskitgroup.[ownerid]
+    , VWI_CRM_xts_accessorieskitgroup.[overriddencreatedon]
+    , VWI_CRM_xts_accessorieskitgroup.[msdyn_companycode]
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM [CRM_xts_accessorieskitgroup] a
+	INNER JOIN CRM_businessunit b 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+)VWI_CRM_xts_accessorieskitgroup

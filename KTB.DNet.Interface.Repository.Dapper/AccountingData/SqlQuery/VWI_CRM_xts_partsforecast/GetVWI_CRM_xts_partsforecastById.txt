@@ -1,0 +1,57 @@
+SELECT 
+        ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+      ,[company]
+      ,[businessunitcode]
+      ,[xts_state]
+      ,[createdonbehalfbyyominame]
+      ,[modifiedonbehalfby]
+      ,[owningteam]
+      ,[statecode]
+      ,[xts_businessunitidname]
+      ,[xts_partsforecast]
+      ,[statecodename]
+      ,[owninguser]
+      ,[createdonbehalfby]
+      ,[xts_handling]
+      ,[importsequencenumber]
+      ,[xts_partsforecastid]
+      ,[utcconversiontimezonecode]
+      ,[createdbyyominame]
+      ,[owningbusinessunit]
+      ,[modifiedbyname]
+      ,[versionnumber]
+      ,[modifiedby]
+      ,[modifiedbyyominame]
+      ,[createdby]
+      ,[timezoneruleversionnumber]
+      ,[owneridtype]
+      ,[xts_handlingname]
+      ,[xts_statename]
+      ,[owneridyominame]
+      ,[modifiedon]
+      ,[xts_forecastyear]
+      ,[modifiedonbehalfbyyominame]
+      ,[statuscode]
+      ,[createdbyname]
+      ,[createdon]
+      ,[xts_businessunitid]
+      ,[createdonbehalfbyname]
+      ,[statuscodename]
+      ,[modifiedonbehalfbyname]
+      ,[xts_forecastmonth]
+      ,[owneridname]
+      ,[xts_forecastmonthname]
+      ,[ownerid]
+      ,[overriddencreatedon]
+      ,[msdyn_companycode]
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM [CRM_xts_partsforecast] a with(nolock)
+	left JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_partsforecastid = @Id
+) VWI_CRM_xts_partsforecast 

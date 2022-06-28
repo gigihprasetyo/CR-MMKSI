@@ -1,0 +1,9 @@
+﻿SELECT ISNULL(b.IsTemporary, -100) --a.ID, a.ChassisNumber, 
+FROM
+(
+	SELECT * FROM ChassisMaster a WITH(NOlock) where ID not in (select ChassisMasterId from RevisionFaktur) and RowStatus = 0 AND ID = @ChassisMasterID 
+) a
+LEFT JOIN 
+(
+	SELECT * FROM EndCustomer b WITH(NOLOCK) WHERE (IsTemporary IS NULL OR IsTemporary != 1) and RowStatus = 0 and b.FakturDate >= '2017-04-01'
+) b  ON a.EndCustomerID = b.ID

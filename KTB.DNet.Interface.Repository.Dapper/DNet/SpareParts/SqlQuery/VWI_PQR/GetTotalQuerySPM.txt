@@ -1,0 +1,28 @@
+﻿select distinct
+	count(1)
+from 
+(
+	select distinct
+		f.PartNumber
+		, c.DealerCode
+		, a.PQRNo
+		, e.ChassisNumber
+	from PQRHeader a with(nolock)
+	join PQRPartsCode b with(nolock) 
+		ON b.PQRHeaderID = a.ID
+	inner join Dealer c with(nolock) 
+		ON a.DealerID = c.ID 
+	inner join StandardCode d with(nolock) 
+		ON d.ValueId = a.PQRType 
+		and d.Category = 'PQRType'
+	inner join ChassisMaster e with(nolock) 
+		ON e.ID = a.ChassisMasterID 
+		and e.RowStatus = 0
+	inner join SparePartMaster f with(nolock)
+		ON f.ID = b.SparePartMasterID 
+		and f.RowStatus = 0
+     WHERE 1=1
+	and (a.RowStatus in (1,2,3,4)
+	and a.PQRType in (0,2,3,4))
+)	as VWI_PQRSparePartMaster
+{0}

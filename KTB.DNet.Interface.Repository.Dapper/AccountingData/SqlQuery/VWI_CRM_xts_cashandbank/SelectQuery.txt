@@ -1,0 +1,64 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_cashandbank.createdonbehalfbyyominame
+	, VWI_CRM_xts_cashandbank.modifiedonbehalfby
+	, VWI_CRM_xts_cashandbank.statecode
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension2id
+	, VWI_CRM_xts_cashandbank.statecodename
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension6id
+	, VWI_CRM_xts_cashandbank.xts_bankaccountnumber
+	, VWI_CRM_xts_cashandbank.createdonbehalfby
+	, VWI_CRM_xts_cashandbank.xjp_accounttype
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension2idname
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension9idname
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension1idname
+	, VWI_CRM_xts_cashandbank.xjp_accounttypename
+	, VWI_CRM_xts_cashandbank.xts_currency
+	, VWI_CRM_xts_cashandbank.xts_cashandbankid
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension7idname
+	, VWI_CRM_xts_cashandbank.importsequencenumber
+	, VWI_CRM_xts_cashandbank.organizationidname
+	, VWI_CRM_xts_cashandbank.modifiedbyyominame
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension7id
+	, VWI_CRM_xts_cashandbank.xts_bankidname
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension8id
+	, VWI_CRM_xts_cashandbank.utcconversiontimezonecode
+	, VWI_CRM_xts_cashandbank.createdbyyominame
+	, VWI_CRM_xts_cashandbank.xts_cashandbankaccountidname
+	, VWI_CRM_xts_cashandbank.modifiedbyname
+	, VWI_CRM_xts_cashandbank.versionnumber
+	, VWI_CRM_xts_cashandbank.modifiedby
+	, VWI_CRM_xts_cashandbank.createdby
+	, VWI_CRM_xts_cashandbank.timezoneruleversionnumber
+	, VWI_CRM_xts_cashandbank.statuscodename
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension6idname
+	, VWI_CRM_xts_cashandbank.xts_company
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension4idname
+	, VWI_CRM_xts_cashandbank.xts_accountnumber
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension10id
+	, VWI_CRM_xts_cashandbank.modifiedon
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension10idname
+	, VWI_CRM_xts_cashandbank.xts_cashandbankaccountid
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension3id
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension5id
+	, VWI_CRM_xts_cashandbank.xts_accountname
+	, VWI_CRM_xts_cashandbank.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_cashandbank.statuscode
+	, VWI_CRM_xts_cashandbank.createdbyname
+	, VWI_CRM_xts_cashandbank.createdon
+	, VWI_CRM_xts_cashandbank.organizationid
+	, VWI_CRM_xts_cashandbank.createdonbehalfbyname
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension5idname
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension3idname
+	, VWI_CRM_xts_cashandbank.modifiedonbehalfbyname
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension1id
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension8idname
+	, VWI_CRM_xts_cashandbank.xts_bankid
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension9id
+	, VWI_CRM_xts_cashandbank.overriddencreatedon
+	, VWI_CRM_xts_cashandbank.xts_cashandbankdimension4id
+	, VWI_CRM_xts_cashandbank.RowStatus
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_cashandbank as VWI_CRM_xts_cashandbank WITH (NOLOCK) 
+{0}

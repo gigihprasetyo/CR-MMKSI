@@ -1,0 +1,1 @@
+﻿SELECT * FROM APIRole WHERE Id = @Id

@@ -1,0 +1,4 @@
+SELECT
+	COUNT(1)
+FROM CRM_xts_consumptiontax as VWI_CRM_xts_consumptiontax WITH (NOLOCK) 
+{0}

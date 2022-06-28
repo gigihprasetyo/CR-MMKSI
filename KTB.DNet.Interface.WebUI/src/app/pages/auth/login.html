@@ -1,0 +1,76 @@
+<style>
+    .panel-heading {
+        text-align: center;
+        padding-top: 35px;
+        margin-bottom: 15px;
+        border-bottom: none;
+    }
+
+    .panel>.panel-body {
+        padding: 15px 65px;
+        padding-bottom: 30px;
+    }
+
+    .glyphicon {
+        top: 0px;
+    }
+
+    .input-group {
+        margin-bottom: 0px;
+    }
+</style>
+<div class="widgets">
+    <div class="row" ng-show="isLogin">
+        <div class="col-md-4 col-md-offset-4 animated slideInDown" style="text-align: center;">
+            <img src="src/assets/img/mitsubishi-logo.png">
+        </div>
+        <div class="col-md-4 col-md-offset-4">
+            <div ba-panel ba-panel-title="Sign In to DNet Interface" ba-panel-class="with-scroll">
+                <form ng-hide="selectClientMode" class="form-horizontal" name="form" ng-submit="login()">
+                    <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+                        <div class="input-group ng-scope">
+                            <span class="glyphicon glyphicon-user input-group-addon input-group-addon-default addon-left"></span>
+                            <input type="text" id="username" class="form-control with-primary-addon" placeholder="Username" ng-model="loginDetail.username"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group ng-scope">
+                            <span class="glyphicon glyphicon-lock input-group-addon input-group-addon-default addon-left"></span>
+                            <input id="password" type="password" class="form-control with-primary-addon" placeholder="Password" ng-model="loginDetail.password"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="">
+                            <button type="submit" ng-disabled="form.$invalid" class="col-sm-12 btn btn-primary btn-auth pull-right">Sign in</button>
+                        </div>
+                    </div>
+                </form>
+
+                <form ng-show="selectClientMode" class="form-horizontal" name="form">
+                    <div class="form-group">
+                        <label for="select-client" class="col-sm-12 control-label" style=" text-align: left; ">Select a Client:</label>
+                        <div class="col-sm-12">
+                            <ui-select ng-model="selectedClient.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true"
+                                search-enabled="true">
+                                <ui-select-match placeholder="Nothing Selected">
+                                    {{$select.selected.Name}}
+                                </ui-select-match>
+                                <ui-select-choices repeat="selectedClient in listClients | filter: $select.search">
+                                    <span ng-bind-html="selectedClient.Name"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button type="button" class="btn btn-default pull-left" style="width: 49%" ng-click="back();">Back</button>
+                            <button type="button" ng-disabled="!selectedClient.selected" class="btn btn-primary btn-auth pull-right" style="width: 49%" ng-click="enterApp();">Enter</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

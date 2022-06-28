@@ -1,0 +1,9 @@
+select 
+/**PagingIndexQuery**/ 
+	VWI_SPKMasterCountryCodePhone.ID
+	, VWI_SPKMasterCountryCodePhone.CountryName
+	, VWI_SPKMasterCountryCodePhone.CountryCode
+	, VWI_SPKMasterCountryCodePhone.LastUpdatedTime
+/**EndPagingIndexQuery**/
+from SPKMasterCountryCodePhone as VWI_SPKMasterCountryCodePhone with(Nolock) 
+{0}

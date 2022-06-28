@@ -1,0 +1,17 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_PRT_IncomingTransaction.company
+	,VWI_CRM_PRT_IncomingTransaction.businessunitcode
+	,VWI_CRM_PRT_IncomingTransaction.InventoryTransactionNo
+	,VWI_CRM_PRT_IncomingTransaction.TransactionDate
+	,VWI_CRM_PRT_IncomingTransaction.TransactionType
+	,VWI_CRM_PRT_IncomingTransaction.ReasonCode
+	,VWI_CRM_PRT_IncomingTransaction.Product
+	,VWI_CRM_PRT_IncomingTransaction.ProductDescription
+	,VWI_CRM_PRT_IncomingTransaction.TransactionUnit
+	,VWI_CRM_PRT_IncomingTransaction.Quantity
+	,VWI_CRM_PRT_IncomingTransaction.UnitCost
+	,VWI_CRM_PRT_IncomingTransaction.TotalCost
+	,VWI_CRM_PRT_IncomingTransaction.msdyn_companycode
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_PRT_IncomingTransaction WITH (NOLOCK) {0}

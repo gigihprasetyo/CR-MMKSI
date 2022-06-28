@@ -1,0 +1,73 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+      ,company
+      ,businessunitcode
+      ,xjp_kitcategoryidname
+      ,owninguser
+      ,owningteam
+      ,xts_locking
+      ,transactioncurrencyidname
+      ,xts_businessunitidname
+      ,owneridname
+      ,createdon
+      ,transactioncurrencyid
+      ,createdonbehalfby
+      ,overriddencreatedon
+      ,xts_kit
+      ,xjp_estimatetotalpartcost_base
+      ,importsequencenumber
+      ,xjp_estimatetotalpartcost
+      ,xjp_storecostaddition
+      ,xjp_acquisitiontaxcategoryname
+      ,xjp_kitcategoryid
+      ,utcconversiontimezonecode
+      ,createdbyyominame
+      ,xts_consumptiontaxid
+      ,owningbusinessunit
+      ,xts_consumptiontaxidname
+      ,versionnumber
+      ,modifiedby
+      ,modifiedbyyominame
+      ,createdby
+      ,timezoneruleversionnumber
+      ,xjp_estimatesubcontractcost_base
+      ,modifiedbyname
+      ,owneridtype
+      ,statuscodename
+      ,ownerid
+      ,xts_kitid
+      ,createdonbehalfbyyominame
+      ,xts_kittype
+      ,owneridyominame
+      ,modifiedon
+      ,exchangerate
+      ,statecode
+      ,xts_businessunitid
+      ,statuscode
+      ,modifiedonbehalfbyyominame
+      ,statecodename
+      ,createdbyname
+      ,xjp_storecostaddition_base
+      ,xts_description2
+      ,createdonbehalfbyname
+      ,xjp_estimatesubcontractcost
+      ,modifiedonbehalfbyname
+      ,xts_kittypename
+      ,modifiedonbehalfby
+      ,xts_productid
+      ,xts_defaultduration
+      ,xts_productidname
+      ,xjp_acquisitiontaxcategory
+      ,xts_description1
+      ,msdyn_companycode
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.*  
+        , b.msdyn_companycode
+    FROM CRM_xts_kit a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_kitid = @Id
+) VWI_CRM_xts_kit

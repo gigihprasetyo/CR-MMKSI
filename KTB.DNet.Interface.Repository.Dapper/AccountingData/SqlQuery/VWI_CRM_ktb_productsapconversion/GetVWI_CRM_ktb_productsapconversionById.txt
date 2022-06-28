@@ -1,0 +1,59 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,ktb_dnetid
+	,ktb_productsapdesc
+	,modifiedonbehalfby
+	,owningteam
+	,statecode
+	,owneridname
+	,statecodename
+	,owninguser
+	,createdonbehalfby
+	,ktb_uomname
+	,importsequencenumber
+	,ktb_uom
+	,ktb_productsapconversionid
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,ktb_typecode
+	,ktb_productreferenceidname
+	,modifiedbyname
+	,versionnumber
+	,modifiedby
+	,modifiedbyyominame
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,ktb_productreferenceid
+	,createdonbehalfbyyominame
+	,ktb_isinterfaced
+	,owneridyominame
+	,ktb_isinterfacedname
+	,modifiedon
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,ktb_productsap
+	,ktb_productsapconversion
+	,owningbusinessunit
+	,statuscodename
+	,modifiedonbehalfbyname
+	,createdonbehalfbyname
+	,ownerid
+	,overriddencreatedon
+	,RowStatus
+	,msdyn_companycode
+from (
+	SELECT  
+		  b.ktb_bucompany company
+		, b.ktb_dealercode businessunitcode
+		, a.*
+		, b.msdyn_companycode
+	FROM CRM_ktb_productsapconversion a
+	LEFT JOIN CRM_businessunit b 
+	ON b.businessunitid = a.owningbusinessunit
+	where ktb_productsapconversionid = @Id
+) VWI_CRM_ktb_productsapconversion

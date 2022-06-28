@@ -1,0 +1,88 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow  
+	,company
+	,businessunitcode
+	,versionnumber
+	,xjp_destinationsiteid
+	,createdon
+	,xjp_stockidname
+	,xjp_idempotentmessage
+	,xjp_productid
+	,statuscodename
+	,xjp_fromsiteidname
+	,xjp_parentbusinessunitidname
+	,modifiedbyyominame
+	,owneridtype
+	,xjp_productconfigurationidname
+	,createdonbehalfby
+	,xjp_handlingname
+	,modifiedbyname
+	,xjp_productidname
+	,xjp_parentbusinessunitid
+	,owneridname
+	,overriddencreatedon
+	,xjp_transactiontype
+	,xjp_destinationlocationidname
+	,modifiedonbehalfby
+	,xjp_destinationlocationid
+	,owningteam
+	,xjp_destinationwarehouseidname
+	,statecode
+	,timezoneruleversionnumber
+	,xjp_productconfigurationid
+	,xjp_fromlocationidname
+	,xjp_handling
+	,xjp_statusname
+	,xjp_productexteriorcoloridname
+	,xjp_businessunitid
+	,createdonbehalfbyname
+	,utcconversiontimezonecode
+	,xjp_fromwarehouseidname
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xjp_chassisnumber
+	,xjp_fromwarehouseid
+	,xjp_vehicletransferid
+	,createdbyname
+	,modifiedonbehalfbyname
+	,xjp_destinationwarehouseid
+	,xjp_productstyleidname
+	,xjp_fromlocationid
+	,xjp_vehicletransfernumber
+	,createdby
+	,modifiedby
+	,xjp_fromsiteid
+	,xjp_businessunitidname
+	,createdbyyominame
+	,owninguser
+	,xjp_destinationaddress
+	,createdonbehalfbyyominame
+	,owningbusinessunit
+	,xjp_receiptdateandtime
+	,xjp_status
+	,xjp_productinteriorcolorid
+	,xjp_productstyleid
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xjp_productinteriorcoloridname
+	,xjp_destinationsiteidname
+	,xjp_stockid
+	,xjp_transactiontypename
+	,xjp_productexteriorcolorid
+	,statecodename
+	,xjp_locking
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.*
+        , b.msdyn_companycode
+    FROM CRM_xjp_vehicletransfer a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xjp_businessunitid
+    WHERE xjp_vehicletransferid = @Id
+) VWI_CRM_xjp_vehicletransfer 

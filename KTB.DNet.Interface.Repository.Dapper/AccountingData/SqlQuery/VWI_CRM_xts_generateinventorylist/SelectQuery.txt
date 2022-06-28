@@ -1,0 +1,87 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_generateinventorylist.company
+	, VWI_CRM_xts_generateinventorylist.businessunitcode
+	, VWI_CRM_xts_generateinventorylist.xts_parentbusinessunitid
+	, VWI_CRM_xts_generateinventorylist.versionnumber
+	, VWI_CRM_xts_generateinventorylist.createdon
+	, VWI_CRM_xts_generateinventorylist.xts_warehousetypename
+	, VWI_CRM_xts_generateinventorylist.xts_producttypeaccessoriesname
+	, VWI_CRM_xts_generateinventorylist.statuscodename
+	, VWI_CRM_xts_generateinventorylist.xts_warehouseid
+	, VWI_CRM_xts_generateinventorylist.xts_status
+	, VWI_CRM_xts_generateinventorylist.modifiedbyyominame
+	, VWI_CRM_xts_generateinventorylist.owneridtype
+	, VWI_CRM_xts_generateinventorylist.xts_generatemethod
+	, VWI_CRM_xts_generateinventorylist.xts_log
+	, VWI_CRM_xts_generateinventorylist.createdonbehalfby
+	, VWI_CRM_xts_generateinventorylist.modifiedbyname
+	, VWI_CRM_xts_generateinventorylist.xts_producttypepartname
+	, VWI_CRM_xts_generateinventorylist.xts_producttypenewvehicle
+	, VWI_CRM_xts_generateinventorylist.owneridname
+	, VWI_CRM_xts_generateinventorylist.overriddencreatedon
+	, VWI_CRM_xts_generateinventorylist.xts_producttypepart
+	, VWI_CRM_xts_generateinventorylist.modifiedonbehalfby
+	, VWI_CRM_xts_generateinventorylist.xts_producttypevehiclebodyname
+	, VWI_CRM_xts_generateinventorylist.xts_producttypeoil
+	, VWI_CRM_xts_generateinventorylist.owningteam
+	, VWI_CRM_xts_generateinventorylist.xts_processcode
+	, VWI_CRM_xts_generateinventorylist.xts_producttypevehiclebody
+	, VWI_CRM_xts_generateinventorylist.statecode
+	, VWI_CRM_xts_generateinventorylist.xts_siteidname
+	, VWI_CRM_xts_generateinventorylist.timezoneruleversionnumber
+	, VWI_CRM_xts_generateinventorylist.xts_warehouseidname
+	, VWI_CRM_xts_generateinventorylist.xts_locking
+	, VWI_CRM_xts_generateinventorylist.xts_handling
+	, VWI_CRM_xts_generateinventorylist.xts_producttypeusedvehicle
+	, VWI_CRM_xts_generateinventorylist.xts_generateinventorylistid
+	, VWI_CRM_xts_generateinventorylist.xts_producttypeusedvehiclename
+	, VWI_CRM_xts_generateinventorylist.createdonbehalfbyname
+	, VWI_CRM_xts_generateinventorylist.utcconversiontimezonecode
+	, VWI_CRM_xts_generateinventorylist.xts_scheduledreleasedate
+	, VWI_CRM_xts_generateinventorylist.xts_statusname
+	, VWI_CRM_xts_generateinventorylist.ownerid
+	, VWI_CRM_xts_generateinventorylist.modifiedon
+	, VWI_CRM_xts_generateinventorylist.importsequencenumber
+	, VWI_CRM_xts_generateinventorylist.owneridyominame
+	, VWI_CRM_xts_generateinventorylist.xts_producttypematerial
+	, VWI_CRM_xts_generateinventorylist.xts_siteid
+	, VWI_CRM_xts_generateinventorylist.createdbyname
+	, VWI_CRM_xts_generateinventorylist.xts_businessunitid
+	, VWI_CRM_xts_generateinventorylist.modifiedonbehalfbyname
+	, VWI_CRM_xts_generateinventorylist.xts_handlingname
+	, VWI_CRM_xts_generateinventorylist.xts_warehousetype
+	, VWI_CRM_xts_generateinventorylist.xts_generateinventorylistnumber
+	, VWI_CRM_xts_generateinventorylist.createdby
+	, VWI_CRM_xts_generateinventorylist.modifiedby
+	, VWI_CRM_xts_generateinventorylist.xts_producttypeoilname
+	, VWI_CRM_xts_generateinventorylist.createdbyyominame
+	, VWI_CRM_xts_generateinventorylist.owninguser
+	, VWI_CRM_xts_generateinventorylist.createdonbehalfbyyominame
+	, VWI_CRM_xts_generateinventorylist.owningbusinessunit
+	, VWI_CRM_xts_generateinventorylist.xts_locationid
+	, VWI_CRM_xts_generateinventorylist.xts_producttypenewvehiclename
+	, VWI_CRM_xts_generateinventorylist.xts_parentbusinessunitidname
+	, VWI_CRM_xts_generateinventorylist.statuscode
+	, VWI_CRM_xts_generateinventorylist.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_generateinventorylist.xts_generatemethodname
+	, VWI_CRM_xts_generateinventorylist.xts_producttypematerialname
+	, VWI_CRM_xts_generateinventorylist.xts_locationidname
+	, VWI_CRM_xts_generateinventorylist.statecodename
+	, VWI_CRM_xts_generateinventorylist.xts_businessunitidname
+	, VWI_CRM_xts_generateinventorylist.xts_producttypeaccessories
+	, VWI_CRM_xts_generateinventorylist.RowStatus
+	, VWI_CRM_xts_generateinventorylist.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+    SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_generateinventorylist a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_generateinventorylist

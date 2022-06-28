@@ -1,0 +1,39 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_transactioncurrency.createdonbehalfbyyominame
+	, VWI_CRM_transactioncurrency.modifiedonbehalfby
+	, VWI_CRM_transactioncurrency.currencysymbol
+	, VWI_CRM_transactioncurrency.modifiedon
+	, VWI_CRM_transactioncurrency.statecode
+	, VWI_CRM_transactioncurrency.entityimage_timestamp
+	, VWI_CRM_transactioncurrency.statecodename
+	, VWI_CRM_transactioncurrency.createdonbehalfby
+	, VWI_CRM_transactioncurrency.transactioncurrencyid
+	, VWI_CRM_transactioncurrency.entityimage
+	, VWI_CRM_transactioncurrency.entityimageid
+	, VWI_CRM_transactioncurrency.importsequencenumber
+	, VWI_CRM_transactioncurrency.organizationid
+	, VWI_CRM_transactioncurrency.modifiedbyyominame
+	, VWI_CRM_transactioncurrency.currencyprecision
+	, VWI_CRM_transactioncurrency.createdbyyominame
+	, VWI_CRM_transactioncurrency.modifiedbyname
+	, VWI_CRM_transactioncurrency.versionnumber
+	, VWI_CRM_transactioncurrency.isocurrencycode
+	, VWI_CRM_transactioncurrency.modifiedby
+	, VWI_CRM_transactioncurrency.createdby
+	, VWI_CRM_transactioncurrency.statuscodename
+	, VWI_CRM_transactioncurrency.uniquedscid
+	, VWI_CRM_transactioncurrency.exchangerate
+	, VWI_CRM_transactioncurrency.modifiedonbehalfbyyominame
+	, VWI_CRM_transactioncurrency.statuscode
+	, VWI_CRM_transactioncurrency.createdbyname
+	, VWI_CRM_transactioncurrency.createdon
+	, VWI_CRM_transactioncurrency.createdonbehalfbyname
+	, VWI_CRM_transactioncurrency.modifiedonbehalfbyname
+	, VWI_CRM_transactioncurrency.currencyname
+	, VWI_CRM_transactioncurrency.overriddencreatedon
+	, VWI_CRM_transactioncurrency.entityimage_url
+	/**EndPagingIndexQuery**/
+FROM [dbo].[CRM_transactioncurrency] as VWI_CRM_transactioncurrency with(nolock) 
+{0}

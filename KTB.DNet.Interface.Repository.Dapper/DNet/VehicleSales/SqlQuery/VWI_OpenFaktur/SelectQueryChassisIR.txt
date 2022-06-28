@@ -1,0 +1,4 @@
+SELECT DISTINCT ChassisMasterID 
+FROM RevisionFaktur WITH (NOLOCK) 
+WHERE RowStatus = 0 
+AND ChassisMasterID = @ChassisMasterID

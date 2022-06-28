@@ -1,0 +1,14 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SVC_FreeServiceToBeInvoiced.businessunitcode
+	,VWI_CRM_SVC_FreeServiceToBeInvoiced.xts_workorder
+	,VWI_CRM_SVC_FreeServiceToBeInvoiced.xts_workorderstatus
+	,VWI_CRM_SVC_FreeServiceToBeInvoiced.xts_servicecategory
+	,VWI_CRM_SVC_FreeServiceToBeInvoiced.xts_product
+	,VWI_CRM_SVC_FreeServiceToBeInvoiced.xts_platenumber
+	,VWI_CRM_SVC_FreeServiceToBeInvoiced.xts_ordertype
+	,VWI_CRM_SVC_FreeServiceToBeInvoiced.customername
+	,VWI_CRM_SVC_FreeServiceToBeInvoiced.billtocustomername
+	,VWI_CRM_SVC_FreeServiceToBeInvoiced.ktb_wodate
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SVC_FreeServiceToBeInvoiced WITH (NOLOCK) {0}

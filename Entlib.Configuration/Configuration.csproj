@@ -1,0 +1,816 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.30319</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>Microsoft.Practices.EnterpriseLibrary.Configuration</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Microsoft.Practices.EnterpriseLibrary.Configuration</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>0067</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>doc\Microsoft.Practices.EnterpriseLibrary.Configuration.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>0067</NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugLongRunningTests|AnyCPU' ">
+    <OutputPath>bin\DebugLong\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE;UNIT_TESTS;LONG_RUNNING_TESTS</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>0067</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseUnitTests|AnyCPU' ">
+    <OutputPath>bin\ReleaseTests\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE;UNIT_TESTS;LONG_RUNNING_TESTS</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>0067</NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseFinal|AnyCPU' ">
+    <OutputPath>bin\ReleaseFinal\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>TRACE;FINAL</DefineConstants>
+    <DocumentationFile>doc\Microsoft.Practices.EnterpriseLibrary.Configuration.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>0067</NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugUnitTests|AnyCPU' ">
+    <OutputPath>bin\DebugTests\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile />
+    <DefineConstants>DEBUG;TRACE;UNIT_TESTS</DefineConstants>
+    <DocumentationFile />
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>0067</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+    <NoWarn>0067</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Microsoft.Practices.EnterpriseLibrary.Configuration.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>doc\Microsoft.Practices.EnterpriseLibrary.Configuration.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <NoWarn>0067</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Microsoft.Practices.EnterpriseLibrary.Configuration.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugLongRunningTests|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\DebugLongRunningTests\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNIT_TESTS;LONG_RUNNING_TESTS</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+    <NoWarn>0067</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\DebugLong\Microsoft.Practices.EnterpriseLibrary.Configuration.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseUnitTests|x64'">
+    <OutputPath>bin\x64\ReleaseUnitTests\</OutputPath>
+    <DefineConstants>TRACE;UNIT_TESTS;LONG_RUNNING_TESTS</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <NoWarn>0067</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\ReleaseTests\Microsoft.Practices.EnterpriseLibrary.Configuration.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'ReleaseFinal|x64'">
+    <OutputPath>bin\x64\ReleaseFinal\</OutputPath>
+    <DefineConstants>TRACE;FINAL</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DocumentationFile>doc\Microsoft.Practices.EnterpriseLibrary.Configuration.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <FileAlignment>4096</FileAlignment>
+    <NoWarn>0067</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\ReleaseFinal\Microsoft.Practices.EnterpriseLibrary.Configuration.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugUnitTests|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\DebugUnitTests\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNIT_TESTS</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+    <NoWarn>0067</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\DebugTests\Microsoft.Practices.EnterpriseLibrary.Configuration.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Configuration.Install">
+      <Name>System.Configuration.Install</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationChangedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationChangingEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationDictionary.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationProtector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationSections.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationSettingsLoader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConfigurationView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\AppConfigFileStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationSectionData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationSectionDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ConfigurationSettings.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\CustomKeyAlgorithmPairStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\CustomStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\CustomTransformerData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\DpapiSettingsData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\FileKeyAlgorithmPairStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\KeyAlgorithmPairStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\ReadOnlyConfigurationSectionData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\RegistryStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\SqlStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\StorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\StorageProviderDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Tests\ConfigurationSectionDataCollectionFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Tests\ConfigurationSectionDataFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Tests\ConfigurationSettingsFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Tests\MyCustomKeyAlgorithmPairStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Tests\MyCustomStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Tests\MyCustomTransformerData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Tests\XmlFileStorageProviderDataFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Tests\XmlIncludeTypeDataCollectionFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Tests\XmlIncludeTypeDataFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\Tests\XmlSerializerTransformerDataFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\TransformerData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\TransformerDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\XmlFileStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\XmlIncludeTypeData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\XmlIncludeTypeDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration\XmlSerializerTransformerData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DisposingWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IActionCommand.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IConfigurationChangeWatcherFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IConfigurationProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IDisposableWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IDisposingWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvalidSectionExceptionBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IStorageProviderReader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IStorageProviderWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ITransformer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NameValueItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NameValueItemCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NonDisposingWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NullConfigurationChangeWatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NullTransformer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\FileKeyAlgorithmPairStorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\IKeyAlgorithmPairStorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\IKeyCreator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\KeyAlgorithmPair.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\KeyAlgorithmStorageProviderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\KeyedHashAlgorithmKeyCreator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\SymmetricAlgorithmKeyCreator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\Tests\FileKeyAlgorithmPairStorageProviderFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\Tests\KeyAlgorithmPairFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\Tests\KeyAlgorithmStorageProviderFactoryFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\Tests\KeyedHashAlgorithmKeyCreatorFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Protection\Tests\SymmetricAlgorithmKeyCreatorFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProviderDataCollection.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProviderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RuntimeConfigurationView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SerializerCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SR.cs">
+      <DependentUpon>SR.strings</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="StorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StorageProviderFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\AllowedRegistryHive.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\AppConfigFileStorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\ConfigurationChangeFileWatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\ConfigurationChangeRegistryWatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\ConfigurationChangeSqlWatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\ConfigurationChangeWatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\ConfigurationChangeWatcherPauser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\ConfigurationRegistryChangedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\ConfigurationRegistryChangingEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\ConfigurationSqlChangedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\ConfigurationSqlChangingEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\IConfigurationChangeWatcher.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\RegistryStorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\SqlStorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\Tests\AppConfigFileStorageProviderFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\Tests\Bug1664RegressionAppConfigFileFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\Tests\Bug1664RegressionFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\Tests\Bug1664RegressionXmlFileStorageProviderFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\Tests\Bug1664RegressiosSqlStorageProviderFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\Tests\ConfigurationChangeFileWatcherFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\Tests\ConfigurationChangeSqlWatcherFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\Tests\ConfigurationChangeWatcherPauserFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\Tests\RegistryStorageProviderFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\Tests\SqlStorageProviderFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\Tests\XmlFileStorageProviderFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\XmlFileStorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\BadConstructionTransformer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\ConfigurationBuilderFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\ConfigurationChangingEventArgsFixture.cs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\ConfigurationContextFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\ConfigurationContextFixtureBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\ConfigurationData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\ConfigurationManagerFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\ConfigurationProtectorFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\DisposableWrapperFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\ExceptionConstructorStorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\ExceptionConstructorStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\FileUtility.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\FileWatcherCountFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\MockConfigurationData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\MockStorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\MockStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\MockTransformer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\MockTransformerData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\NameValueItemCollectionFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\NonCreatableTransformer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\NotRealStorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\NotRealStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\NotRealTransformer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\NotRealTransformerData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\PrivateConstructorStorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\PrivateConstructorStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\ReadOnlyStorageProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\ReadonlyStorageProviderData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\RuntimeConfigurationViewSecurityDemandsFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\StorageProviderFactoryFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tests\TransformerFactoryFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransformerFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransformerProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transformer\Tests\XmlSerializerTransformerFixture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transformer\XmlSerializerTransformer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="Scripts\CreateEntLibExtensions.sql" />
+    <Content Include="Scripts\SqlStorage.sql" />
+    <Content Include="Storage\Tests\Bug1664Empty.config" />
+    <Content Include="Storage\Tests\Bug1664Ok.config" />
+    <Content Include="Storage\Tests\Bug1664Wrong.config" />
+    <Content Include="Storage\Tests\MyBadTestConfig.xml" />
+    <Content Include="Storage\Tests\MyTestConfig.xml" />
+    <Content Include="Tests\BlankEncryptConfig.xml" />
+    <Content Include="Tests\EncryptConfig.xml" />
+    <Content Include="Tests\MissingMetaDataConfigTest.xml" />
+    <Content Include="Tests\MyBadConfigSectionTest.xml" />
+    <Content Include="Tests\MyBadConfigTest.xml" />
+    <Content Include="Tests\MyBadXmlConfigTest.xml" />
+    <Content Include="Tests\MyConfig.xml" />
+    <Content Include="Tests\MyConfigTest.xml" />
+    <Content Include="Tests\MyEmptyConfigTest.xml" />
+    <Content Include="Tests\MyHashtableConfig.xml" />
+    <Content Include="Tests\MyWriteConfigTest.xml" />
+    <Content Include="Tests\NoTransformerConfig.xml" />
+    <Content Include="Tests\RemoveConfigTest.xml" />
+    <Content Include="Tests\SectionHandlerTestConfig.xml" />
+    <Content Include="Tests\StorageFactoryConfig.xml" />
+    <Content Include="Tests\testwebdata.xml" />
+    <Content Include="Tests\WebConfigTest.xml" />
+    <EmbeddedResource Include="SR.resx">
+      <DependentUpon>SR.strings</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="SR.strings">
+      <Generator>StringResourceTool</Generator>
+      <LastGenOutput>SR.cs</LastGenOutput>
+    </None>
+    <None Include="Tests\bug1645.config" />
+    <None Include="Tests\encryptkey.key" />
+    <None Include="Tests\foo.config" />
+    <None Include="Tests\Microsoft.Practices.EnterpriseLibrary.Configuration.dll.config" />
+    <None Include="Tests\registrystorage.config" />
+    <None Include="Tests\Whidbey.config" />
+    <None Include="Tests\WhidbeyMachine.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent>copy "$(ProjectDir)Tests\*.config" "$(TargetDir)" &gt; nul
+copy "$(ProjectDir)Tests\*.xml" "$(TargetDir)" &gt; nul
+copy "$(ProjectDir)Tests\*.key" "$(TargetDir)" &gt; nul
+copy "$(ProjectDir)Storage\Tests\*.xml" "$(TargetDir)" &gt; nul
+copy "$(ProjectDir)Storage\Tests\*.config" "$(TargetDir)" &gt; nul
+</PostBuildEvent>
+  </PropertyGroup>
+</Project>

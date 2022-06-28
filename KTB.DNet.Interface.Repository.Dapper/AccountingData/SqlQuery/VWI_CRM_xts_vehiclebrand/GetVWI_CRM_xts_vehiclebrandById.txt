@@ -1,0 +1,45 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	--, xts_manufacturer
+	--, xts_pkcombinationkey
+	--, xts_manufacturername
+	, overriddencreatedon
+	, xts_vehiclecategory
+	, xts_branddescription
+	, modifiedonbehalfbyname
+	, createdonbehalfbyname
+	, xts_vehiclebrandid
+	, createdon
+	, createdbyname
+	, statuscode
+	, modifiedonbehalfbyyominame
+	, xts_vehiclebrand
+	, xts_vehiclecategoryname
+	, modifiedon
+	, xts_vehiclecategoryidname
+	, xts_releasedate
+	, statuscodename
+	, timezoneruleversionnumber
+	, createdby
+	, modifiedby
+	, versionnumber
+	, modifiedbyname
+	, xts_vehiclecategoryid
+	, createdbyyominame
+	, utcconversiontimezonecode
+	, xts_brand
+	, xts_announcementdate
+	, xts_brandgeneration
+	, modifiedbyyominame
+	, organizationidname
+	, importsequencenumber
+	, organizationid
+	, createdonbehalfby
+	, xts_createddate
+	, statecodename
+	, statecode
+	, xts_locking
+	, modifiedonbehalfby
+	, createdonbehalfbyyominame
+FROM CRM_xts_vehiclebrand as VWI_CRM_xts_vehiclebrand with (nolock)  
+WHERE xts_vehiclebrandid = @Id

@@ -1,0 +1,55 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_location.createdonbehalfbyyominame
+	, VWI_CRM_xts_location.modifiedonbehalfby
+	, VWI_CRM_xts_location.xts_location
+	, VWI_CRM_xts_location.xts_allowdeliveryordername
+	, VWI_CRM_xts_location.statecode
+	, VWI_CRM_xts_location.xts_blockedname
+	, VWI_CRM_xts_location.statecodename
+	, VWI_CRM_xts_location.xts_warehouseidname
+	, VWI_CRM_xts_location.createdonbehalfby
+	, VWI_CRM_xts_location.xts_volume
+	, VWI_CRM_xts_location.xts_depth
+	, VWI_CRM_xts_location.xts_pkcombinationkey
+	, VWI_CRM_xts_location.xts_warehouseid
+	, VWI_CRM_xts_location.importsequencenumber
+	, VWI_CRM_xts_location.organizationidname
+	, VWI_CRM_xts_location.modifiedbyyominame
+	, VWI_CRM_xts_location.xts_blocked
+	, VWI_CRM_xts_location.xts_width
+	, VWI_CRM_xts_location.xts_aisleid
+	, VWI_CRM_xts_location.xts_manualupdatename
+	, VWI_CRM_xts_location.utcconversiontimezonecode
+	, VWI_CRM_xts_location.createdbyyominame
+	, VWI_CRM_xts_location.xts_absoluteheight
+	, VWI_CRM_xts_location.modifiedbyname
+	, VWI_CRM_xts_location.versionnumber
+	, VWI_CRM_xts_location.modifiedby
+	, VWI_CRM_xts_location.createdby
+	, VWI_CRM_xts_location.timezoneruleversionnumber
+	, VWI_CRM_xts_location.xts_locationtype
+	, VWI_CRM_xts_location.xts_maximumweight
+	, VWI_CRM_xts_location.statuscodename
+	, VWI_CRM_xts_location.xts_manualupdate
+	, VWI_CRM_xts_location.xts_company
+	, VWI_CRM_xts_location.xts_aisleidname
+	, VWI_CRM_xts_location.modifiedon
+	, VWI_CRM_xts_location.xts_locationid
+	, VWI_CRM_xts_location.xts_allowdeliveryorder
+	, VWI_CRM_xts_location.xts_entitytag
+	, VWI_CRM_xts_location.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_location.statuscode
+	, VWI_CRM_xts_location.createdbyname
+	, VWI_CRM_xts_location.createdon
+	, VWI_CRM_xts_location.organizationid
+	, VWI_CRM_xts_location.xts_maximumvolume
+	, VWI_CRM_xts_location.createdonbehalfbyname
+	, VWI_CRM_xts_location.xts_height
+	, VWI_CRM_xts_location.modifiedonbehalfbyname
+	, VWI_CRM_xts_location.xts_locationtypename
+	, VWI_CRM_xts_location.overriddencreatedon
+    /**EndPagingIndexQuery**/
+FROM [dbo].[CRM_xts_location] as VWI_CRM_xts_location with (nolock) 
+{0}

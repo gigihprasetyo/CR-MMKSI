@@ -1,0 +1,43 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_perlengkapanstandard.createdonbehalfbyyominame
+	, VWI_CRM_ktb_perlengkapanstandard.owninguser
+	, VWI_CRM_ktb_perlengkapanstandard.statecode
+	, VWI_CRM_ktb_perlengkapanstandard.ktb_newvehiclemodelid
+	, VWI_CRM_ktb_perlengkapanstandard.owneridname
+	, VWI_CRM_ktb_perlengkapanstandard.statecodename
+	, VWI_CRM_ktb_perlengkapanstandard.createdonbehalfby
+	, VWI_CRM_ktb_perlengkapanstandard.ktb_perlengkapanstandard
+	, VWI_CRM_ktb_perlengkapanstandard.ktb_perlengkapanstandardid
+	, VWI_CRM_ktb_perlengkapanstandard.ktb_vehiclemodelidname
+	, VWI_CRM_ktb_perlengkapanstandard.importsequencenumber
+	, VWI_CRM_ktb_perlengkapanstandard.modifiedbyyominame
+	, VWI_CRM_ktb_perlengkapanstandard.utcconversiontimezonecode
+	, VWI_CRM_ktb_perlengkapanstandard.createdbyyominame
+	, VWI_CRM_ktb_perlengkapanstandard.owningbusinessunit
+	, VWI_CRM_ktb_perlengkapanstandard.modifiedbyname
+	, VWI_CRM_ktb_perlengkapanstandard.owningteam
+	, VWI_CRM_ktb_perlengkapanstandard.modifiedby
+	, VWI_CRM_ktb_perlengkapanstandard.createdby
+	, VWI_CRM_ktb_perlengkapanstandard.timezoneruleversionnumber
+	, VWI_CRM_ktb_perlengkapanstandard.owneridtype
+	, VWI_CRM_ktb_perlengkapanstandard.statuscodename
+	, VWI_CRM_ktb_perlengkapanstandard.ktb_newvehiclemodelidname
+	, VWI_CRM_ktb_perlengkapanstandard.owneridyominame
+	, VWI_CRM_ktb_perlengkapanstandard.modifiedon
+	, VWI_CRM_ktb_perlengkapanstandard.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_perlengkapanstandard.statuscode
+	, VWI_CRM_ktb_perlengkapanstandard.createdbyname
+	, VWI_CRM_ktb_perlengkapanstandard.createdon
+	, VWI_CRM_ktb_perlengkapanstandard.createdonbehalfbyname
+	, VWI_CRM_ktb_perlengkapanstandard.modifiedonbehalfbyname
+	, VWI_CRM_ktb_perlengkapanstandard.versionnumber
+	, VWI_CRM_ktb_perlengkapanstandard.modifiedonbehalfby
+	, VWI_CRM_ktb_perlengkapanstandard.ktb_vehiclemodelid
+	, VWI_CRM_ktb_perlengkapanstandard.ownerid
+	, VWI_CRM_ktb_perlengkapanstandard.overriddencreatedon
+	, VWI_CRM_ktb_perlengkapanstandard.RowStatus
+	/**EndPagingIndexQuery**/
+FROM CRM_ktb_perlengkapanstandard as VWI_CRM_ktb_perlengkapanstandard WITH (NOLOCK) 
+{0}

@@ -1,0 +1,63 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_productcrossreference.company
+    , VWI_CRM_xts_productcrossreference.businessunitcode
+    , VWI_CRM_xts_productcrossreference.createdonbehalfbyyominame
+    , VWI_CRM_xts_productcrossreference.owninguser
+    , VWI_CRM_xts_productcrossreference.owningteam
+    , VWI_CRM_xts_productcrossreference.xts_locking
+    , VWI_CRM_xts_productcrossreference.statecode
+    , VWI_CRM_xts_productcrossreference.xts_productidname
+    , VWI_CRM_xts_productcrossreference.statuscode
+    , VWI_CRM_xts_productcrossreference.statecodename
+    , VWI_CRM_xts_productcrossreference.createdonbehalfby
+    , VWI_CRM_xts_productcrossreference.xts_crossrefftypename
+    , VWI_CRM_xts_productcrossreference.xts_productcrossreferenceid
+    , VWI_CRM_xts_productcrossreference.importsequencenumber
+    , VWI_CRM_xts_productcrossreference.modifiedbyyominame
+    , VWI_CRM_xts_productcrossreference.xts_productdescription
+    , VWI_CRM_xts_productcrossreference.xts_customeridyominame
+    , VWI_CRM_xts_productcrossreference.utcconversiontimezonecode
+    , VWI_CRM_xts_productcrossreference.createdbyyominame
+    , VWI_CRM_xts_productcrossreference.xts_productcrossreference
+    , VWI_CRM_xts_productcrossreference.xts_vendoridname
+    , VWI_CRM_xts_productcrossreference.modifiedbyname
+    , VWI_CRM_xts_productcrossreference.versionnumber
+    , VWI_CRM_xts_productcrossreference.modifiedby
+    , VWI_CRM_xts_productcrossreference.owneridname
+    , VWI_CRM_xts_productcrossreference.createdby
+    , VWI_CRM_xts_productcrossreference.timezoneruleversionnumber
+    , VWI_CRM_xts_productcrossreference.owneridtype
+    , VWI_CRM_xts_productcrossreference.statuscodename
+    , VWI_CRM_xts_productcrossreference.owneridyominame
+    , VWI_CRM_xts_productcrossreference.modifiedon
+    , VWI_CRM_xts_productcrossreference.xts_crossreff
+    , VWI_CRM_xts_productcrossreference.xts_crossrefftype
+    , VWI_CRM_xts_productcrossreference.xts_customerid
+    , VWI_CRM_xts_productcrossreference.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_productcrossreference.xts_customeridname
+    , VWI_CRM_xts_productcrossreference.createdbyname
+    , VWI_CRM_xts_productcrossreference.createdon
+    , VWI_CRM_xts_productcrossreference.createdonbehalfbyname
+    , VWI_CRM_xts_productcrossreference.owningbusinessunit
+    , VWI_CRM_xts_productcrossreference.modifiedonbehalfbyname
+    , VWI_CRM_xts_productcrossreference.xts_crossreffdescription
+    , VWI_CRM_xts_productcrossreference.modifiedonbehalfby
+    , VWI_CRM_xts_productcrossreference.xts_productid
+    , VWI_CRM_xts_productcrossreference.xts_vendorid
+    , VWI_CRM_xts_productcrossreference.ownerid
+    , VWI_CRM_xts_productcrossreference.overriddencreatedon
+    , VWI_CRM_xts_productcrossreference.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_productcrossreference a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    {0}
+) as VWI_CRM_xts_productcrossreference  

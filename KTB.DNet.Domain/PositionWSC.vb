@@ -1,0 +1,173 @@
+#Region "Summary"
+'// ===========================================================================
+'// AUTHOR        : DNet Team
+'// PURPOSE       : PositionWSC Domain Object.
+'// SPECIAL NOTES : 
+'// ---------------------
+'// Copyright  2005 
+'// ---------------------
+'// $History      : $
+'// Generated on 10/24/2005 - 11:16:06 AM
+'//
+'// ===========================================================================	
+#End Region
+
+#Region ".NET Base Class Namespace Imports"
+Imports System
+Imports System.Collections
+#End Region
+
+#Region "Custom Namespace Imports"
+Imports Microsoft.Practices.EnterpriseLibrary.ExceptionHandling
+Imports KTB.DNet.Domain.Search
+#End Region
+
+Namespace KTB.DNet.Domain
+    <Serializable(), TableInfo("PositionWSC")> _
+    Public Class PositionWSC
+        Inherits DomainObject
+
+#Region "Constructors/Destructors/Finalizers"
+
+        Public Sub New()
+        End Sub
+
+        Public Sub New(ByVal ID As Integer)
+            _iD = ID
+        End Sub
+
+#End Region
+
+#Region "Private Variables"
+
+        Private _iD As Integer
+        Private _positionCategory As String = String.Empty
+        Private _positionCode As String = String.Empty
+        Private _description As String = String.Empty
+        Private _rowStatus As Short
+        Private _createdBy As String = String.Empty
+        Private _createdTime As DateTime = System.DateTime.MinValue
+        Private _lastUpdateBy As String = String.Empty
+        Private _lastUpdateTime As DateTime = System.DateTime.MinValue
+
+
+
+
+#End Region
+
+#Region "Public Properties"
+
+        <ColumnInfo("ID", "{0}")> _
+        Public Property ID() As Integer
+            Get
+                Return _iD
+            End Get
+            Set(ByVal value As Integer)
+                _iD = value
+            End Set
+        End Property
+
+
+        <ColumnInfo("PositionCategory", "'{0}'")> _
+        Public Property PositionCategory() As String
+            Get
+                Return _positionCategory
+            End Get
+            Set(ByVal value As String)
+                _positionCategory = value
+            End Set
+        End Property
+
+
+        <ColumnInfo("PositionCode", "'{0}'")> _
+        Public Property PositionCode() As String
+            Get
+                Return _positionCode
+            End Get
+            Set(ByVal value As String)
+                _positionCode = value
+            End Set
+        End Property
+
+
+        <ColumnInfo("Description", "'{0}'")> _
+        Public Property Description() As String
+            Get
+                Return _description
+            End Get
+            Set(ByVal value As String)
+                _description = value
+            End Set
+        End Property
+
+
+        <ColumnInfo("RowStatus", "{0}")> _
+        Public Property RowStatus() As Short
+            Get
+                Return _rowStatus
+            End Get
+            Set(ByVal value As Short)
+                _rowStatus = value
+            End Set
+        End Property
+
+
+        <ColumnInfo("CreatedBy", "'{0}'")> _
+        Public Property CreatedBy() As String
+            Get
+                Return _createdBy
+            End Get
+            Set(ByVal value As String)
+                _createdBy = value
+            End Set
+        End Property
+
+
+        <ColumnInfo("CreatedTime", "'{0:yyyy/MM/dd HH:mm:ss}'")> _
+        Public Property CreatedTime() As DateTime
+            Get
+                Return _createdTime
+            End Get
+            Set(ByVal value As DateTime)
+                _createdTime = value
+            End Set
+        End Property
+
+
+        <ColumnInfo("LastUpdateBy", "'{0}'")> _
+        Public Property LastUpdateBy() As String
+            Get
+                Return _lastUpdateBy
+            End Get
+            Set(ByVal value As String)
+                _lastUpdateBy = value
+            End Set
+        End Property
+
+
+        <ColumnInfo("LastUpdateTime", "'{0:yyyy/MM/dd HH:mm:ss}'")> _
+        Public Property LastUpdateTime() As DateTime
+            Get
+                Return _lastUpdateTime
+            End Get
+            Set(ByVal value As DateTime)
+                _lastUpdateTime = value
+            End Set
+        End Property
+
+
+
+
+
+
+
+#End Region
+
+#Region "Custom Method"
+
+#End Region
+
+    End Class
+End Namespace
+
+

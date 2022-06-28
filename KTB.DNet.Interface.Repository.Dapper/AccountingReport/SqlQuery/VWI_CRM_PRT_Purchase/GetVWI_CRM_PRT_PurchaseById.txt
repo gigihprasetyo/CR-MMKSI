@@ -1,0 +1,31 @@
+SELECT 
+	IDRow
+	,company
+	,businessunitcode
+	,PurchaseOrderNo
+	,PurchaseReceiptNo
+	,PurchaseReceiptDate
+	,VendorInvoiceNumber
+	,PurchaseReceiptType
+	,PRPOType
+	,PurchaseReceiptStatus
+	,Vendor
+	,Product
+	,ProductDescription
+	,ReceivedQuantity
+	,PurchaseUnit
+	,UnitCost
+	,DiscountPercentage
+	,DiscountAmount
+	,ConsumptionTax1
+	,ConsumptionTax1Amount
+	,ConsumptionTax2
+	,ConsumptionTax2Amount
+	,TotalConsumptionTaxAmount
+	,TotalBaseAmount
+	,TransactionAmount
+	,Site
+	,Warehouse
+	,msdyn_companycode
+FROM VWI_CRM_PRT_Purchase WITH (NOLOCK)
+WHERE ID = @Id

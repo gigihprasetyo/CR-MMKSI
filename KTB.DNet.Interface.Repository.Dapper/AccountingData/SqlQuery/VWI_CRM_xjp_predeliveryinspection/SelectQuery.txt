@@ -1,0 +1,129 @@
+SELECT
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xjp_predeliveryinspection.company
+	, VWI_CRM_xjp_predeliveryinspection.businessunitcode
+	, VWI_CRM_xjp_predeliveryinspection.ktb_isinterfacedname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_customernumber
+	, VWI_CRM_xjp_predeliveryinspection.versionnumber
+	, VWI_CRM_xjp_predeliveryinspection.xjp_actualcost_base
+	, VWI_CRM_xjp_predeliveryinspection.xjp_stockidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_pdistatusname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_productid
+	, VWI_CRM_xjp_predeliveryinspection.statuscodename
+	, VWI_CRM_xjp_predeliveryinspection.xjp_parentbusinessunitidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_arrivaldate
+	, VWI_CRM_xjp_predeliveryinspection.modifiedon
+	, VWI_CRM_xjp_predeliveryinspection.createdon
+	, VWI_CRM_xjp_predeliveryinspection.owneridtype
+	, VWI_CRM_xjp_predeliveryinspection.xjp_deliverybusinessunitidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_autoreceipt
+	, VWI_CRM_xjp_predeliveryinspection.createdonbehalfby
+	, VWI_CRM_xjp_predeliveryinspection.xjp_handlingname
+	, VWI_CRM_xjp_predeliveryinspection.modifiedbyname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_vendoridname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_departmentid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_exteriorcolorid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_styleidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_productidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_parentbusinessunitid
+	, VWI_CRM_xjp_predeliveryinspection.owneridname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_vehiclesuggestedarrivaldateandtime
+	, VWI_CRM_xjp_predeliveryinspection.overriddencreatedon
+	, VWI_CRM_xjp_predeliveryinspection.xjp_desireddeliverydate
+	, VWI_CRM_xjp_predeliveryinspection.xjp_actualcost
+	, VWI_CRM_xjp_predeliveryinspection.xjp_pdicategory
+	, VWI_CRM_xjp_predeliveryinspection.xjp_customeridname
+	, VWI_CRM_xjp_predeliveryinspection.createdonbehalfbyyominame
+	, VWI_CRM_xjp_predeliveryinspection.modifiedonbehalfby
+	, VWI_CRM_xjp_predeliveryinspection.exchangerate
+	, VWI_CRM_xjp_predeliveryinspection.xjp_vendorid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_pdistatus
+	, VWI_CRM_xjp_predeliveryinspection.xjp_newvehiclesalesorderid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_costdifference_base
+	, VWI_CRM_xjp_predeliveryinspection.owningteam
+	, VWI_CRM_xjp_predeliveryinspection.xjp_interiorcolorid
+	, VWI_CRM_xjp_predeliveryinspection.statecode
+	, VWI_CRM_xjp_predeliveryinspection.ktb_iskaroseri
+	, VWI_CRM_xjp_predeliveryinspection.xjp_servicecategoryid
+	, VWI_CRM_xjp_predeliveryinspection.timezoneruleversionnumber
+	, VWI_CRM_xjp_predeliveryinspection.xjp_predeliveryinspectionid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_schedulearrivaldate
+	, VWI_CRM_xjp_predeliveryinspection.xjp_customeridyominame
+	, VWI_CRM_xjp_predeliveryinspection.xjp_servicecategoryidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_handling
+	, VWI_CRM_xjp_predeliveryinspection.xjp_newvehiclesalesorderidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_exteriorcoloridname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_interiorcoloridname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_businessunitid
+	, VWI_CRM_xjp_predeliveryinspection.traversedpath
+	, VWI_CRM_xjp_predeliveryinspection.createdonbehalfbyname
+	, VWI_CRM_xjp_predeliveryinspection.ktb_interfaceexceptionmessage
+	, VWI_CRM_xjp_predeliveryinspection.xjp_completepdidate
+	, VWI_CRM_xjp_predeliveryinspection.utcconversiontimezonecode
+	, VWI_CRM_xjp_predeliveryinspection.xjp_matchunmatchidname
+	, VWI_CRM_xjp_predeliveryinspection.ownerid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_autoreceiptname
+	, VWI_CRM_xjp_predeliveryinspection.importsequencenumber
+	, VWI_CRM_xjp_predeliveryinspection.owneridyominame
+	, VWI_CRM_xjp_predeliveryinspection.modifiedby
+	, VWI_CRM_xjp_predeliveryinspection.xjp_chassisnumber
+	, VWI_CRM_xjp_predeliveryinspection.xjp_configurationidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_customerid
+	, VWI_CRM_xjp_predeliveryinspection.processid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_vehicleidentificationid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_scheduledcompletepdidate
+	, VWI_CRM_xjp_predeliveryinspection.createdbyname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_type
+	, VWI_CRM_xjp_predeliveryinspection.xjp_deliverydate
+	, VWI_CRM_xjp_predeliveryinspection.modifiedonbehalfbyname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_departmentidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_transactiondate
+	, VWI_CRM_xjp_predeliveryinspection.stageid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_deliverytostore
+	, VWI_CRM_xjp_predeliveryinspection.xjp_eventdata
+	, VWI_CRM_xjp_predeliveryinspection.xjp_deliverytostorename
+	, VWI_CRM_xjp_predeliveryinspection.transactioncurrencyid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_costdifference
+	, VWI_CRM_xjp_predeliveryinspection.createdby
+	, VWI_CRM_xjp_predeliveryinspection.xjp_deliverybusinessunitid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_estimatedcost
+	, VWI_CRM_xjp_predeliveryinspection.xjp_configurationid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_salespersonid
+	, VWI_CRM_xjp_predeliveryinspection.xjp_vehicleidentificationidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_businessunitidname
+	, VWI_CRM_xjp_predeliveryinspection.createdbyyominame
+	, VWI_CRM_xjp_predeliveryinspection.owninguser
+	, VWI_CRM_xjp_predeliveryinspection.transactioncurrencyidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_matchunmatchid
+	, VWI_CRM_xjp_predeliveryinspection.owningbusinessunit
+	, VWI_CRM_xjp_predeliveryinspection.modifiedbyyominame
+	, VWI_CRM_xjp_predeliveryinspection.xjp_productdescription
+	, VWI_CRM_xjp_predeliveryinspection.ktb_iskaroseriname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_pdicategoryname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_salespersonidname
+	, VWI_CRM_xjp_predeliveryinspection.xjp_typename
+	, VWI_CRM_xjp_predeliveryinspection.xjp_platenumber
+	, VWI_CRM_xjp_predeliveryinspection.xjp_predeliveryinspectionnumber
+	, VWI_CRM_xjp_predeliveryinspection.xjp_styleid
+	, VWI_CRM_xjp_predeliveryinspection.statuscode
+	, VWI_CRM_xjp_predeliveryinspection.modifiedonbehalfbyyominame
+	, VWI_CRM_xjp_predeliveryinspection.xjp_pdicancellationdate
+	, VWI_CRM_xjp_predeliveryinspection.xjp_stockid
+	, VWI_CRM_xjp_predeliveryinspection.ktb_isinterfaced
+	, VWI_CRM_xjp_predeliveryinspection.xjp_estimatedcost_base
+	, VWI_CRM_xjp_predeliveryinspection.statecodename
+	, VWI_CRM_xjp_predeliveryinspection.xjp_locking
+	, VWI_CRM_xjp_predeliveryinspection.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT
+          b.ktb_bucompany company,
+          b.ktb_dealercode businessunitcode
+        , a.*
+        , b.msdyn_companycode
+    FROM CRM_xjp_predeliveryinspection a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xjp_businessunitid
+    {0}
+) VWI_CRM_xjp_predeliveryinspection  

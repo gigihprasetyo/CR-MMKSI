@@ -1,0 +1,90 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xjp_vehicletransfer.company
+	, VWI_CRM_xjp_vehicletransfer.businessunitcode
+	, VWI_CRM_xjp_vehicletransfer.versionnumber
+	, VWI_CRM_xjp_vehicletransfer.xjp_destinationsiteid
+	, VWI_CRM_xjp_vehicletransfer.createdon
+	, VWI_CRM_xjp_vehicletransfer.xjp_stockidname
+	, VWI_CRM_xjp_vehicletransfer.xjp_idempotentmessage
+	, VWI_CRM_xjp_vehicletransfer.xjp_productid
+	, VWI_CRM_xjp_vehicletransfer.statuscodename
+	, VWI_CRM_xjp_vehicletransfer.xjp_fromsiteidname
+	, VWI_CRM_xjp_vehicletransfer.xjp_parentbusinessunitidname
+	, VWI_CRM_xjp_vehicletransfer.modifiedbyyominame
+	, VWI_CRM_xjp_vehicletransfer.owneridtype
+	, VWI_CRM_xjp_vehicletransfer.xjp_productconfigurationidname
+	, VWI_CRM_xjp_vehicletransfer.createdonbehalfby
+	, VWI_CRM_xjp_vehicletransfer.xjp_handlingname
+	, VWI_CRM_xjp_vehicletransfer.modifiedbyname
+	, VWI_CRM_xjp_vehicletransfer.xjp_productidname
+	, VWI_CRM_xjp_vehicletransfer.xjp_parentbusinessunitid
+	, VWI_CRM_xjp_vehicletransfer.owneridname
+	, VWI_CRM_xjp_vehicletransfer.overriddencreatedon
+	, VWI_CRM_xjp_vehicletransfer.xjp_transactiontype
+	, VWI_CRM_xjp_vehicletransfer.xjp_destinationlocationidname
+	, VWI_CRM_xjp_vehicletransfer.modifiedonbehalfby
+	, VWI_CRM_xjp_vehicletransfer.xjp_destinationlocationid
+	, VWI_CRM_xjp_vehicletransfer.owningteam
+	, VWI_CRM_xjp_vehicletransfer.xjp_destinationwarehouseidname
+	, VWI_CRM_xjp_vehicletransfer.statecode
+	, VWI_CRM_xjp_vehicletransfer.timezoneruleversionnumber
+	, VWI_CRM_xjp_vehicletransfer.xjp_productconfigurationid
+	, VWI_CRM_xjp_vehicletransfer.xjp_fromlocationidname
+	, VWI_CRM_xjp_vehicletransfer.xjp_handling
+	, VWI_CRM_xjp_vehicletransfer.xjp_statusname
+	, VWI_CRM_xjp_vehicletransfer.xjp_productexteriorcoloridname
+	, VWI_CRM_xjp_vehicletransfer.xjp_businessunitid
+	, VWI_CRM_xjp_vehicletransfer.createdonbehalfbyname
+	, VWI_CRM_xjp_vehicletransfer.utcconversiontimezonecode
+	, VWI_CRM_xjp_vehicletransfer.xjp_fromwarehouseidname
+	, VWI_CRM_xjp_vehicletransfer.ownerid
+	, VWI_CRM_xjp_vehicletransfer.modifiedon
+	, VWI_CRM_xjp_vehicletransfer.importsequencenumber
+	, VWI_CRM_xjp_vehicletransfer.owneridyominame
+	, VWI_CRM_xjp_vehicletransfer.xjp_chassisnumber
+	, VWI_CRM_xjp_vehicletransfer.xjp_fromwarehouseid
+	, VWI_CRM_xjp_vehicletransfer.xjp_vehicletransferid
+	, VWI_CRM_xjp_vehicletransfer.createdbyname
+	, VWI_CRM_xjp_vehicletransfer.modifiedonbehalfbyname
+	, VWI_CRM_xjp_vehicletransfer.xjp_destinationwarehouseid
+	, VWI_CRM_xjp_vehicletransfer.xjp_productstyleidname
+	, VWI_CRM_xjp_vehicletransfer.xjp_fromlocationid
+	, VWI_CRM_xjp_vehicletransfer.xjp_vehicletransfernumber
+	, VWI_CRM_xjp_vehicletransfer.createdby
+	, VWI_CRM_xjp_vehicletransfer.modifiedby
+	, VWI_CRM_xjp_vehicletransfer.xjp_fromsiteid
+	, VWI_CRM_xjp_vehicletransfer.xjp_businessunitidname
+	, VWI_CRM_xjp_vehicletransfer.createdbyyominame
+	, VWI_CRM_xjp_vehicletransfer.owninguser
+	, VWI_CRM_xjp_vehicletransfer.xjp_destinationaddress
+	, VWI_CRM_xjp_vehicletransfer.createdonbehalfbyyominame
+	, VWI_CRM_xjp_vehicletransfer.owningbusinessunit
+	, VWI_CRM_xjp_vehicletransfer.xjp_receiptdateandtime
+	, VWI_CRM_xjp_vehicletransfer.xjp_status
+	, VWI_CRM_xjp_vehicletransfer.xjp_productinteriorcolorid
+	, VWI_CRM_xjp_vehicletransfer.xjp_productstyleid
+	, VWI_CRM_xjp_vehicletransfer.statuscode
+	, VWI_CRM_xjp_vehicletransfer.modifiedonbehalfbyyominame
+	, VWI_CRM_xjp_vehicletransfer.xjp_productinteriorcoloridname
+	, VWI_CRM_xjp_vehicletransfer.xjp_destinationsiteidname
+	, VWI_CRM_xjp_vehicletransfer.xjp_stockid
+	, VWI_CRM_xjp_vehicletransfer.xjp_transactiontypename
+	, VWI_CRM_xjp_vehicletransfer.xjp_productexteriorcolorid
+	, VWI_CRM_xjp_vehicletransfer.statecodename
+	, VWI_CRM_xjp_vehicletransfer.xjp_locking
+	, VWI_CRM_xjp_vehicletransfer.RowStatus
+	, VWI_CRM_xjp_vehicletransfer.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.*
+        , b.msdyn_companycode
+    FROM CRM_xjp_vehicletransfer a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xjp_businessunitid
+    {0}
+) VWI_CRM_xjp_vehicletransfer 

@@ -1,0 +1,42 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow,
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,xts_locking
+	,statecode
+	,xts_accounttypename
+	,statecodename
+	,createdonbehalfby
+	,xts_pkcombinationkey
+	,xts_allowmanualentry
+	,xts_chartofaccountid
+	,importsequencenumber
+	,organizationidname
+	,modifiedbyyominame
+	,xts_accounttype
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,modifiedbyname
+	,versionnumber
+	,xts_chartofaccount
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,xts_ledgerchartofaccountidname
+	,statuscodename
+	,xts_category
+	,modifiedon
+	,xts_allowmanualentryname
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,organizationid
+	,xts_ledgerchartofaccountid
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,overriddencreatedon
+	,xts_description
+	,RowStatus
+FROM CRM_xts_chartofaccount as VWI_CRM_xts_chartofaccount WITH (NOLOCK)
+WHERE ID = @Id

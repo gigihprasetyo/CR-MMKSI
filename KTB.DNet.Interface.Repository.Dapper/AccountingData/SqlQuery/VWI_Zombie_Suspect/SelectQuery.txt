@@ -1,0 +1,27 @@
+SELECT 
+	/**RowNumber**/ 
+	  VWI_Zombie_Suspect.Id
+	, VWI_Zombie_Suspect.DealerCode
+	, VWI_Zombie_Suspect.DealerCompany
+	, VWI_Zombie_Suspect.InvalidZombieData
+	, VWI_Zombie_Suspect.Category_ZombieData
+	, VWI_Zombie_Suspect.Category_ZombieDataCode
+	, VWI_Zombie_Suspect.LastCheckedTime
+	/**EndPagingIndexQuery**/
+from (
+	SELECT        
+		a.Id
+		, a.Dealer_Code as DealerCode
+		, a.Dealer_Company as DealerCompany
+		, a.InvalidZombieData
+		, a.Category_ZombieData
+		, c.ValueId as Category_ZombieDataCode
+		, a.LastCheckedTime
+	FROM VWI_GetDetailSuspect_Zombie_TS a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.[name] = a.Dealer_Code 
+	LEFT JOIN CRM_StandardCode c WITH(NOLOCK)
+	ON a.Category_ZombieData = c.ValueCode
+	AND c.Category = 'zombieWOTimeRegister.Category_ZombieData'
+	{0}
+) VWI_Zombie_Suspect

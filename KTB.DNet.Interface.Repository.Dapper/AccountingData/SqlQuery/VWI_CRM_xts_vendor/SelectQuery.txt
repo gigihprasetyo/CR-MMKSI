@@ -1,0 +1,130 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_vendor.company
+	, VWI_CRM_xts_vendor.xts_shortname
+	, VWI_CRM_xts_vendor.versionnumber
+	, VWI_CRM_xts_vendor.xts_consumptiontax2idname
+	, VWI_CRM_xts_vendor.createdon
+	, VWI_CRM_xts_vendor.xts_vendor
+	, VWI_CRM_xts_vendor.xts_mainprovinceidname
+	, VWI_CRM_xts_vendor.xts_consumptiontax1id
+	, VWI_CRM_xts_vendor.statuscodename
+	, VWI_CRM_xts_vendor.xts_methodofpaymentidname
+	, VWI_CRM_xts_vendor.xts_requirepurchaseorderapproval
+	, VWI_CRM_xts_vendor.xts_description
+	, VWI_CRM_xts_vendor.modifiedbyyominame
+	, VWI_CRM_xts_vendor.xts_insurancecompanytypename
+	, VWI_CRM_xts_vendor.owneridtype
+	, VWI_CRM_xts_vendor.xts_classid
+	, VWI_CRM_xts_vendor.xts_requireponumberforaccountpayablename
+	, VWI_CRM_xts_vendor.createdonbehalfby
+	, VWI_CRM_xts_vendor.xts_billtoaddress1
+	, VWI_CRM_xts_vendor.modifiedbyname
+	, VWI_CRM_xts_vendor.xts_taxzoneidname
+	, VWI_CRM_xts_vendor.xts_salutation
+	, VWI_CRM_xts_vendor.xts_billtocountryidname
+	, VWI_CRM_xts_vendor.xts_internalnumber
+	, VWI_CRM_xts_vendor.xts_mainmobilephone
+	, VWI_CRM_xts_vendor.ktb_registrationagency
+	, VWI_CRM_xts_vendor.overriddencreatedon
+	, VWI_CRM_xts_vendor.xts_billtovillageandstreetid
+	, VWI_CRM_xts_vendor.xts_billtovillageandstreetidname
+	, VWI_CRM_xts_vendor.xts_billtoaddress3
+	, VWI_CRM_xts_vendor.xts_type
+	, VWI_CRM_xts_vendor.xts_billtoprovinceid
+	, VWI_CRM_xts_vendor.modifiedonbehalfby
+	, VWI_CRM_xts_vendor.xts_maincityid
+	, VWI_CRM_xts_vendor.xts_mainaddress2
+	, VWI_CRM_xts_vendor.xts_consumptiontax2id
+	, VWI_CRM_xts_vendor.xts_taxregistrationnumber
+	, VWI_CRM_xts_vendor.owningteam
+	, VWI_CRM_xts_vendor.xts_mainotherphone
+	, VWI_CRM_xts_vendor.statecode
+	, VWI_CRM_xts_vendor.xts_billtowebsite
+	, VWI_CRM_xts_vendor.timezoneruleversionnumber
+	, VWI_CRM_xts_vendor.xts_termofpaymentid
+	, VWI_CRM_xts_vendor.xts_classidname
+	, VWI_CRM_xts_vendor.xts_billtomobilephone
+	, VWI_CRM_xts_vendor.xts_termofpaymentidname
+	, VWI_CRM_xts_vendor.xts_taxzoneid
+	, VWI_CRM_xts_vendor.xts_locking
+	, VWI_CRM_xts_vendor.xts_maincountryid
+	, VWI_CRM_xts_vendor.xts_billtocountryid
+	, VWI_CRM_xts_vendor.xts_billtofax
+	, VWI_CRM_xts_vendor.xts_consumptiontax1idname
+	, VWI_CRM_xts_vendor.createdonbehalfbyname
+	, VWI_CRM_xts_vendor.xts_mainfax
+	, VWI_CRM_xts_vendor.xts_automaticallycreateapvoucher
+	, VWI_CRM_xts_vendor.xts_billtoaddress4
+	, VWI_CRM_xts_vendor.utcconversiontimezonecode
+	, VWI_CRM_xts_vendor.owneridname
+	, VWI_CRM_xts_vendor.xts_mainaddress4
+	, VWI_CRM_xts_vendor.xts_typename
+	, VWI_CRM_xts_vendor.ktb_typename
+	, VWI_CRM_xts_vendor.ownerid
+	, VWI_CRM_xts_vendor.modifiedon
+	, VWI_CRM_xts_vendor.importsequencenumber
+	, VWI_CRM_xts_vendor.owneridyominame
+	, VWI_CRM_xts_vendor.xts_vendornumber
+	, VWI_CRM_xts_vendor.xts_mainemail
+	, VWI_CRM_xts_vendor.xts_pkcombinationkey
+	, VWI_CRM_xts_vendor.xts_billtoemail
+	, VWI_CRM_xts_vendor.xts_mainpostalcode
+	, VWI_CRM_xts_vendor.xts_billtocityidname
+	, VWI_CRM_xts_vendor.xts_mainwebsite
+	, VWI_CRM_xts_vendor.createdbyname
+	, VWI_CRM_xts_vendor.xts_businessunitid
+	, VWI_CRM_xts_vendor.xts_requirepurchaseorderapprovalname
+	, VWI_CRM_xts_vendor.modifiedonbehalfbyname
+	, VWI_CRM_xts_vendor.xts_personincharge
+	, VWI_CRM_xts_vendor.xts_billtootherphone
+	, VWI_CRM_xts_vendor.xts_mainvillageandstreetidname
+	, VWI_CRM_xts_vendor.xts_automaticallycreateapvouchername
+	, VWI_CRM_xts_vendor.xts_aliasname
+	, VWI_CRM_xts_vendor.ktb_type
+	, VWI_CRM_xts_vendor.xts_billtopostalcode
+	, VWI_CRM_xts_vendor.xts_maincountryidname
+	, VWI_CRM_xts_vendor.xts_mainhomephone
+	, VWI_CRM_xts_vendor.ktb_registrationagencyname
+	, VWI_CRM_xts_vendor.createdby
+	, VWI_CRM_xts_vendor.ktb_leveldataname
+	, VWI_CRM_xts_vendor.modifiedby
+	, VWI_CRM_xts_vendor.xts_billtoaddress2
+	, VWI_CRM_xts_vendor.createdbyyominame
+	, VWI_CRM_xts_vendor.owninguser
+	, VWI_CRM_xts_vendor.createdonbehalfbyyominame
+	, VWI_CRM_xts_vendor.xts_mainaddress3
+	, VWI_CRM_xts_vendor.xts_billtoprovinceidname
+	, VWI_CRM_xts_vendor.xts_mainvillageandstreetid
+	, VWI_CRM_xts_vendor.xts_mainprovinceid
+	, VWI_CRM_xts_vendor.xts_billtohomephone
+	, VWI_CRM_xts_vendor.xts_maincityidname
+	, VWI_CRM_xts_vendor.xts_vendorid
+	, VWI_CRM_xts_vendor.xts_mainbusinessphone
+	, VWI_CRM_xts_vendor.statuscode
+	, VWI_CRM_xts_vendor.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_vendor.ktb_leveldata
+	, VWI_CRM_xts_vendor.xts_insurancecompanytype
+	, VWI_CRM_xts_vendor.xts_billtocityid
+	, VWI_CRM_xts_vendor.xts_billtobusinessphone
+	, VWI_CRM_xts_vendor.xts_requireponumberforaccountpayable
+	, VWI_CRM_xts_vendor.xts_methodofpaymentid
+	, VWI_CRM_xts_vendor.xts_mainaddress1
+	, VWI_CRM_xts_vendor.statecodename
+	, VWI_CRM_xts_vendor.xts_businessunitidname
+	, VWI_CRM_xts_vendor.owningbusinessunit
+	, VWI_CRM_xts_vendor.RowStatus
+	, VWI_CRM_xts_vendor.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_xts_vendor a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.xts_businessunitid 
+	{0}
+) VWI_CRM_xts_vendor

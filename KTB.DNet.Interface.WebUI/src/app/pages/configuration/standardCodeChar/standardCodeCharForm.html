@@ -1,0 +1,23 @@
+﻿<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="{{activePageTitle}}" ba-panel-class="with-scroll">
+                <form name="form" ng-submit="Submit()">
+                    <div class="col-md-6 col-xs-12">
+                        <input-text label="ValueId" name="ValueId" ng-model="standardCodeChar.ValueId" required></input-text>
+                        <input-text label="ValueCode" name="ValueCode" ng-model="standardCodeChar.ValueCode" required></input-text>
+                        <input-text label="Category" name="Category" ng-model="standardCodeChar.Category" required></input-text>
+                        <input-text label="Sequence" name="Sequence" type="number" ng-model="standardCodeChar.Sequence" required></input-text>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <text-area label="ValueDesc" name="ValueDesc" ng-model="standardCodeChar.ValueDesc" required></text-area>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <a ui-sref="configuration.standardCodeChar.list" class="btn btn-default m-t-15 waves-effect">Back</a>
+                        <input ng-disabled="form.$invalid" type="submit" value="Save" class="btn btn-primary m-t-15 waves-effect">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

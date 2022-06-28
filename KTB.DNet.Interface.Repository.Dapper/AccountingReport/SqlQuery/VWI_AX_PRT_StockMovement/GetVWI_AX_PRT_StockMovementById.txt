@@ -1,0 +1,29 @@
+SELECT 
+	IDRow
+	,Company
+	,Product
+	,ProductDescription
+	,TransType
+	,ReferenceID
+	,PackingSlipID
+	,TransactionDate
+	,Unit
+	,BeginningBalance
+	,BeginningTotalCost
+	,TotalCost
+	,QTY
+	,Site
+	,Warehouse
+	,STATUSISSUE
+	,Account
+	,DIMENSION1
+	,DIMENSION2
+	,DIMENSION3
+	,DIMENSION4
+	,DIMENSION5
+	,DIMENSION6
+	,ProductClass
+	,ProductType
+	,Period
+FROM VWI_AX_PRT_StockMovement WITH (NOLOCK)
+WHERE ID = @Id

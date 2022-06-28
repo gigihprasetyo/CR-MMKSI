@@ -1,0 +1,19 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.company
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.businessunitcode
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.InventoryTransferNo
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.TransactionDate
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.TransactionType
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.WorkOrderNO
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.FromSite
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.FromWarehouse
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.ToWarehouse
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.Product
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.ProductDescription
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.Quantity
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.UOM
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.COGSTrx
+	,VWI_CRM_PRT_OutgoingInventoryTransferWarehouse.msdyn_companycode
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_PRT_OutgoingInventoryTransferWarehouse WITH (NOLOCK) {0}

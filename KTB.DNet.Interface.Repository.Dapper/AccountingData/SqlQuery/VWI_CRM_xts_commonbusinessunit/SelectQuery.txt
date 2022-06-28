@@ -1,0 +1,61 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/  
+	  VWI_CRM_xts_commonbusinessunit.company
+	, VWI_CRM_xts_commonbusinessunit.businessunitcode
+	, VWI_CRM_xts_commonbusinessunit.createdonbehalfbyyominame
+	, VWI_CRM_xts_commonbusinessunit.owninguser
+	, VWI_CRM_xts_commonbusinessunit.owningteam
+	, VWI_CRM_xts_commonbusinessunit.xts_locking
+	, VWI_CRM_xts_commonbusinessunit.statecode
+	, VWI_CRM_xts_commonbusinessunit.xts_businessunitidname
+	, VWI_CRM_xts_commonbusinessunit.owneridname
+	, VWI_CRM_xts_commonbusinessunit.statecodename
+	, VWI_CRM_xts_commonbusinessunit.createdonbehalfby
+	, VWI_CRM_xts_commonbusinessunit.xts_pkcombinationkey
+	, VWI_CRM_xts_commonbusinessunit.xts_sortorder
+	, VWI_CRM_xts_commonbusinessunit.xts_categoryname
+	, VWI_CRM_xts_commonbusinessunit.importsequencenumber
+	, VWI_CRM_xts_commonbusinessunit.ktb_showinservicetemplatename
+	, VWI_CRM_xts_commonbusinessunit.modifiedbyyominame
+	, VWI_CRM_xts_commonbusinessunit.xts_value
+	, VWI_CRM_xts_commonbusinessunit.utcconversiontimezonecode
+	, VWI_CRM_xts_commonbusinessunit.createdbyyominame
+	, VWI_CRM_xts_commonbusinessunit.owningbusinessunit
+	, VWI_CRM_xts_commonbusinessunit.modifiedbyname
+	, VWI_CRM_xts_commonbusinessunit.xts_commonbusinessunitid
+	, VWI_CRM_xts_commonbusinessunit.modifiedby
+	, VWI_CRM_xts_commonbusinessunit.createdby
+	, VWI_CRM_xts_commonbusinessunit.timezoneruleversionnumber
+	, VWI_CRM_xts_commonbusinessunit.owneridtype
+	, VWI_CRM_xts_commonbusinessunit.statuscodename
+	, VWI_CRM_xts_commonbusinessunit.xts_category
+	, VWI_CRM_xts_commonbusinessunit.owneridyominame
+	, VWI_CRM_xts_commonbusinessunit.modifiedon
+	, VWI_CRM_xts_commonbusinessunit.xts_commonbusinessunit
+	, VWI_CRM_xts_commonbusinessunit.ktb_showinservicetemplate
+	, VWI_CRM_xts_commonbusinessunit.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_commonbusinessunit.statuscode
+	, VWI_CRM_xts_commonbusinessunit.createdbyname
+	, VWI_CRM_xts_commonbusinessunit.createdon
+	, VWI_CRM_xts_commonbusinessunit.xts_businessunitid
+	, VWI_CRM_xts_commonbusinessunit.createdonbehalfbyname
+	, VWI_CRM_xts_commonbusinessunit.modifiedonbehalfbyname
+	, VWI_CRM_xts_commonbusinessunit.versionnumber
+	, VWI_CRM_xts_commonbusinessunit.modifiedonbehalfby
+	, VWI_CRM_xts_commonbusinessunit.ownerid
+	, VWI_CRM_xts_commonbusinessunit.overriddencreatedon
+	, VWI_CRM_xts_commonbusinessunit.xts_description
+	, VWI_CRM_xts_commonbusinessunit.RowStatus
+	, VWI_CRM_xts_commonbusinessunit.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_commonbusinessunit a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_commonbusinessunit

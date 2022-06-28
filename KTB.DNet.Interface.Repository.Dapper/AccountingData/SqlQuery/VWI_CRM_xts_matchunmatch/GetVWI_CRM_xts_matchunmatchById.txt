@@ -1,0 +1,114 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xts_stockidname
+	,xts_parentbusinessunitid
+	,versionnumber
+	,createdon
+	,xts_requesteddeliverydate
+	,xts_productconfigurationid
+	,statuscodename
+	,xts_productinteriorcolorid
+	,xts_status
+	,xts_customerid
+	,xts_description
+	,modifiedbyyominame
+	,ktb_applicationno
+	,owneridtype
+	,processid
+	,xts_unmatchreferenceidname
+	,createdonbehalfby
+	,ktb_vehicledescription
+	,xts_chassisnumber
+	,owneridname
+	,ktb_nvsoregistrationdetailnumberid
+	,overriddencreatedon
+	,xts_type
+	,xts_eventdata
+	,modifiedonbehalfby
+	,xts_registrationrequesteddate
+	,xts_customeridyominame
+	,xts_newvehiclesalesorderid
+	,xts_productidname
+	,statecode
+	,timezoneruleversionnumber
+	,modifiedbyname
+	,createdonbehalfbyyominame
+	,xts_warehouseidname
+	,xts_productstyleid
+	,xts_productdescription
+	,xts_handling
+	,xts_keynumber
+	,xts_matchingreferenceidname
+	,ktb_newvehiclewholesaleorderid
+	,owningteam
+	,traversedpath
+	,createdonbehalfbyname
+	,xts_matchingreferenceid
+	,xts_productexteriorcolorid
+	,xts_locking
+	,utcconversiontimezonecode
+	,xts_statusname
+	,xts_typename
+	,ktb_vehiclemodelidname
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,ktb_vehiclecolorname
+	,ktb_vehiclemodelid
+	,xts_customeridname
+	,xts_customerdescription
+	,xts_siteid
+	,createdbyname
+	,ktb_vehiclecategoryid
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_productexteriorcoloridname
+	,xts_productconfigurationidname
+	,stageid
+	,xts_matchingnumber
+	,xts_handlingname
+	,ktb_remark
+	,xts_productid
+	,ktb_nvsoregistrationdetailnumberidname
+	,xts_matchunmatchid
+	,createdby
+	,modifiedby
+	,xts_parentbusinessunitidname
+	,xts_newvehiclesalesorderidname
+	,createdbyyominame
+	,owninguser
+	,xts_productstyleidname
+	,xts_otherbusinessunitstock
+	,ktb_newvehiclewholesaleorderidname
+	,xts_stockid
+	,xts_locationid
+	,ktb_vehiclecategoryidname
+	,ktb_isinterfacedname
+	,xts_date
+	,xts_productinteriorcoloridname
+	,ktb_interfaceexceptionmessage
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_siteidname
+	,xts_warehouseid
+	,xts_locationidname
+	,ktb_isinterfaced
+	,xts_enginenumber
+	,statecodename
+	,xts_businessunitidname
+	,owningbusinessunit
+	,xts_unmatchreferenceid
+	,RowStatus
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_matchunmatch a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+	WHERE xts_matchunmatchid = @Id
+) VWI_CRM_xts_matchunmatch WITH (NOLOCK)

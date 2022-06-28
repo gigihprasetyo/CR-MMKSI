@@ -1,0 +1,13 @@
+SELECT 
+	COUNT(1)
+FROM (
+    SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_globalworkorderhistory a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON TRIM(B.ktb_dealercode) = TRIM(A.xts_businessunit)
+    {0}
+) VWI_CRM_xts_globalworkorderhistory

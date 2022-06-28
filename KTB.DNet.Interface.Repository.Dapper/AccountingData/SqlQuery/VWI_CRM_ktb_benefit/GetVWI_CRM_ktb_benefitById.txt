@@ -1,0 +1,48 @@
+SELECT 
+	  ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+      ,createdonbehalfbyyominame
+      ,modifiedonbehalfby
+      ,ktb_id
+      ,statecode
+      ,ktb_fakturopenend
+      ,statecodename
+      ,ktb_fakturvalidationstart
+      ,ktb_fakturvalidationend
+      ,ktb_nomorsurat
+      ,createdonbehalfby
+      ,ktb_fakturopenstart
+      ,ktb_dealerid
+      ,ktb_vehicletypeid
+      ,importsequencenumber
+      ,organizationidname
+      ,modifiedbyyominame
+      ,ktb_benefitid
+      ,ktb_statusname
+      ,ktb_vehicletypecode
+      ,utcconversiontimezonecode
+      ,createdbyyominame
+      ,ktb_dealercode
+      ,ktb_benefitregno
+      ,modifiedbyname
+      ,versionnumber
+      ,modifiedby
+      ,createdby
+      ,timezoneruleversionnumber
+      ,statuscodename
+      ,ktb_rowstatus
+      ,ktb_detailrowstatusname
+      ,modifiedon
+      ,ktb_status
+      ,ktb_detailrowstatus
+      ,modifiedonbehalfbyyominame
+      ,statuscode
+      ,createdbyname
+      ,createdon
+      ,organizationid
+      ,createdonbehalfbyname
+      ,ktb_remarks
+      ,modifiedonbehalfbyname
+      ,ktb_vehicletypedesc
+      ,overriddencreatedon
+FROM CRM_ktb_benefit as VWI_CRM_ktb_benefit WITH (NOLOCK) 
+where ktb_benefitid = @Id

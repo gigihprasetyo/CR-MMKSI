@@ -1,0 +1,64 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	VWI_CRM_ktb_servicetemplateproductnongenuine.company
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.businessunitcode
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_nongenuinecategory
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.modifiedbyyominame
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.createdbyname
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.modifiedon
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_productdescription
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_productidname
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ownerid
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.modifiedbyname
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.modifiedonbehalfby
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_servicetemplateid
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.createdonbehalfbyyominame
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_productid
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.owneridname
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.importsequencenumber
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.createdonbehalfby
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.owninguser
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_businessunitid
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.statecode
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.versionnumber
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.createdon
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.createdby
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.owneridtype
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.modifiedonbehalfbyyominame
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_parentbusinessunitname
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_name
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.statuscodename
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.modifiedby
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.overriddencreatedon
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_businessunitidname
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.createdonbehalfbyname
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_nongenuinecategoryname
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_nongenuinecategorydescription
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_servicetemplateproductnongenuineid
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_buproduct
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.owningbusinessunit
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.timezoneruleversionnumber
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.statecodename
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.owningteam
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_servicetemplateidname
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.modifiedonbehalfbyname
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.statuscode
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.owneridyominame
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.ktb_parentbusinessunit
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.createdbyyominame
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.utcconversiontimezonecode
+    , VWI_CRM_ktb_servicetemplateproductnongenuine.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_ktb_servicetemplateproductnongenuine a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.ktb_businessunitid
+    {0}
+) as VWI_CRM_ktb_servicetemplateproductnongenuine  
+

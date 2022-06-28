@@ -1,0 +1,7 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow,* 
+FROM 
+(
+	SELECT * FROM DMSAnnouncement with (nolock) where StatusAnnounce='publish' and enddate>=getdate()
+	and ID = @Id
+) AS DMSAnnouncement

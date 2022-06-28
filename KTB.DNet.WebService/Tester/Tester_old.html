@@ -1,0 +1,25 @@
+<html>
+	<head>		
+		<script src="jquery-1.8.2.min.js"></script>
+		<script>
+			function doTest(){
+				var content = $('#content').text();
+				$.ajax({
+					type:"POST", 
+					Origin : "172.17.31.123:888", 
+					url: "http://172.17.31.123:888/ktb.dnet.ws/api/saplistener/SendData",
+					crossDomain:true, 
+					data: content
+				}).done(function() {
+					//alert('success');				  
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" id="submit" value="Test WS" onclick="doTest();" />
+		<div id="content">K;TRANSFERCEILING_20160913095214\nH;100002;S101;TOP\nD;20160901;11000000000\nD;20160902;10000000000\nD;20160903;10000000000\nD;20160904;10000000000\nD;20160905;10000000000\n</div>
+	</body>
+</html>
+
+

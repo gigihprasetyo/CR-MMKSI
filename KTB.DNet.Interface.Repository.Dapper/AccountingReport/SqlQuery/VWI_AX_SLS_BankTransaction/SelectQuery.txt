@@ -1,0 +1,17 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_AX_SLS_BankTransaction.Company
+	,VWI_AX_SLS_BankTransaction.BankAccount
+	,VWI_AX_SLS_BankTransaction.TransactionDate
+	,VWI_AX_SLS_BankTransaction.VoucherNumber
+	,VWI_AX_SLS_BankTransaction.BankTransactionType
+	,VWI_AX_SLS_BankTransaction.PaymentReference
+	,VWI_AX_SLS_BankTransaction.DepositSlip
+	,VWI_AX_SLS_BankTransaction.CheckNumber
+	,VWI_AX_SLS_BankTransaction.Currency
+	,VWI_AX_SLS_BankTransaction.AmountInTransactionCurrency
+	,VWI_AX_SLS_BankTransaction.Amount
+	,VWI_AX_SLS_BankTransaction.AmountInReportingCurrency
+	,VWI_AX_SLS_BankTransaction.Reconciled
+/**EndPagingIndexQuery**/
+FROM VWI_AX_SLS_BankTransaction WITH (NOLOCK) {0}

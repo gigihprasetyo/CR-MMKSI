@@ -1,0 +1,12 @@
+declare @username nvarchar(100) = @param
+
+select 
+    Id,
+    Username
+    IsAllow,
+    CreatedTime,
+    CreatedBy,
+    LastUpdatedTime,
+    LastUpdatedBy
+from UserRestriction with(nolock)
+where Username = @username;

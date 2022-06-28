@@ -1,0 +1,45 @@
+SELECT 
+	IDRow
+	,businessunitcode
+	,xts_workorder
+	,xts_site
+	,xts_ordertype
+	,xts_leaseapprovalnumber
+	,xts_claimapprovalnumber
+	,xts_servicecategory
+	,xts_customerid
+	,xts_billtocustomerid
+	,xts_vehicleidentificationid
+	,xts_productid
+	,xts_product
+	,xts_productdescription
+	,xts_platenumber
+	,xts_servicepersoninchargeid
+	,xts_salespersonid
+	,xts_esttotalpartsamount
+	,xts_totalpartsamount
+	,xts_totalworkamount
+	,xts_esttotalworkamount
+	,xts_totalmiscchargeamount
+	,xts_esttotalmiscchargeamount
+	,xts_totalothersalesamount
+	,xts_esttotalothersalesamount
+	,xts_totalpaymentamount
+	,xts_grandtotalamount
+	,xts_incomingoutsourcebusinessunitid
+	,xts_originaloutsorcereferenceoutsourcewoid
+	,xts_originalworkorderreferencenumberid
+	,xts_incomingoutsourcereferenceid
+	,xts_claimstatus
+	,xts_scheduledarrivaldateandtime
+	,xts_actualarrivaldateandtime
+	,xts_scheduledservicestartdateandtime
+	,xts_actualservicestartdateandtime
+	,xts_scheduledservicefinishdateandtime
+	,xts_actualservicefinishdateandtime
+	,xts_scheduledfinishdateandtime
+	,xts_actualfinishdateandtime
+	,xts_autocreateoutsourceworkorderreceipt
+	,ktb_wodate
+FROM VWI_CRM_SVC_ARReceiptDetailBasedOnWO WITH (NOLOCK)
+WHERE ID = @Id

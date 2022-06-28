@@ -1,0 +1,85 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xts_cashtransactiondimension1id
+	,ktb_vendoridname
+	,xts_parentbusinessunitid
+	,versionnumber
+	,createdon
+	,statuscodename
+	,xts_reasonid
+	,xts_description
+	,modifiedbyyominame
+	,ktb_arreceiptidname
+	,owneridtype
+	,createdonbehalfby
+	,xts_departmentidname
+	,modifiedbyname
+	,xts_cashtransactiondimension2id
+	,xts_businessunitidname
+	,owneridname
+	,overriddencreatedon
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_transactionamount_base
+	,xts_cashtransactiondetail
+	,xts_cashtransactiondimension3id
+	,xts_cashtransactionidname
+	,statecode
+	,xts_externaldocumentnumber
+	,xts_cashtransactiondimension1idname
+	,timezoneruleversionnumber
+	,xts_cashtransactiondimension2idname
+	,ktb_customerid
+	,owninguser
+	,ktb_vendorid
+	,xts_cashtransactiondimension4id
+	,createdonbehalfbyname
+	,xts_cashtransactiondimension4idname
+	,xts_cashtransactiondetailid
+	,utcconversiontimezonecode
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,ktb_customeridname
+	,xts_cashtransactiondimension5id
+	,createdbyname
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_accountidname
+	,xts_cashtransactiondimension3idname
+	,transactioncurrencyid
+	,owningteam
+	,createdby
+	,modifiedby
+	,xts_cashtransactiondimension6id
+	,createdbyyominame
+	,xts_reasonidname
+	,transactioncurrencyidname
+	,owningbusinessunit
+	,xts_cashtransactiondimension5idname
+	,xts_parentbusinessunitidname
+	,xts_transactionamount
+	,xts_cashtransactiondimension6idname
+	,xts_departmentid
+	,ktb_arreceiptid
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_accountid
+	,statecodename
+	,xts_cashtransactionid
+	,ktb_customeridyominame
+	,RowStatus
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_cashtransactiondetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_cashtransactiondetailid = @Id
+) VWI_CRM_xts_cashtransactiondetail 

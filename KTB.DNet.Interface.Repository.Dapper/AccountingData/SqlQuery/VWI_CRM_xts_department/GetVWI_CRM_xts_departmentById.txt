@@ -1,0 +1,78 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , createdonbehalfbyyominame
+    , owninguser
+    , xts_locking
+    , statecode
+    , xts_businessunitidname
+    , owneridname
+    , statecodename
+    , xts_dimension1idname
+    , createdonbehalfby
+    , xts_dimension1id
+    , xts_dimension10id
+    , xts_dimension7id
+    , xts_dimension8idname
+    , xts_dimension4id
+    , xts_dimension5idname
+    , importsequencenumber
+    , xts_dimension3idname
+    , modifiedbyyominame
+    , xts_personinchargeid
+    , xts_dimension2idname
+    , xts_dimension3id
+    , utcconversiontimezonecode
+    , createdbyyominame
+    , owningbusinessunit
+    , modifiedbyname
+    , owningteam
+    , xts_dimension7idname
+    , modifiedby
+    , createdby
+    , timezoneruleversionnumber
+    , owneridtype
+    , statuscodename
+    , xts_dimension10idname
+    , xts_dimension9idname
+    , xts_department
+    , xts_dimension4idname
+    , xts_dimension6idname
+    , owneridyominame
+    , xts_usedinworkorder
+    , modifiedon
+    , xts_personinchargeidname
+    , xts_dimension9id
+    , xts_dimension8id
+    , xts_dimension6id
+    , xts_needreasoncodename
+    , modifiedonbehalfbyyominame
+    , statuscode
+    , createdbyname
+    , createdon
+    , xts_businessunitid
+    , createdonbehalfbyname
+    , xts_departmentid
+    , xts_usedinworkordername
+    , modifiedonbehalfbyname
+    , xts_dimension2id
+    , xts_needreasoncode
+    , versionnumber
+    , modifiedonbehalfby
+    , xts_dimension5id
+    , ownerid
+    , overriddencreatedon
+    , xts_description
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_department a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_departmentid = @Id
+) as VWI_CRM_xts_department  

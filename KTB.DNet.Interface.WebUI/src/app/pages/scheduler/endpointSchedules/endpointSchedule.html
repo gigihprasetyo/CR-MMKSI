@@ -1,0 +1,44 @@
+﻿<section>
+    <div class="widgets">
+        <div class="row">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="{{activePageTitle}}" ba-panel-class="with-scroll">
+                    <div class="col-md-12">
+                        <div general-table on-select-row="onSelectRow" http-service="endpointScheduleService" fn-name="SearchScheduled" table-definition="tableDefinition"></div>
+                    </div>
+                    <div class="col-md-4" ng-show="displaySchedule">
+                        <uib-accordion>
+                            <uib-accordion-group is-open="true" panel-class="bootstrap-panel accordion-panel panel-primary">
+                                <uib-accordion-heading>
+                                    Assign Schedule
+                                    <i class="fa pull-right ion-plus"></i>
+                                </uib-accordion-heading>
+                                <form name="form" ng-submit="AssignSchedule()">
+                                    <div class="col-md-12">
+                                        <multiple-select label="Schedule" name="SelectedSchedules" ng-model="entity.ListOfSelectedScheduleId" options="listOfUnassignedSchedules"
+                                            value="Id" text="Name"/>
+                                    </div>
+                                    <div class="col-md-12 text-right">
+                                        <input ng-disabled="form.$invalid" type="submit" value="Save" class="btn btn-primary m-t-15 waves-effect">
+                                    </div>
+                                </form>
+                            </uib-accordion-group>
+                        <uib-accordion>
+                    </div>
+
+                    <div ng-show="displaySchedule" class="col-md-8">
+                            <uib-accordion>
+                                <uib-accordion-group is-open="true" panel-class="bootstrap-panel accordion-panel panel-primary">
+                                    <uib-accordion-heading>
+                                         Schedule Assigned
+                                        <i class="fa pull-right ion-ios-timer"></i>
+                                    </uib-accordion-heading>
+                                    <div general-table custom-pipe="customRenderData" table-definition="endpointScheduleTableDefinition"></div>
+                                </uib-accordion-group>
+                            <uib-accordion>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

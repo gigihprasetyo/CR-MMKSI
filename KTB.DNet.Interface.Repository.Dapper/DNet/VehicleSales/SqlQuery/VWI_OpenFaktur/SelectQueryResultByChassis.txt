@@ -1,0 +1,39 @@
+SELECT 
+/**PagingIndexQuery**/ 
+VWI_OpenFaktur.ID,
+VWI_OpenFaktur.ChassisNumber,
+VWI_OpenFaktur.OpenFakturDate,
+VWI_OpenFaktur.SPKNumber,
+VWI_OpenFaktur.SoldDealerID,
+VWI_OpenFaktur.DealerCode,
+VWI_OpenFaktur.CreatedTime,
+VWI_OpenFaktur.LastUpdateTime,
+VWI_OpenFaktur.EndCustomerID
+/**EndPagingIndexQuery**/
+FROM
+(	
+	SELECT a.ID, a.ChassisNumber, 
+	       CASE WHEN a.FakturStatus = 4 THEN b.FakturDate ELSE NULL END AS OpenFakturDate,  
+		   SPKNumber = case when b.ID is not null then case when b.IsTemporary = -1 then null else case when (b.IsTemporary = 0 or b.IsTemporary is null) then d.SPKNumber else '0000000000' end end else null end,
+		   --SPKNumber = coalesce (d.SPKNumber, '0000000000'),
+		   SoldDealerID = coalesce(d.DealerID, a.SoldDealerID) , 
+		   DealerCode = coalesce(e.DealerCode, f.DealerCode), b.LastUpdateTime, b.CreatedTime, a.EndCustomerID
+	FROM (
+	    SELECT * FROM ChassisMaster WITH ( NOLOCK ) {0}
+	) a 
+	JOIN EndCustomer b WITH ( NOLOCK ) ON a.EndCustomerID = b.ID and b.RowStatus = 0 and (b.IsTemporary is null or b.IsTemporary = 0 or b.IsTemporary = 1)
+	LEFT JOIN SPKFaktur c WITH ( NOLOCK ) ON b.ID = c.EndCustomerID and c.RowStatus = 0
+	LEFT JOIN SPKHeader d WITH ( NOLOCK ) ON c.SPKHeaderID = d.ID and d.RowStatus = 0
+	LEFT JOIN Dealer e WITH ( NOLOCK ) on d.DealerID = e.ID and e.RowStatus = 0
+	LEFT JOIN Dealer f WITH ( NOLOCK ) on a.SoldDealerID = f.ID and f.RowStatus = 0	
+	WHERE a.RowStatus = 0 and a.ID not in (select ChassisMasterID from RevisionFaktur with (nolock) where RowStatus = 0)
+) VWI_OpenFaktur 
+OUTER APPLY(
+		SELECT X.ID  FROM ChassisMasterClaimHeader X WITH(NOLOCK)
+			INNER JOIN ChassisMasterClaimDetail Y WITH(NOLOCK) ON Y.ChassisMasterClaimHeaderID = X.ID AND X.RowStatus = 0 AND Y.RowStatus = 0
+		WHERE X.StatusID NOT IN(4,6) -- ChassisMasterClaim.StatusClaim 4=Tolak,6=Selesai
+			AND X.ResponClaim IN(1,5) -- ChassisMasterClaim.RespondClaim 1=Ganti_Unit, 5=Ganti_Uang
+			AND VWI_OpenFaktur.SoldDealerID = X.DealerID
+	)CBUReturn 
+WHERE CBUReturn.ID IS NULL
+ {1}

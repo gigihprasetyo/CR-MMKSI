@@ -1,0 +1,3 @@
+﻿SELECT TOP {=Take} [Endpoint], COUNT(Id) AS Total FROM TransactionLog WITH(NOLOCK) 
+GROUP BY [Endpoint]
+ORDER BY Total DESC

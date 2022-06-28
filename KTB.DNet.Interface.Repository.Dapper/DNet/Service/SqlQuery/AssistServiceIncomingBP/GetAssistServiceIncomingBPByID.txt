@@ -1,0 +1,50 @@
+SELECT 
+	AssistUploadLogID
+	, ChassisMasterID
+	, CreatedBy
+	, CreatedTime
+	, CustomerOwnerName
+	, CustomerOwnerPhoneNumber
+	, CustomerVisitName
+	, CustomerVisitPhoneNumber
+	, DamageCategory
+	, DealerCode
+	, DealerID
+	, ID
+	, InsuranceName
+	, KMService
+	, KodeChassis
+	, KodeMekanik
+	, LastUpdateBy
+	, LastUpdateTime
+	, MethodofPayment
+	, NoWorkOrder
+	, RemarksBM
+	, RemarksSpecial
+	, RemarksSystem
+	, RowStatus
+	, ServiceBooking
+	, ServiceTypeCode
+	, ServiceTypeID
+	, StatusAktif
+	, TglBukaTransaksi
+	, TglJanjiSelesai
+	, TglPengajuanEstimasi
+	, TglPersetujuanEstimasi
+	, TglTutupTransaksi
+	, TotalCat
+	, TotalLC
+	, TotalNonCat
+	, TotalPanel
+	, TotalSubOrder
+	, TrTraineMekanikID
+	, ValidateSystemStatus
+	, VehicleColorDesc
+	, VehicleModelDesc
+	, convert(datetime, TglTutupTransaksi) + convert(datetime, WaktuKeluar) as WaktuKeluar
+	, convert(datetime, TglBukaTransaksi) + convert(datetime, WaktuMasuk) as WaktuMasuk
+	, WorkOrderCategoryCode
+	, WorkOrderCategoryID
+	, WOStatus
+FROM AssistServiceIncomingBP with(nolock)
+WHERE ID = @ID

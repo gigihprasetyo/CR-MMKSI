@@ -1,0 +1,144 @@
+SELECT 
+    /**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_campaignactivity.company
+	, VWI_CRM_campaignactivity.businessunitcode
+	, VWI_CRM_campaignactivity.subcategory
+	, VWI_CRM_campaignactivity.prioritycodename
+	, VWI_CRM_campaignactivity.versionnumber
+	, VWI_CRM_campaignactivity.createdon
+	, VWI_CRM_campaignactivity.modifiedonbehalfbyyominame
+	, VWI_CRM_campaignactivity.activitytypecodename
+	, VWI_CRM_campaignactivity.from
+	, VWI_CRM_campaignactivity.resources
+	, VWI_CRM_campaignactivity.statuscodename
+	, VWI_CRM_campaignactivity.isregularactivityname
+	, VWI_CRM_campaignactivity.traversedpath
+	, VWI_CRM_campaignactivity.activityid
+	, VWI_CRM_campaignactivity.xts_salesobjective
+	, VWI_CRM_campaignactivity.owneridtype
+	, VWI_CRM_campaignactivity.xts_manufacturerid
+	, VWI_CRM_campaignactivity.ismapiprivatename
+	, VWI_CRM_campaignactivity.customers
+	, VWI_CRM_campaignactivity.createdonbehalfby
+	, VWI_CRM_campaignactivity.deliverylastattemptedon
+	, VWI_CRM_campaignactivity.postponeactivityprocessinguntil
+	, VWI_CRM_campaignactivity.onholdtime
+	, VWI_CRM_campaignactivity.createdbyyominame
+	, VWI_CRM_campaignactivity.xts_vehiclemodelidname
+	, VWI_CRM_campaignactivity.regardingobjectidyominame
+	, VWI_CRM_campaignactivity.owneridname
+	, VWI_CRM_campaignactivity.prioritycode
+	, VWI_CRM_campaignactivity.overriddencreatedon
+	, VWI_CRM_campaignactivity.xts_vehiclemodelid
+	, VWI_CRM_campaignactivity.exchangeitemid
+	, VWI_CRM_campaignactivity.scheduledstart
+	, VWI_CRM_campaignactivity.createdonbehalfbyyominame
+	, VWI_CRM_campaignactivity.isbilled
+	, VWI_CRM_campaignactivity.exchangerate
+	, VWI_CRM_campaignactivity.deliveryprioritycodename
+	, VWI_CRM_campaignactivity.excludeifcontactedinxdays
+	, VWI_CRM_campaignactivity.budgetedcost_base
+	, VWI_CRM_campaignactivity.owningteam
+	, VWI_CRM_campaignactivity.xts_vehiclebrandid
+	, VWI_CRM_campaignactivity.deliveryprioritycode
+	, VWI_CRM_campaignactivity.sendermailboxid
+	, VWI_CRM_campaignactivity.xts_productidname
+	, VWI_CRM_campaignactivity.regardingobjectid
+	, VWI_CRM_campaignactivity.statecode
+	, VWI_CRM_campaignactivity.exchangeweblink
+	, VWI_CRM_campaignactivity.activityadditionalparams
+	, VWI_CRM_campaignactivity.seriesid
+	, VWI_CRM_campaignactivity.timezoneruleversionnumber
+	, VWI_CRM_campaignactivity.bcc
+	, VWI_CRM_campaignactivity.xts_businessunitid
+	, VWI_CRM_campaignactivity.xts_productexteriorcoloridname
+	, VWI_CRM_campaignactivity.modifiedonbehalfby
+	, VWI_CRM_campaignactivity.xts_locking
+	, VWI_CRM_campaignactivity.community
+	, VWI_CRM_campaignactivity.xts_manufactureridname
+	, VWI_CRM_campaignactivity.actualcost_base
+	, VWI_CRM_campaignactivity.regardingobjectidname
+	, VWI_CRM_campaignactivity.slainvokedidname
+	, VWI_CRM_campaignactivity.ignoreinactivelistmembers
+	, VWI_CRM_campaignactivity.createdonbehalfbyname
+	, VWI_CRM_campaignactivity.ignoreinactivelistmembersname
+	, VWI_CRM_campaignactivity.actualstart
+	, VWI_CRM_campaignactivity.xts_productexteriorcolorid
+	, VWI_CRM_campaignactivity.utcconversiontimezonecode
+	, VWI_CRM_campaignactivity.activitytypecode
+	, VWI_CRM_campaignactivity.instancetypecodename
+	, VWI_CRM_campaignactivity.lastonholdtime
+	, VWI_CRM_campaignactivity.slaid
+	, VWI_CRM_campaignactivity.slainvokedid
+	, VWI_CRM_campaignactivity.sortdate
+	, VWI_CRM_campaignactivity.ownerid
+	, VWI_CRM_campaignactivity.modifiedon
+	, VWI_CRM_campaignactivity.importsequencenumber
+	, VWI_CRM_campaignactivity.owneridyominame
+	, VWI_CRM_campaignactivity.scheduleddurationminutes
+	, VWI_CRM_campaignactivity.category
+	, VWI_CRM_campaignactivity.processid
+	, VWI_CRM_campaignactivity.actualcost
+	, VWI_CRM_campaignactivity.description
+	, VWI_CRM_campaignactivity.slaname
+	, VWI_CRM_campaignactivity.to
+	, VWI_CRM_campaignactivity.createdbyname
+	, VWI_CRM_campaignactivity.regardingobjecttypecode
+	, VWI_CRM_campaignactivity.xts_salesobjectivename
+	, VWI_CRM_campaignactivity.modifiedonbehalfbyname
+	, VWI_CRM_campaignactivity.ismapiprivate
+	, VWI_CRM_campaignactivity.isworkflowcreatedname
+	, VWI_CRM_campaignactivity.requiredattendees
+	, VWI_CRM_campaignactivity.donotsendonoptout
+	, VWI_CRM_campaignactivity.stageid
+	, VWI_CRM_campaignactivity.partners
+	, VWI_CRM_campaignactivity.checkfordonotsendmmonlistmembersname
+	, VWI_CRM_campaignactivity.leftvoicemail
+	, VWI_CRM_campaignactivity.optionalattendees
+	, VWI_CRM_campaignactivity.xts_productid
+	, VWI_CRM_campaignactivity.channeltypecode
+	, VWI_CRM_campaignactivity.instancetypecode
+	, VWI_CRM_campaignactivity.createdby
+	, VWI_CRM_campaignactivity.modifiedby
+	, VWI_CRM_campaignactivity.organizer
+	, VWI_CRM_campaignactivity.serviceid
+	, VWI_CRM_campaignactivity.channeltypecodename
+	, VWI_CRM_campaignactivity.isworkflowcreated
+	, VWI_CRM_campaignactivity.owninguser
+	, VWI_CRM_campaignactivity.transactioncurrencyidname
+	, VWI_CRM_campaignactivity.actualend
+	, VWI_CRM_campaignactivity.owningbusinessunit
+	, VWI_CRM_campaignactivity.xts_vehiclebrandidname
+	, VWI_CRM_campaignactivity.transactioncurrencyid
+	, VWI_CRM_campaignactivity.modifiedbyyominame
+	, VWI_CRM_campaignactivity.typecodename
+	, VWI_CRM_campaignactivity.sendermailboxidname
+	, VWI_CRM_campaignactivity.isregularactivity
+	, VWI_CRM_campaignactivity.cc
+	, VWI_CRM_campaignactivity.isbilledname
+	, VWI_CRM_campaignactivity.senton
+	, VWI_CRM_campaignactivity.scheduledend
+	, VWI_CRM_campaignactivity.statuscode
+	, VWI_CRM_campaignactivity.modifiedbyname
+	, VWI_CRM_campaignactivity.budgetedcost
+	, VWI_CRM_campaignactivity.actualdurationminutes
+	, VWI_CRM_campaignactivity.typecode
+	, VWI_CRM_campaignactivity.subject
+	, VWI_CRM_campaignactivity.leftvoicemailname
+	, VWI_CRM_campaignactivity.statecodename
+	, VWI_CRM_campaignactivity.xts_businessunitidname
+	, VWI_CRM_campaignactivity.communityname
+	, VWI_CRM_campaignactivity.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	select    
+		 b.ktb_bucompany company  
+		 ,b.ktb_dealercode businessunitcode  
+		 ,a.*
+		 ,b.msdyn_companycode 
+	from CRM_campaignactivity a WITH(NOLOCK)
+	JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	{0}
+) VWI_CRM_campaignactivity 

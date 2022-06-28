@@ -1,0 +1,97 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xts_parentbusinessunitid
+	,versionnumber
+	,xts_totaltaxamount_base
+	,xts_totaltaxamount
+	,statuscodename
+	,xts_status
+	,xts_customerid
+	,xts_vendorinvoicedate
+	,modifiedbyyominame
+	,createdon
+	,owneridtype
+	,processid
+	,createdonbehalfby
+	,modifiedbyname
+	,xts_platenumber
+	,xjp_idempotentmessage
+	,xts_totalbillingamountaftertax
+	,xts_outsourceworkorderid
+	,owneridname
+	,xts_totalbillingamountbeforetax_base
+	,xts_totalbillingamountbeforetax
+	,overriddencreatedon
+	,xts_originalworkorderreferenceidname
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_customeridyominame
+	,owningteam
+	,xts_outsourceworkorderidname
+	,statecode
+	,xts_outsourceworkorderreceipt
+	,timezoneruleversionnumber
+	,xts_totalwithholdingtaxamount_base
+	,xts_outsourceworkorderreceiptpersoninchargeid
+	,xts_locking
+	,xts_outsourceworkorderdate
+	,xts_outsourceworkorderreceiptid
+	,xts_customernumber
+	,xts_destinationworkorderidname
+	,createdonbehalfbyname
+	,xts_handling
+	,xts_automaticallycreateapvoucher
+	,utcconversiontimezonecode
+	,xts_vehicleidentificationid
+	,xts_statusname
+	,xts_outsourceworkshopidname
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_originalworkorderreferenceid
+	,xts_category
+	,xts_transactiondate
+	,xts_outsourceworkshopid
+	,createdbyname
+	,xts_totalwithholdingtaxamount
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_vehicleidentificationidname
+	,xts_automaticallycreateapvouchername
+	,xts_categoryname
+	,xts_handlingname
+	,transactioncurrencyid
+	,xts_businessunitidname
+	,createdby
+	,modifiedby
+	,xts_vehiclemodelname
+	,stageid
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_customeridname
+	,xts_destinationworkorderid
+	,owningbusinessunit
+	,xts_parentbusinessunitidname
+	,traversedpath
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_deliveryinvoicenumber
+	,statecodename
+	,xts_totalbillingamountaftertax_base
+	,xts_outsourceworkorderreceiptpersoninchargeidname
+	,RowStatus
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_outsourceworkorderreceipt a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_outsourceworkorderreceiptid = @Id
+) VWI_CRM_xts_outsourceworkorderreceipt

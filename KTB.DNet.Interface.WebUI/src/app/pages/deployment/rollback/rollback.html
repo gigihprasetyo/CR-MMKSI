@@ -1,0 +1,54 @@
+<link rel="stylesheet" type="text/css" href="src/app/pages/deployment/rollback/rollbackStyle.css">
+<section>
+    <div class="widgets">
+        <div class="row">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="{{activePageTitle}}" ba-panel-class="with-scroll">
+                    <ba-wizard tab-mode="true">
+                        <ba-wizard-step hide-nav ng-repeat="env in rollbackData" title="{{env.Category}}">
+                            <div class="col-md-9">
+                                <uib-tabset class="tabs-left">
+                                    <uib-tab heading="{{$index+1}}. {{appRollback.AppName}}" ng-repeat="appRollback in env.AppRollbackModels">
+                                        <uib-accordion>
+                                            <uib-accordion-group ng-repeat="fdList in appRollback.FolderList" panel-class="bootstrap-panel accordion-panel panel-default">
+                                                <uib-accordion-heading>
+                                                    {{fdList.GroupName}}
+                                                    <i class="fa pull-right ion-android-calendar"></i>
+                                                </uib-accordion-heading>
+                                                <div class="list-group">
+                                                    <button ng-repeat="dr in fdList.DirModelList" type="button" class="list-group-item" ng-click="selectDir(env.Name, appRollback.AppName, dr.DirName)">
+                                                        {{dr.DirName}}
+                                                        <span style="float: right; font-style: italic; color: #a1a1a1; ">{{dr.When | fromNow}}</span>
+                                                    </button>
+                                                </div>
+                                            </uib-accordion-group>
+                                        </uib-accordion>
+                                    </uib-tab>
+                                </uib-tabset>
+                            </div>
+                            <div class="col-md-3">
+                                Selected Rollback:
+                                <ul class="list-group" style=" margin-top: 10px; ">
+                                    <li ng-if="!parameter[env.Name]" class="list-group-item">
+                                        Nothing Selected
+                                    </li>
+                                    <li ng-repeat="(key, value) in parameter[env.Name]" class="list-group-item">
+                                        {{value.app}}
+                                        <a href="javascript:void(0);" ng-click="deleteSelected(env.Name, key)" title="delete">
+                                            <i class="ion-android-delete" style="float: right; margin:1px -5px 0px 10px;"></i>
+                                        </a>
+                                        <span class="badge bg-green selected-bu">{{value.dir}}</span>
+                                    </li>
+                                </ul>
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-primary waves-effect" ng-click="run(env.Name)">Execute Rollback ({{env.Category}})</button>
+                                </div>
+                            </div>
+                        </ba-wizard-step>
+                    </ba-wizard>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

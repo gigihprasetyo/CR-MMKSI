@@ -1,0 +1,11 @@
+SELECT 
+	COUNT(1)
+from
+(	
+	select 
+		ktb_bucompany as company,
+		ktb_dealercode AS businessunitcode,
+		*
+	from CRM_businessunit WITH(NOLOCK)
+	{0}
+) VWI_CRM_BusinessUnit

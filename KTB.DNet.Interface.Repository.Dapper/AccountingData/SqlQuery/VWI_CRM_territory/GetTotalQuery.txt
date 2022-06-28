@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_territory as VWI_CRM_territory with (nolock)  
+{0}

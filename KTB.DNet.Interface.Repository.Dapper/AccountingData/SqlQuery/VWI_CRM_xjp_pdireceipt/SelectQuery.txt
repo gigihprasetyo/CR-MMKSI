@@ -1,0 +1,97 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xjp_pdireceipt.company
+	, VWI_CRM_xjp_pdireceipt.businessunitcode
+	, VWI_CRM_xjp_pdireceipt.versionnumber
+	, VWI_CRM_xjp_pdireceipt.createdon
+	, VWI_CRM_xjp_pdireceipt.ktb_spkidname
+	, VWI_CRM_xjp_pdireceipt.xjp_idempotentmessage
+	, VWI_CRM_xjp_pdireceipt.statuscodename
+	, VWI_CRM_xjp_pdireceipt.xjp_vendorinvoicedate
+	, VWI_CRM_xjp_pdireceipt.xjp_parentbusinessunitidname
+	, VWI_CRM_xjp_pdireceipt.modifiedbyyominame
+	, VWI_CRM_xjp_pdireceipt.xjp_totalsubcontractfee_base
+	, VWI_CRM_xjp_pdireceipt.xjp_totalpartsfee
+	, VWI_CRM_xjp_pdireceipt.xjp_handlingname
+	, VWI_CRM_xjp_pdireceipt.modifiedbyname
+	, VWI_CRM_xjp_pdireceipt.xjp_personinchargeidname
+	, VWI_CRM_xjp_pdireceipt.xjp_vendoridname
+	, VWI_CRM_xjp_pdireceipt.xjp_parentbusinessunitid
+	, VWI_CRM_xjp_pdireceipt.owneridname
+	, VWI_CRM_xjp_pdireceipt.overriddencreatedon
+	, VWI_CRM_xjp_pdireceipt.xjp_transactiontype
+	, VWI_CRM_xjp_pdireceipt.xjp_totalfee
+	, VWI_CRM_xjp_pdireceipt.createdonbehalfbyyominame
+	, VWI_CRM_xjp_pdireceipt.modifiedonbehalfby
+	, VWI_CRM_xjp_pdireceipt.exchangerate
+	, VWI_CRM_xjp_pdireceipt.xjp_vendorid
+	, VWI_CRM_xjp_pdireceipt.xjp_transactiondate
+	, VWI_CRM_xjp_pdireceipt.owningteam
+	, VWI_CRM_xjp_pdireceipt.xjp_pdireceiptreferenceidname
+	, VWI_CRM_xjp_pdireceipt.xjp_totalservicefee_base
+	, VWI_CRM_xjp_pdireceipt.statecode
+	, VWI_CRM_xjp_pdireceipt.ktb_iskaroseri
+	, VWI_CRM_xjp_pdireceipt.ktb_spkid
+	, VWI_CRM_xjp_pdireceipt.timezoneruleversionnumber
+	, VWI_CRM_xjp_pdireceipt.xjp_duedate
+	, VWI_CRM_xjp_pdireceipt.ktb_spkdetailidname
+	, VWI_CRM_xjp_pdireceipt.xjp_handling
+	, VWI_CRM_xjp_pdireceipt.xjp_totalsubcontractfee
+	, VWI_CRM_xjp_pdireceipt.xjp_businessunitid
+	, VWI_CRM_xjp_pdireceipt.xjp_vendorinvoicenumber
+	, VWI_CRM_xjp_pdireceipt.traversedpath
+	, VWI_CRM_xjp_pdireceipt.createdonbehalfbyname
+	, VWI_CRM_xjp_pdireceipt.ktb_chassisnumber
+	, VWI_CRM_xjp_pdireceipt.xjp_pdireceiptnumber
+	, VWI_CRM_xjp_pdireceipt.xjp_pdireceiptstatus
+	, VWI_CRM_xjp_pdireceipt.createdonbehalfby
+	, VWI_CRM_xjp_pdireceipt.utcconversiontimezonecode
+	, VWI_CRM_xjp_pdireceipt.xjp_totalfee_base
+	, VWI_CRM_xjp_pdireceipt.ownerid
+	, VWI_CRM_xjp_pdireceipt.modifiedon
+	, VWI_CRM_xjp_pdireceipt.importsequencenumber
+	, VWI_CRM_xjp_pdireceipt.owneridyominame
+	, VWI_CRM_xjp_pdireceipt.xjp_pdiidname
+	, VWI_CRM_xjp_pdireceipt.ktb_spkdetailid
+	, VWI_CRM_xjp_pdireceipt.processid
+	, VWI_CRM_xjp_pdireceipt.xjp_totalpartsfee_base
+	, VWI_CRM_xjp_pdireceipt.createdbyname
+	, VWI_CRM_xjp_pdireceipt.xjp_pdireceiptreferenceid
+	, VWI_CRM_xjp_pdireceipt.modifiedonbehalfbyname
+	, VWI_CRM_xjp_pdireceipt.xjp_personinchargeid
+	, VWI_CRM_xjp_pdireceipt.stageid
+	, VWI_CRM_xjp_pdireceipt.ktb_blankospkidname
+	, VWI_CRM_xjp_pdireceipt.transactioncurrencyid
+	, VWI_CRM_xjp_pdireceipt.createdby
+	, VWI_CRM_xjp_pdireceipt.xjp_totalservicefee
+	, VWI_CRM_xjp_pdireceipt.modifiedby
+	, VWI_CRM_xjp_pdireceipt.xjp_businessunitidname
+	, VWI_CRM_xjp_pdireceipt.createdbyyominame
+	, VWI_CRM_xjp_pdireceipt.owninguser
+	, VWI_CRM_xjp_pdireceipt.transactioncurrencyidname
+	, VWI_CRM_xjp_pdireceipt.owningbusinessunit
+	, VWI_CRM_xjp_pdireceipt.ktb_blankospkid
+	, VWI_CRM_xjp_pdireceipt.ktb_iskaroseriname
+	, VWI_CRM_xjp_pdireceipt.xjp_pdiid
+	, VWI_CRM_xjp_pdireceipt.owneridtype
+	, VWI_CRM_xjp_pdireceipt.statuscode
+	, VWI_CRM_xjp_pdireceipt.modifiedonbehalfbyyominame
+	, VWI_CRM_xjp_pdireceipt.xjp_pdireceiptstatusname
+	, VWI_CRM_xjp_pdireceipt.statecodename
+	, VWI_CRM_xjp_pdireceipt.xjp_transactiontypename
+	, VWI_CRM_xjp_pdireceipt.xjp_pdireceiptid
+	, VWI_CRM_xjp_pdireceipt.xjp_locking
+	, VWI_CRM_xjp_pdireceipt.RowStatus
+	/**EndPagingIndexQuery**/
+from (
+    SELECT 
+		  b.ktb_bucompany company,
+		  b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xjp_pdireceipt a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xjp_businessunitid
+	{0}
+) VWI_CRM_xjp_pdireceipt 

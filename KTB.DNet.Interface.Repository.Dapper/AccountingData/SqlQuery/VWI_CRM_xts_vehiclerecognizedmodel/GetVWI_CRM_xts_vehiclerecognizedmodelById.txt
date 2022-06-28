@@ -1,0 +1,55 @@
+SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+    , company
+    , businessunitcode
+    , createdonbehalfbyyominame
+    , modifiedonbehalfby
+    , owningteam
+    , xts_locking
+    , statecode
+    , owneridname
+    , statuscode
+    , xts_manufacturerid
+    , owninguser
+    , createdonbehalfby
+    , xts_manufactureridname
+    , importsequencenumber
+    , modifiedbyyominame
+    , utcconversiontimezonecode
+    , createdbyyominame
+    , modifiedby
+    , owningbusinessunit
+    , modifiedbyname
+    , versionnumber
+    , xts_vehiclerecognizedmodel
+    , xts_vehiclemodelidname
+    , createdby
+    , timezoneruleversionnumber
+    , owneridtype
+    , statuscodename
+    , owneridyominame
+    , modifiedon
+    , modifiedonbehalfbyname
+    , modifiedonbehalfbyyominame
+    , statecodename
+    , createdbyname
+    , createdon
+    , createdonbehalfbyname
+    , xts_description
+    , xts_vehiclemodelid
+    , xts_vehiclerecognizedmodelid
+    , ownerid
+    , overriddencreatedon
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_vehiclerecognizedmodel a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    WHERE xts_vehiclerecognizedmodelid = @Id
+) as VWI_CRM_xts_vehiclerecognizedmodel  
+

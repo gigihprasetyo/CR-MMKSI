@@ -1,0 +1,18 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SOInvoiceDetail.TRANSACTION_ITEM_NUMBER
+	,VWI_CRM_SOInvoiceDetail.[OF]
+	,VWI_CRM_SOInvoiceDetail.KODE_OBJEK
+	,VWI_CRM_SOInvoiceDetail.NAMA_OBJEK
+	,VWI_CRM_SOInvoiceDetail.HARGA_SATUAN
+	,VWI_CRM_SOInvoiceDetail.JUMLAH_BARANG
+	,VWI_CRM_SOInvoiceDetail.HARGA_TOTAL
+	,VWI_CRM_SOInvoiceDetail.DISKON
+	,VWI_CRM_SOInvoiceDetail.DPP
+	,VWI_CRM_SOInvoiceDetail.PPN
+	,VWI_CRM_SOInvoiceDetail.TARIF_PPNBM
+	,VWI_CRM_SOInvoiceDetail.PPNBM
+	,VWI_CRM_SOInvoiceDetail.xts_rate
+	,VWI_CRM_SOInvoiceDetail.xts_deliveryorderid
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SOInvoiceDetail WITH (NOLOCK) {0}

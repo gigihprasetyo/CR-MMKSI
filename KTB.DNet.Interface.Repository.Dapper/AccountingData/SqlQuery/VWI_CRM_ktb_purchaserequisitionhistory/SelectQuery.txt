@@ -1,0 +1,77 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_purchaserequisitionhistory.company
+	, VWI_CRM_ktb_purchaserequisitionhistory.businessunitcode
+	, VWI_CRM_ktb_purchaserequisitionhistory.createdonbehalfbyyominame
+	, VWI_CRM_ktb_purchaserequisitionhistory.owninguser
+	, VWI_CRM_ktb_purchaserequisitionhistory.statecode
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_dnetstatusnewname
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_dnetponumber
+	, VWI_CRM_ktb_purchaserequisitionhistory.owneridname
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_dnetpodate
+	, VWI_CRM_ktb_purchaserequisitionhistory.statecodename
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_purchaserequisitionidname
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_estimationdeliverydate
+	, VWI_CRM_ktb_purchaserequisitionhistory.createdonbehalfby
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_sotype
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_expeditionname
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_readyfordeliverydate
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_packingdate
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_purchaserequisitionhistoryid
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_dnetstatus
+	, VWI_CRM_ktb_purchaserequisitionhistory.importsequencenumber
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_businessunitidname
+	, VWI_CRM_ktb_purchaserequisitionhistory.modifiedbyyominame
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_name
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_eta
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_atd
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_dnetstatusnew
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_paymentdate
+	, VWI_CRM_ktb_purchaserequisitionhistory.utcconversiontimezonecode
+	, VWI_CRM_ktb_purchaserequisitionhistory.createdbyyominame
+	, VWI_CRM_ktb_purchaserequisitionhistory.owningbusinessunit
+	, VWI_CRM_ktb_purchaserequisitionhistory.modifiedbyname
+	, VWI_CRM_ktb_purchaserequisitionhistory.owningteam
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_dnetdonumber
+	, VWI_CRM_ktb_purchaserequisitionhistory.modifiedby
+	, VWI_CRM_ktb_purchaserequisitionhistory.createdby
+	, VWI_CRM_ktb_purchaserequisitionhistory.timezoneruleversionnumber
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_totalamount
+	, VWI_CRM_ktb_purchaserequisitionhistory.owneridtype
+	, VWI_CRM_ktb_purchaserequisitionhistory.statuscodename
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_dnetdodate
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_dnetsodate
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_dnetsonumber
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_businessunitid
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_sotypename
+	, VWI_CRM_ktb_purchaserequisitionhistory.owneridyominame
+	, VWI_CRM_ktb_purchaserequisitionhistory.modifiedon
+	, VWI_CRM_ktb_purchaserequisitionhistory.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_purchaserequisitionhistory.statuscode
+	, VWI_CRM_ktb_purchaserequisitionhistory.createdbyname
+	, VWI_CRM_ktb_purchaserequisitionhistory.createdon
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_pickingdate
+	, VWI_CRM_ktb_purchaserequisitionhistory.createdonbehalfbyname
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_goodsissuedate
+	, VWI_CRM_ktb_purchaserequisitionhistory.modifiedonbehalfbyname
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_purchaserequisitionid
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_discount
+	, VWI_CRM_ktb_purchaserequisitionhistory.versionnumber
+	, VWI_CRM_ktb_purchaserequisitionhistory.modifiedonbehalfby
+	, VWI_CRM_ktb_purchaserequisitionhistory.ownerid
+	, VWI_CRM_ktb_purchaserequisitionhistory.overriddencreatedon
+	, VWI_CRM_ktb_purchaserequisitionhistory.ktb_expeditionno
+	, VWI_CRM_ktb_purchaserequisitionhistory.RowStatus
+	, VWI_CRM_ktb_purchaserequisitionhistory.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_ktb_purchaserequisitionhistory a
+    LEFT JOIN CRM_businessunit b ON B.businessunitid = a.ktb_businessunitid
+    {0}
+) VWI_CRM_ktb_purchaserequisitionhistory

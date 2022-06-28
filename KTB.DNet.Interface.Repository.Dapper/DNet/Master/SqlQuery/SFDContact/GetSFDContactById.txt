@@ -1,0 +1,35 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow,* 
+FROM 
+(
+	SELECT
+		a.ID,
+		b.DealerCode,
+		a.SalesmanCode,
+		a.FirstName,
+		a.LastName,
+		c.CountryCode,
+		a.HPNo,
+		a.PhoneType,
+		a.Phone,
+		a.Email,
+		a.Gender,
+		a.Address,
+		d.CityCode,
+		CASE 
+			WHEN a.CustomerType=0 THEN 'Retail'
+			WHEN a.CustomerType=1 THEN 'Corporate'
+			WHEN a.CustomerType=2 THEN 'Government/BUMN'
+		END AS CustomerType,
+		a.LeadSource,
+		a.Notes,
+		a.CreatedTime,
+		a.CreatedBy,
+		a.LastUpdateTime,
+		a.LastUpdateBy
+	FROM SFDCustomerContact a WITH (NOLOCK)
+	LEFT JOIN Dealer b WITH (NOLOCK) ON a.DealerId =b.ID AND b.RowStatus=0
+	LEFT JOIN SPKMasterCountryCodePhone c WITH (NOLOCK) ON a.SPKMasterCountryCodePhoneID = c.ID AND c.RowStatus=0
+	LEFT JOIN City d WITH (NOLOCK) ON a.CityID = d.ID AND d.RowStatus=0
+	WHERE a.ID = @Id
+) AS SFDContact

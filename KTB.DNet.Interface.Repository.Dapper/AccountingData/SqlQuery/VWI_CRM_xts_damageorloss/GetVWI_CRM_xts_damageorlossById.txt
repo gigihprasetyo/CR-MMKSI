@@ -1,0 +1,60 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,statecode
+	,xts_businessunitidname
+	,owneridname
+	,statecodename
+	,createdonbehalfby
+	,xts_pkcombinationkey
+	,ktb_parentbusinessunitid
+	,importsequencenumber
+	,modifiedbyyominame
+	,ktb_parentbusinessunitidname
+	,xts_transactiondate
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,xts_remarks
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,xts_damageorlossid
+	,statuscodename
+	,xts_vehicleorderformnumberid
+	,xts_salespersonid
+	,owneridyominame
+	,modifiedon
+	,xts_type
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,xts_damageorloss
+	,createdonbehalfbyname
+	,xts_typename
+	,modifiedonbehalfbyname
+	,owneridtype
+	,versionnumber
+	,modifiedonbehalfby
+	,xts_vehicleorderformnumberidname
+	,ownerid
+	,overriddencreatedon
+	,xts_salespersonidname
+	,RowStatus
+FROM (
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xts_damageorloss a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	WHERE xts_damageorlossid = @Id
+) VWI_CRM_xts_damageorloss 

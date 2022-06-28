@@ -1,0 +1,38 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, xid_stageordernumber
+	, statecode
+	, statuscode
+	, statecodename
+	, xid_leadtimeregistrationbycustomer
+	, createdonbehalfby
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, xid_leadtimereusecurrentplatenumber
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, createdby
+	, timezoneruleversionnumber
+	, xid_progressstage
+	, statuscodename
+	, xid_territoryidname
+	, xid_territoryid
+	, modifiedon
+	, xid_pkcombinationkey
+	, modifiedonbehalfbyyominame
+	, xid_registrationprogressstageid
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, modifiedonbehalfbyname
+	, xid_leadtimenormalregistration
+	, overriddencreatedon
+FROM [dbo].[CRM_xid_registrationprogressstage] as VWI_CRM_xid_registrationprogressstage with(nolock)
+WHERE xid_registrationprogressstageid = @Id

@@ -1,0 +1,53 @@
+SELECT 
+	/**PagingIndexQuery**/
+	/**RowNumber**/ 
+	bookingstatusid
+	, createdby
+	, createdbyname
+	, createdbyyominame
+	, createdon
+	, createdonbehalfby
+	, createdonbehalfbyname
+	, createdonbehalfbyyominame
+	, DealerCode
+	, description
+	, exchangerate
+	, importsequencenumber
+	, LastSyncDate
+	, modifiedby
+	, modifiedbyname
+	, modifiedbyyominame
+	, modifiedon
+	, modifiedonbehalfby
+	, modifiedonbehalfbyname
+	, modifiedonbehalfbyyominame
+	, msdyn_imageurl
+	, msdyn_serviceappointmentstatus
+	, msdyn_serviceappointmentstatusname
+	, msdyn_statuscolor
+	, name
+	, overriddencreatedon
+	, ownerid
+	, owneridname
+	, owneridtype
+	, owneridyominame
+	, owningbusinessunit
+	, owningbusinessunitname
+	, owningteam
+	, owninguser
+	, RowStatus
+	, SourceType
+	, statecode
+	, statecodename
+	, status
+	, statuscode
+	, statuscodename
+	, statusname
+	, timezoneruleversionnumber
+	, transactioncurrencyid
+	, transactioncurrencyidname
+	, utcconversiontimezonecode
+	, versionnumber
+	/**EndPagingIndexQuery**/
+from CRM_bookingstatus as VWI_CRM_bookingstatus with(nolock)
+{0}

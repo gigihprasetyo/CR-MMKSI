@@ -1,0 +1,21 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_VehicleInvoiceDetail.TRANSACTION_ITEM_NUMBER
+	,VWI_CRM_VehicleInvoiceDetail.[OF]
+	,VWI_CRM_VehicleInvoiceDetail.KODE_OBJEK
+	,VWI_CRM_VehicleInvoiceDetail.NAMA_OBJEK
+	,VWI_CRM_VehicleInvoiceDetail.HARGA_SATUAN
+	,VWI_CRM_VehicleInvoiceDetail.JUMLAH_BARANG
+	,VWI_CRM_VehicleInvoiceDetail.HARGA_TOTAL
+	,VWI_CRM_VehicleInvoiceDetail.DISKON
+	,VWI_CRM_VehicleInvoiceDetail.DPP
+	,VWI_CRM_VehicleInvoiceDetail.PPN
+	,VWI_CRM_VehicleInvoiceDetail.TARIF_PPNBM
+	,VWI_CRM_VehicleInvoiceDetail.PPNBM
+	,VWI_CRM_VehicleInvoiceDetail.Tax1
+	,VWI_CRM_VehicleInvoiceDetail.Tax2
+	,VWI_CRM_VehicleInvoiceDetail.DPBeforeInvoice
+	,VWI_CRM_VehicleInvoiceDetail.DPOnInvoice
+	,VWI_CRM_VehicleInvoiceDetail.xts_accountreceivableinvoiceid
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_VehicleInvoiceDetail WITH (NOLOCK) {0}

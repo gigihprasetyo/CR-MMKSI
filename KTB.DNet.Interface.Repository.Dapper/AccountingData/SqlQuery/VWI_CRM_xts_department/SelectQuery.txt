@@ -1,0 +1,80 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_department.company
+    , VWI_CRM_xts_department.businessunitcode
+    , VWI_CRM_xts_department.createdonbehalfbyyominame
+    , VWI_CRM_xts_department.owninguser
+    , VWI_CRM_xts_department.xts_locking
+    , VWI_CRM_xts_department.statecode
+    , VWI_CRM_xts_department.xts_businessunitidname
+    , VWI_CRM_xts_department.owneridname
+    , VWI_CRM_xts_department.statecodename
+    , VWI_CRM_xts_department.xts_dimension1idname
+    , VWI_CRM_xts_department.createdonbehalfby
+    , VWI_CRM_xts_department.xts_dimension1id
+    , VWI_CRM_xts_department.xts_dimension10id
+    , VWI_CRM_xts_department.xts_dimension7id
+    , VWI_CRM_xts_department.xts_dimension8idname
+    , VWI_CRM_xts_department.xts_dimension4id
+    , VWI_CRM_xts_department.xts_dimension5idname
+    , VWI_CRM_xts_department.importsequencenumber
+    , VWI_CRM_xts_department.xts_dimension3idname
+    , VWI_CRM_xts_department.modifiedbyyominame
+    , VWI_CRM_xts_department.xts_personinchargeid
+    , VWI_CRM_xts_department.xts_dimension2idname
+    , VWI_CRM_xts_department.xts_dimension3id
+    , VWI_CRM_xts_department.utcconversiontimezonecode
+    , VWI_CRM_xts_department.createdbyyominame
+    , VWI_CRM_xts_department.owningbusinessunit
+    , VWI_CRM_xts_department.modifiedbyname
+    , VWI_CRM_xts_department.owningteam
+    , VWI_CRM_xts_department.xts_dimension7idname
+    , VWI_CRM_xts_department.modifiedby
+    , VWI_CRM_xts_department.createdby
+    , VWI_CRM_xts_department.timezoneruleversionnumber
+    , VWI_CRM_xts_department.owneridtype
+    , VWI_CRM_xts_department.statuscodename
+    , VWI_CRM_xts_department.xts_dimension10idname
+    , VWI_CRM_xts_department.xts_dimension9idname
+    , VWI_CRM_xts_department.xts_department
+    , VWI_CRM_xts_department.xts_dimension4idname
+    , VWI_CRM_xts_department.xts_dimension6idname
+    , VWI_CRM_xts_department.owneridyominame
+    , VWI_CRM_xts_department.xts_usedinworkorder
+    , VWI_CRM_xts_department.modifiedon
+    , VWI_CRM_xts_department.xts_personinchargeidname
+    , VWI_CRM_xts_department.xts_dimension9id
+    , VWI_CRM_xts_department.xts_dimension8id
+    , VWI_CRM_xts_department.xts_dimension6id
+    , VWI_CRM_xts_department.xts_needreasoncodename
+    , VWI_CRM_xts_department.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_department.statuscode
+    , VWI_CRM_xts_department.createdbyname
+    , VWI_CRM_xts_department.createdon
+    , VWI_CRM_xts_department.xts_businessunitid
+    , VWI_CRM_xts_department.createdonbehalfbyname
+    , VWI_CRM_xts_department.xts_departmentid
+    , VWI_CRM_xts_department.xts_usedinworkordername
+    , VWI_CRM_xts_department.modifiedonbehalfbyname
+    , VWI_CRM_xts_department.xts_dimension2id
+    , VWI_CRM_xts_department.xts_needreasoncode
+    , VWI_CRM_xts_department.versionnumber
+    , VWI_CRM_xts_department.modifiedonbehalfby
+    , VWI_CRM_xts_department.xts_dimension5id
+    , VWI_CRM_xts_department.ownerid
+    , VWI_CRM_xts_department.overriddencreatedon
+    , VWI_CRM_xts_department.xts_description
+    , VWI_CRM_xts_department.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_department a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_department  

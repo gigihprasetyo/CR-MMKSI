@@ -1,0 +1,34 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_daerahlogistic.createdbyyominame
+	, VWI_CRM_ktb_daerahlogistic.modifiedby
+	, VWI_CRM_ktb_daerahlogistic.organizationidname
+	, VWI_CRM_ktb_daerahlogistic.statecode
+	, VWI_CRM_ktb_daerahlogistic.statuscode
+	, VWI_CRM_ktb_daerahlogistic.createdonbehalfbyyominame
+	, VWI_CRM_ktb_daerahlogistic.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_daerahlogistic.modifiedbyyominame
+	, VWI_CRM_ktb_daerahlogistic.createdbyname
+	, VWI_CRM_ktb_daerahlogistic.versionnumber
+	, VWI_CRM_ktb_daerahlogistic.modifiedonbehalfby
+	, VWI_CRM_ktb_daerahlogistic.createdonbehalfby
+	, VWI_CRM_ktb_daerahlogistic.timezoneruleversionnumber
+	, VWI_CRM_ktb_daerahlogistic.statuscodename
+	, VWI_CRM_ktb_daerahlogistic.importsequencenumber
+	, VWI_CRM_ktb_daerahlogistic.modifiedonbehalfbyname
+	, VWI_CRM_ktb_daerahlogistic.createdby
+	, VWI_CRM_ktb_daerahlogistic.ktb_daerahlogisticid
+	, VWI_CRM_ktb_daerahlogistic.modifiedbyname
+	, VWI_CRM_ktb_daerahlogistic.ktb_company
+	, VWI_CRM_ktb_daerahlogistic.modifiedon
+	, VWI_CRM_ktb_daerahlogistic.overriddencreatedon
+	, VWI_CRM_ktb_daerahlogistic.organizationid
+	, VWI_CRM_ktb_daerahlogistic.ktb_daerahlogistic
+	, VWI_CRM_ktb_daerahlogistic.utcconversiontimezonecode
+	, VWI_CRM_ktb_daerahlogistic.createdonbehalfbyname
+	, VWI_CRM_ktb_daerahlogistic.createdon
+	, VWI_CRM_ktb_daerahlogistic.statecodename
+    /**EndPagingIndexQuery**/
+FROM [dbo].[CRM_ktb_daerahlogistic] as VWI_CRM_ktb_daerahlogistic with(nolock) 
+{0}

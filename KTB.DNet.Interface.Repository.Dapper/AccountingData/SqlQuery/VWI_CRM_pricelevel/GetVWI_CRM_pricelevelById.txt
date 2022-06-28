@@ -1,0 +1,43 @@
+SELECT 
+    ROW_NUMBER() OVER (Order by 0) AS IDRow
+      ,createdonbehalfbyyominame
+      ,modifiedonbehalfby
+      ,transactioncurrencyidname
+      ,freighttermscode
+      ,enddate
+      ,description
+      ,statecodename
+      ,begindate
+      ,createdonbehalfby
+      ,transactioncurrencyid
+      ,name
+      ,pricelevelid
+      ,importsequencenumber
+      ,organizationidname
+      ,statecode
+      ,shippingmethodcode
+      ,paymentmethodcode
+      ,utcconversiontimezonecode
+      ,createdbyyominame
+      ,modifiedbyname
+      ,versionnumber
+      ,modifiedby
+      ,modifiedbyyominame
+      ,createdby
+      ,timezoneruleversionnumber
+      ,shippingmethodcodename
+      ,statuscodename
+      ,paymentmethodcodename
+      ,freighttermscodename
+      ,modifiedon
+      ,exchangerate
+      ,modifiedonbehalfbyyominame
+      ,statuscode
+      ,createdbyname
+      ,createdon
+      ,organizationid
+      ,createdonbehalfbyname
+      ,modifiedonbehalfbyname
+      ,overriddencreatedon
+FROM CRM_pricelevel as VWI_CRM_pricelevel WITH (NOLOCK) 
+WHERE pricelevelid = @Id

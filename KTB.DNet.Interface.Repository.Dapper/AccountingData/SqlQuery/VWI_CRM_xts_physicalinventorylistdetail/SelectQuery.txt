@@ -1,0 +1,106 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_xts_physicalinventorylistdetail.company
+    , VWI_CRM_xts_physicalinventorylistdetail.businessunitcode
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_inventorylistid
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_producttype
+	, VWI_CRM_xts_physicalinventorylistdetail.versionnumber
+	, VWI_CRM_xts_physicalinventorylistdetail.createdon
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_regularstock
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_interiorcolorid
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_batchnumberidname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_physicalinventorylistdetail
+	, VWI_CRM_xts_physicalinventorylistdetail.statuscodename
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_serialnumber
+	, VWI_CRM_xts_physicalinventorylistdetail.modifiedbyyominame
+	, VWI_CRM_xts_physicalinventorylistdetail.owneridtype
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_variance
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_personinchargeidyominame
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_personinchargeid
+	, VWI_CRM_xts_physicalinventorylistdetail.createdonbehalfby
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_exteriorcoloridname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_batchnumberid
+	, VWI_CRM_xts_physicalinventorylistdetail.modifiedbyname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_inventoryunitid
+	, VWI_CRM_xts_physicalinventorylistdetail.owneridname
+	, VWI_CRM_xts_physicalinventorylistdetail.overriddencreatedon
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_bookquantity
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_varianceamount
+	, VWI_CRM_xts_physicalinventorylistdetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_physicalinventorylistdetail.modifiedonbehalfby
+	, VWI_CRM_xts_physicalinventorylistdetail.exchangerate
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_stockinventorynewvehicleid
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_locationid
+	, VWI_CRM_xts_physicalinventorylistdetail.owningteam
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_productidname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_styleid
+	, VWI_CRM_xts_physicalinventorylistdetail.statecode
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_unitcost
+	, VWI_CRM_xts_physicalinventorylistdetail.timezoneruleversionnumber
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_warehouseidname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_parentbusinessunitid
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_physicalinventorylistdetailid
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_producttypename
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_inventorylistidname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_stockinventoryusedvehicleid
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_globalcoloridname
+	, VWI_CRM_xts_physicalinventorylistdetail.createdonbehalfbyname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_locking
+	, VWI_CRM_xts_physicalinventorylistdetail.utcconversiontimezonecode
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_configurationid
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_unitcost_base
+	, VWI_CRM_xts_physicalinventorylistdetail.ownerid
+	, VWI_CRM_xts_physicalinventorylistdetail.modifiedon
+	, VWI_CRM_xts_physicalinventorylistdetail.importsequencenumber
+	, VWI_CRM_xts_physicalinventorylistdetail.owneridyominame
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_exteriorcolorid
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_personinchargeidname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_siteid
+	, VWI_CRM_xts_physicalinventorylistdetail.createdbyname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_businessunitid
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_inventoryunitidname
+	, VWI_CRM_xts_physicalinventorylistdetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_varianceamount_base
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_regularstockname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_quantityreserved
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_productid
+	, VWI_CRM_xts_physicalinventorylistdetail.transactioncurrencyid
+	, VWI_CRM_xts_physicalinventorylistdetail.createdby
+	, VWI_CRM_xts_physicalinventorylistdetail.modifiedby
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_siteidname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_stockinventorynewvehicleidname
+	, VWI_CRM_xts_physicalinventorylistdetail.createdbyyominame
+	, VWI_CRM_xts_physicalinventorylistdetail.owninguser
+	, VWI_CRM_xts_physicalinventorylistdetail.transactioncurrencyidname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_locationidname
+	, VWI_CRM_xts_physicalinventorylistdetail.owningbusinessunit
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_globalcolorid
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_physicalquantity
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_parentbusinessunitidname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_productdescription
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_interiorcoloridname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_stockinventoryusedvehicleidname
+	, VWI_CRM_xts_physicalinventorylistdetail.statuscode
+	, VWI_CRM_xts_physicalinventorylistdetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_configurationidname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_warehouseid
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_remarks
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_stocknumberlookupname
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_stocknumberlookuptype
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_styleidname
+	, VWI_CRM_xts_physicalinventorylistdetail.statecodename
+	, VWI_CRM_xts_physicalinventorylistdetail.xts_businessunitidname
+	, VWI_CRM_xts_physicalinventorylistdetail.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.*
+		, b.msdyn_companycode
+	FROM CRM_xts_physicalinventorylistdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	{0}
+) VWI_CRM_xts_physicalinventorylistdetail

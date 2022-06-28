@@ -1,0 +1,94 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_nvsoreferral.company
+	, VWI_CRM_xts_nvsoreferral.businessunitcode
+	, VWI_CRM_xts_nvsoreferral.xts_parentbusinessunitid
+	, VWI_CRM_xts_nvsoreferral.versionnumber
+	, VWI_CRM_xts_nvsoreferral.createdon
+	, VWI_CRM_xts_nvsoreferral.xts_referraltaxamount
+	, VWI_CRM_xts_nvsoreferral.xts_methodofpaymentidname
+	, VWI_CRM_xts_nvsoreferral.xts_referralvendoridname
+	, VWI_CRM_xts_nvsoreferral.xts_bankaccountnumber
+	, VWI_CRM_xts_nvsoreferral.xts_reasonidname
+	, VWI_CRM_xts_nvsoreferral.statuscodename
+	, VWI_CRM_xts_nvsoreferral.xts_baseamount_base
+	, VWI_CRM_xts_nvsoreferral.modifiedbyyominame
+	, VWI_CRM_xts_nvsoreferral.xts_nvsqreferralidname
+	, VWI_CRM_xts_nvsoreferral.owneridtype
+	, VWI_CRM_xts_nvsoreferral.xts_referralamount_base
+	, VWI_CRM_xts_nvsoreferral.xts_reasonid
+	, VWI_CRM_xts_nvsoreferral.createdonbehalfby
+	, VWI_CRM_xts_nvsoreferral.modifiedbyname
+	, VWI_CRM_xts_nvsoreferral.xts_referraltaxid
+	, VWI_CRM_xts_nvsoreferral.xts_relationshipcategory
+	, VWI_CRM_xts_nvsoreferral.xts_bank
+	, VWI_CRM_xts_nvsoreferral.overriddencreatedon
+	, VWI_CRM_xts_nvsoreferral.xts_relationshipcategoryname
+	, VWI_CRM_xts_nvsoreferral.createdonbehalfbyyominame
+	, VWI_CRM_xts_nvsoreferral.transactioncurrencyidname
+	, VWI_CRM_xts_nvsoreferral.modifiedonbehalfby
+	, VWI_CRM_xts_nvsoreferral.exchangerate
+	, VWI_CRM_xts_nvsoreferral.xts_newvehiclesalesorderid
+	, VWI_CRM_xts_nvsoreferral.xts_balance
+	, VWI_CRM_xts_nvsoreferral.statecode
+	, VWI_CRM_xts_nvsoreferral.owneridname
+	, VWI_CRM_xts_nvsoreferral.xts_referralamount
+	, VWI_CRM_xts_nvsoreferral.timezoneruleversionnumber
+	, VWI_CRM_xts_nvsoreferral.xts_totalpaymentamount_base
+	, VWI_CRM_xts_nvsoreferral.xts_referraltaxamount_base
+	, VWI_CRM_xts_nvsoreferral.xts_locking
+	, VWI_CRM_xts_nvsoreferral.xts_bankaccounttypename
+	, VWI_CRM_xts_nvsoreferral.xts_totalamount_base
+	, VWI_CRM_xts_nvsoreferral.xts_apvouchername
+	, VWI_CRM_xts_nvsoreferral.createdonbehalfbyname
+	, VWI_CRM_xts_nvsoreferral.xts_pluginflag
+	, VWI_CRM_xts_nvsoreferral.xts_newvehiclesalesorderidname
+	, VWI_CRM_xts_nvsoreferral.utcconversiontimezonecode
+	, VWI_CRM_xts_nvsoreferral.xts_businessunitid
+	, VWI_CRM_xts_nvsoreferral.xts_totalpaymentamount
+	, VWI_CRM_xts_nvsoreferral.ownerid
+	, VWI_CRM_xts_nvsoreferral.modifiedon
+	, VWI_CRM_xts_nvsoreferral.importsequencenumber
+	, VWI_CRM_xts_nvsoreferral.owneridyominame
+	, VWI_CRM_xts_nvsoreferral.xts_nvsqreferralid
+	, VWI_CRM_xts_nvsoreferral.xts_bankaccounttype
+	, VWI_CRM_xts_nvsoreferral.xts_apvoucher
+	, VWI_CRM_xts_nvsoreferral.xts_nvsoreferralid
+	, VWI_CRM_xts_nvsoreferral.createdbyname
+	, VWI_CRM_xts_nvsoreferral.xts_methodofpaymentid
+	, VWI_CRM_xts_nvsoreferral.modifiedonbehalfbyname
+	, VWI_CRM_xts_nvsoreferral.xts_balance_base
+	, VWI_CRM_xts_nvsoreferral.xts_referraltaxidname
+	, VWI_CRM_xts_nvsoreferral.xts_baseamount
+	, VWI_CRM_xts_nvsoreferral.transactioncurrencyid
+	, VWI_CRM_xts_nvsoreferral.owningteam
+	, VWI_CRM_xts_nvsoreferral.createdby
+	, VWI_CRM_xts_nvsoreferral.modifiedby
+	, VWI_CRM_xts_nvsoreferral.xts_referralvendorid
+	, VWI_CRM_xts_nvsoreferral.createdbyyominame
+	, VWI_CRM_xts_nvsoreferral.owninguser
+	, VWI_CRM_xts_nvsoreferral.xts_nvsoreferralnumber
+	, VWI_CRM_xts_nvsoreferral.owningbusinessunit
+	, VWI_CRM_xts_nvsoreferral.xts_parentbusinessunitidname
+	, VWI_CRM_xts_nvsoreferral.xts_eventdata
+	, VWI_CRM_xts_nvsoreferral.xts_totalamount
+	, VWI_CRM_xts_nvsoreferral.statuscode
+	, VWI_CRM_xts_nvsoreferral.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_nvsoreferral.xts_referraldescription
+	, VWI_CRM_xts_nvsoreferral.statecodename
+	, VWI_CRM_xts_nvsoreferral.xts_businessunitidname
+	, VWI_CRM_xts_nvsoreferral.RowStatus
+	, VWI_CRM_xts_nvsoreferral.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xts_nvsoreferral a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	{0}
+) VWI_CRM_xts_nvsoreferral

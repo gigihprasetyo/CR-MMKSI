@@ -1,0 +1,69 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,xts_servicecategorydescription
+	,xts_locking
+	,statecode
+	,xts_servicecategoryid
+	,owneridname
+	,statecodename
+	,xts_incomingpdiandserviceinstructionid
+	,createdonbehalfby
+	,xts_pkcombinationkey
+	,xts_parentbusinessunitid
+	,xjp_pdidetailreferenceidname
+	,xts_producttypename
+	,importsequencenumber
+	,modifiedbyyominame
+	,xts_productdescription
+	,xts_serviceinstructiondetailreferenceidname
+	,xts_producttype
+	,xts_productidname
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,xts_serviceinstructiondetailreferenceid
+	,owneridtype
+	,statuscodename
+	,xts_businessunitidname
+	,xts_kitid
+	,xts_incomingoutsourceworkorderidname
+	,xts_servicecategoryidname
+	,owneridyominame
+	,modifiedon
+	,xts_incomingoutsourceworkorderid
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,xjp_pdidetailreferenceid
+	,xts_parentbusinessunitidname
+	,versionnumber
+	,modifiedonbehalfby
+	,xts_productid
+	,xts_kitidname
+	,ownerid
+	,overriddencreatedon
+	,xts_quantity
+	,RowStatus
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_incomingpdiandserviceinstruction a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_incomingpdiandserviceinstructionid = @Id
+) VWI_CRM_xts_incomingpdiandserviceinstruction

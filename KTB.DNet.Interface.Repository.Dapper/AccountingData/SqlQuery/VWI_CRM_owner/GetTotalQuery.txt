@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_owner as VWI_CRM_owner with (nolock)  
+{0}

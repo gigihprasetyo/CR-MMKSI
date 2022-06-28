@@ -1,0 +1,94 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,versionnumber
+	,createdon
+	,ktb_spkidname
+	,xjp_idempotentmessage
+	,statuscodename
+	,xjp_vendorinvoicedate
+	,xjp_parentbusinessunitidname
+	,modifiedbyyominame
+	,xjp_totalsubcontractfee_base
+	,xjp_totalpartsfee
+	,xjp_handlingname
+	,modifiedbyname
+	,xjp_personinchargeidname
+	,xjp_vendoridname
+	,xjp_parentbusinessunitid
+	,owneridname
+	,overriddencreatedon
+	,xjp_transactiontype
+	,xjp_totalfee
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,xjp_vendorid
+	,xjp_transactiondate
+	,owningteam
+	,xjp_pdireceiptreferenceidname
+	,xjp_totalservicefee_base
+	,statecode
+	,ktb_iskaroseri
+	,ktb_spkid
+	,timezoneruleversionnumber
+	,xjp_duedate
+	,ktb_spkdetailidname
+	,xjp_handling
+	,xjp_totalsubcontractfee
+	,xjp_businessunitid
+	,xjp_vendorinvoicenumber
+	,traversedpath
+	,createdonbehalfbyname
+	,ktb_chassisnumber
+	,xjp_pdireceiptnumber
+	,xjp_pdireceiptstatus
+	,createdonbehalfby
+	,utcconversiontimezonecode
+	,xjp_totalfee_base
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xjp_pdiidname
+	,ktb_spkdetailid
+	,processid
+	,xjp_totalpartsfee_base
+	,createdbyname
+	,xjp_pdireceiptreferenceid
+	,modifiedonbehalfbyname
+	,xjp_personinchargeid
+	,stageid
+	,ktb_blankospkidname
+	,transactioncurrencyid
+	,createdby
+	,xjp_totalservicefee
+	,modifiedby
+	,xjp_businessunitidname
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,owningbusinessunit
+	,ktb_blankospkid
+	,ktb_iskaroseriname
+	,xjp_pdiid
+	,owneridtype
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xjp_pdireceiptstatusname
+	,statecodename
+	,xjp_transactiontypename
+	,xjp_pdireceiptid
+	,xjp_locking
+	,RowStatus
+from (
+    SELECT 
+		  b.ktb_bucompany company,
+		  b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xjp_pdireceipt a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xjp_businessunitid
+	WHERE xjp_pdireceiptid = @Id
+) VWI_CRM_xjp_pdireceipt 

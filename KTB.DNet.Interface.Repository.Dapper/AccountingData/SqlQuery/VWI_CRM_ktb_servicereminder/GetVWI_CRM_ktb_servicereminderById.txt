@@ -1,0 +1,100 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	, ktb_bucompany company    
+	, ktb_dealercode businessunitcode    
+	, versionnumber
+	, createdon
+	, ktb_servicereminderid
+	, owningbusinessunitname
+	, statuscodename
+	, ktb_maximaltanggalfollowup
+	, ktb_plateno
+	, ktb_vehiclepublicid
+	, modifiedbyyominame
+	, ktb_vehiclepublicidname
+	, ktb_transactiontype
+	, owneridtype
+	, ktb_businessunitid
+	, modifiedbyname
+	, owneridname
+	, overriddencreatedon
+	, ktb_tanggalbooking
+	, ktb_serviceincdnetcode
+	, ktb_notemms
+	, ktb_servicereminderiddnet
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, ktb_responname
+	, owningteam
+	, ktb_respon
+	, ktb_nommsrefidname
+	, ktb_lastkm
+	, statecode
+	, ktb_noworefmmsid
+	, ktb_noworefmmsidname
+	, timezoneruleversionnumber
+	, ktb_isinterface
+	, ktb_parentbusinessunitid
+	, modifiedby
+	, ktb_followupdate
+	, ktb_businessunitidname
+	, ktb_vehicleidentificationnoid
+	, ktb_noworefidname
+	, ktb_customername
+	, ktb_servicereminderdms
+	, ktb_statusname
+	, createdonbehalfbyname
+	, ktb_chassisnumber
+	, createdby
+	, utcconversiontimezonecode
+	, ktb_sourcedata
+	, ktb_engineno
+	, ownerid
+	, modifiedon
+	, importsequencenumber
+	, owneridyominame
+	, ktb_tipekendaraan
+	, ktb_noworefid
+	, ktb_sourcedataname
+	, ktb_isinterfacename
+	, ktb_description
+	, ktb_reinterface
+	, createdbyname
+	, modifiedonbehalfbyname
+	, ktb_handling
+	, createdonbehalfby
+	, ktb_customerphonenumber
+	, ktb_interfaceresult
+	, createdbyyominame
+	, owninguser
+	, ktb_reinterfacename
+	, ktb_reminderservicedate
+	, owningbusinessunit
+	, ktb_handlingname
+	, ktb_contactphonenumber
+	, ktb_dateupdatefrominterface
+	, statuscode
+	, modifiedonbehalfbyyominame
+	, ktb_parentbusinessunitidname
+	, ktb_nommsrefid
+	, statecodename
+	, ktb_contactname
+	, ktb_vehicleidentificationnoidname
+	, ktb_status
+	, ktb_casenumber
+	, DealerCode
+	, SourceType
+	, RowStatus
+	, LastSyncDate  
+	, msdyn_companycode  
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode      
+	FROM CRM_ktb_servicereminder a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.ktb_businessunitid 
+	WHERE ktb_servicereminderid = @Id
+) VWI_CRM_ktb_servicereminder

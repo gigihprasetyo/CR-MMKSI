@@ -1,0 +1,148 @@
+SELECT 
+    /**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_appointment.company
+    , VWI_CRM_appointment.businessunitcode
+	, VWI_CRM_appointment.xts_appointmenttypename
+	, VWI_CRM_appointment.prioritycodename
+	, VWI_CRM_appointment.versionnumber
+	, VWI_CRM_appointment.createdon
+	, VWI_CRM_appointment.modifiedonbehalfbyyominame
+	, VWI_CRM_appointment.xts_regardingpersoninchargeidname
+	, VWI_CRM_appointment.originalstartdate
+	, VWI_CRM_appointment.xts_referenceid
+	, VWI_CRM_appointment.xts_referencenumberlookuptype
+	, VWI_CRM_appointment.attachmentcount
+	, VWI_CRM_appointment.statuscodename
+	, VWI_CRM_appointment.isregularactivityname
+	, VWI_CRM_appointment.activityid
+	, VWI_CRM_appointment.xts_referenceglobalserviceidname
+	, VWI_CRM_appointment.xto_activityrating
+	, VWI_CRM_appointment.owneridtype
+	, VWI_CRM_appointment.isdraftname
+	, VWI_CRM_appointment.xts_personinchargeid
+	, VWI_CRM_appointment.createdonbehalfby
+	, VWI_CRM_appointment.xts_mobilephone
+	, VWI_CRM_appointment.onholdtime
+	, VWI_CRM_appointment.xts_businessunitidname
+	, VWI_CRM_appointment.xts_vehiclemodelidname
+	, VWI_CRM_appointment.regardingobjectidyominame
+	, VWI_CRM_appointment.owneridname
+	, VWI_CRM_appointment.prioritycode
+	, VWI_CRM_appointment.overriddencreatedon
+	, VWI_CRM_appointment.xts_vehiclemodelid
+	, VWI_CRM_appointment.xts_referenceusedvehicleidname
+	, VWI_CRM_appointment.xts_referenceglobalserviceid
+	, VWI_CRM_appointment.scheduledstart
+	, VWI_CRM_appointment.createdonbehalfbyyominame
+	, VWI_CRM_appointment.subscriptionid
+	, VWI_CRM_appointment.isbilled
+	, VWI_CRM_appointment.exchangerate
+	, VWI_CRM_appointment.isregularactivity
+	, VWI_CRM_appointment.subcategory
+	, VWI_CRM_appointment.owningteam
+	, VWI_CRM_appointment.activityadditionalparams
+	, VWI_CRM_appointment.xts_vehiclebrandid
+	, VWI_CRM_appointment.xts_productidname
+	, VWI_CRM_appointment.regardingobjectid
+	, VWI_CRM_appointment.statecode
+	, VWI_CRM_appointment.seriesid
+	, VWI_CRM_appointment.timezoneruleversionnumber
+	, VWI_CRM_appointment.attachmenterrors
+	, VWI_CRM_appointment.xts_businessunitid
+	, VWI_CRM_appointment.xts_productexteriorcoloridname
+	, VWI_CRM_appointment.modifiedonbehalfby
+	, VWI_CRM_appointment.xts_referencenumberlookupname
+	, VWI_CRM_appointment.xts_locking
+	, VWI_CRM_appointment.xts_email
+	, VWI_CRM_appointment.attachmenterrorsname
+	, VWI_CRM_appointment.xts_manufactureridname
+	, VWI_CRM_appointment.activitytypecodename
+	, VWI_CRM_appointment.regardingobjectidname
+	, VWI_CRM_appointment.xto_salespersonid
+	, VWI_CRM_appointment.traversedpath
+	, VWI_CRM_appointment.createdonbehalfbyname
+	, VWI_CRM_appointment.actualstart
+	, VWI_CRM_appointment.xts_productexteriorcolorid
+	, VWI_CRM_appointment.safedescription
+	, VWI_CRM_appointment.isbilledname
+	, VWI_CRM_appointment.activitytypecode
+	, VWI_CRM_appointment.utcconversiontimezonecode
+	, VWI_CRM_appointment.instancetypecodename
+	, VWI_CRM_appointment.xts_vehiclebrandidname
+	, VWI_CRM_appointment.organizer
+	, VWI_CRM_appointment.slainvokedid
+	, VWI_CRM_appointment.ownerid
+	, VWI_CRM_appointment.isworkflowcreated
+	, VWI_CRM_appointment.importsequencenumber
+	, VWI_CRM_appointment.owneridyominame
+	, VWI_CRM_appointment.scheduleddurationminutes
+	, VWI_CRM_appointment.category
+	, VWI_CRM_appointment.isunsafe
+	, VWI_CRM_appointment.xts_personinchargeidname
+	, VWI_CRM_appointment.processid
+	, VWI_CRM_appointment.sortdate
+	, VWI_CRM_appointment.description
+	, VWI_CRM_appointment.modifiedon
+	, VWI_CRM_appointment.isdraft
+	, VWI_CRM_appointment.location
+	, VWI_CRM_appointment.createdbyname
+	, VWI_CRM_appointment.globalobjectid
+	, VWI_CRM_appointment.instancetypecode
+	, VWI_CRM_appointment.ismapiprivatename
+	, VWI_CRM_appointment.modifiedonbehalfbyname
+	, VWI_CRM_appointment.ismapiprivate
+	, VWI_CRM_appointment.isworkflowcreatedname
+	, VWI_CRM_appointment.requiredattendees
+	, VWI_CRM_appointment.xts_vehicleidentificationidname
+	, VWI_CRM_appointment.lastonholdtime
+	, VWI_CRM_appointment.stageid
+	, VWI_CRM_appointment.optionalattendees
+	, VWI_CRM_appointment.xts_appointmenttype
+	, VWI_CRM_appointment.xto_activityresult
+	, VWI_CRM_appointment.xts_productid
+	, VWI_CRM_appointment.transactioncurrencyid
+	, VWI_CRM_appointment.slaid
+	, VWI_CRM_appointment.createdby
+	, VWI_CRM_appointment.modifiedby
+	, VWI_CRM_appointment.isalldayevent
+	, VWI_CRM_appointment.serviceid
+	, VWI_CRM_appointment.createdbyyominame
+	, VWI_CRM_appointment.owninguser
+	, VWI_CRM_appointment.transactioncurrencyidname
+	, VWI_CRM_appointment.xto_activityresultname
+	, VWI_CRM_appointment.actualend
+	, VWI_CRM_appointment.owningbusinessunit
+	, VWI_CRM_appointment.xts_vehicleidentificationid
+	, VWI_CRM_appointment.isalldayeventname
+	, VWI_CRM_appointment.modifiedbyyominame
+	, VWI_CRM_appointment.xts_regardingpersoninchargeid
+	, VWI_CRM_appointment.regardingobjecttypecode
+	, VWI_CRM_appointment.xto_salespersonidname
+	, VWI_CRM_appointment.slainvokedidname
+	, VWI_CRM_appointment.scheduledend
+	, VWI_CRM_appointment.statuscode
+	, VWI_CRM_appointment.modifiedbyname
+	, VWI_CRM_appointment.xts_referenceusedvehicleid
+	, VWI_CRM_appointment.modifiedfieldsmask
+	, VWI_CRM_appointment.outlookownerapptid
+	, VWI_CRM_appointment.actualdurationminutes
+	, VWI_CRM_appointment.xts_manufacturerid
+	, VWI_CRM_appointment.xts_referenceidname
+	, VWI_CRM_appointment.subject
+	, VWI_CRM_appointment.xto_activityratingname
+	, VWI_CRM_appointment.statecodename
+	, VWI_CRM_appointment.slaname
+	, VWI_CRM_appointment.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	select    
+		 b.ktb_bucompany company  
+		 ,b.ktb_dealercode businessunitcode  
+		 ,a.*
+		 ,b.msdyn_companycode 
+	from CRM_appointment a WITH(NOLOCK)
+	JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	{0}
+) VWI_CRM_appointment 

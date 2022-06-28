@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM VWI_CRM_SVC_ARReceiptDetailBasedOnWO WITH (NOLOCK) {0}

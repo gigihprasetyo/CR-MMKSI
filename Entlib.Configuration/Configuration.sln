@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Configuration", "Configuration.csproj", "{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "..\Common\Common.csproj", "{A09297C8-2C40-470B-8856-D856676DDFFA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugLongRunningTests|Any CPU = DebugLongRunningTests|Any CPU
+		DebugUnitTests|Any CPU = DebugUnitTests|Any CPU
+		Release|Any CPU = Release|Any CPU
+		ReleaseFinal|Any CPU = ReleaseFinal|Any CPU
+		ReleaseUnitTests|Any CPU = ReleaseUnitTests|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.DebugLongRunningTests|Any CPU.ActiveCfg = DebugLongRunningTests|Any CPU
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.DebugLongRunningTests|Any CPU.Build.0 = DebugLongRunningTests|Any CPU
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.DebugUnitTests|Any CPU.ActiveCfg = DebugUnitTests|Any CPU
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.DebugUnitTests|Any CPU.Build.0 = DebugUnitTests|Any CPU
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.ReleaseFinal|Any CPU.ActiveCfg = ReleaseFinal|Any CPU
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.ReleaseFinal|Any CPU.Build.0 = ReleaseFinal|Any CPU
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.ReleaseUnitTests|Any CPU.ActiveCfg = ReleaseUnitTests|Any CPU
+		{D1BB1AB9-453A-4923-B77C-FA6F1D2802F9}.ReleaseUnitTests|Any CPU.Build.0 = ReleaseUnitTests|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.DebugLongRunningTests|Any CPU.ActiveCfg = DebugLongRunningTests|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.DebugLongRunningTests|Any CPU.Build.0 = DebugLongRunningTests|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.DebugUnitTests|Any CPU.ActiveCfg = DebugUnitTests|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.DebugUnitTests|Any CPU.Build.0 = DebugUnitTests|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.ReleaseFinal|Any CPU.ActiveCfg = ReleaseFinal|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.ReleaseFinal|Any CPU.Build.0 = ReleaseFinal|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.ReleaseUnitTests|Any CPU.ActiveCfg = ReleaseUnitTests|Any CPU
+		{A09297C8-2C40-470B-8856-D856676DDFFA}.ReleaseUnitTests|Any CPU.Build.0 = ReleaseUnitTests|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

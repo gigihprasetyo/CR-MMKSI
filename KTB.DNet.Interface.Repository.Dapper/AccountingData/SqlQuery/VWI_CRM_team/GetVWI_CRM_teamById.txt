@@ -1,0 +1,68 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow,
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,transactioncurrencyidname
+	,queueid
+	,administratorid
+	,description
+	,queueidname
+	,regardingobjecttypecode
+	,createdonbehalfby
+	,transactioncurrencyid
+	,regardingobjectid
+	,teamid
+	,name
+	,azureactivedirectoryobjectid
+	,teamtypename
+	,stageid
+	,administratoridname
+	,organizationid
+	,importsequencenumber
+	,organizationidname
+	,xts_isdomainname
+	,ktb_teamtype
+	,businessunitid
+	,xts_isdomain
+	,emailaddress
+	,systemmanaged
+	,createdbyyominame
+	,modifiedbyname
+	,versionnumber
+	,modifiedby
+	,modifiedbyyominame
+	,createdby
+	,traversedpath
+	,administratoridyominame
+	,teamtype
+	,exchangerate
+	,isdefaultname
+	,processid
+	,yominame
+	,teamtemplateid
+	,modifiedon
+	,businessunitidname
+	,modifiedonbehalfbyyominame
+	,ktb_teamtypename
+	,createdbyname
+	,createdon
+	,new_isdomain
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,systemmanagedname
+	,new_isdomainname
+	,overriddencreatedon
+	,isdefault
+	,RowStatus
+from(
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_team a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.businessunitid
+	Where teamid = @id
+) VWI_CRM_team

@@ -1,0 +1,5 @@
+SELECT * FROM 
+(
+	SELECT * FROM DMSAnnouncement with (nolock) where StatusAnnounce='publish' and enddate>=getdate()
+) AS DMSAnnouncement
+{0}

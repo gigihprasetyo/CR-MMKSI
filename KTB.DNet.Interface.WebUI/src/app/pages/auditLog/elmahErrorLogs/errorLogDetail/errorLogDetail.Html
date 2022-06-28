@@ -1,0 +1,91 @@
+﻿<section>
+    <div class="widgets">
+        <div class="row">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-class="tabs-panel xtralarge-panel">
+                    <uib-tabset class="tabs-left">
+                        <uib-tab heading="Error Info">
+                            <h5>{{errorLogDetail.error["@message"] || "-"}}</h5>
+                            <div class="col-md-8">
+                                <div class="control-group">
+                                    <div class="control">
+                                        <label class="col-sm-3 control-label"><b>Time</b></label>
+                                        <p class="light-text">{{FormatDate(errorLogDetail.error["@time"]) || "-"}}</p>
+                                    </div>
+                                    <div class="control">
+                                        <label class="col-sm-3 control-label"><b>URL</b></label>
+                                        <p class="light-text"><span class="{{GetValue(serverVariableData, 'REQUEST_METHOD') == '' ? '' : 'tag label label-default'}}">{{GetValue(serverVariableData, 'REQUEST_METHOD')}}</span> {{GetValue(serverVariableData, 'URL')}}</p>
+                                    </div>
+                                    <div class="control">
+                                        <label class="col-sm-3 control-label"><b>Status Code</b></label>
+                                        <p class="light-text"><span class="{{errorLogDetail.error["@statusCode"] == '' ? '' : 'tag label label-default'}}">{{errorLogDetail.error["@statusCode"] || "-"}}</span></p>
+                                    </div>
+                                    <div class="control">
+                                        <label class="col-sm-3 control-label"><b>Host</b></label>
+                                        <p class="light-text">{{errorLogDetail.error["@host"] || "-"}}</p>
+                                    </div>
+                                    <div class="control">
+                                        <label class="col-sm-3 control-label"><b>Error</b></label>
+                                        <p class="light-text">{{errorLogDetail.error["@type"] || "-"}}</p>
+                                    </div>
+                                    <p class="control">
+                                        <label class="col-sm-3 control-label"><b>Application</b></label>
+                                    <p class="light-text">{{errorLogDetail.error["@application"] || "-"}}</p>
+                                </div>
+                                <div class="control">
+                                    <label class="col-sm-3 control-label"><b>Source</b></label>
+                                    <p class="light-text">{{errorLogDetail.error["@source"] || "-"}}</p>
+                                </div>
+                                <div class="control">
+                                    <label class="col-sm-3 control-label"><b>User</b></label>
+                                    <p class="light-text">{{GetValue(serverVariableData, 'AUTH_USER') || "-"}}</p>
+                                </div>
+                                <div class="control">
+                                    <label class="col-sm-3 control-label"><b>Client IP</b></label>
+                                    <p class="light-text">{{GetValue(serverVariableData, 'REMOTE_HOST') || "-"}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <p style="background-color: #f9f2f4;">
+                                    <code>
+                                        {{errorLogDetail.error["@detail"] || "-"}}
+                                    </code>
+                                </p>
+                            </div>
+                        </uib-tab>
+                        <uib-tab heading="Variable">
+                            <div class="col-md-12">
+                                <div general-table offline="true" table-definition="serverVariableTableDefinition"></div>
+                            </div>
+                        </uib-tab>
+                        <uib-tab heading="Cookies">
+                            <div ng-show="{{cookiesData['@name'] == undefined}}" class="alert bg-info">
+                                No cookies for this Log.
+                            </div>
+                            <div ng-show="{{cookiesData['@name'] != undefined}}" class="horizontal-scroll text-left">
+                                <div class="col-md-12"></div>
+                                <table class="table table-bordered table-striped table-text-left">
+                                    <tbody>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td><span>: {{cookiesData['@name']}}</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Value</td>
+                                            <td style="text-align: left !important;"><span>: {{cookiesData.value['@string']}}</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </uib-tab>
+                    </uib-tabset>                    
+                </div>
+            </div>
+            <div class="col-md-12 text-right margin-top-bottom-10">
+                <button class="btn btn-info m-t-15 waves-effect" ng-click="back(appName)">Back</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+

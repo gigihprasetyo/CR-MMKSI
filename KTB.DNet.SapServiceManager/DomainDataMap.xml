@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+===========================================================================
+AUTHOR        :                                                 
+PURPOSE       : PersistentFramework Objects Mapper Configuration File.  
+SPECIAL NOTES :                                                            
+================================                                                      
+Copyright  2005                                       
+================================                                                      
+$History      : $                                                          
+Generated on 7/28/2005 - 11:50:00 AM
+                                                                           
+===========================================================================
+-->
+<DomainDBMSMap>
+	<Map Domain="KTB.DNet.Domain.BasicProduct" Mapper="KTB.DNet.DataMapper.BasicProductMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Product" Mapper="KTB.DNet.DataMapper.ProductMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.ProductDetail" Mapper="KTB.DNet.DataMapper.ProductDetailMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.UserInfo" Mapper="KTB.DNet.DataMapper.UserInfoMapper, KTB.DNet.DataMapper" />	
+	<Map Domain="KTB.DNet.Domain.SYS_MenuItem" Mapper="KTB.DNet.DataMapper.SYS_MenuItemMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SYS_Form" Mapper="KTB.DNet.DataMapper.SYS_FormMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Role" Mapper="KTB.DNet.DataMapper.RoleMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.UserRole" Mapper="KTB.DNet.DataMapper.UserRoleMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Category" Mapper="KTB.DNet.DataMapper.CategoryMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.VechileModel" Mapper="KTB.DNet.DataMapper.VechileModelMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.VechileType" Mapper="KTB.DNet.DataMapper.VechileTypeMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Province" Mapper="KTB.DNet.DataMapper.ProvinceMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.DealerGroup" Mapper="KTB.DNet.DataMapper.DealerGroupMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PKHeader" Mapper="KTB.DNet.DataMapper.PKHeaderMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PKDetail" Mapper="KTB.DNet.DataMapper.PKDetailMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.City" Mapper="KTB.DNet.DataMapper.CityMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.view_PKList" Mapper="KTB.DNet.DataMapper.view_PKListMapperView, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.view_ColorList" Mapper="KTB.DNet.DataMapper.view_ColorListMapperView, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.VechileColor" Mapper="KTB.DNet.DataMapper.VechileColorMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Dealer" Mapper="KTB.DNet.DataMapper.DealerMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.BusinessArea" Mapper="KTB.DNet.DataMapper.BusinessAreaMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Price" Mapper="KTB.DNet.DataMapper.PriceMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Area1" Mapper="KTB.DNet.DataMapper.Area1Mapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Area2" Mapper="KTB.DNet.DataMapper.Area2Mapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PKProductionPlan" Mapper="KTB.DNet.DataMapper.PKProductionPlanMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.TransactionControl" Mapper="KTB.DNet.DataMapper.TransactionControlMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.ContractHeader" Mapper="KTB.DNet.DataMapper.ContractHeaderMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.ContractDetail" Mapper="KTB.DNet.DataMapper.ContractDetailMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SparePartMaster" Mapper="KTB.DNet.DataMapper.SparePartMasterMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SparePartPO" Mapper="KTB.DNet.DataMapper.SparePartPOMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SparePartPODetail" Mapper="KTB.DNet.DataMapper.SparePartPODetailMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SparePartPOEstimate" Mapper="KTB.DNet.DataMapper.SparePartPOEstimateMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SparePartPOEstimateDetail" Mapper="KTB.DNet.DataMapper.SparePartPOEstimateDetailMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SparePartPOStatus" Mapper="KTB.DNet.DataMapper.SparePartPOStatusMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SparePartPOStatusDetail" Mapper="KTB.DNet.DataMapper.SparePartPOStatusDetailMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Deposit" Mapper="KTB.DNet.DataMapper.DepositMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.DepositLine" Mapper="KTB.DNet.DataMapper.DepositLineMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.DepositC2" Mapper="KTB.DNet.DataMapper.DepositC2Mapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.DepositC2Line" Mapper="KTB.DNet.DataMapper.DepositC2LineMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.POHeader" Mapper="KTB.DNet.DataMapper.POHeaderMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PODetail" Mapper="KTB.DNet.DataMapper.PODetailMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.NationalHoliday" Mapper="KTB.DNet.DataMapper.NationalHolidayMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PPQty" Mapper="KTB.DNet.DataMapper.PPQtyMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.TermOfPayment" Mapper="KTB.DNet.DataMapper.TermOfPaymentMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.ChassisMaster" Mapper="KTB.DNet.DataMapper.ChassisMasterMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.FSKind" Mapper="KTB.DNet.DataMapper.FSKindMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.FreeService" Mapper="KTB.DNet.DataMapper.FreeServiceMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.AlokasiStok_view" Mapper="KTB.DNet.DataMapper.AlokasiStok_viewMapperView, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.DailyPayment" Mapper="KTB.DNet.DataMapper.DailyPaymentMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PaymentPurpose" Mapper="KTB.DNet.DataMapper.PaymentPurposeMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Reason" Mapper="KTB.DNet.DataMapper.ReasonMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PDI" Mapper="KTB.DNet.DataMapper.PDIMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PositionWSC" Mapper="KTB.DNet.DataMapper.PositionWSCMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.WSCHeader" Mapper="KTB.DNet.DataMapper.WSCHeaderMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.WSCDetail" Mapper="KTB.DNet.DataMapper.WSCDetailMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.LaborMaster" Mapper="KTB.DNet.DataMapper.LaborMasterMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.WSCDamageRequestPart" Mapper="KTB.DNet.DataMapper.WSCDamageRequestPartMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.WSCEvidence" Mapper="KTB.DNet.DataMapper.WSCEvidenceMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.view_DealerWSC" Mapper="KTB.DNet.DataMapper.view_DealerWSCMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.view_DealerWSCProccessed" Mapper="KTB.DNet.DataMapper.view_DealerWSCProccessedMapper, KTB.DNet.DataMapper" />	
+	<Map Domain="KTB.DNet.Domain.DealerTerritory" Mapper="KTB.DNet.DataMapper.DealerTerritoryMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.EquipmentMaster" Mapper="KTB.DNet.DataMapper.EquipmentMasterMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.EquipmentSalesHeader" Mapper="KTB.DNet.DataMapper.EquipmentSalesHeaderMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.EquipmentSalesDetail" Mapper="KTB.DNet.DataMapper.EquipmentSalesDetailMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.EquipmentSalesPayment" Mapper="KTB.DNet.DataMapper.EquipmentSalesPaymentMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.StatusChangeHistory" Mapper="KTB.DNet.DataMapper.StatusChangeHistoryMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.HeaderBOM" Mapper="KTB.DNet.DataMapper.HeaderBOMMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.DetailBOM" Mapper="KTB.DNet.DataMapper.DetailBOMMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.EndCustomer" Mapper="KTB.DNet.DataMapper.EndCustomerMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.MainOperationArea" Mapper="KTB.DNet.DataMapper.MainOperationAreaMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.VehicleOwnership" Mapper="KTB.DNet.DataMapper.VehicleOwnershipMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PaymentMethod" Mapper="KTB.DNet.DataMapper.PaymentMethodMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.CustomerBusiness" Mapper="KTB.DNet.DataMapper.CustomerBusinessMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PaymentType" Mapper="KTB.DNet.DataMapper.PaymentTypeMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.VehicleBodyShape" Mapper="KTB.DNet.DataMapper.VehicleBodyShapeMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.MainUsage" Mapper="KTB.DNet.DataMapper.MainUsageMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.VehiclePurpose" Mapper="KTB.DNet.DataMapper.VehiclePurposeMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.OwnerAge" Mapper="KTB.DNet.DataMapper.OwnerAgeMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.TrCourse" Mapper="KTB.DNet.DataMapper.TrCourseMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.TrCourseEvaluation" Mapper="KTB.DNet.DataMapper.TrCourseEvaluationMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.TrClassAllocation" Mapper="KTB.DNet.DataMapper.TrClassAllocationMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.TrClassRegistration" Mapper="KTB.DNet.DataMapper.TrClassRegistrationMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.TrClass" Mapper="KTB.DNet.DataMapper.TrClassMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.TrCertificateLine" Mapper="KTB.DNet.DataMapper.TrCertificateLineMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.TrPreRequire" Mapper="KTB.DNet.DataMapper.TrPreRequireMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.TrScheduleUpload" Mapper="KTB.DNet.DataMapper.TrScheduleUploadMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.MonthlyDocument" Mapper="KTB.DNet.DataMapper.MonthlyDocumentMapper, KTB.DNet.DataMapper" />	
+	<Map Domain="KTB.DNet.Domain.AnnualDiscount" Mapper="KTB.DNet.DataMapper.AnnualDiscountMapper, KTB.DNet.DataMapper" />	
+	<Map Domain="KTB.DNet.Domain.AnnualDiscountAchievement" Mapper="KTB.DNet.DataMapper.AnnualDiscountAchievementMapper, KTB.DNet.DataMapper" />	
+	<Map Domain="KTB.DNet.Domain.AnnualDiscountAchievementHeader" Mapper="KTB.DNet.DataMapper.AnnualDiscountAchievementHeaderMapper, KTB.DNet.DataMapper" />	
+	<Map Domain="KTB.DNet.Domain.TrTrainee" Mapper="KTB.DNet.DataMapper.TrTraineeMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Reference" Mapper="KTB.DNet.DataMapper.ReferenceMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SpecialItemHeader" Mapper="KTB.DNet.DataMapper.SpecialItemHeaderMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SpecialItemDetail" Mapper="KTB.DNet.DataMapper.SpecialItemDetailMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SpecialItemPackage" Mapper="KTB.DNet.DataMapper.SpecialItemPackageMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.VIEW_PartNumberByExtMaterialGroup" Mapper="KTB.DNet.DataMapper.VIEW_PartNumberByExtMaterialGroupMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.VIEW_ExtMaterialGroup" Mapper="KTB.DNet.DataMapper.VIEW_ExtMaterialGroupMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.SparePartPOBillingRecap" Mapper="KTB.DNet.DataMapper.SparePartPOBillingRecapMapper, KTB.DNet.DataMapper" />	
+	<Map Domain="KTB.DNet.Domain.PartIncidentalHeader" Mapper="KTB.DNet.DataMapper.PartIncidentalHeaderMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PartIncidentalDetail" Mapper="KTB.DNet.DataMapper.PartIncidentalDetailMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PRPFile" Mapper="KTB.DNet.DataMapper.PRPFileMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PRPCategory" Mapper="KTB.DNet.DataMapper.PRPCategoryMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.PartIncidentalUser" Mapper="KTB.DNet.DataMapper.PartIncidentalUserMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.FileUploadAnnualDiscount" Mapper="KTB.DNet.DataMapper.FileUploadAnnualDiscountMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.Privilege" Mapper="KTB.DNet.DataMapper.PrivilegeMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.OrganizationPrivilege" Mapper="KTB.DNet.DataMapper.OrganizationPrivilegeMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.UserOrgAssignment" Mapper="KTB.DNet.DataMapper.UserOrgAssignmentMapper, KTB.DNet.DataMapper" />
+	<Map Domain="KTB.DNet.Domain.RoleOrganizationPrivilege" Mapper="KTB.DNet.DataMapper.RoleOrganizationPrivilegeMapper, KTB.DNet.DataMapper" />	
+</DomainDBMSMap>

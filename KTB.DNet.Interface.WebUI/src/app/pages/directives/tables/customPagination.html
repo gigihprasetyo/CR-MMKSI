@@ -1,0 +1,32 @@
+<nav>
+    <ul ng-if="numPages && pages.length >= 2" class="pagination"  style="float:left;margin-right:20px">
+        <li ng-if="start > 1">
+            <a href="#" ng-click="selectPage(1); $event.preventDefault(); $event.stopPropagation();">1</a>
+        </li>
+        <li ng-if="start > 2">
+            <a href="#" ng-click=" $event.preventDefault(); $event.stopPropagation();">...</a>
+        </li>
+        <li ng-repeat="page in pages" ng-class="{active: page==currentPage}">
+            <a href="#" ng-click="selectPage(page); $event.preventDefault(); $event.stopPropagation();">{{page}}</a>
+        </li>
+        <li ng-if="end  < totalPages">
+            <a href="#" ng-click=" $event.preventDefault(); $event.stopPropagation();">...</a>
+        </li>
+        <li ng-if="end  <= totalPages">
+            <a href="#" ng-click="selectPage(totalPages); $event.preventDefault(); $event.stopPropagation();">{{totalPages}}</a>
+        </li>
+    </ul>
+
+    <div style="display: -webkit-box;margin: 4px 0 -12px 0px;">
+        <span style="line-height: 2.3em;" >Rows on page</span>
+        <ui-select theme="bootstrap" ng-model="stItemsByPage" on-select="changeNumberOfRow(stItemsByPage)" append-to-body="true" style=" margin-left: 5px; ">
+            <ui-select-match placeholder="{{stItemsByPage}}">
+                <span> {{$select.selected}} </span>
+            </ui-select-match>
+            <ui-select-choices repeat="numberOfPage in numberOfPages">
+                <span ng-bind-html="numberOfPage"></span>
+            </ui-select-choices>
+        </ui-select>
+    </div>
+
+</nav>

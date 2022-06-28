@@ -1,0 +1,46 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow,* 
+FROM 
+(
+	SELECT
+		a.[accountid] as Id,
+		a.[Error_ID_Card],
+		a.[InvalidLength],
+		a.[InvalidFormat],
+		a.[Duplicate],
+		a.[Dummy],
+		a.[Error_Mobile_Nbr],
+		a.[InvalidBlankMobile],
+		a.[InvalidLengthMobile],
+		a.[InvalidFormatMobile],
+		a.[DuplicateMobile],
+		a.[DummyMobile],
+		a.[Error_BirthDate],
+		a.[InvalidBlankBirthDate],
+		a.[InvalidRangeBD],
+		a.[Error_EmailAddress],
+		a.[InvalidBlankEmail],
+		a.[InvalidLengthEmail],
+		a.[InvalidFormatEmail],
+		a.[DuplicateEmail],
+		a.[Error_Customer_Class],
+		a.[InvalidBlankCustClass],
+		a.[InvalidDataCustClass],
+		a.[ID_Card_Error_Reason],
+		a.[Mobile_Nbr_Error_Reason],
+		a.[Birth_Date_Error_Reason],
+		a.[Email_Address_Error_Reason],
+		a.[Customer_Class_Error_Reason],
+		a.[LastCheckedTime],
+		a.[ktb_dealercode],
+		a.[ktb_bucompany],
+		NGData = CASE	
+					WHEN Error_ID_Card=1 OR Error_Mobile_Nbr=1 OR Error_BirthDate=1 OR Error_EmailAddress=1 OR Error_Customer_Class=1
+					THEN 1
+					ELSE 0
+				END
+	FROM [DQI_DetailCustomer] a WITH (NOLOCK) 
+	LEFT JOIN CRM_businessunit b with (nolock) 
+	on a.ktb_dealercode = b.[name]
+	WHERE a.accountid = @Id
+) AS VWI_CRM_invalidcustomer

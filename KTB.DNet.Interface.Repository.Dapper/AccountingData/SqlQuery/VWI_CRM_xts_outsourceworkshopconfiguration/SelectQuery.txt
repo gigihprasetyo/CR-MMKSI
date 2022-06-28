@@ -1,0 +1,64 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_xts_outsourceworkshopconfiguration.company
+    , VWI_CRM_xts_outsourceworkshopconfiguration.businessunitcode
+    , VWI_CRM_xts_outsourceworkshopconfiguration.createdonbehalfbyyominame
+    , VWI_CRM_xts_outsourceworkshopconfiguration.modifiedonbehalfby
+    , VWI_CRM_xts_outsourceworkshopconfiguration.owningteam
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_locking
+    , VWI_CRM_xts_outsourceworkshopconfiguration.createdbyname
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_businessunitidname
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_outsourceworkshopconfiguration
+    , VWI_CRM_xts_outsourceworkshopconfiguration.owneridname
+    , VWI_CRM_xts_outsourceworkshopconfiguration.statecodename
+    , VWI_CRM_xts_outsourceworkshopconfiguration.owninguser
+    , VWI_CRM_xts_outsourceworkshopconfiguration.createdonbehalfby
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_pkcombinationkey
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_taxzoneidname
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_outsourceworkshopconfigurationid
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_outsourcebusinessunitid
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_categoryname
+    , VWI_CRM_xts_outsourceworkshopconfiguration.importsequencenumber
+    , VWI_CRM_xts_outsourceworkshopconfiguration.statecode
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_outsourcebusinessunitidname
+    , VWI_CRM_xts_outsourceworkshopconfiguration.utcconversiontimezonecode
+    , VWI_CRM_xts_outsourceworkshopconfiguration.createdbyyominame
+    , VWI_CRM_xts_outsourceworkshopconfiguration.owningbusinessunit
+    , VWI_CRM_xts_outsourceworkshopconfiguration.modifiedbyname
+    , VWI_CRM_xts_outsourceworkshopconfiguration.versionnumber
+    , VWI_CRM_xts_outsourceworkshopconfiguration.modifiedby
+    , VWI_CRM_xts_outsourceworkshopconfiguration.modifiedbyyominame
+    , VWI_CRM_xts_outsourceworkshopconfiguration.createdby
+    , VWI_CRM_xts_outsourceworkshopconfiguration.timezoneruleversionnumber
+    , VWI_CRM_xts_outsourceworkshopconfiguration.owneridtype
+    , VWI_CRM_xts_outsourceworkshopconfiguration.statuscodename
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_category
+    , VWI_CRM_xts_outsourceworkshopconfiguration.owneridyominame
+    , VWI_CRM_xts_outsourceworkshopconfiguration.modifiedon
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_outsourcebusinessunitdescription
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_taxzoneid
+    , VWI_CRM_xts_outsourceworkshopconfiguration.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_outsourceworkshopconfiguration.statuscode
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_vendoridname
+    , VWI_CRM_xts_outsourceworkshopconfiguration.createdon
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_businessunitid
+    , VWI_CRM_xts_outsourceworkshopconfiguration.createdonbehalfbyname
+    , VWI_CRM_xts_outsourceworkshopconfiguration.modifiedonbehalfbyname
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_vendorid
+    , VWI_CRM_xts_outsourceworkshopconfiguration.ownerid
+    , VWI_CRM_xts_outsourceworkshopconfiguration.overriddencreatedon
+    , VWI_CRM_xts_outsourceworkshopconfiguration.xts_vendordescription
+    , VWI_CRM_xts_outsourceworkshopconfiguration.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_outsourceworkshopconfiguration a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    {0}
+) as VWI_CRM_xts_outsourceworkshopconfiguration 

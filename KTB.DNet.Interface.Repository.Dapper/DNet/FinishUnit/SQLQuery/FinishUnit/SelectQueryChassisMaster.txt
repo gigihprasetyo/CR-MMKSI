@@ -1,0 +1,1 @@
+﻿SELECT * FROM ChassisMaster WITH (NOLOCK) {0}

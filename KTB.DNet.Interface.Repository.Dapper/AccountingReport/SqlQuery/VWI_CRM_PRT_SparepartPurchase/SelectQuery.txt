@@ -1,0 +1,20 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_PRT_SparepartPurchase.businessunitcode
+	,VWI_CRM_PRT_SparepartPurchase.xts_purchaseordernumber
+	,VWI_CRM_PRT_SparepartPurchase.xts_accountpayablevouchernumber
+	,VWI_CRM_PRT_SparepartPurchase.TransactionDate
+	,VWI_CRM_PRT_SparepartPurchase.PurchaseReceiptDate
+	,VWI_CRM_PRT_SparepartPurchase.xts_packingslipnumber
+	,VWI_CRM_PRT_SparepartPurchase.xts_vendor
+	,VWI_CRM_PRT_SparepartPurchase.xts_product
+	,VWI_CRM_PRT_SparepartPurchase.xts_description
+	,VWI_CRM_PRT_SparepartPurchase.ktb_modelcode
+	,VWI_CRM_PRT_SparepartPurchase.xts_uom
+	,VWI_CRM_PRT_SparepartPurchase.xts_receivedquantity
+	,VWI_CRM_PRT_SparepartPurchase.xts_unitcost
+	,VWI_CRM_PRT_SparepartPurchase.xts_discountamount
+	,VWI_CRM_PRT_SparepartPurchase.xts_totalconsumptiontaxamount
+	,VWI_CRM_PRT_SparepartPurchase.xts_totalamount
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_PRT_SparepartPurchase WITH (NOLOCK) {0}

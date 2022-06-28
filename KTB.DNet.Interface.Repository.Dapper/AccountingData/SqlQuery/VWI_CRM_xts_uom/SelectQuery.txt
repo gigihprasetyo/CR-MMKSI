@@ -1,0 +1,41 @@
+SELECT
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_uom.ktb_dnetid
+	, VWI_CRM_xts_uom.createdonbehalfbyyominame
+	, VWI_CRM_xts_uom.modifiedonbehalfby
+	, VWI_CRM_xts_uom.statecode
+	, VWI_CRM_xts_uom.statecodename
+	, VWI_CRM_xts_uom.createdonbehalfby
+	, VWI_CRM_xts_uom.xts_decimalprecision
+	, VWI_CRM_xts_uom.importsequencenumber
+	, VWI_CRM_xts_uom.organizationidname
+	, VWI_CRM_xts_uom.modifiedbyyominame
+	, VWI_CRM_xts_uom.utcconversiontimezonecode
+	, VWI_CRM_xts_uom.createdbyyominame
+	, VWI_CRM_xts_uom.xts_uom
+	, VWI_CRM_xts_uom.modifiedbyname
+	, VWI_CRM_xts_uom.versionnumber
+	, VWI_CRM_xts_uom.xts_uomid
+	, VWI_CRM_xts_uom.modifiedby
+	, VWI_CRM_xts_uom.createdby
+	, VWI_CRM_xts_uom.timezoneruleversionnumber
+	, VWI_CRM_xts_uom.statuscodename
+	, VWI_CRM_xts_uom.ktb_isinterfaced
+	, VWI_CRM_xts_uom.xts_unitclass
+	, VWI_CRM_xts_uom.modifiedon
+	, VWI_CRM_xts_uom.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_uom.statuscode
+	, VWI_CRM_xts_uom.createdbyname
+	, VWI_CRM_xts_uom.createdon
+	, VWI_CRM_xts_uom.organizationid
+	, VWI_CRM_xts_uom.createdonbehalfbyname
+	, VWI_CRM_xts_uom.modifiedonbehalfbyname
+	, VWI_CRM_xts_uom.ktb_isinterfacedname
+	, VWI_CRM_xts_uom.xts_unitclassname
+	, VWI_CRM_xts_uom.overriddencreatedon
+	, VWI_CRM_xts_uom.xts_description
+	, VWI_CRM_xts_uom.RowStatus
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_uom as VWI_CRM_xts_uom WITH (NOLOCK) 
+{0}

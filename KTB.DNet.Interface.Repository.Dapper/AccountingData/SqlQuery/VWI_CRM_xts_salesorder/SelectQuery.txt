@@ -1,0 +1,146 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_salesorder.company
+	, VWI_CRM_xts_salesorder.xts_parentbusinessunitid
+	, VWI_CRM_xts_salesorder.versionnumber
+	, VWI_CRM_xts_salesorder.createdon
+	, VWI_CRM_xts_salesorder.xts_methodofpaymentidname
+	, VWI_CRM_xts_salesorder.xts_salesordernumber
+	, VWI_CRM_xts_salesorder.xjp_idempotentmessage
+	, VWI_CRM_xts_salesorder.xts_referencenumberlookuptype
+	, VWI_CRM_xts_salesorder.xts_eventdata
+	, VWI_CRM_xts_salesorder.statuscodename
+	, VWI_CRM_xts_salesorder.xts_status
+	, VWI_CRM_xts_salesorder.xts_customerid
+	, VWI_CRM_xts_salesorder.xts_description
+	, VWI_CRM_xts_salesorder.modifiedbyyominame
+	, VWI_CRM_xts_salesorder.owneridtype
+	, VWI_CRM_xts_salesorder.ktb_saleschannel
+	, VWI_CRM_xts_salesorder.xts_totalbaseamount_base
+	, VWI_CRM_xts_salesorder.xts_checkstockagainst
+	, VWI_CRM_xts_salesorder.createdonbehalfby
+	, VWI_CRM_xts_salesorder.xts_referencenumberusedvehiclesalesorderid
+	, VWI_CRM_xts_salesorder.modifiedbyname
+	, VWI_CRM_xts_salesorder.xts_salesorderid
+	, VWI_CRM_xts_salesorder.xts_newvehiclesalesorderid
+	, VWI_CRM_xts_salesorder.xts_behaviorname
+	, VWI_CRM_xts_salesorder.xts_totalbaseamount
+	, VWI_CRM_xts_salesorder.xts_overcreditlimitonhold
+	, VWI_CRM_xts_salesorder.xts_billtocustomeridname
+	, VWI_CRM_xts_salesorder.owneridname
+	, VWI_CRM_xts_salesorder.xts_downpaymentispaidname
+	, VWI_CRM_xts_salesorder.overriddencreatedon
+	, VWI_CRM_xts_salesorder.xts_billtocustomerid
+	, VWI_CRM_xts_salesorder.xts_ordertypeid
+	, VWI_CRM_xts_salesorder.ktb_purchaseorderid
+	, VWI_CRM_xts_salesorder.xts_downpaymentamount
+	, VWI_CRM_xts_salesorder.createdonbehalfbyyominame
+	, VWI_CRM_xts_salesorder.modifiedonbehalfby
+	, VWI_CRM_xts_salesorder.exchangerate
+	, VWI_CRM_xts_salesorder.xts_totalconsumptiontaxamount_base
+	, VWI_CRM_xts_salesorder.ktb_saleschannelid
+	, VWI_CRM_xts_salesorder.xts_downpaymentamount_base
+	, VWI_CRM_xts_salesorder.ktb_ribbondata
+	, VWI_CRM_xts_salesorder.owningteam
+	, VWI_CRM_xts_salesorder.xts_referencenumberusedvehiclesalesorderidname
+	, VWI_CRM_xts_salesorder.xts_balance
+	, VWI_CRM_xts_salesorder.xts_billtocustomeridyominame
+	, VWI_CRM_xts_salesorder.xts_checkstockagainstname
+	, VWI_CRM_xts_salesorder.xts_totalreceipt
+	, VWI_CRM_xts_salesorder.xts_exchangeratedate
+	, VWI_CRM_xts_salesorder.xts_totaldiscountamount_base
+	, VWI_CRM_xts_salesorder.statecode
+	, VWI_CRM_xts_salesorder.xts_salespersonid
+	, VWI_CRM_xts_salesorder.timezoneruleversionnumber
+	, VWI_CRM_xts_salesorder.xts_termofpaymentid
+	, VWI_CRM_xts_salesorder.xts_totalwithholdingtaxamount_base
+	, VWI_CRM_xts_salesorder.ktb_purchaserequisitionid
+	, VWI_CRM_xts_salesorder.ktb_purchaserequisitionidname
+	, VWI_CRM_xts_salesorder.xts_exchangerateamount
+	, VWI_CRM_xts_salesorder.ktb_latestpurchasepricedate
+	, VWI_CRM_xts_salesorder.xts_totalconsumptiontaxamount
+	, VWI_CRM_xts_salesorder.xts_referencenumberlookupname
+	, VWI_CRM_xts_salesorder.xts_locking
+	, VWI_CRM_xts_salesorder.xts_handling
+	, VWI_CRM_xts_salesorder.xts_termofpaymentidname
+	, VWI_CRM_xts_salesorder.xts_totalamountbeforediscount
+	, VWI_CRM_xts_salesorder.xts_customernumber
+	, VWI_CRM_xts_salesorder.xts_referencenumbernewvehiclesalesorderid
+	, VWI_CRM_xts_salesorder.xts_totalreceipt_base
+	, VWI_CRM_xts_salesorder.createdonbehalfbyname
+	, VWI_CRM_xts_salesorder.xts_exchangeratetypeidname
+	, VWI_CRM_xts_salesorder.xts_newvehiclesalesorderidname
+	, VWI_CRM_xts_salesorder.ktb_saleschannelidname
+	, VWI_CRM_xts_salesorder.xts_totaldiscountamount
+	, VWI_CRM_xts_salesorder.utcconversiontimezonecode
+	, VWI_CRM_xts_salesorder.xts_businessunitid
+	, VWI_CRM_xts_salesorder.xts_referencenumberworkorderid
+	, VWI_CRM_xts_salesorder.xts_statusname
+	, VWI_CRM_xts_salesorder.xts_customeridyominame
+	, VWI_CRM_xts_salesorder.ownerid
+	, VWI_CRM_xts_salesorder.modifiedon
+	, VWI_CRM_xts_salesorder.importsequencenumber
+	, VWI_CRM_xts_salesorder.owneridyominame
+	, VWI_CRM_xts_salesorder.ktb_modelcode
+	, VWI_CRM_xts_salesorder.ktb_campaignid
+	, VWI_CRM_xts_salesorder.xts_shipmenttypename
+	, VWI_CRM_xts_salesorder.xts_transactiondate
+	, VWI_CRM_xts_salesorder.xts_downpaymentispaid
+	, VWI_CRM_xts_salesorder.xts_referencenumbernewvehiclesalesorderidname
+	, VWI_CRM_xts_salesorder.xts_ordertypeidname
+	, VWI_CRM_xts_salesorder.createdbyname
+	, VWI_CRM_xts_salesorder.xts_totalwithholdingtaxamount
+	, VWI_CRM_xts_salesorder.xts_methodofpaymentid
+	, VWI_CRM_xts_salesorder.xts_exchangerateamount_base
+	, VWI_CRM_xts_salesorder.xts_exchangeratetypeid
+	, VWI_CRM_xts_salesorder.ktb_campaignidname
+	, VWI_CRM_xts_salesorder.xts_overcreditlimitonholdname
+	, VWI_CRM_xts_salesorder.xts_balance_base
+	, VWI_CRM_xts_salesorder.xts_bigdata
+	, VWI_CRM_xts_salesorder.xts_handlingname
+	, VWI_CRM_xts_salesorder.xts_grandtotal
+	, VWI_CRM_xts_salesorder.xts_grandtotal_base
+	, VWI_CRM_xts_salesorder.xts_salespersonidname
+	, VWI_CRM_xts_salesorder.transactioncurrencyid
+	, VWI_CRM_xts_salesorder.ktb_customerdescription
+	, VWI_CRM_xts_salesorder.xts_cancellationdate
+	, VWI_CRM_xts_salesorder.createdby
+	, VWI_CRM_xts_salesorder.modifiedby
+	, VWI_CRM_xts_salesorder.ktb_overdueonholdname
+	, VWI_CRM_xts_salesorder.xts_shipmenttype
+	, VWI_CRM_xts_salesorder.createdbyyominame
+	, VWI_CRM_xts_salesorder.owninguser
+	, VWI_CRM_xts_salesorder.transactioncurrencyidname
+	, VWI_CRM_xts_salesorder.xts_customeridname
+	, VWI_CRM_xts_salesorder.owningbusinessunit
+	, VWI_CRM_xts_salesorder.xts_downpaymentamountreceived
+	, VWI_CRM_xts_salesorder.xts_parentbusinessunitidname
+	, VWI_CRM_xts_salesorder.modifiedonbehalfbyname
+	, VWI_CRM_xts_salesorder.xts_bigdataname
+	, VWI_CRM_xts_salesorder.ktb_purchaseorderidname
+	, VWI_CRM_xts_salesorder.xts_externalreferencenumber
+	, VWI_CRM_xts_salesorder.statuscode
+	, VWI_CRM_xts_salesorder.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_salesorder.xts_behavior
+	, VWI_CRM_xts_salesorder.ktb_say
+	, VWI_CRM_xts_salesorder.xts_totalamountbeforediscount_base
+	, VWI_CRM_xts_salesorder.ktb_overdueonhold
+	, VWI_CRM_xts_salesorder.xts_downpaymentamountreceived_base
+	, VWI_CRM_xts_salesorder.xts_referencenumberworkorderidname
+	, VWI_CRM_xts_salesorder.statecodename
+	, VWI_CRM_xts_salesorder.xts_businessunitidname
+	, VWI_CRM_xts_salesorder.ktb_saleschannelname
+	, VWI_CRM_xts_salesorder.RowStatus
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_xts_salesorder a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.xts_businessunitid 
+	{0}
+) VWI_CRM_xts_salesorder

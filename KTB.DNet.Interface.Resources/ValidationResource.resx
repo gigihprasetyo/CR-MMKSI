@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Accessories" xml:space="preserve">
+    <value> Accessories dan </value>
+    <comment>Sparepart</comment>
+  </data>
+  <data name="ChassisBeingRetur" xml:space="preserve">
+    <value>Chassis {0} sedang dikembalikan</value>
+    <comment>Create PDI</comment>
+  </data>
+  <data name="ChassisMasterIDAndFsKindIDExist" xml:space="preserve">
+    <value>No. Rangka {0} dengan jenis servis {1} sudah ada</value>
+    <comment>Free Service</comment>
+  </data>
+  <data name="ChassisMasterIDNoPDI" xml:space="preserve">
+    <value>No. Rangka {0} belum PDI</value>
+    <comment>Free Service</comment>
+  </data>
+  <data name="For" xml:space="preserve">
+    <value> Untuk</value>
+  </data>
+  <data name="FromSPK" xml:space="preserve">
+    <value> berasal dari proses SPK.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="FSKindNotRegistered" xml:space="preserve">
+    <value>Kode Jenis Free Servis tidak terdaftar !</value>
+    <comment>Free Service</comment>
+  </data>
+  <data name="GreaterThan" xml:space="preserve">
+    <value>lebih besar</value>
+    <comment>Condition</comment>
+  </data>
+  <data name="IndentPartNotMatch" xml:space="preserve">
+    <value> tidak cocok dengan Tipe Barang yang dipilih.</value>
+    <comment>IndentPart</comment>
+  </data>
+  <data name="InvalidDateFormat" xml:space="preserve">
+    <value>Format tanggal {0}  {1} salah. Tanggal harus dalam format ddmmyyyy.</value>
+    <comment>Create PDI Free Service</comment>
+  </data>
+  <data name="InvalidDateFormatServiceIncoming" xml:space="preserve">
+    <value>Format tanggal {0} {1} salah. Tanggal harus dalam format [dd/mm/yy]</value>
+    <comment>Service Incoming</comment>
+  </data>
+  <data name="InvalidDateTglBukaMoreThanToday" xml:space="preserve">
+    <value>Tanggal buka {0} transaksi tidak boleh melebihi tanggal hari ini {1}</value>
+    <comment>Service Incoming</comment>
+  </data>
+  <data name="InvalidDateTglTutupLessThanTglBuka" xml:space="preserve">
+    <value>Tanggal tutup {0} tidak boleh kurang dari tanggal buka  {1}</value>
+    <comment>Service Incoming</comment>
+  </data>
+  <data name="InvalidFileType" xml:space="preserve">
+    <value>Tipe file {0} tidak valid. Hanya menerima {1}</value>
+  </data>
+  <data name="InvalidKodeMekanik" xml:space="preserve">
+    <value>Kode mekanik {0} tidak tersedia pada dealer code {1}</value>
+    <comment>Service Incoming</comment>
+  </data>
+  <data name="InvalidMetodePembayaran" xml:space="preserve">
+    <value>Metode pembayaran harus berisi TUNAI atau KREDIT</value>
+    <comment>Service Incoming</comment>
+  </data>
+  <data name="InvalidTimeFormatServiceIncoming" xml:space="preserve">
+    <value>Format tanggal {0}  {1} salah. Tanggal harus dalam format [dd/mm/yy hh:mm]</value>
+    <comment>Service Incoming</comment>
+  </data>
+  <data name="InvalidTotalLC" xml:space="preserve">
+    <value>Total LC tidak diperbolehkan bernilai decimal</value>
+    <comment>Service Incoming</comment>
+  </data>
+  <data name="LessThan" xml:space="preserve">
+    <value>lebih kecil</value>
+    <comment>Condition</comment>
+  </data>
+  <data name="ListOf" xml:space="preserve">
+    <value>Daftar {0}</value>
+    <comment>Condition</comment>
+  </data>
+  <data name="MaximumFileSize" xml:space="preserve">
+    <value>Maximum ukuran file yang diperbolehkan untuk {0}  adalah {1} bytes</value>
+  </data>
+  <data name="MileAgeInvalid" xml:space="preserve">
+    <value>Jarak tempuh melampaui batas jenis free service</value>
+    <comment>Free Service</comment>
+  </data>
+  <data name="NoFreeServiceForThisVehicle" xml:space="preserve">
+    <value>Kendaraan tidak berhak mendaftarkan Free Service</value>
+    <comment>Free Service</comment>
+  </data>
+  <data name="OpenFakturDateEmpty" xml:space="preserve">
+    <value>Tanggal Open Faktur kosong.</value>
+    <comment>Create PDI</comment>
+  </data>
+  <data name="PDIDateLessThanOpenFakturDate" xml:space="preserve">
+    <value>Tanggal PDI  kurang dari Tanggal Open Faktur.</value>
+    <comment>Create PDI</comment>
+  </data>
+  <data name="Put" xml:space="preserve">
+    <value>pasang/Stamping</value>
+    <comment>Sparepart</comment>
+  </data>
+  <data name="ServiceDateGreaterThanTodayDate" xml:space="preserve">
+    <value>Tanggal Service {0} melebihi hari ini {1}</value>
+    <comment>Free Service</comment>
+  </data>
+  <data name="SoldDateGreaterThanServiceDate" xml:space="preserve">
+    <value>Tanggal Penjualan {0} melebihi Tanggal Service {1}</value>
+    <comment>Free Service</comment>
+  </data>
+  <data name="ValidationIndentPartDataID" xml:space="preserve">
+    <value>Untuk update Data ID atau RequestNo harus di isi</value>
+    <comment>IndentPartHeader</comment>
+  </data>
+  <data name="ValidationIndentPartHeaderAccesorries" xml:space="preserve">
+    <value> Harap mengisikan dengan 1. Parts atau 3. Accessories</value>
+    <comment>IndentPartHeader</comment>
+  </data>
+  <data name="ValidationIndentPartHeaderStamping" xml:space="preserve">
+    <value> Harap mengisikan dengan 1. Pilih Pasang/Stamping atau 2. Kirim</value>
+    <comment>IndentPartHeader</comment>
+  </data>
+  <data name="ValidationIndentPartListOf" xml:space="preserve">
+    <value> on some list of IndentPartDetail</value>
+    <comment>IndentPart</comment>
+  </data>
+  <data name="InvalidDateSoldDate" xml:space="preserve">
+    <value>Tanggal penjualan tidak valid</value>
+    <comment>FreeService</comment>
+  </data>
+  <data name="ValidationAge" xml:space="preserve">
+    <value>Umur siswa tidak memenuhi syarat, usia minimal 18 tahun. Cek tanggal lahir kembali.</value>
+    <comment>EmployeeMechanic</comment>
+  </data>
+  <data name="ValidationBirthDate" xml:space="preserve">
+    <value>Tanggal lahir tolong di cek kembali.</value>
+    <comment>EmployeeMechanic</comment>
+  </data>
+  <data name="PMHeaderRemarksFormat" xml:space="preserve">
+    <value>Smart Package: Type {0} Tahun ke {1} Valid Until ({2})</value>
+    <comment>PMHeader</comment>
+  </data>
+  <data name="ValidationEmptyPreArea" xml:space="preserve">
+    <value>Kosongkan (Kota / Kabupaten)</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationName1" xml:space="preserve">
+    <value>Nama 1 lebih dari 40 karakter</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationNoKTPMaxLength" xml:space="preserve">
+    <value>No KTP maksimal 40 karakter</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationNoKTPMinLength" xml:space="preserve">
+    <value>No KTP tidak benar</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationNoKTPTDPMaxLength" xml:space="preserve">
+    <value>No KTP / TDP maksimal 40 karakter</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationNoKTPTDPMinLength" xml:space="preserve">
+    <value>No KTP / TDP tidak benar</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationNoTDPMaxLength" xml:space="preserve">
+    <value>No TDP maksimal 40 karakter</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationNoTDPMinLength" xml:space="preserve">
+    <value>No TDP tidak benar</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationPhoneNumber" xml:space="preserve">
+    <value>No Telp tidak benar</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationPostalCodeLength" xml:space="preserve">
+    <value>Kodepos harus 5 Angka</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationUseKab" xml:space="preserve">
+    <value>Gunakan KAB atau kosongkan (Kota / Kabupaten)</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationUseKabKota" xml:space="preserve">
+    <value>Gunakan KAB / KOTA atau kosongkan (Kota / Kabupaten)</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationUseKabKotaKodya" xml:space="preserve">
+    <value>Gunakan KAB / KOTA / KODYA</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ChassisAndEngineDoesNotMatch" xml:space="preserve">
+    <value>Nomor mesin {0} tidak cocok dengan nomor rangka {1}</value>
+    <comment>Free Service</comment>
+  </data>
+  <data name="ChassisNotExistInPMHeader" xml:space="preserve">
+    <value>Data nomor rangka {0} dengan FSType 2 belum ada di tabel PMHeader</value>
+    <comment>Free Service</comment>
+  </data>
+  <data name="VisitTypeDoesNotExist" xml:space="preserve">
+    <value>Tipe kedatangan {0} tidak valid ( WI = Walk In, BO = Booking)</value>
+    <comment>Free Service</comment>
+  </data>
+  <data name="ChassisNoFreeServiceSpecial" xml:space="preserve">
+    <value>Chassis {0} tidak boleh Free Service Special</value>
+  </data>
+  <data name="MileAgeNotMatchWithFSType" xml:space="preserve">
+    <value>Jarak tempuh tidak sesuai dengan batas jenis free service</value>
+    <comment>Free Service</comment>
+  </data>
+  <data name="ValidationName2" xml:space="preserve">
+    <value>Nama 2 lebih dari 40 karakter</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ValidationBuilding" xml:space="preserve">
+    <value>Gedung lebih dari 40 karakter</value>
+    <comment>Customer Vehicle</comment>
+  </data>
+  <data name="ChassisMasterIDAndPMKindIDExist" xml:space="preserve">
+    <value>Sudah ada claim untuk No Rangka {0} pada KM {1} - KindCode {2}</value>
+    <comment>MSPClaim</comment>
+  </data>
+  <data name="StandKMInvalid" xml:space="preserve">
+    <value>{0} KM tidak terdaftar pada sistem</value>
+    <comment>MSPClaim</comment>
+  </data>
+  <data name="InvalidWktMasukWktKeluar" xml:space="preserve">
+    <value>Waktu keluar {0} tidak boleh kurang dari waktu masuk  {1}</value>
+    <comment>Service Incoming BP</comment>
+  </data>
+  <data name="InvalidJenisKerusakan" xml:space="preserve">
+    <value>Jenis Kerusakan harus berisi Ringan atau Sedang atau Berat</value>
+    <comment>Service Incoming Body Paint</comment>
+  </data>
+  <data name="InvalidServiceBooking" xml:space="preserve">
+    <value>Booking harus berisi Ya atau Tidak</value>
+    <comment>Service Incoming Body Paint</comment>
+  </data>
+  <data name="InvalidMetodePembayaranBP" xml:space="preserve">
+    <value>Metode Pembarayan harus berisi TUNAI atau KREDIT atau ASURANSI</value>
+    <comment>Service Incoming BP</comment>
+  </data>
+</root>

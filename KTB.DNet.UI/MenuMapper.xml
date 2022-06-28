@@ -1,0 +1,1065 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+===========================================================================
+AUTHOR        :                                                 
+PURPOSE       : Menu Mapper Configuration File.  
+SPECIAL NOTES :                                                            
+================================                                                      
+Copyright  2005                                       
+================================                                                      
+$History      : $                                                          
+Generated on 7/28/2005 - 11:50:00 AM
+                                                                           
+===========================================================================
+-->
+<DomainDBMSMap>
+  <!--Discount Proposal-->
+  <Map MenuID="8001" MenuPage="DiscountProposal/FrmInputDiscountProposal.aspx"/>
+  <Map MenuID="8002" MenuPage="DiscountProposal/FrmDaftarDiscountProposal.aspx"/>
+  <Map MenuID="8003" MenuPage="DiscountProposal/FrmProgramDiskonReguler.aspx"/>
+  <Map MenuID="8004" MenuPage="DiscountProposal/FrmDiscountMaster.aspx"/>
+  <Map MenuID="8005" MenuPage="DiscountProposal/FrmDPFleetCustomerList.aspx"/>
+  <Map MenuID="8006" MenuPage="DiscountProposal/FrmDiscountMatrix.aspx"/>
+  <Map MenuID="8007" MenuPage="DiscountProposal/FrmDPMaintainParameter.aspx"/>
+  <!--End Discount Proposal-->
+
+  <Map MenuID="999011" MenuPage="Salesman/FrmSalesmanDSE.aspx"/>
+  <Map MenuID="999012" MenuPage="Salesman/FrmSalesmanDSE.aspx"/>
+  
+  <Map MenuID="7901" MenuPage="ESRUT/FrmUploadESRUT.aspx"/>
+  <Map MenuID="7902" MenuPage="ESRUT/FrmDownloadESRUT.aspx"/>
+  <Map MenuID="7903" MenuPage="ESRUT/FrmDownloadESRUTDealer.aspx"/>
+  <!--Append Menu here-->
+  <!-- Wems -->
+
+  <!--CS-->
+  <Map MenuID="10320" MenuPage="CallCenter/FrmCcInputCsTeam.aspx?Mode=CS&amp;Menu=6&amp;edit=true" />
+  <Map MenuID="10321" MenuPage="CallCenter/FrmCcCSTeamList.aspx"></Map>
+  <Map MenuID="10322" MenuPage="CallCenter/FrmCcResignCsTeam.aspx"></Map>
+  <Map MenuID="10323" MenuPage="Training/FrmCourseRegistrationCS.aspx" />
+  <Map MenuID="10324" MenuPage="Training/FrmClassConfirmationCS.aspx" />
+
+  
+  <Map MenuID="7700" MenuPage="Service/FrmWSCHeader.aspx"/>
+  <Map MenuID="7800" MenuPage="Service/FrmWSCParameterHeader.aspx"/>
+
+  <Map MenuID="22336666" MenuPage="Service/FrmWSCForm.aspx"></Map>
+  <Map MenuID="22336688" MenuPage="Service/FrmWSCFormList.aspx"></Map>
+
+  <Map MenuID="111119" MenuPage="Service/FrmWSCHeaderBB.aspx?Mode=New" />
+
+  <Map MenuID="777777777" MenuPage="Service/FrmWSCParameterLog.aspx" />
+
+  <!--approval training-->
+  <Map MenuID="10217" MenuPage="Training/FrmTrFreePass.aspx?area=2" />
+  
+  <!--Upload-->
+  <Map MenuID="10219" MenuPage="General/FrmGlobalUpload.aspx?code=freepass" />
+  <Map MenuID="99989" MenuPage="General/FrmGlobalUpload.aspx?code=salesmangrade" />
+  <Map MenuID="99988" MenuPage="Salesman/FrmListSalesmanGrade.aspx" />
+  <Map MenuID="10222" MenuPage="General/FrmGlobalUpload.aspx?code=classass" />
+
+  <!--approval training-->
+  <Map MenuID="10215" MenuPage="Training/FrmTrApproval.aspx?area=2" />
+  
+  <!--Training New - Kategori Kursus-->
+  <Map MenuID="10101" MenuPage="Training/FrmTRCourseCategory.aspx?area=1" />
+  <Map MenuID="10201" MenuPage="Training/FrmTRCourseCategory.aspx?area=2" />
+  <Map MenuID="10301" MenuPage="Training/FrmTRCourseCategory.aspx?area=3" />
+  
+  <!--Training New - Kategori Training-->
+  <Map MenuID="10102" MenuPage="Training/FrmTrCourse.aspx?area=1" />
+  <Map MenuID="10202" MenuPage="Training/FrmTrCourse.aspx?area=2" />
+  <Map MenuID="10302" MenuPage="Training/FrmTrCourse.aspx?area=3" />
+
+  <!--Training New - Jenis Evaluasi-->
+  <Map MenuID="10103" MenuPage="Training/FrmTrCourseEvaluationNew.aspx?area=1" />
+  <Map MenuID="10203" MenuPage="Training/FrmTrCourseEvaluationNew.aspx?area=2" />
+  <Map MenuID="10303" MenuPage="Training/FrmTrCourseEvaluationNew.aspx?area=3" />
+
+  <!--Training New - Alokasi-->
+  <Map MenuID="10109" MenuPage="Training/FrmTrClassAllocationNew.aspx?area=1" />
+  <Map MenuID="10209" MenuPage="Training/FrmCourseCategoryAllocated.aspx?area=2" />
+  <Map MenuID="10309" MenuPage="Training/FrmTrClassAllocationNew.aspx?area=3" />
+
+  <!--Training New - Reminder-->
+  <Map MenuID="10110" MenuPage="Training/FrmTrReminderNew.aspx?area=1" />
+  <Map MenuID="10210" MenuPage="Training/FrmTrReminderNew.aspx?area=2" />
+  <Map MenuID="10310" MenuPage="Training/FrmTrReminderNew.aspx?area=3" />
+  <Map MenuID="10116" MenuPage="Training/FrmTrReminderNew.aspx?area=1" />
+
+  <!--Training New - Referensi-->
+  <Map MenuID="10111" MenuPage="Training/FrmReferenceNew.aspx?area=1" />
+  <Map MenuID="10211" MenuPage="Training/FrmReferenceNew.aspx?area=2" />
+  <Map MenuID="10311" MenuPage="Training/FrmReferenceNew.aspx?area=3" />
+  
+
+  <!--Training New - Kelas-->
+  <Map MenuID="10108" MenuPage="Training/FrmTrClassSales.aspx" />
+  <Map MenuID="10123" MenuPage="Training/FrmTrClassSales.aspx" />
+  <Map MenuID="10208" MenuPage="Training/FrmTrClassAss.aspx" />
+  <Map MenuID="10308" MenuPage="Training/FrmTrClassCs.aspx" />
+  
+  <!--Training Data Status Siswa-->
+  <Map MenuID="10112" MenuPage="Training/FrmDataStatusSiswa.aspx?category=sales" />
+  <Map MenuID="10212" MenuPage="Training/FrmDataStatusSiswa.aspx?category=ass" />
+  <Map MenuID="10312" MenuPage="Training/FrmDataStatusSiswa.aspx?category=cs" />
+  <Map MenuID="10224" MenuPage="Training/FrmDataStatusSiswa.aspx?category=ass" />
+  <Map MenuID="10118" MenuPage="Training/FrmDataStatusSiswa.aspx?category=sales" />
+
+  <!--Training Data Status Siswa-->
+  <Map MenuID="10207" MenuPage="Training/FrmDataSiswa.aspx?area=2" />
+  <Map MenuID="10236" MenuPage="Training/FrmDataSiswa.aspx?area=2" />
+  <Map MenuID="10107" MenuPage="Training/FrmDataSiswa.aspx?area=1" />
+  <Map MenuID="10307" MenuPage="Training/FrmDataSiswa.aspx?area=3" />
+
+  <!--Training Upload Jadwal-->
+  <Map MenuID="10232" MenuPage="Training/FrmTrScheduleUpload.aspx?area=2" />
+  <Map MenuID="10121" MenuPage="Training/FrmTrScheduleUpload.aspx?area=1" />
+  <Map MenuID="10328" MenuPage="Training/FrmTrScheduleUpload.aspx?area=3" />
+  <Map MenuID="10233" MenuPage="Training/FrmTrScheduleUpload.aspx?area=2" />
+  <Map MenuID="10122" MenuPage="Training/FrmTrScheduleUpload.aspx?area=1" />
+  <Map MenuID="10329" MenuPage="Training/FrmTrScheduleUpload.aspx?area=3" />
+  
+  <!--Training Data Status Pendaftaran-->
+  <Map MenuID="10114" MenuPage="Training/FrmDaftarPendaftaranSales.aspx?" />
+  <Map MenuID="10115" MenuPage="Training/FrmDaftarPendaftaranSales.aspx?" />
+
+  <!--Training Hasil Evaluasi-->
+  <Map MenuID="10117" MenuPage="Training/FrmCourseEvaluationList.aspx?area=1" />
+  <Map MenuID="10120" MenuPage="Training/FrmCourseEvaluationList.aspx?area=1" />
+  <Map MenuID="10226" MenuPage="Training/FrmCourseEvaluationList.aspx?area=2" />
+  <Map MenuID="10231" MenuPage="Training/FrmCourseEvaluationList.aspx?area=2" />
+  <Map MenuID="10326" MenuPage="Training/FrmCourseEvaluationList.aspx?area=3" />
+  <Map MenuID="10327" MenuPage="Training/FrmCourseEvaluationList.aspx?area=3" />
+  
+
+  <!--Training Input Data Nilai-->
+  <Map MenuID="10225" MenuPage="Training/FrmTrCertificateLine3.aspx?area=2" />
+  <Map MenuID="10119" MenuPage="Training/FrmTrCertificateLine3.aspx?area=1" />
+  <Map MenuID="10325" MenuPage="Training/FrmTrCertificateLine3.aspx?area=3" />
+
+  <Map MenuID="10213" MenuPage="Training/FrmTrAdditionalClass.aspx" />
+  <Map MenuID="10214" MenuPage="Training/FrmCourseRegistration.aspx?area=2" />
+  <Map MenuID="10227" MenuPage="Training/FrmListPendaftaranASS.aspx" />
+  <Map MenuID="10216" MenuPage="Training/FrmDataSiswaBerbayar.aspx?readonly=0&amp;area=2" />
+  <Map MenuID="10218" MenuPage="Training/FrmCourseBill.aspx?area=2" />
+  <Map MenuID="10220" MenuPage="Training/FrmCourseBill.aspx?area=2" />
+  <Map MenuID="10221" MenuPage="Training/FrmTrPaymentInput.aspx?area=2" />
+  <Map MenuID="10223" MenuPage="Training/FrmDaftarPembayaran.aspx?area=2" />
+  <Map MenuID="10230" MenuPage="Training/FrmDaftarPembayaran.aspx?area=2" />
+  <Map MenuID="10229" MenuPage="Training/FrmTrCertificateConfig.aspx" />
+  <Map MenuID="10204" MenuPage="Training/FrmTrReplacement.aspx?area=2" />
+  <Map MenuID="10113" MenuPage="Training/FrmPendaftaranSales.aspx" />
+
+
+  <Map MenuID="10106" MenuPage="Training/FrmTrPreRequire.aspx?category=sales" />
+  <Map MenuID="10206" MenuPage="Training/FrmTrPreRequire.aspx?category=ass" />
+  <Map MenuID="10306" MenuPage="Training/FrmTrPreRequire.aspx?category=cs" />
+  <Map MenuID="10205" MenuPage="Training/FrmTrMRTC.aspx" />
+
+  <!-- EOF Wems -->
+
+  <!-- STAT MSP -->
+  <Map MenuID="160401" MenuPage="MSP/FrmMSPMaster.aspx"/>
+  <Map MenuID="160402" MenuPage="MSP/FrmMSPRegistration.aspx"/>
+  <Map MenuID="160403" MenuPage="MSP/FrmMSPRegistrationList.aspx"/>
+  <Map MenuID="160404" MenuPage="MSP/FrmMSPPayment.aspx"/>
+  <Map MenuID="160405" MenuPage="MSP/FrmMSPPaymentList.aspx"/>
+  <Map MenuID="160406" MenuPage="MSP/FrmMSPClaimList.aspx"/>
+  <Map MenuID="160407" MenuPage="MSP/FrmMSPRegistrationUpload.aspx"/>
+  <Map MenuID="160408" MenuPage="MSP/FrmMSPClaimEntry.aspx"/>
+  <!-- END MSP-->
+
+  <!-- STAT MSP Extended -->
+  <Map MenuID="170401" MenuPage="MSP/FrmMSPExtendedRegistration.aspx"/>
+  <Map MenuID="170402" MenuPage="MSP/FrmMSPExtendedRegistrationList.aspx"/>
+  <Map MenuID="170403" MenuPage="MSP/FrmMSPExtendedMaster.aspx"/>
+  <Map MenuID="170404" MenuPage="MSP/FrmMSPExtendedPayment.aspx"/>
+  <Map MenuID="170405" MenuPage="MSP/FrmMSPExtendedPaymentList.aspx"/>
+  <Map MenuID="170407" MenuPage="MSP/FrmMSPExtendedUploadFakturPajak.aspx"/>
+  <Map MenuID="170408" MenuPage="MSP/FrmMSPExtendedUploadPayment.aspx"/>
+  
+  <!-- END MSP Extended-->
+
+  <Map MenuID="1234567" MenuPage="General/FrmPODate.aspx"/>
+  <Map MenuID="110" MenuPage="Product/FrmBasisProduct.aspx" />
+  <Map MenuID="120" MenuPage="Error.html" />
+  <Map MenuID="130" MenuPage="Welcome.html" />
+  <Map MenuID="140" MenuPage="logout.aspx" />
+  <Map MenuID="2210" MenuPage="FinishUnit/FrmCategory.aspx" />
+  <Map MenuID="2220" MenuPage="General/FrmGroup.aspx" />
+  <Map MenuID="2230" MenuPage="General/FrmCity.aspx" />
+  <Map MenuID="2240" MenuPage="General/FrmProvince.aspx" />
+  <Map MenuID="2110" MenuPage="General/FrmDealerMaintenance.aspx" />
+  <Map MenuID="1110" MenuPage="FinishUnit/FrmVehicleColor.aspx" />
+  <Map MenuID="1111" MenuPage="FinishUnit/FrmVehicleKind.aspx" />
+  <Map MenuID="1112" MenuPage="FinishUnit/FrmVehicleKindMaster.aspx" />
+  <Map MenuID="1120" MenuPage="FinishUnit/FrmPrice.aspx" />
+  <Map MenuID="2250" MenuPage="FinishUnit/FrmVehicleType.aspx" />
+  <Map MenuID="2260" MenuPage="FinishUnit/FrmVehicleModel.aspx" />
+  <Map MenuID="1130" MenuPage="FinishUnit/FrmVehicleColorInformation.aspx" />
+  <Map MenuID="1140" MenuPage="FinishUnit/FrmGetPrice.aspx" />
+  <Map MenuID="1150" MenuPage="General/FrmBusinessSectorHeader.aspx" />
+  <Map MenuID="1160" MenuPage="General/FrmBusinessSectorDetail.aspx" />
+  <Map MenuID="1210" MenuPage="FinishUnit/FrmDOStatusList.aspx" />
+  <Map MenuID="1211" MenuPage="FinishUnit/FrmDelivery.aspx" />
+  <Map MenuID="1510" MenuPage="FinishUnit/FrmInvoiceReqList.aspx?Mode=New" />
+  <Map MenuID="1520" MenuPage="FinishUnit/FrmInvoiceResultList.aspx" />
+  <Map MenuID="1525" MenuPage="FinishUnit/FrmChassisMasterProfile.aspx" />
+  <Map MenuID="2741" MenuPage="FinishUnit/FrmSPKMatching.aspx" />
+  <Map MenuID="2270" MenuPage="General/FrmTermOfPayment.aspx" />
+  <Map MenuID="2280" MenuPage="General/FrmArea1.aspx" />
+  <Map MenuID="2281" MenuPage="General/FrmMainArea.aspx" />
+
+  <Map MenuID="2290" MenuPage="General/FrmArea2.aspx" />
+  <Map MenuID="2120" MenuPage="General/FrmListDealerMantenance.aspx" />
+  <Map MenuID="2130" MenuPage="General/FrmTransactionControl.aspx" />
+  <Map MenuID="2215" MenuPage="General/FrmNationalHoliday.aspx" />
+  <Map MenuID="2310" MenuPage="UserManagement/FrmMasterPrivilege.aspx" />
+  <Map MenuID="2370" MenuPage="UserManagement/FrmUserList.aspx" />
+  <Map MenuID="2360" MenuPage="UserManagement/FrmUserInfo.aspx" />
+  <Map MenuID="2320" MenuPage="General/FrmDealerMaintenance.aspx" />
+  <Map MenuID="2330" MenuPage="General/FrmListDealerMantenance.aspx" />
+  <Map MenuID="2292" MenuPage="Service/FrmReason.aspx" />
+  <Map MenuID="2293" MenuPage="Service/FrmListServiceGrade.aspx" />
+  
+  <Map MenuID="2295" MenuPage="General/FrmPaymentPurpose.aspx" />
+  <Map MenuID="1310" MenuPage="PK/PesananKendaraanKhusus.aspx" />
+  <Map MenuID="1311" MenuPage="PK/PesananKendaraanBiasa.aspx" />
+  <Map MenuID="1313" MenuPage="PK/SearchPK.aspx" />
+  <Map MenuID="1414" MenuPage="PK/ValidatePKOrder.aspx" />
+  <Map MenuID="1415" MenuPage="PK/ResponsePKOrder.aspx?New=True" />
+  <Map MenuID="1416" MenuPage="PK/UploadProductionPlanning.aspx" />
+  <Map MenuID="1417" MenuPage="PK/DisplayDealerOrderQty.aspx" />
+  <Map MenuID="1419" MenuPage="PK/ListContract.aspx" />
+  <Map MenuID="1499" MenuPage="Report/frmReportPK.aspx" />
+  <Map MenuID="1314" MenuPage="PK/ListPK.aspx" />
+  <Map MenuID="210" MenuPage="SparePart/FrmEntrySparePartPO.aspx" />
+  <Map MenuID="220" MenuPage="SparePart/FrmUploadSPPOText.aspx" />
+  <Map MenuID="230" MenuPage="SparePart/FrmUploadSPPOExcel.aspx" />
+  <Map MenuID="240" MenuPage="SparePart/FrmGetSPPOCheckList.aspx" />
+  <Map MenuID="250" MenuPage="SparePart/FrmPurchaseOrderEstimate.aspx" />
+  <Map MenuID="260" MenuPage="SparePart/frmSPPOStatus.aspx" />
+  <Map MenuID="270" MenuPage="SparePart/frmSPPOList.aspx" />
+  <Map MenuID="280" MenuPage="SparePart/frmSPPOListForKTB.aspx" />
+  <Map MenuID="290" MenuPage="SparePart/FrmUploadPemesanan.aspx"></Map>
+  <Map MenuID="410" MenuPage="SparePart/frmSparePartMaster.aspx" />
+  <Map MenuID="420" MenuPage="SparePart/FrmSearchSAPSparePartMaster.aspx" />
+  <Map MenuID="501" MenuPage="SparePart/FrmDisplayAnnualDiscountAchivement.aspx" />
+  <Map MenuID="502" MenuPage="SparePart/FrmUploadAnnualDiscount.aspx" />
+  <Map MenuID="503" MenuPage="SparePart/FrmDisplayAnnualDiscount.aspx" />
+  <Map MenuID="504" MenuPage="SparePart/FrmUploadItemAnnualDiscount.aspx" />
+  <Map MenuID="9100" MenuPage="Service/FrmFSKind.aspx" />
+  <Map MenuID="9200" MenuPage="Service/FrmEntryFreeServis.aspx" />
+  <Map MenuID="9300" MenuPage="ClossingMessageFS.htm" />
+  <Map MenuID="9400" MenuPage="Service/SubmitFStoSAP.aspx" />
+  <Map MenuID="9500" MenuPage="Service/FrmGetFreeServiceDataStatus.aspx" />
+  <Map MenuID="8100" MenuPage="Service/FrmEntryPDI.aspx" />
+  <Map MenuID="8200" MenuPage="Service/FrmEntryPDIViaText.aspx" />
+  <Map MenuID="8300" MenuPage="Service/SubmitPDItoSAP.aspx" />
+  <Map MenuID="8400" MenuPage="Service/frmGetPDIDataStatus.aspx" />
+  <Map MenuID="1470" MenuPage="PO/ListPO.aspx" />
+  <Map MenuID="1410" MenuPage="PO/OpenDailyPO.aspx" />
+  <Map MenuID="1420" MenuPage="PO/ConfirmDailyPO.aspx" />
+  <Map MenuID="1430" MenuPage="PO/frmDisplayPOAllocation.aspx" />
+  <Map MenuID="1440" MenuPage="PO/ProposeAllocationList.aspx" />
+  <Map MenuID="1450" MenuPage="PO/UpdatePaymentStatus.aspx" />
+  <Map MenuID="1451" MenuPage="PO/FrmDaftarInvoice.aspx" />
+	<!-- <Map MenuID="7100" MenuPage="Service/FrmWSCUpload.aspx" />-->
+	<Map MenuID="9900" MenuPage="Service/FrmServiceReminder.aspx" />
+  <Map MenuID="7100" MenuPage="ClossingMessageWems.htm" />
+  <Map MenuID="7200" MenuPage="Service/FrmSubmitWSCToSAP.aspx" />
+  <Map MenuID="2291" MenuPage="Service/FrmLaborMaster.aspx" />
+  <Map MenuID="7300" MenuPage="Service/FrmWSCStatusList.aspx" />
+  <Map MenuID="7400" MenuPage="Service/FrmWSCEvidanceList.aspx" />
+  <Map MenuID="6100" MenuPage="Service/frmEquipmentBOMMaintenance.aspx" />
+  <Map MenuID="6200" MenuPage="Service/frmEquipmentMaster.aspx" />
+  <Map MenuID="6300" MenuPage="Service/frmEquipmentList.aspx" />
+  <Map MenuID="6400" MenuPage="Service/frmEquipmentOrderList.aspx" />
+  <Map MenuID="6500" MenuPage="Service/frmCreateEquipmentOrder.aspx" />
+  <Map MenuID="6600" MenuPage="PopUp/PopUpPaymentStatus.aspx" />
+  <Map MenuID="7500" MenuPage="Service/frmUploadWSCEvidence.aspx" />
+  <Map MenuID="7600" MenuPage="Service/frmPositionWSC.aspx" />
+  <Map MenuID="5100" MenuPage="FinishUnit/FrmVehicleInformationSystem.aspx" />
+  <Map MenuID="5200" MenuPage="Service/FrmMonthlyDocument.aspx" />
+  <Map MenuID="5700" MenuPage="Service/FrmServiceDueDateNotification.aspx" />
+  <Map MenuID="10100" MenuPage="Training/FrmTrCourse.aspx" />
+  <Map MenuID="10200" MenuPage="Training/FrmTrCourseEvaluation.aspx" />
+  <Map MenuID="10300" MenuPage="Training/FrmTrPreRequire.aspx" />
+  <Map MenuID="10400" MenuPage="Training/FrmTrTrainee.aspx" />
+  <Map MenuID="10500" MenuPage="Training/FrmTrClass.aspx" />
+  <Map MenuID="10600" MenuPage="Training/FrmTrClassAllocation.aspx" />
+  <Map MenuID="10700" MenuPage="Training/FrmTrMasterScheduleUpload.aspx" />
+  <Map MenuID="10750" MenuPage="Training/FrmTrSchedule.aspx" />
+  <Map MenuID="10800" MenuPage="Training/FrmTrClassRegistration1.aspx" />
+  <Map MenuID="10820" MenuPage="Training/FrmViewTrClassRegistration1.aspx" />
+  <Map MenuID="10850" MenuPage="Training/FrmViewTrClassRegistration1.aspx" />
+  <Map MenuID="10860" MenuPage="Training/FrmTrReminder.aspx" />
+  <Map MenuID="10900" MenuPage="Training/FrmTrCertificateLine3.aspx" />
+  <Map MenuID="10903" MenuPage="Training/FrmTrCertificateLine2.aspx" />
+  <Map MenuID="10905" MenuPage="Training/FrmTrCertificateLine.aspx" />
+  <Map MenuID="10910" MenuPage="Training/FrmCourseEvaluationList.aspx" />
+  <!--	<Map MenuID="10920" MenuPage="Training/FrmTrTrainee1.aspx" /> -->
+  <Map MenuID="310" MenuPage="SparePart/FrmDisplayDeposit.aspx" />
+  <Map MenuID="320" MenuPage="SparePart/FrmDisplayDepositC2.aspx" />
+  <Map MenuID="330" MenuPage="SparePart/FrmSparePartCeiling.aspx" />
+  <Map MenuID="1530" MenuPage="FinishUnit/FrmMainUsage.aspx" />
+  <Map MenuID="1540" MenuPage="FinishUnit/FrmVehicleBodyShape.aspx" />
+  <Map MenuID="1550" MenuPage="FinishUnit/FrmVehiclePurpose.aspx" />
+  <Map MenuID="1560" MenuPage="FinishUnit/FrmOwnerAge.aspx" />
+  <Map MenuID="1570" MenuPage="FinishUnit/FrmMainOperationArea.aspx" />
+  <Map MenuID="1580" MenuPage="FinishUnit/FrmVehicleOwnership.aspx" />
+  <Map MenuID="1590" MenuPage="FinishUnit/FrmPaymentMethod.aspx" />
+  <Map MenuID="1591" MenuPage="FinishUnit/FrmCustomerBusiness.aspx" />
+  <Map MenuID="1599" MenuPage="SalesFaktur/FrmBlokPengajuanFaktur.aspx" />
+  <Map MenuID="1592" MenuPage="FinishUnit/FrmPaymentType.aspx" />
+  <Map MenuID="1593" MenuPage="General/FrmDealerTerritory.aspx" />
+  <Map MenuID="1431" MenuPage="PK/FrmDisplayPKReleaseHeader.aspx" />
+  <Map MenuID="610" MenuPage="SparePart/FrmSPPOBillingRecap.aspx" />
+  <Map MenuID="710" MenuPage="SparePart/FrmListPartincidental.aspx" />
+  <Map MenuID="720" MenuPage="SparePart/FrmEntryPartIncidental.aspx" />
+  <Map MenuID="730" MenuPage="SparePart/FrmListPartIncidentalKTB.aspx" />
+  <Map MenuID="740" MenuPage="SparePart/FrmPartIncidentalUser.aspx" />
+  <Map MenuID="810" MenuPage="SparePart/FrmModifySpecialItem.aspx" />
+  <Map MenuID="820" MenuPage="SparePart/FrmSpecialItemInfoList.aspx" />
+  <Map MenuID="830" MenuPage="SparePart/FrmUploadSPItemSpecial.aspx" />
+  <Map MenuID="901" MenuPage="SparePart/FrmManagePRPCategory.aspx" />
+  <Map MenuID="902" MenuPage="SparePart/FrmManagePRP.aspx" />
+  <Map MenuID="903" MenuPage="SparePart/FrmUploadPRP.aspx" />
+  <Map MenuID="904" MenuPage="SparePart/FrmDisplayPRP.aspx" />
+  <Map MenuID="505" MenuPage="SparePart/FrmFileUploadAnnualDiscountMaster.aspx"></Map>
+  <Map MenuID="2350" MenuPage="UserManagement/FrmDisplayRole.aspx" />
+  <Map MenuID="2340" MenuPage="UserManagement/FrmNewRole.aspx" />
+  <Map MenuID="2380" MenuPage="Helper/ReferenceHelper.aspx" />
+  <Map MenuID="2401" MenuPage="Buletin/FrmBuletinCategory.aspx" />
+  <Map MenuID="2420" MenuPage="Buletin/FrmBuletinRead.aspx" />
+  <Map MenuID="2430" MenuPage="Buletin/FrmBuletinManage.aspx" />
+  <Map MenuID="2440" MenuPage="Buletin/FrmBuletinUpload.aspx" />
+  <Map MenuID="2450" MenuPage="Helper/ReferenceHelper.aspx" />
+  <Map MenuID="905" MenuPage="SparePart/FrmListPRPEmail.aspx" />
+  <Map MenuID="906" MenuPage="SparePart/FrmSendingPRPReport.aspx" />
+  <Map MenuID="907" MenuPage="SparePart/FrmListPRPReport.aspx" />
+  <Map MenuID="10904" MenuPage="Training/FrmTrUserEmail.aspx" />
+  <Map MenuID="10235" MenuPage="Training/FrmTrUserEmail.aspx" />
+  <Map MenuID="1475" MenuPage="PO/OutStandingMO.aspx" />
+  <Map MenuID="9600" MenuPage="Service/FrmFSKindOnVechileType.aspx"></Map>
+  <Map MenuID="551" MenuPage="SparePart/FrmSpOrderRestriction.aspx"></Map>
+  <Map MenuID="266" MenuPage="SparePart/frmSummarySPPO.aspx"></Map>
+  <Map MenuID="267" MenuPage="SparePart/FrmRegularOrderConfirmation.aspx"></Map>
+  <Map MenuID="268" MenuPage="SparePart/FrmSparepartMaxOrder.aspx"></Map>
+  <Map MenuID="2140" MenuPage="General/FrmMasterJobPosition.aspx"></Map>
+  <Map MenuID="10977" MenuPage="Service/FrmPositionCode.aspx"></Map>
+  <Map MenuID="10978" MenuPage="Service/FrmWorkCode.aspx"></Map>
+  <Map MenuID="1594" MenuPage="FinishUnit/FrmSPLHeader.aspx" />
+  <Map MenuID="1598" MenuPage="FinishUnit/FrmSPLDetail.aspx" />
+  <Map MenuID="745" MenuPage="SparePart/FrmPartIncidentalPO.aspx" />
+  <Map MenuID="746" MenuPage="SparePart/FrmPartIncidentalPOProcess.aspx" />
+  <Map MenuID="747" MenuPage="SparePart/FrmPartIncidentalListPO.aspx" />
+  <Map MenuID="421" MenuPage="SparePart/FrmBlockMaterial.aspx" />
+  <Map MenuID="999" MenuPage="General/FrmAppSetting.aspx" />
+  <Map MenuID="2150" MenuPage="UserManagement/frmPhisingGuardImageList.aspx" />
+  <Map MenuID="10979" MenuPage="Service/FrmABC.aspx"></Map>
+  <Map MenuID="5405" MenuPage="Service/frmProfileGroup.aspx"></Map>
+  <Map MenuID="2601" MenuPage="forum/FrmForumCategory.aspx"></Map>
+  <Map MenuID="2602" MenuPage="forum/FrmBannedWord.aspx"></Map>
+  <Map MenuID="2603" MenuPage="forum/FrmForumList.aspx"></Map>
+  <Map MenuID="2604" MenuPage="forum/TopicList.aspx"></Map>
+  <Map MenuID="2606" MenuPage="forum/FrmForumPMInbox.aspx"></Map>
+  <Map MenuID="351" MenuPage="claim/FrmClaimReason.aspx"></Map>
+  <Map MenuID="352" MenuPage="claim/FrmClaimGoodCondition.aspx"></Map>
+  <Map MenuID="355" MenuPage="claim/FrmEntryClaim.aspx"></Map>
+  <Map MenuID="356" MenuPage="claim/FrmClaimList.aspx"></Map>
+  <Map MenuID="360" MenuPage="claim/FrmListClaim.aspx"></Map>
+  <Map MenuID="361" MenuPage="SparePart/FrmSupportClaimDoc.aspx"></Map>
+  <Map MenuID="5407" MenuPage="Service/FrmProfileHeaderBaru.aspx"></Map>
+  <Map MenuID="4002" MenuPage="Service/FrmReplecementPartMaster.aspx"></Map>
+  <Map MenuID="4001" MenuPage="Service/FrmPMKind.aspx"></Map>
+  <Map MenuID="4003" MenuPage="Service/FrmEntryPM.aspx"></Map>
+  <Map MenuID="4004" MenuPage="Service/FrmEntryPMViaText.aspx"></Map>
+  <Map MenuID="4006" MenuPage="Service/FrmDaftarStatusPM.aspx"></Map>
+  <Map MenuID="353" MenuPage="Claim/FrmClaimLetter.aspx"></Map>
+  <Map MenuID="9701" MenuPage="PQR/FrmPQRList.aspx"></Map>
+  <Map MenuID="7601" MenuPage="Customer/FrmCustomerRequestStatusList.aspx"></Map>
+  <Map MenuID="7603" MenuPage="Customer/FrmCustomerRequest.aspx"></Map>
+  <Map MenuID="7604" MenuPage="Customer/FrmCustomerList.aspx"></Map>
+  <Map MenuID="7602" MenuPage="Customer/FrmVerAssigned.aspx"></Map>
+  <Map MenuID="354" MenuPage="Claim/FrmClaimDealerETA.aspx"></Map>
+  <Map MenuID="5406" MenuPage="Service/FrmProfileHeader.aspx"></Map>
+  <Map MenuID="2365" MenuPage="UserManagement/FrmUserGroup.aspx" />
+  <Map MenuID="371" MenuPage="IndentPart/FrmIndentPart.aspx"></Map>
+  <Map MenuID="9702" MenuPage="PQR/FrmPQRSolution.aspx"></Map>
+  <Map MenuID="99801" MenuPage="Forum/MarketingRedirector.aspx?Menu=ForumManage" />
+  <Map MenuID="99802" MenuPage="Forum/MarketingRedirector.aspx?Menu=DnetForum" />
+  <Map MenuID="99803" MenuPage="forum/FrmManageForum.aspx?Marketing=1"></Map>
+  <Map MenuID="357" MenuPage="Claim/FrmClaimArrival.aspx"></Map>
+  <Map MenuID="372" MenuPage="IndentPart/FrmListIndentPart.aspx"></Map>
+  <Map MenuID="378" MenuPage="IndentPart/FrmListPO.aspx"></Map>
+  <Map MenuID="9703" MenuPage="PQR/FrmPQRListKondisi.aspx"></Map>
+  <Map MenuID="1521" MenuPage="MaterialPromotion/EntryMaterialPromotion.aspx"></Map>
+  <Map MenuID="4005" MenuPage="Service/FrmTransferPMToSAP.aspx"></Map>
+  <Map MenuID="381" MenuPage="MaterialPromotion/EntryMaterialPromotion.aspx"></Map>
+  <Map MenuID="382" MenuPage="MaterialPromotion/EntryStockMaterialPromotion.aspx"></Map>
+  <Map MenuID="3821" MenuPage="MaterialPromotion/FrmStockMaterialPromotionUpload.aspx"></Map>
+  <Map MenuID="1531" MenuPage="FinishUnit/FrmPengajuanFaktur.aspx"></Map>
+  <Map MenuID="1532" MenuPage="FinishUnit/FrmPengajuanDummyFaktur.aspx"></Map>
+  <Map MenuID="383" MenuPage="MaterialPromotion/FrmMaterialPromotionPeriod.aspx"></Map>
+  <Map MenuID="384" MenuPage="MaterialPromotion/FrmMaterialPromotionAllocation.aspx"></Map>
+  <Map MenuID="385" MenuPage="MaterialPromotion/ListMaterialPromotionRequest.aspx"></Map>
+  <Map MenuID="373" MenuPage="IndentPart/FrmAllocIndentByOrder.aspx"></Map>
+  <Map MenuID="374" MenuPage="IndentPart/FrmAllocIndentByMaterial.aspx"></Map>
+  <Map MenuID="1931" MenuPage="FinishUnit/FrmDepositA.aspx"></Map>
+  <Map MenuID="1932" MenuPage="FinishUnit/FrmSalesUploadDocument.aspx"></Map>
+  <Map MenuID="1933" MenuPage="FinishUnit/FrmDepartment.aspx"></Map>
+  <Map MenuID="2331" MenuPage="General/FrmDealerProfile.aspx" />
+  <Map MenuID="387" MenuPage="MaterialPromotion/DetailInOutMaterialPromotion.aspx" />
+  <Map MenuID="1934" MenuPage="FinishUnit/FrmKindOfLetter.aspx"></Map>
+  <!-- CR Phase 4 -->
+  <Map MenuID="1935" MenuPage="FinishUnit/FrmDaftarInterestDepositA.aspx"></Map>
+  <Map MenuID="1937" MenuPage="FinishUnit/FrmPengajuanPencairanDepositA.aspx"></Map>
+  <Map MenuID="1938" MenuPage="FinishUnit/FrmDaftarPengajuanPencairanDepositA.aspx"></Map>
+  <Map MenuID="1939" MenuPage="FinishUnit/FrmDaftarDebitNote.aspx"></Map>
+  <Map MenuID="1940" MenuPage="FinishUnit/FrmBuatKuitansiPencairanDepositA.aspx"></Map>
+  <Map MenuID="1941" MenuPage="FinishUnit/FrmDaftarKuitansiPencairanDepositA.aspx"></Map>
+  <Map MenuID="1942" MenuPage="FinishUnit/frmUploadPencairanDepositATahunan.aspx"></Map>
+  <Map MenuID="1944" MenuPage="FinishUnit/FrmDaftarPencairanDepositATahunan.aspx"></Map>
+  <Map MenuID="1936" MenuPage="FinishUnit/FrmSalesDocumentList.aspx"></Map>
+  <Map MenuID="9704" MenuPage="PQR/FrmPQRHeader.aspx?Mode=New"></Map>
+  <Map MenuID="229" MenuPage="SparePart/FrmPendingOrder.aspx"></Map>
+  <Map MenuID="2332" MenuPage="General/FrmDealerList.aspx" />
+  <Map MenuID="2333" MenuPage="General/FrmDealerProfileList.aspx" />
+  <Map MenuID="2336" MenuPage="General/FrmDealerBranchList.aspx" />
+  <Map MenuID="2334" MenuPage="General/FrmListDealerBranch.aspx" />
+  <Map MenuID="2335" MenuPage="General/FrmDealerBranchEntry.aspx" />
+  <Map MenuID="386" MenuPage="MaterialPromotion/FrmGIMaterialPromotion.aspx"></Map>
+  <Map MenuID="388" MenuPage="MaterialPromotion/FrmGRMaterialPromotion.aspx"></Map>
+  <Map MenuID="389" MenuPage="MaterialPromotion/FrmListGRMaterialPromotion.aspx"></Map>
+  <Map MenuID="45102" MenuPage="SPAF/FrmUploadSPAF.aspx?isSPAF=True"></Map>
+  <Map MenuID="45103" MenuPage="SPAF/FrmUploadSPAF.aspx?isSPAF=False"></Map>
+  <Map MenuID="45104" MenuPage="SPAF/FrmDaftarStatusSPAF.aspx"></Map>
+  <Map MenuID="45101" MenuPage="SPAF/FrmMasterKondisiList.aspx"></Map>
+  <Map MenuID="2605" MenuPage="forum/FrmManageForum.aspx"></Map>
+  <Map MenuID="390" MenuPage="MaterialPromotion/FrmMaterialPromotionUpload.aspx"></Map>
+  <Map MenuID="391" MenuPage="MaterialPromotion/RequestMaterialPromotion.aspx"></Map>
+  <Map MenuID="358" MenuPage="Claim/FrmClaimProgress.aspx"></Map>
+  <Map MenuID="359" MenuPage="Claim/FrmClaimList.aspx"></Map>
+  <Map MenuID="17104" MenuPage="DealerReport/FrmVehicleClass.aspx"></Map>
+  <Map MenuID="17105" MenuPage="DealerReport/FrmCompetitorType.aspx"></Map>
+  <Map MenuID="17103" MenuPage="DealerReport/FrmCompetitorBrand.aspx"></Map>
+  <Map MenuID="17101" MenuPage="DealerReport/FrmEntrySalesDeliveryVechile.aspx?Mode=New"></Map>
+  <Map MenuID="17102" MenuPage="DealerReport/FrmListSalesDeliveryVechile.aspx"></Map>
+  <Map MenuID="17106" MenuPage="DealerReport/FrmViewHargaPasar.aspx"></Map>
+  <Map MenuID="17110" MenuPage="DealerReport/FrmEntryHargaPasar.aspx"></Map>
+  <Map MenuID="17108" MenuPage="DealerReport/FrmStockReport.aspx"></Map>
+  <Map MenuID="17107" MenuPage="DealerReport/FrmDealerStock.aspx"></Map>
+  <Map MenuID="18101" MenuPage="VDH/FrmListVDH.aspx"></Map>
+  <!--Start Salesman -->
+  <Map MenuID="99901" MenuPage="Salesman/FrmSalesmanLevel.aspx"></Map>
+  <Map MenuID="99902" MenuPage="Salesman/FrmSalesmanArea.aspx"></Map>
+  <!--	<Map MenuID="99903" MenuPage="Salesman/FrmSalesmanHeader.aspx?Mode=unit"></Map> -->
+  <!--	<Map MenuID="99904" MenuPage="Salesman/frmSalesmanList.aspx?Mode=unit"></Map> -->
+  <Map MenuID="99905" MenuPage="Salesman/FrmSalesmanEntryResign.aspx?Mode=unit"></Map>
+  <Map MenuID="99906" MenuPage="Salesman/FrmSalesmanRegister.aspx?Mode=rsd"></Map>
+  <Map MenuID="99907" MenuPage="Salesman/frmSalesmanRekapSalesPerArea.aspx?Mode=unit"></Map>
+  <Map MenuID="99908" MenuPage="Salesman/frmSalesmanRekapSalesPerGroupDealer.aspx?Mode=unit"></Map>
+  <Map MenuID="99909" MenuPage="Salesman/FrmSalesmanTurnOver.aspx?Mode=unit"></Map>
+  <Map MenuID="99910" MenuPage="Salesman/FrmSalesmanEvaluasi.aspx"></Map>
+  <Map MenuID="99921" MenuPage="Salesman/FrmSalesmanTrainingMaster.aspx"></Map>
+  <Map MenuID="99922" MenuPage="Salesman/FrmSalesmanTraining.aspx"></Map>
+  <Map MenuID="99923" MenuPage="Salesman/SalesmanCreateAnnouncement.aspx"></Map>
+  <Map MenuID="99924" MenuPage="Salesman/FrmSalesmanTrainingConfirmation.aspx"></Map>
+  <Map MenuID="99925" MenuPage="Salesman/FrmSalesmanTrainingListof.aspx"></Map>
+  <Map MenuID="99941" MenuPage="Salesman/FrmSalesmanMaintainUniform.aspx"></Map>
+  <Map MenuID="99942" MenuPage="Salesman/FrmSalesmanUniformPriceList.aspx"></Map>
+  <Map MenuID="99943" MenuPage="Salesman/FrmSalesmanUniformGuide.aspx"></Map>
+  <!--	<Map MenuID="99944" MenuPage="Salesman/FrmSalesmanUniformAssign.aspx"></Map> -->
+  <Map MenuID="99946" MenuPage="Salesman/FrmSalesmanUniformOrder.aspx"></Map>
+  <Map MenuID="99947" MenuPage="Salesman/FrmSalesmanUniformInvoice.aspx"></Map>
+  <Map MenuID="99951" MenuPage="Event/FrmEventType.aspx"></Map>
+  <Map MenuID="99952" MenuPage="Event/FrmInsertEvent.aspx"></Map>
+  <Map MenuID="99953" MenuPage="Event/FrmEventParameter.aspx"></Map>
+  <Map MenuID="99949" MenuPage="Salesman/FrmSalesmanUniformInvoice.aspx"></Map>
+  <Map MenuID="99948" MenuPage="Salesman/FrmSalesmanUniformList.aspx"></Map>
+  <Map MenuID="99970" MenuPage="Salesman/FrmSalesmanDaftarSalesTarget.aspx"></Map>
+  <!--End Salesman -->
+  <Map MenuID="99954" MenuPage="Event/FrmEventEmail.aspx"></Map>
+  <Map MenuID="99956" MenuPage="Event/FrmConfirmInfoEvent.aspx"></Map>
+  <Map MenuID="99958" MenuPage="Event/FrmrealizationEvent.aspx"></Map>
+  <Map MenuID="99959" MenuPage="Event/FrmListRealizationEvent.aspx"></Map>
+  <Map MenuID="99955" MenuPage="Event/FrmListEventInfo.aspx"></Map>
+  <Map MenuID="99957" MenuPage="Event/FrmListEventInfo.aspx"></Map>
+  <Map MenuID="99960" MenuPage="Event/FrmUploadDocument.aspx"></Map>
+  <Map MenuID="99961" MenuPage="Event/FrmListDocument.aspx"></Map>
+  <Map MenuID="99971" MenuPage="General/FrmDealerList.aspx" />
+  <Map MenuID="99123" MenuPage="Event/FrmInputEvent.aspx" />
+  <Map MenuID="99124" MenuPage="Event/FrmSettingEventCategory.aspx" />
+  <Map MenuID="99125" MenuPage="Event/FrmSettingMandatory.aspx" />
+  <!--BABITT-->
+  <Map MenuID="987006" MenuPage="BABIT/FrmSampelIklan.aspx" />
+  <Map MenuID="987001" MenuPage="BABIT/FrmAlokasiBabit.aspx?Mode=New" />
+  <Map MenuID="987002" MenuPage="BABIT/FrmAlokasiBabitList.aspx" />
+  <Map MenuID="987003" MenuPage="BABIT/FrmPengajuanBabit.aspx" />
+  <Map MenuID="987004" MenuPage="BABIT/FrmListPengajuanBabit.aspx" />
+  <Map MenuID="987007" MenuPage="BABIT/FrmPengajuanDesignIklan.aspx" />
+  <Map MenuID="987008" MenuPage="BABIT/FrmDaftarPengajuanIklan.aspx"></Map>
+  <Map MenuID="987011" MenuPage="BABIT/FrmListDealerActivityBabit.aspx"></Map>
+  <Map MenuID="987012" MenuPage="BABIT/FrmActivityPlanBabit.aspx"></Map>
+  <Map MenuID="9870999" MenuPage="BABIT/FrmListDealerActivityBabit.aspx"></Map>
+  <Map MenuID="987009" MenuPage="BABIT/FrmReleaseApproval.aspx"></Map>
+  <Map MenuID="987010" MenuPage="BABIT/FrmPenggunaanDanaBabit.aspx"></Map>
+  <Map MenuID="987005" MenuPage="BABIT/FrmPemotonganAlokasiBabit.aspx"></Map>
+  <Map MenuID="987013" MenuPage="BABIT/FrmPengajuanBabitKhusus.aspx"></Map>
+  <Map MenuID="987014" MenuPage="BABIT/FrmListPengajuanBabitKhusus.aspx"></Map>
+  <Map MenuID="987015" MenuPage="BABIT/FrmDownloadBabit.aspx"></Map>
+  
+  <!--New Menu Babit-->
+  <Map MenuID="987016" MenuPage="BABIT/FrmInputBabitEvent.aspx"></Map>
+  <Map MenuID="987615" MenuPage="BABIT/FrmInputBabitIklan.aspx"></Map>
+  <Map MenuID="987017" MenuPage="BABIT/FrmInputBabitPameran.aspx"></Map>
+  <Map MenuID="99126" MenuPage="BABIT/FrmInputBabitParameter.aspx" />
+  <Map MenuID="99127" MenuPage="BABIT/FrmBabitList.aspx" />
+  <Map MenuID="987018" MenuPage="BABIT/FrmInputBabitEventProposal.aspx"></Map>
+  <Map MenuID="99128" MenuPage="BABIT/FrmBabitEventProposalList.aspx" />
+  <Map MenuID="987019" MenuPage="BABIT/FrmInputBabitEventReport.aspx" />
+  <Map MenuID="987020" MenuPage="BABIT/FrmInputBabitPameranReport.aspx" />
+  <Map MenuID="987021" MenuPage="BABIT/FrmInputBabitIklanReport.aspx" />
+  <Map MenuID="99129" MenuPage="BABIT/FrmBabitEventReportList.aspx" />
+  <Map MenuID="99130" MenuPage="BABIT/FrmInputMasterEventType.aspx" />
+  <Map MenuID="99131" MenuPage="BABIT/FrmBabitReportReceiptList.aspx" />
+  <Map MenuID="99132" MenuPage="EVENT/FrmEventDealerList.aspx" />
+  <Map MenuID="99133" MenuPage="BABIT/FrmBabitJVList.aspx" />
+  <Map MenuID="99134" MenuPage="BABIT/FrmBabitEventReportReceiptList.aspx" />
+  <Map MenuID="99135" MenuPage="BABIT/FrmInputBabitReportEvent.aspx" />
+  <Map MenuID="99139" MenuPage="BABIT/FrmBabitReportEventList.aspx" />
+  <Map MenuID="99136" MenuPage="BABIT/FrmEventJVList.aspx" />
+  <!--End-->
+
+  <!--Start Event Nasional-->
+  <Map MenuID="99140" MenuPage="EventNational/FrmInputEventNational.aspx" />
+  <Map MenuID="99150" MenuPage="EventNational/FrmDaftarEventNational.aspx" />
+  <Map MenuID="99160" MenuPage="EventNational/FrmUploadFileSPK.aspx" />
+  <Map MenuID="99170" MenuPage="EventNational/FrmReportSPKSalesEventNasional.aspx" />
+  <Map MenuID="99180" MenuPage="EventNational/MasterTypeEvent.aspx" />
+  <Map MenuID="99181" MenuPage="EventNational/MasterCityEvent.aspx" />
+  <Map MenuID="99182" MenuPage="EventNational/MasterVenueEvent.aspx" />
+  <!--End Event Nasional-->
+  
+  <!-- Master -->
+  <Map MenuID="999901" MenuPage="BABIT/FrmInputRetailTarget.aspx" />
+  <Map MenuID="999902" MenuPage="BABIT/FrmSettingBabitPrice.aspx" />
+  <Map MenuID="999903" MenuPage="BABIT/FrmBabitAllocationDetail.aspx" />
+  <Map MenuID="999904" MenuPage="BABIT/FrmBabitAllocationSummary.aspx" />
+
+  <!-- End Master -->
+  
+  <!--Showroom Audit Menu-->
+  <Map MenuID="99981" MenuPage="ShowroomAudit/FrmParameterAudit.aspx"></Map>
+  <Map MenuID="99982" MenuPage="ShowroomAudit/FrmParameterAuditList.aspx"></Map>
+  <Map MenuID="99983" MenuPage="ShowroomAudit/FrmAuditSchedule.aspx"></Map>
+  <Map MenuID="99985" MenuPage="ShowroomAudit/FrmAuditAssesmentResultList.aspx"></Map>
+  <!-- System Management -->
+  <Map MenuID="2366" MenuPage="General/FrmManualDoc.aspx"></Map>
+  <Map MenuID="2367" MenuPage="General/FrmAnnouncement.aspx"></Map>
+  <Map MenuID="2368" MenuPage="General/FrmManualDocList.aspx"></Map>
+  <Map MenuID="99984" MenuPage="ShowroomAudit/FrmListAuditSchedule.aspx"></Map>
+  <!-- SAP -->
+  <Map MenuID="99931" MenuPage="SAP/FrmSAPPeriod.aspx"></Map>
+  <Map MenuID="99932" MenuPage="SAP/FrmSAPSalesParameter.aspx"></Map>
+  <Map MenuID="99933" MenuPage="SAP/FrmSAPGradeWeight.aspx"></Map>
+  <Map MenuID="99934" MenuPage="SAP/FrmSAPTargetofSales.aspx"></Map>
+  <!--	<Map MenuID="99935" MenuPage="SAP/FrmListParticipant.aspx"></Map> -->
+  <Map MenuID="99936" MenuPage="SAP/FrmSAPCustomer.aspx"></Map>
+  <Map MenuID="99938" MenuPage="SAP/FrmEntryTest.aspx"></Map>
+  <Map MenuID="99937" MenuPage="SAP/FrmSAPSalesmanValidation.aspx"></Map>
+  <Map MenuID="99939" MenuPage="SAP/FrmSAPCustomerList.aspx"></Map>
+  <Map MenuID="99962" MenuPage="SAP/FrmSAPInputDataResult.aspx"></Map>
+  <Map MenuID="99963" MenuPage="SAP/FrmSAPReport.aspx"></Map>
+  <!-- Alert Management -->
+  <Map MenuID="29001" MenuPage="AlertManagement/FrmTransactionalAlert.aspx?Mode=New;T"></Map>
+  <Map MenuID="29002" MenuPage="AlertManagement/FrmAlertManagemenList.aspx?Type=T"></Map>
+  <Map MenuID="29003" MenuPage="AlertManagement/FrmTransactionalAlert.aspx?Mode=New;A"></Map>
+  <Map MenuID="29004" MenuPage="AlertManagement/FrmAlertManagemenList.aspx?Type=A"></Map>
+  <!-- Salesman permasing-2 menu -->
+  <Map MenuID="9801" MenuPage="Salesman/frmSalesmanList.aspx?Mode=servis"></Map>
+  <Map MenuID="9802" MenuPage="Salesman/FrmSalesmanRegister.aspx?Mode=servis"></Map>
+  <!--	<Map MenuID="9901" MenuPage="Salesman/frmSalesmanList.aspx?Mode=part"></Map> -->
+  <Map MenuID="9902" MenuPage="Salesman/FrmSalesmanRegister.aspx?Mode=part"></Map>
+  <Map MenuID="9851" MenuPage="Salesman/FrmSalesmanHeader.aspx?Mode=servis"></Map>
+  <Map MenuID="9951" MenuPage="Salesman/FrmSalesmanHeader.aspx?Mode=part"></Map>
+  <Map MenuID="9852" MenuPage="Salesman/FrmSalesmanEntryResign.aspx?Mode=servis"></Map>
+  <Map MenuID="9952" MenuPage="Salesman/FrmSalesmanEntryResign.aspx?Mode=part"></Map>
+  <!-- Online Payment -->
+  <Map MenuID="171701" MenuPage="OnlinePayment/FrmEntryObligationType.aspx"></Map>
+  <Map MenuID="171702" MenuPage="OnlinePayment/FrmPaymentAssignmentType.aspx"></Map>
+  <Map MenuID="171703" MenuPage="OnlinePayment/FrmPaymentObligation.aspx?tipe=SAP"></Map>
+  <Map MenuID="171704" MenuPage="OnlinePayment/FrmPaymentObligation.aspx?tipe=MANUAL"></Map>
+  <Map MenuID="171705" MenuPage="OnlinePayment/FrmEntryObligasiManual.aspx"></Map>
+  <Map MenuID="171706" MenuPage="OnlinePayment/FrmDueDate.aspx"></Map>
+  <Map MenuID="171707" MenuPage="OnlinePayment/FrmRegisteredDoc.aspx"></Map>
+  <Map MenuID="171708" MenuPage="OnlinePayment/FrmPosisiCredit.aspx"></Map>
+  <Map MenuID="171709" MenuPage="OnlinePayment/FrmPosisiTemporaryCreditOutStanding.aspx"></Map>
+  <!-- TAF -->
+  <Map MenuID="100110" MenuPage="TAF/FrmCommonSetting.aspx"></Map>
+  <Map MenuID="100120" MenuPage="TAF/FrmDealerSetting.aspx"></Map>
+  <Map MenuID="110101" MenuPage="TAF/FrmCustomerFunding.aspx"></Map>
+  <Map MenuID="110102" MenuPage="TAF/FrmCustomerFundingList.aspx"></Map>
+  <Map MenuID="100111" MenuPage="TAF/FrmCategory.aspx"></Map>
+  <Map MenuID="100130" MenuPage="TAF/FrmVehicleColor.aspx"></Map>
+  <Map MenuID="100140" MenuPage="TAF/FrmVehicleType.aspx"></Map>
+  <Map MenuID="110103" MenuPage="TAF/FrmMutasiBPKBList.aspx"></Map>
+  <Map MenuID="110104" MenuPage="TAF/FrmSimulation.aspx"></Map>
+  <Map MenuID="100150" MenuPage="TAF/FrmDelayedPayment.aspx"></Map>
+  <Map MenuID="110108" MenuPage="TAF/FrmTitipan.aspx"></Map>
+  <Map MenuID="110107" MenuPage="TAF/FrmTitipanList.aspx"></Map>
+  <Map MenuID="100301" MenuPage="TAF/FrmDelayedPayment.aspx"></Map>
+  <Map MenuID="100204" MenuPage="TAF/FrmCollectorAssignmentOverdue.aspx"></Map>
+  <Map MenuID="100302" MenuPage="TAF/FrmReposses.aspx"></Map>
+  <Map MenuID="100304" MenuPage="TAF/FrmInventory.aspx"></Map>
+  <Map MenuID="100205" MenuPage="TAF/FrmPaymentValidate.aspx"></Map>
+  <Map MenuID="100401" MenuPage="TAF/Report/RptContractDetail.aspx"></Map>
+  <Map MenuID="100402" MenuPage="TAF/Report/RptCreditApproval.aspx"></Map>
+  <Map MenuID="100201" MenuPage="TAF/FrmCollectorAssignmentOverdue.aspx"></Map>
+  <Map MenuID="300001" MenuPage="TAF/FrmETList.aspx"></Map>
+  <Map MenuID="200001" MenuPage="TAF/Report/RptCreditApproval.aspx"></Map>
+  <Map MenuID="200003" MenuPage="TAF/Report/RptSchedulePayment.aspx"></Map>
+  <Map MenuID="100203" MenuPage="TAF/FrmPaymentValidateCash.aspx"></Map>
+  <Map MenuID="400001" MenuPage="TAF/FrmDaftarAsuransiClaim.aspx"></Map>
+  <Map MenuID="200004" MenuPage="TAF/Report/RptHistoricalPayment.aspx"></Map>
+  <Map MenuID="200005" MenuPage="TAF/Report/RptInventory.aspx"></Map>
+  <Map MenuID="200006" MenuPage="TAF/Report/RptDetailReceivableCriteria.aspx"></Map>
+  <Map MenuID="200007" MenuPage="TAF/Report/RptPayment.aspx"></Map>
+  <Map MenuID="200017" MenuPage="TAF/Report/RptPaymentSummary.aspx"></Map>
+  <Map MenuID="200008" MenuPage="TAF/Report/RptAgingOverdueReceivable.aspx"></Map>
+  <Map MenuID="200018" MenuPage="TAF/Report/RptAgingOverdueReceivableSummary.aspx"></Map>
+  <Map MenuID="100102" MenuPage="TAF/FrmVehicleColor.aspx"></Map>
+  <Map MenuID="100101" MenuPage="TAF/FrmVehicleType.aspx"></Map>
+  <Map MenuID="100121" MenuPage="TAF/FrmSalesman.aspx"></Map>
+  <Map MenuID="100122" MenuPage="TAF/FrmCollector.aspx"></Map>
+  <Map MenuID="100123" MenuPage="TAF/FrmLokasi.aspx"></Map>
+  <Map MenuID="100160" MenuPage="TAF/FrmViewDealerStructure.aspx"></Map>
+  <Map MenuID="200009" MenuPage="TAF/Report/RptDetailReceivableCriteriaSummary.aspx"></Map>
+  <!-- phase 4 - remaining -->
+  <Map MenuID="90102011" MenuPage="IndentPartEquipment/FrmEstimationEquipment.aspx"></Map>
+  <Map MenuID="90102012" MenuPage="IndentPartEquipment/FrmEstimationEquipment.aspx?up=true"></Map>
+  <Map MenuID="9020201" MenuPage="IndentPartEquipment/FrmListEstimationEquip.aspx"></Map>
+  <Map MenuID="93102011" MenuPage="IndentPartEquipment/FrmPoEstimationEquip.aspx"></Map>
+  <Map MenuID="93102012" MenuPage="IndentPartEquipment/FrmPoListEstimationEquip.aspx"></Map>
+  <Map MenuID="93102013" MenuPage="IndentPart/FrmAllocIndentByOrder.aspx?MaterialType=4"></Map>
+  <Map MenuID="93102015" MenuPage="IndentPartEquipment/FrmSPPOEquipList.aspx"></Map>
+  <Map MenuID="93102016" MenuPage="IndentPartEquipment/FrmEquipUser.aspx"></Map>
+  <Map MenuID="999601" MenuPage="Event/FrmParameterEvent.aspx"></Map>
+  <Map MenuID="999603" MenuPage="Event/ListParameterEvent.aspx"></Map>
+  <Map MenuID="999604" MenuPage="Event/FrmEventRequestProposal.aspx?ActivityType=1"></Map>
+  <Map MenuID="999605" MenuPage="Event/ListEventRequestProposal.aspx"></Map>
+  <Map MenuID="999606" MenuPage="Event/ListEventAgreement.aspx"></Map>
+  <Map MenuID="999607" MenuPage="Event/FrmEventReport.aspx?act=0"></Map>
+  <Map MenuID="22010" MenuPage="PO/FrmStokDealer.aspx" />
+  <Map MenuID="23010" MenuPage="PO/FrmCeiling2.aspx" />
+  <Map MenuID="23020" MenuPage="PO/FrmCeilingVsAllocation.aspx" />
+  <Map MenuID="23030" MenuPage="PO/FrmCeilingBlockedList.aspx" />
+  <Map MenuID="23040" MenuPage="PO/UpdatePaymentStatus.aspx?ShowAcceleration=1" />
+  <Map MenuID="748" MenuPage="SparePart/FrmPartIncidentalPriority.aspx" />
+  <Map MenuID="9996050" MenuPage="Event/FrmEventFinishingList.aspx"></Map>
+  <Map MenuID="9996040" MenuPage="Event/FrmEventRequestProposal.aspx?GroupCode=0"></Map>
+  <Map MenuID="9996042" MenuPage="Event/FrmEventRequestProposal.aspx?GroupCode=1"></Map>
+  <Map MenuID="9996041" MenuPage="Event/FrmEventRequestProposal.aspx?GroupCode=2"></Map>
+  <Map MenuID="9996043" MenuPage="Event/FrmEventRequestProposal.aspx?GroupCode=3"></Map>
+  <Map MenuID="20091005" MenuPage="General/FrmPPh.aspx"></Map>
+  <Map MenuID="20091101" MenuPage="General/FrmLeasingFee.aspx"></Map>
+  <Map MenuID="20091102" MenuPage="General/FrmLeasingFeeList.aspx"></Map>
+  <Map MenuID="20091116" MenuPage="Event/FrmEventSellingReport.aspx"></Map>
+  <Map MenuID="1943" MenuPage="PO/FrmFreePPh.aspx" />
+  <Map MenuID="1595" MenuPage="FinishUnit/FrmJaminan.aspx" />
+  <Map MenuID="1596" MenuPage="FinishUnit/FrmJaminanList.aspx" />
+  <Map MenuID="10920" MenuPage="Training/FrmTrTrainee1.aspx?Menu=5" />
+  <Map MenuID="99903" MenuPage="Salesman/FrmSalesmanHeader.aspx?Mode=unit&amp;Menu=1"></Map>
+  <Map MenuID="99904" MenuPage="Salesman/frmSalesmanList.aspx?Mode=unit&amp;Menu=1"></Map>
+  <Map MenuID="99944" MenuPage="Salesman/FrmSalesmanUniformAssign.aspx?Menu=3"></Map>
+  <Map MenuID="99935" MenuPage="SAP/FrmListParticipant.aspx?Menu=4"></Map>
+  <Map MenuID="9901" MenuPage="Salesman/frmSalesmanList.aspx?Mode=part&amp;Menu=6"></Map>
+  <Map MenuID="9610" MenuPage="Service/FrmFSCampaign.aspx"></Map>
+  <!-- Factoring : Start -->
+  <Map MenuID="25010" MenuPage="PO/FrmFactoring.aspx" />
+  <Map MenuID="25020" MenuPage="PO/FrmCessie.aspx" />
+  <Map MenuID="25030" MenuPage="PO/FrmAdequacyReport.aspx" />
+  <Map MenuID="25040" MenuPage="PO/FrmEntryGyro.aspx?IsNew=1" />
+  <Map MenuID="25050" MenuPage="PO/UpdatePaymentStatus.aspx?IsFactoring=1" />
+  <Map MenuID="25060" MenuPage="PO/FrmPaymentList.aspx" />
+  <Map MenuID="25070" MenuPage="PO/FrmFactoringDownload.aspx" />
+  <!-- Factoring : End -->
+  <!-- SPK : Start-->
+  <Map MenuID="1950" MenuPage="FinishUnit/FrmSPKCustomer.aspx" />
+  <Map MenuID="1951" MenuPage="FinishUnit/FrmSPKHeader.aspx?Mode=0&amp;isBack=0" />
+  <Map MenuID="1952" MenuPage="FinishUnit/FrmSPKDaftar.aspx" />
+  <!-- SPK : End-->
+  <!-- Vehicle Dealer Price : Start-->
+  <Map MenuID="1980" MenuPage="FinishUnit/FrmDaftarHargaKendaraan.aspx" />
+  <!-- Vehicle Dealer Price : End-->
+  <!-- Call Center -->
+  <Map MenuID="11100501" MenuPage="CallCenter/FrmReportDownload.aspx"></Map>
+  <Map MenuID="11100502" MenuPage="CallCenter/FrmComplainFeedback.aspx"></Map>
+  <Map MenuID="11100505" MenuPage="CallCenter/FrmUploadCustomer.aspx"></Map>
+  <Map MenuID="11100506" MenuPage="CallCenter/FrmPreviewCustomer.aspx"></Map>
+  <!-- Call Center End-->
+
+  <!-- FS Special :Start-->
+
+  <Map MenuID="11101401" MenuPage="Service/FrmEntryFreeServisBB.aspx" />
+  <Map MenuID="11101402" MenuPage="Service/FrmFreeServisViaTextBB.aspx" />
+  <Map MenuID="11101403" MenuPage="Service/FrmGetFreeServiceDataStatusBB.aspx" />
+  <Map MenuID="11101901" MenuPage="Service/SubmitFStoSAPBB.aspx" />
+
+  <!-- <Map MenuID="11111801" MenuPage="Service/FrmWSCUploadBB.aspx" /> -->
+  <Map MenuID="11111801" MenuPage="ClossingMessageWems.htm" />
+  <Map MenuID="11111802" MenuPage="Service/FrmWSCStatusListBB.aspx" />
+  <Map MenuID="11111803" MenuPage="Service/frmUploadWSCEvidenceBB.aspx" />
+  <Map MenuID="11111804" MenuPage="Service/FrmWSCEvidanceListBB.aspx" />
+  <Map MenuID="11111805" MenuPage="Service/FrmSubmitWSCToSAPBB.aspx" />
+  <Map MenuID="11121301" MenuPage="Service/FrmWSCEvidanceListBB.aspx" />
+  <Map MenuID="2011121401" MenuPage="FinishUnit/FrmVehicleInformationSystemBB.aspx" />
+
+  <!-- FS Special :End-->
+  <!--Start Salesman Part 2011-06-06 by ANH -->
+  <Map MenuID="9961" MenuPage="Salesman/FrmSalesmanPart.aspx?Mode=part&amp;Menu=6&amp;edit=true"></Map>
+  <Map MenuID="9962" MenuPage="Salesman/FrmSalesmanPartList.aspx?Mode=part&amp;Menu=6"></Map>
+  <Map MenuID="9963" MenuPage="Salesman/FrmSalesmanPartRegister.aspx?Mode=part"></Map>
+  <Map MenuID="9964" MenuPage="Salesman/FrmSalesmanPartEntryResign.aspx?Mode=part"></Map>
+  <Map MenuID="9969" MenuPage="Salesman/FrmSparePartOrganization.aspx"></Map>
+  <Map MenuID="9965" MenuPage="Salesman/FrmSalesmanPartTarget.aspx"></Map>
+  <Map MenuID="9966" MenuPage="Salesman/FrmSalesmanPartTargetList.aspx"></Map>
+  <Map MenuID="9967" MenuPage="Salesman/FrmSalesmanPartPerformance.aspx"></Map>
+  <Map MenuID="9968" MenuPage="Salesman/FrmSalesmanPartPerformanceList.aspx"></Map>
+  <!--End Salesman Part 2011-06-06 by ANH -->
+  <!-- Start Part Shop By Anh 20110621 -->
+  <Map MenuID="910" MenuPage="SparePart/FrmPartShopList.aspx?mode=list"></Map>
+  <Map MenuID="911" MenuPage="SparePart/FrmPartShopEntry.aspx?mode=entry"></Map>
+  <Map MenuID="912" MenuPage="SparePart/FrmPartShopUpload.aspx"></Map>
+  <Map MenuID="913" MenuPage="SparePart/FrmPartShopList.aspx?mode=Registration"></Map>
+  <Map MenuID="914" MenuPage="Claim/frmGradeDealer.aspx?mode=new"></Map>
+  <!-- End Spare Part By Anh 20110621 -->
+
+  <!--Start:PQRBB-->
+  <Map MenuID="12011604" MenuPage="PQR/FrmPQRHeaderBB.aspx?Mode=New"></Map>
+  <Map MenuID="12011601" MenuPage="PQR/FrmPQRListBB.aspx"></Map>
+  <Map MenuID="12011603" MenuPage="PQR/FrmPQRListKondisiBB.aspx"></Map>
+  <!--End:PQRBB-->
+
+  <!-- Start Parking Fee By anh 201202 -->
+  <Map MenuID="1212" MenuPage="FinishUnit/FrmParkingFee.aspx" />
+  <Map MenuID="1213" MenuPage="FinishUnit/FrmPPHStatus.aspx" />
+  <!-- Start Parking Fee By anh 201202 -->
+  <!-- Redemption Plan : Start-->
+  <Map MenuID="24010" MenuPage="PO/FrmEntryEstimationStock.aspx" />
+  <Map MenuID="24020" MenuPage="PO/FrmEntryRedemptionPlan2.aspx" />
+  <!-- Redemption Plan : End-->
+
+
+  <!-- Credit Account-->
+  <Map MenuID="12051101" MenuPage="General/FrmListDealerCreditAccount.aspx" />
+  <!-- Credit Account-->
+
+  <!--Permintaan Tidak Dipenuhi -->
+  <Map MenuID="12060401" MenuPage="SparePart/FrmGetSPPOCheckList.aspx" />
+  <!--Permintaan Tidak Dipenuhi -->
+
+  <!-- Penjualan Accessories -->
+  <Map MenuID="12070501" MenuPage="SparePart/FrmKategoriInput.aspx" />
+  <Map MenuID="12070502" MenuPage="SparePart/FrmLaporanPenjualanAcc.aspx" />
+  <Map MenuID="12070503" MenuPage="SparePart/FrmInputPenjualanAcc.aspx" />
+  <Map MenuID="12072401" MenuPage="SparePart/frmSparePartMaster.aspx?IsAccessories=1" />
+  <!-- Penjualan Accessories -->
+
+  <Map MenuID="12101501" MenuPage="PO/FrmMaxTOPDay.aspx" />
+
+  <!--Start:Download-->
+  <Map MenuID="53100" MenuPage="Tools/FrmQueryReport.aspx"></Map>
+  <Map MenuID="53200" MenuPage="Tools/FrmReportList.aspx"></Map>
+  <!--End:Download-->
+
+  <Map MenuID="11100503" MenuPage="CallCenter/FrmReportDealerRangking.aspx"></Map>
+  <Map MenuID="11100504" MenuPage="CallCenter/FrmDRReportAdmin.aspx"></Map>
+
+  <Map MenuID="11100515" MenuPage="CallCenter/FrmCcCSPerformanceMaster.aspx"></Map>
+  <Map MenuID="11100516" MenuPage="CallCenter/FrmUploadScoreCSPerformance.aspx"></Map>
+  <Map MenuID="11100517" MenuPage="CallCenter/FrmCSPerformanceScoreList.aspx"></Map>
+  <Map MenuID="11100599" MenuPage="CallCenter/FrmReportCSPerformance.aspx"></Map>
+
+  <!-- start anh 20140807 User Activation Code-->
+  <Map MenuID="20140807" MenuPage="UserManagement/FrmUserActivationCode.aspx" />
+  <!-- end anh 20140123-->
+
+  <!--MCP Start 2015-07-09 by anh-->
+  <Map MenuID="1601" MenuPage="FinishUnit/FrmMCPDetail.aspx" />
+  <Map MenuID="1602" MenuPage="FinishUnit/FrmMCPHeader.aspx" />
+  <!--MCP End-->
+
+  <!--Sparepart BO Start 2015-12-18 by anh-->
+  <Map MenuID="151021" MenuPage="SparePart/FrmSPPendingOrder.aspx" />
+  <Map MenuID="151022" MenuPage="SparePart/FrmSPOutstandingOrder.aspx" />
+  <!--Sparepart BO End 2015-12-18 by anh-->
+
+  <!--PK Enhancement Start-->
+  <Map MenuID="151111" MenuPage="PK/frmStockTarget.aspx" />
+  <Map MenuID="151120" MenuPage="PK/frmSalesPlanMeeting.aspx" />
+  <Map MenuID="151124" MenuPage="PK/frmDealerStockRatio.aspx" />
+  <Map MenuID="151208" MenuPage="PK/frmTransactionControlPK.aspx" />
+  <Map MenuID="151209" MenuPage="PK/frmPengaturanTypeKendaraan.aspx" />
+  <!--PK Enhancement End-->
+
+  <!--Presentasi Start-->
+  <Map MenuID="1605" MenuPage="Presentation/frmPresentationManage.aspx?Mode=New" />
+  <Map MenuID="1606" MenuPage="Presentation/frmPresentationList.aspx?Mode=New" />
+  <!--Presentasi End-->
+
+  <!--Jadwal Proses Pemesanan”-->
+  <Map MenuID="1607" MenuPage="SparePart/frmSparePartPOScheduleManage.aspx?Mode=New" />
+  <!--Jadwal Proses Pemesanan”-->
+
+  <!--LKPP Start 2015-12-08 by adi-->
+  <Map MenuID="1603" MenuPage="LKPP/FrmLKPPDetail.aspx?Mode=New" />
+  <Map MenuID="1604" MenuPage="LKPP/FrmLKPPHeader.aspx?Mode=New" />
+  <!--LKPP End-->
+  <!--begin Sales Campaing 20151202-->
+  <Map MenuID="26010" MenuPage="Benefit/FrmBenefitTypeList.aspx" />
+  <Map MenuID="26020" MenuPage="Benefit/FrmBenefitList.aspx" />
+  <Map MenuID="26030" MenuPage="Benefit/FrmLeasingList.aspx" />
+  <Map MenuID="26040" MenuPage="Benefit/FrmEventParticipantProcessList.aspx" />
+  <Map MenuID="26050" MenuPage="Benefit/FrmBenefitClaimList.aspx" />
+  <Map MenuID="26060" MenuPage="Benefit/FrmUploadClaim.aspx" />
+  <Map MenuID="26070" MenuPage="Benefit/FrmNewInputMasterList.aspx" />
+  <Map MenuID="26080" MenuPage="Benefit/FrmInputEventParticipantList.aspx?mode=entry" />
+  <Map MenuID="26090" MenuPage="Benefit/FrmInputClaim.aspx" />
+  <Map MenuID="26091" MenuPage="Benefit/FrmClaimJVList.aspx" />
+  <!--end Sales Campaing-->
+
+  <!-- Recall / Field Fix -->
+  <Map MenuID="1610" MenuPage="Service/FrmRecallChassisMaster.aspx?Mode=New" />
+  <Map MenuID="1611" MenuPage="Service/FrmRecallService.aspx?Mode=New" />
+  <Map MenuID="1612" MenuPage="Service/FrmRecallInformation.aspx?Mode=New" />
+  <Map MenuID="1613" MenuPage="Service/FrmRecallCategory.aspx?Mode=New" />
+  <Map MenuID="1614" MenuPage="Service/FrmRecallServiceList.aspx?Mode=New" />
+  <Map MenuID="1615" MenuPage="Service/FrmRecallServiceViaText.aspx?Mode=New" />
+
+  <!-- Field Fix -->
+  <Map MenuID="1616" MenuPage="Service/FrmFieldFixStockControl.aspx?Mode=New" />
+  <Map MenuID="1617" MenuPage="Service/FrmFieldFixRequestPart.aspx?Mode=New" />
+  <Map MenuID="1618" MenuPage="Service/FrmFieldFixRequestPartList.aspx?Mode=New" />
+  <Map MenuID="1619" MenuPage="Service/FrmFieldFixPengiriman.aspx?Mode=New" />
+  <Map MenuID="1620" MenuPage="Service/FrmFieldFixPartOrderConfirmationList.aspx" />
+  <Map MenuID="1621" MenuPage="Service/FrmFieldFixRequestPartDetailList.aspx?Mode=New" />
+  
+  <!-- End Of Recall-->
+  
+  
+  <Map MenuID="160806" MenuPage="Service/FrmFSChassisCampaign.aspx"></Map>
+
+  <!-- Payment Transfer -->
+  <Map MenuID="2016070101" MenuPage="Transfer/FrmTransferCeilingReport.aspx" />
+  <Map MenuID="2016070102" MenuPage="Transfer/FrmTransferPayment.aspx?Mode=New" />
+
+  <Map MenuID="2016091101" MenuPage="Transfer/FrmTransferControl.aspx" />
+  <Map MenuID="2016091102" MenuPage="Transfer/FrmTransferPaymentList.aspx?Mode=New" />
+  <Map MenuID="2016091103" MenuPage="Transfer/FrmEmailPaymentTransfer.aspx" />
+  <Map MenuID="2016100301" MenuPage="Transfer/FrmTransferOutsandingPayment.aspx" />
+
+  <!-- End of Payment Transfer -->
+
+
+  <!-- Deposit B :Start-->
+
+  <Map MenuID="1603001" MenuPage="Service/FrmDepB_KewajibanInput.aspx" />
+  <Map MenuID="1603002" MenuPage="Service/FrmDepB_KewajibanList.aspx" />
+  <Map MenuID="1603003" MenuPage="Service/FrmDepB_DebitNoteList.aspx" />
+  <Map MenuID="1603004" MenuPage="Service/FrmDepB_DepositList.aspx" />
+  <Map MenuID="1603005" MenuPage="Service/FrmDepB_InterestList.aspx" />
+  <Map MenuID="1603006" MenuPage="Service/FrmDepB_Plafon.aspx" />
+  <Map MenuID="1603007" MenuPage="Service/FrmDepB_PengajuanPencairan.aspx" />
+  <Map MenuID="1603008" MenuPage="Service/FrmDepB_ProsesPencairan.aspx" />
+  <Map MenuID="1603009" MenuPage="Service/FrmDepB_KuitansiPencairan.aspx" />
+  <Map MenuID="1603010" MenuPage="Service/FrmDepB_KuitansiPencairanList.aspx" />
+
+  <!-- Deposit B :End-->
+
+  <!-- Deposit C :Start-->
+  <Map MenuID="1707001" MenuPage="SparePart/FrmDepC_InterestList.aspx" />
+  <!-- Deposit C :End-->
+
+  
+  <!-- MDP -->
+  <!--<Map MenuID="1911" MenuPage="MDP/FrmMDPPeriodStock.aspx"></Map>-->
+  <Map MenuID="2611" MenuPage="MDP/FrmMDPDailyStock.aspx"></Map>
+  <Map MenuID="2612" MenuPage="MDP/FrmMDPMasterDealer.aspx"></Map>
+  <Map MenuID="2613" MenuPage="MDP/FrmMDPMasterVehicle.aspx"></Map>
+
+  <!-- DSK Sparepart-->
+  <Map MenuID="295" MenuPage="SparePart/FrmDealerLeadTime.aspx"></Map>
+
+
+  <!-- CityPart-->
+  <Map MenuID="450" MenuPage="SparePart/FrmCityPart.aspx?mode=list"></Map>
+
+
+  <!-- Fleet-->
+  <Map MenuID="297" MenuPage="Campaign/FrmFleetRequest.aspx?Mode=New"></Map>
+  <Map MenuID="298" MenuPage="Campaign/FrmFleetRequestList.aspx"></Map>
+
+  <!-- Fleet Management-->  
+  <Map MenuID="301" MenuPage="FleetManagement/FrmInputFleetCustomer.aspx"></Map>
+  <Map MenuID="302" MenuPage="FleetManagement/FrmFleetCustomerList.aspx"></Map>
+  <Map MenuID="3021" MenuPage="FleetManagement/FrmFleetCustomerList.aspx?Mode=View"></Map>
+  <Map MenuID="303" MenuPage="FleetManagement/FrmUploadFleetCustomer.aspx"></Map>
+  <Map MenuID="304" MenuPage="FleetManagement/FrmCustomerGroup.aspx"></Map>
+  <Map MenuID="305" MenuPage="FleetManagement/FrmCompetitor.aspx"></Map>
+  <Map MenuID="306" MenuPage="FleetManagement/FrmVisitasiResultList.aspx"></Map>
+
+
+  <!-- start anh 20140123 Showroom Traffic-->
+  <!-- <Map MenuID="1526" MenuPage="FinishUnit/FrmPreCustomerEntry.aspx" />-->
+  <!-- <Map MenuID="1527" MenuPage="FinishUnit/FrmPreCustomerList.aspx" />-->
+  <!-- end anh 20140123-->
+  <Map MenuID="1526" MenuPage="Marketing/FrmPreCustomerEntryForm.aspx" />
+  <Map MenuID="1527" MenuPage="Marketing/FrmPreCustomerList.aspx" />
+  <Map MenuID="1528" MenuPage="Marketing/FrmPreCustomerEntryUpload.aspx" />
+  <Map MenuID="1529" MenuPage="Marketing/FrmCustomerCase.aspx" />
+  <Map MenuID="1600" MenuPage="Marketing/FrmContactDealerNotification.aspx" />
+  <Map MenuID="20170901" MenuPage="Marketing/FrmDashboard.aspx" />
+
+  <!--Tambahan SLA-->
+  <Map MenuID="1452" MenuPage="PO/FrmPODestination.aspx"></Map>
+  <Map MenuID="2337" MenuPage="General/FrmLogisticPrice.aspx" />
+  <Map MenuID="1214" MenuPage="FinishUnit/FrmLogisticCost.aspx" />
+  <Map MenuID="1215" MenuPage="FinishUnit/FrmPPHLogisticCostStatus.aspx" />
+	<Map MenuID="1216" MenuPage="FinishUnit/FrmLeadTimeOfDelivery.aspx" />
+
+  <Map MenuID="2901" MenuPage="AfterSales/FrmSalesChannel.aspx" />
+  <Map MenuID="2902" MenuPage="AfterSales/FrmSparePartSalesman.aspx" />
+  <Map MenuID="2903" MenuPage="AfterSales/FrmWorkOrderType.aspx" />
+  <Map MenuID="2904" MenuPage="AfterSales/FrmWorkOrderCategory.aspx" />
+  <Map MenuID="2905" MenuPage="AfterSales/FrmServicePlace.aspx" />
+  <Map MenuID="2906" MenuPage="AfterSales/FrmServiceType.aspx" />
+  <!--<Map MenuID="2907" MenuPage="AfterSales/FrmMasterExpenseGroup.aspx" />
+  <Map MenuID="2908" MenuPage="AfterSales/FrmMasterExpense.aspx" />-->
+  <Map MenuID="2909" MenuPage="AfterSales/FrmEmailUser.aspx" />
+  <Map MenuID="2910" MenuPage="AfterSales/FrmServiceMechanic.aspx" />
+  <Map MenuID="2911" MenuPage="AfterSales/FrmModule.aspx" />
+  <Map MenuID="2912" MenuPage="AfterSales/FrmCutOffPeriod.aspx" />
+  <Map MenuID="2914" MenuPage="AfterSales/FrmUploadReport.aspx" />
+  <Map MenuID="2916" MenuPage="AfterSales/FrmDaftarUpload.aspx" />
+  <Map MenuID="2917" MenuPage="AfterSales/FrmServiceIncoming.aspx" />
+  <Map MenuID="2918" MenuPage="AfterSales/FrmPartsSales.aspx" />
+  <Map MenuID="2919" MenuPage="AfterSales/FrmPartsStock.aspx" />
+  <Map MenuID="2920" MenuPage="AfterSales/FrmExpenseService.aspx" />
+  <Map MenuID="2921" MenuPage="AfterSales/FrmExpenseSpareparts.aspx" />
+  <Map MenuID="2922" MenuPage="AfterSales/FrmServiceIncomingBP.aspx" />
+
+  <!-- Invoice Revision -->
+  <Map MenuID="1522" MenuPage="FinishUnit/FrmDaftarRevisionFaktur.aspx" />
+  <Map MenuID="1523" MenuPage="FinishUnit/FrmInvoiceRevision.aspx" />
+
+  <Map MenuID="1945" MenuPage="General/FrmMasterLeasingList.aspx"></Map>
+  <Map MenuID="1946" MenuPage="General/FrmMasterKaroseriList.aspx"></Map>
+  <Map MenuID="1947" MenuPage="General/FrmRevisionPriceList.aspx"></Map>
+  <Map MenuID="1948" MenuPage="General/FrmDealerSalesOrganization.aspx" />
+
+  <Map MenuID="1534" MenuPage="FinishUnit/FrmEntryInvoiceRevisionPayment.aspx"></Map>
+  <Map MenuID="1535" MenuPage="FinishUnit/FrmDaftarInvoiceRevisionPayment.aspx"></Map>
+  <!-- ENd of Invoice REvision -->
+
+  <!--TOP Sparepart-->
+   <Map MenuID="7095991" MenuPage="TOPSparepart/FrmSettingCreditAccount.aspx" />
+  <Map MenuID="7095971" MenuPage="TOPSparepart/FrmTOPSPTransferPayment.aspx" />
+  <Map MenuID="7095972" MenuPage="TOPSparepart/FrmTOPSPList.aspx" />
+  <Map MenuID="7095973" MenuPage="TOPSparepart/FrmOutStandingSparePartBillingList.aspx" />
+  <Map MenuID="7095981" MenuPage="TOPSparepart/FrmTOPSPReportCeiling.aspx" />
+  <Map MenuID="7095982" MenuPage="TOPSparepart/FrmFUTOPSPReportCeiling.aspx" />
+  <Map MenuID="7095983" MenuPage="Sparepart/FrmSparePartDueDateNotification.aspx" />
+  <Map MenuID="7095984" MenuPage="TOPSparepart/FrmTOPTransferControl.aspx" />
+  <Map MenuID="7095985" MenuPage="TOPSparepart/FrmCODOutstanding.aspx" />
+  <Map MenuID="7095986" MenuPage="TOPSparepart/FrmCODPayment.aspx" />
+  <Map MenuID="7095987" MenuPage="TOPSparepart/FrmTOPSPPenaltyList.aspx" />
+  <Map MenuID="7095988" MenuPage="TOPSparepart/FrmTOPSPTransferOutstanding.aspx" />
+
+  <Map MenuID="7095974" MenuPage="TOPSparepart/FrmTOPSPUploadPayment.aspx" />
+	<Map MenuID="7095975" MenuPage="TOPSparepart/FrmTOPSPNotaRetur.aspx" />
+  <!--TOP Sparepart-->
+
+
+<Map MenuID="1480" MenuPage="MDP/FrmPODraftList.aspx" />
+
+	<!--Dealer PO Target-->
+	<Map MenuID="35111" MenuPage="PO/FrmDealerPOTargetList.aspx" />
+	<!--End Dealer PO Target-->
+
+  <!--[BEGIN] DSF Subvention-->
+  <Map MenuID="13101" MenuPage="FinishUnit/frmDSFUploadLeasingClaim.aspx" />
+  <Map MenuID="26051" MenuPage="FinishUnit/FrmDaftarDSFLeasingClaim.aspx" />
+  <Map MenuID="26052" MenuPage="FinishUnit/FrmDaftarBenefitClaimDeducted.aspx" />
+  <!--[END] DSF Subvention-->
+
+  <Map MenuID="7801" MenuPage="Service/FrmWarrantyPartAccessories.aspx"/>
+
+  <!--PM-->
+  <Map MenuID="4007" MenuPage="Service/FrmDurasiPM.aspx"/>
+  <Map MenuID="11100600" MenuPage="Service/FrmGSDaftarService.aspx"/>
+  <Map MenuID="11100601" MenuPage="Service/FrmGSRDashboard.aspx" />
+
+
+  <!-- CBU Return-->
+  <Map MenuID="9720201" MenuPage="CBUReturn/FrmDaftarClaimCBUReturn.aspx"/>
+  <Map MenuID="9720202" MenuPage="CBUReturn/FrmInputClaimCBUReturn.aspx"/>
+  <Map MenuID="9720203" MenuPage="CBUReturn/FrmImportClaimCBUReturn.aspx"/>
+  <Map MenuID="9720204" MenuPage="CBUReturn/FrmLogisticCompany.aspx"/>  
+  <!-- END CBU Return-->
+
+<!-- SP EDocument-->
+  <Map MenuID="122021" MenuPage="SparePart/FrmEDocument.aspx"/>
+<!-- END SP EDocument-->
+  <!--CR SPK Customer Sales Enhance-->
+  <Map MenuID="2282" MenuPage="General/FrmMasterCountry.aspx" />
+  <!-- END CR-->
+  
+  <!--CR PPN Enhanchment-->
+  <Map MenuID="100001" MenuPage="General/FrmPPNMaster.aspx" />
+  <!--End CR-->
+  <!-- Stall Management-->
+  <Map MenuID="18051" MenuPage="Service/FrmStallMaster.aspx"/>
+  <Map MenuID="18052" MenuPage="Service/FrmFlatRate.aspx"/>
+  <Map MenuID="18053" MenuPage="Service/FrmServiceTemplateFS.aspx"/>
+  <Map MenuID="18054" MenuPage="Service/FrmWorkingTimeConf.aspx"/>
+  <Map MenuID="18055" MenuPage="Service/FrmInputServiceBooking.aspx"/>
+  <Map MenuID="18056" MenuPage="Service/FrmListServiceBooking.aspx"/>
+  <Map MenuID="18057" MenuPage="Service/FrmServiceStandardTime.aspx"/>
+  <Map MenuID="18058" MenuPage="Service/FrmUploadServiceStandardTime.aspx"/>
+  <Map MenuID="18059" MenuPage="Service/frmAllocationRealTimeService.aspx"/>
+  <Map MenuID="18060" MenuPage="Service/frmUploadMaintainGeneralRepair.aspx"/>
+  <Map MenuID="18061" MenuPage="Service/FrmGRKind.aspx"/>
+
+  <!-- END Stall Management-->
+  <!-- PDIPKT -->
+  <Map MenuID="8600" MenuPage="Service/FrmEntryPDISpecimen.aspx"/>
+  <Map MenuID="8410" MenuPage="Service/FrmPDIMasterTemplate.aspx"/>
+  <Map MenuID="5130" MenuPage="Service/FrmPKTCertificateMaster.aspx"/>
+  <!-- END PDIPKT-->
+  
+  <!-- Warranty Activation-->
+  <Map MenuID="5110" MenuPage="Service/frmWarrantyActivation.aspx"/>
+  <!--END-->
+
+  <!-- PKT Specimen-->
+  <Map MenuID="5120" MenuPage="Service/frmPKTMasterSpecimenSignature.aspx"/>
+  <!--END-->
+
+  <!-- Service/Umum-->
+  <Map MenuID="5201" MenuPage="Service/FrmMonthlyDocumentActualTransfer.aspx" />
+  <Map MenuID="5202" MenuPage="Service/FrmMonthlyDocumentOutstanding.aspx" />
+  <Map MenuID="5203" MenuPage="Service/FrmAPOutstanding.aspx" />
+  <!--END-->
+  
+
+  <!-- PPH Online-->
+  <Map MenuID="1217" MenuPage="PPHOnline/FrmDaftarPPHInterest.aspx"/>
+  <Map MenuID="1218" MenuPage="PPHOnline/FrmInputBuktiPotong.aspx"/>
+  <Map MenuID="1219" MenuPage="PPHOnline/FrmDaftarBuktiPotongInterest.aspx"/>
+  <!--END-->
+
+</DomainDBMSMap>

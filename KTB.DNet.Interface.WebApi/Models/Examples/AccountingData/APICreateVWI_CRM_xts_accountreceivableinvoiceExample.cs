@@ -1,0 +1,150 @@
+#region Summary
+// ===========================================================================
+// AUTHOR        : BSI Code Generator 
+// SPECIAL NOTES : DNet WebApi Project
+// ---------------------
+// Copyright  (c) 2019 
+// ---------------------
+// $History      : $
+// Created on 13/01/2020 14:30:17]
+//
+// ===========================================================================	
+#endregion
+
+using Swashbuckle.Examples;
+
+namespace KTB.DNet.Interface.WebApi.Models.Examples
+{
+    public class APICreateVWI_CRM_xts_accountreceivableinvoiceExample : IExamplesProvider
+    {
+        public object GetExamples()
+        {
+            var obj = new
+            {
+				UpdatedBy = "DealerUser"
+				,company = "company Value"
+				,businessunitcode = "businessunitcode Value"
+				,versionnumber = "versionnumber Value"
+				,createdon = "createdon Value"
+				,ktb_spkidname = "ktb_spkidname Value"
+				,xts_ordernumber = "xts_ordernumber Value"
+				,ktb_parentbusinessunitid = "ktb_parentbusinessunitid Value"
+				,xts_financingcompanyinvoiceamount = "xts_financingcompanyinvoiceamount Value"
+				,xts_originalreferencenumberidname = "xts_originalreferencenumberidname Value"
+				,statuscodename = "statuscodename Value"
+				,xts_status = "xts_status Value"
+				,xts_customerid = "xts_customerid Value"
+				,modifiedbyyominame = "modifiedbyyominame Value"
+				,owneridtype = "owneridtype Value"
+				,xts_type = "xts_type Value"
+				,xts_billabletype = "xts_billabletype Value"
+				,xts_taxregistrationnumber = "xts_taxregistrationnumber Value"
+				,createdonbehalfby = "createdonbehalfby Value"
+				,ktb_origarinvoicenumber = "ktb_origarinvoicenumber Value"
+				,xts_financingcompanyidname = "xts_financingcompanyidname Value"
+				,modifiedbyname = "modifiedbyname Value"
+				,xts_salesorderid = "xts_salesorderid Value"
+				,xts_newvehiclesalesorderid = "xts_newvehiclesalesorderid Value"
+				,xts_salesorderidname = "xts_salesorderidname Value"
+				,ktb_sourcetypenumbering = "ktb_sourcetypenumbering Value"
+				,owneridname = "owneridname Value"
+				,overriddencreatedon = "overriddencreatedon Value"
+				,xts_deliveryorderid = "xts_deliveryorderid Value"
+				,xts_newvehicledeliveryorderidname = "xts_newvehicledeliveryorderidname Value"
+				,xts_totalreceiptamount_base = "xts_totalreceiptamount_base Value"
+				,xts_financingcompanynumber = "xts_financingcompanynumber Value"
+				,createdonbehalfbyyominame = "createdonbehalfbyyominame Value"
+				,modifiedonbehalfby = "modifiedonbehalfby Value"
+				,exchangerate = "exchangerate Value"
+				,xts_workorderidname = "xts_workorderidname Value"
+				,xts_usedvehiclesalesorderid = "xts_usedvehiclesalesorderid Value"
+				,xts_customeridyominame = "xts_customeridyominame Value"
+				,owningteam = "owningteam Value"
+				,xts_taxinvoicenumber = "xts_taxinvoicenumber Value"
+				,xts_termofpayment = "xts_termofpayment Value"
+				,xts_newvehicledeliveryorderid = "xts_newvehicledeliveryorderid Value"
+				,xts_financingcompanybalance = "xts_financingcompanybalance Value"
+				,statecode = "statecode Value"
+				,ktb_sourcetypenumberingname = "ktb_sourcetypenumberingname Value"
+				,ktb_spkid = "ktb_spkid Value"
+				,xts_sourcetype = "xts_sourcetype Value"
+				,timezoneruleversionnumber = "timezoneruleversionnumber Value"
+				,xts_serviceproportionalinvoiceid = "xts_serviceproportionalinvoiceid Value"
+				,xts_financingcompanybalance_base = "xts_financingcompanybalance_base Value"
+				,xts_writeoffbalanceid = "xts_writeoffbalanceid Value"
+				,ktb_productid = "ktb_productid Value"
+				,xts_locking = "xts_locking Value"
+				,xts_handling = "xts_handling Value"
+				,ktb_chassisnumber = "ktb_chassisnumber Value"
+				,xts_customernumber = "xts_customernumber Value"
+				,xts_reversingname = "xts_reversingname Value"
+				,xts_originalreferencenumber = "xts_originalreferencenumber Value"
+				,xts_usedvehicledeliveryorderid = "xts_usedvehicledeliveryorderid Value"
+				,xts_accountreceivableinvoice = "xts_accountreceivableinvoice Value"
+				,createdonbehalfbyname = "createdonbehalfbyname Value"
+				,ktb_ordertypeidname = "ktb_ordertypeidname Value"
+				,xts_newvehiclesalesorderidname = "xts_newvehiclesalesorderidname Value"
+				,utcconversiontimezonecode = "utcconversiontimezonecode Value"
+				,xts_billabletypename = "xts_billabletypename Value"
+				,xts_financingcompanyreceiptamount_base = "xts_financingcompanyreceiptamount_base Value"
+				,xts_deliveryordernumber = "xts_deliveryordernumber Value"
+				,xts_statusname = "xts_statusname Value"
+				,xts_typename = "xts_typename Value"
+				,ktb_enginenumber = "ktb_enginenumber Value"
+				,ownerid = "ownerid Value"
+				,modifiedon = "modifiedon Value"
+				,importsequencenumber = "importsequencenumber Value"
+				,owneridyominame = "owneridyominame Value"
+				,xts_writeoffbalanceidname = "xts_writeoffbalanceidname Value"
+				,xts_balance = "xts_balance Value"
+				,xts_customeridname = "xts_customeridname Value"
+				,xts_transactiondate = "xts_transactiondate Value"
+				,xts_invoiceamount = "xts_invoiceamount Value"
+				,xts_workorderid = "xts_workorderid Value"
+				,createdbyname = "createdbyname Value"
+				,ktb_ordertypeid = "ktb_ordertypeid Value"
+				,xts_businessunitid = "xts_businessunitid Value"
+				,modifiedonbehalfbyname = "modifiedonbehalfbyname Value"
+				,xts_duedate = "xts_duedate Value"
+				,xts_balance_base = "xts_balance_base Value"
+				,ktb_productidname = "ktb_productidname Value"
+				,ktb_interfaceprocessname = "ktb_interfaceprocessname Value"
+				,xts_handlingname = "xts_handlingname Value"
+				,xts_originalreferencenumberid = "xts_originalreferencenumberid Value"
+				,xts_serviceproportionalinvoiceidname = "xts_serviceproportionalinvoiceidname Value"
+				,transactioncurrencyid = "transactioncurrencyid Value"
+				,ktb_customerdescription = "ktb_customerdescription Value"
+				,xts_usedvehicledeliveryorderidname = "xts_usedvehicledeliveryorderidname Value"
+				,createdby = "createdby Value"
+				,xts_deliveryorderidname = "xts_deliveryorderidname Value"
+				,modifiedby = "modifiedby Value"
+				,xts_financingcompanyinvoiceamount_base = "xts_financingcompanyinvoiceamount_base Value"
+				,xts_reversing = "xts_reversing Value"
+				,createdbyyominame = "createdbyyominame Value"
+				,owninguser = "owninguser Value"
+				,transactioncurrencyidname = "transactioncurrencyidname Value"
+				,owningbusinessunit = "owningbusinessunit Value"
+				,xts_financingcompanyid = "xts_financingcompanyid Value"
+				,ktb_vehicleproductionyear = "ktb_vehicleproductionyear Value"
+				,xts_invoiceamount_base = "xts_invoiceamount_base Value"
+				,ktb_vehiclecolordescription = "ktb_vehiclecolordescription Value"
+				,xts_sourcetypename = "xts_sourcetypename Value"
+				,xts_accountreceivableinvoiceid = "xts_accountreceivableinvoiceid Value"
+				,statuscode = "statuscode Value"
+				,modifiedonbehalfbyyominame = "modifiedonbehalfbyyominame Value"
+				,ktb_parentbusinessunitidname = "ktb_parentbusinessunitidname Value"
+				,ktb_say = "ktb_say Value"
+				,xts_totalreceiptamount = "xts_totalreceiptamount Value"
+				,xts_financingcompanyidyominame = "xts_financingcompanyidyominame Value"
+				,ktb_interfaceprocess = "ktb_interfaceprocess Value"
+				,xts_usedvehiclesalesorderidname = "xts_usedvehiclesalesorderidname Value"
+				,statecodename = "statecodename Value"
+				,xts_businessunitidname = "xts_businessunitidname Value"
+				,xts_financingcompanyreceiptamount = "xts_financingcompanyreceiptamount Value"
+				,msdyn_companycode = "msdyn_companycode Value"
+            };
+
+            return obj;
+        }
+    }
+}

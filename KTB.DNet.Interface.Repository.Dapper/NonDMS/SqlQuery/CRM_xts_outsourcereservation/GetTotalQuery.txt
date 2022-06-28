@@ -1,0 +1,2 @@
+SELECT COUNT(1)
+FROM CRM_xts_outsourcereservation WITH (NOLOCK) {0}

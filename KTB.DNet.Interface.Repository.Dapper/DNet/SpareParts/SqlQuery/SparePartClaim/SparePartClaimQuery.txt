@@ -1,0 +1,6 @@
+﻿select * from (select ch.ID, d.DealerCode, ch.ClaimNo as ClaimNumber, ch.Status,spo.approvedQty,spo.SONumber, ch.SORetur, ch.SOReturDate,ch.FakturRetur,ch.FakturReturDate, ch.LastUpdateTime FROM ClaimHeader ch with(nolock) join
+(select sp.SONumber, cd.approvedQty, cd.id from SparePartPOStatus sp with(nolock)
+join SparePartPOStatusDetail spd with(nolock) on sp.id = spd.SparePartPOStatusId
+join ClaimDetail cd with (nolock) on spd.id = cd.SparePartPOStatusDetailId) spo on ch.id  = spo.id
+join (SELECT DealerCode, id from Dealer) d on ch.DealerId = d.id) as SparePartClaimDto
+{0}

@@ -1,0 +1,1 @@
+﻿SELECT Id, Endpoint, Status, CreatedBy, CreatedTime, UpdatedBy, UpdatedTime FROM TransactionLog WITH(NOLOCK) WHERE ParentId = @ParentId ORDER BY CreatedTime DESC

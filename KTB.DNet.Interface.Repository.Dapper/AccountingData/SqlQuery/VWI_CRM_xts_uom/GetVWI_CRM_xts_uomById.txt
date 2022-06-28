@@ -1,0 +1,39 @@
+SELECT 
+      ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,ktb_dnetid
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,statecode
+	,statecodename
+	,createdonbehalfby
+	,xts_decimalprecision
+	,importsequencenumber
+	,organizationidname
+	,modifiedbyyominame
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,xts_uom
+	,modifiedbyname
+	,versionnumber
+	,xts_uomid
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,statuscodename
+	,ktb_isinterfaced
+	,xts_unitclass
+	,modifiedon
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,organizationid
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,ktb_isinterfacedname
+	,xts_unitclassname
+	,overriddencreatedon
+	,xts_description
+	,RowStatus
+FROM CRM_xts_uom as VWI_CRM_xts_uom WITH (NOLOCK) 
+WHERE xts_uomid = @Id

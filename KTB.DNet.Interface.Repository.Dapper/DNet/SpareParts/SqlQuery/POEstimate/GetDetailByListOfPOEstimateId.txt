@@ -1,0 +1,16 @@
+﻿SELECT * FROM
+	(SELECT ed.ID, d.DealerCode, ed.SparePartPOEstimateID, ed.PartNumber, ed.PartName, sm.ActiveStatus, sm.UoM, ed.OrderQty, ed.AllocQty, ed.AltPartNumber
+		FROM SparePartPOEstimateDetail ed  WITH ( NOLOCK ) JOIN
+		SparePartPOEstimate e  WITH ( NOLOCK ) ON ed.SparePartPOEstimateID = e.ID AND e.RowStatus = 0 JOIN
+		SparePartPO po  WITH ( NOLOCK ) ON po.ID = e.SparePartPOID AND po.RowStatus = 0 JOIN
+		Dealer d  WITH ( NOLOCK ) ON d.ID = po.DealerID and d.RowStatus = 0 JOIN
+		SparePartMaster sm  WITH ( NOLOCK ) ON sm.PartNumber = ed.PartNumber AND sm.RowStatus = 0
+		WHERE e.ID IN @ListOfPOEstimateId AND ed.RowStatus = 0) AS detail
+	LEFT JOIN
+	(SELECT e.ID AS POEstimateID, bd.Tax, sm.PartNumber, bd.RetailPrice,bd.Discount
+		FROM SparePartPOEstimate e  WITH ( NOLOCK ) JOIN
+		SparePartDODetail dd  WITH ( NOLOCK ) ON e.ID = dd.SparePartPOEstimateID  AND dd.RowStatus = 0 JOIN
+		SparePartBillingDetail bd  WITH ( NOLOCK ) ON bd.SparePartDODetailID = dd.ID AND bd.RowStatus = 0 JOIN
+		SparePartMaster sm  WITH ( NOLOCK ) on sm.ID = dd.SparePartMasterID AND sm.RowStatus = 0
+		WHERE e.ID IN @ListOfPOEstimateId AND e.RowStatus = 0) AS detail1
+	ON detail.SparePartPOEstimateID = detail1.POEstimateID AND detail.PartNumber = detail1.PartNumber  ORDER BY detail.PartNumber

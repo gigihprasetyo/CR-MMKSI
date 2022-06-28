@@ -1,0 +1,277 @@
+<VisualStudioProject>
+    <VisualBasic
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{EC1E1C9C-FE7D-48F3-B68D-A991D06CAE1A}"
+        SccProjectName = "SAK"
+        SccLocalPath = "SAK"
+        SccAuxPath = "SAK"
+        SccProvider = "SAK"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "KTB.DNet.Service"
+                AssemblyOriginatorKeyFile = ""
+                AssemblyOriginatorKeyMode = "None"
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "WinExe"
+                OptionCompare = "Binary"
+                OptionExplicit = "On"
+                OptionStrict = "Off"
+                RootNamespace = "KTB.DNet.Service"
+                StartupObject = "KTB.DNet.Service.DNetService"
+            >
+                <Config
+                    Name = "Debug"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    DebugSymbols = "true"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+                <Config
+                    Name = "Release"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    DebugSymbols = "false"
+                    IncrementalBuild = "false"
+                    Optimize = "true"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                />
+                <Reference
+                    Name = "System.ServiceProcess"
+                    AssemblyName = "System.ServiceProcess"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                />
+                <Reference
+                    Name = "System.Configuration.Install"
+                    AssemblyName = "System.Configuration.Install"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Configuration.Install.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Logging"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Logging"
+                    HintPath = "..\Binary Reference\EntLib\Microsoft.Practices.EnterpriseLibrary.Logging.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design"
+                    HintPath = "..\Binary Reference\EntLib\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Common"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Common"
+                    HintPath = "..\Binary Reference\EntLib\Microsoft.Practices.EnterpriseLibrary.Common.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Configuration"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Configuration"
+                    HintPath = "..\Binary Reference\EntLib\Microsoft.Practices.EnterpriseLibrary.Configuration.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Data"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Data"
+                    HintPath = "..\Binary Reference\EntLib\Microsoft.Practices.EnterpriseLibrary.Data.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling"
+                    HintPath = "..\Binary Reference\EntLib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll"
+                />
+                <Reference
+                    Name = "KTB.DNet.BusinessFacade"
+                    Project = "{172FE48B-F8B2-419D-8F64-6D3470D2CDF2}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "KTB.DNet.Domain"
+                    Project = "{F4CC7463-4CBB-4336-AEAF-AC8FBC38DD9A}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "KTB.DNet.Domain.Search"
+                    Project = "{06A29192-8B96-4DFB-9C6C-AA5B4DDF8D36}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "KTB.DNet.Lib"
+                    Project = "{E839ABCC-D7EF-4D3A-A697-CBB1E0A21737}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "KTB.DNet.Parser"
+                    Project = "{E04276C6-A965-47B4-AFA8-B02359BEFC69}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "KTB.DNet.Security"
+                    Project = "{17F38C9B-D956-438D-8577-18837C5AE615}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "KTB.DNet.Utility"
+                    Project = "{B6DE3F6D-8A0E-4693-8204-4EA972DCBF2A}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "system.web"
+                    AssemblyName = "System.Web"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\system.web.dll"
+                />
+                <Reference
+                    Name = "system.security"
+                    AssemblyName = "System.Security"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\system.security.dll"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Diagnostics" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "App.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "AssemblyInfo.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "cachingconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "CeilingChecker.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "dataconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "DNetService.vb"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "DNetService.resx"
+                    DependentUpon = "DNetService.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "DomainDataMap.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "exceptionhandlingconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "IndentPartEquipmentPO.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Job.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Library.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "loggingconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "loggingdistributorconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "LogHelper.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ProjectInstaller.vb"
+                    SubType = "Component"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ProjectInstaller.resx"
+                    DependentUpon = "ProjectInstaller.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "securityconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "securitycryptographyconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "EmailTemplate\CeilingChecker.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "EmailTemplate\IndentPartEquipEstimationDealer.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "EmailTemplate\IndentPartEquipEstimationKTB.htm"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "EmailTemplate\IndentPartEquipOrderNoDepositB.htm"
+                    BuildAction = "Content"
+                />
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>
+

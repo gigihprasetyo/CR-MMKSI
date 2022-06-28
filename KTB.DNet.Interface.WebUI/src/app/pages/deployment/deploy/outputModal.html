@@ -1,0 +1,29 @@
+<style>
+    .modal-dialog.modal-lg {
+        width: 90%;
+    }
+</style>
+<div class="modal-content">
+    <div class="modal-header bg-info">
+        <h3>
+            <i class="ion-android-alert modal-icon"></i>
+            <span>Console Output</span>
+        </h3>
+    </div>
+    <div class="modal-body text-center">
+        Jobs:
+        <b>
+            <span>{{output.jobName}}</span>
+        </b> Build Number:
+        <b>
+            <span>#{{output.buildNo}}</span>
+        </b>
+        <hr>
+        <pre style=" text-align: left; ">
+                {{output.message}}
+        </pre>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-info" ng-click="$close()">OK</button>
+    </div>
+</div>

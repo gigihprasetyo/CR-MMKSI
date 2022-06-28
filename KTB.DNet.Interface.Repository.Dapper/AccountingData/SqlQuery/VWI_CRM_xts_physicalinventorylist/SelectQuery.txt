@@ -1,0 +1,64 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_xts_physicalinventorylist.company
+    , VWI_CRM_xts_physicalinventorylist.businessunitcode
+	, VWI_CRM_xts_physicalinventorylist.createdonbehalfbyyominame
+	, VWI_CRM_xts_physicalinventorylist.owninguser
+	, VWI_CRM_xts_physicalinventorylist.xts_locking
+	, VWI_CRM_xts_physicalinventorylist.statecode
+	, VWI_CRM_xts_physicalinventorylist.xts_businessunitidname
+	, VWI_CRM_xts_physicalinventorylist.owneridname
+	, VWI_CRM_xts_physicalinventorylist.statecodename
+	, VWI_CRM_xts_physicalinventorylist.createdonbehalfby
+	, VWI_CRM_xts_physicalinventorylist.xts_handlingname
+	, VWI_CRM_xts_physicalinventorylist.xts_siteidname
+	, VWI_CRM_xts_physicalinventorylist.xts_handling
+	, VWI_CRM_xts_physicalinventorylist.xts_generateinventorylistid
+	, VWI_CRM_xts_physicalinventorylist.xts_physicalinventorylistid
+	, VWI_CRM_xts_physicalinventorylist.xts_parentbusinessunitid
+	, VWI_CRM_xts_physicalinventorylist.importsequencenumber
+	, VWI_CRM_xts_physicalinventorylist.modifiedbyyominame
+	, VWI_CRM_xts_physicalinventorylist.xts_siteid
+	, VWI_CRM_xts_physicalinventorylist.xts_inventorylistnumber
+	, VWI_CRM_xts_physicalinventorylist.xts_statusname
+	, VWI_CRM_xts_physicalinventorylist.utcconversiontimezonecode
+	, VWI_CRM_xts_physicalinventorylist.createdbyyominame
+	, VWI_CRM_xts_physicalinventorylist.owningbusinessunit
+	, VWI_CRM_xts_physicalinventorylist.modifiedbyname
+	, VWI_CRM_xts_physicalinventorylist.owningteam
+	, VWI_CRM_xts_physicalinventorylist.xts_generateinventorylistidname
+	, VWI_CRM_xts_physicalinventorylist.modifiedby
+	, VWI_CRM_xts_physicalinventorylist.createdby
+	, VWI_CRM_xts_physicalinventorylist.timezoneruleversionnumber
+	, VWI_CRM_xts_physicalinventorylist.owneridtype
+	, VWI_CRM_xts_physicalinventorylist.statuscodename
+	, VWI_CRM_xts_physicalinventorylist.xts_lasttagnumber
+	, VWI_CRM_xts_physicalinventorylist.owneridyominame
+	, VWI_CRM_xts_physicalinventorylist.modifiedon
+	, VWI_CRM_xts_physicalinventorylist.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_physicalinventorylist.statuscode
+	, VWI_CRM_xts_physicalinventorylist.createdbyname
+	, VWI_CRM_xts_physicalinventorylist.createdon
+	, VWI_CRM_xts_physicalinventorylist.xts_businessunitid
+	, VWI_CRM_xts_physicalinventorylist.createdonbehalfbyname
+	, VWI_CRM_xts_physicalinventorylist.xts_status
+	, VWI_CRM_xts_physicalinventorylist.modifiedonbehalfbyname
+	, VWI_CRM_xts_physicalinventorylist.versionnumber
+	, VWI_CRM_xts_physicalinventorylist.modifiedonbehalfby
+	, VWI_CRM_xts_physicalinventorylist.ownerid
+	, VWI_CRM_xts_physicalinventorylist.overriddencreatedon
+	, VWI_CRM_xts_physicalinventorylist.xts_parentbusinessunitidname
+	, VWI_CRM_xts_physicalinventorylist.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_physicalinventorylist a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_physicalinventorylist

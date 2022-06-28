@@ -1,0 +1,33 @@
+select 
+	ID
+	, PartNumber
+	, Stock
+	, NoBulletinService
+	, NoRecallCategory
+	, MaxOrder
+	, [Status]
+	, RowStatus
+	, LastUpdateby
+	, LastUpdateTime
+	/**EndPagingIndexQuery**/
+from
+(
+	select 
+		  a.ID
+		, b.PartNumber
+		, a.Stock
+		, convert(nvarchar, a.NoBulletinService) as NoBulletinService
+		, convert(nvarchar, a.NoRecallCategory) as NoRecallCategory
+		, a.MaxOrder
+		, a.[Status]
+		, a.RowStatus
+		, case when a.LastUpdatedby is null then a.Createdby else a.LastUpdatedby end as LastUpdateby
+		, case when a.LastUpdatedtime is null then a.CreatedTime else a.LastUpdatedtime end as LastUpdateTime
+	from SparePartForecastMaster a with(nolock)
+	join SparePartMaster b with(nolock) 
+	on b.ID = a.SparePartMasterID
+	where b.RowStatus = 0
+) StockManagement
+{0}
+
+

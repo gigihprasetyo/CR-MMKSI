@@ -1,0 +1,19 @@
+UPDATE SparePartOutstandingOrderDetail
+	SET 
+	AllocationAmount = ISNULL(@AllocationAmount, AllocationAmount),
+	AllocationQty = ISNULL(@AllocationQty, AllocationQty),
+	CreatedBy = ISNULL(@CreatedBy, CreatedBy),
+	CreatedTime = ISNULL(@CreatedTime, CreatedTime),
+	EstimateFillDate = ISNULL(@EstimateFillDate, EstimateFillDate),
+	LastUpdateBy = ISNULL(@LastUpdateBy, LastUpdateBy),
+	LastUpdateTime = ISNULL(@LastUpdateTime, LastUpdateTime),
+	OpenAmount = ISNULL(@OpenAmount, OpenAmount),
+	OpenQty = ISNULL(@OpenQty, OpenQty),
+	OrderQty = ISNULL(@OrderQty, OrderQty),
+	PartName = ISNULL(@PartName, PartName),
+	PartNumber = ISNULL(@PartNumber, PartNumber),
+	RowStatus = ISNULL(@RowStatus, RowStatus),
+	SparePartOutstandingOrderID = ISNULL(@SparePartOutstandingOrderID, SparePartOutstandingOrderID),
+	Status = ISNULL(@Status, Status),
+	SubtitutePartNumber = ISNULL(@SubtitutePartNumber, SubtitutePartNumber)
+WHERE ID = @ID

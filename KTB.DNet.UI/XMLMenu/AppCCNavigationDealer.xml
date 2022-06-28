@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AppNavigationSchema xmlns="http://tempuri.org/AppNavigationSchema.xsd">
+	<AppMenu>
+		<AppMenuId>11100</AppMenuId>
+		<MenuName>Customer Satisfaction</MenuName>
+		<ScreenId>11100</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>12</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>11100</AppScreenId>
+		<ScreenName>Customer Satisfaction</ScreenName>
+		<NavigateUrl>default_cc.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>11100501</AppMenuId>
+		<MenuName>Download Dealer Report</MenuName>
+		<ScreenId>11100501</ScreenId>
+		<ParentMenuId>11100</ParentMenuId>
+		<SortOrder>0</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>11100501</AppScreenId>
+		<ScreenName>Download Dealer Report</ScreenName>
+		<NavigateUrl>default_cc.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>11100503</AppMenuId>
+		<MenuName>Download Rangking Dealer</MenuName>
+		<ScreenId>11100503</ScreenId>
+		<ParentMenuId>11100</ParentMenuId>
+		<SortOrder>0</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>11100503</AppScreenId>
+		<ScreenName>Download Rangking Dealer</ScreenName>
+		<NavigateUrl>default_cc.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>11200</AppMenuId>
+		<MenuName>Upload Konsumen</MenuName>
+		<ScreenId>11200</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>12</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>11200</AppScreenId>
+		<ScreenName>Upload Konsumen</ScreenName>
+		<NavigateUrl>default_cc.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>11100505</AppMenuId>
+		<MenuName>Upload Data Konsumen ASS</MenuName>
+		<ScreenId>11100505</ScreenId>
+		<ParentMenuId>11200</ParentMenuId>
+		<SortOrder>0</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>11100505</AppScreenId>
+		<ScreenName>Upload Data Konsumen ASS</ScreenName>
+		<NavigateUrl>default_cc.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>11100506</AppMenuId>
+		<MenuName>Preview Data Konsumen ASS</MenuName>
+		<ScreenId>11100506</ScreenId>
+		<ParentMenuId>11200</ParentMenuId>
+		<SortOrder>0</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>11100506</AppScreenId>
+		<ScreenName>Preview Data Konsumen ASS</ScreenName>
+		<NavigateUrl>default_cc.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+  <AppMenu>
+    <AppMenuId>11300</AppMenuId>
+    <MenuName>CS Performance</MenuName>
+    <ScreenId>11300</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>14</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11300</AppScreenId>
+    <ScreenName>CS Performance</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>11100599</AppMenuId>
+    <MenuName>CS Performance Report</MenuName>
+    <ScreenId>11100599</ScreenId>
+    <ParentMenuId>11300</ParentMenuId>
+    <SortOrder>99</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11100599</AppScreenId>
+    <ScreenName>CS Performance Report</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <!--global service-->
+  <AppMenu>
+    <AppMenuId>11301</AppMenuId>
+    <MenuName>Global Service Reminder</MenuName>
+    <ScreenId>11301</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>14</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11301</AppScreenId>
+    <ScreenName>Global Service Reminder</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppScreen>
+    <AppScreenId>11100601</AppScreenId>
+    <ScreenName>Dashboard</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>11100601</AppMenuId>
+    <MenuName>Dashboard</MenuName>
+    <ScreenId>11100601</ScreenId>
+    <ParentMenuId>11301</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppMenu>
+    <AppMenuId>11100600</AppMenuId>
+    <MenuName>Daftar Reminder</MenuName>
+    <ScreenId>11100600</ScreenId>
+    <ParentMenuId>11301</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11100600</AppScreenId>
+    <ScreenName>Daftar Reminder</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+	<!--<AppMenu>
+		<AppMenuId>11100502</AppMenuId>
+		<MenuName>Feedback Report</MenuName>
+		<ScreenId>11100502</ScreenId>
+		<ParentMenuId>11100</ParentMenuId>
+		<SortOrder>0</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>11100502</AppScreenId>
+		<ScreenName>Feedback Report</ScreenName>
+		<NavigateUrl>default_cc.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>-->
+  <!-- Start anh 201707 Salesforce integration-->
+  <!--Case-->
+  <AppScreen>
+    <AppScreenId>99901</AppScreenId>
+    <ScreenName>Case Management</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>99901</AppMenuId>
+    <MenuName>Case Management</MenuName>
+    <ScreenId>99901</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+  <!-- Start anh 201707 Salesforce integration-->
+  <AppScreen>
+    <AppScreenId>1529</AppScreenId>
+    <ScreenName>Case Management</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>1529</AppMenuId>
+    <MenuName>Case Management</MenuName>
+    <ScreenId>1529</ScreenId>
+    <ParentMenuId>99901</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>20170901</AppScreenId>
+    <ScreenName>Dashboard</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>20170901</AppMenuId>
+    <MenuName>Dashboard</MenuName>
+    <ScreenId>20170901</ScreenId>
+    <ParentMenuId>99901</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  
+  <AppScreen>
+    <AppScreenId>1600</AppScreenId>
+    <ScreenName>Contact Dealer Notification</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>1600</AppMenuId>
+    <MenuName>Contact Dealer Notification</MenuName>
+    <ScreenId>1600</ScreenId>
+    <ParentMenuId>99901</ParentMenuId>
+    <SortOrder>3</SortOrder>
+  </AppMenu>
+  <!-- End anh 201707 Salesforce integration -->
+</AppNavigationSchema>

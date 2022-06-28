@@ -1,0 +1,15 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SLS_StockSummary.company
+	,VWI_CRM_SLS_StockSummary.businessunitcode
+	,VWI_CRM_SLS_StockSummary.xts_stocknumber
+	,VWI_CRM_SLS_StockSummary.xts_product
+	,VWI_CRM_SLS_StockSummary.xts_description
+	,VWI_CRM_SLS_StockSummary.xts_productinteriorcolor
+	,VWI_CRM_SLS_StockSummary.xts_productexteriorcolor
+	,VWI_CRM_SLS_StockSummary.xts_scheduledshipmentdate
+	,VWI_CRM_SLS_StockSummary.xts_referencenumber
+	,VWI_CRM_SLS_StockSummary.xts_receivingdate
+	,VWI_CRM_SLS_StockSummary.msdyn_companycode
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SLS_StockSummary WITH (NOLOCK) {0}

@@ -1,0 +1,23 @@
+SELECT 
+	IDRow
+	,company
+	,businessunitcode
+	,IdentificationType
+	,APVoucherNo
+	,TransactionDate
+	,Vendor
+	,TransactionType
+	,DueDate
+	,VendorInvoiceNumber
+	,APVoucherDetailNo
+	,PaymentTerms
+	,GrandTotal
+	,Balance
+	,PaymentAmount
+	,ConsumptionTax1Amount
+	,ConsumptionTax2Amount
+	,Description
+	,DocState
+	,msdyn_companycode
+FROM VWI_CRM_SLS_APBalance WITH (NOLOCK)
+WHERE ID = @Id

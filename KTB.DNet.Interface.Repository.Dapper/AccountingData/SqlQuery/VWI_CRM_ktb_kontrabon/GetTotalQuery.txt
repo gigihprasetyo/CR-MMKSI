@@ -1,0 +1,13 @@
+SELECT 
+	COUNT(1)
+from (
+	select 
+		 b.ktb_bucompany as company
+		, b.ktb_dealercode as businessunitcode  
+		, a.*  
+		, b.msdyn_companycode  
+	from CRM_ktb_kontrabon a with(nolock)  
+	left join CRM_businessunit b with(nolock)
+	on a.ktb_businessunitid = b.businessunitid
+	{0}
+) VWI_CRM_ktb_kontrabon

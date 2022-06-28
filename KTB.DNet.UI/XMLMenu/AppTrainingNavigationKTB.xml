@@ -1,0 +1,905 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppNavigationSchema xmlns="http://tempuri.org/AppNavigationSchema.xsd">
+
+
+  <AppMenu>
+    <AppMenuId>10100</AppMenuId>
+    <MenuName>Training Sales</MenuName>
+    <ScreenId>10000</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10100</AppScreenId>
+    <ScreenName>Training Sales</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10101</AppMenuId>
+    <MenuName>Kategori Kursus</MenuName>
+    <ScreenId>10101</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10101</AppScreenId>
+    <ScreenName>Kategori Kursus</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10102</AppMenuId>
+    <MenuName>Kategori Training</MenuName>
+    <ScreenId>10102</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10102</AppScreenId>
+    <ScreenName>Kategori Training</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10103</AppMenuId>
+    <MenuName>Jenis Evaluasi</MenuName>
+    <ScreenId>10103</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>3</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10103</AppScreenId>
+    <ScreenName>Jenis Evaluasi</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10106</AppMenuId>
+    <MenuName>Prasyarat</MenuName>
+    <ScreenId>10106</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>4</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10106</AppScreenId>
+    <ScreenName>Prasyarat</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10107</AppMenuId>
+    <MenuName>Siswa</MenuName>
+    <ScreenId>10107</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>7</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10107</AppScreenId>
+    <ScreenName>Siswa</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10108</AppMenuId>
+    <MenuName>Kelas</MenuName>
+    <ScreenId>10108</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>5</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10108</AppScreenId>
+    <ScreenName>Kelas</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10109</AppMenuId>
+    <MenuName>Alokasi</MenuName>
+    <ScreenId>10109</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>6</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10109</AppScreenId>
+    <ScreenName>Kelas</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10110</AppMenuId>
+    <MenuName>Reminder</MenuName>
+    <ScreenId>10110</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>9</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10110</AppScreenId>
+    <ScreenName>Reminder</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10111</AppMenuId>
+    <MenuName>Referensi</MenuName>
+    <ScreenId>10111</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>10</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10111</AppScreenId>
+    <ScreenName>Referensi</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10112</AppMenuId>
+    <MenuName>Data Status Siswa</MenuName>
+    <ScreenId>10112</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>13</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10112</AppScreenId>
+    <ScreenName>Data Status Siswa</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10115</AppMenuId>
+    <MenuName>List Pendaftaran</MenuName>
+    <ScreenId>10115</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>8</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10115</AppScreenId>
+    <ScreenName>List Pendaftaran</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10119</AppMenuId>
+    <MenuName>Input Data Nilai</MenuName>
+    <ScreenId>10119</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>11</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10119</AppScreenId>
+    <ScreenName>Input Data Nilai</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10120</AppMenuId>
+    <MenuName>Evaluasi Hasil Training</MenuName>
+    <ScreenId>10120</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>12</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10120</AppScreenId>
+    <ScreenName>Evaluasi Hasil Training</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10121</AppMenuId>
+    <MenuName>Upload Jadwal</MenuName>
+    <ScreenId>10121</ScreenId>
+    <ParentMenuId>10100</ParentMenuId>
+    <SortOrder>6</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10121</AppScreenId>
+    <ScreenName>Upload Jadwal</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10200</AppMenuId>
+    <MenuName>Training After Sales</MenuName>
+    <ScreenId>10200</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10200</AppScreenId>
+    <ScreenName>Training After Sales</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10201</AppMenuId>
+    <MenuName>Kategori Kursus</MenuName>
+    <ScreenId>10201</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10201</AppScreenId>
+    <ScreenName>Kategori Kursus</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10202</AppMenuId>
+    <MenuName>Kategori Training</MenuName>
+    <ScreenId>10202</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10202</AppScreenId>
+    <ScreenName>Kategori Training</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10203</AppMenuId>
+    <MenuName>Jenis Evaluasi</MenuName>
+    <ScreenId>10203</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10203</AppScreenId>
+    <ScreenName>Jenis Evaluasi</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10204</AppMenuId>
+    <MenuName>Training Pengganti</MenuName>
+    <ScreenId>10204</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10204</AppScreenId>
+    <ScreenName>Training Pengganti</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10205</AppMenuId>
+    <MenuName>MRTC</MenuName>
+    <ScreenId>10205</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10205</AppScreenId>
+    <ScreenName>MRTC</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10206</AppMenuId>
+    <MenuName>Prasyarat</MenuName>
+    <ScreenId>10206</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10206</AppScreenId>
+    <ScreenName>Prasyarat</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10207</AppMenuId>
+    <MenuName>Siswa</MenuName>
+    <ScreenId>10207</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10207</AppScreenId>
+    <ScreenName>Siswa</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10208</AppMenuId>
+    <MenuName>Kelas</MenuName>
+    <ScreenId>10208</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10208</AppScreenId>
+    <ScreenName>Kelas</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10209</AppMenuId>
+    <MenuName>Alokasi</MenuName>
+    <ScreenId>10209</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10209</AppScreenId>
+    <ScreenName>Alokasi</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10210</AppMenuId>
+    <MenuName>Reminder</MenuName>
+    <ScreenId>10210</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10210</AppScreenId>
+    <ScreenName>Reminder</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10211</AppMenuId>
+    <MenuName>Referensi</MenuName>
+    <ScreenId>10211</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10211</AppScreenId>
+    <ScreenName>Referensi</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10212</AppMenuId>
+    <MenuName>Data Status Siswa</MenuName>
+    <ScreenId>10212</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10212</AppScreenId>
+    <ScreenName>Data Status Siswa</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10213</AppMenuId>
+    <MenuName>Kelas Inhouse dan Fleet</MenuName>
+    <ScreenId>10213</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10213</AppScreenId>
+    <ScreenName>Kelas Inhouse dan Fleet</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10215</AppMenuId>
+    <MenuName>Approval Training</MenuName>
+    <ScreenId>10215</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10215</AppScreenId>
+    <ScreenName>Approval Training</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10217</AppMenuId>
+    <MenuName>Free Pass Training</MenuName>
+    <ScreenId>10217</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10217</AppScreenId>
+    <ScreenName>Free Pass Training</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10219</AppMenuId>
+    <MenuName>Upload Free Pass</MenuName>
+    <ScreenId>10219</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10219</AppScreenId>
+    <ScreenName>Upload Free Pass</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10220</AppMenuId>
+    <MenuName>Daftar Tagihan</MenuName>
+    <ScreenId>10220</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10220</AppScreenId>
+    <ScreenName>Daftar Tagihan</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10225</AppMenuId>
+    <MenuName>Input Data Nilai</MenuName>
+    <ScreenId>10225</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10225</AppScreenId>
+    <ScreenName>Input Data Nilai</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10226</AppMenuId>
+    <MenuName>Evaluasi Hasil Training</MenuName>
+    <ScreenId>10226</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10226</AppScreenId>
+    <ScreenName>Evaluasi Hasil Training</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10227</AppMenuId>
+    <MenuName>List Pendaftaran</MenuName>
+    <ScreenId>10227</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10227</AppScreenId>
+    <ScreenName>List Pendaftaran</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  
+  <AppMenu>
+    <AppMenuId>10229</AppMenuId>
+    <MenuName>Konfigurasi Sertifikat</MenuName>
+    <ScreenId>10229</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10229</AppScreenId>
+    <ScreenName>Konfigurasi Sertifikat</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10230</AppMenuId>
+    <MenuName>Daftar Pembayaran</MenuName>
+    <ScreenId>10230</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10230</AppScreenId>
+    <ScreenName>Daftar Pembayaran</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10235</AppMenuId>
+    <MenuName>Daftar Penerima Email</MenuName>
+    <ScreenId>10235</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10235</AppScreenId>
+    <ScreenName>Daftar Penerima Email</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10232</AppMenuId>
+    <MenuName>Upload Jadwal</MenuName>
+    <ScreenId>10232</ScreenId>
+    <ParentMenuId>10200</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10232</AppScreenId>
+    <ScreenName>Upload Jadwal</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10000</AppMenuId>
+    <MenuName>Training Customer Satisfaction</MenuName>
+    <ScreenId>10000</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>3</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10000</AppScreenId>
+    <ScreenName>Training Customer Satisfaction</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10301</AppMenuId>
+    <MenuName>Kategori Kursus</MenuName>
+    <ScreenId>10301</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10301</AppScreenId>
+    <ScreenName>Kategori Kursus</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10302</AppMenuId>
+    <MenuName>Kategori Training</MenuName>
+    <ScreenId>10302</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10302</AppScreenId>
+    <ScreenName>Kategori Training</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10303</AppMenuId>
+    <MenuName>Jenis Evaluasi</MenuName>
+    <ScreenId>10303</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>3</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10303</AppScreenId>
+    <ScreenName>Jenis Evaluasi</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10306</AppMenuId>
+    <MenuName>Prasyarat</MenuName>
+    <ScreenId>10306</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>4</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10306</AppScreenId>
+    <ScreenName>Prasyarat</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10307</AppMenuId>
+    <MenuName>Siswa</MenuName>
+    <ScreenId>10307</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>6</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10307</AppScreenId>
+    <ScreenName>Siswa</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10308</AppMenuId>
+    <MenuName>Kelas</MenuName>
+    <ScreenId>10308</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>5</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10308</AppScreenId>
+    <ScreenName>Kelas</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10311</AppMenuId>
+    <MenuName>Referensi</MenuName>
+    <ScreenId>10311</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>9</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10311</AppScreenId>
+    <ScreenName>Referensi</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10312</AppMenuId>
+    <MenuName>Data Status Siswa</MenuName>
+    <ScreenId>10312</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>12</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10312</AppScreenId>
+    <ScreenName>Data Status Siswa</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>10323</AppMenuId>
+    <MenuName>Pendaftaran Kelas</MenuName>
+    <ScreenId>10323</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>7</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10323</AppScreenId>
+    <ScreenName>Pendaftaran Kelas</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10325</AppMenuId>
+    <MenuName>Input Data Nilai</MenuName>
+    <ScreenId>10325</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>10</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10325</AppScreenId>
+    <ScreenName>Input Data Nilai</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10326</AppMenuId>
+    <MenuName>Evaluasi Hasil Training</MenuName>
+    <ScreenId>10326</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>11</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10326</AppScreenId>
+    <ScreenName>Evaluasi Hasil Training</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <!--<AppMenu>
+    <AppMenuId>10328</AppMenuId>
+    <MenuName>Upload Jadwal</MenuName>
+    <ScreenId>10328</ScreenId>
+    <ParentMenuId>10000</ParentMenuId>
+    <SortOrder>5</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10328</AppScreenId>
+    <ScreenName>Upload Jadwal</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>-->
+  <AppMenu>
+    <AppMenuId>100000</AppMenuId>
+    <MenuName>Customer Satisfaction Team</MenuName>
+    <ScreenId>100000</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>4</SortOrder>
+  </AppMenu>
+  
+  <AppScreen>
+    <AppScreenId>100000</AppScreenId>
+    <ScreenName>Customer Satisfaction Team</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>10321</AppMenuId>
+    <MenuName>Daftar CS Team</MenuName>
+    <ScreenId>10321</ScreenId>
+    <ParentMenuId>100000</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>10321</AppScreenId>
+    <ScreenName>Daftar CS Team</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppScreen>
+    <AppScreenId>99600</AppScreenId>
+    <ScreenName>Part Employee</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>99600</AppMenuId>
+    <MenuName>Part Employee</MenuName>
+    <ScreenId>99600</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>7</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>9962</AppScreenId>
+    <ScreenName>Daftar Part Employee</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>9962</AppMenuId>
+    <MenuName>Daftar Part Employee</MenuName>
+    <ScreenId>9962</ScreenId>
+    <ParentMenuId>99600</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>9963</AppScreenId>
+    <ScreenName>Generate Part Employee ID</ScreenName>
+    <NavigateUrl>default_training.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>9963</AppMenuId>
+    <MenuName>Generate Part Employee ID</MenuName>
+    <ScreenId>9963</ScreenId>
+    <ParentMenuId>99600</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+</AppNavigationSchema>

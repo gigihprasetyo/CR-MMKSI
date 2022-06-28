@@ -1,0 +1,75 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_servicetemplatedetail.company
+    , VWI_CRM_xts_servicetemplatedetail.businessunitcode
+    , VWI_CRM_xts_servicetemplatedetail.xts_servicetemplateidname
+    , VWI_CRM_xts_servicetemplatedetail.owninguser
+    , VWI_CRM_xts_servicetemplatedetail.owningteam
+    , VWI_CRM_xts_servicetemplatedetail.xts_locking
+    , VWI_CRM_xts_servicetemplatedetail.transactioncurrencyidname
+    , VWI_CRM_xts_servicetemplatedetail.xts_businessunitidname
+    , VWI_CRM_xts_servicetemplatedetail.xts_productidname
+    , VWI_CRM_xts_servicetemplatedetail.statecodename
+    , VWI_CRM_xts_servicetemplatedetail.xts_partcodedescription
+    , VWI_CRM_xts_servicetemplatedetail.createdonbehalfby
+    , VWI_CRM_xts_servicetemplatedetail.transactioncurrencyid
+    , VWI_CRM_xts_servicetemplatedetail.xts_partidname
+    , VWI_CRM_xts_servicetemplatedetail.xts_pkcombinationkey
+    , VWI_CRM_xts_servicetemplatedetail.xts_totalpricerate_base
+    , VWI_CRM_xts_servicetemplatedetail.xts_servicetemplatedetailid
+    , VWI_CRM_xts_servicetemplatedetail.xts_parentbusinessunitid
+    , VWI_CRM_xts_servicetemplatedetail.xts_quantitymanhour
+    , VWI_CRM_xts_servicetemplatedetail.xts_producttypename
+    , VWI_CRM_xts_servicetemplatedetail.importsequencenumber
+    , VWI_CRM_xts_servicetemplatedetail.xts_productdescription
+    , VWI_CRM_xts_servicetemplatedetail.xts_orderofdisplay
+    , VWI_CRM_xts_servicetemplatedetail.xts_unitpricerate
+    , VWI_CRM_xts_servicetemplatedetail.xts_producttype
+    , VWI_CRM_xts_servicetemplatedetail.utcconversiontimezonecode
+    , VWI_CRM_xts_servicetemplatedetail.createdbyyominame
+    , VWI_CRM_xts_servicetemplatedetail.modifiedby
+    , VWI_CRM_xts_servicetemplatedetail.modifiedbyname
+    , VWI_CRM_xts_servicetemplatedetail.versionnumber
+    , VWI_CRM_xts_servicetemplatedetail.xts_unitpricerate_base
+    , VWI_CRM_xts_servicetemplatedetail.modifiedbyyominame
+    , VWI_CRM_xts_servicetemplatedetail.xts_servicetemplateid
+    , VWI_CRM_xts_servicetemplatedetail.timezoneruleversionnumber
+    , VWI_CRM_xts_servicetemplatedetail.xts_servicetemplatedetail
+    , VWI_CRM_xts_servicetemplatedetail.owneridtype
+    , VWI_CRM_xts_servicetemplatedetail.statuscodename
+    , VWI_CRM_xts_servicetemplatedetail.xts_totalpricerate
+    , VWI_CRM_xts_servicetemplatedetail.createdonbehalfbyyominame
+    , VWI_CRM_xts_servicetemplatedetail.owneridyominame
+    , VWI_CRM_xts_servicetemplatedetail.modifiedon
+    , VWI_CRM_xts_servicetemplatedetail.exchangerate
+    , VWI_CRM_xts_servicetemplatedetail.statecode
+    , VWI_CRM_xts_servicetemplatedetail.owningbusinessunit
+    , VWI_CRM_xts_servicetemplatedetail.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_servicetemplatedetail.statuscode
+    , VWI_CRM_xts_servicetemplatedetail.createdbyname
+    , VWI_CRM_xts_servicetemplatedetail.createdon
+    , VWI_CRM_xts_servicetemplatedetail.xts_businessunitid
+    , VWI_CRM_xts_servicetemplatedetail.createdby
+    , VWI_CRM_xts_servicetemplatedetail.createdonbehalfbyname
+    , VWI_CRM_xts_servicetemplatedetail.modifiedonbehalfby
+    , VWI_CRM_xts_servicetemplatedetail.modifiedonbehalfbyname
+    , VWI_CRM_xts_servicetemplatedetail.owneridname
+    , VWI_CRM_xts_servicetemplatedetail.xts_partid
+    , VWI_CRM_xts_servicetemplatedetail.xts_productid
+    , VWI_CRM_xts_servicetemplatedetail.ownerid
+    , VWI_CRM_xts_servicetemplatedetail.overriddencreatedon
+    , VWI_CRM_xts_servicetemplatedetail.xts_parentbusinessunitidname
+    , VWI_CRM_xts_servicetemplatedetail.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicetemplatedetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_servicetemplatedetail  

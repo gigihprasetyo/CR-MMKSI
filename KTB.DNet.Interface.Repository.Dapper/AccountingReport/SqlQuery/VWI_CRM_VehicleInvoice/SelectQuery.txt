@@ -1,0 +1,27 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_VehicleInvoice.KD_JENIS_TRANSAKSI
+	,VWI_CRM_VehicleInvoice.FG_PENGGANTI
+	,VWI_CRM_VehicleInvoice.NOMOR_FAKTUR
+	,VWI_CRM_VehicleInvoice.MASA_PAJAK
+	,VWI_CRM_VehicleInvoice.TAHUN_PAJAK
+	,VWI_CRM_VehicleInvoice.TANGGAL_FAKTUR
+	,VWI_CRM_VehicleInvoice.NPWP
+	,VWI_CRM_VehicleInvoice.NAMA
+	,VWI_CRM_VehicleInvoice.ALAMAT_LENGKAP
+	,VWI_CRM_VehicleInvoice.JUMLAH_DPP
+	,VWI_CRM_VehicleInvoice.JUMLAH_PPN
+	,VWI_CRM_VehicleInvoice.JUMLAH_PPNBM
+	,VWI_CRM_VehicleInvoice.ID_KETERANGAN_TAMBAHAN
+	,VWI_CRM_VehicleInvoice.FG_UANG_MUKA
+	,VWI_CRM_VehicleInvoice.UANG_MUKA_DPP
+	,VWI_CRM_VehicleInvoice.UANG_MUKA_PPN
+	,VWI_CRM_VehicleInvoice.UANG_MUKA_PPNBM
+	,VWI_CRM_VehicleInvoice.REFERENSI
+	,VWI_CRM_VehicleInvoice.TRANSACTION_NUMBER
+	,VWI_CRM_VehicleInvoice.RETUR_REFERENSI
+	,VWI_CRM_VehicleInvoice.ktb_dealercode
+	,VWI_CRM_VehicleInvoice.msdyn_companycode
+	,VWI_CRM_VehicleInvoice.xts_accountreceivableinvoiceid
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_VehicleInvoice WITH (NOLOCK) {0}

@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_xjp_registrationcolor as VWI_CRM_xjp_registrationcolor with (nolock)  
+{0}

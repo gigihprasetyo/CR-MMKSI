@@ -1,0 +1,1 @@
+﻿DELETE FROM TransactionRuntime WHERE Id = @id

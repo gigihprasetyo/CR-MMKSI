@@ -1,0 +1,116 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xts_parentbusinessunitid
+	,versionnumber
+	,createdon
+	,xts_billtocustomernumber
+	,xts_totalwithholdingtaxallocated
+	,xts_withholdingtaxid
+	,xts_billtocustomeridname
+	,xts_totalwithholdingtaxallocated_base
+	,statuscodename
+	,xts_grandtotalbaseallocated
+	,xts_grandtotalbaseallocated_base
+	,modifiedbyyominame
+	,owneridtype
+	,createdonbehalfby
+	,xts_accountreceiptbalance_base
+	,modifiedbyname
+	,xts_grandtotalallocated
+	,xts_grandtotaltaxallocated_base
+	,overriddencreatedon
+	,xts_billtocustomerid
+	,xts_address2
+	,xts_billtocustomertermofpaymentid
+	,xts_grandtotalallocated_base
+	,createdonbehalfbyyominame
+	,transactioncurrencyidname
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_workorderidname
+	,xts_caliallocated_base
+	,xts_address4
+	,owningteam
+	,xts_totalothersalesallocated_base
+	,xts_totalothersalesbaseallocated
+	,xts_billtocustomeridyominame
+	,xts_grandtotaltaxallocated
+	,xts_totalmiscchargeallocated
+	,xts_billtocustomertermofpaymentidname
+	,statecode
+	,owneridname
+	,timezoneruleversionnumber
+	,xts_totalmiscchargebaseallocated
+	,xts_locking
+	,ktb_say
+	,xts_totalworkbaseallocated_base
+	,xts_totalpartstaxallocated
+	,xts_withholdingtaxidname
+	,xts_totalpartsallocated_base
+	,xts_totalworkbaseallocated
+	,xts_totalmiscchargebaseallocated_base
+	,xts_totalworktaxallocated
+	,xts_totalpartsbaseallocated_base
+	,utcconversiontimezonecode
+	,xts_serviceproportionalinvoice
+	,xts_accountreceiptbalance
+	,xts_totalpartstaxallocated_base
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_totalworkallocated
+	,xts_totalothersalesallocated
+	,xts_totalothersalesbaseallocated_base
+	,xts_transactiondate
+	,xts_workorderid
+	,xts_totalpartsbaseallocated
+	,createdbyname
+	,xts_businessunitid
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,xts_address3
+	,xts_totalworktaxallocated_base
+	,transactioncurrencyid
+	,xts_totalothersalestaxallocated_base
+	,createdby
+	,modifiedby
+	,xts_address1
+	,xts_totalpartsallocated
+	,xts_totalmiscchargeallocated_base
+	,xts_serviceproportionalinvoiceid
+	,createdbyyominame
+	,owninguser
+	,xts_serviceorderid
+	,xts_totalworkallocated_base
+	,owningbusinessunit
+	,xjp_caliallocated
+	,xts_totalmiscchargetaxallocated_base
+	,xts_parentbusinessunitidname
+	,xts_billtocustomerphonenumber
+	,xts_serviceorderidname
+	,xjp_caliallocated_base
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_caliallocated
+	,xts_duedaysdate
+	,xts_totalothersalestaxallocated
+	,xts_totalmiscchargetaxallocated
+	,xts_runningnumber
+	,statecodename
+	,xts_businessunitidname
+	,RowStatus
+	,ktb_isownrisk
+	,ktb_isownriskname
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_serviceproportionalinvoice a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_serviceproportionalinvoiceid = @Id
+) VWI_CRM_xts_serviceproportionalinvoice

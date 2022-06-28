@@ -1,0 +1,1 @@
+﻿SELECT ID, DealerCode, DealerName FROM DEALER {0}

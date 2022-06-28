@@ -1,0 +1,22 @@
+<div class="body-bg"></div>
+<main ng-if="$pageFinishedLoading" ng-class="{ 'menu-collapsed': $baSidebarService.isMenuCollapsed() }">
+    <ba-sidebar></ba-sidebar>
+    <page-top></page-top>
+    <div class="al-main">
+        <div class="al-content">
+            <content-top></content-top>
+            <div ui-view autoscroll="true" autoscroll-body-top></div>
+        </div>
+    </div>
+    <footer class="al-footer clearfix">
+        <!-- <div class="al-footer-right">Created with
+            <i class="ion-heart"></i>
+        </div> -->
+        <div class="al-footer-main clearfix">
+            <div class="al-copy"><span>Version {{appVersion}}</span> &copy; 2018
+                <a href="https://www.mitsubishi-motors.co.id/" target="_blank">PT Mitsubishi Motors Krama Yudha Sales Indonesia</a>
+            </div>    
+        </div>
+    </footer>
+    <back-top></back-top>
+</main>

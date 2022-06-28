@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_ktb_perlengkapanstandard as VWI_CRM_ktb_perlengkapanstandard WITH (NOLOCK) 
+{0}

@@ -1,0 +1,17 @@
+UPDATE ServiceMMS
+	SET 
+		  DealerID				   = isnull( @DealerID					,  DealerID					  )
+		, DealerBranchID		   = isnull( @DealerBranchID			,  DealerBranchID			  )
+		, WONumber				   = isnull( @WONumber					,  WONumber					  )
+		, ServiceDate			   = isnull( @ServiceDate				,  ServiceDate				  )
+		, ChassisMasterID		   = isnull( @ChassisMasterID			,  ChassisMasterID			  )
+		, PlateNo				   = isnull( @PlateNo					,  PlateNo					  )
+		, NextEstimatedServiceDate = isnull( @NextEstimatedServiceDate  ,  NextEstimatedServiceDate	  )
+		, Notes					   = isnull( @Notes						,  Notes					  )
+		, Status				   = isnull( @Status					,  Status					  )
+		, RowStatus				   = isnull( @RowStatus					,  RowStatus				  )
+		, CreatedBy				   = isnull( @CreatedBy					,  CreatedBy				  )
+		, CreatedTime			   = isnull( @CreatedTime				,  CreatedTime				  )
+		, LastUpdateBy			   = isnull( @LastUpdateBy				,  LastUpdateBy				  )
+		, LastUpdateTime		   = isnull( @LastUpdateTime			,  LastUpdateTime			  )
+WHERE ID = @ID

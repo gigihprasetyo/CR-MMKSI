@@ -1,0 +1,96 @@
+body
+{
+	margin-left:0; margin-right:0; margin-bottom:0; margin-top:0;
+	background-color:white;
+}
+body, table, div, TR, TD 
+{
+	font:8pt verdana;
+}
+
+A
+{
+	color:black;
+}
+
+.topLevelMenu
+{
+	border-right: #808080 1px solid;
+	border-top: white 1px solid;
+	border-left: white 1px solid;
+	border-bottom: #808080 1px solid;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-right: 2px;
+	padding-left: 2px;
+	background: #6699ff;
+	width: 160px;
+	color: white;
+	font-weight: bold;
+}
+
+
+.topLevelMenu a
+{
+	color: Black;
+	font: 8pt verdana;
+	text-decoration: none;
+}
+
+.topLevelMenu a:hover
+{
+	color: Blue;
+	text-decoration: underline;
+}
+
+.menuItem
+{
+	padding-top:2px;
+	padding-bottom:2px;
+	padding-left:2px;
+	padding-right:2px;
+}
+
+.menuItem a
+{
+	color: Black;
+	font: 8pt verdana;
+	text-decoration: none
+}
+
+.menuItem a:hover
+{
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background: lavender;
+	color: black;
+	text-decoration: underline;
+}
+
+.menuSelected
+{
+	border-right: #808080 1px solid;
+	border-top: #808080 1px solid;
+	border-left: #808080 1px solid;
+	border-bottom: #808080 1px solid;
+	padding-right: 2px;
+	padding-left: 2px;
+	padding-bottom: 2px;
+	padding-top: 2px;
+	background: lightcyan;
+}
+
+.menuClicked
+{
+	border-right: #808080 1px solid;
+	padding-right: 2px;
+	border-top: #808080 1px solid;
+	padding-left: 2px;
+	background: #cccc99;
+	padding-bottom: 2px;
+	border-left: #808080 1px solid;
+	padding-top: 2px;
+	border-bottom: #808080 1px solid;
+}

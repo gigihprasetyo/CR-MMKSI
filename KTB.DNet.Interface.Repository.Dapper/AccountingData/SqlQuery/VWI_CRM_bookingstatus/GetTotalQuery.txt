@@ -1,0 +1,4 @@
+select 
+	COUNT(1)
+from CRM_bookingstatus as VWI_CRM_bookingstatus with(nolock)
+{0}

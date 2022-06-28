@@ -1,0 +1,34 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, statecode
+	, statecodename
+	, createdonbehalfby
+	, xts_style
+	, xts_styleid
+	, organizationid
+	, importsequencenumber
+	, organizationidname
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, modifiedbyyominame
+	, createdby
+	, timezoneruleversionnumber
+	, xts_eventdata
+	, statuscodename
+	, modifiedon
+	, modifiedonbehalfbyname
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, xts_entitytag
+	, createdonbehalfbyname
+	, xts_description
+	, overriddencreatedon
+FROM CRM_xts_style as VWI_CRM_xts_style with(nolock)  
+WHERE xts_styleid = @Id

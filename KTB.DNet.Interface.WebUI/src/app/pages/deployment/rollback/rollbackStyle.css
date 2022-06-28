@@ -1,0 +1,68 @@
+.tabs-right .tab-content,
+.tabs-left .tab-content {
+    width: calc(100% - 115px);
+    margin-bottom: 15px;
+    overflow-y: auto;
+    min-height: 200px;
+    border: 1px solid #dbdbdb;
+}
+
+.tabs-left>.nav-tabs>li,
+.tabs-right>.nav-tabs>li {
+    margin-bottom: 5px;
+    background-color: #63bbb2;
+    margin-right: 9px;
+}
+
+@media (min-width: 1200px) {
+    .tabs-right .nav-tabs,
+    .tabs-left .nav-tabs {
+        min-width: 330px;
+    }
+
+    .tabs-right .tab-content,
+    .tabs-left .tab-content {
+        width: calc(100% - 335px);
+        overflow-y: auto;
+    }
+    .tabs-left>.nav-tabs>li,
+    .tabs-right>.nav-tabs>li {
+        margin-right: 30px;
+    }
+}
+
+.nav.nav-tabs {
+    background-color: transparent;
+}
+
+.nav.nav-tabs>li:first-of-type a {
+    border-top-left-radius: 0px;
+}
+
+button.list-group-item:focus {
+    outline: 0;
+}
+
+.accordion-panel .panel-heading {
+    height: 35px;
+}
+
+.accordion-panel .panel-title {
+    font-weight: initial;
+    font-size: 14px;
+}
+
+ .panel .accordion-panel {
+    box-shadow: 0 0px 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.accordion-panel .panel-group .panel {
+    margin-bottom: 0;
+    border-radius: 0px;
+}
+
+.accordion-panel .panel-heading .accordion-toggle {
+    display: inline-block;
+    width: 100%;
+    padding: 10px 22px;
+}

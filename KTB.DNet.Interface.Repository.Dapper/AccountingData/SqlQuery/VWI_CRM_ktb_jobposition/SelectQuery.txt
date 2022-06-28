@@ -1,0 +1,40 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_jobposition.ktb_dnetid
+	, VWI_CRM_ktb_jobposition.createdonbehalfbyyominame
+	, VWI_CRM_ktb_jobposition.modifiedonbehalfby
+	, VWI_CRM_ktb_jobposition.statecode
+	, VWI_CRM_ktb_jobposition.statecodename
+	, VWI_CRM_ktb_jobposition.ktb_jobposition
+	, VWI_CRM_ktb_jobposition.ktb_position1
+	, VWI_CRM_ktb_jobposition.createdonbehalfby
+	, VWI_CRM_ktb_jobposition.ktb_position1name
+	, VWI_CRM_ktb_jobposition.importsequencenumber
+	, VWI_CRM_ktb_jobposition.organizationidname
+	, VWI_CRM_ktb_jobposition.modifiedbyyominame
+	, VWI_CRM_ktb_jobposition.ktb_sequencenumber
+	, VWI_CRM_ktb_jobposition.utcconversiontimezonecode
+	, VWI_CRM_ktb_jobposition.createdbyyominame
+	, VWI_CRM_ktb_jobposition.ktb_positionname
+	, VWI_CRM_ktb_jobposition.modifiedbyname
+	, VWI_CRM_ktb_jobposition.versionnumber
+	, VWI_CRM_ktb_jobposition.modifiedby
+	, VWI_CRM_ktb_jobposition.createdby
+	, VWI_CRM_ktb_jobposition.timezoneruleversionnumber
+	, VWI_CRM_ktb_jobposition.ktb_description
+	, VWI_CRM_ktb_jobposition.statuscodename
+	, VWI_CRM_ktb_jobposition.ktb_jobpositionid
+	, VWI_CRM_ktb_jobposition.modifiedon
+	, VWI_CRM_ktb_jobposition.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_jobposition.statuscode
+	, VWI_CRM_ktb_jobposition.createdbyname
+	, VWI_CRM_ktb_jobposition.createdon
+	, VWI_CRM_ktb_jobposition.organizationid
+	, VWI_CRM_ktb_jobposition.createdonbehalfbyname
+	, VWI_CRM_ktb_jobposition.modifiedonbehalfbyname
+	, VWI_CRM_ktb_jobposition.ktb_position
+	, VWI_CRM_ktb_jobposition.overriddencreatedon
+	/**EndPagingIndexQuery**/
+FROM [dbo].[CRM_ktb_jobposition] as VWI_CRM_ktb_jobposition with (nolock) 
+{0}

@@ -1,0 +1,30 @@
+﻿
+<section>
+    <div class="widgets">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-sm-3">
+                    <ui-select name="appName" theme="bootstrap" ng-model="selected.App" on-select="onSelectCallback($item, $model)"
+                               class="btn-group bootstrap-select form-control"
+                               ng-disabled="false"
+                               append-to-body="true"
+                               search-enabled="false" style="z-index: 1; margin-top: 5px;">
+                        <ui-select-match placeholder="All application name config">
+                            <span> {{$select.selected.label}}</span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="app in listOfApplicationNames | filter: $select.search">
+                            <span ng-bind-html="app.label"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                    
+                </div>
+                <div ba-panel ba-panel-title="{{activePageTitle}}" ba-panel-class="with-scroll">
+                    <div general-table custom-pipe="customRenderData" table-definition="errorLogTableDefinition"></div>
+                </div>
+            </div>
+            <div class="col-md-12 text-right margin-top-bottom-10">
+                <button class="btn btn-info m-t-15 waves-effect" ng-click="backToDashboard()">Back</button>
+            </div>
+        </div>
+    </div>
+</section>

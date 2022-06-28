@@ -1,0 +1,41 @@
+SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, xts_description
+	, overriddencreatedon
+	, modifiedonbehalfbyname
+	, xts_exteriorcoloridname
+	, createdonbehalfbyname
+	, organizationid
+	, createdon
+	, createdbyname
+	, statuscode
+	, modifiedonbehalfbyyominame
+	, xts_entitytag
+	, xts_eventdata
+	, xts_productexteriorcolorid
+	, modifiedon
+	, xts_sharedproductidname
+	, xts_sharedproductid
+	, xts_productexteriorcolor
+	, xts_exteriorcolorid
+	, statuscodename
+	, timezoneruleversionnumber
+	, createdby
+	, modifiedby
+	, versionnumber
+	, modifiedbyname
+	, createdbyyominame
+	, utcconversiontimezonecode
+	, modifiedbyyominame
+	, organizationidname
+	, importsequencenumber
+	, xts_pkcombinationkey
+	, createdonbehalfby
+	, statecodename
+	, ktb_specialflagname
+	, statecode
+	, ktb_specialflag
+	, modifiedonbehalfby
+	, createdonbehalfbyyominame
+FROM CRM_xts_productexteriorcolor as VWI_CRM_xts_productexteriorcolor with (nolock)
+WHERE xts_productexteriorcolorid = @Id

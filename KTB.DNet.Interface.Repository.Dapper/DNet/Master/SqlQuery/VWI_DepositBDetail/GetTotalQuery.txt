@@ -1,0 +1,6 @@
+select
+	count(1)
+from DepositBDetail as VWI_DepositBDetail 
+{0}
+
+

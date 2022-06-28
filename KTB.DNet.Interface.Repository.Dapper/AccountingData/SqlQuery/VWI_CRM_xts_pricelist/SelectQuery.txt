@@ -1,0 +1,66 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  company
+    , businessunitcode
+    , modifiedonbehalfby
+    , xts_customerid
+    , modifiedbyyominame
+    , createdbyname
+    , modifiedon
+    , ktb_isinterfaced
+    , modifiedbyname
+    , xts_pricelist
+    , xts_customerclassidname
+    , xts_locking
+    , xts_effectivestartdate
+    , owneridname
+    , createdby
+    , importsequencenumber
+    , xts_customeridname
+    , xts_pricelistid
+    , xts_businessunitidname
+    , modifiedonbehalfbyname
+    , statecode
+    , versionnumber
+    , createdon
+    , createdonbehalfbyyominame
+    , owneridtype
+    , modifiedonbehalfbyyominame
+    , ktb_isinterfacedname
+    , xts_pkcombinationkey
+    , xts_customerclassid
+    , modifiedby
+    , overriddencreatedon
+    , createdonbehalfbyname
+    , xts_description
+    , owninguser
+    , statuscodename
+    , owningbusinessunit
+    , timezoneruleversionnumber
+    , xts_currencyidname
+    , statecodename
+    , owningteam
+    , xts_customeridyominame
+    , createdbyyominame
+    , createdonbehalfby
+    , statuscode
+    , ktb_dnetid
+    , xts_businessunitid
+    , owneridyominame
+    , xts_currencyid
+    , ownerid
+    , utcconversiontimezonecode
+    , msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_pricelist a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_pricelist  

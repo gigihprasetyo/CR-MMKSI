@@ -1,0 +1,19 @@
+SELECT 
+	ID
+	, DealerID
+	, DealerBranchID
+	, WONumber
+	, ServiceDate
+	, ChassisMasterID
+	, PlateNo
+	, NextEstimatedServiceDate
+	, Notes
+	, Status
+	, RowStatus
+	, CreatedBy
+	, CreatedTime
+	, LastUpdateBy
+	, LastUpdateTime
+	/**EndPagingIndexQuery**/
+FROM ServiceMMS WITH (NOLOCK) 
+{0}

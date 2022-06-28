@@ -1,0 +1,64 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+      ,company
+      ,businessunitcode
+      ,createdonbehalfbyyominame
+      ,modifiedonbehalfby
+      ,owningteam
+      ,statecode
+      ,xjp_automobiletaxdimension6idname
+      ,owneridname
+      ,statecodename
+      ,owninguser
+      ,xjp_automobiletaxdimension5id
+      ,createdonbehalfby
+      ,xjp_automobiletaxdimension1idname
+      ,xjp_automobiletaxid
+      ,xjp_automobiletaxdimension2id
+      ,importsequencenumber
+      ,modifiedbyyominame
+      ,xjp_automobiletaxdimension3idname
+      ,utcconversiontimezonecode
+      ,createdbyyominame
+      ,modifiedby
+      ,owningbusinessunit
+      ,modifiedbyname
+      ,versionnumber
+      ,xjp_automobiletaxdimension4id
+      ,xjp_locking
+      ,createdby
+      ,timezoneruleversionnumber
+      ,xjp_automobiletaxdimension5idname
+      ,owneridtype
+      ,statuscodename
+      ,xjp_automobiletax
+      ,xjp_description
+      ,owneridyominame
+      ,xjp_automobiletaxdimension6id
+      ,modifiedon
+      ,xjp_automobileaccountid
+      ,xjp_automobiletaxdimension2idname
+      ,xjp_automobiletaxdimension1id
+      ,modifiedonbehalfbyyominame
+      ,statuscode
+      ,createdbyname
+      ,createdon
+      ,createdonbehalfbyname
+      ,xjp_automobiletaxdimension4idname
+      ,modifiedonbehalfbyname
+      ,xjp_automobiletaxdimension3id
+      ,xjp_automobileaccountidname
+      ,ownerid
+      ,overriddencreatedon
+      ,msdyn_companycode
+from (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM [CRM_xjp_automobiletax] a
+    INNER JOIN CRM_businessunit b 
+    ON b.businessunitid = a.[owningbusinessunit]
+    WHERE xjp_automobiletaxid = @Id
+) VWI_CRM_xjp_automobiletax 

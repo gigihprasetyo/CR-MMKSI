@@ -1,0 +1,77 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_servicecampaign.company
+	, VWI_CRM_xts_servicecampaign.businessunitcode
+	, VWI_CRM_xts_servicecampaign.createdonbehalfbyyominame
+	, VWI_CRM_xts_servicecampaign.owninguser
+	, VWI_CRM_xts_servicecampaign.xts_locking
+	, VWI_CRM_xts_servicecampaign.statecode
+	, VWI_CRM_xts_servicecampaign.xts_businessunitidname
+	, VWI_CRM_xts_servicecampaign.bsi_pbuoriginalname
+	, VWI_CRM_xts_servicecampaign.owneridname
+	, VWI_CRM_xts_servicecampaign.statecodename
+	, VWI_CRM_xts_servicecampaign.ktb_iscampaign
+	, VWI_CRM_xts_servicecampaign.createdonbehalfby
+	, VWI_CRM_xts_servicecampaign.xts_startdate
+	, VWI_CRM_xts_servicecampaign.xts_parentbusinessunitid
+	, VWI_CRM_xts_servicecampaign.importsequencenumber
+	, VWI_CRM_xts_servicecampaign.bsi_owneridoriginallogicalname
+	, VWI_CRM_xts_servicecampaign.modifiedbyyominame
+	, VWI_CRM_xts_servicecampaign.bsi_buoriginal
+	, VWI_CRM_xts_servicecampaign.bsi_buoriginalname
+	, VWI_CRM_xts_servicecampaign.ktb_buletindescription
+	, VWI_CRM_xts_servicecampaign.xts_enddate
+	, VWI_CRM_xts_servicecampaign.ktb_iscampaignname
+	, VWI_CRM_xts_servicecampaign.utcconversiontimezonecode
+	, VWI_CRM_xts_servicecampaign.createdbyyominame
+	, VWI_CRM_xts_servicecampaign.bsi_pbuoriginal
+	, VWI_CRM_xts_servicecampaign.owningbusinessunit
+	, VWI_CRM_xts_servicecampaign.modifiedbyname
+	, VWI_CRM_xts_servicecampaign.owningteam
+	, VWI_CRM_xts_servicecampaign.ktb_servicecategoryidname
+	, VWI_CRM_xts_servicecampaign.modifiedby
+	, VWI_CRM_xts_servicecampaign.createdby
+	, VWI_CRM_xts_servicecampaign.timezoneruleversionnumber
+	, VWI_CRM_xts_servicecampaign.ktb_isfieldfix
+	, VWI_CRM_xts_servicecampaign.owneridtype
+	, VWI_CRM_xts_servicecampaign.statuscodename
+	, VWI_CRM_xts_servicecampaign.bsi_owneridoriginalname
+	, VWI_CRM_xts_servicecampaign.ktb_isinterfaced
+	, VWI_CRM_xts_servicecampaign.xts_servicecampaignid
+	, VWI_CRM_xts_servicecampaign.bsi_owneridoriginalguid
+	, VWI_CRM_xts_servicecampaign.owneridyominame
+	, VWI_CRM_xts_servicecampaign.ktb_isinterfacedname
+	, VWI_CRM_xts_servicecampaign.modifiedon
+	, VWI_CRM_xts_servicecampaign.xts_type
+	, VWI_CRM_xts_servicecampaign.bsi_owneridoriginal_text
+	, VWI_CRM_xts_servicecampaign.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_servicecampaign.statuscode
+	, VWI_CRM_xts_servicecampaign.createdbyname
+	, VWI_CRM_xts_servicecampaign.createdon
+	, VWI_CRM_xts_servicecampaign.xts_businessunitid
+	, VWI_CRM_xts_servicecampaign.xts_servicecampaignnumber
+	, VWI_CRM_xts_servicecampaign.createdonbehalfbyname
+	, VWI_CRM_xts_servicecampaign.ktb_isfieldfixname
+	, VWI_CRM_xts_servicecampaign.xts_typename
+	, VWI_CRM_xts_servicecampaign.modifiedonbehalfbyname
+	, VWI_CRM_xts_servicecampaign.ktb_servicecategoryid
+	, VWI_CRM_xts_servicecampaign.xts_parentbusinessunitidname
+	, VWI_CRM_xts_servicecampaign.versionnumber
+	, VWI_CRM_xts_servicecampaign.modifiedonbehalfby
+	, VWI_CRM_xts_servicecampaign.ownerid
+	, VWI_CRM_xts_servicecampaign.overriddencreatedon
+	, VWI_CRM_xts_servicecampaign.xts_description
+	, VWI_CRM_xts_servicecampaign.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicecampaign a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_servicecampaign

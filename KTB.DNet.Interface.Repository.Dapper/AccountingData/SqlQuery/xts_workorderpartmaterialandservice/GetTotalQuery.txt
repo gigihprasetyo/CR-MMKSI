@@ -1,0 +1,19 @@
+SELECT 
+	COUNT(1)
+FROM 
+(
+	SELECT      
+		 b.ktb_bucompany company,    
+		 b.ktb_dealercode businessunitcode    
+		 ,a.*    
+		 ,b.msdyn_companycode 
+		 ,c.xts_product
+	FROM CRM_xts_workorderpartmaterialandservice a WITH(NOLOCK)    
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.owningbusinessunit 
+	LEFT JOIN CRM_xts_product c WITH(NOLOCK) 
+	ON c.xts_productid = a.xts_productid
+	{0}
+)
+VWI_CRM_xts_workorderpartmaterialandservice 
+ 

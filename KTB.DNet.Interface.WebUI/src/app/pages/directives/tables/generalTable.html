@@ -1,0 +1,87 @@
+<div class="horizontal-scroll">
+    <table class="table table-hover" ng-attr-st-pipe="offline ? null : renderData " st-table="tableDefinition.dataSource">
+        <thead>
+            <tr>
+                <th style="text-align: left;">
+                    <a ng-if="tableDefinition.action.create" ui-sref="{{tableDefinition.action.create}}">
+                        <button class="btn btn-primary" style="margin-left:-5px">Create New</button>
+                    </a>
+                    <a ng-if="tableDefinition.action.upload" ui-sref="{{tableDefinition.action.upload}}">
+                        <button class="btn btn-primary" style="margin-left:5px">Upload Data</button>
+                    </a>
+                    <a ng-repeat="customButton in tableDefinition.customButtons">
+                        <button ng-click="customButton.action()" class="{{customButton.class}}">{{customButton.text}}</button>
+                    </a>
+                </th>
+                <th ng-if="tableDefinition.columns.length > 2" colspan="{{tableDefinition.columns.length - 2}}" style="text-align: right;">
+                    <a ng-if="tableDefinition.action.refresh">
+                        <button class="btn btn-primary" style="margin-right: -10px;margin-bottom: 0px;padding: 2px 12px;" ng-click="tableDefinition.reload();"><i style=" font-size: 20px; " class="ion-ios-refresh-empty"></i></button>
+                    </a>
+                </th>
+                <th ng-show="tableDefinition.hideSearch == null || tableDefinition.hideSearch == false">
+                    <input ng-if="tableDefinition.searchable != null ? tableDefinition.searchable : true" st-search="" class="form-control" placeholder="Search ..." type="text" />
+                </th>
+            </tr>
+            <tr ng-class="{'sortable': tableDefinition.sortable == null }">
+                <th ng-attr-st-sort="{{tableDefinition.sortable == false ? '' : column.action ? '' : column.sortColumnName || column.name}}"
+                    ng-repeat="column in tableDefinition.columns" ng-style="column.attrStyle">{{column.label}}</th>
+            </tr>
+            <tr ng-show="tableDefinition.fieldSearch == true">
+                <th ng-repeat="column in tableDefinition.columns">
+                    <input name="search{{column.name}}" type="search" ng-if="column.searchable == true" st-search="{{column.name}}" class="form-control" placeholder="Search..." />
+                </th>
+            </tr>
+        </thead>
+        <tbody ng-show="!isLoading">
+            <tr row-data="row" onselectrow="onSelectRow" ng-repeat="row in (tableDefinition.dataSource||[])">
+                <td ng-repeat="column in tableDefinition.columns" ng-style="column.attrStyle">
+                    <div class="buttons" ng-if="column.action">
+                        <a ng-if="tableDefinition.action.update" ui-sref="{{tableDefinition.action.update}}({id: row[tableDefinition.key]})">
+                            <button class="btn btn-primary editable-table-button btn-xs">
+                                Edit
+                            </button>
+                        </a>
+                        <button ng-if="tableDefinition.action.delete" class="btn btn-danger editable-table-button btn-xs" ng-click="delete(row)">Delete</button>                        
+                        <span ng-repeat="action in tableDefinition.action.customActions">
+                            <a ng-if="!action.isButton" ui-sref="{{action.state}}({id: row[tableDefinition.key]})">
+                                <button class="btn editable-table-button btn-xs btn-{{action.customType? action.customType(row) : action.type}}" ng-click="action.action(row)">
+                                    {{action.customText? action.customText(row) : action.text}}
+                                </button>
+                            </a>
+                            <button ng-if="action.isButton" class="btn editable-table-button btn-xs btn-{{action.customType? action.customType(row) : action.type}}" ng-click="action.action(row)">
+                                {{action.customText? action.customText(row) : action.text}}
+                            </button>
+                        </span>
+                    </div>
+                    <span ng-else>
+                        <span ng-switch="column.datatype" class="{{getDisplayedValue(row, column.name) == '' ? '' : column.attrClass}}">
+                            <span ng-switch-when="boolean" class="label" ng-class="{'label-success' : getDisplayedValue(row, column.name), 'label-danger' : !getDisplayedValue(row, column.name)}">{{getDisplayedValue(row, column.name) ? "Yes" : "No"}}</span>
+                            <span ng-switch-when="option">
+                                {{getOptionValue(column.options, column.optionKey, column.optionText, getDisplayedValue(row, column.name))}}
+                            </span>
+                            <span ng-switch-when="date">{{getDisplayedValue(row, column.name) | date: column.format}}</span>
+                            <span ng-switch-when="action">
+                                <a href="" ng-click="column.onClick(row, getDisplayedValue(row, column.name))">{{getDisplayedValue(row, column.name)}}</a>
+                            </span>
+                            <span ng-switch-when="fromnow">{{getDisplayedValue(row, column.name) | fromNow}}</span>
+                            <span ng-switch-when="string">{{getDisplayedValue(row, column.name) == '0' ? '' : getDisplayedValue(row, column.name)}}</span>
+                            <span ng-switch-default>{{getDisplayedValue(row, column.name)}}</span>
+                        </span>
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+        <tbody ng-show="isLoading">
+            <tr>
+                <td colspan="{{tableDefinition.columns.length}}" class="text-center">Loading ... </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr ng-show="tableDefinition.hideFooter == null || tableDefinition.hideFooter == false">
+                <!-- <td class="text-right" st-pagination="" st-displayed-pages="10" st-items-by-page="tableDefinition.tablePageSize||25" colspan="{{tableDefinition.columns.length}}"></td> -->
+                <td class="" custom-pagination="" st-displayed-pages="10" st-items-by-page="tableDefinition.tablePageSize||25"
+                    colspan="{{tableDefinition.columns.length}}"></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

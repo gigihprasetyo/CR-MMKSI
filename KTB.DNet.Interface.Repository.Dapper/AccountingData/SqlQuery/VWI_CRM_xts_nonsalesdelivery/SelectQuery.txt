@@ -1,0 +1,106 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_nonsalesdelivery.company
+	, VWI_CRM_xts_nonsalesdelivery.businessunitcode
+	, VWI_CRM_xts_nonsalesdelivery.xts_stockidname
+	, VWI_CRM_xts_nonsalesdelivery.xts_parentbusinessunitid
+	, VWI_CRM_xts_nonsalesdelivery.versionnumber
+	, VWI_CRM_xts_nonsalesdelivery.createdon
+	, VWI_CRM_xts_nonsalesdelivery.xts_productconfigurationid
+	, VWI_CRM_xts_nonsalesdelivery.statuscodename
+	, VWI_CRM_xts_nonsalesdelivery.xts_productinteriorcolorid
+	, VWI_CRM_xts_nonsalesdelivery.xts_status
+	, VWI_CRM_xts_nonsalesdelivery.xts_customerid
+	, VWI_CRM_xts_nonsalesdelivery.modifiedbyyominame
+	, VWI_CRM_xts_nonsalesdelivery.owneridtype
+	, VWI_CRM_xts_nonsalesdelivery.xts_personinchargeid
+	, VWI_CRM_xts_nonsalesdelivery.createdonbehalfby
+	, VWI_CRM_xts_nonsalesdelivery.modifiedbyname
+	, VWI_CRM_xts_nonsalesdelivery.xts_platenumber
+	, VWI_CRM_xts_nonsalesdelivery.xts_deliverytypeidname
+	, VWI_CRM_xts_nonsalesdelivery.xts_vehiclemodelidname
+	, VWI_CRM_xts_nonsalesdelivery.owneridname
+	, VWI_CRM_xts_nonsalesdelivery.overriddencreatedon
+	, VWI_CRM_xts_nonsalesdelivery.xts_vehiclemodelid
+	, VWI_CRM_xts_nonsalesdelivery.createdonbehalfbyyominame
+	, VWI_CRM_xts_nonsalesdelivery.modifiedonbehalfby
+	, VWI_CRM_xts_nonsalesdelivery.xjp_antiqueledgerid
+	, VWI_CRM_xts_nonsalesdelivery.xts_stockinventorynewvehicleid
+	, VWI_CRM_xts_nonsalesdelivery.xts_customeridyominame
+	, VWI_CRM_xts_nonsalesdelivery.owningteam
+	, VWI_CRM_xts_nonsalesdelivery.xts_productidname
+	, VWI_CRM_xts_nonsalesdelivery.statecode
+	, VWI_CRM_xts_nonsalesdelivery.xts_sourcetype
+	, VWI_CRM_xts_nonsalesdelivery.timezoneruleversionnumber
+	, VWI_CRM_xts_nonsalesdelivery.xts_destination
+	, VWI_CRM_xts_nonsalesdelivery.xts_mileage
+	, VWI_CRM_xts_nonsalesdelivery.xts_warehouseidname
+	, VWI_CRM_xts_nonsalesdelivery.xts_productstyleid
+	, VWI_CRM_xts_nonsalesdelivery.xts_transfertousedcarname
+	, VWI_CRM_xts_nonsalesdelivery.xts_locking
+	, VWI_CRM_xts_nonsalesdelivery.xts_handling
+	, VWI_CRM_xts_nonsalesdelivery.xts_deliverydate
+	, VWI_CRM_xts_nonsalesdelivery.createdonbehalfbyname
+	, VWI_CRM_xts_nonsalesdelivery.xts_productexteriorcolorid
+	, VWI_CRM_xts_nonsalesdelivery.utcconversiontimezonecode
+	, VWI_CRM_xts_nonsalesdelivery.xjp_productionyearjapan
+	, VWI_CRM_xts_nonsalesdelivery.xts_statusname
+	, VWI_CRM_xts_nonsalesdelivery.ownerid
+	, VWI_CRM_xts_nonsalesdelivery.modifiedon
+	, VWI_CRM_xts_nonsalesdelivery.importsequencenumber
+	, VWI_CRM_xts_nonsalesdelivery.owneridyominame
+	, VWI_CRM_xts_nonsalesdelivery.xts_personinchargeidname
+	, VWI_CRM_xts_nonsalesdelivery.xts_customeridname
+	, VWI_CRM_xts_nonsalesdelivery.xts_inventorytransactionid
+	, VWI_CRM_xts_nonsalesdelivery.xts_siteid
+	, VWI_CRM_xts_nonsalesdelivery.createdbyname
+	, VWI_CRM_xts_nonsalesdelivery.xts_businessunitid
+	, VWI_CRM_xts_nonsalesdelivery.modifiedonbehalfbyname
+	, VWI_CRM_xts_nonsalesdelivery.xts_productexteriorcoloridname
+	, VWI_CRM_xts_nonsalesdelivery.xts_productconfigurationidname
+	, VWI_CRM_xts_nonsalesdelivery.xts_handlingname
+	, VWI_CRM_xts_nonsalesdelivery.xts_inventorytransactionidname
+	, VWI_CRM_xts_nonsalesdelivery.xts_productid
+	, VWI_CRM_xts_nonsalesdelivery.xts_usedvehicleexteriorcoloridname
+	, VWI_CRM_xts_nonsalesdelivery.xts_transfertousedcar
+	, VWI_CRM_xts_nonsalesdelivery.createdby
+	, VWI_CRM_xts_nonsalesdelivery.modifiedby
+	, VWI_CRM_xts_nonsalesdelivery.xts_nonsalesdeliveryid
+	, VWI_CRM_xts_nonsalesdelivery.xts_parentbusinessunitidname
+	, VWI_CRM_xts_nonsalesdelivery.xts_vehicleidentificationnumber
+	, VWI_CRM_xts_nonsalesdelivery.xts_stockinventorynewvehicleidname
+	, VWI_CRM_xts_nonsalesdelivery.createdbyyominame
+	, VWI_CRM_xts_nonsalesdelivery.owninguser
+	, VWI_CRM_xts_nonsalesdelivery.xts_stockid
+	, VWI_CRM_xts_nonsalesdelivery.xts_locationid
+	, VWI_CRM_xts_nonsalesdelivery.xts_aliasmodel
+	, VWI_CRM_xts_nonsalesdelivery.xts_nonsalesdeliverynumber
+	, VWI_CRM_xts_nonsalesdelivery.xts_usedvehicleexteriorcolorid
+	, VWI_CRM_xts_nonsalesdelivery.xts_productinteriorcoloridname
+	, VWI_CRM_xts_nonsalesdelivery.xts_deliverytypeid
+	, VWI_CRM_xts_nonsalesdelivery.xts_sourcetypename
+	, VWI_CRM_xts_nonsalesdelivery.statuscode
+	, VWI_CRM_xts_nonsalesdelivery.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_nonsalesdelivery.xts_siteidname
+	, VWI_CRM_xts_nonsalesdelivery.xts_warehouseid
+	, VWI_CRM_xts_nonsalesdelivery.xjp_antiqueledgeridname
+	, VWI_CRM_xts_nonsalesdelivery.xts_locationidname
+	, VWI_CRM_xts_nonsalesdelivery.xts_productdescription
+	, VWI_CRM_xts_nonsalesdelivery.statecodename
+	, VWI_CRM_xts_nonsalesdelivery.xts_businessunitidname
+	, VWI_CRM_xts_nonsalesdelivery.owningbusinessunit
+	, VWI_CRM_xts_nonsalesdelivery.xts_productstyleidname
+	, VWI_CRM_xts_nonsalesdelivery.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_nonsalesdelivery a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_nonsalesdelivery 

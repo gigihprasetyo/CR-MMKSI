@@ -1,0 +1,118 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_outsourceworkorderdetail.company
+	, VWI_CRM_xts_outsourceworkorderdetail.businessunitcode
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_servicecategoryid
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_producttype
+	, VWI_CRM_xts_outsourceworkorderdetail.versionnumber
+	, VWI_CRM_xts_outsourceworkorderdetail.createdon
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_withholdingtaxid
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_commentdescription
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_consumptiontax1id
+	, VWI_CRM_xts_outsourceworkorderdetail.statuscodename
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_discountrate
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_discountbaseamount_base
+	, VWI_CRM_xts_outsourceworkorderdetail.modifiedbyyominame
+	, VWI_CRM_xts_outsourceworkorderdetail.owneridtype
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_unitidname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_totaltransactionamount_base
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_totalbaseamount_base
+	, VWI_CRM_xts_outsourceworkorderdetail.createdonbehalfby
+	, VWI_CRM_xts_outsourceworkorderdetail.modifiedbyname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_outsourceworkorderid
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_unitpricelaborrate_base
+	, VWI_CRM_xts_outsourceworkorderdetail.owneridname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_consumptiontax2amount
+	, VWI_CRM_xts_outsourceworkorderdetail.overriddencreatedon
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_productsegment1id
+	, VWI_CRM_xts_outsourceworkorderdetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_outsourceworkorderdetail.modifiedonbehalfby
+	, VWI_CRM_xts_outsourceworkorderdetail.statuscode
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_totalconsumptiontaxamount_base
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_transactionamount_base
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_consumptiontax2id
+	, VWI_CRM_xts_outsourceworkorderdetail.owningteam
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_outsourceworkorderdetail
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_quantitymanhour
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_productidname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_outsourceworkorderidname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_productsegment3idname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_commentid
+	, VWI_CRM_xts_outsourceworkorderdetail.statecode
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_consumptiontax1amount_base
+	, VWI_CRM_xts_outsourceworkorderdetail.timezoneruleversionnumber
+	, VWI_CRM_xts_outsourceworkorderdetail.exchangerate
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_parentbusinessunitid
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_totalconsumptiontaxamount
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_proceedtoreceiptstatus
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_producttypename
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_totalamountbeforediscount
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_commentidname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_servicecategorydescription
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_consumptiontax1idname
+	, VWI_CRM_xts_outsourceworkorderdetail.createdonbehalfbyname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_consumptiontax2idname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_outsourceworkorderdetailid
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_locking
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_discountbaseamount
+	, VWI_CRM_xts_outsourceworkorderdetail.utcconversiontimezonecode
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_totalwitholdingtaxamount
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_servicepartsandmaterialsid
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_discountamount
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_unitpricelaborrate
+	, VWI_CRM_xts_outsourceworkorderdetail.ownerid
+	, VWI_CRM_xts_outsourceworkorderdetail.modifiedon
+	, VWI_CRM_xts_outsourceworkorderdetail.importsequencenumber
+	, VWI_CRM_xts_outsourceworkorderdetail.owneridyominame
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_servicepartsandmaterialsidname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_partidname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_totalbaseamount
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_partid
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_productsegment2id
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_unitid
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_partcodedescription
+	, VWI_CRM_xts_outsourceworkorderdetail.createdbyname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_businessunitid
+	, VWI_CRM_xts_outsourceworkorderdetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_productsegment4id
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_discountamount_base
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_totalwitholdingtaxamount_base
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_productsegment2idname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_productid
+	, VWI_CRM_xts_outsourceworkorderdetail.transactioncurrencyid
+	, VWI_CRM_xts_outsourceworkorderdetail.createdby
+	, VWI_CRM_xts_outsourceworkorderdetail.modifiedby
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_parentbusinessunitidname
+	, VWI_CRM_xts_outsourceworkorderdetail.createdbyyominame
+	, VWI_CRM_xts_outsourceworkorderdetail.owninguser
+	, VWI_CRM_xts_outsourceworkorderdetail.transactioncurrencyidname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_productsegment4idname
+	, VWI_CRM_xts_outsourceworkorderdetail.owningbusinessunit
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_consumptiontax1amount
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_consumptiontax2amount_base
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_transactionamount
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_productsegment3id
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_proceedtoreceiptstatusname
+	, VWI_CRM_xts_outsourceworkorderdetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_productsegment1idname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_withholdingtaxidname
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_totalamountbeforediscount_base
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_totaltransactionamount
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_productdescription
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_servicecategoryidname
+	, VWI_CRM_xts_outsourceworkorderdetail.statecodename
+	, VWI_CRM_xts_outsourceworkorderdetail.xts_businessunitidname
+	, VWI_CRM_xts_outsourceworkorderdetail.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xts_outsourceworkorderdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_outsourceworkorderdetail

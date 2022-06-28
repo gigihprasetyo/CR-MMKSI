@@ -1,0 +1,20 @@
+<div class="widgets">
+  <div class="row">
+    <div class="col-md-12">
+      <div ba-panel ba-panel-title="Role Details" ba-panel-class="with-scroll">
+        <form name="form" ng-submit="Submit()">
+          <div class="col-md-6">
+            <input-text label="Name" name="Name" ng-model="role.Name" required></input-text>
+          </div>
+          <div class="col-md-6">
+            <input-text label="Level" name="Level" ng-model="role.Level" required></input-text>
+          </div>
+          <div class="col-md-12 text-right">
+            <a ui-sref="accessControl.role.list" class="btn btn-default m-t-15 waves-effect">Cancel</a>
+            <input ng-disabled="form.$invalid" type="submit" value="Save" class="btn btn-primary m-t-15 waves-effect">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

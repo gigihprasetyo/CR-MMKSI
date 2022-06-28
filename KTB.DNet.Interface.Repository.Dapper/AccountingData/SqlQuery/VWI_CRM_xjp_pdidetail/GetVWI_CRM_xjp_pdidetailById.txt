@@ -1,0 +1,102 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xjp_consumptiontax1rate
+	,versionnumber
+	,createdon
+	,xjp_installationcategoryatnvsoidname
+	,xjp_installationcategoryatnvsoid
+	,statuscodename
+	,xjp_businessunitidname
+	,xjp_consumptiontax1amount
+	,xjp_actualservicefee_base
+	,owneridtype
+	,xjp_accessoriesdescription
+	,xjp_consumptiontax2amount
+	,xjp_consumptiontax1amount_base
+	,xjp_parentbusinessunitid
+	,owneridname
+	,overriddencreatedon
+	,xjp_consumptiontax1idname
+	,xjp_invoicesubcontractfee_base
+	,xjp_estimatedsubcontractfee
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,xjp_invoicepartfee_base
+	,ktb_spkdetailidname
+	,xjp_actualsubcontractfee
+	,owningteam
+	,xjp_invoicesubcontractfee
+	,xjp_invoiceservicefee_base
+	,statecode
+	,xjp_consumptiontax2id
+	,xjp_pdidetailid
+	,timezoneruleversionnumber
+	,xjp_actualpartfee_base
+	,modifiedbyname
+	,ktb_karoseriname
+	,xjp_servicecategoryidname
+	,xjp_kitid
+	,xjp_businessunitid
+	,createdonbehalfbyname
+	,xjp_invoicepartfee
+	,xjp_consumptiontax1id
+	,createdonbehalfby
+	,xjp_estimatedpartfee
+	,xjp_actualservicefee
+	,xjp_estimatedpartfee_base
+	,utcconversiontimezonecode
+	,xjp_accessoriesid
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xjp_actualpartfee
+	,ktb_spkdetailid
+	,xjp_servicecategoryid
+	,xjp_pdidetailnumber
+	,createdbyname
+	,modifiedonbehalfbyname
+	,xjp_accessoriesidname
+	,ktb_karoseri
+	,xjp_quantity
+	,xjp_consumptiontax2amount_base
+	,xjp_estimatedsubcontractfee_base
+	,createdby
+	,xjp_kitidname
+	,modifiedby
+	,xjp_consumptiontax2rate
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,owningbusinessunit
+	,xjp_invoiceservicefee
+	,xjp_actualsubcontractfee_base
+	,modifiedbyyominame
+	,xjp_comment
+	,xjp_locking
+	,xjp_installationcategoryidname
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xjp_installationcategoryid
+	,xjp_predeliveryinspectionid
+	,transactioncurrencyid
+	,xjp_estimatedservicefee_base
+	,xjp_consumptiontax2idname
+	,xjp_predeliveryinspectionidname
+	,statecodename
+	,xjp_parentbusinessunitidname
+	,xjp_estimatedservicefee
+	,RowStatus
+from (
+	SELECT  
+		  b.ktb_bucompany company,
+		  b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xjp_pdidetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xjp_businessunitid
+	WHERE xjp_pdidetailid = @Id
+) VWI_CRM_xjp_pdidetail

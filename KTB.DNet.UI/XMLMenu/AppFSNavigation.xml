@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AppNavigationSchema xmlns="http://tempuri.org/AppNavigationSchema.xsd">
+	<AppScreen>
+		<AppScreenId>9000</AppScreenId>
+		<ScreenName>Free Service</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>9000</AppMenuId>
+		<MenuName>Free Service</MenuName>
+		<ScreenId>9000</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	<AppToolbar>
+		<AppToolbarId>1</AppToolbarId>
+		<Name>Home</Name>
+		<ScreenId>100</ScreenId>
+		<SortOrder>1</SortOrder>
+	</AppToolbar>
+	<AppScreen>
+		<AppScreenId>9100</AppScreenId>
+		<ScreenName>Jenis Free Service </ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>9100</AppMenuId>
+		<MenuName>Jenis Free Service </MenuName>
+		<ScreenId>9100</ScreenId>
+		<ParentMenuId>9000</ParentMenuId>
+		<SortOrder>19</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>9200</AppScreenId>
+		<ScreenName>Data  Free Service</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>9200</AppMenuId>
+		<MenuName>Data  Free Service</MenuName>
+		<ScreenId>9200</ScreenId>
+		<ParentMenuId>9000</ParentMenuId>
+		<SortOrder>20</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>9300</AppMenuId>
+		<MenuName>Upload  Free Service</MenuName>
+		<ScreenId>9300</ScreenId>
+		<ParentMenuId>9000</ParentMenuId>
+		<SortOrder>21</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>9400</AppMenuId>
+		<MenuName>Transfer Free Service ke SAP</MenuName>
+		<ScreenId>9400</ScreenId>
+		<ParentMenuId>9000</ParentMenuId>
+		<SortOrder>22</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>9500</AppMenuId>
+		<MenuName>Daftar Status Free Service </MenuName>
+		<ScreenId>9500</ScreenId>
+		<ParentMenuId>9000</ParentMenuId>
+		<SortOrder>23</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>9300</AppScreenId>
+		<ScreenName>Upload  Free Service</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>9400</AppScreenId>
+		<ScreenName>Transfer Free Service ke SAP</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>9500</AppScreenId>
+		<ScreenName>Daftar Status Free Service </ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>8000</AppMenuId>
+		<MenuName>Pre Delivery Inspection</MenuName>
+		<ScreenId>8000</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>3</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>8100</AppMenuId>
+		<MenuName>Data PDI</MenuName>
+		<ScreenId>8100</ScreenId>
+		<ParentMenuId>8000</ParentMenuId>
+		<SortOrder>30</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>8200</AppMenuId>
+		<MenuName>Upload PDI</MenuName>
+		<ScreenId>8200</ScreenId>
+		<ParentMenuId>8000</ParentMenuId>
+		<SortOrder>31</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>8000</AppScreenId>
+		<ScreenName>Pre Delivery Inspection</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>8100</AppScreenId>
+		<ScreenName>Data PDI</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>8200</AppScreenId>
+		<ScreenName>Upload PDI</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>8300</AppMenuId>
+		<MenuName>Transfer PDI ke SAP</MenuName>
+		<ScreenId>8300</ScreenId>
+		<ParentMenuId>8000</ParentMenuId>
+		<SortOrder>32</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>8400</AppMenuId>
+		<MenuName>Daftar Status PDI</MenuName>
+		<ScreenId>8400</ScreenId>
+		<ParentMenuId>8000</ParentMenuId>
+		<SortOrder>33</SortOrder>
+	</AppMenu>
+
+	<AppScreen>
+		<AppScreenId>8300</AppScreenId>
+		<ScreenName>Transfer PDI ke SAP</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>8400</AppScreenId>
+		<ScreenName>Daftar Status PDI</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>7000</AppScreenId>
+		<ScreenName>Waranty Service Claim</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>7100</AppScreenId>
+		<ScreenName>Upload Waranty Service dari Dealer</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>7000</AppMenuId>
+		<MenuName>Waranty Service Claim</MenuName>
+		<ScreenId>7000</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>4</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>7100</AppMenuId>
+		<MenuName>Upload WSC</MenuName>
+		<ScreenId>7100</ScreenId>
+		<ParentMenuId>7000</ParentMenuId>
+		<SortOrder>2200</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>7200</AppScreenId>
+		<ScreenName>Transfer WSC ke SAP</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>7200</AppMenuId>
+		<MenuName>Transfer WSC ke SAP</MenuName>
+		<ScreenId>7200</ScreenId>
+		<ParentMenuId>7000</ParentMenuId>
+		<SortOrder>2201</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>7300</AppScreenId>
+		<ScreenName>Daftar Status WSC</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>7300</AppMenuId>
+		<MenuName>Daftar Status WSC</MenuName>
+		<ScreenId>7300</ScreenId>
+		<ParentMenuId>7000</ParentMenuId>
+		<SortOrder>2202</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>7400</AppMenuId>
+		<MenuName>Daftar Bukti WSC</MenuName>
+		<ScreenId>7400</ScreenId>
+		<ParentMenuId>7000</ParentMenuId>
+		<SortOrder>2204</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>7500</AppMenuId>
+		<MenuName>Upload Bukti WSC</MenuName>
+		<ScreenId>7500</ScreenId>
+		<ParentMenuId>7000</ParentMenuId>
+		<SortOrder>2203</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>7600</AppMenuId>
+		<MenuName>Daftar Kode ABC</MenuName>
+		<ScreenId>7600</ScreenId>
+		<ParentMenuId>7000</ParentMenuId>
+		<SortOrder>2199</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>7400</AppScreenId>
+		<ScreenName>Daftar Bukti WSC</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>7500</AppScreenId>
+		<ScreenName>Upload Bukti WSC</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>7600</AppScreenId>
+		<ScreenName>Daftar Kode ABC</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>6000</AppMenuId>
+		<MenuName>Equipment Sales</MenuName>
+		<ScreenId>6000</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>60</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>6100</AppMenuId>
+		<MenuName>Master BOM</MenuName>
+		<ScreenId>6100</ScreenId>
+		<ParentMenuId>6000</ParentMenuId>
+		<SortOrder>62</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>6000</AppScreenId>
+		<ScreenName>Equipment Sales</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>6100</AppScreenId>
+		<ScreenName>Master BOM</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>6200</AppScreenId>
+		<ScreenName>Master Equipment</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>6200</AppMenuId>
+		<MenuName>Master Equipment</MenuName>
+		<ScreenId>6200</ScreenId>
+		<ParentMenuId>6000</ParentMenuId>
+		<SortOrder>61</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>6300</AppMenuId>
+		<MenuName>Daftar Equipment</MenuName>
+		<ScreenId>6300</ScreenId>
+		<ParentMenuId>6000</ParentMenuId>
+		<SortOrder>63</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>6300</AppScreenId>
+		<ScreenName>Daftar Equipment</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>5000</AppScreenId>
+		<ScreenName>Umum</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>5000</AppMenuId>
+		<MenuName>Umum</MenuName>
+		<ScreenId>5000</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>1</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>5100</AppMenuId>
+		<MenuName>Informasi Kendaraan</MenuName>
+		<ScreenId>5100</ScreenId>
+		<ParentMenuId>5000</ParentMenuId>
+		<SortOrder>10</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>5100</AppScreenId>
+		<ScreenName>Informasi Kendaraan</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+  <!--
+	<AppScreen>
+		<AppScreenId>6400</AppScreenId>
+		<ScreenName>Daftar P3B</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>6500</AppScreenId>
+		<ScreenName>Pengajuan P3B</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>6400</AppMenuId>
+		<MenuName>Daftar P3B</MenuName>
+		<ScreenId>6400</ScreenId>
+		<ParentMenuId>6000</ParentMenuId>
+		<SortOrder>65</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>6500</AppMenuId>
+		<MenuName>Pengajuan P3B</MenuName>
+		<ScreenId>6500</ScreenId>
+		<ParentMenuId>6000</ParentMenuId>
+		<SortOrder>64</SortOrder>
+	</AppMenu>
+  -->
+	<AppScreen>
+		<AppScreenId>10000</AppScreenId>
+		<ScreenName>Training</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>10000</AppMenuId>
+		<MenuName>Training</MenuName>
+		<ScreenId>10000</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>6</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>10100</AppMenuId>
+		<MenuName>Kategori Training</MenuName>
+		<ScreenId>10100</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>80</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>10200</AppMenuId>
+		<MenuName>Jenis Evaluasi</MenuName>
+		<ScreenId>10200</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>81</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>10100</AppScreenId>
+		<ScreenName>Kategori Training</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>10200</AppScreenId>
+		<ScreenName>Jenis Evaluasi</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>10300</AppScreenId>
+		<ScreenName>Prasyarat</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>10300</AppMenuId>
+		<MenuName>Prasyarat</MenuName>
+		<ScreenId>10300</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>82</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>10400</AppMenuId>
+		<MenuName>Siswa</MenuName>
+		<ScreenId>10400</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>83</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>10400</AppScreenId>
+		<ScreenName>Siswa</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>10500</AppScreenId>
+		<ScreenName>Kelas</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>10500</AppMenuId>
+		<MenuName>Kelas</MenuName>
+		<ScreenId>10500</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>84</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>10600</AppMenuId>
+		<MenuName>Alokasi</MenuName>
+		<ScreenId>10600</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>85</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>10600</AppScreenId>
+		<ScreenName>Alokasi</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>10700</AppScreenId>
+		<ScreenName>Upload Jadwal</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>10700</AppMenuId>
+		<MenuName>Upload Jadwal</MenuName>
+		<ScreenId>10700</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>86</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>10800</AppMenuId>
+		<MenuName>Pendaftaran</MenuName>
+		<ScreenId>10800</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>88</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>10800</AppScreenId>
+		<ScreenName>Pendaftaran</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+  <!--
+	<AppScreen>
+		<AppScreenId>6600</AppScreenId>
+		<ScreenName>Status Pembayaran</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>6600</AppMenuId>
+		<MenuName>Status Pembayaran</MenuName>
+		<ScreenId>6600</ScreenId>
+		<ParentMenuId>6000</ParentMenuId>
+		<SortOrder>66</SortOrder>
+	</AppMenu>
+  -->
+	<AppMenu>
+		<AppMenuId>10750</AppMenuId>
+		<MenuName>DownLoad Jadwal</MenuName>
+		<ScreenId>10750</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>87</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>10750</AppScreenId>
+		<ScreenName>DownLoad Jadwal</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>10850</AppScreenId>
+		<ScreenName>Status Pendaftaran</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>10860</AppScreenId>
+		<ScreenName>Reminder</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>10900</AppScreenId>
+		<ScreenName>Input Data Nilai</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>10910</AppScreenId>
+		<ScreenName>Evaluasi Hasil Training</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>10920</AppScreenId>
+		<ScreenName>Data Status Siswa</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>10850</AppMenuId>
+		<MenuName>Status Pendaftaran</MenuName>
+		<ScreenId>10850</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>90</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>10860</AppMenuId>
+		<MenuName>Reminder</MenuName>
+		<ScreenId>10860</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>91</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>10900</AppMenuId>
+		<MenuName>Input Data Nilai</MenuName>
+		<ScreenId>10900</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>95</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>10910</AppMenuId>
+		<MenuName>Evaluasi Hasil Training</MenuName>
+		<ScreenId>10910</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>98</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>10920</AppMenuId>
+		<MenuName>Data Status Siswa</MenuName>
+		<ScreenId>10920</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>99</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>5200</AppScreenId>
+		<ScreenName>Daftar Dokumen Service</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>5200</AppMenuId>
+		<MenuName>Daftar Dokumen Service</MenuName>
+		<ScreenId>5200</ScreenId>
+		<ParentMenuId>5000</ParentMenuId>
+		<SortOrder>20</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>10820</AppScreenId>
+		<ScreenName>List Pendaftaran</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>10820</AppMenuId>
+		<MenuName>List Pendaftaran</MenuName>
+		<ScreenId>10820</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>89</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>10905</AppMenuId>
+		<MenuName>Ubah Data Nilai</MenuName>
+		<ScreenId>10905</ScreenId>
+		<ParentMenuId>10000</ParentMenuId>
+		<SortOrder>95</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>10905</AppScreenId>
+		<ScreenName>Ubah Data Nilai</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>2291</AppScreenId>
+		<ScreenName>Kode Posisi</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>2291</AppMenuId>
+		<MenuName>Kode Posisi</MenuName>
+		<ScreenId>2291</ScreenId>
+		<ParentMenuId>7000</ParentMenuId>
+		<SortOrder>2207</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>2292</AppMenuId>
+		<MenuName>Alasan Penolakan</MenuName>
+		<ScreenId>2292</ScreenId>
+		<ParentMenuId>5000</ParentMenuId>
+		<SortOrder>100</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>2292</AppScreenId>
+		<ScreenName>Alasan Penolakan</ScreenName>
+		<NavigateUrl>default_service.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+  <AppMenu>
+    <AppMenuId>5700</AppMenuId>
+    <MenuName>Due Date Notification</MenuName>
+    <ScreenId>5700</ScreenId>
+    <ParentMenuId>5000</ParentMenuId>
+    <SortOrder>100</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>5700</AppScreenId>
+    <ScreenName>Service Due Date Notification</ScreenName>
+    <NavigateUrl>default_service.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+</AppNavigationSchema>

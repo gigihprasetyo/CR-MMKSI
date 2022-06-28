@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_pricelevel as VWI_CRM_pricelevel WITH (NOLOCK) 
+{0}

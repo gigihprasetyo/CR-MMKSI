@@ -1,0 +1,196 @@
+﻿
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\data\bin\debugtests\microsoft.practices.enterpriselibrary.data.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\data\bin\debugtests\microsoft.practices.enterpriselibrary.data.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\data\bin\debugtests\microsoft.practices.enterpriselibrary.data.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\data\bin\debugtests\microsoft.practices.enterpriselibrary.data.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\caching\bin\debugtests\microsoft.practices.enterpriselibrary.caching.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\caching\bin\debugtests\microsoft.practices.enterpriselibrary.caching.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\caching\bin\debugtests\microsoft.practices.enterpriselibrary.caching.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\caching\bin\debugtests\microsoft.practices.enterpriselibrary.caching.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\logging\bin\debugtests\microsoft.practices.enterpriselibrary.logging.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\logging\bin\debugtests\microsoft.practices.enterpriselibrary.logging.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\logging\bin\debugtests\microsoft.practices.enterpriselibrary.logging.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\logging\bin\debugtests\microsoft.practices.enterpriselibrary.logging.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\logging\sinks\wmischema\bin\debugtests\microsoft.practices.enterpriselibrary.logging.sinks.wmischema.tests.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\logging\sinks\wmischema\bin\debugtests\microsoft.practices.enterpriselibrary.logging.sinks.wmischema.tests.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\logging\sinks\wmischema\bin\debugtests\microsoft.practices.enterpriselibrary.logging.sinks.wmischema.tests.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\logging\sinks\wmischema\bin\debugtests\microsoft.practices.enterpriselibrary.logging.sinks.wmischema.tests.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\exceptionhandling\bin\debugtests\microsoft.practices.enterpriselibrary.exceptionhandling.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\exceptionhandling\bin\debugtests\microsoft.practices.enterpriselibrary.exceptionhandling.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\exceptionhandling\bin\debugtests\microsoft.practices.enterpriselibrary.exceptionhandling.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\exceptionhandling\bin\debugtests\microsoft.practices.enterpriselibrary.exceptionhandling.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\security\bin\debugtests\microsoft.practices.enterpriselibrary.security.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\security\bin\debugtests\microsoft.practices.enterpriselibrary.security.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\security\bin\debugtests\microsoft.practices.enterpriselibrary.security.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\security\bin\debugtests\microsoft.practices.enterpriselibrary.security.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\security\cryptography\bin\debugtests\microsoft.practices.enterpriselibrary.security.cryptography.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\security\cryptography\bin\debugtests\microsoft.practices.enterpriselibrary.security.cryptography.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\security\cryptography\bin\debugtests\microsoft.practices.enterpriselibrary.security.cryptography.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\security\cryptography\bin\debugtests\microsoft.practices.enterpriselibrary.security.cryptography.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\data\bin\debugtests\microsoft.practices.enterpriselibrary.data.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\data\bin\debugtests\microsoft.practices.enterpriselibrary.data.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\data\bin\debugtests\microsoft.practices.enterpriselibrary.data.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\data\bin\debugtests\microsoft.practices.enterpriselibrary.data.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\caching\bin\debugtests\microsoft.practices.enterpriselibrary.caching.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\caching\bin\debugtests\microsoft.practices.enterpriselibrary.caching.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\caching\bin\debugtests\microsoft.practices.enterpriselibrary.caching.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\caching\bin\debugtests\microsoft.practices.enterpriselibrary.caching.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\logging\bin\debugtests\microsoft.practices.enterpriselibrary.logging.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\logging\bin\debugtests\microsoft.practices.enterpriselibrary.logging.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\logging\bin\debugtests\microsoft.practices.enterpriselibrary.logging.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\logging\bin\debugtests\microsoft.practices.enterpriselibrary.logging.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\logging\sinks\wmischema\bin\debugtests\microsoft.practices.enterpriselibrary.logging.sinks.wmischema.tests.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\logging\sinks\wmischema\bin\debugtests\microsoft.practices.enterpriselibrary.logging.sinks.wmischema.tests.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\logging\sinks\wmischema\bin\debugtests\microsoft.practices.enterpriselibrary.logging.sinks.wmischema.tests.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\logging\sinks\wmischema\bin\debugtests\microsoft.practices.enterpriselibrary.logging.sinks.wmischema.tests.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\exceptionhandling\bin\debugtests\microsoft.practices.enterpriselibrary.exceptionhandling.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\exceptionhandling\bin\debugtests\microsoft.practices.enterpriselibrary.exceptionhandling.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\exceptionhandling\bin\debugtests\microsoft.practices.enterpriselibrary.exceptionhandling.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\exceptionhandling\bin\debugtests\microsoft.practices.enterpriselibrary.exceptionhandling.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\security\bin\debugtests\microsoft.practices.enterpriselibrary.security.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\security\bin\debugtests\microsoft.practices.enterpriselibrary.security.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\security\bin\debugtests\microsoft.practices.enterpriselibrary.security.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\security\bin\debugtests\microsoft.practices.enterpriselibrary.security.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.
+
+Running a transacted installation.
+
+Beginning the Install phase of the installation.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\security\cryptography\bin\debugtests\microsoft.practices.enterpriselibrary.security.cryptography.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\security\cryptography\bin\debugtests\microsoft.practices.enterpriselibrary.security.cryptography.InstallLog.
+
+The Install phase completed successfully, and the Commit phase is beginning.
+See the contents of the log file for the c:\projects\enterpriselibrary\src\security\cryptography\bin\debugtests\microsoft.practices.enterpriselibrary.security.cryptography.dll assembly's progress.
+The file is located at c:\projects\enterpriselibrary\src\security\cryptography\bin\debugtests\microsoft.practices.enterpriselibrary.security.cryptography.InstallLog.
+
+The Commit phase completed successfully.
+
+The transacted install has completed.

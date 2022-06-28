@@ -1,0 +1,72 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_reason.versionnumber
+	, VWI_CRM_xts_reason.createdonbehalfbyname
+	, VWI_CRM_xts_reason.xts_dimension1id
+	, VWI_CRM_xts_reason.xts_reasoncodedim1fromname
+	, VWI_CRM_xts_reason.utcconversiontimezonecode
+	, VWI_CRM_xts_reason.xts_dimension5idname
+	, VWI_CRM_xts_reason.xts_reasoncodedim6from
+	, VWI_CRM_xts_reason.xts_dimension3idname
+	, VWI_CRM_xts_reason.modifiedon
+	, VWI_CRM_xts_reason.importsequencenumber
+	, VWI_CRM_xts_reason.xts_dimension6id
+	, VWI_CRM_xts_reason.xts_reasoncodedim3from
+	, VWI_CRM_xts_reason.xts_dimension7id
+	, VWI_CRM_xts_reason.xts_dimension2idname
+	, VWI_CRM_xts_reason.xts_reasoncodedim5fromname
+	, VWI_CRM_xts_reason.createdbyname
+	, VWI_CRM_xts_reason.modifiedonbehalfbyname
+	, VWI_CRM_xts_reason.xts_categoryname
+	, VWI_CRM_xts_reason.xts_dimension8idname
+	, VWI_CRM_xts_reason.createdby
+	, VWI_CRM_xts_reason.modifiedby
+	, VWI_CRM_xts_reason.xts_dimension10id
+	, VWI_CRM_xts_reason.createdbyyominame
+	, VWI_CRM_xts_reason.xts_dimension4idname
+	, VWI_CRM_xts_reason.xts_dimension9id
+	, VWI_CRM_xts_reason.modifiedbyyominame
+	, VWI_CRM_xts_reason.xts_reason
+	, VWI_CRM_xts_reason.xts_reasoncodedim6fromname
+	, VWI_CRM_xts_reason.xts_dimension1idname
+	, VWI_CRM_xts_reason.statuscode
+	, VWI_CRM_xts_reason.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_reason.xts_accountid
+	, VWI_CRM_xts_reason.xts_locking
+	, VWI_CRM_xts_reason.xts_reasoncodedim4fromname
+	, VWI_CRM_xts_reason.xts_dimension10idname
+	, VWI_CRM_xts_reason.timezoneruleversionnumber
+	, VWI_CRM_xts_reason.xts_company
+	, VWI_CRM_xts_reason.xts_dimension9idname
+	, VWI_CRM_xts_reason.statecode
+	, VWI_CRM_xts_reason.xts_dimension4id
+	, VWI_CRM_xts_reason.xts_category
+	, VWI_CRM_xts_reason.xts_reasoncodedim5from
+	, VWI_CRM_xts_reason.modifiedonbehalfby
+	, VWI_CRM_xts_reason.createdonbehalfbyyominame
+	, VWI_CRM_xts_reason.xts_dimension6idname
+	, VWI_CRM_xts_reason.xts_reasoncodedim4from
+	, VWI_CRM_xts_reason.overriddencreatedon
+	, VWI_CRM_xts_reason.xts_dimension7idname
+	, VWI_CRM_xts_reason.xts_dimension2id
+	, VWI_CRM_xts_reason.modifiedbyname
+	, VWI_CRM_xts_reason.createdonbehalfby
+	, VWI_CRM_xts_reason.xts_reasoncodedim2from
+	, VWI_CRM_xts_reason.xts_dimension5id
+	, VWI_CRM_xts_reason.xts_reasoncodedim3fromname
+	, VWI_CRM_xts_reason.xts_description
+	, VWI_CRM_xts_reason.statuscodename
+	, VWI_CRM_xts_reason.xts_reasoncodedim1from
+	, VWI_CRM_xts_reason.xts_dimension8id
+	, VWI_CRM_xts_reason.createdon
+	, VWI_CRM_xts_reason.xts_reasonid
+	, VWI_CRM_xts_reason.xts_accountidname
+	, VWI_CRM_xts_reason.xts_reasoncodedim2fromname
+	, VWI_CRM_xts_reason.organizationid
+	, VWI_CRM_xts_reason.statecodename
+	, VWI_CRM_xts_reason.organizationidname
+	, VWI_CRM_xts_reason.xts_dimension3id
+    /**EndPagingIndexQuery**/
+FROM [dbo].[CRM_xts_reason] as VWI_CRM_xts_reason with(nolock) 
+{0}

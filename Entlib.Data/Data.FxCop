@@ -1,0 +1,938 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.312" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">c:\program files\microsoft fxcop 1.312\Xml\FxCopReport.Xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <PermitAnalysis>True</PermitAnalysis>
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>100</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>10</RuleExceptionsThreshold>
+  <Spelling Locale="en-us" />
+  <VersionAware>False</VersionAware>
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+ </ProjectOptions>
+ <Targets>
+  <AssemblyReferenceDirectories>
+   <Directory>$(ProjectDir)/../../../../Program Files/IBM/SQLLIB/BIN/netf11/</Directory>
+  </AssemblyReferenceDirectories>
+  <Target Name="$(ProjectDir)/bin/Debug/Microsoft.Practices.EnterpriseLibrary.Data.dll" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/DB2/bin/Debug/Microsoft.Practices.EnterpriseLibrary.Data.DB2.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.312">
+  <Namespaces>
+   <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Data.DB2">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2004-12-29 18:56:41Z">
+      <Issue>
+       <Item>Microsoft.Practices.EnterpriseLibrary.Data.DB2</Item>
+      </Issue>
+      <Notes>
+       <User Name="v-bribut">
+        <Note Id="6" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Data.Oracle">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2004-12-29 18:56:41Z">
+      <Issue>
+       <Item>Microsoft.Practices.EnterpriseLibrary.Data.Oracle</Item>
+      </Issue>
+      <Notes>
+       <User Name="v-bribut">
+        <Note Id="6" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Data.Sql">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2004-12-29 18:56:41Z">
+      <Issue>
+       <Item>Microsoft.Practices.EnterpriseLibrary.Data.Sql</Item>
+      </Issue>
+      <Notes>
+       <User Name="v-bribut">
+        <Note Id="6" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/bin/Debug/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+    <Modules>
+     <Module Name="microsoft.practices.enterpriselibrary.data.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2004-12-29 18:56:41Z">
+        <Issue Name="NoStrongName">
+         <Item>Microsoft.Practices.EnterpriseLibrary.Data</Item>
+        </Issue>
+        <Notes>
+         <User Name="v-bribut">
+          <Note Id="1" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Data">
+        <Types>
+         <Type Name="ConnectionString">
+          <Members>
+           <Member Name="CreateNewConnectionString(System.String):Microsoft.Practices.EnterpriseLibrary.Data.ConnectionString">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>ConnectionString.CreateNewConnectionString(String):ConnectionString</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="7" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetTokenPositions(System.String,System.Int32&amp;,System.Int32&amp;):System.Void">
+            <Messages>
+             <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>ConnectionString.GetTokenPositions(String, Int32&amp;, Int32&amp;):Void</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="7" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Password">
+            <Accessors>
+             <Accessor Name="get_Password():System.String">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Excluded" Created="2004-12-29 18:56:41Z">
+                <Issue>
+                 <Item>ConnectionString.get_Password():String</Item>
+                </Issue>
+                <Notes>
+                 <User Name="v-bribut">
+                  <Note Id="7" />
+                 </User>
+                </Notes>
+               </Message>
+              </Messages>
+             </Accessor>
+             <Accessor Name="set_Password(System.String):System.Void">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Excluded" Created="2004-12-29 18:56:41Z">
+                <Issue>
+                 <Item>ConnectionString.set_Password(String):Void</Item>
+                </Issue>
+                <Notes>
+                 <User Name="v-bribut">
+                  <Note Id="7" />
+                 </User>
+                </Notes>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+           <Member Name="UserName">
+            <Accessors>
+             <Accessor Name="get_UserName():System.String">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Excluded" Created="2004-12-29 18:56:41Z">
+                <Issue>
+                 <Item>ConnectionString.get_UserName():String</Item>
+                </Issue>
+                <Notes>
+                 <User Name="v-bribut">
+                  <Note Id="7" />
+                 </User>
+                </Notes>
+               </Message>
+              </Messages>
+             </Accessor>
+             <Accessor Name="set_UserName(System.String):System.Void">
+              <Messages>
+               <Message TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811" Status="Excluded" Created="2004-12-29 18:56:41Z">
+                <Issue>
+                 <Item>ConnectionString.set_UserName(String):Void</Item>
+                </Issue>
+                <Notes>
+                 <User Name="v-bribut">
+                  <Note Id="7" />
+                 </User>
+                </Notes>
+               </Message>
+              </Messages>
+             </Accessor>
+            </Accessors>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="Database">
+          <Members>
+           <Member Name="GetConnection():System.Data.IDbConnection">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue Certainty="50">
+               <Item>GetConnection</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="16" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DatabaseConfigurationView">
+          <Members>
+           <Member Name="GetDatabaseSettings():Microsoft.Practices.EnterpriseLibrary.Data.Configuration.DatabaseSettings">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue Certainty="50">
+               <Item>GetDatabaseSettings</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="16" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetDefaultInstanceName():System.String">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue Certainty="50">
+               <Item>GetDefaultInstanceName</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="16" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SR+Keys">
+          <Messages>
+           <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Excluded" Created="2004-12-29 18:56:41Z">
+            <Issue>
+             <Item>Microsoft.Practices.EnterpriseLibrary.Data.SR+Keys</Item>
+            </Issue>
+            <Notes>
+             <User Name="v-bribut">
+              <Note Id="8" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="GetString(System.String,System.Object[]):System.String">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Keys.GetString(String, Object[]):String</Item>
+               <Item>System.String.Format(System.String,System.Object[])</Item>
+               <Item>System.String.Format(System.IFormatProvider,System.String,System.Object[])</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="10" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Data.Instrumentation">
+        <Types>
+         <Type Name="DataCommandExecutedEvent">
+          <Members>
+           <Member Name="Fire(System.DateTime):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Fire</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataCommandFailedEvent">
+          <Members>
+           <Member Name="Fire(System.String,System.String):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Fire</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataConnectionFailedEvent">
+          <Members>
+           <Member Name="Fire(System.String):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Fire</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FireEvent(System.String):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>FireEvent</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataConnectionOpenedEvent">
+          <Members>
+           <Member Name="Fire(System.String):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Fire</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FireEvent(System.String):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>FireEvent</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataInstrumentationFacade">
+          <Members>
+           <Member Name="ConnectionFailed(System.String):System.Void">
+            <Messages>
+             <Message Id="this" TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801" Status="Excluded" Created="2004-12-29 18:56:41Z" FixCategory="Breaking">
+              <Issue Name="MarkAsStatic">
+               <Item>DataInstrumentationFacade.ConnectionFailed(String):Void</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="1" />
+               </User>
+               <User Name="v-bribut">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ConnectionOpened(System.String):System.Void">
+            <Messages>
+             <Message Id="this" TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801" Status="Excluded" Created="2004-12-29 18:56:41Z" FixCategory="Breaking">
+              <Issue Name="MarkAsStatic">
+               <Item>DataInstrumentationFacade.ConnectionOpened(String):Void</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="1" />
+               </User>
+               <User Name="v-bribut">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="TransactionFailed(System.String):System.Void">
+            <Messages>
+             <Message Id="this" TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801" Status="Excluded" Created="2004-12-29 18:56:41Z" FixCategory="Breaking">
+              <Issue Name="MarkAsStatic">
+               <Item>DataInstrumentationFacade.TransactionFailed(String):Void</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="1" />
+               </User>
+               <User Name="v-bribut">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="TransactionRolledBack(System.String):System.Void">
+            <Messages>
+             <Message Id="this" TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801" Status="Excluded" Created="2004-12-29 18:56:41Z" FixCategory="Breaking">
+              <Issue Name="MarkAsStatic">
+               <Item>DataInstrumentationFacade.TransactionRolledBack(String):Void</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="1" />
+               </User>
+               <User Name="v-bribut">
+                <Note Id="2" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataServiceConfigFailureEvent">
+          <Members>
+           <Member Name="Fire(System.String,System.Exception):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Fire</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="Fire(System.String,System.Exception,System.String):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Fire</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataServiceEvent">
+          <Members>
+           <Member Name="FireAuxEvent(System.String):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>FireAuxEvent</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataServiceFailureEvent">
+          <Members>
+           <Member Name="Fire(System.String,System.Exception):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Fire</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataTransactionCommittedEvent">
+          <Members>
+           <Member Name="Fire():System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Fire</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataTransactionFailedEvent">
+          <Members>
+           <Member Name="Fire(System.String):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Fire</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="3" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataTransactionOpenedEvent">
+          <Members>
+           <Member Name="Fire():System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Fire</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataTransactionRolledBackEvent">
+          <Members>
+           <Member Name="Fire(System.String):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Fire</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Data.Sql">
+        <Types>
+         <Type Name="SqlCommandWrapper">
+          <Members>
+           <Member Name=".ctor(System.String,System.Data.CommandType,System.Char)">
+            <Messages>
+             <Message TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>SqlCommandWrapper..ctor(String, CommandType, Char)</Item>
+               <Item>needsParameters</Item>
+               <Item>boolean</Item>
+               <Item>false</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="15" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SqlDatabase">
+          <Members>
+           <Member Name="ExecuteXmlReader(Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlCommandWrapper):System.Xml.XmlReader">
+            <Messages>
+             <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>command</Item>
+               <Item>Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlCommandWrapper</Item>
+               <Item>Microsoft.Practices.EnterpriseLibrary.Data.DBCommandWrapper</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="ExecuteXmlReader(Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlCommandWrapper,System.Data.IDbTransaction):System.Xml.XmlReader">
+            <Messages>
+             <Message TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>command</Item>
+               <Item>Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlCommandWrapper</Item>
+               <Item>Microsoft.Practices.EnterpriseLibrary.Data.DBCommandWrapper</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+   <Target Name="$(ProjectDir)/DB2/bin/Debug/Microsoft.Practices.EnterpriseLibrary.Data.DB2.dll">
+    <Modules>
+     <Module Name="microsoft.practices.enterpriselibrary.data.db2.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2004-12-29 18:56:41Z">
+        <Issue Name="NoStrongName">
+         <Item>Microsoft.Practices.EnterpriseLibrary.Data.DB2</Item>
+        </Issue>
+        <Notes>
+         <User Name="v-bribut">
+          <Note Id="4" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Data.DB2">
+        <Types>
+         <Type Name="DB2CommandWrapper">
+          <Members>
+           <Member Name="BuildParameterName(System.String):System.String">
+            <Messages>
+             <Message Id="this" TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801" Status="Excluded" Created="2004-12-29 18:56:41Z" FixCategory="NonBreaking">
+              <Issue Name="MarkAsStatic">
+               <Item>DB2CommandWrapper.BuildParameterName(String):String</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="CreateParameter(System.String,System.Data.DbType,System.Int32,System.Data.ParameterDirection,System.Boolean,System.Byte,System.Byte,System.String,System.Data.DataRowVersion,System.Object):IBM.Data.DB2.DB2Parameter">
+            <Messages>
+             <Message Id="IBM.Data.DB2.DB2Parameter.get_Value" TypeName="AvoidCallsThatBoxValueTypes" Category="Microsoft.Performance" CheckId="CA1808" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>DB2CommandWrapper.CreateParameter(String, DbType, Int32, ParameterDirection, Boolean, Byte, Byte, String, DataRowVersion, Object):DB2Parameter</Item>
+               <Item>DB2Parameter.get_Value():Object</Item>
+               <Item>Boolean</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue Name="Parameter">
+               <Item>value</Item>
+               <Item>System.DBNull</Item>
+               <Item>DB2CommandWrapper.CreateParameter(String, DbType, Int32, ParameterDirection, Boolean, Byte, Byte, String, DataRowVersion, Object):DB2Parameter</Item>
+               <Item>isint</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="0" />
+               </User>
+               <User Name="v-bribut">
+                <Note Id="13" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetParameterValue(System.String):System.Object">
+            <Messages>
+             <Message Id="System.Array.GetValue(System.Int32)" TypeName="AvoidCallsThatBoxValueTypes" Category="Microsoft.Performance" CheckId="CA1808" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>DB2CommandWrapper.GetParameterValue(String):Object</Item>
+               <Item>Array.GetValue(Int32):Object</Item>
+               <Item>Byte</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SR+Keys">
+          <Messages>
+           <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Excluded" Created="2004-12-29 18:56:41Z">
+            <Issue>
+             <Item>Microsoft.Practices.EnterpriseLibrary.Data.DB2.SR+Keys</Item>
+            </Issue>
+            <Notes>
+             <User Name="v-bribut">
+              <Note Id="8" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="GetString(System.String,System.Object[]):System.String">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2004-12-29 18:56:41Z">
+              <Issue>
+               <Item>Keys.GetString(String, Object[]):String</Item>
+               <Item>System.String.Format(System.String,System.Object[])</Item>
+               <Item>System.String.Format(System.IFormatProvider,System.String,System.Object[])</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="10" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Notes>
+   <User Name="scottden">
+    <Note Id="0" Modified="2005-01-12 23:36:29Z">There is only one cast.</Note>
+    <Note Id="1" Modified="2005-01-12 23:51:18Z">Since this is just an internal facade we use to test instrumentation they can not be static methods.</Note>
+   </User>
+   <User Name="v-bribut">
+    <Note Id="0" Modified="2004-12-29 18:57:20Z">Instrumentation is broken and we know it. It needs to be redesigned</Note>
+    <Note Id="1" Modified="2004-12-29 18:57:27Z">shipping source, so we don't care</Note>
+    <Note Id="2" Modified="2004-12-29 18:57:50Z">prefer instance methods to static methods</Note>
+    <Note Id="3" Modified="2004-12-29 18:58:09Z">Instrumentation is broken and we know it. We need to redesign it</Note>
+    <Note Id="4" Modified="2004-12-29 18:58:22Z">Shipping source so we don't care</Note>
+    <Note Id="5" Modified="2004-12-29 19:00:21Z">design choice</Note>
+    <Note Id="6" Modified="2004-12-29 19:00:28Z">design choice</Note>
+    <Note Id="7" Modified="2004-12-29 19:00:56Z">called from other assemblies not present here</Note>
+    <Note Id="8" Modified="2004-12-29 19:01:05Z">generated code</Note>
+    <Note Id="9" Modified="2004-12-29 19:01:15Z">prefer instance methods to static methods</Note>
+    <Note Id="10" Modified="2004-12-29 19:01:45Z">generated code</Note>
+    <Note Id="11" Modified="2004-12-29 19:06:57Z">typesafety dictates that we pass the derived type here</Note>
+    <Note Id="13" Modified="2004-12-29 19:24:07Z">clarity over brevity</Note>
+    <Note Id="15" Modified="2004-12-29 19:24:40Z">clarity over brevity</Note>
+    <Note Id="16" Modified="2004-12-29 19:28:39Z">by design</Note>
+   </User>
+  </Notes>
+  <Rules>
+   <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+    <Name>Assemblies should have valid strong names</Name>
+    <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+    <Resolution Name="NoStrongName">Sign '{0}' with a strong name key.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/AssembliesShouldHaveValidStrongNames.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AvoidCallsThatBoxValueTypes" Category="Microsoft.Performance" CheckId="CA1808">
+    <Name>Avoid calls that box value types</Name>
+    <Description>Weakly typed methods that return value types results in boxing. Prefer calling a strongly-typed version of the method, if it is available.</Description>
+    <Resolution Name="Default">{0} calls {1}, a weakly-typed method, and unboxes the result as {2}, a value type.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/AvoidCallsThatBoxValueTypes.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="90">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+    <Name>Avoid namespaces with few types</Name>
+    <Description>A namespace should generally have more than five types.</Description>
+    <Resolution Name="Default">Consider merging the types defined in  '{0}' with another namespace.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/AvoidNamespacesWithFewTypes.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="50">Warning</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AvoidUncalledPrivateCode" Category="Microsoft.Performance" CheckId="CA1811">
+    <Name>Avoid uncalled private code</Name>
+    <Description>There is uncalled code that is not externally visible and is not a known runtime entry point. If this violation fires in error, please send a problem report to the FxCop team.</Description>
+    <Resolution Name="Default">'{0}' appears to have no upstream public or protected callers.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/AvoidUncalledPrivateCode.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812">
+    <Name>Avoid uninstantiated internal classes</Name>
+    <Description>An internal class was detected that is apparently never instantiated. This rule does not attempt to detect late-bound creation and will generate false positives if instances of a type are only created in this way (for example, by means of Activator.CreateInstance or by passing the type as an argument to a TypeConverter constructor).</Description>
+    <Resolution Name="Default">'{0}' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/AvoidUninstantiatedInternalClasses.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801">
+    <Name>Avoid unused parameters</Name>
+    <Description>Avoid declaring parameters that are not used in the method body. Unused parameters incur maintenance and performance costs. Sometimes a violation of this rule can point to an implementation bug in the method (i.e. the parameter should actually have been used in the method body). Exclude warnings of this rule if the parameter has to exist because of backward compatibility.</Description>
+    <Resolution Name="MarkAsStatic">The 'this' parameter (or 'Me' in VB) of {0} is never used. Mark the method as static (or Shared in VB) or use 'this'/Me in the method body.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/AvoidUnusedParameters.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="ConsiderPassingBaseTypesAsParameters" Category="Microsoft.Design" CheckId="CA1011">
+    <Name>Consider passing base types as parameters</Name>
+    <Description>Using base types as parameters to methods improves re-use of these methods if you only use methods &amp; properties from the parameter's base class. E.g. use Stream instead of FileStream as a parameter when only calling Stream.Read(), this makes the method work on all kind of streams instead of just File streams.</Description>
+    <Resolution Name="Default">Consider changing the type of parameter '{0}' from '{1}' to '{2}' since '{1}' derives from '{2}' and this method only calls methods that are defined in '{2}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/ConsiderPassingBaseTypesAsParameters.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Error</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="DoNotCastUnnecessarily" Category="Microsoft.Performance" CheckId="CA1800">
+    <Name>Do not cast unnecessarily</Name>
+    <Description>Avoid duplicate casts where possible, since there is a cost associated with them.</Description>
+    <Resolution Name="Parameter">'{0}', a parameter, is cast to type '{1}' multiple times in method {2}. Cache the result of the 'as' operator or direct cast in order to eliminate the redundant {3} instruction.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/DoNotCastUnnecessarily.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="DoNotInitializeUnnecessarily" Category="Microsoft.Performance" CheckId="CA1805">
+    <Name>Do not initialize unnecessarily</Name>
+    <Description>Do not make initializations that have already been done by the runtime.</Description>
+    <Resolution Name="Default">{0} initializes field '{1}', a {2}, to {3}. Remove this initialization, as it will be done automatically by the runtime.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/DoNotInitializeUnnecessarily.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="90">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+    <Name>Specify IFormatProvider</Name>
+    <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the common language runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture.</Description>
+    <Resolution Name="Default">{0} makes a call to {1} that does not explicitly provide an IFormatProvider. This should be replaced with a call to {2}.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Globalization/SpecifyIFormatProvider.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Error</MessageLevel>
+    <File Name="GlobalizationRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030">
+    <Name>Use events where appropriate</Name>
+    <Description>A method name suggestive of event functionality was encountered.</Description>
+    <Resolution Name="Default">Consider making '{0}' an event.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/UseEventsWhereAppropriate.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Warning</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+    <Name>Use properties where appropriate</Name>
+    <Description>Properties should be used instead of Get/Set methods in most situations. Methods are preferable to properties in the following situations: the operation is a conversion, is expensive or has an observable side-effect; the order of execution is important; calling the member twice in succession creates different results; a member is static but returns a mutable value; or the member returns an array.</Description>
+    <Resolution Name="Default">Change '{0}' to a property if appropriate.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/UsePropertiesWhereAppropriate.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Warning</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

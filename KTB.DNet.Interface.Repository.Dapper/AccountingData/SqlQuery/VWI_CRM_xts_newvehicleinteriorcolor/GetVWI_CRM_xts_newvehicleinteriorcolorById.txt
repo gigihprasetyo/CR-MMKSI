@@ -1,0 +1,34 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, statecode
+	, statuscode
+	, createdonbehalfby
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, createdby
+	, timezoneruleversionnumber
+	, statuscodename
+	, xts_newvehicleinteriorcolor
+	, xts_newvehicleinteriorcolorid
+	, modifiedon
+	, xts_eventdata
+	, xts_entitytag
+	, modifiedonbehalfbyyominame
+	, statecodename
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, modifiedonbehalfbyname
+	, overriddencreatedon
+	, xts_description
+FROM [dbo].[CRM_xts_newvehicleinteriorcolor] as VWI_CRM_xts_newvehicleinteriorcolor with(nolock)
+WHERE xts_newvehicleinteriorcolorid = @Id

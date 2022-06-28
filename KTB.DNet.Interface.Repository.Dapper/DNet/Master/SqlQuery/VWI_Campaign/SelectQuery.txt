@@ -1,0 +1,460 @@
+﻿	/* Check is exists temp table */
+	IF OBJECT_ID('tempdb..#tempBabitHeader') IS NOT NULL DROP TABLE #tempBabitHeader
+	IF OBJECT_ID('tempdb..#tempBabitEventProposalHeader') IS NOT NULL DROP TABLE #tempBabitEventProposalHeader
+	IF OBJECT_ID('tempdb..#tempNationalEvent') IS NOT NULL DROP TABLE #tempNationalEvent
+	
+	/* Create temp table */
+	create table #tempBabitHeader (
+		  DealerID				int
+		, DealerBranchID		int
+		, CampaignCode			varchar(max)
+		, CampaignType			int
+		, CampaignTypeCode		varchar(max)
+		, CampaignTypeDesc		varchar(max)
+		, CampaignName			varchar(max)
+		, DealerCampaignName	varchar(max)
+		, BabitDealerNumber		varchar(max)
+		, PeriodStart			datetime
+		, PeriodEnd				datetime
+		, [Location]			varchar(max)
+		, CampaignDate			datetime
+		, LocationName			varchar(max)
+		, LuasArea				int
+		, ProspectTarget		int
+		, SPKTarget				int
+		, InvitationQty			int
+		, BabitCategory			varchar(max)
+		, CityID				int
+		, CityCode				varchar(max)
+		, CityName				varchar(max)
+		, ProvinceCode			varchar(max)
+		, ProvinceName			varchar(max)
+		, [Status]				int
+		, DealerCode			varchar(max)
+		, DealerBranchCode		varchar(max)
+		, LastUpdateTime		datetime
+	)
+	create table #tempBabitEventProposalHeader (
+		  DealerID				int
+		, DealerBranchID		int
+		, CampaignCode			varchar(max)
+		, CampaignType			int
+		, CampaignTypeCode		varchar(max)
+		, CampaignTypeDesc		varchar(max)
+		, CampaignName			varchar(max)
+		, DealerCampaignName	varchar(max)
+		, BabitDealerNumber		varchar(max)
+		, PeriodStart			datetime
+		, PeriodEnd				datetime
+		, [Location]			varchar(max)
+		, CampaignDate			datetime
+		, LocationName			varchar(max)
+		, LuasArea				int
+		, ProspectTarget		int
+		, SPKTarget				int
+		, InvitationQty			int
+		, BabitCategory			varchar(max)
+		, CityID				int
+		, CityCode				varchar(max)
+		, CityName				varchar(max)
+		, ProvinceCode			varchar(max)
+		, ProvinceName			varchar(max)
+		, [Status]				int
+		, DealerCode			varchar(max)
+		, DealerBranchCode		varchar(max)
+		, LastUpdateTime		datetime
+	)
+	create table #tempNationalEvent (
+		  DealerID				int
+		, DealerBranchID		int
+		, CampaignCode			varchar(max)
+		, CampaignType			int
+		, CampaignTypeCode		varchar(max)
+		, CampaignTypeDesc		varchar(max)
+		, CampaignName			varchar(max)
+		, DealerCampaignName	varchar(max)
+		, BabitDealerNumber		varchar(max)
+		, PeriodStart			datetime
+		, PeriodEnd				datetime
+		, [Location]			varchar(max)
+		, CampaignDate			datetime
+		, LocationName			varchar(max)
+		, LuasArea				int
+		, ProspectTarget		int
+		, SPKTarget				int
+		, InvitationQty			int
+		, BabitCategory			varchar(max)
+		, CityID				int
+		, CityCode				varchar(max)
+		, CityName				varchar(max)
+		, ProvinceCode			varchar(max)
+		, ProvinceName			varchar(max)
+		, [Status]				int
+		, DealerCode			varchar(max)
+		, DealerBranchCode		varchar(max)
+		, LastUpdateTime		datetime
+	)
+	
+	/* insert into #tempBabitHeader */
+	insert into #tempBabitHeader
+	SELECT distinct
+		a.DealerID
+		, a.DealerBranchID   
+        , a.BabitRegNumber as CampaignCode
+		, a.BabitMasterEventTypeID as CampaignType
+		, b.TypeCode as CampaignTypeCode
+		, b.TypeName as CampaignTypeDesc
+		, CampaignName = case
+							when a.BabitMasterEventTypeID = 3 
+							THEN 'IKLAN' + ' (' + Convert(varchar,a.PeriodStart, 106) + ' - ' + Convert(varchar,a.PeriodEnd, 106) + ')' 
+							ELSE
+								case 
+									when c.LocationName != '' AND c.LocationName is not null 
+									THEN 
+										CASE WHEN LEN(c.LocationName) > 70
+											THEN LEFT(LTRIM(RTRIM(c.LocationName)),70) + '...(' + Convert(varchar,a.PeriodStart, 106) + ' - ' + Convert(varchar,a.PeriodEnd, 106) + ')'  
+										ELSE LTRIM(RTRIM(c.LocationName)) + ' (' + Convert(varchar,a.PeriodStart, 106) + ' - ' + Convert(varchar,a.PeriodEnd, 106) + ')' 
+										END     
+									ELSE 
+										case when LTRIM(RTRIM(a.Location)) != '' AND a.Location is not null 
+											THEN 
+												CASE WHEN LEN(a.Location) > 70
+													THEN LEFT(LTRIM(RTRIM(a.Location)),70) + '...(' + Convert(varchar,a.PeriodStart, 106) + ' - ' + Convert(varchar,a.PeriodEnd, 106) + ')' 
+												ELSE LTRIM(RTRIM(a.Location)) + ' (' + Convert(varchar,a.PeriodStart, 106) + ' - ' + Convert(varchar,a.PeriodEnd, 106) + ')' 
+												END 												 
+											ELSE '' 
+										END 
+								END 
+						END
+		, DealerCampaignName = case
+							when a.BabitMasterEventTypeID = 3 
+							THEN 'IKLAN' + ' ( ' + Convert(varchar,a.PeriodStart, 106) + ' - ' + Convert(varchar,a.PeriodEnd, 106) + ' ) ' 
+							ELSE
+								case 
+									when c.LocationName != '' AND c.LocationName is not null 
+									THEN LTRIM(RTRIM(c.LocationName)) + ' ( ' + Convert(varchar,a.PeriodStart, 106) + ' - ' + Convert(varchar,a.PeriodEnd, 106) + ' ) '    
+									ELSE 
+										case when LTRIM(RTRIM(a.Location)) != '' AND a.Location is not null 
+											THEN LTRIM(RTRIM(a.Location)) + ' ( ' + Convert(varchar,a.PeriodStart, 106) + ' - ' + Convert(varchar,a.PeriodEnd, 106) + ' ) ' 
+											ELSE '' 
+										END 
+								END 
+						END 
+		, a.BabitDealerNumber
+		, a.PeriodStart
+		, a.PeriodEnd
+		, a.Location
+		, CampaignDate = a.CreatedTime
+		, c.LocationName
+		, a.LuasArea
+		, a.ProspectTarget
+		, SPKTarget = 0
+		, a.InvitationQty
+		, d.BabitCategory
+		, a.CityID
+		, e.CityCode
+		, e.CityName
+		, f.ProvinceCode
+		, f.ProvinceName
+		, Status = CASE 
+					WHEN a.RowStatus = -1 THEN a.RowStatus 
+					ELSE 
+						CASE 
+						WHEN g.BabitReportStatus is not null AND g.BabitReportStatus in (1,2) THEN -1 
+						ELSE 
+							CASE 
+							WHEN a.BabitStatus = 5 THEN 0 
+							ELSE -1 
+							END 
+						END 
+					END
+		, h.DealerCode
+		, i.DealerBranchCode
+		, a.LastUpdateTime  
+	FROM (
+		select distinct value as DealerID, * from (
+			select distinct
+				case when isnull(BabitDealerGroup, '') = '' then Convert(nvarchar, DealerID)
+					 when isnull(BabitDealerGroup, '') <> '' then Convert(nvarchar, DealerID) + ';' + BabitDealerGroup
+				end as BabitDealerGroup
+				, ID
+				, DealerBranchID   
+				, BabitRegNumber 
+				, BabitMasterEventTypeID 
+				, PeriodStart
+				, PeriodEnd
+				, [Location]
+				, BabitMasterLocationID
+				, [BabitDealerNumber]
+				, [CreatedTime]
+				, LuasArea
+				, ProspectTarget
+				, InvitationQty
+				, CityID
+				, RowStatus
+				, BabitStatus
+				, LastUpdateTime
+			from BabitHeader with(nolock)
+		) x 
+		CROSS APPLY STRING_SPLIT(x.BabitDealerGroup, ';')
+	)a    
+	JOIN BabitMasterEventType b WITH (NOLOCK) 
+		on a.BabitMasterEventTypeID = b.ID 
+	LEFT JOIN BabitMasterLocation c WITH (NOLOCK) 
+		on a.BabitMasterLocationID = c.ID 
+	LEFT JOIN BabitDealerAllocation d WITH (NOLOCK) 
+		on a.ID = d.BabitHeaderID 
+	LEFT JOIN City e WITH (NOLOCK) 
+		on a.CityID = e.ID 
+	LEFT JOIN Province f WITH (NOLOCK) 
+		on e.ProvinceID = f.ID 
+	LEFT JOIN BabitReportHeader g WITH (NOLOCK) 
+		on a.ID = g.BabitHeaderID 
+	JOIN Dealer h WITH (NOLOCK) 
+		on a.DealerID = h.ID 
+	LEFT JOIN DealerBranch i WITH (NOLOCK) 
+		on a.DealerBranchID = i.ID
+	where 1=1
+		and Isnull(b.RowStatus,0) = 0  
+		and Isnull(c.RowStatus,0) = 0  
+		and Isnull(d.RowStatus,0) = 0  
+		and Isnull(e.RowStatus,0) = 0  
+		and Isnull(f.RowStatus,0) = 0  
+		--and Isnull(g.RowStatus,0) = 0  
+		and Isnull(h.RowStatus,0) = 0  
+		
+	/* insert into #tempBabitEventProposalHeader */
+	insert into #tempBabitEventProposalHeader
+SELECT   
+		a.DealerID
+		, a.DealerBranchID
+		, a.CampaignCode
+		, a.CampaignType
+		, a.CampaignTypeCode
+		, a.CampaignTypeDesc
+		, a.CampaignName
+		, DealerCampaignName=a.CampaignName
+		, a.BabitDealerNumber
+		, a.PeriodStart
+		, a.PeriodEnd     
+		, a.Location
+		, a.CampaignDate
+		, a.LocationName
+		, a.LuasArea
+		, a.ProspectTarget
+		, a.SPKTarget
+		, a.InvitationQty
+		, a.BabitCategory
+		, a.CityID
+		, a.CityCode
+		, a.CityName
+		, a.ProvinceCode
+		, a.ProvinceName
+		, a.Status
+		, h.DealerCode
+		, i.DealerBranchCode
+		, a.LastUpdateTime   
+  FROM  
+  (  
+			SELECT 
+				a.Dealer as DealerID
+				, CASE 
+					WHEN a.Dealer = a.DealerID 
+					THEN b.DealerBranchID 
+					ELSE null 
+				  END as DealerBranchID   
+				, a.EventRegNumber as CampaignCode
+				, 0 as CampaignType
+				, 'EVENT' as CampaignTypeCode
+				, 'MMKSI Event' as CampaignTypeDesc
+				, CampaignName = CASE WHEN LEN(c.EventName) > 70
+									THEN CONCAT(LEFT(c.EventName,70), '...(', Convert(varchar,c.PeriodStart, 106) , ' - ' , Convert(varchar,c.PeriodEnd, 106) , ')')  
+								ELSE CONCAT(c.EventName, ' (', Convert(varchar,c.PeriodStart, 106) , ' - ' , Convert(varchar,c.PeriodEnd, 106) , ')') 
+								END
+				, DealerCampaignName = CONCAT(b.EventProposalName, ' ( ', Convert(varchar,b.PeriodStart, 106) , ' - ' , Convert(varchar,b.PeriodEnd, 106) , ' ) ')
+				, BabitDealerNumber = '', b.PeriodStart
+				, b.PeriodEnd
+				, b.LocationName
+				, CampaignDate = b.CreatedTime
+				, Location = b.LocationName
+				, LuasArea = 0
+				, ProspectTarget = 0
+				, SPKTarget = 0
+				, InvitationQty = 0
+				, BabitCategory = d.CategoryCode
+				, b.CityID
+				, e.CityCode
+				, e.CityName
+				, f.ProvinceCode
+				, f.ProvinceName
+				, Status = CASE WHEN b.RowStatus = -1 
+								THEN b.RowStatus 
+				                ELSE 
+									CASE 
+										WHEN g.RowStatus is null 
+										THEN 0 
+										ELSE 
+											CASE 
+												WHEN g.Status in (0,1,3) 
+												THEN 0 
+												ELSE -1 
+											END 
+					 END 
+							    END 
+				, b.LastUpdateTime
+           FROM    
+           (    
+				SELECT
+					DealerID
+					, EventRegNumber
+					, cs.value as Dealer     
+     FROM    
+     (    
+					SELECT 
+						DealerID
+						, EventRegNumber
+						, CASE WHEN LTRIM(RTRIM(coalesce(CollaborateDealer,''))) = '' THEN cast (DealerID as varchar) ELSE CONCAT(DealerID,';',CollaborateDealer) END as UnionDealer     
+      FROM BabitEventProposalHeader WITH (NOLOCK)    
+      WHERE RowStatus = 0    
+				) x    
+     CROSS APPLY string_split (UnionDealer,';') cs    
+            ) a    
+			LEFT JOIN BabitEventProposalHeader b WITH (NOLOCK) 
+				on a.EventRegNumber = b.EventRegNumber 
+				AND a.DealerID = b.DealerID     
+			LEFT JOIN EventDealerHeader c WITH (NOLOCK) 
+				on b.EventDealerHeaderID = c.ID  
+			LEFT JOIN Category d WITH (NOLOCK) 
+				on c.CategoryID = d.ID 
+			LEFT JOIN City e WITH (NOLOCK) 
+				on b.CityID = e.ID 
+			LEFT JOIN Province f WITH (NOLOCK) 
+				on e.ProvinceID = f.ID 
+			LEFT JOIN BabitEventReportHeader g WITH (NOLOCK) 
+				on b.ID = g.BabitEventProposalHeaderID 
+			WHERE 1=1
+				and Isnull(b.RowStatus,0) = 0
+				and Isnull(c.RowStatus,0) = 0   
+				and Isnull(d.RowStatus,0) = 0    
+				and Isnull(e.RowStatus,0) = 0    
+				and Isnull(f.RowStatus,0) = 0    
+				--and Isnull(g.RowStatus,0) = 0   
+		) a  
+		LEFT JOIN Dealer h WITH (NOLOCK) 
+			on a.DealerID = h.ID 
+		LEFT JOIN DealerBranch i WITH (NOLOCK) 
+			on a.DealerBranchID = i.ID 
+		where 1=1
+			and Isnull(h.RowStatus,0) = 0    
+			and Isnull(i.RowStatus,0) = 0 
+			
+	/* insert into #tempNationalEvent */
+	insert into #tempNationalEvent
+	select
+		h.ID as DealerID
+		, i.ID as BranchID
+		, a.RegNumber as CampaignCode
+		, a.NationalEventTypeID as CampaignType
+		, b.[Name] as CampaignTypeCode
+		, b.[Description] as CampaignTypeDesc
+		,  CASE WHEN LEN(b.[Description]) > 70
+				THEN CONCAT(LEFT(b.[Description],70), '...(', Convert(varchar,a.PeriodStart, 106) , ' - ' , Convert(varchar,a.PeriodEnd, 106) , ')') 
+			ELSE CONCAT(b.[Description], ' (', Convert(varchar,a.PeriodStart, 106) , ' - ' , Convert(varchar,a.PeriodEnd, 106) , ')') 
+			END
+		 as CampaignName
+		,  CONCAT(b.[Description], ' ( ', Convert(varchar,a.PeriodStart, 106) , ' - ' , Convert(varchar,a.PeriodEnd, 106) , ' ) ') as DealerCampaignName
+		, BabitDealerNumber = ''
+		, a.PeriodStart
+		, a.PeriodEnd
+		, e.VenueName as [Location]
+		, a.CreatedTime as CampaignDate
+		, e.VenueName as [LocationName]
+		, 0 as LuasArea
+		, 0 as ProspectTarget
+		, 0 as SPKTarget
+		, 0 as InvitationQty 
+		, 'All' as BabitCategory
+		, c.CityID
+		, d.CityCode
+		, d.CityName
+		, j.ProvinceCode
+		, j.ProvinceName
+		, [Status] = case 
+						when convert(date, getdate()) > convert(date, a.PeriodEnd) and Isnull(a.RowStatus,0) = 0 then -1
+						when g.ID is not null and Isnull(g.RowStatus,0) = 0 then 0
+						end
+		, h.DealerCode
+		, i.DealerBranchCode
+		, g.LastUpdateTime
+	From NationalEvent a with(nolock)
+	left join NationalEventType b with(nolock)
+		on a.NationalEventTypeID = b.ID
+	left join NationalEventCity c with(nolock)
+		on a.NationalEventCityID = c.ID
+	left join City d with(nolock)
+		on c.CityID = d.ID
+	left join NationalEventVenue e with(nolock)
+		on a.NationalEventVenueID = e.ID
+	left join City f with(nolock)
+		on e.CityID = f.ID
+	left join NationalEventDetail g with(nolock)
+		on a.ID = g.NationalEventID
+	left join Dealer h with(nolock)
+		on g.DealerID = h.ID
+	left join DealerBranch i with(nolock)
+		on g.DealerID = i.DealerID
+	LEFT JOIN Province j WITH (NOLOCK) 
+		on d.ProvinceID = j.ID 
+	where 1=1
+		and Isnull(a.RowStatus,0) = 0
+		and Isnull(g.RowStatus,0) = 0
+
+	/* Select final data Campaign */
+	select 
+		/**PagingIndexQuery**/
+		VWI_Campaign.DealerCode  
+		, VWI_Campaign.DealerBranchCode  
+		, VWI_Campaign.CampaignCode  
+		, VWI_Campaign.CampaignType  
+		, VWI_Campaign.CampaignTypeCode  
+		, VWI_Campaign.CampaignTypeDesc  
+		, VWI_Campaign.CampaignName  
+		, VWI_Campaign.DealerCampaignName  
+		, VWI_Campaign.BabitDealerNumber  
+		, VWI_Campaign.PeriodStart  
+		, VWI_Campaign.PeriodEnd  
+		, VWI_Campaign.Location  
+		, VWI_Campaign.CampaignDate  
+		, VWI_Campaign.LocationName  
+		, VWI_Campaign.LuasArea  
+		, VWI_Campaign.ProspectTarget  
+		, VWI_Campaign.SPKTarget  
+		, VWI_Campaign.InvitationQty  
+		, VWI_Campaign.BabitCategory  
+		, VWI_Campaign.CityCode  
+		, VWI_Campaign.CityName  
+		, VWI_Campaign.ProvinceCode  
+		, VWI_Campaign.ProvinceName
+		, VWI_Campaign.LastUpdateTime
+		, VWI_Campaign.[Status]
+		, VWI_Campaign.EventType
+		/**EndPagingIndexQuery**/
+	from 
+	(
+		select 
+			*, 
+			(select top 1 ValueId from StandardCode with(nolock) where ValueCode = 'Babit_Transaction' and Category = 'BabitEventCampaign.EventType') as EventType 
+			from #tempBabitHeader {0}
+		union all
+		select 
+			*, 
+			(select top 1 ValueId from StandardCode with(nolock) where ValueCode = 'Event_Transaction' and Category = 'BabitEventCampaign.EventType') as EventType 
+			from #tempBabitEventProposalHeader {0}
+		union all
+		select 
+			*, 
+			(select top 1 ValueId from StandardCode with(nolock) where ValueCode = 'NationalEvent_Transaction' and Category = 'BabitEventCampaign.EventType') as EventType 
+			from #tempNationalEvent {0}
+	) as VWI_Campaign
+	{1}
+	

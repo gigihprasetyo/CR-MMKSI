@@ -1,0 +1,11 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_owner.versionnumber
+	, VWI_CRM_owner.name
+	, VWI_CRM_owner.ownerid
+	, VWI_CRM_owner.owneridtype
+	, VWI_CRM_owner.yominame
+	/**EndPagingIndexQuery**/
+FROM [dbo].[CRM_owner] as VWI_CRM_owner with(nolock) 
+{0}

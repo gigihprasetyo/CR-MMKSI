@@ -1,0 +1,68 @@
+SELECT 
+	/**PagingIndexQuery**/
+	/**RowNumber**/ 
+	  VWI_CRM_xjp_vehiclecostinputdetail.[xjp_parentbusinessunitidname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[modifiedbyyominame]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[createdbyname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_amount_base]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[modifiedon]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[ownerid]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[modifiedbyname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_vehiclecostinputidname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[modifiedonbehalfby]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[owningbusinessunitname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[statuscode]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[createdonbehalfbyyominame]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_landedcostdescription]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[importsequencenumber]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[modifiedby]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[transactioncurrencyid]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[statecodename]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_businessunitid]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[createdby]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[modifiedonbehalfbyname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[statecode]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[versionnumber]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[createdon]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_locking]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[owneridtype]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[modifiedonbehalfbyyominame]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_stockidname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_vehiclecostinputid]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_stockid]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_landedcostid]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[overriddencreatedon]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[createdonbehalfbyname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[owneridname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[exchangerate]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[owninguser]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[statuscodename]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[owningbusinessunit]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[timezoneruleversionnumber]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_vehiclecostinputdetailid]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_parentbusinessunitid]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[owningteam]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[transactioncurrencyidname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_businessunitidname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_amount]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[createdonbehalfby]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_vehiclecostinputdetail]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[xjp_landedcostidname]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[owneridyominame]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[createdbyyominame]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[utcconversiontimezonecode]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[DealerCode]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[SourceType]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[RowStatus]
+		,VWI_CRM_xjp_vehiclecostinputdetail.[LastSyncDate]
+	, VWI_CRM_xjp_vehiclecostinputdetail.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		a.*  
+		, b.msdyn_companycode    
+	FROM CRM_xjp_vehiclecostinputdetail a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.xjp_businessunitid   
+	{0}
+) as VWI_CRM_xjp_vehiclecostinputdetail

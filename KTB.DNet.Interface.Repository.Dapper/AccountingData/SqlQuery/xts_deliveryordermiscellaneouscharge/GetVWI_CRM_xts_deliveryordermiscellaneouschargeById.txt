@@ -1,0 +1,73 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xts_consumptiontax1id
+	,createdonbehalfbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_locking
+	,statecode
+	,xts_businessunitidname
+	,owneridname
+	,xts_amount_base
+	,statecodename
+	,xts_amount
+	,createdonbehalfby
+	,transactioncurrencyid
+	,xts_miscellaneouschargeidname
+	,xts_totalamount_base
+	,xts_parentbusinessunitid
+	,xts_deliveryorderid
+	,xts_deliveryordermiscellaneouscharge
+	,xts_totalamount
+	,importsequencenumber
+	,modifiedbyyominame
+	,xts_consumptiontax2idname
+	,xts_consumptiontax2id
+	,xts_consumptiontax1amount_base
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,xts_miscellaneouschargeid
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,xts_baseamount_base
+	,xts_consumptiontax1idname
+	,xts_consumptiontax2amount
+	,xts_consumptiontax2amount_base
+	,owneridyominame
+	,modifiedon
+	,exchangerate
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,createdonbehalfbyname
+	,xts_consumptiontax1amount
+	,xts_deliveryordermiscellaneouschargeid
+	,xts_deliveryorderidname
+	,modifiedonbehalfbyname
+	,xts_parentbusinessunitidname
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,xts_baseamount
+	,RowStatus
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_deliveryordermiscellaneouscharge a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_deliveryordermiscellaneouschargeid = @Id
+) VWI_CRM_xts_deliveryordermiscellaneouscharge 

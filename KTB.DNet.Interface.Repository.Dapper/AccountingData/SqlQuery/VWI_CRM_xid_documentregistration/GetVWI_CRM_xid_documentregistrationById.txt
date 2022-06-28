@@ -1,0 +1,115 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xid_registrationcolorid
+	,xid_handling
+	,versionnumber
+	,createdon
+	,xid_financingcompanyidname
+	,xid_documentregistrationnumber
+	,xid_chasissno
+	,xid_firststagename
+	,xid_stocknumberid
+	,statuscodename
+	,xid_nvexteriorcoloridname
+	,modifiedbyyominame
+	,ktb_notes
+	,owneridtype
+	,xid_platenumber
+	,createdonbehalfby
+	,ktb_validnextdocumentregistrationid
+	,modifiedbyname
+	,xid_financingcompanyid
+	,xid_productid
+	,ktb_spknameid
+	,owneridname
+	,xid_customeridyominame
+	,overriddencreatedon
+	,xid_transactiondate
+	,xid_territoryid
+	,xid_productidname
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,xid_vehicleregistrationinvoiceduedate
+	,xid_nvexteriorcolorid
+	,xid_financingponumber
+	,owningteam
+	,xid_handlingname
+	,statecode
+	,ktb_bpkbnameid
+	,xid_businessunitidname
+	,timezoneruleversionnumber
+	,xid_customeridname
+	,xid_cancellationnotes
+	,xid_contactperson
+	,ktb_spknameidyominame
+	,xid_stocknumberidname
+	,xid_contactpersonphone
+	,ktb_validnextdocumentregistrationidname
+	,xid_transactiontypename
+	,xid_documentregistrationid
+	,ktb_bpkbnameidname
+	,createdonbehalfbyname
+	,xid_progressstageidname
+	,xid_registrationagencyid
+	,utcconversiontimezonecode
+	,xid_vehicleregistrationvaliddate
+	,xid_personinchargeidname
+	,ktb_spkdetaildummyname
+	,xid_businessunitid
+	,ownerid
+	,modifiedon
+	,xid_chassismodel
+	,owneridyominame
+	,xid_engineno
+	,ktb_spknameidname
+	,xid_stageordernumber
+	,xid_customerid
+	,xid_previousdocregistrationid
+	,createdbyname
+	,xid_vehicleregistrationnumber
+	,xid_invoicenumber
+	,modifiedonbehalfbyname
+	,xid_progressstageid
+	,xid_previousdocregistrationidname
+	,ktb_bpkbnameidyominame
+	,xid_transactiontype
+	,xid_statusname
+	,xid_financingcompanyidyominame
+	,createdby
+	,modifiedby
+	,xid_parentbusinessunitid
+	,xid_vehicleregistrationaddress
+	,createdbyyominame
+	,owninguser
+	,xid_vehicleregistrationname
+	,xid_registrationcoloridname
+	,ktb_spkdetaildummy
+	,owningbusinessunit
+	,xid_businessunit
+	,xid_status
+	,xid_parentbusinessunitidname
+	,xid_territoryidname
+	,xid_vehicleownershipcerificatenumber
+	,xid_firststage
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xid_personinchargeid
+	,xid_newvehiclesalesorderid
+	,xid_registrationagencyidname
+	,xid_productdescription
+	,xid_newvehiclesalesorderidname
+	,importsequencenumber
+	,statecodename
+	,RowStatus
+from (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xid_documentregistration a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xid_businessunitid
+	WHERE xid_documentregistrationid = @Id
+) VWI_CRM_xid_documentregistration 

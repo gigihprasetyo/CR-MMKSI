@@ -1,0 +1,83 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+      ,company
+      ,businessunitcode
+      ,versionnumber
+      ,createdon
+      ,modifiedbyyominame
+      ,bsi_employeeidentificationtype
+      ,createdonbehalfby
+      ,modifiedbyname
+      ,xts_vehiclemodelname
+      ,xts_vehiclemodelidname
+      ,equipmentid
+      ,xts_addlaborrateperhour_base
+      ,overriddencreatedon
+      ,xts_vehiclemodelid
+      ,xts_default
+      ,xts_type
+      ,createdonbehalfbyyominame
+      ,bsi_employeeidentificationtypename
+      ,modifiedonbehalfby
+      ,exchangerate
+      ,xts_productidname
+      ,skills
+      ,xts_vehiclebrandid
+      ,xts_addlaborrateperhour
+      ,timezoneruleversionnumber
+      ,siteid
+      ,displayinserviceviewsname
+      ,xts_locking
+      ,xts_equipmentnumber
+      ,timezonecode
+      ,xts_manufactureridname
+      ,xts_employeeid
+      ,createdonbehalfbyname
+      ,utcconversiontimezonecode
+      ,xts_typename
+      ,siteidname
+      ,modifiedon
+      ,importsequencenumber
+      ,description
+      ,xts_defaultname
+      ,xts_objective
+      ,createdbyname
+      ,xts_objectivename
+      ,isdisabled
+      ,modifiedonbehalfbyname
+      ,xts_pkcombinationkey
+      ,isdisabledname
+      ,xts_employeeidname
+      ,businessunitidname
+      ,calendarid
+      ,xts_productid
+      ,transactioncurrencyid
+      ,createdby
+      ,modifiedby
+      ,displayinserviceviews
+      ,xts_vehicleidentificationnumber
+      ,createdbyyominame
+      ,transactioncurrencyidname
+      ,emailaddress
+      ,xts_vehiclebrandidname
+      ,xts_orderdisplay
+      ,xts_manufacturerid
+      ,name
+      ,modifiedonbehalfbyyominame
+      ,organizationid
+      ,organizationidname
+      ,businessunitid
+      ,msdyn_organizationalunitid
+      ,msdyn_organizationalunitidname
+      ,msdyn_companycode
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_equipment a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.businessunitid   
+	where equipmentid = @Id
+) as VWI_CRM_equipment 

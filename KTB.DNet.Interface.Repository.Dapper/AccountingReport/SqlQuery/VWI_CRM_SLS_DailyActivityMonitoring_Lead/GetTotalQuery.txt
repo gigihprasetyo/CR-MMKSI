@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM VWI_CRM_SLS_DailyActivityMonitoring_Lead WITH (NOLOCK) {0}

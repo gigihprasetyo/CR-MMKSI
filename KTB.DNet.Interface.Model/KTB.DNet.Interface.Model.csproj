@@ -1,0 +1,2084 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88BF0ED7-1491-4582-993F-80494EF9DE0E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KTB.DNet.Interface.Model</RootNamespace>
+    <AssemblyName>KTB.DNet.Interface.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|AnyCPU'">
+    <OutputPath>bin\SIT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|x64'">
+    <OutputPath>bin\x64\SIT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|x64'">
+    <OutputPath>bin\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|x64' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|AnyCPU'">
+    <OutputPath>bin\MIG\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|x64'">
+    <OutputPath>bin\x64\MIG\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Embarr.WebAPI.AntiXss, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ASPNetWebAPIAntiXss.1.0.0\lib\net45\Embarr.WebAPI.AntiXss.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\DNetValidationResult.cs" />
+    <Compile Include="Base\ParameterDtoBaseCustom.cs" />
+    <Compile Include="Base\ReadDtoBase.cs" />
+    <Compile Include="Base\ResponseBaseCustom.cs" />
+    <Compile Include="Common\ErrorCode.cs" />
+    <Compile Include="Dto\AccountingData\AX_TSTransStockMutationsDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_lkppdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_lkppDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_daftardepositcdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_bookingstatusDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_invalidcustomerDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_daftardepositadetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_daftardepositaDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_daftardepositbdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_daftardepositbDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_daftardepositcDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_depositc2Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_externaldealerinterfacelogDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_openfactureDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_accountDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_appointmentDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_BusinessUnitDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_campaignactivityDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_equipmentDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_campaignDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_campaignresponseDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_contactDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_customworkorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_benefitDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_daerahlogisticDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_jobpositionDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_karoseriDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_kontrabonDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_leasingcompanyDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_mastervehiclemodelDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_perlengkapanstandardDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_productsapconversionDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_purchaserequisitionhistoryDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_saleschannelDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_salesquotationDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_servicereminderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_servicetemplateproductnongenuineDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_userareaassignmentDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_ktb_vendorlogisticDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_leadDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_opportunityDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_pricelevelDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_serviceappointmentDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_serviceDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_systemuserDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_teamDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_territoryDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xid_documentregistrationDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xid_registrationmonitoringDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xid_registrationprogressstageDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_automobiletaxDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_pdidetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_pdireceiptdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_pdireceiptDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_predeliveryinspectionDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_registrationcolorDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_registrationrequestDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_standardplateDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_vehiclecostinputdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_vehiclecostinputDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_vehicletransferDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_weighttaxDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_accessoriesinstallationcategoryDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_accessorieskitgroupDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_accountpayablepaymentdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_accountpayablepaymentDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_accountpayablevoucherDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_accountreceivableinvoicedetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_accountreceivableinvoiceDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_accountreceivablereceiptdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_accountreceivablereceiptDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_accountreceivablereceiptotherexpenseDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_aptransactiondocumentdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_aptransactiondocumentDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_apvdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_apvlandedcostDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_apvmiscellaneouschargeDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_artransactiondocumentdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_artransactiondocumentDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_assessmentDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_assigntosalespersonDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_bankDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_businessunitinquiryDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_cashandbankaccountDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_cashandbankDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_cashtransactiondetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_cashtransactionDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_chartofaccountDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_cityDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_commonbusinessunitDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_commonDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_consumptiontaxDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_customerclassDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_customerpublicDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_damageorlossDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_deliveryorderdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_deliveryorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_deliveryordermiscellaneouschargeDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_departmentDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_dimension10Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_dimension1Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_dimension2Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_dimension3Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_dimension4Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_dimension5Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_dimension6Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_dimension7Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_dimension8Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_dimension9Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_discountsetupdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_discountsetupDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_employeeclassDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_employeeDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_generateinventorylistDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_gljournaldetailsDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_gljournalDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_globalworkorderhistorydetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_globalworkorderhistoryDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_goodsreceiptDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_gradeDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_incomingoutsourceworkorderdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_incomingoutsourceworkorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_incomingpdiandserviceinstructionDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_inventbatchDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_inventorynewvehicleDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_inventorytransactiondetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_inventorytransactionDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_inventorytransferdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_inventorytransferDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_inventserialDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_inventtransDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_kitDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_landedcostDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_locationDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_manufacturerDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_matchunmatchDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_miscellaneouschargeDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_miscellaneouschargetemplateDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_moreaddressDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_newvehicledeliveryorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_newvehicleexteriorcolorDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_newvehicleinteriorcolorDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_newvehiclesalesorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_newvehiclesalesquoteDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_newvehiclewholesaleorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_nonsalesdeliveryDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_nvsoaccessoriesDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_nvsomiscellaneouschargeDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_nvsonumberregistrationdetailsDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_nvsoreferralDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_nvsqaccessoriesDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_nvsqmiscellaneouschargeDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_ordertypeDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_outsourcereservationDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_outsourceworkorderdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_outsourceworkorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_outsourceworkorderreceiptdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_outsourceworkorderreceiptDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_outsourceworkshopconfigurationDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_partsforecastDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_physicalinventorylistdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_physicalinventorylistDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_pricelistdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_pricelistDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productclassDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productcrossreferenceDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productexteriorcolorDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productinteriorcolorDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productsegment1Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productsegment2Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productsegment3Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productsegment4Dto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productstyleDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productsubstituteDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_productvariantDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_provinceDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_purchaseorderdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_purchaseorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_purchasereceiptdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_purchasereceiptdetaillandedcostDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_purchasereceiptDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_purchaserequisitiondetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_purchaserequisitionDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_purchaserequisitionpurchaseordertypeDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xjp_registrationdocumentDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_ratetypeDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_reasonDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_recommendedproductDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_reservationtransactionDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_salesorderdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_salesorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicecampaignDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicecategoryDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicecategorygroupDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_serviceinstructionDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicemiscellaneouschargeDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicemmsDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_serviceproportionalinvoiceDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicereceiptDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicereservationclassDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicetemplateactivityDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicetemplatedetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicetemplateDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicetemplateparentgroupdetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_servicetemplateparentgroupDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_serviceworkshopsettingDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_sharedproductDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_siteDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_siteinquiryDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_styleDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_subsidyanddiscountDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_termofpaymentDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_transferorderrequestingDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_uomconversionDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_uomDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_usedvehicledeliveryorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_usedvehiclesalesorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_uvsoreferralinformationDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vehiclebrandDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vehicleinformationDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vehiclemodelDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vehiclepricedetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vehiclepriceDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vehiclepublicDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vehiclerecognizedmodelDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vehiclespecificationDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vehicletransactionhistoryDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vehicletransferhistoryDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vendorclassDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_vendorDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_villageandstreetDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_warehouseDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_warehouseinquiryDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_workorderDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_workorderpartmaterialandserviceDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_workorderservicetemplateDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_workordertimeregisterDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_writeoffbalancedetailDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_xts_writeoffbalanceDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_CRM_bookableresourcebookingDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_Zombie_CampaignDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_Zombie_ReservationDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_Zombie_SuspectDto.cs" />
+    <Compile Include="Dto\AccountingData\VWI_Zombie_WOTimeRegisterDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_AX_PRT_FlowReportPartDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_AX_PRT_StockMovementDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_AX_SLS_BankTransactionDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_AX_SLS_FlowReportVehicleDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_AX_SLS_LedgerTransactionDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_AX_SLS_StockMutationDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferOutletDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferWarehouseDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_IncomingTransactionDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferOutletDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferWarehouseDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_OutgoingTransactionDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_PurchaseDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_PurchaseReturnDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_SparepartPurchaseDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_SparepartSalesDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_SparepartSalesReturnDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_PRT_SparepartSalesToPartshopDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SLS_APBalanceDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SLS_ARBalanceDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_LeadDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_SPKDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_VDODto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SLS_SalesmanActivityDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SLS_SalesUnitDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SLS_StockMutationDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SLS_StockSummaryDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SLS_VehicleStockDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SOInvoiceDetailDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SOInvoiceDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SVC_ARReceiptDetailBasedOnWODto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SVC_ARReceiptDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SVC_DailyReportDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_SVC_FreeServiceToBeInvoicedDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_VehicleInvoiceDetailDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_VehicleInvoiceDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_WOInvoiceDetailDto.cs" />
+    <Compile Include="Dto\AccountingReport\VWI_CRM_WOInvoiceDto.cs" />
+    <Compile Include="Dto\FinishUnit\DSFCeilingDto.cs" />
+    <Compile Include="Dto\FinishUnit\UploadLeasingClaimDAPPDto.cs" />
+    <Compile Include="Dto\FinishUnit\DSFPaymentDto.cs" />
+    <Compile Include="Dto\FinishUnit\UploadLeasingClaimDto.cs" />
+    <Compile Include="Dto\Masters\AssistWorkOrderCategoryDto.cs" />
+    <Compile Include="Dto\Masters\AssistWorkOrderTypeDto.cs" />
+    <Compile Include="Dto\Masters\CustomerVehicleUploadImageDto.cs" />
+    <Compile Include="Dto\Masters\DMSAnnouncementDto.cs" />
+    <Compile Include="Dto\Masters\SendASBSFIDDto.cs" />
+    <Compile Include="Dto\Masters\SFDContactDto.cs" />
+    <Compile Include="Dto\Masters\VWI_BabitMasterRetailTargetDto.cs" />
+    <Compile Include="Dto\Masters\VWI_DepositADto.cs" />
+    <Compile Include="Dto\Masters\PMKindDto.cs" />
+    <Compile Include="Dto\Masters\PODestinationDto.cs" />
+    <Compile Include="Dto\Masters\SalesmanAreaMasterDto.cs" />
+    <Compile Include="Dto\Masters\VWI_DepositBHeaderDto.cs" />
+    <Compile Include="Dto\Masters\VWI_DepositC2Dto.cs" />
+    <Compile Include="Dto\Masters\VWI_DepositDto.cs" />
+    <Compile Include="Dto\Masters\VWI_IPAddressRestrictionDto.cs" />
+    <Compile Include="Dto\Masters\VWI_ServiceAdvisorDto.cs" />
+    <Compile Include="Dto\Masters\VWI_VehicleTypeDto.cs" />
+    <Compile Include="Dto\Masters\VWI_CampaignDto.cs" />
+    <Compile Include="Dto\Masters\VWI_CityDto.cs" />
+    <Compile Include="Dto\Masters\VWI_EmployeeResignDto.cs" />
+    <Compile Include="Dto\Masters\VWI_EmployeeServiceResignDto.cs" />
+    <Compile Include="Dto\Masters\VWI_JobPositionPartsDto.cs" />
+    <Compile Include="Dto\Masters\VWI_JobPositionSalesDto.cs" />
+    <Compile Include="Dto\Masters\VWI_JobPositionServicesDto.cs" />
+    <Compile Include="Dto\Masters\VWI_ProfileDetailFromHeaderCodeDto.cs" />
+    <Compile Include="Dto\Masters\VWI_SFDMobileSalesmanDto.cs" />
+    <Compile Include="Dto\Masters\VWI_QuickProductAllDto.cs" />
+    <Compile Include="Dto\Masters\VWI_VehicleSpecificationDto.cs" />
+    <Compile Include="Dto\Masters\VWI_CustomerDto.cs" />
+    <Compile Include="Dto\Masters\CustomerRequestProfileDto.cs" />
+    <Compile Include="Dto\Masters\CustomerRequestProfileHistoryDto.cs" />
+    <Compile Include="Dto\Masters\CustomerVehicleDto.cs" />
+    <Compile Include="Dto\Masters\VWI_CustomerVehicleDto.cs" />
+    <Compile Include="Dto\Masters\VWI_EmployeeServiceDto.cs" />
+    <Compile Include="Dto\Masters\EmployeePartDto.cs" />
+    <Compile Include="Dto\Masters\EmployeeSalesDto.cs" />
+    <Compile Include="Dto\Masters\TrTraineeDto.cs" />
+    <Compile Include="Dto\Masters\VWI_EmployeePartsDto.cs" />
+    <Compile Include="Dto\Masters\VWI_EmployeeSalesDto.cs" />
+    <Compile Include="Dto\Masters\VWI_FleetDto.cs" />
+    <Compile Include="Dto\Masters\VWI_QuickProductDto.cs" />
+    <Compile Include="Dto\Masters\VWI_ServiceTemplateDto.cs" />
+    <Compile Include="Dto\Masters\VWI_VehicleInformationDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_accountDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_appointmentDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_bookableresourcebookingDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_campaignDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_campaignresponseDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_contactDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_equipmentDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_ktb_kontrabondetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_ktb_kontrabonDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_leadDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_opportunityDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_serviceappointmentDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_teamDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xid_documentregistrationDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xid_registrationmonitoringDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xjp_pdidetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xjp_pdireceiptDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xjp_predeliveryinspectionDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xjp_vehiclecostinputDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xjp_vehicletransferDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_accessoriesinstallationcategoryDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_accountpayablepaymentdetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_accountpayablepaymentDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_accountpayablevoucherDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_accountreceivableinvoicedetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_accountreceivableinvoiceDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_accountreceivablereceiptdetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_accountreceivablereceiptDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_apvdetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_assessmentDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_assigntosalespersonDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_businessunitinquiryDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_customerpublicDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_damageorlossDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_deliveryorderdetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_deliveryorderDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_employeeDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_incomingoutsourceworkorderdetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_inventorynewvehicleDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_inventorytransactiondetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_inventorytransactionDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_inventorytransferdetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_inventorytransferDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_inventserialDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_inventtransDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_landedcostDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_matchunmatchDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_moreaddressDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_newvehicleaccessoriesDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_newvehicledeliveryorderDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_newvehicleexteriorcolorDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_newvehiclesalesorderDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_newvehiclesalesquoteDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_newvehiclewholesaleorderDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_nonsalesdeliveryDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_nvsonumberregistrationdetailsDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_outsourcereservationDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_outsourceworkorderdetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_outsourceworkorderDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_outsourceworkorderreceiptdetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_outsourceworkorderreceiptDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_outsourceworkshopconfigurationDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_productDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_productlistDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_purchaseorderdetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_purchaseorderDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_purchasereceiptdetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_purchasereceiptdetaillandedcostDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_purchasereceiptDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_purchaserequisitiondetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_purchaserequisitionDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_reservationtransactionDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_salesorderdetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_salesorderDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_servicecampaignDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_servicemmsDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_serviceproportionalinvoiceDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_servicequeueDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_siteDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_siteinquiryDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_vehicleinformationDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_vehiclepricedetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_vehiclepriceDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_vehiclepublicDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_vendorDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_warehouseDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_warehouseinquiryDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_workorderDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_workorderpartmaterialandserviceDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_workordertimeregisterDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_writeoffbalancedetailDto.cs" />
+    <Compile Include="Dto\NonDMS\CRM_xts_writeoffbalanceDto.cs" />
+    <Compile Include="Dto\OCR\OCRIdentityKTPDto.cs" />
+    <Compile Include="Dto\OCR\OCRIdentitySIMDto.cs" />
+    <Compile Include="Dto\Services\AssistServiceIncomingBPDto.cs" />
+    <Compile Include="Dto\Services\DealerSuggestionServiceDto.cs" />
+    <Compile Include="Dto\Services\GetServiceTypeDto.cs" />
+    <Compile Include="Dto\Services\ServiceBookingActivityDto.cs" />
+    <Compile Include="Dto\Services\ServiceBookingDto.cs" />
+    <Compile Include="Dto\Services\ServiceBookingRealtimeDto.cs" />
+    <Compile Include="Dto\Services\ServiceMMSDto.cs" />
+    <Compile Include="Dto\Services\ServiceRecommendationDto.cs" />
+    <Compile Include="Dto\Services\ServiceStandardTimeDto.cs" />
+    <Compile Include="Dto\Services\ServiceTemplateDetailDto.cs" />
+    <Compile Include="Dto\Services\ServiceTemplateHeaderDto.cs" />
+    <Compile Include="Dto\Services\StallMasterDto.cs" />
+    <Compile Include="Dto\Services\ServiceReminderFollowUpDto.cs" />
+    <Compile Include="Dto\Services\StallWorkingTimeDto.cs" />
+    <Compile Include="Dto\Services\VWI_MobileServiceReminderDto.cs" />
+    <Compile Include="Dto\Services\VWI_MSPExMembershipDto.cs" />
+    <Compile Include="Dto\Services\VWI_PDIExpiredDto.cs" />
+    <Compile Include="Dto\Services\VWI_ServiceCostEstimationDto.cs" />
+    <Compile Include="Dto\Services\VWI_ServiceReminderDto.cs" />
+    <Compile Include="Dto\Services\DMSWOWarrantyDto.cs" />
+    <Compile Include="Dto\Services\FreeServicePartDetailDto.cs" />
+    <Compile Include="Dto\Services\MSPClaimDto.cs" />
+    <Compile Include="Dto\Services\ServiceValidatorDto.cs" />
+    <Compile Include="Dto\Services\VWI_DMSWorkOrderWSCStatusDto.cs" />
+    <Compile Include="Dto\Services\VWI_FieldFixServicedDto.cs" />
+    <Compile Include="Dto\Masters\VWI_ServicePlaceDto.cs" />
+    <Compile Include="Dto\Masters\VWI_ServiceTypeDto.cs" />
+    <Compile Include="Dto\Services\VWI_ServiceHistoryDetailDto.cs" />
+    <Compile Include="Dto\Services\VWI_ServiceHistoryWithDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\SparepartClaimDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartClaimDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartOutstandingOrderDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartOutstandingOrderDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartPenaltyDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartPenaltyHeaderDto.cs" />
+    <Compile Include="Dto\Services\VWI_ServiceTemplateActivityDto.cs" />
+    <Compile Include="Dto\Services\V_WarrantyActivationDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartForecastDto.cs" />
+    <Compile Include="Dto\SpareParts\VWI_PQRDto.cs" />
+    <Compile Include="Dto\VehicleSales\VWI_SPKMasterCountryCodePhoneDto.cs" />
+    <Compile Include="Dto\VehicleSales\VWI_SPKTrackingDto.cs" />
+    <Compile Include="Filter\AccountingData\AX_TSTransStockMutationsFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_lkppdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_lkppFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_daftardepositcdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_bookingstatusFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_invalidcustomerFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_daftardepositadetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_daftardepositaFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_daftardepositbdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_daftardepositbFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_daftardepositcFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_depositc2FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_servicereminderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_vehiclecostinputdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_vehiclecostinputFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_gljournaldetailsFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_gljournalFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_bookableresourcebookingFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_inventtransFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_Zombie_CampaignFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_Zombie_ReservationFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_Zombie_SuspectFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_Zombie_WOTimeRegisterFilterDto.cs" />
+    <Compile Include="Filter\Masters\DMSAnnouncementFilterDto.cs" />
+    <Compile Include="Filter\Masters\SFDContactFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_BabitMasterRetailTargetFilterDto.cs" />
+    <Compile Include="Filter\Masters\LKPPDealerFilterDto.cs" />
+    <Compile Include="Filter\Masters\LKPPDetailFilterDto.cs" />
+    <Compile Include="Filter\Masters\LKPPHeaderFilterDto.cs" />
+    <Compile Include="Filter\Masters\SendASBSFIDFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_DepositAFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_DepositBHeaderFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_DepositC2FilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_DepositFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_IPAddressRestrictionFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_bookableresourcebookingFilterDto.cs" />
+    <Compile Include="Filter\Services\ServiceMMSFilterDto.cs" />
+    <Compile Include="Filter\FinishUnit\DSFCeilingFilterDto.cs" />
+    <Compile Include="Filter\FinishUnit\DSFPaymentFilterDto.cs" />
+    <Compile Include="Filter\Services\VWI_PDIExpiredFilterDto.cs" />
+    <Compile Include="Filter\Services\V_WarrantyActivationFilterDto.cs" />
+    <Compile Include="Dto\Services\WarrantyActivationDto.cs" />
+    <Compile Include="Dto\SpareParts\VWI_PurchaseReturnDto.cs" />
+    <Compile Include="Dto\SpareParts\VWI_PRHistoryPOStatusCancelDto.cs" />
+    <Compile Include="Dto\SpareParts\VWI_SparePartPaymentDto.cs" />
+    <Compile Include="Dto\VehiclePurchases\ChassisMasterATADto.cs" />
+    <Compile Include="Dto\VehiclePurchases\ChassisMasterClaimDetailDto.cs" />
+    <Compile Include="Dto\VehiclePurchases\ChassisMasterClaimDocumentUploadDto.cs" />
+    <Compile Include="Dto\VehiclePurchases\ChassisMasterClaimHeaderDto.cs" />
+    <Compile Include="Dto\VehiclePurchases\VWI_POReceiptDealerDto.cs" />
+    <Compile Include="Dto\VehicleSales\SalesmanAreaDto.cs" />
+    <Compile Include="Dto\VehicleSales\ValidateChassisDto.cs" />
+    <Compile Include="Dto\VehicleSales\SPKDetailCustomerProfileDto.cs" />
+    <Compile Include="Dto\VehicleSales\SPKDetailCustomerDto.cs" />
+    <Compile Include="Dto\VehicleSales\VWI_KaroseriDto.cs" />
+    <Compile Include="Dto\VehicleSales\VWI_LeasingDto.cs" />
+    <Compile Include="Dto\VehicleSales\VWI_ChassisStatusFakturDto.cs" />
+    <Compile Include="Dto\VehicleSales\VWI_OpenFakturForPDIDto.cs" />
+    <Compile Include="Dto\VehicleSales\VWI_SPKCustomerHaveRequestDto.cs" />
+    <Compile Include="Dto\VehicleSales\VWI_UnmatchSPKChassisDto.cs" />
+    <Compile Include="Dto\Masters\VWI_WholeSalesPriceDto.cs" />
+    <Compile Include="Dto\Services\VWI_ServiceHistoryDto.cs" />
+    <Compile Include="Dto\SpareParts\APPaymentDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\APPaymentDto.cs" />
+    <Compile Include="Dto\AppConfigDto.cs" />
+    <Compile Include="Dto\SpareParts\ARReceiptDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\ARReceiptDto.cs" />
+    <Compile Include="Dto\SpareParts\AssistPartStockDto.cs" />
+    <Compile Include="Dto\SpareParts\AssistSalesChannelDto.cs" />
+    <Compile Include="Dto\Services\AssistServiceIncomingDto.cs" />
+    <Compile Include="Dto\SpareParts\AssistPartSalesDto.cs" />
+    <Compile Include="Dto\Masters\AttachmentDto.cs" />
+    <Compile Include="Base\ParameterDtoBase.cs" />
+    <Compile Include="CustomAttribute\ValidateObjectAttribute.cs" />
+    <Compile Include="Dto\Services\CustomerCaseResponseEvidenceDto.cs" />
+    <Compile Include="Dto\Services\CustomerCaseResponseDto.cs" />
+    <Compile Include="Dto\Services\CustomerCaseDto.cs" />
+    <Compile Include="Dto\SpareParts\DepositLineDto.cs" />
+    <Compile Include="Dto\SpareParts\EstimationEquipPODto.cs" />
+    <Compile Include="Dto\Services\FieldFixListDto.cs" />
+    <Compile Include="Dto\SpareParts\VWI_PRHistoryIndentStatusCancelDto.cs" />
+    <Compile Include="Dto\VehicleSales\VWI_LeadCustomerSalesForceDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_externaldealerinterfacelogFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_openfactureFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_accountFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_appointmentlFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_BusinessUnitFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_campaignactivityFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_equipmentFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_campaignFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_campaignresponseFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_contactFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_customworkorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_benefitFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_daerahlogisticFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_jobpositionFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_karoseriFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_kontrabonFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_leasingcompanyFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_mastervehiclemodelFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_perlengkapanstandardFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_productsapconversionFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_purchaserequisitionhistoryFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_saleschannelFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_salesquotationFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_servicetemplateproductnongenuineFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_userareaassignmentFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_ktb_vendorlogisticFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_leadFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_opportunityFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_pricelevelFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_serviceappointmentFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_serviceFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_systemuserFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_teamFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_territoryFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xid_documentregistrationFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xid_registrationmonitoringFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xid_registrationprogressstageFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_automobiletaxFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_pdidetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_pdireceiptdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_pdireceiptFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_predeliveryinspectionFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_registrationcolorFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_registrationrequestFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_standardplateFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_vehicletransferFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_weighttaxFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_accessoriesinstallationcategoryFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_accessorieskitgroupFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_accountpayablepaymentdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_accountpayablepaymentFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_accountpayablevoucherFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_accountreceivableinvoicedetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_accountreceivableinvoiceFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_accountreceivablereceiptdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_accountreceivablereceiptFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_accountreceivablereceiptotherexpenseFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_aptransactiondocumentdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_aptransactiondocumentFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_apvdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_apvlandedcostFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_apvmiscellaneouschargeFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_artransactiondocumentdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_artransactiondocumentFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_assessmentFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_assigntosalespersonFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_bankFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_businessunitinquiryFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_cashandbankaccountFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_cashandbankFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_cashtransactiondetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_cashtransactionFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_chartofaccountFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_cityFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_commonbusinessunitFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_commonFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_consumptiontaxFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_customerclassFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_customerpublicFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_damageorlossFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_deliveryorderdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_deliveryorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_deliveryordermiscellaneouschargeFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_departmentFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_dimension10FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_dimension1FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_dimension2FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_dimension3FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_dimension4FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_dimension5FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_dimension6FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_dimension7FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_dimension8FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_dimension9FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_discountsetupdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_discountsetupFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_employeeclassFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_employeeFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_generateinventorylistFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_globalworkorderhistorydetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_globalworkorderhistoryFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_goodsreceiptFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_gradeFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_incomingoutsourceworkorderdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_incomingoutsourceworkorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_incomingpdiandserviceinstructionFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_inventbatchFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_inventorynewvehicleFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_inventorytransactiondetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_inventorytransactionFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_inventorytransferdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_inventorytransferFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_inventserialFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_kitFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_landedcostFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_locationFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_manufacturerFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_matchunmatchFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_miscellaneouschargeFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_miscellaneouschargetemplateFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_moreaddressFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_newvehicledeliveryorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_newvehicleexteriorcolorFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_newvehicleinteriorcolorFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_newvehiclesalesorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_newvehiclesalesquoteFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_newvehiclewholesaleorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_nonsalesdeliveryFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_nvsoaccessoriesFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_nvsomiscellaneouschargeFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_nvsonumberregistrationdetailsFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_nvsoreferralFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_nvsqaccessoriesFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_nvsqmiscellaneouschargeFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_ordertypeFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_outsourcereservationFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_outsourceworkorderdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_outsourceworkorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_outsourceworkorderreceiptdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_outsourceworkorderreceiptFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_outsourceworkshopconfigurationFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_partsforecastFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_physicalinventorylistdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_physicalinventorylistFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_pricelistdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_pricelistFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productclassFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productcrossreferenceFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productexteriorcolorFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productinteriorcolorFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productsegment1FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productsegment2FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productsegment3FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productsegment4FilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productstyleFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productsubstituteFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_productvariantFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_provinceFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_purchaseorderdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_purchaseorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_purchasereceiptdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_purchasereceiptdetaillandedcostFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_purchasereceiptFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_purchaserequisitiondetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_purchaserequisitionFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_purchaserequisitionpurchaseordertypeFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xjp_registrationdocumentFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_ratetypeFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_reasonFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_recommendedproductFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_reservationtransactionFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_salesorderdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_salesorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicecampaignFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicecategoryFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicecategorygroupFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_serviceinstructionFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicemiscellaneouschargeFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicemmsFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_serviceproportionalinvoiceFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicereceiptFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicereservationclassFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicetemplateactivityFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicetemplatedetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicetemplateFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicetemplateparentgroupdetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_servicetemplateparentgroupFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_serviceworkshopsettingFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_sharedproductFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_siteFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_siteinquiryFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_styleFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_subsidyanddiscountFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_termofpaymentFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_transferorderrequestingFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_uomconversionFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_uomFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_usedvehicledeliveryorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_usedvehiclesalesorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_uvsoreferralinformationFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vehiclebrandFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vehicleinformationFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vehiclemodelFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vehiclepricedetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vehiclepriceFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vehiclepublicFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vehiclerecognizedmodelFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vehiclespecificationFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vehicletransactionhistoryFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vehicletransferhistoryFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vendorclassFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_vendorFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_villageandstreetFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_warehouseFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_warehouseinquiryFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_workorderFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_workorderpartmaterialandserviceFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_workorderservicetemplateFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_workordertimeregisterFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_writeoffbalancedetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingData\VWI_CRM_xts_writeoffbalanceFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_AX_PRT_FlowReportPartFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_AX_PRT_StockMovementFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_AX_SLS_BankTransactionFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_AX_SLS_FlowReportVehicleFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_AX_SLS_LedgerTransactionFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_AX_SLS_StockMutationFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferOutletFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferWarehouseFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_IncomingTransactionFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferOutletFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferWarehouseFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_OutgoingTransactionFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_PurchaseFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_PurchaseReturnFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_SparepartPurchaseFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_SparepartSalesFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_SparepartSalesReturnFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_PRT_SparepartSalesToPartshopFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SLS_APBalanceFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SLS_ARBalanceFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_LeadFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_SPKFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_VDOFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SLS_SalesmanActivityFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SLS_SalesUnitFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SLS_StockMutationFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SLS_StockSummaryFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SLS_VehicleStockFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SOInvoiceDetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SOInvoiceFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SVC_ARReceiptDetailBasedOnWOFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SVC_ARReceiptFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SVC_DailyReportFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_SVC_FreeServiceToBeInvoicedFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_VehicleInvoiceDetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_VehicleInvoiceFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_WOInvoiceDetailFilterDto.cs" />
+    <Compile Include="Filter\AccountingReport\VWI_CRM_WOInvoiceFilterDto.cs" />
+    <Compile Include="Filter\FinishUnit\UploadLeasingClaimDAPPFilterDto.cs" />
+    <Compile Include="Filter\FinishUnit\UploadLeasingClaim.cs" />
+    <Compile Include="Filter\Masters\AssistWorkOrderCategoryFilterDto.cs" />
+    <Compile Include="Filter\Masters\AssistWorkOrderTypeFilterDto.cs" />
+    <Compile Include="Filter\Masters\PODestinationFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_CampaignFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_EmployeePartsResignFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_EmployeeResignFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_EmployeeSalesResignFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_EmployeeServicesResignFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_ProfileDetailFromHeaderCodeFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_QuickProductAllFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_SFDMobileSalesmanFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_VehicleSpecificationFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_VehicleInformationFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_BusinessSectorFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_CustomerFilterDto.cs" />
+    <Compile Include="Filter\Masters\CustomerVehicleFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_EmployeeServiceFilterDto.cs" />
+    <Compile Include="Filter\Masters\EmployeeSalesFilterDto.cs" />
+    <Compile Include="Filter\Masters\TrTraineeFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_EmployeePartsFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_CustomerVehicleFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_EmployeeSalesFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_FleetFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_QuickProductFilterDto.cs" />
+    <Compile Include="Filter\Masters\ServiceTemplateFilterDto.cs" />
+    <Compile Include="Filter\Services\AssistServiceIncomingBPFilterDto.cs" />
+    <Compile Include="Filter\Services\ServiceBookingActivityFilterDto.cs" />
+    <Compile Include="Filter\Services\ServiceBookingFilterDto.cs" />
+    <Compile Include="Filter\Services\ServiceStandardTimeFilterDto.cs" />
+    <Compile Include="Filter\Services\ServiceTemplateDetailFilterDto.cs" />
+    <Compile Include="Filter\Services\ServiceTemplateHeaderFilterDto.cs" />
+    <Compile Include="Filter\Services\StallMasterFilterDto.cs" />
+    <Compile Include="Filter\Services\StallWorkingTimeFilterDto.cs" />
+    <Compile Include="Filter\Services\VWI_MobileServiceReminderFilterDto.cs" />
+    <Compile Include="Filter\Services\VWI_MSPExMembershipFilterDto.cs" />
+    <Compile Include="Filter\Services\VWI_ServiceReminderFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_VehicleTypeFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_accountFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_appointmentFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_campaignFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_campaignresponseFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_contactFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_equipmentFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_ktb_kontrabondetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_ktb_kontrabonFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_leadFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_opportunityFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_serviceappointmentFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_teamFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xid_documentregistrationFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xid_registrationmonitoringFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xjp_pdidetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xjp_pdireceiptFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xjp_predeliveryinspectionFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xjp_vehiclecostinputFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xjp_vehicletransferFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_accessoriesinstallationcategoryFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_accountpayablepaymentdetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_accountpayablepaymentFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_accountpayablevoucherFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_accountreceivableinvoicedetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_accountreceivableinvoiceFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_accountreceivablereceiptdetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_accountreceivablereceiptFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_apvdetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_assessmentFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_assigntosalespersonFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_businessunitinquiryFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_customerpublicFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_damageorlossFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_deliveryorderdetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_deliveryorderFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_employeeFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_incomingoutsourceworkorderdetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_inventorynewvehicleFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_inventorytransactiondetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_inventorytransactionFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_inventorytransferdetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_inventorytransferFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_inventserialFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_inventtransFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_landedcostFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_matchunmatchFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_moreaddressFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_newvehicleaccessoriesFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_newvehicledeliveryorderFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_newvehicleexteriorcolorFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_newvehiclesalesorderFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_newvehiclesalesquoteFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_newvehiclewholesaleorderFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_nonsalesdeliveryFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_nvsonumberregistrationdetailsFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_outsourcereservationFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_outsourceworkorderdetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_outsourceworkorderFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_outsourceworkorderreceiptdetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_outsourceworkorderreceiptFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_outsourceworkshopconfigurationFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_productFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_productlistFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_purchaseorderdetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_purchaseorderFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_purchasereceiptdetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_purchasereceiptdetaillandedcostFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_purchasereceiptFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_purchaserequisitiondetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_purchaserequisitionFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_reservationtransactionFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_salesorderdetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_salesorderFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_servicecampaignFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_servicemmsFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_serviceproportionalinvoiceFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_servicequeueFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_siteFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_siteinquiryFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_vehicleinformationFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_vehiclepricedetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_vehiclepriceFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_vehiclepublicFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_vendorFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_warehouseFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_warehouseinquiryFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_workorderFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_workorderpartmaterialandserviceFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_workordertimeregisterFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_writeoffbalancedetailFilterDto.cs" />
+    <Compile Include="Filter\NonDMS\CRM_xts_writeoffbalanceFilterDto.cs" />
+    <Compile Include="Filter\Services\DMSWOWarrantyFilterDto.cs" />
+    <Compile Include="Filter\Services\MSPClaimFilterDto.cs" />
+    <Compile Include="Filter\Services\PMKindFilterDto.cs" />
+    <Compile Include="Filter\Services\VWI_DMSWorkOrderWSCStatusDto.cs" />
+    <Compile Include="Filter\Masters\VWI_ServicePlaceFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_ServiceTypeFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartClaimFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartOutstandingOrderDetailFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartOutstandingOrderFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartPenaltyDetailFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartPenaltyHeaderFilterDto.cs" />
+    <Compile Include="Filter\Services\VWI_ServiceTemplateActivityFilterDto.cs" />
+    <Compile Include="Filter\Services\WarrantyActivationFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartForecastFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\VWI_PQRFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\VWI_PurchaseReturnFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\VWI_PRHistoryPOStatusCancelFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\VWI_SparePartPaymentFilterDto.cs" />
+    <Compile Include="Filter\VehiclePurchases\ChassisMasterATAFilterDto.cs" />
+    <Compile Include="Filter\VehiclePurchases\ChassisMasterClaimDetailFilterDto.cs" />
+    <Compile Include="Filter\VehiclePurchases\ChassisMasterClaimDocumentUploadFilterDto.cs" />
+    <Compile Include="Filter\VehiclePurchases\ChassisMasterClaimHeaderFilterDto.cs" />
+    <Compile Include="Filter\VehiclePurchases\VWI_POReceiptDealerFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\SPKDetailCustomerProfileFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\SPKDetailCustomerFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_ChassisStatusFakturLastUpdateTimeFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_KaroseriFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_LeasingFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_ChassisStatusFakturFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_OpenFakturForPDIFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_SPKCustomerHaveRequestFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_SPKMasterCountryCodePhoneFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_SPKTrackingFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_UnmatchSPKChassisFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_WholeSalesPriceFilterDto.cs" />
+    <Compile Include="Filter\Services\VWI_ServiceHistoryFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\APPaymentDetailFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\APPaymentFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\ARReceiptDetailFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\ARReceiptFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\AssistPartStockFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\AssistSalesChannelFilterDto.cs" />
+    <Compile Include="Filter\Services\AssistServiceIncomingFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\AssistPartSalesFilterDto.cs" />
+    <Compile Include="Filter\Services\CustomerCaseFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\DepositLineFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\EstimationEquipPOFilterDto.cs" />
+    <Compile Include="Filter\Services\FreeServiceFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\IndentPartDetailFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\IndentPartHeaderFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\IndentPartPOFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\InventoryTransactionFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\InventoryTransferDetailFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\InventoryTransferFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_ProvinceFilterDto.cs" />
+    <Compile Include="Filter\Masters\PartShopFilterDto.cs" />
+    <Compile Include="Filter\Services\VWI_MSPMembershipFilterDto.cs" />
+    <Compile Include="Filter\Services\PMHeaderFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\POOtherVendorFilterDto.cs" />
+    <Compile Include="Filter\Services\RecallServiceFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartBillingFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\VWI_SparePartConversionFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartDOFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartDeliveryOrderDetailFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartDeliveryOrderFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartDOExpeditionFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartPRFromVendorFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\VWI_SparePartPriceListFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartSalesOrderFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\VWI_SparePartUoMFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\VWI_PRHistoryDOFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\VWI_PRHistorySOFilterDto.cs" />
+    <Compile Include="Filter\Masters\VWI_VehicleExteriorColorFilterDto.cs" />
+    <Compile Include="Dto\Services\FreeServiceDto.cs" />
+    <Compile Include="Dto\SpareParts\IndentPartDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\IndentPartHeaderDto.cs" />
+    <Compile Include="Dto\SpareParts\IndentPartPODto.cs" />
+    <Compile Include="Dto\SpareParts\InventoryTransactionDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\InventoryTransactionDto.cs" />
+    <Compile Include="Dto\SpareParts\InventoryTransferDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\InventoryTransferDto.cs" />
+    <Compile Include="Dto\Masters\VWI_ProvinceDto.cs" />
+    <Compile Include="Dto\Services\VWI_MSPMembershipDto.cs" />
+    <Compile Include="Filter\SpareParts\VWI_PRHistoryIndentStatusCancelFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_LeadCustomerSalesForceFilterDto.cs" />
+    <Compile Include="Parameters\AccountingData\AX_TSTransStockMutationsDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\CRM_ktb_openfactureDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_accountDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_appointmentDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_bookingstatusParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_BusinessUnitDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_campaignactivityDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_equipmentDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_campaignDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_campaignresponseDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_contactDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_customworkorderParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_invalidcustomerDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_lkppdetailParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_lkppParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_benefitParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_daerahlogisticParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_daftardepositadetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_daftardepositaDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_daftardepositbdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_daftardepositbDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_daftardepositcdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_daftardepositcDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_depositc2DtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_externaldealerinterfacelogParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_jobpositionParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_karoseriParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_kontrabonDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_leasingcompanyDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_mastervehiclemodelDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_perlengkapanstandardDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_productsapconversionDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_purchaserequisitionhistoryDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_saleschannelParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_salesquotationParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_servicereminderParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_servicetemplateproductnongenuineParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_userareaassignmentDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_ktb_vendorlogisticParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_leadDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_opportunityDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_pricelevelDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_serviceappointmentParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_serviceParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_systemuserParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_teamDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_territoryParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xid_documentregistrationDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xid_registrationmonitoringDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xid_registrationprogressstageParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_automobiletaxParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_pdidetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_pdireceiptdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_pdireceiptDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_predeliveryinspectionDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_registrationcolorParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_registrationrequestParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_standardplateParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_vehiclecostinputdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_vehiclecostinputParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_vehicletransferDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_weighttaxParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_accessoriesinstallationcategoryParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_accessorieskitgroupParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_accountpayablepaymentdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_accountpayablepaymentDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_accountpayablevoucherDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_accountreceivableinvoicedetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_accountreceivableinvoiceDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_accountreceivablereceiptdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_accountreceivablereceiptDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_accountreceivablereceiptotherexpenseDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_aptransactiondocumentdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_aptransactiondocumentDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_apvdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_apvlandedcostDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_apvmiscellaneouschargeDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_artransactiondocumentdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_artransactiondocumentDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_assessmentParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_assigntosalespersonDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_bankParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_businessunitinquiryParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_cashandbankaccountDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_cashandbankDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_cashtransactiondetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_cashtransactionDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_chartofaccountDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_cityParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_commonbusinessunitDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_commonDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_consumptiontaxDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_customerclassDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_customerpublicDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_damageorlossDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_deliveryorderdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_deliveryorderDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_deliveryordermiscellaneouschargeDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_departmentParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_dimension10ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_dimension1ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_dimension2ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_dimension3ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_dimension4ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_dimension5ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_dimension6ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_dimension7ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_dimension8ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_dimension9ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_discountsetupdetailParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_discountsetupParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_employeeclassParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_employeeDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_generateinventorylistDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_gljournaldetailsParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_gljournalParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_globalworkorderhistorydetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_globalworkorderhistoryDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_goodsreceiptParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_gradeParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_incomingoutsourceworkorderdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_incomingoutsourceworkorderDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_incomingpdiandserviceinstructionDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_inventbatchParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_inventorynewvehicleDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_inventorytransactiondetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_inventorytransactionDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_inventorytransferdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_inventorytransferDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_inventserialDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_inventtransDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_kitParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_landedcostParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_locationParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_manufacturerParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_matchunmatchDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_miscellaneouschargeDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_miscellaneouschargetemplateDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_moreaddressParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_newvehicledeliveryorderDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_newvehicleexteriorcolorDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_newvehicleinteriorcolorParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_newvehiclesalesorderDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_newvehiclesalesquoteDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_newvehiclewholesaleorderDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_nonsalesdeliveryDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_nvsoaccessoriesDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_nvsomiscellaneouschargeDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_nvsonumberregistrationdetailsDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_nvsoreferralDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_nvsqaccessoriesDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_nvsqmiscellaneouschargeDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_ordertypeDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_outsourcereservationParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_outsourceworkorderdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_outsourceworkorderDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_outsourceworkorderreceiptdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_outsourceworkorderreceiptDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_outsourceworkshopconfigurationParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_partsforecastParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_physicalinventorylistdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_physicalinventorylistDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_pricelistdetailParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_pricelistParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productclassDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productcrossreferenceParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productexteriorcolorParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productinteriorcolorDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productsegment1ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productsegment2DtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productsegment3ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productsegment4ParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productstyleParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productsubstituteDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_productvariantParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_provinceParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_purchaseorderdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_purchaseorderDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_purchasereceiptdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_purchasereceiptdetaillandedcostDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_purchasereceiptDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_purchaserequisitiondetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_purchaserequisitionDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_purchaserequisitionpurchaseordertypeDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xjp_registrationdocumentParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_ratetypeParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_reasonParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_recommendedproductParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_reservationtransactionDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_salesorderdetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_salesorderDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicecampaignDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicecategoryDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicecategorygroupDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_serviceinstructionParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicemiscellaneouschargeDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicemmsParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_serviceproportionalinvoiceDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicereceiptParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicereservationclassDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicetemplateactivityParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicetemplatedetailParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicetemplateDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicetemplateparentgroupdetailParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_servicetemplateparentgroupDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_serviceworkshopsettingParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_sharedproductDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_siteDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_siteinquiryParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_styleParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_subsidyanddiscountParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_termofpaymentParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_transferorderrequestingParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_uomconversionParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_uomDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_usedvehicledeliveryorderParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_usedvehiclesalesorderParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_uvsoreferralinformationParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vehiclebrandParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vehicleinformationDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vehiclemodelDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vehiclepricedetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vehiclepriceDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vehiclepublicParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vehiclerecognizedmodelParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vehiclespecificationDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vehicletransactionhistoryDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vehicletransferhistoryDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vendorclassDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_vendorDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_villageandstreetParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_warehouseDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_warehouseinquiryParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_workorderDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_workorderpartmaterialandserviceDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_workorderservicetemplateDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_workordertimeregisterDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_writeoffbalancedetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_xts_writeoffbalanceDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_CRM_bookableresourcebookingParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_Zombie_CampaignParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_Zombie_ReservationParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_Zombie_SuspectParameterDto.cs" />
+    <Compile Include="Parameters\AccountingData\VWI_Zombie_WOTimeRegisterParameterDto.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_AX_PRT_FlowReportPartDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_AX_PRT_StockMovementDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_AX_SLS_BankTransactionDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_AX_SLS_FlowReportVehicleDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_AX_SLS_LedgerTransactionDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_AX_SLS_StockMutationDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferOutletDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferWarehouseDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_IncomingTransactionDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferOutletDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferWarehouseDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_OutgoingTransactionDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_PurchaseDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_PurchaseReturnDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_SparepartPurchaseDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_SparepartSalesDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_SparepartSalesReturnDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_PRT_SparepartSalesToPartshopDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SLS_APBalanceDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SLS_ARBalanceDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_LeadDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_SPKDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_VDODtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SLS_SalesmanActivityDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SLS_SalesUnitDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SLS_StockMutationDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SLS_StockSummaryDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SLS_VehicleStockDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SOInvoiceDetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SOInvoiceDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SVC_ARReceiptDetailBasedOnWODtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SVC_ARReceiptDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SVC_DailyReportDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_SVC_FreeServiceToBeInvoicedDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_VehicleInvoiceDetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_VehicleInvoiceDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_WOInvoiceDetailDtoParameter.cs" />
+    <Compile Include="Parameters\AccountingReport\VWI_CRM_WOInvoiceDtoParameter.cs" />
+    <Compile Include="Parameters\FinishUnit\DSFCeilingParameterDto.cs" />
+    <Compile Include="Parameters\FinishUnit\DSFPaymentParameterDto.cs" />
+    <Compile Include="Parameters\FinishUnit\UploadLeasingClaimParameterDto.cs" />
+    <Compile Include="Parameters\Masters\AssistWorkOrderCategoryParameterDto.cs" />
+    <Compile Include="Parameters\Masters\AssistWorkOrderTypeParameterDto.cs" />
+    <Compile Include="Parameters\Masters\DMSAnnouncementParameterDto.cs" />
+    <Compile Include="Parameters\Masters\SFDContactParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_BabitMasterRetailTargetParameterDto.cs" />
+    <Compile Include="Parameters\Masters\CustomerUploadImageParameterDto.cs" />
+    <Compile Include="Parameters\Masters\LKPPDealerParameterDto.cs" />
+    <Compile Include="Parameters\Masters\LKPPDetailParameterDto.cs" />
+    <Compile Include="Parameters\Masters\LKPPHeaderParameterDto.cs" />
+    <Compile Include="Parameters\Masters\PMKindParameterDto.cs" />
+    <Compile Include="Parameters\Masters\PODestinationParameterDto.cs" />
+    <Compile Include="Parameters\Masters\SendASBSFIDParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_CampaignParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_DepositAParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_DepositBHeaderParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_DepositC2ParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_DepositParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_EmployeeResignParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_ProfileDetailFromHeaderCodeParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_ServiceTemplateParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_SFDMobileSalesmanParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_VehicleSpecificationParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_BusinessSectorParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_CustomerParameterDto.cs" />
+    <Compile Include="Parameters\Masters\CustomerVehicleParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_EmployeeServiceParameterDto.cs" />
+    <Compile Include="Parameters\Masters\EmployeeSalesParameterDto.cs" />
+    <Compile Include="Parameters\Masters\TrTraineeParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_EmployeePartsParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_CustomerVehicleParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_EmployeeSalesParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_FleetParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_QuickProductParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_VehicleInformationParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_bookableresourcebookingParameterDto.cs" />
+    <Compile Include="Parameters\Services\AssistServiceIncomingBPParameterDto.cs" />
+    <Compile Include="Parameters\Services\DealerSuggestionServiceParameterDto.cs" />
+    <Compile Include="Parameters\Services\GetServiceTypeParameterDto.cs" />
+    <Compile Include="Parameters\Services\ServiceBookingActivityParameterDto.cs" />
+    <Compile Include="Parameters\Services\ServiceBookingRealtimeParameterDto.cs" />
+    <Compile Include="Parameters\Services\ServiceMMSParameterDto.cs" />
+    <Compile Include="Parameters\Services\ServiceRecommendationParameterDto.cs" />
+    <Compile Include="Parameters\Services\VWI_ServiceCostEstimationParameterDto.cs" />
+    <Compile Include="Parameters\Services\ServiceBookingParameterDto.cs" />
+    <Compile Include="Parameters\Services\PDIGetFileParameter.cs" />
+    <Compile Include="Parameters\Services\VWI_PDIExpiredParameterDto.cs" />
+    <Compile Include="Parameters\Services\V_WarrantyActivationParameterDto.cs" />
+    <Compile Include="Parameters\Services\WarrantyActivationGetFileParameter.cs" />
+    <Compile Include="Parameters\Services\ServiceReminderFollowUpParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_VehicleTypeParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_accountParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_appointmentParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_campaignParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_campaignresponseParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_contactParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_equipmentParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_ktb_kontrabondetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_ktb_kontrabonParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_leadParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_opportunityParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_serviceappointmentParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_teamParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xid_documentregistrationParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xid_registrationmonitoringParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xjp_pdidetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xjp_pdireceiptParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xjp_predeliveryinspectionParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xjp_vehiclecostinputParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xjp_vehicletransferParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_accessoriesinstallationcategoryParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_accountpayablepaymentdetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_accountpayablepaymentParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_accountpayablevoucherParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_accountreceivableinvoicedetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_accountreceivableinvoiceParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_accountreceivablereceiptdetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_accountreceivablereceiptParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_apvdetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_assessmentParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_assigntosalespersonParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_businessunitinquiryParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_customerpublicParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_damageorlossParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_deliveryorderdetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_deliveryorderParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_employeeParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_incomingoutsourceworkorderdetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_inventorynewvehicleParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_inventorytransactiondetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_inventorytransactionParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_inventorytransferdetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_inventorytransferParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_inventserialParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_inventtransParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_landedcostParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_matchunmatchParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_moreaddressParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_newvehicleaccessoriesParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_newvehicledeliveryorderParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_newvehicleexteriorcolorParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_newvehiclesalesorderParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_newvehiclesalesquoteParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_newvehiclewholesaleorderParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_nonsalesdeliveryParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_nvsonumberregistrationdetailsParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_outsourcereservationParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_outsourceworkorderdetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_outsourceworkorderParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_outsourceworkorderreceiptdetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_outsourceworkorderreceiptParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_outsourceworkshopconfigurationParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_productlistParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_productParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_purchaseorderdetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_purchaseorderParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_purchasereceiptdetaillandedcostParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_purchasereceiptdetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_purchasereceiptParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_purchaserequisitiondetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_purchaserequisitionParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_reservationtransactionParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_salesorderdetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_salesorderParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_servicecampaignParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_servicemmsParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_serviceproportionalinvoiceParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_servicequeueParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_siteinquiryParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_siteParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_vehicleinformationParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_vehiclepricedetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_vehiclepriceParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_vehiclepublicParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_vendorParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_warehouseinquiryParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_warehouseParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_workorderParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_workorderpartmaterialandserviceParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_workordertimeregisterParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_writeoffbalancedetailParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\CRM_xts_writeoffbalanceParameterDto.cs" />
+    <Compile Include="Parameters\NonDMS\ValidationParameterDto.cs" />
+    <Compile Include="Parameters\Services\DMSWOWarrantyDeleteParameterDto.cs" />
+    <Compile Include="Parameters\Services\DMSWOWarrantyParameterDto.cs" />
+    <Compile Include="Parameters\Services\PDIDeleteParameterDto.cs" />
+    <Compile Include="Parameters\Services\FreeServiceDeleteParameterDto.cs" />
+    <Compile Include="Parameters\Services\MSPClaimParameterDto.cs" />
+    <Compile Include="Parameters\Services\ServiceStandardTimeParameterDto.cs" />
+    <Compile Include="Parameters\Services\ServiceTemplateDetailParameterDto.cs" />
+    <Compile Include="Parameters\Services\ServiceTemplateHeaderParameterDto.cs" />
+    <Compile Include="Parameters\Services\ServiceValidatorParameterDto.cs" />
+    <Compile Include="Parameters\Services\StallMasterDeleteParameterDto.cs" />
+    <Compile Include="Parameters\Services\StallMasterParameterDto.cs" />
+    <Compile Include="Parameters\Services\StallWorkingTimeParameterDto.cs" />
+    <Compile Include="Parameters\Services\VWI_DMSWorkOrderWSCStatusParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_ServicePlaceParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_ServiceTypeParameterDto.cs" />
+    <Compile Include="Parameters\Services\VWI_MobileServiceReminderParameterDto.cs" />
+    <Compile Include="Parameters\Services\VWI_ServiceTemplateActivityParameterDto.cs" />
+    <Compile Include="Parameters\Services\WarrantyActivationParameterDto.cs" />
+    <Compile Include="Parameters\Services\WorkOrderPMDeleteParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartClaimDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartClaimDocumentParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartClaimParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartOutstandingOrderDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartOutstandingOrderParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartPenaltyDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartPenaltyHeaderParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartForecastParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartForecastDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\VWI_PQRParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\VWI_PurchaseReturnParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\VWI_PRHistoryPOStatusCancelParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\VWI_SparePartPaymentParameterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchases\ChassisMasterATAParameterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchases\ChassisMasterClaimDetailParameterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchases\ChassisMasterClaimDocumentUploadParameterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchases\ChassisMasterClaimHeaderParameterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchases\VWI_POReceiptDealerParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\AttachmentParameterOCRKKDto.cs" />
+    <Compile Include="Parameters\VehicleSales\OCRKKDetailParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\OCRKKParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\ValidateChassisParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SPKDetailCustomerProfileParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SPKDetailCustomerParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\VWI_KaroseriParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\VWI_LeasingParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\VWI_SPKCustomerHaveRequestParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\VWI_SPKMasterCountryCodePhoneParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\VWI_UnmatchSPKChassisParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_WholeSalesPriceParameterDto.cs" />
+    <Compile Include="Parameters\Services\VWI_ServiceHistoryParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\AssistPartSalesParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\AssistPartStockParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\APPaymentDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\APPaymentParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\ARReceiptDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\ARReceiptParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\AssistSalesChannelParameterDto.cs" />
+    <Compile Include="Parameters\Services\AssistServiceIncomingParameterDto.cs" />
+    <Compile Include="Parameters\Services\CustomerCaseParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\DepositLineParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\EstimationEquipPOParameterDto.cs" />
+    <Compile Include="Parameters\Services\FreeServiceParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\IndentPartDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\IndentPartHeaderParameterDto.cs" />
+    <Compile Include="Dto\SpareParts\EstimationEquipHeaderResponseDto.cs" />
+    <Compile Include="Parameters\Masters\VWI_ProvinceParameterDto.cs" />
+    <Compile Include="Parameters\Masters\EmployeePartParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\PRHistoryDOParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\PRHistorySOParameterDto.cs" />
+    <Compile Include="Dto\SpareParts\VWI_PRHistoryDODto.cs" />
+    <Compile Include="Parameters\Masters\VWI_VehicleExteriorColorParameterDto.cs" />
+    <Compile Include="Dto\SpareParts\VWI_PRHistorySODto.cs" />
+    <Compile Include="Dto\Masters\VWI_VehicleExteriorColorDto.cs" />
+    <Compile Include="Dto\VehicleSales\VWI_CampaignReportDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_CampaignReportFilterDto.cs" />
+    <Compile Include="Filter\VehiclePurchases\VWI_PODealerFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartPOEstimateDetailFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartPOEstimateFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\VWI_OpenFakturFilterDto.cs" />
+    <Compile Include="Parameters\SpareParts\VWI_PRHistoryIndentStatusCancelParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\VWI_CampaignReportParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\IndentPartPOParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\InventoryTransactionDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\InventoryTransactionParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\InventoryTransferDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\InventoryTransferParameterDto.cs" />
+    <Compile Include="Parameters\Masters\PartShopParameterDto.cs" />
+    <Compile Include="Parameters\Services\VWI_MSPMembershipParameterDto.cs" />
+    <Compile Include="Parameters\Services\PMHeaderParameterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchases\VWI_PODealerParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\POOtherVendorDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\POOtherVendorParameterDto.cs" />
+    <Compile Include="Parameters\Services\RecallServiceParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\VWI_SparePartConversionParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartDeliveryOrderDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartDeliveryOrderParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartDODetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartDOExpeditionParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartDOParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartBillingParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartPODetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartPOEstimateDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartPOParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartPRDetailFromVendorParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartPRFromVendorParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartPOEstimateParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartPriceListParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartSalesOrderDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartSalesOrderParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartUoMParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SPKDocumentParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\OCRParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\VWI_OpenFakturParameterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartPOFilterDto.cs" />
+    <Compile Include="Dto\Masters\PartShopDto.cs" />
+    <Compile Include="Dto\Services\PMHeaderDto.cs" />
+    <Compile Include="Dto\SpareParts\POOtherVendorDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\POOtherVendorDto.cs" />
+    <Compile Include="Dto\Services\RecallServiceDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartBillingDto.cs" />
+    <Compile Include="Dto\SpareParts\VWI_SparePartConversionDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartDeliveryOrderDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartDeliveryOrderDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartDODetailDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartDODto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartDOExpeditionDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartPODetailDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartPODto.cs" />
+    <Compile Include="Dto\VehiclePurchases\VWI_PODealerDto.cs" />
+    <Compile Include="CustomAttribute\RequiredListAttribute.cs" />
+    <Compile Include="Dto\SpareParts\EstimationEquipDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\EstimationEquipHeaderDto.cs" />
+    <Compile Include="Filter\SpareParts\EstimationEquipDetailFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\EstimationEquipHeaderFilterDto.cs" />
+    <Compile Include="Filter\SpareParts\SparePartMasterFilterDto.cs" />
+    <Compile Include="Parameters\SpareParts\EstimationEquipDetailParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\EstimationEquipHeaderParameterDto.cs" />
+    <Compile Include="Parameters\SpareParts\SparePartMasterParameterDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartMasterDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartPOEstimateDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartPOEstimateDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartPRDetailFromVendorDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartPRFromVendorDto.cs" />
+    <Compile Include="Dto\SpareParts\VWI_SparePartPriceListDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartSalesOrderDetailDto.cs" />
+    <Compile Include="Dto\SpareParts\SparePartSalesOrderDto.cs" />
+    <Compile Include="Dto\SpareParts\VWI_SparePartUoMDto.cs" />
+    <Compile Include="Dto\VehicleSales\SPKDocumentDto.cs" />
+    <Compile Include="Dto\VehiclePurchases\VehiclePurchaseHeaderDto.cs" />
+    <Compile Include="Dto\VehiclePurchases\VehiclePurchaseDetailDto.cs" />
+    <Compile Include="Dto\Masters\BusinessSectorDetailDto.cs" />
+    <Compile Include="Dto\Masters\BusinessSectorHeaderDto.cs" />
+    <Compile Include="Dto\VehiclePurchases\CarrosserieDetailDto.cs" />
+    <Compile Include="Dto\VehiclePurchases\CarrosserieHeaderDto.cs" />
+    <Compile Include="Filter\VehiclePurchases\VehiclePurchaseDetailFilterDto.cs" />
+    <Compile Include="Filter\VehiclePurchases\CarrosserieDetailFilterDto.cs" />
+    <Compile Include="Filter\VehiclePurchases\VehiclePurchaseHeaderFilterDto.cs" />
+    <Compile Include="Filter\VehiclePurchases\CarrosserieHeaderFilterDto.cs" />
+    <Compile Include="Filter\StandardCodes\StandardCodeCharFilterDto.cs" />
+    <Compile Include="Filter\Masters\BusinessSectorDetailFilterDto.cs" />
+    <Compile Include="Filter\Masters\BusinessSectorHeaderFilterDto.cs" />
+    <Compile Include="Filter\Masters\FleetFilterDto.cs" />
+    <Compile Include="Dto\Masters\FleetDto.cs" />
+    <Compile Include="Dto\Masters\BenefitEventHeaderDto.cs" />
+    <Compile Include="Dto\Masters\BenefitMasterDealerDto.cs" />
+    <Compile Include="Dto\Masters\BenefitMasterDetailDto.cs" />
+    <Compile Include="Dto\Masters\BenefitMasterHeaderDto.cs" />
+    <Compile Include="Dto\Masters\BenefitTypeDto.cs" />
+    <Compile Include="Dto\Masters\CityDto.cs" />
+    <Compile Include="CustomAttribute\DateDisplayFormatAttribute.cs" />
+    <Compile Include="CustomAttribute\DateTimeDisplayFormatAttribute.cs" />
+    <Compile Include="Filter\Masters\BenefitEventHeaderFilterDto.cs" />
+    <Compile Include="Filter\Masters\BenefitMasterDealerFilterDto.cs" />
+    <Compile Include="Filter\Masters\BenefitMasterDetailFilterDto.cs" />
+    <Compile Include="Filter\Masters\BenefitMasterHeaderFilterDto.cs" />
+    <Compile Include="Filter\Masters\BenefitTypeFilterDto.cs" />
+    <Compile Include="Filter\Masters\CityFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\CustomerFilterDto.cs" />
+    <Compile Include="Filter\Masters\IndustrialSectorFilterDto.cs" />
+    <Compile Include="Filter\Services\PDIFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\ChassisMasterPKTFilterDto.cs" />
+    <Compile Include="Filter\Masters\ProfileGroupFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\SPKChassisFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\SPKCustomerProfileFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\SPKDetailFilterDto.cs" />
+    <Compile Include="Filter\Masters\ProfileHeaderToGroupFilterDto.cs" />
+    <Compile Include="Filter\Masters\TermOfPaymentFilterDto.cs" />
+    <Compile Include="Filter\Masters\PriceFilterDto.cs" />
+    <Compile Include="Filter\Masters\PositionWSCFilterDto.cs" />
+    <Compile Include="Filter\Masters\LaborMasterFilterDto.cs" />
+    <Compile Include="Filter\Services\FSKindFilterDto.cs" />
+    <Compile Include="Filter\Masters\EndCustomerFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\ChassisMasterFilterDto.cs" />
+    <Compile Include="Filter\Masters\CategoryFilterDto.cs" />
+    <Compile Include="Dto\Masters\FSKindDto.cs" />
+    <Compile Include="Dto\Masters\IndustrialSectorDto.cs" />
+    <Compile Include="Dto\Masters\LaborMasterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchases\VehiclePurchaseHeaderParameterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchases\VehiclePurchaseDetailParameterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchases\CarrosserieDetailParameterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchases\CarrosserieHeaderParameterDto.cs" />
+    <Compile Include="Parameters\StandardCodes\StandardCodeCharParameterDto.cs" />
+    <Compile Include="Parameters\Masters\BusinessSectorDetailParameterDto.cs" />
+    <Compile Include="Parameters\Masters\BusinessSectorHeaderParameterDto.cs" />
+    <Compile Include="Parameters\Masters\FleetParameterDto.cs" />
+    <Compile Include="Parameters\AttachmentParameterDto.cs" />
+    <Compile Include="Parameters\Masters\BenefitEventHeaderParameterDto.cs" />
+    <Compile Include="Parameters\Masters\BenefitMasterDealerParameterDto.cs" />
+    <Compile Include="Parameters\Masters\BenefitMasterDetailParameterDto.cs" />
+    <Compile Include="Parameters\Masters\BenefitMasterHeaderParameterDto.cs" />
+    <Compile Include="Parameters\Masters\BenefitTypeParameterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchases\ChassisMasterParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\CustomerParameterDto.cs" />
+    <Compile Include="Parameters\Masters\EndCustomerParameterDto.cs" />
+    <Compile Include="Parameters\Masters\FSKindParameterDto.cs" />
+    <Compile Include="Parameters\Masters\IndustrialSectorParameterDto.cs" />
+    <Compile Include="Parameters\Masters\LaborMasterParameterDto.cs" />
+    <Compile Include="Parameters\Services\PDIParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\ChassisMasterPKTParameterDto.cs" />
+    <Compile Include="Parameters\Masters\PositionWSCParameterDto.cs" />
+    <Compile Include="Parameters\Masters\PriceParameterDto.cs" />
+    <Compile Include="Parameters\Masters\ProfileGroupParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SPKChassisParameterDto.cs" />
+    <Compile Include="Parameters\Masters\ProfileHeaderToGroupParameterDto.cs" />
+    <Compile Include="Parameters\Masters\TermOfPaymentParameterDto.cs" />
+    <Compile Include="Dto\Masters\PaymentMethodDto.cs" />
+    <Compile Include="Dto\Masters\PaymentPurposeDto.cs" />
+    <Compile Include="Dto\Masters\Area1Dto.cs" />
+    <Compile Include="Dto\Masters\DealerGroupDto.cs" />
+    <Compile Include="Dto\Masters\Area2Dto.cs" />
+    <Compile Include="Base\AggregateFilter.cs" />
+    <Compile Include="Base\CompareTypeFilter.cs" />
+    <Compile Include="Base\FilterDtoBase.cs" />
+    <Compile Include="Base\MatchTypeFilter.cs" />
+    <Compile Include="Base\SortFilter.cs" />
+    <Compile Include="Dto\Masters\CategoryDto.cs" />
+    <Compile Include="Dto\VehiclePurchases\ChassisMasterDto.cs" />
+    <Compile Include="Dto\VehiclePurchases\ChassisMasterLocationDto.cs" />
+    <Compile Include="Dto\VehiclePurchases\ChassisMasterProfileDto.cs" />
+    <Compile Include="Common\SQLOperation.cs" />
+    <Compile Include="Dto\VehiclePurchases\CustomerBusinessDto.cs" />
+    <Compile Include="Dto\VehicleSales\CustomerDealerDto.cs" />
+    <Compile Include="Dto\VehicleSales\CustomerDto.cs" />
+    <Compile Include="Dto\VehicleSales\CustomerProfileDto.cs" />
+    <Compile Include="Dto\VehicleSales\CustomerProfileHistoryDto.cs" />
+    <Compile Include="Dto\Masters\DealerBranchDto.cs" />
+    <Compile Include="Dto\Masters\EndCustomerDto.cs" />
+    <Compile Include="Filter\AppConfigFilterDto.cs" />
+    <Compile Include="Filter\Masters\PaymentMethodFilterDto.cs" />
+    <Compile Include="Filter\Masters\PaymentPurposeFilterDto.cs" />
+    <Compile Include="Filter\Masters\VehicleKindGroupFilterDto.cs" />
+    <Compile Include="Filter\Masters\VehicleKindFilterDto.cs" />
+    <Compile Include="Filter\Masters\VehicleModelFilterDto.cs" />
+    <Compile Include="Filter\Masters\VehicleClassFilterDto.cs" />
+    <Compile Include="Filter\Masters\VehicleColorFilterDto.cs" />
+    <Compile Include="Filter\Masters\DealerGroupFilterDto.cs" />
+    <Compile Include="Filter\Masters\DealerBranchFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\SPKCustomerFilterDto.cs" />
+    <Compile Include="Filter\Masters\Area2FilterDto.cs" />
+    <Compile Include="Filter\Masters\Area1FilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\SPKFakturFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\SPKHeaderFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\StatusChangeHistoryFilterDto.cs" />
+    <Compile Include="Filter\StandardCodes\StandardCodeFilterDto.cs" />
+    <Compile Include="Dto\Masters\JobPositionDto.cs" />
+    <Compile Include="Dto\Masters\LKPPDealerDto.cs" />
+    <Compile Include="Dto\Masters\LKPPDetailDto.cs" />
+    <Compile Include="Dto\Masters\LKPPHeaderDto.cs" />
+    <Compile Include="Dto\Masters\MainOperationAreaDto.cs" />
+    <Compile Include="Dto\Masters\MainUsageDto.cs" />
+    <Compile Include="Dto\Services\MCPDealerDto.cs" />
+    <Compile Include="Dto\Services\MCPDetailDto.cs" />
+    <Compile Include="Dto\Services\MCPHeaderDto.cs" />
+    <Compile Include="Dto\Masters\OwnerAgeDto.cs" />
+    <Compile Include="Parameters\AppConfigParameterDto.cs" />
+    <Compile Include="Parameters\Masters\PaymentMethodParameterDto.cs" />
+    <Compile Include="Parameters\Masters\PaymentPurposeParameterDto.cs" />
+    <Compile Include="Parameters\Masters\DealerGroupParameterDto.cs" />
+    <Compile Include="Parameters\Masters\CategoryParameterDto.cs" />
+    <Compile Include="Parameters\Masters\CityParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\CustomerRequestParameterDto.cs" />
+    <Compile Include="Parameters\Masters\DealerBranchParameterDto.cs" />
+    <Compile Include="Filter\Masters\MainAreaFilterDto.cs" />
+    <Compile Include="Filter\Masters\ProvinceFilterDto.cs" />
+    <Compile Include="Dto\Masters\MainAreaDto.cs" />
+    <Compile Include="Parameters\Masters\Area1ParameterDto.cs" />
+    <Compile Include="Parameters\Masters\Area2ParameterDto.cs" />
+    <Compile Include="Parameters\Masters\MainAreaParametrDto.cs" />
+    <Compile Include="Parameters\Masters\ProvinceParameterDto.cs" />
+    <Compile Include="Dto\VehicleSales\CustomerRequestDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SPKCustomerParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SPKDetailParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SPKFakturParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SPKHeaderParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SPKCustomerProfileParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SPKProfileParameterDto.cs" />
+    <Compile Include="Parameters\StandardCodes\StandardCodeParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\StatusChangeHistoryParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VehicleClassParameter.cs" />
+    <Compile Include="Parameters\Masters\VehicleModelParameter.cs" />
+    <Compile Include="Parameters\Masters\VehicleColorParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VehicleKindGroupParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VehicleKindParameterDto.cs" />
+    <Compile Include="Dto\Services\PDIDto.cs" />
+    <Compile Include="Dto\VehicleSales\ChassisMasterPKTDto.cs" />
+    <Compile Include="Dto\Masters\PositionWSCDto.cs" />
+    <Compile Include="Dto\Masters\PriceDto.cs" />
+    <Compile Include="Dto\Masters\PaymentTypeDto.cs" />
+    <Compile Include="Dto\Masters\ProductCategoryDto.cs" />
+    <Compile Include="Dto\Masters\ProfileDetailDto.cs" />
+    <Compile Include="Dto\Masters\ProfileGroupDto.cs" />
+    <Compile Include="Dto\Masters\ProfileHeaderDto.cs" />
+    <Compile Include="Dto\Masters\ProfileHeaderToGroupDto.cs" />
+    <Compile Include="Dto\Masters\ProvinceDto.cs" />
+    <Compile Include="Dto\VehicleSales\SalesmanLevelDto.cs" />
+    <Compile Include="Dto\Masters\SPAFDocDto.cs" />
+    <Compile Include="Dto\VehicleSales\SPKCustomerDto.cs" />
+    <Compile Include="Dto\VehicleSales\SPKCustomerProfileDto.cs" />
+    <Compile Include="Dto\VehicleSales\SPKChassisDto.cs" />
+    <Compile Include="Dto\VehicleSales\SPKDetailDto.cs" />
+    <Compile Include="Dto\VehicleSales\SPKFakturDto.cs" />
+    <Compile Include="Dto\VehicleSales\SPKHeaderStatusDto.cs" />
+    <Compile Include="Dto\VehicleSales\SPKHeaderDto.cs" />
+    <Compile Include="Common\Utils.cs" />
+    <Compile Include="Dto\VehicleSales\SPKProfileDto.cs" />
+    <Compile Include="Dto\StandardCodes\StandardCodeCharDto.cs" />
+    <Compile Include="Dto\StandardCodes\StandardCodeDto.cs" />
+    <Compile Include="Dto\VehicleSales\StatusChangeHistoryDto.cs" />
+    <Compile Include="Dto\Masters\TermOfPaymentDto.cs" />
+    <Compile Include="Dto\Masters\VehicleBodyShapeDto.cs" />
+    <Compile Include="Dto\Masters\VehicleKindGroupDto.cs" />
+    <Compile Include="Dto\Masters\VehicleKindDto.cs" />
+    <Compile Include="Dto\Masters\VehicleColorDto.cs" />
+    <Compile Include="Dto\Masters\SPLDealerDto.cs" />
+    <Compile Include="Dto\Masters\SPLDetailDto.cs" />
+    <Compile Include="Dto\Masters\SPLDto.cs" />
+    <Compile Include="Dto\Masters\VehicleClassDto.cs" />
+    <Compile Include="Dto\Masters\VehicleModelDto.cs" />
+    <Compile Include="Dto\Masters\VehicleOwnershipDto.cs" />
+    <Compile Include="Dto\Masters\VehiclePurposeDto.cs" />
+    <Compile Include="Dto\VehicleSales\VWI_OpenFakturDto.cs" />
+    <Compile Include="Dto\Masters\VehicleTypeDto.cs" />
+    <Compile Include="Dto\Masters\DealerDto.cs" />
+    <Compile Include="Dto\VehicleSales\SalesmanHeaderDto.cs" />
+    <Compile Include="Dto\Masters\BankDto.cs" />
+    <Compile Include="Base\DtoBase.cs" />
+    <Compile Include="Base\MessageBase.cs" />
+    <Compile Include="Base\Request.cs" />
+    <Compile Include="Base\ResponseBase.cs" />
+    <Compile Include="Filter\Masters\BankFilterDto.cs" />
+    <Compile Include="Filter\Masters\DealerFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\SalesmanHeaderFilterDto.cs" />
+    <Compile Include="Filter\Masters\VehicleTypeFilterDto.cs" />
+    <Compile Include="Filter\VehicleSales\SAPCustomerFilterDto.cs" />
+    <Compile Include="Parameters\Masters\BankParameterDto.cs" />
+    <Compile Include="Parameters\Masters\VehicleTypeParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SalesmanHeaderParameterDto.cs" />
+    <Compile Include="Parameters\Masters\DealerParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\SAPCustomerParameterDto.cs" />
+    <Compile Include="Parameters\VehicleSales\VWI_LeadCustomerSalesForceParameterDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Dto\VehicleSales\SAPCustomerDto.cs" />
+    <Compile Include="Dto\Masters\VWI_BusinessSectorDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KTB.DNet.DataMapper.Framework\KTB.DNet.DataMapper.Framework.vbproj">
+      <Project>{cc23ff7e-bc14-4d66-9e96-6e0a51576a34}</Project>
+      <Name>KTB.DNet.DataMapper.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.DataMapper\KTB.DNet.DataMapper.vbproj">
+      <Project>{e021fe28-84e0-4b1f-804a-180be4f38f26}</Project>
+      <Name>KTB.DNet.DataMapper</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain.Search\KTB.DNet.Domain.Search.vbproj">
+      <Project>{06a29192-8b96-4dfb-9c6c-aa5b4ddf8d36}</Project>
+      <Name>KTB.DNet.Domain.Search</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain\KTB.DNet.Domain.vbproj">
+      <Project>{f4cc7463-4cbb-4336-aeaf-ac8fbc38dd9a}</Project>
+      <Name>KTB.DNet.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Framework\KTB.DNet.Interface.Framework.csproj">
+      <Project>{35cd5278-bb7f-44d7-ab5b-ff5e551a916b}</Project>
+      <Name>KTB.DNet.Interface.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Resources\KTB.DNet.Interface.Resources.csproj">
+      <Project>{2a4ee316-2430-45c8-b2ca-7952d52e3180}</Project>
+      <Name>KTB.DNet.Interface.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

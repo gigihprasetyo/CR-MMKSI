@@ -1,0 +1,88 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_vehiclepricedetail.businessunitcode
+	, VWI_CRM_xts_vehiclepricedetail.xts_titleregistrationfee
+	, VWI_CRM_xts_vehiclepricedetail.versionnumber
+	, VWI_CRM_xts_vehiclepricedetail.createdon
+	, VWI_CRM_xts_vehiclepricedetail.xts_vehiclepriceidname
+	, VWI_CRM_xts_vehiclepricedetail.xts_ontheroadprice
+	, VWI_CRM_xts_vehiclepricedetail.xts_productconfigurationid
+	, VWI_CRM_xts_vehiclepricedetail.xts_offtheroadprice_base
+	, VWI_CRM_xts_vehiclepricedetail.xts_consumptiontax1amount
+	, VWI_CRM_xts_vehiclepricedetail.statuscodename
+	, VWI_CRM_xts_vehiclepricedetail.xts_productinteriorcolorid
+	, VWI_CRM_xts_vehiclepricedetail.modifiedbyyominame
+	, VWI_CRM_xts_vehiclepricedetail.owneridtype
+	, VWI_CRM_xts_vehiclepricedetail.createdonbehalfby
+	, VWI_CRM_xts_vehiclepricedetail.modifiedbyname
+	, VWI_CRM_xts_vehiclepricedetail.owneridname
+	, VWI_CRM_xts_vehiclepricedetail.xts_consumptiontax2amount
+	, VWI_CRM_xts_vehiclepricedetail.overriddencreatedon
+	, VWI_CRM_xts_vehiclepricedetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_vehiclepricedetail.modifiedonbehalfby
+	, VWI_CRM_xts_vehiclepricedetail.exchangerate
+	, VWI_CRM_xts_vehiclepricedetail.ktb_dnetid
+	, VWI_CRM_xts_vehiclepricedetail.xts_consumptiontax2id
+	, VWI_CRM_xts_vehiclepricedetail.owningteam
+	, VWI_CRM_xts_vehiclepricedetail.xts_productidname
+	, VWI_CRM_xts_vehiclepricedetail.statecode
+	, VWI_CRM_xts_vehiclepricedetail.xts_consumptiontax1amount_base
+	, VWI_CRM_xts_vehiclepricedetail.timezoneruleversionnumber
+	, VWI_CRM_xts_vehiclepricedetail.xts_bookingfeeamount_base
+	, VWI_CRM_xts_vehiclepricedetail.xts_productstyleid
+	, VWI_CRM_xts_vehiclepricedetail.xts_locking
+	, VWI_CRM_xts_vehiclepricedetail.xts_consumptiontax1idname
+	, VWI_CRM_xts_vehiclepricedetail.createdonbehalfbyname
+	, VWI_CRM_xts_vehiclepricedetail.xts_consumptiontax2idname
+	, VWI_CRM_xts_vehiclepricedetail.xts_productexteriorcolorid
+	, VWI_CRM_xts_vehiclepricedetail.createdby
+	, VWI_CRM_xts_vehiclepricedetail.utcconversiontimezonecode
+	, VWI_CRM_xts_vehiclepricedetail.xts_offtheroadprice
+	, VWI_CRM_xts_vehiclepricedetail.xts_specialcolorprice
+	, VWI_CRM_xts_vehiclepricedetail.xts_titleregistrationfee_base
+	, VWI_CRM_xts_vehiclepricedetail.ownerid
+	, VWI_CRM_xts_vehiclepricedetail.modifiedon
+	, VWI_CRM_xts_vehiclepricedetail.importsequencenumber
+	, VWI_CRM_xts_vehiclepricedetail.owneridyominame
+	, VWI_CRM_xts_vehiclepricedetail.modifiedby
+	, VWI_CRM_xts_vehiclepricedetail.createdbyname
+	, VWI_CRM_xts_vehiclepricedetail.xts_vehiclepricedetailid
+	, VWI_CRM_xts_vehiclepricedetail.xts_businessunitid
+	, VWI_CRM_xts_vehiclepricedetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_vehiclepricedetail.xts_productexteriorcoloridname
+	, VWI_CRM_xts_vehiclepricedetail.xts_productconfigurationidname
+	, VWI_CRM_xts_vehiclepricedetail.xts_specialcolorprice_base
+	, VWI_CRM_xts_vehiclepricedetail.xts_productid
+	, VWI_CRM_xts_vehiclepricedetail.transactioncurrencyid
+	, VWI_CRM_xts_vehiclepricedetail.xts_baseprice_base
+	, VWI_CRM_xts_vehiclepricedetail.xts_baseprice
+	, VWI_CRM_xts_vehiclepricedetail.createdbyyominame
+	, VWI_CRM_xts_vehiclepricedetail.owninguser
+	, VWI_CRM_xts_vehiclepricedetail.transactioncurrencyidname
+	, VWI_CRM_xts_vehiclepricedetail.xts_consumptiontax1id
+	, VWI_CRM_xts_vehiclepricedetail.owningbusinessunit
+	, VWI_CRM_xts_vehiclepricedetail.xts_ontheroadprice_base
+	, VWI_CRM_xts_vehiclepricedetail.xts_consumptiontax2amount_base
+	, VWI_CRM_xts_vehiclepricedetail.xts_productinteriorcoloridname
+	, VWI_CRM_xts_vehiclepricedetail.statuscode
+	, VWI_CRM_xts_vehiclepricedetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_vehiclepricedetail.xts_bookingfeeamount
+	, VWI_CRM_xts_vehiclepricedetail.xts_vehiclepriceid
+	, VWI_CRM_xts_vehiclepricedetail.xts_vehiclepricedetail
+	, VWI_CRM_xts_vehiclepricedetail.statecodename
+	, VWI_CRM_xts_vehiclepricedetail.xts_businessunitidname
+	, VWI_CRM_xts_vehiclepricedetail.xts_productstyleidname
+	, VWI_CRM_xts_vehiclepricedetail.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM VWI_CRM_xts_vehiclepricedetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_vehiclepricedetail 

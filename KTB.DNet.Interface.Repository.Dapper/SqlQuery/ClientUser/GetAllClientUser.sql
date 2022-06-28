@@ -1,0 +1,13 @@
+﻿SELECT [Id]
+      ,[ClientId]
+      ,[UserId]
+      ,[Token]
+      ,[TokenExpired]
+      ,[LastActivity]
+      ,[LastLogin]
+      ,[CreatedBy]
+      ,[CreatedTime]
+      ,[UpdatedBy]
+      ,[UpdatedTime]
+FROM [APIClientUser]
+

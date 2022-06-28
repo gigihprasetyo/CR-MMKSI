@@ -1,0 +1,14 @@
+<div class="content-top clearfix">
+  <h1 class="al-title">{{ activePageTitle }}</h1>
+  <ul class="breadcrumb al-breadcrumb">
+    <li>
+      <a href="#/dashboard">Home</a>
+    </li>
+    <li ng-if="$index > 0" ng-repeat="path in paths">
+      <span ng-if="(path.self.module || !path.self.abstract)">{{path.self.breadchrumb ? path.self.breadchrumb.text : path.self.title}}</span>
+      <span ng-if="(!path.self.module && path.self.abstract)">
+        <a ui-sref-active='{"active": "{{path.self.name}}" }' ui-sref='{{path.self.name}}.list'>{{path.self.breadchrumb ? path.self.breadchrumb.text : path.self.title}}</a>
+      </span>
+    </li>
+  </ul>
+</div>

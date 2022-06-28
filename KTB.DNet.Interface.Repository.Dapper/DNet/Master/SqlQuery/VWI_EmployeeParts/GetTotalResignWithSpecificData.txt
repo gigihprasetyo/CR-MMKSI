@@ -1,0 +1,16 @@
+﻿SELECT 
+count(*)
+FROM
+	(SELECT DISTINCT SalesmanHeader.ID, SalesmanHeader.SalesmanCode, SalesmanHeader.Name, SalesmanHeader.PlaceOfBirth, SalesmanHeader.DateOfBirth, 
+		KTPProfile.ProfileValue AS NoKTP,
+		EmailProfile.ProfileValue AS Email,
+		NoHPProfile.ProfileValue AS NoHP,
+		SalesmanHeader.LastUpdateTime
+	FROM SalesmanHeader WITH ( NOLOCK )
+		JOIN Dealer WITH ( NOLOCK ) ON SalesmanHeader.DealerId = Dealer.ID AND Dealer.RowStatus = 0
+		LEFT JOIN DealerBranch WITH ( NOLOCK ) ON SalesmanHeader.DealerId = DealerBranch.DealerID AND SalesmanHeader.DealerBranchID = DealerBranch.ID AND DealerBranch.RowStatus = 0	  
+		LEFT JOIN SalesmanProfile KTPProfile WITH (NOLOCK) ON KTPProfile.SalesmanHeaderID = SalesmanHeader.ID AND KTPProfile.ProfileHeaderId = 29 AND KTPProfile.RowStatus = 0
+		LEFT JOIN SalesmanProfile EmailProfile WITH (NOLOCK) ON EmailProfile.SalesmanHeaderID = SalesmanHeader.ID AND EmailProfile.ProfileHeaderId = 26 AND EmailProfile.RowStatus = 0
+		LEFT JOIN SalesmanProfile NoHPProfile WITH (NOLOCK) ON NoHPProfile.SalesmanHeaderID = SalesmanHeader.ID AND NoHPProfile.ProfileHeaderId = 33 AND NoHPProfile.RowStatus = 0
+    WHERE SalesmanHeader.SalesIndicator = 0 and SalesmanHeader.Status = 3 and SalesmanHeader.RowStatus = 0
+) VWI_EmployeeResign {0}

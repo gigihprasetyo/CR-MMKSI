@@ -1,0 +1,22 @@
+SELECT COUNT(*)
+FROM 
+(
+SELECT
+	  TOPSPPenaltyDetail.ID,
+	  TOPSPPenaltyDetail.TOPSPPenaltyID,
+	  TOPSPPenaltyDetail.AmountPenalty,
+	  SparePartBilling.BillingNumber,
+	  SparePartDO.DoNumber
+FROM
+	  TOPSPPenaltyDetail 
+	  join SparePartBilling on SparePartBilling.ID = TOPSPPenaltyDetail.SparePartBillingID
+	  join SparePartBillingDetail on SparePartBillingDetail.SparePartBillingID = SparePartBilling.ID
+	  join SparePartDODetail on SparePartDODetail.ID = SparePartBillingDetail.SparePartDODetailID
+	  join SparePartDO on SparePartDO.ID = SparePartDODetail.SparePartDOID
+GROUP BY
+	  TOPSPPenaltyDetail.ID,
+	  TOPSPPenaltyDetail.TOPSPPenaltyID,
+	  TOPSPPenaltyDetail.AmountPenalty,
+	  SparePartBilling.BillingNumber,
+	  SparePartDO.DoNumber
+)SparePartPenaltyDetail {0}

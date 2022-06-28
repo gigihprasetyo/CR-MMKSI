@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AppNavigationSchema xmlns="http://tempuri.org/AppNavigationSchema.xsd">
+	<AppScreen>
+		<AppScreenId>200</AppScreenId>
+		<ScreenName>Pemesanan</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>200</AppMenuId>
+		<MenuName>Pemesanan</MenuName>
+		<ScreenId>200</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	<AppToolbar>
+		<AppToolbarId>1</AppToolbarId>
+		<Name>Home</Name>
+		<ScreenId>100</ScreenId>
+		<SortOrder>1</SortOrder>
+	</AppToolbar>
+	<AppScreen>
+		<AppScreenId>210</AppScreenId>
+		<ScreenName>Pesanan</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>210</AppMenuId>
+		<MenuName>Pesanan</MenuName>
+		<ScreenId>210</ScreenId>
+		<ParentMenuId>200</ParentMenuId>
+		<SortOrder>20</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>220</AppMenuId>
+		<MenuName>Upload melalui file Text</MenuName>
+		<ScreenId>220</ScreenId>
+		<ParentMenuId>200</ParentMenuId>
+		<SortOrder>21</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>230</AppMenuId>
+		<MenuName>Upload melalui file Excel</MenuName>
+		<ScreenId>230</ScreenId>
+		<ParentMenuId>200</ParentMenuId>
+		<SortOrder>22</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>240</AppMenuId>
+		<MenuName>Barang yang tidak terpenuhi</MenuName>
+		<ScreenId>240</ScreenId>
+		<ParentMenuId>200</ParentMenuId>
+		<SortOrder>23</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>250</AppMenuId>
+		<MenuName>Estimasi Pesanan</MenuName>
+		<ScreenId>250</ScreenId>
+		<ParentMenuId>200</ParentMenuId>
+		<SortOrder>24</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>260</AppMenuId>
+		<MenuName>Status Pesanan</MenuName>
+		<ScreenId>260</ScreenId>
+		<ParentMenuId>200</ParentMenuId>
+		<SortOrder>25</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>220</AppScreenId>
+		<ScreenName>Upload melalui file Text</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>230</AppScreenId>
+		<ScreenName>Upload melalui file Excel</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>240</AppScreenId>
+		<ScreenName>Barang yang tidak terpenuhi</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>250</AppScreenId>
+		<ScreenName>Estimasi Pesanan</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>260</AppScreenId>
+		<ScreenName>Status Pesanan</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>270</AppScreenId>
+		<ScreenName>Daftar Pesanan</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>270</AppMenuId>
+		<MenuName>Daftar Pesanan</MenuName>
+		<ScreenId>270</ScreenId>
+		<ParentMenuId>200</ParentMenuId>
+		<SortOrder>26</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>280</AppScreenId>
+		<ScreenName>Pembatalan Pesanan</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>280</AppMenuId>
+		<MenuName>Pembatalan Pesanan</MenuName>
+		<ScreenId>280</ScreenId>
+		<ParentMenuId>200</ParentMenuId>
+		<SortOrder>27</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>300</AppScreenId>
+		<ScreenName>Deposit</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>300</AppMenuId>
+		<MenuName>Deposit</MenuName>
+		<ScreenId>300</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>3</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>310</AppMenuId>
+		<MenuName>Daftar Deposit</MenuName>
+		<ScreenId>310</ScreenId>
+		<ParentMenuId>300</ParentMenuId>
+		<SortOrder>30</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>310</AppScreenId>
+		<ScreenName>Daftar Deposit</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>320</AppScreenId>
+		<ScreenName>Daftar DepositC2</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>320</AppMenuId>
+		<MenuName>Daftar DepositC2</MenuName>
+		<ScreenId>320</ScreenId>
+		<ParentMenuId>300</ParentMenuId>
+		<SortOrder>31</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>400</AppMenuId>
+		<MenuName>Master Barang</MenuName>
+		<ScreenId>400</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>4</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>400</AppScreenId>
+		<ScreenName>Master Barang</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>410</AppScreenId>
+		<ScreenName>Master Barang</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>410</AppMenuId>
+		<MenuName>Master Barang</MenuName>
+		<ScreenId>410</ScreenId>
+		<ParentMenuId>400</ParentMenuId>
+		<SortOrder>40</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>500</AppScreenId>
+		<ScreenName>Annual Discount</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>500</AppMenuId>
+		<MenuName>Annual Discount</MenuName>
+		<ScreenId>500</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>5</SortOrder>
+	</AppMenu>
+  <AppScreen>
+    <AppScreenId>1707001</AppScreenId>
+    <ScreenName>Daftar Interest Deposit</ScreenName>
+    <NavigateUrl>default_parts.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>1707001</AppMenuId>
+    <MenuName>Daftar Interest Deposit</MenuName>
+    <ScreenId>1707001</ScreenId>
+    <ParentMenuId>300</ParentMenuId>
+    <SortOrder>32</SortOrder>
+  </AppMenu>
+	<!--<AppScreen>
+		<AppScreenId>501</AppScreenId>
+		<ScreenName>Daftar Pencapaian Annual  Discount</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>501</AppMenuId>
+		<MenuName>Daftar Pencapaian Annual  Discount</MenuName>
+		<ScreenId>501</ScreenId>
+		<ParentMenuId>500</ParentMenuId>
+		<SortOrder>56</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>502</AppScreenId>
+		<ScreenName>Upload File Annual Discount</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>502</AppMenuId>
+		<MenuName>Upload File Annual Discount</MenuName>
+		<ScreenId>502</ScreenId>
+		<ParentMenuId>500</ParentMenuId>
+		<SortOrder>53</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>503</AppMenuId>
+		<MenuName>Daftar File Annual Discount</MenuName>
+		<ScreenId>503</ScreenId>
+		<ParentMenuId>500</ParentMenuId>
+		<SortOrder>55</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>503</AppScreenId>
+		<ScreenName>Daftar File Annual Discount</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>504</AppScreenId>
+		<ScreenName>Upload Item Annual Discount</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>504</AppMenuId>
+		<MenuName>Upload Item Annual Discount</MenuName>
+		<ScreenId>504</ScreenId>
+		<ParentMenuId>500</ParentMenuId>
+		<SortOrder>54</SortOrder>
+	</AppMenu>-->
+	<AppScreen>
+		<AppScreenId>600</AppScreenId>
+		<ScreenName>Rekapitulasi</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>600</AppMenuId>
+		<MenuName>Rekapitulasi</MenuName>
+		<ScreenId>600</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>6</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>610</AppScreenId>
+		<ScreenName>Rekapitulasi Pembelian</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>610</AppMenuId>
+		<MenuName>Rekapitulasi Pembelian</MenuName>
+		<ScreenId>610</ScreenId>
+		<ParentMenuId>600</ParentMenuId>
+		<SortOrder>60</SortOrder>
+	</AppMenu>
+   
+	<AppScreen>
+		<AppScreenId>700</AppScreenId>
+		<ScreenName>Permintaan Khusus</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>700</AppMenuId>
+		<MenuName>Permintaan Khusus</MenuName>
+		<ScreenId>700</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>7</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>710</AppMenuId>
+		<MenuName>Daftar Permintaan Khusus</MenuName>
+		<ScreenId>710</ScreenId>
+		<ParentMenuId>700</ParentMenuId>
+		<SortOrder>70</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>710</AppScreenId>
+		<ScreenName>List Permintaan Khusus</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen> 
+	<AppMenu>
+		<AppMenuId>800</AppMenuId>
+		<MenuName>Special Item</MenuName>
+		<ScreenId>800</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>8</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>810</AppMenuId>
+		<MenuName>Pengelolaan Special Item</MenuName>
+		<ScreenId>810</ScreenId>
+		<ParentMenuId>800</ParentMenuId>
+		<SortOrder>81</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>820</AppMenuId>
+		<MenuName>Daftar Special Item</MenuName>
+		<ScreenId>820</ScreenId>
+		<ParentMenuId>800</ParentMenuId>
+		<SortOrder>82</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>830</AppMenuId>
+		<MenuName>Upload Special Item</MenuName>
+		<ScreenId>830</ScreenId>
+		<ParentMenuId>800</ParentMenuId>
+		<SortOrder>80</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>800</AppScreenId>
+		<ScreenName>Special Item</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>810</AppScreenId>
+		<ScreenName>Pengelolaan Special Item</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>820</AppScreenId>
+		<ScreenName>Daftar Special Item</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>830</AppScreenId>
+		<ScreenName>Upload Special Item</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<!--<AppScreen>
+		<AppScreenId>720</AppScreenId>
+		<ScreenName>Pengajuan Permintaan Khusus</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>720</AppMenuId>
+		<MenuName>Pengajuan Permintaan Khusus</MenuName>
+		<ScreenId>720</ScreenId>
+		<ParentMenuId>700</ParentMenuId>
+		<SortOrder>19</SortOrder>
+	</AppMenu>-->
+	<!--<AppMenu>
+		<AppMenuId>730</AppMenuId>
+		<MenuName>Daftar Permintaan Khusus dari Dealer</MenuName>
+		<ScreenId>730</ScreenId>
+		<ParentMenuId>700</ParentMenuId>
+		<SortOrder>18</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>730</AppScreenId>
+		<ScreenName>Daftar Permintaan Khusus dari Dealer</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>-->
+	<!--<AppMenu>
+		<AppMenuId>740</AppMenuId>
+		<MenuName>Daftar Penerima Email</MenuName>
+		<ScreenId>740</ScreenId>
+		<ParentMenuId>700</ParentMenuId>
+		<SortOrder>17</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>740</AppScreenId>
+		<ScreenName>Daftar Penerima Email</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>-->
+	<AppScreen>
+		<AppScreenId>900</AppScreenId>
+		<ScreenName>Partshop Reward Program</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>901</AppScreenId>
+		<ScreenName>Pengelolaan Kategori PRP</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>902</AppScreenId>
+		<ScreenName>Pengelolaan PRP</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>903</AppScreenId>
+		<ScreenName>Upload PRP</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>904</AppScreenId>
+		<ScreenName>Daftar PRP</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>900</AppMenuId>
+		<MenuName>Partshop Reward Program</MenuName>
+		<ScreenId>900</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>9</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>901</AppMenuId>
+		<MenuName>Pengelolaan Kategori PRP</MenuName>
+		<ScreenId>901</ScreenId>
+		<ParentMenuId>900</ParentMenuId>
+		<SortOrder>21</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>902</AppMenuId>
+		<MenuName>Pengelolaan PRP</MenuName>
+		<ScreenId>902</ScreenId>
+		<ParentMenuId>900</ParentMenuId>
+		<SortOrder>22</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>903</AppMenuId>
+		<MenuName>Upload PRP</MenuName>
+		<ScreenId>903</ScreenId>
+		<ParentMenuId>900</ParentMenuId>
+		<SortOrder>23</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>904</AppMenuId>
+		<MenuName>Daftar PRP</MenuName>
+		<ScreenId>904</ScreenId>
+		<ParentMenuId>900</ParentMenuId>
+		<SortOrder>27</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>505</AppScreenId>
+		<ScreenName>Pengelolaan File Annual Discount</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>505</AppMenuId>
+		<MenuName>Pengelolaan File Annual Discount</MenuName>
+		<ScreenId>505</ScreenId>
+		<ParentMenuId>500</ParentMenuId>
+		<SortOrder>52</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>420</AppScreenId>
+		<ScreenName>Lihat Stok</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>420</AppMenuId>
+		<MenuName>Lihat Stok</MenuName>
+		<ScreenId>420</ScreenId>
+		<ParentMenuId>400</ParentMenuId>
+		<SortOrder>41</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>905</AppScreenId>
+		<ScreenName>Penerima Email PRP</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>905</AppMenuId>
+		<MenuName>Penerima Email PRP</MenuName>
+		<ScreenId>905</ScreenId>
+		<ParentMenuId>900</ParentMenuId>
+		<SortOrder>30</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>906</AppMenuId>
+		<MenuName>Pengiriman Laporan PRP </MenuName>
+		<ScreenId>906</ScreenId>
+		<ParentMenuId>900</ParentMenuId>
+		<SortOrder>31</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>907</AppMenuId>
+		<MenuName>Daftar Pengiriman Laporan PRP</MenuName>
+		<ScreenId>907</ScreenId>
+		<ParentMenuId>900</ParentMenuId>
+		<SortOrder>32</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>906</AppScreenId>
+		<ScreenName>Pengiriman Laporan PRP</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>907</AppScreenId>
+		<ScreenName>Daftar Pengiriman Laporan PRP</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<!--<AppMenu>
+		<AppMenuId>747</AppMenuId>
+		<MenuName>Daftar Pengajuan Permintaan Khusus Terhadap PO</MenuName>
+		<ScreenId>747</ScreenId>
+		<ParentMenuId>700</ParentMenuId>
+		<SortOrder>80</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>747</AppScreenId>
+		<ScreenName>Daftar Pengajuan Permintaan Khusus Terhadap PO</ScreenName>
+		<NavigateUrl>default_parts.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>-->
+	  
+  <AppMenu>
+      <AppMenuId>151021</AppMenuId>
+      <MenuName>Pending Order</MenuName>
+      <ScreenId>151021</ScreenId>
+      <ParentMenuId>200</ParentMenuId>
+      <SortOrder>26</SortOrder>
+  </AppMenu>
+  <AppScreen>
+      <AppScreenId>151021</AppScreenId>
+      <ScreenName>Pending Order</ScreenName>
+      <NavigateUrl>default_parts.aspx</NavigateUrl>
+      <QueryString></QueryString>
+      <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+      <AppMenuId>151022</AppMenuId>
+      <MenuName>Outstanding Order</MenuName>
+      <ScreenId>151022</ScreenId>
+      <ParentMenuId>200</ParentMenuId>
+      <SortOrder>26</SortOrder>
+  </AppMenu>
+  <AppScreen>
+      <AppScreenId>151022</AppScreenId>
+      <ScreenName>Outstanding Order</ScreenName>
+      <NavigateUrl>default_parts.aspx</NavigateUrl>
+      <QueryString></QueryString>
+      <GroupId>0</GroupId>
+  </AppScreen>
+  
+  <!-- TOP Sparepart -->
+  <AppMenu>
+    <AppMenuId>709599</AppMenuId>
+    <MenuName>TOP Sparepart</MenuName>
+    <ScreenId>709599</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>8</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>709599</AppScreenId>
+    <ScreenName>TOP Sparepart</ScreenName>
+    <NavigateUrl>default_parts.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+
+  <AppMenu>
+    <AppMenuId>7095971</AppMenuId>
+    <MenuName>Input Transfer Payment</MenuName>
+    <ScreenId>7095971</ScreenId>
+    <ParentMenuId>709599</ParentMenuId>
+    <SortOrder>80</SortOrder>
+  </AppMenu>
+
+  <AppScreen>
+    <AppScreenId>7095971</AppScreenId>
+    <ScreenName>Input Transfer Payment</ScreenName>
+    <NavigateUrl>default_parts.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>7095972</AppMenuId>
+    <MenuName>Daftar Transfer Payment</MenuName>
+    <ScreenId>7095972</ScreenId>
+    <ParentMenuId>709599</ParentMenuId>
+    <SortOrder>80</SortOrder>
+  </AppMenu>
+
+  <AppScreen>
+    <AppScreenId>7095972</AppScreenId>
+    <ScreenName>Daftar Transfer Payment</ScreenName>
+    <NavigateUrl>default_parts.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppScreen>
+    <AppScreenId>7095981</AppScreenId>
+    <ScreenName>Report Ceiling Sparepart</ScreenName>
+    <NavigateUrl>default_parts.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>7095981</AppMenuId>
+    <MenuName>Report Ceiling Sparepart</MenuName>
+    <ScreenId>7095981</ScreenId>
+    <ParentMenuId>709599</ParentMenuId>
+    <SortOrder>81</SortOrder>
+  </AppMenu>
+
+
+
+  <AppMenu>
+    <AppMenuId>7095982</AppMenuId>
+    <MenuName>Report Ceiling Gabungan</MenuName>
+    <ScreenId>7095982</ScreenId>
+    <ParentMenuId>709599</ParentMenuId>
+    <SortOrder>82</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>7095982</AppScreenId>
+    <ScreenName>Report Ceiling Gabungan</ScreenName>
+    <NavigateUrl>default_parts.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>7095985</AppMenuId>
+    <MenuName>COD Outstanding</MenuName>
+    <ScreenId>7095985</ScreenId>
+    <ParentMenuId>709599</ParentMenuId>
+    <SortOrder>83</SortOrder>
+  </AppMenu>
+
+  <AppScreen>
+    <AppScreenId>7095985</AppScreenId>
+    <ScreenName>COD Outstanding</ScreenName>
+    <NavigateUrl>default_parts.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>7095986</AppMenuId>
+    <MenuName>COD Payment List</MenuName>
+    <ScreenId>7095986</ScreenId>
+    <ParentMenuId>709599</ParentMenuId>
+    <SortOrder>84</SortOrder>
+  </AppMenu>
+
+  <AppScreen>
+    <AppScreenId>7095986</AppScreenId>
+    <ScreenName>COD Payment List</ScreenName>
+    <NavigateUrl>default_parts.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>7095987</AppMenuId>
+    <MenuName>Daftar Penalty</MenuName>
+    <ScreenId>7095987</ScreenId>
+    <ParentMenuId>709599</ParentMenuId>
+    <SortOrder>87</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>7095987</AppScreenId>
+    <ScreenName>Daftar Penalty</ScreenName>
+    <NavigateUrl>default_parts.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>7095988</AppMenuId>
+    <MenuName>Report TOP COD</MenuName>
+    <ScreenId>7095988</ScreenId>
+    <ParentMenuId>709599</ParentMenuId>
+    <SortOrder>88</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>7095988</AppScreenId>
+    <ScreenName>Report TOP COD</ScreenName>
+    <NavigateUrl>default_parts.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+
+  <!-- EOF TOP Sparepart -->
+  <!---->
+</AppNavigationSchema>

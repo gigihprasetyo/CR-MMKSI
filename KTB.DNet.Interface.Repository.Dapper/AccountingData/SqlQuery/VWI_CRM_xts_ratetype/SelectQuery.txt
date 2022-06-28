@@ -1,0 +1,34 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_ratetype.[createdonbehalfbyyominame]
+    , VWI_CRM_xts_ratetype.[modifiedonbehalfby]
+    , VWI_CRM_xts_ratetype.[statecode]
+    , VWI_CRM_xts_ratetype.[statecodename]
+    , VWI_CRM_xts_ratetype.[createdonbehalfby]
+    , VWI_CRM_xts_ratetype.[importsequencenumber]
+    , VWI_CRM_xts_ratetype.[organizationidname]
+    , VWI_CRM_xts_ratetype.[modifiedbyyominame]
+    , VWI_CRM_xts_ratetype.[utcconversiontimezonecode]
+    , VWI_CRM_xts_ratetype.[createdbyyominame]
+    , VWI_CRM_xts_ratetype.[modifiedbyname]
+    , VWI_CRM_xts_ratetype.[versionnumber]
+    , VWI_CRM_xts_ratetype.[modifiedby]
+    , VWI_CRM_xts_ratetype.[createdby]
+    , VWI_CRM_xts_ratetype.[timezoneruleversionnumber]
+    , VWI_CRM_xts_ratetype.[statuscodename]
+    , VWI_CRM_xts_ratetype.[xts_ratetypeid]
+    , VWI_CRM_xts_ratetype.[modifiedon]
+    , VWI_CRM_xts_ratetype.[xts_ratetype]
+    , VWI_CRM_xts_ratetype.[modifiedonbehalfbyyominame]
+    , VWI_CRM_xts_ratetype.[statuscode]
+    , VWI_CRM_xts_ratetype.[createdbyname]
+    , VWI_CRM_xts_ratetype.[createdon]
+    , VWI_CRM_xts_ratetype.[organizationid]
+    , VWI_CRM_xts_ratetype.[createdonbehalfbyname]
+    , VWI_CRM_xts_ratetype.[modifiedonbehalfbyname]
+    , VWI_CRM_xts_ratetype.[overriddencreatedon]
+    , VWI_CRM_xts_ratetype.[xts_description]
+    /**EndPagingIndexQuery**/
+FROM CRM_xts_ratetype as VWI_CRM_xts_ratetype WITH (NOLOCK) 
+{0}

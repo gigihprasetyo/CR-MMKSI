@@ -1,0 +1,119 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_serviceproportionalinvoice.company
+	, VWI_CRM_xts_serviceproportionalinvoice.businessunitcode
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_parentbusinessunitid
+	, VWI_CRM_xts_serviceproportionalinvoice.versionnumber
+	, VWI_CRM_xts_serviceproportionalinvoice.createdon
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_billtocustomernumber
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalwithholdingtaxallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_withholdingtaxid
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_billtocustomeridname
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalwithholdingtaxallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.statuscodename
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_grandtotalbaseallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_grandtotalbaseallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.modifiedbyyominame
+	, VWI_CRM_xts_serviceproportionalinvoice.owneridtype
+	, VWI_CRM_xts_serviceproportionalinvoice.createdonbehalfby
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_accountreceiptbalance_base
+	, VWI_CRM_xts_serviceproportionalinvoice.modifiedbyname
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_grandtotalallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_grandtotaltaxallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.overriddencreatedon
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_billtocustomerid
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_address2
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_billtocustomertermofpaymentid
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_grandtotalallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.createdonbehalfbyyominame
+	, VWI_CRM_xts_serviceproportionalinvoice.transactioncurrencyidname
+	, VWI_CRM_xts_serviceproportionalinvoice.modifiedonbehalfby
+	, VWI_CRM_xts_serviceproportionalinvoice.exchangerate
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_workorderidname
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_caliallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_address4
+	, VWI_CRM_xts_serviceproportionalinvoice.owningteam
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalothersalesallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalothersalesbaseallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_billtocustomeridyominame
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_grandtotaltaxallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalmiscchargeallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_billtocustomertermofpaymentidname
+	, VWI_CRM_xts_serviceproportionalinvoice.statecode
+	, VWI_CRM_xts_serviceproportionalinvoice.owneridname
+	, VWI_CRM_xts_serviceproportionalinvoice.timezoneruleversionnumber
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalmiscchargebaseallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_locking
+	, VWI_CRM_xts_serviceproportionalinvoice.ktb_say
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalworkbaseallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalpartstaxallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_withholdingtaxidname
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalpartsallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalworkbaseallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalmiscchargebaseallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalworktaxallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalpartsbaseallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.utcconversiontimezonecode
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_serviceproportionalinvoice
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_accountreceiptbalance
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalpartstaxallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.ownerid
+	, VWI_CRM_xts_serviceproportionalinvoice.modifiedon
+	, VWI_CRM_xts_serviceproportionalinvoice.importsequencenumber
+	, VWI_CRM_xts_serviceproportionalinvoice.owneridyominame
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalworkallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalothersalesallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalothersalesbaseallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_transactiondate
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_workorderid
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalpartsbaseallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.createdbyname
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_businessunitid
+	, VWI_CRM_xts_serviceproportionalinvoice.createdonbehalfbyname
+	, VWI_CRM_xts_serviceproportionalinvoice.modifiedonbehalfbyname
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_address3
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalworktaxallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.transactioncurrencyid
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalothersalestaxallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.createdby
+	, VWI_CRM_xts_serviceproportionalinvoice.modifiedby
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_address1
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalpartsallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalmiscchargeallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_serviceproportionalinvoiceid
+	, VWI_CRM_xts_serviceproportionalinvoice.createdbyyominame
+	, VWI_CRM_xts_serviceproportionalinvoice.owninguser
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_serviceorderid
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalworkallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.owningbusinessunit
+	, VWI_CRM_xts_serviceproportionalinvoice.xjp_caliallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalmiscchargetaxallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_parentbusinessunitidname
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_billtocustomerphonenumber
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_serviceorderidname
+	, VWI_CRM_xts_serviceproportionalinvoice.xjp_caliallocated_base
+	, VWI_CRM_xts_serviceproportionalinvoice.statuscode
+	, VWI_CRM_xts_serviceproportionalinvoice.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_caliallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_duedaysdate
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalothersalestaxallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_totalmiscchargetaxallocated
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_runningnumber
+	, VWI_CRM_xts_serviceproportionalinvoice.statecodename
+	, VWI_CRM_xts_serviceproportionalinvoice.xts_businessunitidname
+	, VWI_CRM_xts_serviceproportionalinvoice.RowStatus
+	, VWI_CRM_xts_serviceproportionalinvoice.ktb_isownrisk
+	, VWI_CRM_xts_serviceproportionalinvoice.ktb_isownriskname
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_serviceproportionalinvoice a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_serviceproportionalinvoice

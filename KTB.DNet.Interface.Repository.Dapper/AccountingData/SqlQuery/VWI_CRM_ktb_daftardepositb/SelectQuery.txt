@@ -1,0 +1,68 @@
+SELECT 
+	/**PagingIndexQuery**/
+	/**RowNumber**/ 
+		VWI_CRM_ktb_daftardepositb.[ktb_endingbalance_base]
+		,VWI_CRM_ktb_daftardepositb.[modifiedbyyominame]
+		,VWI_CRM_ktb_daftardepositb.[createdbyname]
+		,VWI_CRM_ktb_daftardepositb.[transactioncurrencyid]
+		,VWI_CRM_ktb_daftardepositb.[modifiedon]
+		,VWI_CRM_ktb_daftardepositb.[ktb_totaldebit_base]
+		,VWI_CRM_ktb_daftardepositb.[modifiedbyname]
+		,VWI_CRM_ktb_daftardepositb.[ktb_transactiondate]
+		,VWI_CRM_ktb_daftardepositb.[owningbusinessunitname]
+		,VWI_CRM_ktb_daftardepositb.[createdonbehalfbyyominame]
+		,VWI_CRM_ktb_daftardepositb.[ktb_businessunitid]
+		,VWI_CRM_ktb_daftardepositb.[ktb_endingbalance]
+		,VWI_CRM_ktb_daftardepositb.[importsequencenumber]
+		,VWI_CRM_ktb_daftardepositb.[createdonbehalfby]
+		,VWI_CRM_ktb_daftardepositb.[ktb_beginningbalance]
+		,VWI_CRM_ktb_daftardepositb.[ktb_beginningbalance_base]
+		,VWI_CRM_ktb_daftardepositb.[owninguser]
+		,VWI_CRM_ktb_daftardepositb.[createdby]
+		,VWI_CRM_ktb_daftardepositb.[ktb_dealerid]
+		,VWI_CRM_ktb_daftardepositb.[modifiedonbehalfbyname]
+		,VWI_CRM_ktb_daftardepositb.[statecode]
+		,VWI_CRM_ktb_daftardepositb.[versionnumber]
+		,VWI_CRM_ktb_daftardepositb.[createdon]
+		,VWI_CRM_ktb_daftardepositb.[ktb_totaldebit]
+		,VWI_CRM_ktb_daftardepositb.[owneridtype]
+		,VWI_CRM_ktb_daftardepositb.[modifiedonbehalfbyyominame]
+		,VWI_CRM_ktb_daftardepositb.[ktb_totalcredit]
+		,VWI_CRM_ktb_daftardepositb.[modifiedby]
+		,VWI_CRM_ktb_daftardepositb.[overriddencreatedon]
+		,VWI_CRM_ktb_daftardepositb.[ktb_businessunitidname]
+		,VWI_CRM_ktb_daftardepositb.[createdonbehalfbyname]
+		,VWI_CRM_ktb_daftardepositb.[exchangerate]
+		,VWI_CRM_ktb_daftardepositb.[ktb_idheader]
+		,VWI_CRM_ktb_daftardepositb.[statuscodename]
+		,VWI_CRM_ktb_daftardepositb.[ktb_totalcredit_base]
+		,VWI_CRM_ktb_daftardepositb.[owningbusinessunit]
+		,VWI_CRM_ktb_daftardepositb.[timezoneruleversionnumber]
+		,VWI_CRM_ktb_daftardepositb.[statecodename]
+		,VWI_CRM_ktb_daftardepositb.[owningteam]
+		,VWI_CRM_ktb_daftardepositb.[transactioncurrencyidname]
+		,VWI_CRM_ktb_daftardepositb.[ktb_daftardepositbid]
+		,VWI_CRM_ktb_daftardepositb.[createdbyyominame]
+		,VWI_CRM_ktb_daftardepositb.[statuscode]
+		,VWI_CRM_ktb_daftardepositb.[modifiedonbehalfby]
+		,VWI_CRM_ktb_daftardepositb.[ktb_productcategoryid]
+		,VWI_CRM_ktb_daftardepositb.[owneridyominame]
+		,VWI_CRM_ktb_daftardepositb.[ktb_daftardepositb]
+		,VWI_CRM_ktb_daftardepositb.[owneridname]
+		,VWI_CRM_ktb_daftardepositb.[ownerid]
+		,VWI_CRM_ktb_daftardepositb.[utcconversiontimezonecode]
+		,VWI_CRM_ktb_daftardepositb.[DealerCode]
+		,VWI_CRM_ktb_daftardepositb.[SourceType]
+		,VWI_CRM_ktb_daftardepositb.[RowStatus]
+		,VWI_CRM_ktb_daftardepositb.[LastSyncDate]
+		, VWI_CRM_ktb_daftardepositb.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		a.*  
+		, b.msdyn_companycode    
+	FROM [CRM_ktb_daftardepositb] a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.ktb_businessunitid   
+	{0}
+) as VWI_CRM_ktb_daftardepositb

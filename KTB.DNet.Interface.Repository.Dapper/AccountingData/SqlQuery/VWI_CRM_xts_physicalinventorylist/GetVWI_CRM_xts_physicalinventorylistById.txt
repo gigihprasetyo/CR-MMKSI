@@ -1,0 +1,61 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,xts_locking
+	,statecode
+	,xts_businessunitidname
+	,owneridname
+	,statecodename
+	,createdonbehalfby
+	,xts_handlingname
+	,xts_siteidname
+	,xts_handling
+	,xts_generateinventorylistid
+	,xts_physicalinventorylistid
+	,xts_parentbusinessunitid
+	,importsequencenumber
+	,modifiedbyyominame
+	,xts_siteid
+	,xts_inventorylistnumber
+	,xts_statusname
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,xts_generateinventorylistidname
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,xts_lasttagnumber
+	,owneridyominame
+	,modifiedon
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,createdonbehalfbyname
+	,xts_status
+	,modifiedonbehalfbyname
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,xts_parentbusinessunitidname
+	,RowStatus
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_physicalinventorylist a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_physicalinventorylistid = @Id
+) VWI_CRM_xts_physicalinventorylist

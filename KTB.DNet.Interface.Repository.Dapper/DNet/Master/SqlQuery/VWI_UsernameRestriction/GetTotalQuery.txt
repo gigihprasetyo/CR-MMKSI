@@ -1,0 +1,6 @@
+declare @username nvarchar(100) = @param
+
+select 
+    Count(1)
+from UserRestriction with(nolock)
+where Username = @username;

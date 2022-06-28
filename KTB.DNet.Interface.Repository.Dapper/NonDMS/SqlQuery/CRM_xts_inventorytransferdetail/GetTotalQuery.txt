@@ -1,0 +1,2 @@
+SELECT COUNT(1)
+FROM CRM_xts_inventorytransferdetail WITH (NOLOCK) {0}

@@ -1,0 +1,41 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, VWI_CRM_ktb_salesquotation.activestageid
+	, VWI_CRM_ktb_salesquotation.traversedpath
+	, VWI_CRM_ktb_salesquotation.modifiedonbehalfby
+	, VWI_CRM_ktb_salesquotation.bpf_xts_newvehiclesalesquoteid
+	, VWI_CRM_ktb_salesquotation.statecode
+	, VWI_CRM_ktb_salesquotation.statecodename
+	, VWI_CRM_ktb_salesquotation.activestageidname
+	, VWI_CRM_ktb_salesquotation.createdonbehalfby
+	, VWI_CRM_ktb_salesquotation.importsequencenumber
+	, VWI_CRM_ktb_salesquotation.organizationidname
+	, VWI_CRM_ktb_salesquotation.bpf_duration
+	, VWI_CRM_ktb_salesquotation.utcconversiontimezonecode
+	, VWI_CRM_ktb_salesquotation.createdbyyominame
+	, VWI_CRM_ktb_salesquotation.modifiedbyname
+	, VWI_CRM_ktb_salesquotation.versionnumber
+	, VWI_CRM_ktb_salesquotation.modifiedby
+	, VWI_CRM_ktb_salesquotation.modifiedbyyominame
+	, VWI_CRM_ktb_salesquotation.createdby
+	, VWI_CRM_ktb_salesquotation.timezoneruleversionnumber
+	, VWI_CRM_ktb_salesquotation.statuscodename
+	, VWI_CRM_ktb_salesquotation.processidname
+	, VWI_CRM_ktb_salesquotation.createdonbehalfbyyominame
+	, VWI_CRM_ktb_salesquotation.processid
+	, VWI_CRM_ktb_salesquotation.modifiedon
+	, VWI_CRM_ktb_salesquotation.bpf_xts_newvehiclesalesquoteidname
+	, VWI_CRM_ktb_salesquotation.businessprocessflowinstanceid
+	, VWI_CRM_ktb_salesquotation.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_salesquotation.statuscode
+	, VWI_CRM_ktb_salesquotation.createdbyname
+	, VWI_CRM_ktb_salesquotation.createdon
+	, VWI_CRM_ktb_salesquotation.organizationid
+	, VWI_CRM_ktb_salesquotation.activestagestartedon
+	, VWI_CRM_ktb_salesquotation.completedon
+	, VWI_CRM_ktb_salesquotation.modifiedonbehalfbyname
+	, VWI_CRM_ktb_salesquotation.bpf_name
+	, VWI_CRM_ktb_salesquotation.createdonbehalfbyname
+	, VWI_CRM_ktb_salesquotation.overriddencreatedon
+FROM [dbo].[CRM_ktb_salesquotation] as VWI_CRM_ktb_salesquotation with(nolock)
+WHERE ktb_salesquotationid = @Id

@@ -1,0 +1,53 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_gljournal.createdby
+	, VWI_CRM_xts_gljournal.createdbyname
+	, VWI_CRM_xts_gljournal.createdbyyominame
+	, VWI_CRM_xts_gljournal.createdon
+	, VWI_CRM_xts_gljournal.createdonbehalfby
+	, VWI_CRM_xts_gljournal.createdonbehalfbyname
+	, VWI_CRM_xts_gljournal.createdonbehalfbyyominame
+	, VWI_CRM_xts_gljournal.DealerCode
+	, VWI_CRM_xts_gljournal.importsequencenumber
+	, VWI_CRM_xts_gljournal.LastSyncDate
+	, VWI_CRM_xts_gljournal.modifiedby
+	, VWI_CRM_xts_gljournal.modifiedbyname
+	, VWI_CRM_xts_gljournal.modifiedbyyominame
+	, VWI_CRM_xts_gljournal.modifiedon
+	, VWI_CRM_xts_gljournal.modifiedonbehalfby
+	, VWI_CRM_xts_gljournal.modifiedonbehalfbyname
+	, VWI_CRM_xts_gljournal.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_gljournal.organizationid
+	, VWI_CRM_xts_gljournal.organizationidname
+	, VWI_CRM_xts_gljournal.overriddencreatedon
+	, VWI_CRM_xts_gljournal.RowStatus
+	, VWI_CRM_xts_gljournal.SourceType
+	, VWI_CRM_xts_gljournal.statecode
+	, VWI_CRM_xts_gljournal.statecodename
+	, VWI_CRM_xts_gljournal.statuscode
+	, VWI_CRM_xts_gljournal.statuscodename
+	, VWI_CRM_xts_gljournal.timezoneruleversionnumber
+	, VWI_CRM_xts_gljournal.utcconversiontimezonecode
+	, VWI_CRM_xts_gljournal.versionnumber
+	, VWI_CRM_xts_gljournal.xts_company
+	, VWI_CRM_xts_gljournal.xts_currency
+	, VWI_CRM_xts_gljournal.xts_description
+	, VWI_CRM_xts_gljournal.xts_documentnumber
+	, VWI_CRM_xts_gljournal.xts_gljournalid
+	, VWI_CRM_xts_gljournal.xts_gljournalnumber
+	, VWI_CRM_xts_gljournal.xts_journalnameid
+	, VWI_CRM_xts_gljournal.xts_journalnameidname
+	, VWI_CRM_xts_gljournal.xts_journaltype
+	, VWI_CRM_xts_gljournal.xts_journaltypename
+	, VWI_CRM_xts_gljournal.xts_log
+	, VWI_CRM_xts_gljournal.xts_posted
+	, VWI_CRM_xts_gljournal.xts_posteddateandtime
+	, VWI_CRM_xts_gljournal.xts_postedname
+	, VWI_CRM_xts_gljournal.xts_postinglayer
+	, VWI_CRM_xts_gljournal.xts_postinglayername
+	, VWI_CRM_xts_gljournal.xts_transactiongroup
+	, VWI_CRM_xts_gljournal.xts_transactiongroupname
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_gljournal as VWI_CRM_xts_gljournal WITH (NOLOCK) 
+{0}

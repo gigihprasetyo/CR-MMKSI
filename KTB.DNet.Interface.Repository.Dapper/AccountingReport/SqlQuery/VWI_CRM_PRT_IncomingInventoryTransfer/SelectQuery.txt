@@ -1,0 +1,14 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_PRT_IncomingInventoryTransfer.businessunitcode
+	,VWI_CRM_PRT_IncomingInventoryTransfer.frombusinessunitcode
+	,VWI_CRM_PRT_IncomingInventoryTransfer.sitename
+	,VWI_CRM_PRT_IncomingInventoryTransfer.transactionunitname
+	,VWI_CRM_PRT_IncomingInventoryTransfer.warehousename
+	,VWI_CRM_PRT_IncomingInventoryTransfer.xts_inventorytransactionnumber
+	,VWI_CRM_PRT_IncomingInventoryTransfer.xts_product
+	,VWI_CRM_PRT_IncomingInventoryTransfer.xts_productdescription
+	,VWI_CRM_PRT_IncomingInventoryTransfer.xts_quantity
+	,VWI_CRM_PRT_IncomingInventoryTransfer.xts_transactiondate
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_PRT_IncomingInventoryTransfer WITH (NOLOCK) {0}

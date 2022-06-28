@@ -1,0 +1,44 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_vendorlogistic.organizationid
+	, VWI_CRM_ktb_vendorlogistic.ktb_vendorname
+	, VWI_CRM_ktb_vendorlogistic.ktb_vehicletypeidname
+	, VWI_CRM_ktb_vendorlogistic.ktb_vehiclemodelid
+	, VWI_CRM_ktb_vendorlogistic.statecode
+	, VWI_CRM_ktb_vendorlogistic.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_vendorlogistic.statecodename
+	, VWI_CRM_ktb_vendorlogistic.modifiedby
+	, VWI_CRM_ktb_vendorlogistic.versionnumber
+	, VWI_CRM_ktb_vendorlogistic.ktb_currency
+	, VWI_CRM_ktb_vendorlogistic.modifiedonbehalfbyname
+	, VWI_CRM_ktb_vendorlogistic.ktb_vendor
+	, VWI_CRM_ktb_vendorlogistic.createdonbehalfby
+	, VWI_CRM_ktb_vendorlogistic.organizationidname
+	, VWI_CRM_ktb_vendorlogistic.ktb_vendorlogisticid
+	, VWI_CRM_ktb_vendorlogistic.ktb_effectivestartdate
+	, VWI_CRM_ktb_vendorlogistic.createdby
+	, VWI_CRM_ktb_vendorlogistic.statuscode
+	, VWI_CRM_ktb_vendorlogistic.ktb_company
+	, VWI_CRM_ktb_vendorlogistic.createdonbehalfbyname
+	, VWI_CRM_ktb_vendorlogistic.ktb_vendorlogistic
+	, VWI_CRM_ktb_vendorlogistic.modifiedbyname
+	, VWI_CRM_ktb_vendorlogistic.ktb_vehicletypeid
+	, VWI_CRM_ktb_vendorlogistic.ktb_vehiclemodelidname
+	, VWI_CRM_ktb_vendorlogistic.modifiedon
+	, VWI_CRM_ktb_vendorlogistic.ktb_lastnumber
+	, VWI_CRM_ktb_vendorlogistic.createdbyname
+	, VWI_CRM_ktb_vendorlogistic.utcconversiontimezonecode
+	, VWI_CRM_ktb_vendorlogistic.modifiedbyyominame
+	, VWI_CRM_ktb_vendorlogistic.ktb_currencyname
+	, VWI_CRM_ktb_vendorlogistic.createdonbehalfbyyominame
+	, VWI_CRM_ktb_vendorlogistic.createdon
+	, VWI_CRM_ktb_vendorlogistic.timezoneruleversionnumber
+	, VWI_CRM_ktb_vendorlogistic.importsequencenumber
+	, VWI_CRM_ktb_vendorlogistic.overriddencreatedon
+	, VWI_CRM_ktb_vendorlogistic.createdbyyominame
+	, VWI_CRM_ktb_vendorlogistic.modifiedonbehalfby
+	, VWI_CRM_ktb_vendorlogistic.statuscodename
+	/**EndPagingIndexQuery**/
+FROM [dbo].[CRM_ktb_vendorlogistic] as VWI_CRM_ktb_vendorlogistic with(nolock) 
+{0}

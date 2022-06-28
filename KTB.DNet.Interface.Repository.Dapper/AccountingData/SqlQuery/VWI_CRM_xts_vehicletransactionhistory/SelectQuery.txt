@@ -1,0 +1,113 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_vehicletransactionhistory.company
+	, VWI_CRM_xts_vehicletransactionhistory.businessunitcode
+	, VWI_CRM_xts_vehicletransactionhistory.xts_transactiontypename
+	, VWI_CRM_xts_vehicletransactionhistory.xts_stockidname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_parentbusinessunitid
+	, VWI_CRM_xts_vehicletransactionhistory.versionnumber
+	, VWI_CRM_xts_vehicletransactionhistory.xts_consumptiontaxid
+	, VWI_CRM_xts_vehicletransactionhistory.createdon
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_airbagfee
+	, VWI_CRM_xts_vehicletransactionhistory.xts_referencenumber
+	, VWI_CRM_xts_vehicletransactionhistory.xts_interiorcolorid
+	, VWI_CRM_xts_vehicletransactionhistory.statuscodename
+	, VWI_CRM_xts_vehicletransactionhistory.xts_warehouseid
+	, VWI_CRM_xts_vehicletransactionhistory.xts_consumptiontaxidname
+	, VWI_CRM_xts_vehicletransactionhistory.modifiedbyyominame
+	, VWI_CRM_xts_vehicletransactionhistory.xts_uvstockbalanceupdate
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_airbagfee_base
+	, VWI_CRM_xts_vehicletransactionhistory.xts_transactionuniquereference
+	, VWI_CRM_xts_vehicletransactionhistory.createdonbehalfby
+	, VWI_CRM_xts_vehicletransactionhistory.modifiedbyname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_platenumber
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_fundmanagementfee
+	, VWI_CRM_xts_vehicletransactionhistory.xts_vehiclemodelidname
+	, VWI_CRM_xts_vehicletransactionhistory.overriddencreatedon
+	, VWI_CRM_xts_vehicletransactionhistory.xts_uvstockbalanceupdatename
+	, VWI_CRM_xts_vehicletransactionhistory.xts_interiorcoloridname
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_compulsoryinsuranceamount
+	, VWI_CRM_xts_vehicletransactionhistory.createdonbehalfbyyominame
+	, VWI_CRM_xts_vehicletransactionhistory.modifiedonbehalfby
+	, VWI_CRM_xts_vehicletransactionhistory.exchangerate
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_shredderdustfee
+	, VWI_CRM_xts_vehicletransactionhistory.xts_stockinventorynewvehicleid
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_compulsoryinsuranceamount_base
+	, VWI_CRM_xts_vehicletransactionhistory.xts_vehicletransactionhistoryid
+	, VWI_CRM_xts_vehicletransactionhistory.xts_productidname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_styleid
+	, VWI_CRM_xts_vehicletransactionhistory.statecode
+	, VWI_CRM_xts_vehicletransactionhistory.xts_siteidname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_transactiontype
+	, VWI_CRM_xts_vehicletransactionhistory.timezoneruleversionnumber
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_informationmanagementfee_base
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_fluorocarbonfee_base
+	, VWI_CRM_xts_vehicletransactionhistory.xts_warehouseidname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_productdescription
+	, VWI_CRM_xts_vehicletransactionhistory.xts_manufactureridname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_quantity
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_informationmanagementfee
+	, VWI_CRM_xts_vehicletransactionhistory.xts_vehiclemodelid
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_fundmanagementfee_base
+	, VWI_CRM_xts_vehicletransactionhistory.createdonbehalfbyname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_consumptiontaxamount
+	, VWI_CRM_xts_vehicletransactionhistory.xts_serviceamount_base
+	, VWI_CRM_xts_vehicletransactionhistory.utcconversiontimezonecode
+	, VWI_CRM_xts_vehicletransactionhistory.xts_configurationid
+	, VWI_CRM_xts_vehicletransactionhistory.modifiedon
+	, VWI_CRM_xts_vehicletransactionhistory.importsequencenumber
+	, VWI_CRM_xts_vehicletransactionhistory.xts_consumptiontaxamount_base
+	, VWI_CRM_xts_vehicletransactionhistory.xts_exteriorcolorid
+	, VWI_CRM_xts_vehicletransactionhistory.xts_includeininventhistory
+	, VWI_CRM_xts_vehicletransactionhistory.xts_transactiondate
+	, VWI_CRM_xts_vehicletransactionhistory.xts_stockinventorynewvehicleidname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_siteid
+	, VWI_CRM_xts_vehicletransactionhistory.createdbyname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_businessunitid
+	, VWI_CRM_xts_vehicletransactionhistory.modifiedonbehalfbyname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_includeininventhistoryname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_transactionhistorynumber
+	, VWI_CRM_xts_vehicletransactionhistory.xts_vehicleamount
+	, VWI_CRM_xts_vehicletransactionhistory.xts_productid
+	, VWI_CRM_xts_vehicletransactionhistory.transactioncurrencyid
+	, VWI_CRM_xts_vehicletransactionhistory.createdby
+	, VWI_CRM_xts_vehicletransactionhistory.modifiedby
+	, VWI_CRM_xts_vehicletransactionhistory.xts_vehicleidentificationnumber
+	, VWI_CRM_xts_vehicletransactionhistory.xts_referencetype
+	, VWI_CRM_xts_vehicletransactionhistory.createdbyyominame
+	, VWI_CRM_xts_vehicletransactionhistory.transactioncurrencyidname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_exteriorcoloridname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_stockid
+	, VWI_CRM_xts_vehicletransactionhistory.xts_locationid
+	, VWI_CRM_xts_vehicletransactionhistory.xts_serviceamount
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_shredderdustfee_base
+	, VWI_CRM_xts_vehicletransactionhistory.xts_parentbusinessunitidname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_manufacturerid
+	, VWI_CRM_xts_vehicletransactionhistory.xts_referencetypename
+	, VWI_CRM_xts_vehicletransactionhistory.xts_locationidname
+	, VWI_CRM_xts_vehicletransactionhistory.statuscode
+	, VWI_CRM_xts_vehicletransactionhistory.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_vehicletransactionhistory.xts_configurationidname
+	, VWI_CRM_xts_vehicletransactionhistory.organizationid
+	, VWI_CRM_xts_vehicletransactionhistory.xjp_fluorocarbonfee
+	, VWI_CRM_xts_vehicletransactionhistory.xts_vehicleamount_base
+	, VWI_CRM_xts_vehicletransactionhistory.xts_stocknumberlookupname
+	, VWI_CRM_xts_vehicletransactionhistory.organizationidname
+	, VWI_CRM_xts_vehicletransactionhistory.xts_stocknumberlookuptype
+	, VWI_CRM_xts_vehicletransactionhistory.xts_styleidname
+	, VWI_CRM_xts_vehicletransactionhistory.statecodename
+	, VWI_CRM_xts_vehicletransactionhistory.xts_businessunitidname
+	, VWI_CRM_xts_vehicletransactionhistory.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_vehicletransactionhistory a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_vehicletransactionhistory 

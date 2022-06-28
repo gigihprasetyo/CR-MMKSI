@@ -1,0 +1,1 @@
+SELECT ID, ChassisNumber FROM ChassisMaster {0}

@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_xid_registrationprogressstage as VWI_CRM_xid_registrationprogressstage with (nolock)  
+{0}

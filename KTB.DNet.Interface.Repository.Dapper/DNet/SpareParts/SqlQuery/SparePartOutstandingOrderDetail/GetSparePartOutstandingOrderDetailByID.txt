@@ -1,0 +1,20 @@
+SELECT 
+	AllocationAmount,
+	AllocationQty,
+	CreatedBy,
+	CreatedTime,
+	EstimateFillDate,
+	ID,
+	LastUpdateBy,
+	LastUpdateTime,
+	OpenAmount,
+	OpenQty,
+	OrderQty,
+	PartName,
+	PartNumber,
+	RowStatus,
+	SparePartOutstandingOrderID,
+	Status,
+	SubtitutePartNumber
+FROM SparePartOutstandingOrderDetail
+WHERE ID = @ID

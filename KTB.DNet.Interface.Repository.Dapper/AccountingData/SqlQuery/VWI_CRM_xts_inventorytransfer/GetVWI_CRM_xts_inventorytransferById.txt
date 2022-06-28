@@ -1,0 +1,92 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,xts_transactiontypename
+	,xts_transferstatus
+	,versionnumber
+	,createdon
+	,xts_tositeid
+	,xts_referencenumber
+	,xts_receiptidname
+	,statuscodename
+	,xts_status
+	,modifiedbyyominame
+	,xts_inventorytransferid
+	,owneridtype
+	,xts_receiptid
+	,xts_log
+	,ktb_isclaim
+	,xts_personinchargeid
+	,createdonbehalfby
+	,modifiedbyname
+	,xts_transferstep
+	,ktb_purchasereceiptidname
+	,owneridname
+	,overriddencreatedon
+	,xts_inventorytransfernumber
+	,xts_searchvehicle
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,xts_workorderidname
+	,xts_receiptdate
+	,owningteam
+	,ktb_isclaimname
+	,statecode
+	,xts_tositeidname
+	,xts_transactiontype
+	,timezoneruleversionnumber
+	,xts_itemtypefortransfer
+	,ktb_parentbusinessunitid
+	,xts_locking
+	,xts_handling
+	,xts_fromsiteid
+	,ktb_actualreceiptdate
+	,createdonbehalfbyname
+	,createdbyyominame
+	,utcconversiontimezonecode
+	,xts_statusname
+	,ktb_actualtransferdate
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_itemtypefortransfername
+	,xts_personinchargeidname
+	,xts_tobusinessunitid
+	,xts_transactiondate
+	,xts_fromsiteidname
+	,xts_workorderid
+	,createdbyname
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,ktb_purchasereceiptid
+	,ktb_ribbondataproductwarehouse
+	,xts_handlingname
+	,xts_sourcedata
+	,createdby
+	,modifiedby
+	,xts_transferstepname
+	,owninguser
+	,owningbusinessunit
+	,xts_tobusinessunitidname
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,ktb_parentbusinessunitidname
+	,ktb_description
+	,statecodename
+	,xts_businessunitidname
+	,xts_transferstatusname
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.*  
+        , b.msdyn_companycode
+    FROM CRM_xts_inventorytransfer a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_inventorytransferid = @Id
+) VWI_CRM_xts_inventorytransfer

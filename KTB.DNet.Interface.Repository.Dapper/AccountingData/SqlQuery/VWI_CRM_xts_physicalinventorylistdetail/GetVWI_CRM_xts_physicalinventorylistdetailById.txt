@@ -1,0 +1,103 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xts_inventorylistid
+	,xts_producttype
+	,versionnumber
+	,createdon
+	,xts_regularstock
+	,xts_interiorcolorid
+	,xts_batchnumberidname
+	,xts_physicalinventorylistdetail
+	,statuscodename
+	,xts_serialnumber
+	,modifiedbyyominame
+	,owneridtype
+	,xts_variance
+	,xts_personinchargeidyominame
+	,xts_personinchargeid
+	,createdonbehalfby
+	,xts_exteriorcoloridname
+	,xts_batchnumberid
+	,modifiedbyname
+	,xts_inventoryunitid
+	,owneridname
+	,overriddencreatedon
+	,xts_bookquantity
+	,xts_varianceamount
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_stockinventorynewvehicleid
+	,xts_locationid
+	,owningteam
+	,xts_productidname
+	,xts_styleid
+	,statecode
+	,xts_unitcost
+	,timezoneruleversionnumber
+	,xts_warehouseidname
+	,xts_parentbusinessunitid
+	,xts_physicalinventorylistdetailid
+	,xts_producttypename
+	,xts_inventorylistidname
+	,xts_stockinventoryusedvehicleid
+	,xts_globalcoloridname
+	,createdonbehalfbyname
+	,xts_locking
+	,utcconversiontimezonecode
+	,xts_configurationid
+	,xts_unitcost_base
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_exteriorcolorid
+	,xts_personinchargeidname
+	,xts_siteid
+	,createdbyname
+	,xts_businessunitid
+	,xts_inventoryunitidname
+	,modifiedonbehalfbyname
+	,xts_varianceamount_base
+	,xts_regularstockname
+	,xts_quantityreserved
+	,xts_productid
+	,transactioncurrencyid
+	,createdby
+	,modifiedby
+	,xts_siteidname
+	,xts_stockinventorynewvehicleidname
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_locationidname
+	,owningbusinessunit
+	,xts_globalcolorid
+	,xts_physicalquantity
+	,xts_parentbusinessunitidname
+	,xts_productdescription
+	,xts_interiorcoloridname
+	,xts_stockinventoryusedvehicleidname
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_configurationidname
+	,xts_warehouseid
+	,xts_remarks
+	,xts_stocknumberlookupname
+	,xts_stocknumberlookuptype
+	,xts_styleidname
+	,statecodename
+	,xts_businessunitidname
+	,RowStatus
+FROM (
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.*
+		, b.msdyn_companycode
+	FROM CRM_xts_physicalinventorylistdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	WHERE xts_physicalinventorylistdetailid = @Id
+) VWI_CRM_xts_physicalinventorylistdetail

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+===========================================================================
+AUTHOR        :                                                 
+PURPOSE       : Error Configuration   File.  
+SPECIAL NOTES :                                                            
+================================                                                      
+Copyright  2005                                       
+================================                                                      
+$History      : $                                                          
+Generated on 7/28/2005 - 11:50:00 AM
+                                                                           
+===========================================================================
+-->
+<ErrorMap>
+	<Map Exception="System.Exception" Code="999999" />
+	<Map Exception="System.Data.SqlClient.SqlException" Code="100001" />
+	
+</ErrorMap>

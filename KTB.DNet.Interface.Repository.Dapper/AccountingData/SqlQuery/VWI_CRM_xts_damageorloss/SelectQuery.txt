@@ -1,0 +1,63 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/  
+	  VWI_CRM_xts_damageorloss.company
+	, VWI_CRM_xts_damageorloss.businessunitcode
+	, VWI_CRM_xts_damageorloss.createdonbehalfbyyominame
+	, VWI_CRM_xts_damageorloss.owninguser
+	, VWI_CRM_xts_damageorloss.statecode
+	, VWI_CRM_xts_damageorloss.xts_businessunitidname
+	, VWI_CRM_xts_damageorloss.owneridname
+	, VWI_CRM_xts_damageorloss.statecodename
+	, VWI_CRM_xts_damageorloss.createdonbehalfby
+	, VWI_CRM_xts_damageorloss.xts_pkcombinationkey
+	, VWI_CRM_xts_damageorloss.ktb_parentbusinessunitid
+	, VWI_CRM_xts_damageorloss.importsequencenumber
+	, VWI_CRM_xts_damageorloss.modifiedbyyominame
+	, VWI_CRM_xts_damageorloss.ktb_parentbusinessunitidname
+	, VWI_CRM_xts_damageorloss.xts_transactiondate
+	, VWI_CRM_xts_damageorloss.utcconversiontimezonecode
+	, VWI_CRM_xts_damageorloss.createdbyyominame
+	, VWI_CRM_xts_damageorloss.owningbusinessunit
+	, VWI_CRM_xts_damageorloss.modifiedbyname
+	, VWI_CRM_xts_damageorloss.owningteam
+	, VWI_CRM_xts_damageorloss.xts_remarks
+	, VWI_CRM_xts_damageorloss.modifiedby
+	, VWI_CRM_xts_damageorloss.createdby
+	, VWI_CRM_xts_damageorloss.timezoneruleversionnumber
+	, VWI_CRM_xts_damageorloss.xts_damageorlossid
+	, VWI_CRM_xts_damageorloss.statuscodename
+	, VWI_CRM_xts_damageorloss.xts_vehicleorderformnumberid
+	, VWI_CRM_xts_damageorloss.xts_salespersonid
+	, VWI_CRM_xts_damageorloss.owneridyominame
+	, VWI_CRM_xts_damageorloss.modifiedon
+	, VWI_CRM_xts_damageorloss.xts_type
+	, VWI_CRM_xts_damageorloss.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_damageorloss.statuscode
+	, VWI_CRM_xts_damageorloss.createdbyname
+	, VWI_CRM_xts_damageorloss.createdon
+	, VWI_CRM_xts_damageorloss.xts_businessunitid
+	, VWI_CRM_xts_damageorloss.xts_damageorloss
+	, VWI_CRM_xts_damageorloss.createdonbehalfbyname
+	, VWI_CRM_xts_damageorloss.xts_typename
+	, VWI_CRM_xts_damageorloss.modifiedonbehalfbyname
+	, VWI_CRM_xts_damageorloss.owneridtype
+	, VWI_CRM_xts_damageorloss.versionnumber
+	, VWI_CRM_xts_damageorloss.modifiedonbehalfby
+	, VWI_CRM_xts_damageorloss.xts_vehicleorderformnumberidname
+	, VWI_CRM_xts_damageorloss.ownerid
+	, VWI_CRM_xts_damageorloss.overriddencreatedon
+	, VWI_CRM_xts_damageorloss.xts_salespersonidname
+	, VWI_CRM_xts_damageorloss.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xts_damageorloss a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	{0}
+) VWI_CRM_xts_damageorloss 

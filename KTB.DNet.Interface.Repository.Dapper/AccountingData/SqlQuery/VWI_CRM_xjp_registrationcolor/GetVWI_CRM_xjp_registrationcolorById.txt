@@ -1,0 +1,36 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, statecode
+	, statecodename
+	, xjp_registrationcolordescription
+	, createdonbehalfby
+	, xjp_globalcoloridname
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, xjp_globalcolordescription
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, xjp_locking
+	, createdby
+	, timezoneruleversionnumber
+	, statuscodename
+	, xjp_registrationcolorid
+	, modifiedon
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, xjp_globalcolorid
+	, modifiedonbehalfbyname
+	, xjp_registrationcolor
+	, overriddencreatedon
+FROM [dbo].[CRM_xjp_registrationcolor] as VWI_CRM_xjp_registrationcolor with(nolock)
+WHERE xjp_registrationcolorid = @Id

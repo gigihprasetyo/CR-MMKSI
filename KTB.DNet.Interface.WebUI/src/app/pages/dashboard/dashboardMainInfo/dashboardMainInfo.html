@@ -1,0 +1,13 @@
+<div class="row infobox">
+    <div class="infobox-item-container-{{numberOfBoxes}}" ng-repeat="infobox in infoboxes">
+        <div ba-panel>
+            <div class="infobox-container">
+                <div class="icon"><i class="{{::infobox.icon}}"></i></div>
+                <div class="description">
+                    <div>{{ ::infobox.description }}</div>
+                    <div class="stats">{{ ::infobox.stats }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

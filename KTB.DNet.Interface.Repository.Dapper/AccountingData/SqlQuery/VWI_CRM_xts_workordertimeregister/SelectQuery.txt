@@ -1,0 +1,82 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_workordertimeregister.company
+	, VWI_CRM_xts_workordertimeregister.businessunitcode
+	, VWI_CRM_xts_workordertimeregister.xts_starttime
+	, VWI_CRM_xts_workordertimeregister.createdonbehalfbyyominame
+	, VWI_CRM_xts_workordertimeregister.owninguser
+	, VWI_CRM_xts_workordertimeregister.transactioncurrencyidname
+	, VWI_CRM_xts_workordertimeregister.xts_locking
+	, VWI_CRM_xts_workordertimeregister.statecode
+	, VWI_CRM_xts_workordertimeregister.xts_businessunitidname
+	, VWI_CRM_xts_workordertimeregister.owneridname
+	, VWI_CRM_xts_workordertimeregister.statecodename
+	, VWI_CRM_xts_workordertimeregister.modifiedbyyominame
+	, VWI_CRM_xts_workordertimeregister.createdonbehalfby
+	, VWI_CRM_xts_workordertimeregister.transactioncurrencyid
+	, VWI_CRM_xts_workordertimeregister.xts_handlingname
+	, VWI_CRM_xts_workordertimeregister.xts_workorderidname
+	, VWI_CRM_xts_workordertimeregister.xts_handling
+	, VWI_CRM_xts_workordertimeregister.xts_employeeidname
+	, VWI_CRM_xts_workordertimeregister.xts_workordertimeregister
+	, VWI_CRM_xts_workordertimeregister.xts_serviceactivityidname
+	, VWI_CRM_xts_workordertimeregister.xts_addlaborrateperhour_base
+	, VWI_CRM_xts_workordertimeregister.xts_completedname
+	, VWI_CRM_xts_workordertimeregister.xts_workorderid
+	, VWI_CRM_xts_workordertimeregister.xts_laborcost_base
+	, VWI_CRM_xts_workordertimeregister.importsequencenumber
+	, VWI_CRM_xts_workordertimeregister.xts_completed
+	, VWI_CRM_xts_workordertimeregister.xts_workordertimeregisterid
+	, VWI_CRM_xts_workordertimeregister.xts_statusname
+	, VWI_CRM_xts_workordertimeregister.xts_workordernumber
+	, VWI_CRM_xts_workordertimeregister.utcconversiontimezonecode
+	, VWI_CRM_xts_workordertimeregister.createdbyyominame
+	, VWI_CRM_xts_workordertimeregister.owningbusinessunit
+	, VWI_CRM_xts_workordertimeregister.modifiedbyname
+	, VWI_CRM_xts_workordertimeregister.owningteam
+	, VWI_CRM_xts_workordertimeregister.modifiedby
+	, VWI_CRM_xts_workordertimeregister.createdby
+	, VWI_CRM_xts_workordertimeregister.timezoneruleversionnumber
+	, VWI_CRM_xts_workordertimeregister.xts_stopreasonname
+	, VWI_CRM_xts_workordertimeregister.ktb_description
+	, VWI_CRM_xts_workordertimeregister.owneridtype
+	, VWI_CRM_xts_workordertimeregister.statuscodename
+	, VWI_CRM_xts_workordertimeregister.xts_exchangeratedate
+	, VWI_CRM_xts_workordertimeregister.xts_parentbusinessunitid
+	, VWI_CRM_xts_workordertimeregister.owneridyominame
+	, VWI_CRM_xts_workordertimeregister.modifiedon
+	, VWI_CRM_xts_workordertimeregister.xts_addlaborrateperhour
+	, VWI_CRM_xts_workordertimeregister.exchangerate
+	, VWI_CRM_xts_workordertimeregister.xts_serviceactivityid
+	, VWI_CRM_xts_workordertimeregister.xts_endtime
+	, VWI_CRM_xts_workordertimeregister.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_workordertimeregister.statuscode
+	, VWI_CRM_xts_workordertimeregister.createdbyname
+	, VWI_CRM_xts_workordertimeregister.createdon
+	, VWI_CRM_xts_workordertimeregister.xts_businessunitid
+	, VWI_CRM_xts_workordertimeregister.xts_stopreason
+	, VWI_CRM_xts_workordertimeregister.createdonbehalfbyname
+	, VWI_CRM_xts_workordertimeregister.xts_status
+	, VWI_CRM_xts_workordertimeregister.xts_laborcost
+	, VWI_CRM_xts_workordertimeregister.modifiedonbehalfbyname
+	, VWI_CRM_xts_workordertimeregister.versionnumber
+	, VWI_CRM_xts_workordertimeregister.modifiedonbehalfby
+	, VWI_CRM_xts_workordertimeregister.xts_employeeid
+	, VWI_CRM_xts_workordertimeregister.ownerid
+	, VWI_CRM_xts_workordertimeregister.overriddencreatedon
+	, VWI_CRM_xts_workordertimeregister.xts_parentbusinessunitidname
+	, VWI_CRM_xts_workordertimeregister.RowStatus
+	, VWI_CRM_xts_workordertimeregister.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_xts_workordertimeregister a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.xts_businessunitid 
+	{0}
+) VWI_CRM_xts_workordertimeregister

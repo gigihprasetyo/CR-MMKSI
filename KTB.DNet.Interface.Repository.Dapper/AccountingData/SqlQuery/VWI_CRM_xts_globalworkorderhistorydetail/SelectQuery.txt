@@ -1,0 +1,65 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_globalworkorderhistorydetail.company
+	, VWI_CRM_xts_globalworkorderhistorydetail.businessunitcode
+	, VWI_CRM_xts_globalworkorderhistorydetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_globalworkorderhistorydetail.owninguser
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_globalworkorderhistorydetail
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_locking
+	, VWI_CRM_xts_globalworkorderhistorydetail.statecode
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_businessunitidname
+	, VWI_CRM_xts_globalworkorderhistorydetail.owneridname
+	, VWI_CRM_xts_globalworkorderhistorydetail.statecodename
+	, VWI_CRM_xts_globalworkorderhistorydetail.createdonbehalfby
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_globalworkorderhistoryidname
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_pkcombinationkey
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_parentbusinessunitid
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_quantitymanhouractual
+	, VWI_CRM_xts_globalworkorderhistorydetail.importsequencenumber
+	, VWI_CRM_xts_globalworkorderhistorydetail.modifiedbyyominame
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_productdescription
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_globalworkorderhistorydetailid
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_producttype
+	, VWI_CRM_xts_globalworkorderhistorydetail.utcconversiontimezonecode
+	, VWI_CRM_xts_globalworkorderhistorydetail.createdbyyominame
+	, VWI_CRM_xts_globalworkorderhistorydetail.owningbusinessunit
+	, VWI_CRM_xts_globalworkorderhistorydetail.modifiedbyname
+	, VWI_CRM_xts_globalworkorderhistorydetail.owningteam
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_servicecategorydescription
+	, VWI_CRM_xts_globalworkorderhistorydetail.modifiedby
+	, VWI_CRM_xts_globalworkorderhistorydetail.createdby
+	, VWI_CRM_xts_globalworkorderhistorydetail.timezoneruleversionnumber
+	, VWI_CRM_xts_globalworkorderhistorydetail.owneridtype
+	, VWI_CRM_xts_globalworkorderhistorydetail.statuscodename
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_globalworkorderhistoryid
+	, VWI_CRM_xts_globalworkorderhistorydetail.owneridyominame
+	, VWI_CRM_xts_globalworkorderhistorydetail.modifiedon
+	, VWI_CRM_xts_globalworkorderhistorydetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_globalworkorderhistorydetail.statuscode
+	, VWI_CRM_xts_globalworkorderhistorydetail.createdbyname
+	, VWI_CRM_xts_globalworkorderhistorydetail.createdon
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_businessunitid
+	, VWI_CRM_xts_globalworkorderhistorydetail.createdonbehalfbyname
+	, VWI_CRM_xts_globalworkorderhistorydetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_parentbusinessunitidname
+	, VWI_CRM_xts_globalworkorderhistorydetail.versionnumber
+	, VWI_CRM_xts_globalworkorderhistorydetail.modifiedonbehalfby
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_unit
+	, VWI_CRM_xts_globalworkorderhistorydetail.ownerid
+	, VWI_CRM_xts_globalworkorderhistorydetail.overriddencreatedon
+	, VWI_CRM_xts_globalworkorderhistorydetail.xts_product
+	, VWI_CRM_xts_globalworkorderhistorydetail.RowStatus
+	, VWI_CRM_xts_globalworkorderhistorydetail.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+    SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_globalworkorderhistorydetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    {0}
+) VWI_CRM_xts_globalworkorderhistorydetail

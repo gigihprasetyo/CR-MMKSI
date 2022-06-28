@@ -1,0 +1,1440 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ATA" xml:space="preserve">
+    <value>Actual Time Arival</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Additional" xml:space="preserve">
+    <value>Tambahan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Alamat</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AgeSegment" xml:space="preserve">
+    <value>Rentang usia </value>
+    <comment>Field</comment>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>Harga Unit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AppliedToDocument" xml:space="preserve">
+    <value>AppliedToDocument</value>
+    <comment>Field</comment>
+  </data>
+  <data name="APVoucherNo" xml:space="preserve">
+    <value>APVoucherNo</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ARReceiptNo" xml:space="preserve">
+    <value>ARReceiptNo</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AvailableBalance" xml:space="preserve">
+    <value>AvailableBalance</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BaseQtyOrder" xml:space="preserve">
+    <value>Base Qty Order</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BaseQtyReceipt" xml:space="preserve">
+    <value>Base Qty Receipt</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BaseQuantity" xml:space="preserve">
+    <value>BaseQuantity</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BRANCH_MGR" xml:space="preserve">
+    <value>Branch Manager</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="BU" xml:space="preserve">
+    <value>BU</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Building" xml:space="preserve">
+    <value>Gedung</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BusinessSectorDetail" xml:space="preserve">
+    <value>Bisnis sector detail</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CampaignName" xml:space="preserve">
+    <value>Nama campaign </value>
+    <comment>Field</comment>
+  </data>
+  <data name="CashAndBank" xml:space="preserve">
+    <value>CashAndBank</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Kategori</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CBU_BODYTYPE1" xml:space="preserve">
+    <value>Bentuk Body Kendaraan (CV)</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_BODYTYPELCV1" xml:space="preserve">
+    <value>Bentuk Body Kendaraan (LCV)</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_JENISKEND" xml:space="preserve">
+    <value>Jenis Kendaraan</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_LOADPROFILE1" xml:space="preserve">
+    <value>Bidang Usaha Konsumen</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_MEDANOPERASI1" xml:space="preserve">
+    <value>Daerah Utama Operasi</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_MODELKEND" xml:space="preserve">
+    <value>Model Kendaraan</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_OWNERSHIP1" xml:space="preserve">
+    <value>Kepemilikan Kendaraan</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_PURCSTAT" xml:space="preserve">
+    <value>Kendaraan ini Sebagai Kendaraan</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_PURCSTAT2" xml:space="preserve">
+    <value>Kendaraan Sebagai</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_PURPOSE1" xml:space="preserve">
+    <value>Penggunaan Utama</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_PURPOSE2" xml:space="preserve">
+    <value>Keperluan Angkutan</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_USERAGE1" xml:space="preserve">
+    <value>Usia Pemilik Kendaraan</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="CBU_WAYPAID1" xml:space="preserve">
+    <value>Cara Pembayaran</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="ChangeAmount" xml:space="preserve">
+    <value>ChangeAmount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ChassisMaster" xml:space="preserve">
+    <value>Data master chassis</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ChassisNumber" xml:space="preserve">
+    <value>Nomor rangka </value>
+    <comment>Field</comment>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>City</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Code" xml:space="preserve">
+    <value>Kode</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ColorCode" xml:space="preserve">
+    <value>Kode Warna</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CompanyType" xml:space="preserve">
+    <value>Tipe Perusahaan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ConsumptionTax1Amount" xml:space="preserve">
+    <value>Consumption Tax1 Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ConsumptionTax2Amount" xml:space="preserve">
+    <value>Consumption Tax2 Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>Konsumen</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerCode" xml:space="preserve">
+    <value>APMCustomer</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerGender" xml:space="preserve">
+    <value>Jenis Kelamin </value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerName" xml:space="preserve">
+    <value>Nama Konsumen</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerName2" xml:space="preserve">
+    <value>Nama Konsumen 2</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerNo" xml:space="preserve">
+    <value>Nomor Konsumen</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerPurpose" xml:space="preserve">
+    <value>Tujuan Konsumen </value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerStatus" xml:space="preserve">
+    <value>Status Konsumen </value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerType" xml:space="preserve">
+    <value>Tipe konsumen </value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerTypeEnum" xml:space="preserve">
+    <value>Customer type enum </value>
+    <comment>Field</comment>
+  </data>
+  <data name="Dealer" xml:space="preserve">
+    <value>Dealer</value>
+    <comment>Entity</comment>
+  </data>
+  <data name="DealerBranch" xml:space="preserve">
+    <value>Dealer Cabang</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DealerBranchCode" xml:space="preserve">
+    <value>Kode Dealer Cabang</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DealerCode" xml:space="preserve">
+    <value>Kode Dealer</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DealerCodeOfCustomerReffCode" xml:space="preserve">
+    <value>Dealer code dari Ref. Kode Pelanggan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DealerName" xml:space="preserve">
+    <value>Nama Dealer</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DealerSPKDate" xml:space="preserve">
+    <value>Tanggal SPK Dealer</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DescID" xml:space="preserve">
+    <value>Keterangan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DetailNo" xml:space="preserve">
+    <value>Nomer Detail</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DifferenceValue" xml:space="preserve">
+    <value>DifferenceValue</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DiscountPercentage" xml:space="preserve">
+    <value>Discount Percentage</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DMSPRNo" xml:space="preserve">
+    <value>DMSPRNo</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DONumber" xml:space="preserve">
+    <value>DO Number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DownPayment" xml:space="preserve">
+    <value>Down Payment</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DownPaymentAmountPaid" xml:space="preserve">
+    <value>Down Payment Amount Paid</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EMAIL" xml:space="preserve">
+    <value>Email </value>
+    <comment>Field</comment>
+  </data>
+  <data name="ErrorMsgDataMustBePositiveInteger" xml:space="preserve">
+    <value>{0} harus dalam format bilangan bulat.</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EstimationEquipHeader" xml:space="preserve">
+    <value>Estimation Equip Header</value>
+    <comment>Entity</comment>
+  </data>
+  <data name="ExternalDocumentType" xml:space="preserve">
+    <value>ExternalDocumentType</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Field" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FromDealer" xml:space="preserve">
+    <value>FromDealer</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromSite" xml:space="preserve">
+    <value>FromSite</value>
+    <comment>Field</comment>
+  </data>
+  <data name="GrandTotal" xml:space="preserve">
+    <value>Grand Total</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Handling" xml:space="preserve">
+    <value>Handling</value>
+    <comment>Field</comment>
+  </data>
+  <data name="HandPhoneNumber" xml:space="preserve">
+    <value>Nomor Handphone </value>
+    <comment>Field</comment>
+  </data>
+  <data name="HargaBeli" xml:space="preserve">
+    <value>Harga Beli</value>
+    <comment>Field</comment>
+  </data>
+  <data name="HargaJual" xml:space="preserve">
+    <value>Harga Jual</value>
+    <comment>Field</comment>
+  </data>
+  <data name="HomeNo" xml:space="preserve">
+    <value>Home No</value>
+    <comment>Field</comment>
+  </data>
+  <data name="HpNo" xml:space="preserve">
+    <value>HP No</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="IdentityFile" xml:space="preserve">
+    <value>File KTP</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IDEvidence" xml:space="preserve">
+    <value>Evidence KTP</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IndentPartDetail" xml:space="preserve">
+    <value>Indent Part Detail</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IndentPartHeader" xml:space="preserve">
+    <value>Indent Part Header</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InformationSource" xml:space="preserve">
+    <value>Sumber informasi </value>
+    <comment>Field</comment>
+  </data>
+  <data name="InformationType" xml:space="preserve">
+    <value>Tipe informasi </value>
+    <comment>Field</comment>
+  </data>
+  <data name="IsCampaign" xml:space="preserve">
+    <value>Flag Campaign</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ItemTypeForTransfer" xml:space="preserve">
+    <value>ItemTypeForTransfer</value>
+    <comment>Field</comment>
+  </data>
+  <data name="JK" xml:space="preserve">
+    <value>Jenis Kelamin</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="JumlahDatang" xml:space="preserve">
+    <value>Jumlah Datang</value>
+    <comment>Field</comment>
+  </data>
+  <data name="JumlahStokAwal" xml:space="preserve">
+    <value>Jumlah Stok Awal</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Kecamatan" xml:space="preserve">
+    <value>Kecamatan </value>
+    <comment>Field</comment>
+  </data>
+  <data name="Kelurahan" xml:space="preserve">
+    <value>Kelurahan </value>
+    <comment>Field</comment>
+  </data>
+  <data name="Kind" xml:space="preserve">
+    <value>Jenis Kind</value>
+    <comment>Field</comment>
+  </data>
+  <data name="KodeCustomer" xml:space="preserve">
+    <value>Kode Customer</value>
+    <comment>Field</comment>
+  </data>
+  <data name="KodeMekanik" xml:space="preserve">
+    <value>Kode Mekanik</value>
+    <comment>Field</comment>
+  </data>
+  <data name="KODEPOS" xml:space="preserve">
+    <value>Kode Pos</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="KTP" xml:space="preserve">
+    <value>File KTP</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LeadStatus" xml:space="preserve">
+    <value>Lead status </value>
+    <comment>Field</comment>
+  </data>
+  <data name="LineItem" xml:space="preserve">
+    <value>Line Item</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Listof" xml:space="preserve">
+    <value>List of</value>
+    <comment>Field</comment>
+  </data>
+  <data name="LKPPReference" xml:space="preserve">
+    <value>No Referensi LKPP </value>
+    <comment>Field</comment>
+  </data>
+  <data name="MaterialType" xml:space="preserve">
+    <value>Tipe Barang</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Bulan </value>
+    <comment>Field</comment>
+  </data>
+  <data name="NOKTP" xml:space="preserve">
+    <value>No KTP/ TDP</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="NOTELP" xml:space="preserve">
+    <value>No Telpon</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="OfficeNo" xml:space="preserve">
+    <value>Office No</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OfficeNumber" xml:space="preserve">
+    <value>Nomor Kantor </value>
+    <comment>Field</comment>
+  </data>
+  <data name="OpenFakturDate" xml:space="preserve">
+    <value>Tanggal Open Faktur</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderNo" xml:space="preserve">
+    <value>Nomor Pesanan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OrderType" xml:space="preserve">
+    <value>Tipe Pesanan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OriginatingLeadId" xml:space="preserve">
+    <value>Originating Lead Id</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OutstandingBalance" xml:space="preserve">
+    <value>OutstandingBalance</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Pemilik</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaidBackToCustomer" xml:space="preserve">
+    <value>Pembayaran kembali ke konsumen</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PART_MGR" xml:space="preserve">
+    <value>Sparepart Manager</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="PartNumber" xml:space="preserve">
+    <value>Kode barang</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentAmount" xml:space="preserve">
+    <value>PaymentAmount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PDI" xml:space="preserve">
+    <value>PDI</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="PDIDate" xml:space="preserve">
+    <value>Tanggal PDI</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PDIReleaseDate" xml:space="preserve">
+    <value>Tanggal rilis PDI</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PDIStatus" xml:space="preserve">
+    <value>Status PDI</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PENDIDIKAN" xml:space="preserve">
+    <value>Pendidikan</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="Phone" xml:space="preserve">
+    <value>Phone</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Nomor telepon</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PKT" xml:space="preserve">
+    <value>PKT</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PKTDate" xml:space="preserve">
+    <value>Tanggal PKT </value>
+    <comment>Field</comment>
+  </data>
+  <data name="PlanInvoiceDate" xml:space="preserve">
+    <value>Plan Invoice Date</value>
+    <comment>Field</comment>
+  </data>
+  <data name="POBOX" xml:space="preserve">
+    <value>Po Box</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Kode Pos </value>
+    <comment>Field</comment>
+  </data>
+  <data name="PreArea" xml:space="preserve">
+    <value>Pre-Area</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>Harga</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PRNumber" xml:space="preserve">
+    <value>Nomor Struk Pembelian</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>Produk</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProfileDetail" xml:space="preserve">
+    <value>Profil Kendaraan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProfileDetailCode" xml:space="preserve">
+    <value>Kode Profil Kendaraan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProspectDate" xml:space="preserve">
+    <value>Tanggal prospek </value>
+    <comment>Field</comment>
+  </data>
+  <data name="PurchaseUnit" xml:space="preserve">
+    <value>Unit Pembelian</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Qty" xml:space="preserve">
+    <value>Jumlah Pemesanan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyDelivered" xml:space="preserve">
+    <value>Jumlah Terkirim</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyOrder" xml:space="preserve">
+    <value>Jumlah Pemesanan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtyReturn" xml:space="preserve">
+    <value>Jumlah Pengembalian</value>
+    <comment>Field</comment>
+  </data>
+  <data name="QtySales" xml:space="preserve">
+    <value>Jumlah Penjualan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Jumlah </value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiptAmount" xml:space="preserve">
+    <value>ReceiptAmount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiptFromVendor" xml:space="preserve">
+    <value>ReceiptFromVendor</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceivedQuantity" xml:space="preserve">
+    <value>Jumlah Penerimaan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RefCustomerCode" xml:space="preserve">
+    <value>Kode Konsumen </value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReffCode" xml:space="preserve">
+    <value>Ref. Kode Pelanggan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RefNumber" xml:space="preserve">
+    <value>Nomor Referensi </value>
+    <comment>Field</comment>
+  </data>
+  <data name="RejectedReason" xml:space="preserve">
+    <value>Alasan Batal</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReleaseBy" xml:space="preserve">
+    <value>Dikeluarkan oleh</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReleaseDate" xml:space="preserve">
+    <value>Tanggal dikeluarkan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Religion" xml:space="preserve">
+    <value>Agama</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RemainingBalance" xml:space="preserve">
+    <value>RemainingBalance</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Remarks</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequestNo" xml:space="preserve">
+    <value>Nomor Pengajuan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SALES_MGR" xml:space="preserve">
+    <value>Sales Manager</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="SalesChannel" xml:space="preserve">
+    <value>SalesChannel</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesChannelCode" xml:space="preserve">
+    <value>Sales Channel Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Salesman" xml:space="preserve">
+    <value>Salesman</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesmanCode" xml:space="preserve">
+    <value>Kode Salesman</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesmanHeader" xml:space="preserve">
+    <value>Kode salesman </value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesmanHeaderDealer" xml:space="preserve">
+    <value>Salesman header dealer </value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesmanHeaderSalesIndicator" xml:space="preserve">
+    <value>Salesman header sales indicator</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesmanHeaderStatus" xml:space="preserve">
+    <value>Salesman header status </value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesOrderDetailID" xml:space="preserve">
+    <value>SalesOrderDetail ID</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SalesOrderNo" xml:space="preserve">
+    <value>Nomor SalesOrder</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SAPCustomer" xml:space="preserve">
+    <value>SAP Customer </value>
+    <comment>Field</comment>
+  </data>
+  <data name="SERVICE_MGR" xml:space="preserve">
+    <value>Service Manager</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="ServiceDate" xml:space="preserve">
+    <value>Tanggal Service </value>
+    <comment>Field</comment>
+  </data>
+  <data name="ServiceIncomingTglBuka" xml:space="preserve">
+    <value>Tanggal buka transaksi</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ServiceIncomingTglTutup" xml:space="preserve">
+    <value>Tanggal tutup transaksi</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ServiceIncomingWaktuKeluar" xml:space="preserve">
+    <value>Waktu keluar</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ServiceIncomingWaktuMasuk" xml:space="preserve">
+    <value>Waktu masuk</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ServicePlaceCode" xml:space="preserve">
+    <value>Service Place Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ServiceTypeCode" xml:space="preserve">
+    <value>Service Type Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Sex" xml:space="preserve">
+    <value>Jenis kelamin </value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShipmentType" xml:space="preserve">
+    <value>Tipe Pengiriman</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SoldDate" xml:space="preserve">
+    <value>Tanggal penjualan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SourceType" xml:space="preserve">
+    <value>SourceType</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SparePart" xml:space="preserve">
+    <value>Spare Part</value>
+    <comment>Entity</comment>
+  </data>
+  <data name="SparePartMaster" xml:space="preserve">
+    <value>Spare Part Master </value>
+    <comment>Entity</comment>
+  </data>
+  <data name="SparePartPO" xml:space="preserve">
+    <value>Spare Part PO</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SparePartPODetails" xml:space="preserve">
+    <value>Spare Part PO Details</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SparePartStatus" xml:space="preserve">
+    <value>Status</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPK" xml:space="preserve">
+    <value>SPK</value>
+    <comment>Entity</comment>
+  </data>
+  <data name="SPKCustomer" xml:space="preserve">
+    <value>Konsumen SPK</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKCustomerIDOnSPK" xml:space="preserve">
+    <value>SPKCustomerID on SPK</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKDealerNumber" xml:space="preserve">
+    <value>Nomor SPK Dealer</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKDetail" xml:space="preserve">
+    <value>Detail SPK</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKDetailStatus" xml:space="preserve">
+    <value>SPK Detail Status</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKEvidence" xml:space="preserve">
+    <value>Dokumen SPK</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKHeader" xml:space="preserve">
+    <value>SPKHeader</value>
+    <comment>Entity</comment>
+  </data>
+  <data name="SPKHeaderID" xml:space="preserve">
+    <value>SPKHeaderID</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKHeaderIDOnSPKDetail" xml:space="preserve">
+    <value>SPKHeaderID on SPKDetail</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKNumber" xml:space="preserve">
+    <value>Nomor Reg. SPK</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKNumberDealerCode" xml:space="preserve">
+    <value>SPK Number Dealer Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKStatus" xml:space="preserve">
+    <value>Status SPK</value>
+    <comment>Field</comment>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StateCode" xml:space="preserve">
+    <value>Kode State </value>
+    <comment>Field</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Kode Status </value>
+    <comment>Field</comment>
+  </data>
+  <data name="StatusPart" xml:space="preserve">
+    <value>Status </value>
+    <comment>Field</comment>
+  </data>
+  <data name="StockNumberLookupType" xml:space="preserve">
+    <value>Stock Number Lookup Type</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TitleRegistrationFee" xml:space="preserve">
+    <value>Title Registration Fee</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TodayDate" xml:space="preserve">
+    <value>tanggal hari ini</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToDealer" xml:space="preserve">
+    <value>ToDealer</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToSite" xml:space="preserve">
+    <value>ToSite</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalAmount" xml:space="preserve">
+    <value>Total Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalAmountBase" xml:space="preserve">
+    <value>TotalAmountBase</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalAmountBeforeDiscount" xml:space="preserve">
+    <value>Total Amount Before Discount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalBaseAmount" xml:space="preserve">
+    <value>Total Base Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalChangeAmount" xml:space="preserve">
+    <value>TotalChangeAmount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalConsumptionTaxAmount" xml:space="preserve">
+    <value>Total Consumption Tax Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalCost" xml:space="preserve">
+    <value>Jumlah Biaya</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalDiscountAmount" xml:space="preserve">
+    <value>Total Discount Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalForecast" xml:space="preserve">
+    <value>Jumlah Forecast</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalOutstandingBalanceBase" xml:space="preserve">
+    <value>TotalOutstandingBalanceBase</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalPaymentAmount" xml:space="preserve">
+    <value>Total Jumlah Pembayaran</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalReceiptAmount" xml:space="preserve">
+    <value>TotalReceiptAmount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalRemainingBalanceBase" xml:space="preserve">
+    <value>TotalRemainingBalanceBase</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalTitleRegistrationFee" xml:space="preserve">
+    <value>Total Title Registration Fee</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalVolume" xml:space="preserve">
+    <value>Total Volume</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TotalWeight" xml:space="preserve">
+    <value>Total Weight</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ToWarehouse" xml:space="preserve">
+    <value>ToWarehouse</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransactionAmount" xml:space="preserve">
+    <value>Transaction Amount</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransactionDate" xml:space="preserve">
+    <value>Tanggal Transaksi</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransactionType" xml:space="preserve">
+    <value>Tipe Transkasi</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferStatus" xml:space="preserve">
+    <value>Status Transaksi</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TransferStep" xml:space="preserve">
+    <value>TransferStep</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Tipe</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TypeCode" xml:space="preserve">
+    <value>TypeCode</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UnitCost" xml:space="preserve">
+    <value>Biaya Unit</value>
+    <comment>Field</comment>
+  </data>
+  <data name="UpdateBy" xml:space="preserve">
+    <value>Input oleh </value>
+    <comment>Field</comment>
+  </data>
+  <data name="VechileColorID" xml:space="preserve">
+    <value>Vechile Color ID</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VechileTypeID" xml:space="preserve">
+    <value>Vechile Type ID</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VehicleColor" xml:space="preserve">
+    <value>Warna Kendaraan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VehicleColorCode" xml:space="preserve">
+    <value>Kode Warna Kendaraan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VehicleKind" xml:space="preserve">
+    <value>Vehicle Kind</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VehicleType" xml:space="preserve">
+    <value>Tipe Kendaraan </value>
+    <comment>Field</comment>
+  </data>
+  <data name="VehicleTypeCode" xml:space="preserve">
+    <value>Kode Tipe Kendaraan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VehicleTypeStatus" xml:space="preserve">
+    <value>Status tipe kendaraan </value>
+    <comment>Field</comment>
+  </data>
+  <data name="VehicleTypeStatusCategory" xml:space="preserve">
+    <value>Kategori tipe kendaraan </value>
+    <comment>Field</comment>
+  </data>
+  <data name="Vendor" xml:space="preserve">
+    <value>Vendor</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VisitType" xml:space="preserve">
+    <value>Tipe Kedatangan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Warehouse" xml:space="preserve">
+    <value>Gudang</value>
+    <comment>Field</comment>
+  </data>
+  <data name="WorkOrderCategory" xml:space="preserve">
+    <value>Work Order Category</value>
+    <comment>Field</comment>
+  </data>
+  <data name="WorkOrderNumber" xml:space="preserve">
+    <value>Nomor Work Order</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Tahun </value>
+    <comment>Field</comment>
+  </data>
+  <data name="DeliveryMethod" xml:space="preserve">
+    <value>Delivery Method</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DeliveryType" xml:space="preserve">
+    <value>Delivery Type</value>
+    <comment>Field</comment>
+  </data>
+  <data name="FromSource" xml:space="preserve">
+    <value>Form Source</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PaymentGroup" xml:space="preserve">
+    <value>Payment Group</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PurchaseFor" xml:space="preserve">
+    <value>Purchase For</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Taxable" xml:space="preserve">
+    <value>Taxable</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProfileGroup" xml:space="preserve">
+    <value>Profil Group</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BUCode" xml:space="preserve">
+    <value>BU Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PBUCode" xml:space="preserve">
+    <value>PBU Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PDIReceiptDetailNo" xml:space="preserve">
+    <value>Nomor PDI Receipt Detail</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PDIReceiptNo" xml:space="preserve">
+    <value>PDI Receipt No</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PDIReceiptStatus" xml:space="preserve">
+    <value>PDI Receipt Status</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ReceiveQuantity" xml:space="preserve">
+    <value>Jumlah Terima</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PODate" xml:space="preserve">
+    <value>Tanggal PO</value>
+  </data>
+  <data name="CityCode" xml:space="preserve">
+    <value>Kode Kota</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CityName" xml:space="preserve">
+    <value>Kota</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProvinceCode" xml:space="preserve">
+    <value>ProvinceCode</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProvinceName" xml:space="preserve">
+    <value>ProvinceName</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StatusKota" xml:space="preserve">
+    <value>Status Kota</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nama</value>
+    <comment>Field</comment>
+  </data>
+  <data name="BirthDate" xml:space="preserve">
+    <value>Tanggal Lahir</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EducationLevel" xml:space="preserve">
+    <value>Pendidikan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="JobPosition" xml:space="preserve">
+    <value>Posisi</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NamaSiswa" xml:space="preserve">
+    <value>Nama Siswa</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ShirtSize" xml:space="preserve">
+    <value>Ukuran Baju</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StartWorkingDate" xml:space="preserve">
+    <value>Mulai Bekerja</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Gender" xml:space="preserve">
+    <value>Jenis Kelamin</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Mechanic64Base" xml:space="preserve">
+    <value>File 64 Base Foto</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ImageAttachment" xml:space="preserve">
+    <value>File Image</value>
+    <comment>Field</comment>
+  </data>
+  <data name="StatusMechanic" xml:space="preserve">
+    <value>Status</value>
+    <comment>Field</comment>
+  </data>
+  <data name="DataSiswa" xml:space="preserve">
+    <value>Siswa</value>
+    <comment>Entity</comment>
+  </data>
+  <data name="DateOfBirth" xml:space="preserve">
+    <value>Tanggal Lahir</value>
+  </data>
+  <data name="HireDate" xml:space="preserve">
+    <value>Tanggal Masuk</value>
+  </data>
+  <data name="MarriedStatus" xml:space="preserve">
+    <value>Status Perkawinan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ResignDate" xml:space="preserve">
+    <value>Tanggal Keluar</value>
+  </data>
+  <data name="ResignReason" xml:space="preserve">
+    <value>Alasan</value>
+  </data>
+  <data name="IdentityType" xml:space="preserve">
+    <value>Tipe Identitas</value>
+  </data>
+  <data name="NOHP" xml:space="preserve">
+    <value>No Handphone</value>
+  </data>
+  <data name="GroupCategory" xml:space="preserve">
+    <value>Grup Kategori</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Kategori" xml:space="preserve">
+    <value>Kategori</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TipePerusahaan" xml:space="preserve">
+    <value>Tipe Perusahaan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PlaceOfBirth" xml:space="preserve">
+    <value>Tempat Lahir</value>
+  </data>
+  <data name="SalesmanArea" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="SalesmanLevel" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="Leader" xml:space="preserve">
+    <value>Leader</value>
+  </data>
+  <data name="TeamCategory" xml:space="preserve">
+    <value>Kategory Tim</value>
+  </data>
+  <data name="CustomerVehicle" xml:space="preserve">
+    <value>Konsumen Vehicle</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ProcessDate" xml:space="preserve">
+    <value>Tanggal Proses</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequestDate" xml:space="preserve">
+    <value>Tanggal Pengajuan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NOKTPTDP" xml:space="preserve">
+    <value>NO KTP / NO TDP</value>
+    <comment>Field</comment>
+  </data>
+  <data name="NOTDP" xml:space="preserve">
+    <value>NO TDP</value>
+    <comment>Field</comment>
+  </data>
+  <data name="OCRIdentity" xml:space="preserve">
+    <value>OCRIdentity</value>
+  </data>
+  <data name="TipePelanggan" xml:space="preserve">
+    <value>Tipe Pelanggan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TipePengajuan" xml:space="preserve">
+    <value>Tipe Pengajuan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="EvidenceFile" xml:space="preserve">
+    <value>File Evidence </value>
+    <comment>Field</comment>
+  </data>
+  <data name="EmployeeService" xml:space="preserve">
+    <value>Mekanik</value>
+  </data>
+  <data name="CustomerDealer" xml:space="preserve">
+    <value>Konsumen Dealer</value>
+  </data>
+  <data name="PartShop" xml:space="preserve">
+    <value>Part Shop</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CityPart" xml:space="preserve">
+    <value>City Part</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CategoryLevel" xml:space="preserve">
+    <value>Category Level</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ParentCategoryLevel" xml:space="preserve">
+    <value>Parent Category Level</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VehicleModel" xml:space="preserve">
+    <value>Model Kendaraan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VehicleModelCode" xml:space="preserve">
+    <value>Kode Model Kendaraan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CustomerRequest" xml:space="preserve">
+    <value>Pengajuan Pelanggan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RefRequestNo" xml:space="preserve">
+    <value>Referensi Nomor Pengajuan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RequestType" xml:space="preserve">
+    <value>Tipe pengajuan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="KodePelanggan" xml:space="preserve">
+    <value>Kode Pelanggan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ResignType" xml:space="preserve">
+    <value>Tipe Pengunduran Diri ( ResignType )</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CarrosserieHeader" xml:space="preserve">
+    <value>Carrosserie Header</value>
+    <comment>Field</comment>
+  </data>
+  <data name="VehiclePurchase" xml:space="preserve">
+    <value>Vehicle Purchase</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKReferenceNumber" xml:space="preserve">
+    <value>Nomor referensi SPK</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AssistPartSales" xml:space="preserve">
+    <value>Penjualan SparePart</value>
+    <comment>Field</comment>
+  </data>
+  <data name="AssistPartStock" xml:space="preserve">
+    <value>Stok SparePart</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RemarkATA" xml:space="preserve">
+    <value>Kondisi Kendaraan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SPKDetailCustomer" xml:space="preserve">
+    <value>Konsumen SPK Detail</value>
+    <comment>Field</comment>
+  </data>
+  <data name="WarrantyActivation" xml:space="preserve">
+    <value>Warranty Activation</value>
+    <comment>Field from DB</comment>
+  </data>
+  <data name="DigitalSignature" xml:space="preserve">
+    <value>Digital Signature</value>
+    <comment>Field</comment>
+  </data>
+  <data name="IsOtherCity" xml:space="preserve">
+    <value>IsOtherCity</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ChassisMasterClaimDetail" xml:space="preserve">
+    <value>Chassis Master Claim Detail</value>
+    <comment>Field</comment>
+  </data>
+  <data name="CountryCode" xml:space="preserve">
+    <value>CountryCode</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TypeIdentity" xml:space="preserve">
+    <value>TypeIdentity</value>
+    <comment>Field</comment>
+  </data>
+  <data name="TypePerorangan" xml:space="preserve">
+    <value>TypePerorangan</value>
+    <comment>Field</comment>
+  </data>
+  <data name="Varian" xml:space="preserve">
+    <value>Varian</value>
+    <comment>Field</comment>
+  </data>
+</root>

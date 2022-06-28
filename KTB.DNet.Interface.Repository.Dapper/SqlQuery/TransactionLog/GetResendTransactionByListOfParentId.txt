@@ -1,0 +1,4 @@
+﻿SELECT Id, Endpoint, Status, CreatedBy, CreatedTime, UpdatedBy, UpdatedTime FROM TransactionLog WITH(NOLOCK)
+WHERE ParentId IN @ListOfParentId 
+AND CreatedTime BETWEEN DATEADD(DAY, -7, GETDATE()) AND GETDATE()
+ORDER BY CreatedTime DESC

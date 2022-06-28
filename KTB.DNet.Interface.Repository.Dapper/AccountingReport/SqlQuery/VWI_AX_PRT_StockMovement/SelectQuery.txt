@@ -1,0 +1,29 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_AX_PRT_StockMovement.Company
+	,VWI_AX_PRT_StockMovement.Product
+	,VWI_AX_PRT_StockMovement.ProductDescription
+	,VWI_AX_PRT_StockMovement.TransType
+	,VWI_AX_PRT_StockMovement.ReferenceID
+	,VWI_AX_PRT_StockMovement.PackingSlipID
+	,VWI_AX_PRT_StockMovement.TransactionDate
+	,VWI_AX_PRT_StockMovement.Unit
+	,VWI_AX_PRT_StockMovement.BeginningBalance
+	,VWI_AX_PRT_StockMovement.BeginningTotalCost
+	,VWI_AX_PRT_StockMovement.TotalCost
+	,VWI_AX_PRT_StockMovement.QTY
+	,VWI_AX_PRT_StockMovement.Site
+	,VWI_AX_PRT_StockMovement.Warehouse
+	,VWI_AX_PRT_StockMovement.STATUSISSUE
+	,VWI_AX_PRT_StockMovement.Account
+	,VWI_AX_PRT_StockMovement.DIMENSION1
+	,VWI_AX_PRT_StockMovement.DIMENSION2
+	,VWI_AX_PRT_StockMovement.DIMENSION3
+	,VWI_AX_PRT_StockMovement.DIMENSION4
+	,VWI_AX_PRT_StockMovement.DIMENSION5
+	,VWI_AX_PRT_StockMovement.DIMENSION6
+	,VWI_AX_PRT_StockMovement.ProductClass
+	,VWI_AX_PRT_StockMovement.ProductType
+	,VWI_AX_PRT_StockMovement.Period
+/**EndPagingIndexQuery**/
+FROM VWI_AX_PRT_StockMovement WITH (NOLOCK) {0}

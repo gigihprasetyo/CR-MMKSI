@@ -1,0 +1,61 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , createdonbehalfbyyominame
+    , owninguser
+    , owningteam
+    , xts_locking
+    , statecode
+    , xts_productidname
+    , statuscode
+    , statecodename
+    , createdonbehalfby
+    , xts_crossrefftypename
+    , xts_productcrossreferenceid
+    , importsequencenumber
+    , modifiedbyyominame
+    , xts_productdescription
+    , xts_customeridyominame
+    , utcconversiontimezonecode
+    , createdbyyominame
+    , xts_productcrossreference
+    , xts_vendoridname
+    , modifiedbyname
+    , versionnumber
+    , modifiedby
+    , owneridname
+    , createdby
+    , timezoneruleversionnumber
+    , owneridtype
+    , statuscodename
+    , owneridyominame
+    , modifiedon
+    , xts_crossreff
+    , xts_crossrefftype
+    , xts_customerid
+    , modifiedonbehalfbyyominame
+    , xts_customeridname
+    , createdbyname
+    , createdon
+    , createdonbehalfbyname
+    , owningbusinessunit
+    , modifiedonbehalfbyname
+    , xts_crossreffdescription
+    , modifiedonbehalfby
+    , xts_productid
+    , xts_vendorid
+    , ownerid
+    , overriddencreatedon
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_productcrossreference a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    {0}
+) as VWI_CRM_xts_productcrossreference  

@@ -1,0 +1,19 @@
+SELECT 
+	COUNT(1)
+from (
+	SELECT        
+		a.Id
+		, a.Dealer_Code as DealerCode
+		, a.Dealer_Company as DealerCompany
+		, a.InvalidZombieData
+		, a.Category_ZombieData
+		, c.ValueId as Category_ZombieDataCode
+		, a.LastCheckedTime
+	FROM VWI_GetDetailCampaign_Zombie_TS a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.[name] = a.Dealer_Code 
+	LEFT JOIN CRM_StandardCode c WITH(NOLOCK)
+	ON a.Category_ZombieData = c.ValueCode
+	AND c.Category = 'zombieWOTimeRegister.Category_ZombieData'
+	{0}
+) VWI_Zombie_Campaign

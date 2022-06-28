@@ -1,0 +1,23 @@
+﻿SELECT 
+	/**PagingIndexQuery**/  
+	ChassisMasterID
+	,KodeChassis
+	,PKTDate
+	,TglBukaTransaksi
+	,TglTutupTransaksi
+	,WaktuMasuk
+	,WaktuKeluar
+	,DealerCode
+	,DealerBranchCode
+	,WorkOrderType
+	,WorkOrderCategoryCode
+	,KMService
+	,NoWorkOrder
+	,ServicePlaceCode
+	,ServiceTypeCode
+	,LastUpdateTime
+	,Status 
+	/**EndPagingIndexQuery**/ 
+FROM 
+	VWI_ServiceHistory WITH (NOLOCK) 
+{0}

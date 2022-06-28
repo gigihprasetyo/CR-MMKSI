@@ -1,0 +1,49 @@
+﻿<section>
+    <div class="widgets">
+        <div class="row">
+            <div class="col-xs-12">
+                <div ba-panel ba-panel-title="{{activePageTitle}}" ba-panel-class="with-scroll">
+                    <form name="form">
+                        <div class="col-md-12">
+                            <standard-select label="Log Type" name="LogType" ng-model="logType" options="logTypeOptions" required />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group" ng-class="{ 'has-error': form.beginDate.$invalid && form.beginDate.$touched }">
+                                <label for="From">
+                                    From
+                                    <span class='required'>*</span>
+                                </label>
+                                <div class="input-group" moment-picker="model.From" format="DD MMMM YYYY">
+                                    <span class="input-group-addon">
+                                        <i class="ion-android-calendar"></i>
+                                    </span>
+                                    <input required name="From" autocomplete="off" class="form-control" placeholder="Select a time" ng-model="model.From" ng-model-options="{ updateOn: 'blur' }">
+                                </div>
+                                <span ng-show="form.beginDate.$invalid && form.beginDate.$touched" class="help-block">Begin Date is required</span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group" ng-class="{ 'has-error': form.endDate.$invalid && form.endDate.$touched }">
+                                <label for="To">
+                                    To 
+                                    <span class='required'>*</span>
+                                </label>
+                                <div class="input-group" moment-picker="model.To" format="DD MMMM YYYY">
+                                    <span class="input-group-addon">
+                                        <i class="ion-android-calendar"></i>
+                                    </span>
+                                    <input required name="To" autocomplete="off" class="form-control" placeholder="Select a time" ng-model="model.To" ng-model-options="{ updateOn: 'blur' }">
+                                </div>
+                                <span ng-show="form.endDate.$invalid && form.endDate.$touched" class="help-block">End Date is required</span>
+                            </div>
+                        </div>
+                        <div class="form-group text-right">
+                            <button class="btn btn-danger m-t-15 waves-effect" ng-click="deleteLog()">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

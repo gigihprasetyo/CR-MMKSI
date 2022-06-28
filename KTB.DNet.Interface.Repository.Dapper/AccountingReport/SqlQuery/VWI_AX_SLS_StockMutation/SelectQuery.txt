@@ -1,0 +1,39 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_AX_SLS_StockMutation.COMPANYCODE
+	,VWI_AX_SLS_StockMutation.INVENTTRANSRECID
+	,VWI_AX_SLS_StockMutation.Product
+	,VWI_AX_SLS_StockMutation.UNITID
+	,VWI_AX_SLS_StockMutation.QTY
+	,VWI_AX_SLS_StockMutation.Site
+	,VWI_AX_SLS_StockMutation.Warehouse
+	,VWI_AX_SLS_StockMutation.STATUSISSUE
+	,VWI_AX_SLS_StockMutation.STATUSRECEIPT
+	,VWI_AX_SLS_StockMutation.TotalCost
+	,VWI_AX_SLS_StockMutation.CostAdjustment
+	,VWI_AX_SLS_StockMutation.REFERENCECATEGORY
+	,VWI_AX_SLS_StockMutation.REFERENCEID
+	,VWI_AX_SLS_StockMutation.TransactionDate
+	,VWI_AX_SLS_StockMutation.INVENTTRANSORIGIN
+	,VWI_AX_SLS_StockMutation.PACKINGSLIPID
+	,VWI_AX_SLS_StockMutation.TRANSACTIONTYPE
+	,VWI_AX_SLS_StockMutation.VALUEOPEN
+	,VWI_AX_SLS_StockMutation.INVENTTRANSMODIFIEDDATETIME
+	,VWI_AX_SLS_StockMutation.DIMENSION1
+	,VWI_AX_SLS_StockMutation.DIMENSION2
+	,VWI_AX_SLS_StockMutation.DIMENSION3
+	,VWI_AX_SLS_StockMutation.DIMENSION4
+	,VWI_AX_SLS_StockMutation.DIMENSION5
+	,VWI_AX_SLS_StockMutation.DIMENSION6
+	,VWI_AX_SLS_StockMutation.INVENTSERIALID
+	,VWI_AX_SLS_StockMutation.Account
+	,VWI_AX_SLS_StockMutation.VIN
+	,VWI_AX_SLS_StockMutation.ProductClassName
+	,VWI_AX_SLS_StockMutation.ProductType
+	,VWI_AX_SLS_StockMutation.ExteriorColorID
+	,VWI_AX_SLS_StockMutation.InteriorColorID
+	,VWI_AX_SLS_StockMutation.Company
+	,VWI_AX_SLS_StockMutation.RECID
+	,VWI_AX_SLS_StockMutation.Period
+/**EndPagingIndexQuery**/
+FROM VWI_AX_SLS_StockMutation WITH (NOLOCK) {0}

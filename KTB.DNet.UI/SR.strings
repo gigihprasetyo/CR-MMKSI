@@ -1,0 +1,1544 @@
+#===============================================================================
+# Microsoft patterns & practices Enterprise Library
+# Enterprise Library Shared Library
+#===============================================================================
+# Copyright © Microsoft Corporation.  All rights reserved.
+# THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY
+# OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT
+# LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+# FITNESS FOR A PARTICULAR PURPOSE.
+#===============================================================================
+
+# This file is used to generate SR.cs and SR.resx files. The copyright notice
+# for those files appears here, in this SR.strings file.
+#
+
+# Options are specified as lines starting with "#!"
+
+# Comments are lines starting with ";" or "#"
+
+# To define the SR class public instead of internal (default):
+##! accessor_class_accessibility = public
+
+#! culture_info = ResourcesCultur.CultureInfo
+
+
+[strings]
+Raw = Raw string
+SimpleArg(arg1) = With argument {0}
+StringArg(string name) = With name argument {0}
+NumberArgs(int name2, decimal amount, float chanceOfWinning) = Integer {0}, Amount {1:C}, Change {2}%
+MultiLineWithArgs(int age, string name) = My Age is {0}
+= My name is {0}
+#TransactionMessages
+Test = test
+SaveSuccess = Simpan data berhasil
+SaveFail = Simpan data tidak berhasil
+UpdateSucces = Ubah data berhasil
+UpdateFail = Ubah data tidak berhasil
+DeleteSucces = Hapus data berhasil
+DeleteFail = Hapus data tidak berhasil
+CannotDelete = Data ini sudah dipakai di tempat lain dan tidak dapat dihapus
+ValidateSucces = Validasi berhasil
+ValidateFail = Validasi tidak berhasil
+UploadSucces(string fileName) = Upload file {0} berhasil
+UploadFail(string fileName) = Upload file {0} tidak berhasil
+DownloadSucces(string fileName) = Download file {0} berhasil
+DownloadFail(string fileName)= Download file {0} tidak berhasil
+DataSendSucces = Data berhasil dikirim 
+DataSendFail = Data gagal dikirim
+DataSendCancel = Data batal dikirim
+#Authorization 
+UnAuthorizeCreate(string processName) = Anda tidak berhak untuk membuat {0}
+#ConfirmationMessages
+DeleteConfirmation = Yakin data ini mau dihapus ?
+SubmitConfirmation = Yakin data ini mau dikirim ?
+CancelConfirmation = Yakin data ini mau dibatalkan ?
+#VerificationMessages
+UnitPriceNotFound = Harga unit belum ada 
+InvalidCreatePeriod = Periode Create atau Decide harus diisi
+FileNotSelected = Silahkan pilih file yang akan diupload
+DataSuccesCanceled = Data sudah dikirim / dibatalkan
+GridIsEmpty(string gridName) = {0} masih kosong
+FileIsExist(string fileName) = File {0} sudah ada
+FileNotFound(string fileName) = {0} tidak ditemukan
+DataSubmited(string dataName) = {0} sudah dikirim
+DataProcessed(string dataName) = {0} sudah diproses
+DataCanceled(string dataName) =  {0} sudah dibatalkan
+DataDeleted(string dataName) =  {0} sudah dihapus
+DataNotFound(string dataName) = {0} tidak ditemukan
+DataIsExist(string dataName) = {0} sudah ada
+DataNotFoundByStatus(string dataName,string status)= {0} dengan status {1} tidak ditemukan
+DataNotSelectedByStatus(string dataName,string status)= Tidak ada {0} dengan status {1} yang dipilih
+DataNotChooseYet(string dataName) = {0} belum dipilih
+DataProcessNotFound(string dataName,string processName)= Tidak ada {0} untuk proses {1}
+InputInvalidData(string dataName) = Input {0} salah 
+DataDuplicate(string dataName1, string dataName2, string dataLocation) = {0} tidak boleh sama dengan {1} di {2} lain
+InvalidStatus(string dataName,string status) = Status {0} bukan {1}
+InvalidRangeDate  = Tanggal Mulai Harus Lebih Kecil Sama Dengan Tanggal Akhir
+InvalidCreateDate(string dataName) = Batas Waktu pembuatan {0} tidak valid 
+InvalidSendDate = Input Tanggal Permintaan Kirim tidak valid
+ValidUpdateColor(string colorName) = Hanya Kode Warna {0} yang boleh dirubah
+OverAlocate(string processName) = Total Alokasi Melebihi Total {0}
+ValidHeaderDetail(string headerName,string detailName) = {0} Harus memiliki minimal 1 {1}
+OverDate(string dataName,string days)= Tanggal {0} tidak boleh melebihi {1} hari
+InvalidData(string dataName) = Tidak ada {0} yang valid
+ViewFail = Lihat data tidak berhasil
+
+#Security Message
+AccessDenied=Akses ditolak
+PrivilegeAccessDenied(string AksesName)=Akses {0} ditolak
+
+#SPPO s
+ViewSPPO_Privilege = lihat_pesanan
+SaveSPPO_Privilege = simpan_pesanan
+CancelSPPO_Privilege = batal_pesanan
+SubmitSPPO_Privilege = kirim_pesanan
+UpdateSPPO_Privilege = ubah_pesanan
+NewSPPO_Privilege = baru_pesanan
+NewUploadViaExcel_Privilege = baru_upload_via_excel
+
+
+ViewSPPPO_UploadText_Privilege = lihat_upload_via_text
+BrowseSPPPO_UploadText_Privilege = browse_upload_via_text
+UploadSPPPO_UploadText_Privilege = upload_upload_via_text
+SaveSPPPO_UploadText_Privilege = simpan_upload_via_text
+CancelSPPPO_UploadText_Privilege = batal_upload_via_text
+SubmitSPPPO_UploadText_Privilege = kirim_upload_via_text
+NewSPPPO_UploadText_Privilege = baru_upload_via_text
+
+ViewSPPPO_UploadExcel_Privilege = lihat_upload_via_excel
+BrowseSPPPO_UploadExcel_Privilege = browse_upload_via_excel
+UploadSPPPO_UploadExcel_Privilege = upload_upload_via_excel
+SaveSPPPO_UploadExcel_Privilege = simpan_upload_via_excel
+CancelSPPPO_UploadExcel_Privilege = batal_upload_via_excel
+SubmitSPPPO_UploadExcel_Privilege = kirim_upload_via_excel
+
+ViewSPPO_CheckList_Privilege = lihat_barang_tidak_dipenuhi
+SearchSPPO_CheckList_Privilege = cari_barang_tidak_dipenuhi
+ViewSPPO_CheckListDetail_Privilege = lihat_detail_barang_tidak_dipenuhi
+
+ViewSPPO_Estimate_Privilege = lihat_estimasi_pesanan
+SearchSPPO_Estimate_Privilege = cari_estimasi_pesanan
+ViewSPPO_EstimateDetail_Privilege = lihat_estimasi_detail
+DownLoadSPPO_Estimate_Privilege = download_estimate
+ReturnSPPO_Estimate_Privilege = kembali_lihat_estimate
+
+ViewSPPO_Status_Privilege = lihat_status_pesanan
+SearchSPPO_Status_Privilege = cari_status_pesanan
+ViewSPPO_StatusDetail_Privilege = lihat_status_pesanan_detail
+
+ViewSPPO_List_Privilege = lihat_daftar_pesanan
+SearchSPPO_List_Privilege = cari_daftar_pesanan
+ViewSPPO_ListDetail_Privilege = lihat_detail_daftar_pesanan
+CancelSPPO_ChkBox_Privilege = klik_checkbox_daftar_pesanan
+
+ViewSPPO_KTBCancel_Privilege = lihat_pembatalan_pesanan
+SearchSPPO_KTBCancel_Privilege = cari_pembatalan_pesanan
+ProcessSPPO_KTBCancel_Privilege= batal_proses_pembatalan_pesanan
+
+#DepositAndDepositC2
+ViewDeposit_Privilege = lihat_deposit
+SearchDeposit_Privilege = cari_deposit
+ViewDepositC2_Privilege = lihat_deposit_C2
+SearchDepositC2_Privilege = cari_deposit_C2
+
+#SparepartMasterList
+ViewSparePartMaster_Privilege = lihat_master_barang
+SearchSparePartMaster_Privilege = cari_master_barang
+ViewSparePartMasterAltPage_Privilege = lihat_halaman_barang_alternatif
+ViewSparePartStock_Privilege = lihat_lihat_stok
+
+#TOPSparepartPayment
+Input_TOPSP_Transfer_Payment_Privilege = Input_TOPSP_Transfer_Payment
+Lihat_TOPSP_Report_Ceiling_Privilege = Lihat_TOPSP_Report_Ceiling
+Lihat_TOPSP_Report_CeilingGabungan_Privilege = Lihat_TOPSP_Report_CeilingGabungan
+TOPSP_Outstanding_Spbilling_Lihat_Privilege  = TOPSP_Outstanding_Spbilling_Lihat
+TOPSP_Daftar_Transfer_Payment_Lihat_Privilege  = TOPSP_Daftar_Transfer_Payment_Lihat
+TOPSP_Daftar_Transfer_Payment_Ubah_Privilege  = TOPSP_Daftar_Transfer_Payment_Ubah
+TOPSP_Daftar_Transfer_Payment_Validasi_Privilege = TOPSP_Daftar_Transfer_Payment_Validasi
+TOPSP_Daftar_Transfer_Payment_Batal_Privilege  = TOPSP_Daftar_Transfer_Payment_Batal
+
+#AnnualDiscount
+ViewAnnualDiscount_Privilege = lihat_pengelolaan_annual_discount
+SaveAnnualDiscount_Privilege = simpan_pengelolaan_annual_discount
+CancelAnnualDiscount_Privilege = batal_pengelolan_annual_discount
+
+ViewAnnualDiscountUpload_Privilege = lihat_upload_file_annual_discount
+BrowseAnnualDiscountUpload_Privilege = browse_upload_file_annual_discount
+UploadAnnualDiscountUpload_Privilege = upload_upload_file_annual_discount
+
+ViewAnnualDiscountUploadItem_Privilege = lihat_upload_item_annual_discount
+BrowseAnnualDiscountUploadItem_Privilege = browse_upload_item_annual_discount
+UploadAnnualDiscountUploadItem_Privilege = upload_upload_item_annual_dsicount
+SaveAnnualDiscountUploadItem_Privilege = simpan_upload_item_annual_discount
+NewAnnualDiscountUploadItem_Privilege = baru_upload_item_annual_discount
+DeleteAnnualDiscountUploadAll_Privilege = hapus_semua_upload_annual_discount
+
+ViewAnnualDiscountFileList_Privilege = lihat_daftar_file_annual_discount
+DownloadAnnualDiscountFileList_Privilege = download_daftar_file_annual_discount
+SearchAnnualDiscountFileList_Privilege = cari_daftar_file_annual_discount
+ViewAnnualDiscountItemList_Privilege = lihat_daftar_item_annual_discount
+DownloadAnnualDiscount_Privilege = download_daftar_item_annual_discount
+ViewAnnualDiscountAchivementList_Privilege = lihat_daftar_pecapaian_annual_disc
+SearchAnnualDiscountAchivementList_Privilege = cari_daftar_pencapaian_annual_disc
+DownloadAnnualDiscountAchivementList_Privilege = download_daftar_pencapaian_annual_disc
+
+#Sparepart_PO_Recapitulation
+ViewSPPO_Recapitulation_Privilege = lihat_rekapitulasi
+SearchSPPO_Recapitulation_Privilege = cari_rekapitulasi
+DownloadSPPO_Recapitulation_Privilege = download_recapitulasi
+UpdateSPPOTransControl_Privilege = ubah_sppo_transcontrol
+
+#Sparepart_Incidental
+ViewPartIncidentalEntry_Privilege = lihat_pengajuan_permintaan_khusus
+SavePartIncidentalEntry_Privilege = simpan_pengajuan_permintaan_khusus
+DeletePartIncidentalEntry_Privilege = hapus_pengajuan_permintaan_khusus
+ViewListPengajuanPermintaanKhusus_Privilege = lihat_daftar_pengajuan_permintaan_khusus
+ProcessListPengajuanPermintaanKhususDetail_Privilege = proses_daftar_pengajuan_permintaan_khusus_detail
+
+#PRP
+DownloadDaftarPRPPerDealer_Privilege = download_daftar_prp_perdealer
+DownloadDaftarPRPPerToko_Privilege = download_daftar_prp_pertoko
+ViewEmailReceiverPRP_Privilege = lihat_penerima_email_PRP
+ViewListReportSubmitPRP_Privilege = lihat_daftar_pengiriman_laporan_PRP
+ViewReportSubmitPRP_Privilege = lihat_pengiriman_laporan_PRP
+
+#PartIncidentalEntryList
+ViewPartIncidentalEntryList_Privilege = lihat_daftar_pengajuan_permintaan_khusus
+SearchPartIncidentalEntryList_Privilege = cari_daftar_pengajuan_permintaan_khusus
+
+ViewPartIncidentalDetail_Privilege = lihat_rincian_permintaan_khusus
+BackPartIncidentalDetail_Privilege = kembali_rincian_permintaan_khusus
+DeletePartIncidentalDetail_Privilege = hapus_rincian_permintaan_khusus
+EmailPartIncidentalDetail_Privilege = email_rincian_permintaan_khusus
+
+ViewPartIncidentalEmail_Privilege = lihat_daftar_penerima_email
+SavePartIncidentalEmail_Privilege = simpan_daftar_penerima_email
+DeletePartIncidentalEmail_Privilege = hapus_daftar_penerima_email
+
+ViewPartIncidentalList_Privilege = lihat_daftar_permintaan_khusus
+SearchPartIncidentalList_Privilege = cari_daftar_permintaan_khusus
+DeletePartIncidentalList_Privilege = hapus_daftar_permintaan_khusus
+
+#Sparepart_Special_Items
+ViewSpecialItemUpload_Privilege = lihat_upload_special_item
+BrowseSpecialItemUpload_Privilege = browse_upload_special_item
+UploadSpecialItemUpload_Privilege = upload_upload_special_item
+CopySpecialItemUpload_Privilege = copy_upload_special_item
+ViewSpecialItemManagement_Privilege = lihat_pengelolan_special_item
+SearchSpecialItemManagement_Privilege = cari_pengelolaan_special_item
+DownloadListSpecialItem_Privilege = download_daftar_special_item
+ViewDetailPengelelolaanSpecialItem_Privilege = lihat_detail_pengelolaan_special_item
+DeleteDetailPengelelolaanSpecialItem_Privilege = hapus_detail_pengelolaan_special_item
+SaveDetailPengelelolaanSpecialItem_Privilege = simpan_detail_pengelolaan_special_item
+BackDetailPengelelolaanSpecialItem_Privilege = kembali_detail_pengelolaan_special_item
+SaveUploadSpecialItem_Privilege = simpan_upload_special_item 
+
+
+
+DeleteAllSpecialItemManagement_Privilege = hapus_semua_pengelolan_special_item
+ViewSpecialItemList_Privilege = lihat_daftar_special_item
+SearchSpecialItemList_Privilege = cari_daftar_special_item
+
+#Sparepart_PRP
+ViewCategoryPRP_Privilege = lihat_pengelolaan_kategori_prp
+SaveCategoryPRP_Privilege = simpan_pengelolaan_kategori_prp
+CancelCategoryPRP_Privilege = batal_pengelolaan_kategori_prp
+ViewManagePRP_Privilege = lihat_pengelolaan_prp
+SearchManagePRP_Privilege = cari_pengelolaan_prp
+CancelManagePRP_Privilege = batal_pengelolaan_prp
+ViewUploadPRP_Privilege = lihat_upload_prp
+SaveUploadPRP_Privilege = simpan_upload_prp
+ViewListPRP_Privilege = lihat_daftar_prp
+ViewListDetailPRP_Privilege = lihat_daftar_prp_detail
+
+
+#General
+ViewCategory_Privilege = lihat_kategori
+ChangeCategory_Privilege = ubah_kategori
+ViewModel_Privilege = lihat_model
+ChangeModel_Privilege = ubah_model
+ViewKindModel_Privilege = lihat_jenis_model
+ChangeKindModel_Privilege = ubah_jenis_model
+ViewType_Privilege = lihat_tipe
+ChangeType_Privilege = ubah_tipe
+ViewProvince_Privilege = lihat_propinsi
+ChangeProvince_Privilege = ubah_propinsi
+ViewCity_Privilege = lihat_kota
+ChangeCity_Privilege = ubah_kota
+ViewGroup_Privilege = lihat_group
+ChangeGroup_Privilege = ubah_group
+ViewArea1_Privilege = lihat_area1
+ChangeArea1_Privilege = ubah_area1
+ViewArea2_Privilege = lihat_area2
+ChangeArea2_Privilege = ubah_area2
+ViewHoliday_Privilege = lihat_hari_libur
+ChangeHoliday_Privilege = ubah_hari_libur
+ViewTermOfPaynent_Privilege = lihat_cara_pembayaran
+ChangeTermOfPaynent_Privilege = ubah_cara_pembayaran
+CreateDealer_Privilege  = buat_dealer
+ChangeDealer_Privilege = ubah_dealer
+ChangeDealerContactInfo_Privilege = ubah_ci_dealer
+ChangeFU_Dealer_Privilege = ubah_fu_dealer
+ChangeSV_Dealer_Privilege = ubah_sv_dealer
+ChangeSP_Dealer_Privilege = ubah_sp_dealer
+ViewDealerList_Privilege = lihat_daftar_dealer
+ChangeDealerList_Privilege = ubah_daftar_dealer
+ViewTransControlList_Privilege = lihat_transcontrol
+ChangePK_TransControlList_Privilege = ubah_pk_transcontrol
+ChangePO_TransControlList_Privilege = edit_po_transcontrol
+ViewPriceList_Privilege = lihat_daftar_harga
+UploadPriceList_Privilege = upload_daftar_harga
+DownLoadPriceList_Privilege = download_daftar_harga
+ViewPriceInfo_Privilege = lihat_info_harga
+DownloadPriceInfo_Privilege = download_info_harga
+ViewColorList_Privilege = lihat_daftar_warna
+UploadColorList_Privilege = upload_daftar_warna
+DownloadColorList_Privilege = download_daftar_warna
+ViewColorInfo_Privilege = lihat_info_warna
+DownloadColorInfo_Privilege = download_info_warna
+ActivateDealerTransaksiPesananPrivilege = aktifkan_dealer_transaksi_pesanan
+DeActivateDealerTransaksiPesananPrivilege = non_aktifkan_transaksi_pesanan
+UpdateSparepartPOTransactionControl_Privilege = ubah_sparepart_po_transcontrol
+
+#Global_FinishUnit_Service
+TujuanPembayaranView_Privilege = tujuan_pembayaran_lihat
+TujuanPembayaranUpdate_Privilege = tujuan_pembayaran_Ubah
+PKKondisiBiasa_Privilege = pk_kondisi_biasa
+PKCategoryPC_Privilege = pk_kategori_pc
+PKCategoryLCV_Privilege = pk_kategori_lcv
+PKCategoryCV_Privilege = pk_kategori_cv
+PKKindBulanan_Privilege = pk_jenis_bulanan
+PKKindTambahan_Privilege = pk_jenis_tambahan
+PKKondisiKhusus_Privilege = pk_kondisi_khusus
+PKCategoryAll_Privilege = pk_kategori_semua
+PKKondisiAll_Privilege = pk_kondisi_semua
+PKKindAll_Privilege = pk_jenis_semua
+PKValidate_Privilege = pk_tombol_validasi
+PengajuanPO_Save_Privilege = po_pengajuan_simpan
+AlokasiPODetail_Privielge = po_alokasi_detil_lihat
+UnitUsulanSAPViewDetail_Privilege = po_propose_alokasi_detil_lihat
+PengajuanPOKind_Semua = po_pengajuan_jenis_semua
+PengajuanPOKind_Harian = po_pengajuan_jenis_harian
+PengajuanPOKind_Tambahan = po_pengajuan_jenis_tambahan
+PengajuanPOView_Detail = po_detil_lihat
+pembayaran_tipe_pembayaran_lihat_privilege=pembayaran_tipe_pembayaran_lihat
+pembayaran_tipe_pembayaran_buat_privilege=pembayaran_tipe_pembayaran_buat
+pembayaran_assignment_lihat_privilege=pembayaran_assignment_lihat
+pembayaran_assignment_buat_privilege=pembayaran_assignment_buat
+pembayaran_daftar_pembayaran_sap_lihat_privilege=pembayaran_daftar_pembayaran_sap_lihat
+pembayaran_daftar_pembayaran_manual_lihat_privilege=pembayaran_daftar_pembayaran_manual_lihat
+pembayaran_daftar_jatuh_tempo_privilege=pembayaran_daftar_jatuh_tempo
+pembayaran_daftar_pembayaran_sap_validasi_privilege=pembayaran_daftar_pembayaran_sap_validasi
+pembayaran_daftar_detail_pembayaran_sap_validasi_privilege=pembayaran_daftar_detail_pembayaran_sap_validasi
+pembayaran_pembayaran_manual_buat_privilege=pembayaran_pembayaran_manual_buat
+pembayaran_daftar_register_doc_lihat_privilege=pembayaran_daftar_register_doc_lihat
+pembayaran_daftar_register_doc_edit_privilege=pembayaran_daftar_register_doc_edit
+pembayaran_daftar_jatuh_tempo_proses_privilege=pembayaran_daftar_jatuh_tempo_proses
+
+
+#PengajauanPKBiasa
+PengajuanPKBiasaSave_Privilege = pengajuan_pk_biasa_simpan
+PengajuanPKBiasaDelete_Privilege = pk_tombol_hapus
+PengajuanPKBiasaRemainAllocation_Privilege = pengajuan_pk_biasa_sisa_alokasi
+
+#PengajuanPKKhusus
+PengajuanPKKhususSave_Privilege = pengajuan_pk_khusus_simpan
+PengajuanPKKhususDelete_Privilege = pk_tombol_hapus
+PengajuanPKKhususRemainAllocation_Privilege = pk_proses_sisa_alokasi
+PengajuanPKKhususConfirmationForm_Privilege = pengajuan_pk_khusus_form_konfirmasi
+PengajuanPKKhususExplanationForm_Privilege = pengajuan_pk_khusus_form_penjelasan
+
+#ValidasiPK
+ValidatePKViewList_Privilege = pk_list_validasi_lihat
+ValidatePKCancelValidate_Privilege = pk_list_validasi_batal_validasi
+ValidatePKButtonCancel_Privilege = pk_list_validasi_batal
+ValidatePKIconUpdate_Privilege = pk_list_validasi_icon_ubah
+ValidatePKIconView_Privilege = pk_list_validasi_icon_lihat
+
+#ResponPK
+ResponsePKViewList_Privilege = pk_list_respon_lihat
+ResponsePKStatusAll_Privilege = pk_list_respon_status_semua
+ResponsePKStatusConfirm_Privilege = pk_list_respon_status_konfirmasi
+ResponsePKStatusRelease_Privilege = pk_list_respon_status_rilis
+ResponsePKStatusReject_Privilege = pk_list_respon_status_tolak
+ResponsePKStatusBlock_Privilege = pk_list_respon_status_blok
+ResponsePKIconView_Privilege = pk_list_respon_icon_lihat
+ResponsePKDownload_Privilege = pk_list_respon_download
+ResponsePKViewDetail_Privilege = pk_list_respon_detil_lihat
+ResponsePKSaveDetail_Privilege = pk_list_respon_detil_simpan
+ResponsePKUpdateDetail_Privilege = pk_list_respon_detil_ubah
+ResponsePKDeleteDetail_Privilege = pk_list_respon_detil_hapus
+
+#PersetujuanPK
+PersetujuanPKView_Privilege = pk_list_persetujuan_lihat
+PersetujuanPKApprove_Privilege = pk_list_persetujuan_setuju
+PersetujuanPKDisApprove_Privilege = pk_list_persetujuan_tidak_setuju
+PersetujuanPKIConView_Privilege = pk_list_persetujuan_icon_lihat
+
+#DaftarPK
+DaftarPKViewList_Privilege = pk_list_daftar_lihat
+DaftarPKTransfer_Privilege = pk_list_daftar_transfer
+DaftarPKReTransfer_Privilege = pk_list_daftar_transfer_ulang
+DaftarPKIconView_Privilege = pk_list_daftar_icon_lihat
+
+#RencanaProduksi
+RencanaProduksiView_Privilege = pk_rencana_produksi_lihat
+RencanaProduksiUpload_Privilege = pk_rencana_produksi_upload
+RencanaProduksiDownload_Privilege = pk_rencana_produksi_download
+
+#AlokasiPK
+AlokasiPKViewListPrivilege = pk_alokasi_list_lihat
+AlokasiPKViewDetailPrivilege = pk_alokasi_detil_lihat
+AlokasiPKSaveDetailPrivilege = pk_alokasi_detil_simpan
+
+#DaftarStatusRilis
+DaftarStatusRilisView_Privilege = pk_daftar_rilis_lihat
+DaftarStatusRilisViewDetail_Privilege = pk_daftar_rilis_detil_lihat
+
+#DaftarMO
+DaftarMOView_Privilege = pk_daftar_mo_lihat
+DaftarMOLock_Privilege = pk_daftar_mo_kunci
+DaftarMODelete_Privilege = pk_daftar_mo_hapus
+DaftarMOViewDetail_Privilege = pk_daftar_mo_detil_lihat
+
+#DaftarParkir
+ListParkView_Privilege = daftar_parkir_lihat
+ListParkDelete_Privilege = daftar_parkir_hapus
+ListParkDowload_Privilege = daftar_parkir_download
+
+#Pengajuan PO
+PengajuanPOView_Privilege = po_pengajuan_lihat
+PengajuanPOIconCreatePrivilege = po_pengajuan_icon_buat
+PengajuanPOUpdate_Privilege = po_pengajuan_ubah
+PengajuanPOStatusCancel_Privilege = po_daftar_status_batal
+PengajuanPOListStatusCancel_Privilege = po_daftar_status_batal
+
+#DaftarStatusPO
+DaftarStatusPOView_Privilege = po_daftar_status_lihat
+DaftarStatusPOCancel_Privilege =po_daftar_status_batal
+DaftarStatusPOConfirm_Privilege =po_daftar_status_konfirmasi
+DaftarStatusPOReject_Privilege =po_daftar_status_tolak
+DaftarStatusPOReleasa_Privilege =po_daftar_status_rilis
+DaftarStatusPOBlock_Privilege =po_daftar_status_blok
+DaftarStatusPOApprove_Privilege =po_daftar_status_setuju
+DaftarStatusPODisApprove_Privilege =po_daftar_status_tidak_setuju
+DaftarStatusPOTransferSAP_Privilege =po_daftar_status_transfer_sap
+DaftarStatusPOJenisAll_Privilege =po_pengajuan_jenis_semua
+DaftarPOView_Privilege =po_daftar_lihat
+DaftarPOJenisSemua_Privilege =po_pengajuan_jenis_semua
+DaftarPOSOForm_Privilege =po_daftar_so_form
+
+#DaftarInvoice
+DaftarInvoice_Privilege = Daftar_Invoice_Lihat
+
+#AlokasiPO
+AlokasiPOView_Privilege = po_alokasi_lihat
+AlokasiPOSaveDetail_Privilege = po_alokasi_detil_simpan
+
+#UnitUsulanSAP
+UnitUsulanSAPAlocationView_Privilege = po_propose_alokasi_lihat
+
+#DaftarPembayaran
+DaftarPembayaranView_Privilege = po_pembayaran_lihat
+DaftarPembayaranDownload_Privilege = po_pembayaran_download
+DaftarPembayaranStatusTolakan_Privilege = po_pembayaran_status_tolakan
+DaftarPembayaranNomorAccounting_Privilege = po_pembayaran_nomor_accounting
+
+#MasterFakturKendaraan
+FakturKendaraanViewCaraPembayaran_Privilege = faktur_kendaraan_cara_pembayaran_lihat
+FakturKendaraanUpdateCaraPembayaran_Privilege = faktur_kendaraan_cara_pembayaran_ubah
+FakturKendaraanViewTipePembayaran_Privilege = faktur_kendaraan_tipe_pembayaran_lihat
+FakturKendaraanUpdateTipePembayaran_Privilege = faktur_kendaraan_tipe_pembayaran_ubah
+FakturKendaraanViewKepemilikanKendaraan_Privilege = faktur_kendaraan_kepemilikan_kendaraan_lihat
+FakturKendaraanUbahKepemilikanKendaraan_Privilege = faktur_kendaraan_kepemilikan_kendaraan_ubah
+FakturKendaraanViewKendaraanSebagai_Privilege = faktur_kendaraan_kendaraan_sebagai_lihat
+FakturKendaraanUpdateKendaraanSebagai_Privilege = faktur_kendaraan_kendaraan_sebagai_ubah
+FakturKendaraanViewBentukBody_Privilege = faktur_kendaraan_bentuk_body_lihat
+FakturKendaraanUpdateBentukBody_Privilege = faktur_kendaraan_bentuk_body_ubah
+FakturKendaraanViewUsahaKonsumen_Privilege = faktur_kendaraan_usaha_konsumen_lihat
+FakturKendaraanUpdateUsahaKonsumen_Privilege = faktur_kendaraan_usaha_konsumen_ubah
+FakturKendaraanViewDaerahOperasi_Privilege = faktur_kendaraan_daerah_operasi_lihat
+FakturKendaraanUbahDaerahOperasi_Privilege = faktur_kendaraan_daerah_operasi_ubah
+FakturKendaraanViewUsiaPemilik_Privilege = faktur_kendaraan_usia_pemilik_lihat
+FakturKendaraanUbahUsiaPemilik_Privilege = faktur_kendaraan_usia_pemilik_ubah
+FakturKendaraanViewWilayahDaerah_Privilege = faktur_kendaraan_wilayah_dealer_lihat
+FakturKendaraanUpdateWilayahDaerah_Privilege = faktur_kendaraan_wilayah_dealer_ubah
+FakturKendaraanViewPenggunaanUtama_Privilege = faktur_kendaraan_penggunaan_utama_lihat
+FakturKendaraanUbahPenggunaanUtama_Privilege = faktur_kendaraan_penggunaan_utama_ubah
+
+#DaftarPermohonanFaktur
+FakturKendaraanViewList_Privilege = faktur_kendaraan_daftar_lihat
+FakturKendaraanValidate_Privilege = faktur_kendaraan_validasi
+FakturKendaraanCancelValidate_Privilege = faktur_kendaraan_batal_validasi
+FakturKendaraanDownloadList_Privilege = faktur_kendaraan_daftar_download
+FakturKendaraanPangajuanBuat_Privilege = faktur_kendaraan_pengajuan_buat
+FakturKendaraanPengajuanInformasiTambahan_Privilege = faktur_kendaraan_pengajuan_informasi_tambahan
+FakturKendaraanPengajuanDisCountTOP_Privilege = faktur_kendaraan_pengajuan_diskon_top
+FakturKendaraanSavePengajuan_Privilege = faktur_kendaraan_pengajuan_simpan
+
+#Daftar Status Permohonan Faktur
+FakturKendaraanStatusView_Privilege = faktur_kendaraan_status_lihat
+FakturKendaraanStatusConfirmation_Privilege = faktur_kendaraan_status_konfirmasi
+FakturKendaraanStatusCancelConfirmation_Privilege = faktur_kendaraan_status_batal_konfirmasi
+FakturKendaraanStatusDownload_Privilege = faktur_kendaraan_status_download
+
+#InformasiKendaraan
+InformasiKendaraanView_Privilege = informasi_kendaraan_lihat
+
+#DokumenService
+DokumenServiceView_Privilege = dokumen_service_lihat
+DokumenServiceAll_Privilege = dokumen_service_semua
+DokumenService_Depb01_Privilege = dokumen_service_depb01
+DokumenService_kwsc01_Privilege = dokumen_service_kwsc01
+DokumenService_kfsc01_Privilege = dokumen_service_kfsc01
+DokumenService_lpdi01_Privilege = dokumen_service_lpdi01
+DokumenService_lpdi02_Privilege = dokumen_service_lpdi02
+DokumenService_lfs001_Privilege = dokumen_service_lfs001
+DokumenService_lfsc01_Privilege = dokumen_service_lfsc01
+DokumenService_lwsc01_Privilege = dokumen_service_lwsc01
+DokumenService_wscsta_Privilege = dokumen_service_wscsta
+DokumenServiceDownload_Privilege = dokumen_service_download
+
+#AlasanPenolakan
+ServiceAlasanPenolakanView_Privilege =  service_alasan_penolakan_lihat
+ServiceAlasanPenolakanUpdate_Privilege = service_alasan_penolakan_ubah
+
+#JenisFreeService
+ServiceJenisFSView_Privilege = service_jenis_fs_lihat
+ServiceJenisFSUpdate_Privilege = service_jenis_fs_ubah
+
+#DaftarKodeABC
+ServiceKodeABCView_Privilege = service_kode_abc_lihat
+ServiceKodeABCUpdate_Privilege = service_kode_abc_ubah
+
+#KodePosisi
+ServiceKodePosisiView_Privilege = service_kode_posisi_lihat
+ServiceKodePosisiUpdate_Privilege = service_kode_posisi_ubah
+
+#DataFS
+FreeServiceDataView_Privilege = free_service_data_lihat
+FreeServiceDataSave_Privilege =free_service_data_simpan
+FreeServiceDataRelease_Privilege =free_service_data_rilis
+FreeServiceDataUpdate_Privilege =free_service_data_ubah
+FreeServiceDataDelete_Privilege =free_service_data_hapus
+
+#UploadFS
+FreeServiceUploadView_Privilege = free_service_upload_lihat
+FreeServiceUploadSave_Privilege =free_service_upload_simpan
+
+#TransferFS
+FreeServiceReleaseView_Privilege = free_service_rilis_lihat
+FreeServiceReleaseDownload_Privilege =free_service_rilis_download
+
+#StatusFS
+FreeServiceStatusView_Privilege = free_service_status_lihat
+FreeServiceStatusDownload_Privilege = free_service_status_download
+
+#FSCampaign
+FreeServiceCampaignView_Privilege = view_parameter_fs_campaign
+FreeServiceCampaignCreate_Privilege = buat_parameter_fs_campaign
+FreeServiceCampaignUpdate_Privilege = edit_lihatdetail_delete_fs_campaign
+FreeServiceCampaignActivate_Privilege = aktifkan_parameter_fs_campaign
+
+#DataPDI
+PDIDataView_Privilege = pdi_data_lihat
+PDIDataSave_Privilege = pdi_data_simpan
+PDIDataRelease_Privilege = pdi_data_rilis
+PDIDataUpdate_Privilege = pdi_data_ubah
+
+#UploadPDI
+PDIUploadView_Privilege = pdi_upload_lihat
+PDIUploadSave_Privilege = pdi_upload_simpan
+
+#TransferPDI
+PDIReleaseView_Privilege = pdi_rilis_lihat
+PDIReleaseDownload_Privilege = pdi_rilis_download
+
+#StatusPDI
+PDIStatusView_Privilege = pdi_status_lihat
+PDIStatusDownload_Privilege = pdi_status_download
+
+
+#UploadWSC
+WSCUploadView_Privilege = wsc_upload_lihat
+WSCUploadSave_Privilege = wsc_upload_simpan
+
+#TransferWSC
+WSCTransferView_Privilege = wsc_transfer_lihat
+WSCTransferDownload_Privilege = wsc_transfer_download
+
+#BuktiUpload
+WSCBuktiUploadView_Privilege = wsc_bukti_upload_lihat
+WSCBuktiUploadSave_Privilege = wsc_bukti_upload_simpan
+
+#WSBuktiList
+WSBuktiListView_Privilege = wsc_bukti_daftar_lihat
+WSBuktiListDownload_Privilege = wsc_bukti_daftar_download
+WSBuktiListDelete_Privilege = wsc_bukti_daftar_hapus
+WSCSTatusViewList_Privelege = wsc_status_daftar_lihat 
+
+#WSCStatusDetail
+WSCStatusDetailView_Privilege = wsc_status_detil_lihat
+WSCStatusDetailSave_Privilege = wsc_status_detil_simpan
+WSCStatusDetailMintaBukti_Privilege = wsc_status_detil_minta_bukti
+WSCHapus_data_Privilege = wsc_hapus_data_status_proses
+
+
+#EquipmentMaster
+EquipmentMasterUploadView_Privilege = equipment_master_upload_lihat
+EquipmentMasterUploadSave_Privilege = equipment_master_upload_simpan
+EquipmentMasterUploadBomView_Privilege = equipment_bom_upload_lihat
+EquipmentMasterUploadBomSave_Privilege = equipment_bom_upload_simpan
+EquipmentMasterListView_Privilege = equipment_list_lihat
+EquipmentMasterListDownload_Privilege = equipment_list_download
+EquipmentMasterViewListDetail_Privilege = equipment_list_detil_lihat
+EquipmentMasterUpdateListDetail_Privilege = equipment_list_detil_ubah
+
+#P3B
+PengajuanP3BView_Privilege = pengajuan_p3b_lihat
+PengajuanP3BSave_Privilege = pengajuan_p3b_simpan
+PengajuanP3BDelete_Privilege = pengajuan_p3b_hapus
+PengajuanP3BPenjelasanOrder_Privilege = pengajuan_p3b_penjelasan_order
+PengajuanP3BTanggapanOrder_Privilege = pengajuan_p3b_tanggapan_order
+PengajuanP3BBarangBaru_Privilege = pengajuan_p3b_barang_baru
+PengajuanP3BBarang_Privilege = pengajuan_p3b_barang
+PengajuanP3BPerbaikan_Privilege = pengajuan_p3b_perbaikan
+P3BListView_Privilege = p3b_daftar_lihat
+P3BListApprove_Privilege = p3b_daftar_setuju
+P3BListDisApprove_Privilege = p3b_daftar_tidak_setuju
+P3BListValidate_Privilege = p3b_daftar_validasi
+P3BResponseView_Privilege = p3b_respon_lihat
+P3BResponseSave_Privilege = p3b_respon_simpan
+P3BResponseConfirmation_Privilege = p3b_respon_konfirmasi
+P3BResponseRelease1_Privilege = p3b_respon_rilis1
+P3BResponseRelease2_Privilege = p3b_respon_rilis2
+P3BResponseReject_Privilege = p3b_respon_tolak
+P3BPaymentAdd_Privilege = p3b_bayar_simpan
+
+#Training
+TrainingViewCategory_Privilege = training_kategori_lihat
+TrainingUpdateCategory_Privilege = training_kategori_ubah
+TrainingViewEvaluasi_Privilege = training_evaluasi_lihat
+TrainingUpdateEvaluasi_Privilege = training_evaluasi_ubah
+TrainingViewPrasyarat_Privilege = training_prasyarat_lihat
+TrainingUbahPrasyarat_Privilege = training_prasyarat_ubah
+TrainingViewSiswa_Privilege = training_siswa_lihat
+TrainingUpdateSiswa_Privilege = training_siswa_ubah
+TrainingViewKelas_Privilege = training_kelas_lihat
+TrainingUpdateKelas_Privilege = training_kelas_ubah
+TrainingViewAlokasi_Privilege = training_alokasi_lihat
+TrainingUpdateAlokasi_Privilege = training_alokasi_ubah
+TrainingViewUploadJadwal_Privilege = training_upload_jadwal_lihat
+TrainingUpdateUploadJadwal_Privilege = training_upload_jadwal_ubah
+TrainingDownloadJadwalPrivilege = training_download_jadwal
+TrainingPendaftaran_Privilege = training_pendaftaran
+TrainingViewPendaftaran_Privilege_ktb = training_list_pendaftaran_ktb
+TrainingViewPendaftaran_Privilege = training_list_pendaftaran
+TrainingViewStatusPendaftaranDealer_Privilege = training_status_pendaftaran_dealer
+TrainingViewStatusPendaftaranKTB_Privilege = training_status_pendaftaran_ktb
+TrainingUbahStatusPendaftaranKTB_Privilege = training_ubah_status_pendaftaran_ktb
+TrainingRemainder_Privilege = training_reminder
+TrainingInputDataNilai_Privilege = training_input_data_nilai
+TrainingUbahDataNilai_Privilege = training_ubah_data_nilai
+TrainingViewEHTKTB_Privilege = training_lihat_eht_ktb
+TrainingHitungEHT_Privilege = training_hitung_eht
+TrainingViewEHTDealer_Privilege = training_lihat_eht_dealer
+TrainingViewDataSiswaKTB_Privilege = training_lihat_data_siswa_ktb
+TrainingViewDataSiswaDealer_Privilege = training_lihat_data_siswa_dealer
+TrainingDaftarDataSiswaKTB_Privilege = training_daftar_data_siswa_ktb
+TrainingDaftarDataSiswaDealer_Privilege = training_daftar_data_siswa_dealer
+TrainingReferensi_Privilege = training_referensi
+
+
+#Admin
+AdminCreateNewOrganization_Privilege = admin_buat_organisasi_baru
+AdminViewOrganization_Privilege = admin_lihat_organisasi
+AdminUpdateOrganization_Privilege = admin_ubah_organisasi
+AdminAssigHakAccessOrganization_Privilege = admin_assign_hak_akses_organisasi
+AdminCreateNewRoleKTB_Privilege = admin_buat_role_baru_ktb
+AdminCreateNewRoleDealer_Privilege = admin_buat_role_baru_dealer
+AdminViewListRoleKTB_Privilege = admin_lihat_daftar_role_ktb
+AdminViewListRoleDealer_Privilege = admin_lihat_daftar_role_dealer
+AdminUpdateRoleKTB_Privilege = admin_ubah_role_ktb
+AdminUpdateRoleDealer_Privilege = admin_ubah_role_dealer
+AdminCreateNewUserKTB_Privilege = admin_buat_user_baru_ktb
+AdminCreateNewUserDealer_Privilege = admin_buat_user_baru_dealer
+AdminViewListOfUserKTB_Privilege = admin_lihat_daftar_user_ktb
+AdminViewListOfUserDealer_Privilege = admin_lihat_daftar_user_dealer
+AdminUpdateUserKTB_Privilege = admin_ubah_user_ktb
+AdminUpdateUserDealer_Privilege = admin_ubah_user_dealer
+AdminViewListHakAkses_Privilege = admin_lihat_daftar_hak_akses
+AdminViewListImage_Privilege = admin_lihat_daftar_image
+
+#Buletin
+BuletinViewCategory_Privilege = buletin_lihat_kategori
+BuletinManage_Privilege = buletin_pengelolaan
+BuletinUpload_Privilege = buletin_upload
+BuletinViewList_Privilege = buletin_lihat_daftar
+
+#Enhancements
+ENHEstimatePesanaKTB_Privilege = sp_estimate_pesanan_ktb
+ENHStatusPemesananKTB_Privilege = sp_status_pesanan_ktb
+ENHBatasWaktuPemesananView_Privilege = sp_batas_waktu_pemesanan_view
+ENHBatasWaktuPemesananEdit_Privilege = sp_batas_waktu_pemesanan_edit
+ENHKonfirmasiOrderView_Privilege = sp_konfirmasi_order_view
+ENHKonfirmasiOrderEdit_Privilege = sp_konfirmasi_order_edit
+ENHMonitorPOKTB_Privilege = sp_monitor_PO_ktb
+ENHDealerDepositKTB_Privilege = sp_dealer_deposit_ktb
+ENHAnuallDiscountKTB_Privilege = sp_annual_discount_ktb
+ENHSettingMaksimumStock_Privilege = sp_setting_maksimum_stok_ktb
+ENHDownloadPRP_Privilege = sp_download_prp
+ENHPengirimanLaporanPRPKTB_Privilege = sp_aktivasi_pengiriman_laporan_prp_ktb
+ENHRekapitulasiPembelian_Privilege = sp_rekapitulasi_pembelian
+ENHPODaftarMODetilSisa_Privilege = po_daftar_mo_detil_sisa   
+ENHRevisedServiceDocument_Privilege=revise_service_document 
+
+#EnhancmentPatch2
+ENHServiceKodePosisiDescView_Privilege = service_kode_posisi_desc_lihat
+ENHServiceKodePosisiDescEdit_Privilege = service_kode_posisi_desc_ubah
+ENHServiceKodeKerjaDescView_Privilege = service_kode_kerja_desc_lihat
+ENHServiceKodeKerjaDescEdit_Privilege = service_kode_kerja_desc_ubah
+ENHAdminMaintainFreePPh22_Privilege = admin_maintain_free_pph22
+ENHhargaTampil_Privilege = sales_harga_tampil
+ENHPKDaftarAplikasiLihat_Privilege = pk_daftar_aplikasi_lihat
+ENHPKDaftarAplikasiBuat_Privilege = pk_daftar_aplikasi_buat
+ENHPKDaftarAplikasiDetail_Privilege = pk_daftar_aplikasi_detail
+ENHPKDaftarAplikasiUbah_Privilege = pk_daftar_aplikasi_ubah
+ENHPKDaftarAplikasiDownload_Privilege = pk_daftar_aplikasi_download
+ENHPKDetailAplikasiCredit_Privilege = pk_detil_aplikasi_credit
+ENHPKDetailMOPPh22Set_Previlege = pk_detil_mo_pph22_set
+ENHSalesGeneralApplikasiDownload_Previlege = sales_general_aplikasi_download
+ENHFakturKendaraanReTransfer_Privilege = Faktur_kendaraan_transfer_ulang 
+ENHSparePartMaksimumStockView_Privilege = sp_lihat_maksimum_stock
+ENHSparePartMaksimumStockEdit_Privilege = sp_edit_maksimum_stock
+ENHSalesHargaTidakTampil_Privilege = sales_harga_tidak_tampil
+ENHSalesHargaVHTidakTampil_Privilege = sales_harga_vh_tidak_tampil
+ENHSalesHargaPPTidakTampil_Privilege = sales_harga_pp_tidak_tampil
+ENHSalesHargaITTidakTampil_Privilege = sales_harga_it_tidak_tampil
+ENHSparepartPKAlokasiView_Privilege = sp_pk_alokasi_lihat
+ENHSparepartPKAlokasiEdit_Privilege = sp_pk_alokasi_edit
+ENHSparepartPKUploadSAPView_Privilege = sp_pk_upload_sap_lihat
+ENHSparepartPKUploadSAPEditivilege = sp_pk_upload_sap_edit
+ENHSparepartPKUploadSAPSend_Privilege = sp_pk_upload_sap_kirim
+ENHTrainingKelasDaftar_Privilege = training_kelas_daftar
+ENHFakturPendingReason_Privilege = faktur_kendaraan_pending_reason
+ENHGeneralPosisiJabatanView_Privilege = general_posisi_jabatan_lihat
+ENHGeneralPosisiJabatanUbah_Privilege = general_posisi_jabatan_ubah
+ENHSPLihatBlockMaterial_Privilege = sp_lihat_blok_material
+ENHSPEditBlockMaterial_Privilege = sp_edit_blok_material
+ENHEmailAlokasiTambahan_Privilege = email_alokasi_tambahan
+ENHServiceRevisiDocument_Privilege = revise_service_document
+ENHDataServiceHapus_Privilege = data_service_hapus
+ENHAppSettingView_Privilege = app_setting_lihat
+ENHAppSettingEdit_Privilege = app_setting_edit
+ENHABCView_Privilege = service_kode_failure_abc_lihat
+ENHABCEdit_Privilege = service_kode_failure_abc_edit
+ENHSPViewPOPesananKhusus_Privilege = sp_lihat_po_pesanan_khusus
+
+#MCP
+MCP_List_Privilege = mcp_display_list
+MCP_Input_Privilege = mcp_input
+MCP_Edit_Privilege = mcp_edit
+
+
+SEMaintainPhisingGuardImage_Privilege = pemeliharaan_gambar_pilihan
+SEUnregisterUser_Privilege = pemeliharaan_unregister_user
+SEResetPassword_Privilege = reset_password_user
+SEActivatedUser_Privilege = aktivasi_user
+
+#Phase4
+#General
+BuletinUploadAddUser_Privilege = buletin_upload_tambah_user
+ManualDocMaintain_Privilege = manual_doc_maintain
+AdminViewGroupUserList_Privilege = admin_lihat_daftar_group_user
+AdminEditGroupUser_Privilege = admin_ubah_group_user
+AdminAnnouncement_Privilege = admin_announcement
+DepartmentView_Privilege = lihat_departemen
+DepartmentEdit_Privilege = ubah_departemen
+ClassView_Privilege = lihat_kelas
+ClassEdit_Privilege = ubah_kelas
+TrainingTransactionControlListEdit_Privilege = ubah_daftar_training_transcontrol
+CreditControlTransactionControlEdit_Privilege = ubah_credit_control_transcontrol
+VehicleHistoryTransactionControlEdit_Privilege = ubah_vehicle_history_transcontrol
+ProfileTransactionNew_Privilege = profile_trx_baru
+ProfileGroupView_Privilege = profile_group_lihat
+ProfileGroupEdit_Privilege = profile_group_ubah
+ProfileListGroupView_Privilege = lihat_profile_daftar
+ProfileListGroupEdit_Privilege = ubah_profile_daftar
+ForumCategoryView_Privilege = forum_kategori_lihat
+ForumCategoryEdit_Privilege = forum_kategori_ubah
+ForumBanWordView_Privilege = forum_ban_word_lihat
+ForumBanWordEdit_Privilege = forum_ban_word_ubah
+ForumListView_Privilege = forum_daftar_liat
+ForumNewView_Privilege = forum_baru_lihat
+ForumNewCreate_Privilege = forum_baru_buat
+ForumNewMember_Privilege = forum_baru_member
+ForumPMView_Privilege = forum_PM_lihat
+ForumPMCompose_Privilege = forum_PM_compose
+AlertManagementMaintain_Privilege = alert_mgmt_maintain
+AlertManagementListView_Privilege = alert_mgmt_daftar_lihat
+posisi_jabatan_lihat_Privilege = posisi_jabatan_lihat
+
+
+#Sales
+DepositAView_Privilege = deposit_a_lihat
+SalesDocListView_Privilege = daftar_dokumen_sales_lihat
+SalesDocListDownload_Privilege = daftar_dokumen_sales_download
+SalesDocUpload_Privilege = dokumen_sales_upload
+SalesKindLetterView_Privilege = sales_jenis_surat_lihat
+SaleskindLetterEdit_Privilege = sales_jenis_surat_ubah
+PKListResponBatalSetuju_Privilege = pk_list_respon_batal_setuju
+RecapParkView_Privilege = rekap_parkir_lihat
+RecapParkDownload_Privilege = rekap_parkir_download
+POListStatusTOPPass_Privilege = po_daftar_status_TOP_pas
+POListStatusTOPCancelPass_Privilege = po_daftar_status_TOP_batal_pas
+FactureCreateNew_Privilege = faktur_kendaraan_buat_baru
+CustomerViewDetail_Privilege = konsumen_detail_lihat
+CustomerCreateRegistration_Privilege = konsumen_pendaftaran_buat
+CustomerValidateStatus_Privilege = konsumen_status_validasi
+CustomerStatusCancelValidation_Privilege = konsumen_status_batal_validasi
+CustomerListSAP_Privilege = konsumen_daftar_sap
+CustomerListSAPDonwload_Privilege = konsumen_daftar_sap_download
+CustomerListViewDetail_Privilege = konsumen_daftar_detil_lihat
+CustomerListViewReg_Privilege = konsumen_daftar_registrasi_lihat
+CustomerEditReg_Privilege = konsumen_registrasi_ubah
+CustomerVerificationView_Privilege = konsumen_verifikasi_lihat
+CustomerVerificationSAPTransfer_Privilege = konsumen_verifikasi_SAP_transfer
+CustomerVerificationSAPReTransfer_Privilege = konsumen_verifikasi_SAP_transfer_ulang
+CustomerVerificationSave_Privilege = konsumen_verifikasi_simpan
+CustomerVerificationBlock_Privilege = konsumen_verifikasi_blok
+SPAFConditionListView_Privilege = SPAF_daftar_kondisi_lihat
+SPAFConditionListUpload_Privilege = SPAF_daftar_kondisi_upload
+SPAFConditionListDownload_Privilege = SPAF_daftar_kondisi_download
+SPAFConditionListDelete_Privilege = SPAF_daftar_kondisi_hapus
+SPAFSaveUpload_Privilege = SPAF_spaf_upload_simpan
+SPAFSaveSubsidiUpload_Privilege = SPAF_subsidi_upload_simpan
+SPAFDocListView_Privilege = SPAF_daftar_dokumen_lihat
+SPAFDocListStatusUploadBukti_Privilege = SPAF_daftar_dokumen_status_upload_bukti
+SPAFDocListValidationStatus_Privilege = SPAF_daftar_dokumen_status_validasi
+SPAFDocListValidationStatusCancel_Privilege = SPAF_daftar_dokumen_status_validasi_batal
+SPAFDocListStatusDelete_Privilege = SPAF_daftar_dokumen_status_hapus
+SPAFDocListStatusProcess_Privilege = SPAF_daftar_dokumen_status_proses
+SPAFDocListCancelProcess_Privilege = SPAF_daftar_dokumen_status_proses_batal
+SPAFDocListApproved_Privilege = SPAF_daftar_dokumen_status_disetujui
+SPAFDocListReject_Privilege = SPAF_daftar_dokumen_status_ditolak
+SPAFDownloadDocStatusList_Privilege = SPAF_daftar_dokumen_status_download
+VHListView_Privilege = VH_daftar_lihat
+VHListDownload_Privilege = VH_daftar_download
+InputPKTDate_Privilege = input_pkt_date
+
+#Sales - Deposit A
+#Ikhsan, 29 Jan 2009
+DepositA_daftar_interest_depositA_lihat_Privilege = daftar_interest_depositA_lihat
+DepositA_pengajuan_pencairan_depoA_buat_Privilege = pengajuan_pencairan_depoA_buat
+DepositA_proses_pengajuan_pencairan_depoA_lihat_Privilege = proses_pengajuan_pencairan_depoA_lihat
+DepositA_proses_pengajuan_pencairan_depoA_lihat_detail_Privilege = proses_pengajuan_pencairan_depoA_lihat_detail
+DepositA_debit_note_lihat_Privilege = debit_note_lihat
+DepositA_kuitansi_pencairan_buat_Privilege = kuitansi_pencairan_buat
+DepositA_daftar_kuitansi_pencairan_depositA_lihat_Privilege = daftar_kuitansi_pencairan_depositA_lihat
+DepositA_daftar_kuitansi_pencairan_depositA_lihat_dealer_Privilege = daftar_kuitansi_pencairan_depositA_lihat_dealer
+DepositA_daftar_kuitansi_pencairan_depositA_lihat_detail_Privilege = daftar_kuitansi_pencairan_depositA_lihat_detail
+DepositA_upload_pencairan_depositA_Privilege = upload_pencairan_depositA
+
+#Sparepart Employee
+input_data_salesman_part_privilege = input_data_salesman_part
+buat_buatid_salesman_part_privilege = buat_buatid_salesman_part
+download_buat_salesman_part_privilege = download_buat_salesman_part
+download_daftar_salesman_part_privilege = download_daftar_salesman_part
+lihat_buatid_salesman_part_privilege = lihat_buatid_salesman_part
+lihat_daftar_salesman_part_privilege = lihat_daftar_salesman_part
+lihat_detail_daftar_salesman_part_privilege = lihat_detail_daftar_salesman_part
+edit_detail_daftar_salesman_part_privilege = edit_detail_daftar_salesman_part
+lihat_organisasi_spare_part_privilege = lihat_organisasi_spare_part
+input_salesman_target_realisasi_privilege = input_salesman_target_realisasi
+lihat_salesman_target_realisasi_privilege = lihat_salesman_target_realisasi
+edit_salesman_target_realisasi_privilege = edit_salesman_target_realisasi
+lihat_daftar_salesman_target_realisasi_privilege = lihat_daftar_salesman_target_realisasi
+download_daftar_salesman_target_realisasi_privilege = download_daftar_salesman_target_realisasi
+input_salesman_performance_privilege = input_salesman_performance
+lihat_salesman_performance_privilege = lihat_salesman_performance
+edit_salesman_performance_privilege = edit_salesman_performance
+lihat_daftar_salesman_performance_privilege = lihat_daftar_salesman_performance
+download_daftar_salesman_performance_privilege = download_daftar_salesman_performance
+input_part_shop_privilege = input_part_shop
+requestid_part_shop_privilege = requestid_part_shop
+edit_part_shop_privilege = edit_part_shop
+lihat_part_shop_privilege = lihat_part_shop
+generate_part_shop_privilege = generate_part_shop
+delete_part_shop_privilege = delete_part_shop
+nonaktif_part_shop_privilege = nonaktif_part_shop
+download_part_shop_privilege = download_part_shop
+
+
+#SalesComm
+LihatDataSeragam_Privilege= lihat_daftar_seragam
+SalesmanListDownload_Privilege = download_daftar_tenaga_penjual
+PesertaPelatihanAccessView_Privilege = lihat_peserta_pelatihan
+ProfileListView_Privilege = lihat_daftar_profile
+ProfileListEdit_Privilege = edit_daftar_profile
+ProfileListCreate_Privilege = buat_daftar_profile
+LTPView_Privilege = lihat_level_tenaga_penjual
+LTPCreate_Privilege = buat_level_tenaga_penjual
+LTPArea_Privilege = lihat_area_tenaga_penjual
+ATPCreate_Privilege = buat_area_tenaga_penjual
+IDTPViewCreate_Privilege = lihat_buat_id_tenaga_penjual
+IDTPCreateNew_Privilege = buat_buat_id_tenaga_penjual
+TPCreateDownload_Privilege = download_buat_tenaga_penjual
+TPViewList_Privilege = lihat_daftar_tenaga_penjual
+TPListViewDetail_Privilege = lihat_detail_daftar_tenaga_penjual
+TPListEditDetail_Privilege = edit_detail_daftar_tenaga_penjual
+TPAViewRecap_Privilege = lihat_rekap_tenaga_penjual_area
+TPDViewRecap_Privilege = lihat_rekap_tenaga_penjual_dealer
+ResignViewRecap_Privilege = lihat_rekap_undur_diri
+ResignDataViewCreate_Privilege = lihat_buat_data_pengunduran_diri
+ResignDataViewDetailCreate_Privilege = lihat_detail_buat_data_pengunduran_diri
+ResignDataDownloadCreate_Privilege = download_buat_data_pengunduran_diri
+KodePelatihanViewCreate_Privilege = lihat_buat_kode_pelatihan
+KodePelatihanCreateData_Privilege = buatdata_kode_pelatihan
+KodePelatihanCreateViewDetail_Privilege = lihat_detail_buat_kode_pelatihan
+KodePelatihanEditCreate_Privilege = edit_buat_kode_pelatihan
+KodePelatihanCreateDelete_Privilege = hapus_buat_kode_pelatihan
+PesertaPelatihanSelectView_Privilege = lihat_pilih_peserta_pelatihan
+PesertaPelatihanSelectCreateData_Privilege = buatdata_pilih_peserta_pelatihan
+AnnouncementCreateView_Privilege = lihat_buat_pengumuman
+AnnouncementCreateDataCreate_Privilege = buat_data_buat_pengumuman
+Pelat_Privilege = lihat_daftar_pelatihan
+PelatihanListView_Privilege = download_pengumuman_daftar_pelatihan
+PesertaPelatihanListView_Privilege = lihat_daftar_peserta_pelatihan
+PesertaPelatihanConfirmation_Privilege = konfirmasi_peserta_pelatihan
+PengaturanKodeSeragamView_Privilege = lihat_pengaturan_kode_seragam
+PengaturanKodeSeragamCreateCode_Privilege = buat_kode_pengaturan_kode_seragam
+PengaturanHargaSeragamView_Privilege = lihat_pengaturan_harga_seragam
+UniformPriceCreate_Privilege = buat_harga_seragam
+PASView_Privilege = lihat_panduan_ukuran_seragam
+PASUploadPicture_Privilege = upload_gambar_panduan_ukuran_seragam
+TPPSViewSelect_Privilege = lihat_pilih_tenaga_penjual_penerima_seragam
+TPPSCreate_Privilege = buat_tenaga_penjual_penerima_seragam
+UniformApprovalView_Privilege = lihat_pengesahan_seragam
+UniformApprovalViewDetail_Privilege = lihat_detail_pengesahan_seragam
+UniformApprovalViewRecap_Privilege = lihat_rekap_pengesahan_seragam
+UniformListRecapView_Privilege = lihat_rekap_pesanan
+UniformListRecapDonwload_Privilege = download_rekap_pesanan
+UniformListView_Privilege = lihat_pesan_seragam
+UniformRequestCreate_Privilege = buat_pesan_seragam
+UniformRequestSubmit_Privilege = submit_pesan_seragam
+UniformListDownload_Privilege = download_daftar_seragam
+UniformListViewDetail_Privilege = lihat detail_daftar_seragam
+KwitansiView_Privilege = lihat_kwitansi
+KwitansiDonwload_Privilege = download_kwitansi
+PrintKwitansi_Privilege = print_kwitansi
+SAPPeriodView_Privilege = lihat_sap_period
+SAPPeriodCreate_Privilege = buat_sap_period
+CustomerProspekListView_Privilege = lihat_daftar_konsumen_prospek
+CustomerProspekListDelete_Privilege = hapus_daftar_konsumen_prospek
+ParticipantListView_Privilege = lihat_daftar_participant
+WritingEntryTestResultView_Privilege = lihat_entry_writing_test_result
+WritingEntryTestResultCrete_Privilege = buat_entry_writing_test_result
+SAPInputDataResultView_Privilege = lihat_sap_input_data_result
+SAPInputDataResultCreate_Privilege = buat_data_sap_input_data_result
+SAPInputDataResultDownload_Privilege = download_sap_input_data_result
+SAPReportView_Privilege = lihat_sap_report
+SAPReportCount_Privilege = hitung_sap_report
+SAPReportDonload_Privilege = download_sap_report
+CustomerProspekView_Privilege = lihat_konsumen_prospek
+CustomerProspekCreate_Privilege = buat_konsumen_prospek
+PetunjukPelaksanaanViewInput_Privilege = lihat_input_petunjuk_pelaksanaan
+JuklakInputData_Privilege = masukkan_data_juklak
+JuklakListView_Privilege = lihat_daftar_juklak
+JuklakListRelease_Privilege = rilis_daftar_juklak
+JuklakListEdit_Privilege = edit_daftar_juklak
+ScheduleListViewInput_Privilege = lihat_input_jadwal
+ScheduleListCreate_Privilege = buat_input_jadwal
+ScheduleListView_Privilege = lihat_daftar_jadwal
+ScheduleListInputAuditor_Privilege = input_auditor_daftar_jadwal
+ScheduleListResult_Privilege = hasil_daftar_jadwal
+ScheduleListDelete_Privilege = hapus_daftar_jadwal
+AuditViewResult_Privilege = lihat_hasil_audit
+
+#Promotion
+MaterialPromotionMasterView_Privilege = lihat_master_material_promosi
+MaterialPromotionMasterCreate_Privilege = buat_master_material_promosi
+MaterialPromotionViewHistory_Privilege = lihat_history_material_promosi
+MaterialPromotionViewStock_Privilege = lihat_stock_material_promosi
+MaterialPromotionCreateStock_Privilege = buat_stock_material_promosi
+MaterialPromotionViewAdjusmentStock_Privilege = lihat_adjustment_stock_material_promosi
+MaterialPromotionViewPeriod_Privilege = lihat_periode_material_promosi
+MaterialPromotionCreatePeriod_Privilege = buat_periode_material_promosi
+MaterialPromotionViewAllocation_Privilege = lihat_alokasi_material_promosi
+MaterialPromotionDownloadAllocation_Privilege = download_alokasi_material_promosi
+MaterialPromotionCreateJumlahAllocation_Privilege = buat_jumlah_alokasi_material_promosi
+MaterialPromotionViewPermintaanList_Privilege = lihat_daftar_permintaan_material_promosi
+MaterialPromotionListValidationPermintaan_Privilege = daftar_permintaan_matprom_validasi
+MaterialPromotionListPermintaanCancel_Privilege = daftar_permintaan_matprom_batal
+MaterialPromotionListPermintaanDisetujui_Privilege = daftar_permintaan_matprom_disetujui
+MaterialPromotionListPermintaanReject_Privilege = daftar_permintaan_matprom_ditolak
+MaterialPromotionListPermintaanEdit_Privilege = edit_daftar_permintaan_material_promosi
+MaterialPromotionListPermintaanEditDetail_Privilege = edit_detail_daftar_permintaan_material_promosi
+MaterialPromotionListPermintaanViewDetail_Privilege = lihat_detail_daftar_permintaan_material_promosi
+MaterialPromotionViewInOutDetailList_Privilege = lihat_detail_in_out_material_promosi
+GoodIssueListView_Privilege = lihat_daftar_good_issue
+MaterialPromotionAllocationViewUpload_Privilege = lihat_upload_alokasi_material_promosi
+MaterialPromotionAllocationUploadFile_Privilege = upload_file_alokasi_material_promosi
+MaterialPromotionAllocationView_Privilege = lihat_permintaan_material_promosi
+MaterialPromotionCreatePermintaan_Privilege = buat_permintaan_material_promosi
+BabitAllocationViewEntry_Privilege = lihat_entry_babit_alokasi
+BabitAllocationCreateBabitKhususEntry_Privilege = masukkan_babit_khusus_entry_babit_alokasi
+BabitAllocationCreateRegularEntry_Privilege = masukkan_alokasi_reguler_entry_babit_alokasi
+BabitAllocationCreateAdditionalBabitEntry_Privilege = masukkan_alokasi_tambahan_entry_babit_alokasi
+BabitAllocationListView_Privilege = lihat_daftar_alokasi_babit
+BabitAllocationListRelease_Privilege = rilis_daftar_alokasi_babit
+BabitAllocationListEditDet_Privilege = ubah_detail_daftar_alokasi_babit
+BabitAllocationListViewDetail_Privilege = lihat_detail_daftar_alokasi_babit
+BabitAllocationListViewDanaBabit_Privilege = lihat_dana_babit_daftar_alokasi_babit
+PengajuanBabitListView_Privilege = lihat_daftar_pengajuan_babit
+PengajuanBabitListViewDetail_Privilege = lihat_detail_daftar_pengajuan_babit
+PengajuanBabitListViewStatus_Privilege = lihat_status_daftar_pengajuan_babit
+PengajuanBabitListUploadRealization_Privilege = upload_relisasi_daftar_pengajuan_babit
+PengajuanBabitListDownloadRealization_Privilege = download_realisasi_daftar_pengajuan_babit
+PengajuanBabitListStatusProses_Privilege = status_proses_daftar_pengajuan_babit
+PengajuanBabitListStatusTolak_Privilege = status_tolak_daftar_pengajuan_babit
+PengajuanBabitListDownload_Privilege = download_daftar_pengajuan_babit
+PengajuanBabitListStatusDisetujui_Privilege = status_disetujui_daftar_pengajuan_babit
+BabitApprovalView_Privilege = lihat_persetujuan_babit
+BabitApprovalEdit_Privilege = ubah_persetujuan_babit
+BabitApprovalPrint_Privilege = cetak_persetujuan_babit
+UploadSampleIklanView_Privilege = lihat_upload_contoh_iklan
+UploadSampleIklan_Privilege = upload_file_contoh_iklan
+PengajuanIklanListView_Privilege = lihat_daftar_pengajuan_iklan
+PengajuanIklanListDownloadItem_Privilege = download_item_daftar_pengajuan_iklan
+PengajuanIklanListRealease_Privilege = rilis_daftar_pengajuan_iklan
+paymentView_Privilege = lihat_pembayaran
+paymentEdit_Privilege = ubah_pembayaran
+PaymentSave_Privilege = simpan_pembayaran
+PaymentCreate_Privilege = buat_nomor_pembayaran
+BabitUsageView_Privilege = lihat_penggunaan_dana_babit
+RencanaAkctivitasListView_Privilege = lihat_daftar_rencana_aktivitas
+RencanaAkctivitasListEdit_Privilege = ubah_daftar_rencana_aktivitas
+RencanaAkctivitasListDelete_Privilege = hapus_daftar_rencana_aktivitas
+PengajuanBabitKhususListView_Privilege = lihat_daftar_pengajuan_babit_khusus
+PengajuanBabitKhususStatusProses_Privilege = status_proses_daftar_pengajuan_babit_khusus
+PengajuanBabitKhususListStatusTolak_Privilege = status_tolak_daftar_pengajuan_babit_khusus
+PengajuanBabitKhususListStatusDisetujui_Privilege = status_disetujui_daftar_pengajuan_babit_khusus
+PengajuanBabitKhususListViewDetail_Privilege = lihat_detail_daftar_pengajuan_babit_khusus
+PengajuanBabitKhususListDownload_Privilege = download_daftar_pengajuan_babit_khusus
+PengajuanBabitKhususDownloadListRealization_Privilege = download_realisasi_daftar_pengajuan_babit_khusus
+PengajuanBabitKhusus_Privilege = upload_realisasi_daftar_pengajuan_babit_khusus
+BabitDownloadView_Privilege = lihat_download_babit
+BabitDownloadEdit_Privilege = ubah_download_babit
+BabitDownloadSave_Privilege = simpan_download_babit
+BabitDownload_Privilege = download_babit
+PengajuanBabitAlocationBabit_Privilege = pengajuan_babit_alokasi_babit
+PengajuanBabitView_Privilege = lihat_pengajuan_babit
+PengajuanBabitPameran_Privilege = pengajuan_babit_pameran
+PengajuanBabitIklan_Privilege = pengajuan_babit_iklan
+PengajuanBabitEvent_Privilege = pengajuan_babit_event
+PengajuanBabitStatusBatal_Privilege = status_batal_pengajuan_babit
+PengajuanBabitValidationStatus_Privilege = status_validasi_pengajuan_babit
+PengajuanDesignIklanView_Privilege = lihat_pengajuan_desain_iklan
+PengajuanDesignIklanCreate_Privilege = buat_pengajuan_desain_iklan
+RencanaAkctivitasUploadView_Privilege = lihat_upload_rencana_aktivitas
+RencanaAkctivitasUpload_Privilege = upload_rencana_aktivitas
+PengajuanBabitKhususView_Privilege = lihat_pengajuan_babit_khusus
+PengajuanBabitKhususCreatepameran_Privilege = buat_pengajuan_pameran_babit_khusus
+PengajuanBabitKhususCreateIklan_Privilege = buat_pengajuan_iklan_babit_khusus
+PengajuanBabitKhususCreateEvent_Privilege = buat_pengajuan_event_babit_khusus
+PengajuanBabitKhususListStatusBatal_Privilege = status_batal_daftar_pengajuan_babit_khusus
+PengajuanBabitKhususValidationStatus_Privilege = status_validasi_pengajuan_babit_khusus
+AjukanBabit_privilege = ajukan_babit
+status_validasi_babit_privilege = status_validasi_babit
+status_batal_babit_privilege = status_batal_babit
+BabitViewLinkPersetujuan_privilege = lihat_link_persetujuan
+MatPromPermintaanDownload_privilege = matprom_download_detail_permintaan
+
+
+
+
+#Service
+DocServicePMLett_Privilege = dokumen_service_pmlett
+DocServiceKudepB_Privilege = dokumen_service_kudepB
+DocServiceIndepB_Privilege = dokumen_service_indepB
+PMJenisMasterView_Privilege = PM_jenis_master_lihat
+PMJenisMasterEdit_Privilege = PM_jenis_master_ubah
+PMDataView_Privilege = PM_data_lihat
+PMDataSave_Privilege = PM_data_simpan
+PMDataRilis_Privilege = PM_data_rilis
+PMDataEdit_Privilege = PM_data_ubah
+PMUploadView_Privilege = PM_upload_lihat
+PMUploadSave_Privilege = PM_upload_simpan
+PMRilisView_Privilege = PM_rilis_lihat
+PMRilisDownload_Privilege = PM_rilis_download
+PMStatusView_Privilege = PM_status_lihat
+PMStatusDownload_Privilege = PM_status_download
+PQRNewView_Privilege = PQR_baru_lihat
+PQRNewViewSTS_Privilege = PQR_baru_lihat_STS
+PQRNewSave_Privilege = PQR_baru_simpan
+PQRReplyDiscuss_Privilege = PQR_reply_diskusi
+PQRListView_Privilege = PQR_daftar_lihat
+PQRListStatusCancel_Privilege = PQR_daftar_status_Batal
+PQRListStatusValidate_Privilege = PQR_daftar_status_validasi
+PQRListStatusCancelValidate_Privilege = PQR_daftar_status_validasi_batal
+PQRListStatusProcess_Privilege = PQR_daftar_status_proses
+PQRListStatusCancelProcess_Privilege = PQR_daftar_status_proses_batal
+PQRListStatusRilis_Privilege = PQR_daftar_status_rilis
+PQRListStatusCancelRilis_Privilege = PQR_daftar_status_rilis_batal
+PQRListStatusFinish_Privilege = PQR_daftar_status_selesai
+PQRListDownload_Privilege = PQR_daftar_download
+PQRListSolutionView_Privilege = PQR_daftar_solusi_lihat
+PQRListConditionView_Privilege = PQR_daftar_kondisi_lihat
+PQRListStatusConditionDownload_Privilege = PQR_daftar_kondisi_download
+PQR_status_Batal_Privilege = PQR_status_Batal
+PQR_status_validasi_Privilege = PQR_status_validasi
+PQR_status_validasi_batal_Privilege = PQR_status_validasi_batal
+PQR_status_proses_Privilege = PQR_status_proses
+PQR_status_proses_batal_Privilege = PQR_status_proses_batal
+PQR_status_rilis_Privilege = PQR_status_rilis
+PQR_status_rilis_batal_Privilege = PQR_status_rilis_batal
+PQR_status_selesai_Privilege = PQR_status_selesai
+PQR_status_selesai_batal_Privilege = PQR_status_selesai_batal
+
+
+#Sparepart
+PendingOrderView_Privilege = lihat_pending_order
+PendingOrderViewDetail_Privilege = lihat_detail_pending_order
+PendingOrderViewPONumber_Privilege = lihat_detail_po_number_pending_order
+PendingOrderViewDetailSalesOrder_Privilege = lihat_detail_sales_order_pending_order
+StatusListStatusProcess_Privilege = status_proses_daftar_status_indent_part
+StatusListCancelConfirmation_Privilege = batal_konfirmasi_daftar_status_indent_part
+StatusListKTBConfirmation_Privilege = ktb_konfirmasi_daftar_status_indent_part
+StatusListCancelRilis_Privilege = batal_rilis_daftar_status_indent_part
+StatusListRilis_Privilege = rilis_daftar_status_indent_part
+StatusListReject_Privilege = tolak_daftar_status_indent_part
+StatusListFinished_Privilege = selesai_daftar_status_indent_part
+StatusListViewDetail_Privilege = lihat_detail_daftar_status_indent_part
+StatusListEdit_Privilege = edit_daftar_status_indent_part
+AlocationPemesananView_Privilege = lihat_alokasi_pemesanan_indent_part
+AlocationPemesananCreate_Privilege = buat_alokasi_pemesanan_indent_part
+POIndentPartViewList_Privilege = lihat_daftar_po_indent_part
+POIndentPartListTransferSAP_Privilege = transfer_sap_daftar_po_indent_part
+edit_popup_daftar_status_indent_part_Privilege=edit_popup_daftar_status_indent_part
+ClaimReasonView_Privilege = lihat_alasan_claim
+ClaimReasonCreate_Privilege = buat_alasan_claim
+KondisiBarangView_Privilege = lihat_kondisi_barang_claim
+KondisiBarangCreate_Privilege = buat_kondisi_barang_claim
+ParameterSuratView_Privilege = lihat_parameter_surat_claim
+ParameterSuratCCCreatelist_Privilege = buat_daftar_cc_parameter_surat_claim
+PenandaTanganParameterSuratCreate_Privilege = buat_penanda_tangan_parameter_surat_claim
+ClaimProgressParameterView_Privilege = lihat_claim_progress_parameter_claim
+ClaimProgressParameterCreate_Privilege = buat_claim_progress_parameter_claim
+PerkiaraanKedatanganView_Privilege = lihat_perkiraan_kedatangan_claim
+PerkiraanKedatanganCreate_Privilege = buat_perkiraan_kedatangan_claim
+PenerimaanBarang_Privilege = lihat_penerimaan_barang_claim
+PenerimaanBarangCreate_Privilege = buat_penerimaan_barang_claim
+StatusListCreateNewStatus_Privilege = buat_status_baru_daftar_status_claim
+StatusListCreateStatusProcess_Privilege = buat_status_diproses_daftar_status_claim
+StatusListCreateStatusSelesai_Privilege = buat_status_selesai_daftar_status_claim
+StatusListCreateStatusSelesaiBatalSelesai_Privilege = buat_status_batal_selesai_daftar_status_claim
+StatusListProgressAdmSection_Privilege = progress_adm_section_daftar_status
+StatusListProgressProductionWHSect_Privilege = progress_w/h_production_sect_daftar_status
+StatusListProgressTechnicalSection_Privilege = progress_technical_sect_daftar_status
+StatusListProgressSalesProcessingSect_Privilege = progress_sales_processing_sect_daftar_status
+StatusListProgressManagerPartsSales_Privilege = progress_manager_parts_sales_daftar_status
+HistoryStatusView_Privilege = lihat_history_status_claim
+ClaimDetailView_Privilege = lihat_detail_claim
+StatusListViewKTBNotes_Privilege = lihat_catatan_ktb_daftar_status_claim
+StatusListDownloadEvidance_Privilege = download_evidence_daftar_status_claim
+StatusListCetakFormClaim_Privilege = cetak_form_claim_daftar_status_claim
+StatusListCetakFormClaimProgress_Privilege = cetak_form_claim_process_daftar_status_claim
+PengajuanClaimView_Privilege = lihat_pengajuan_claim
+PengajuanClaimCreateData_Privilege = buat_data_pengajuan_claim
+StatusClaimListView_Privilege = lihat_daftar_status_claim
+StatusClaimListStatusDikirim_Privilege = status_dikirim_daftar_status_claim
+StatusClaimListStatusBatal_Privilege = status_batal_daftar_status_claim
+StatusClaimListViewDetail_Privilege = lihat_detail_daftar_status_claim
+StatusClaimListDownload_Privilege = download_daftar_status_claim
+StatusListKTBNote_Privilege = lihat_catatan_ktb_daftar_status_claim
+PengajuanIndentPartView_Privilege = lihat_pengajuan_indent_part
+PengajuanPartIndentPartCreate_Privilege = buat_pengajuan_parts_indent_part
+PengajuanToolsIndentPartCreate_Privilege = buat_pengajuan_tools_indent_part
+PengajuanAksesorisIndentPartCreate_Privilege = buat_pengajuan_aksesoris_indent_part
+PengajuanIndentPartKirim_Privilege = kirim_pengajuan_indent_part
+StatusListView_Privilege = lihat_daftar_status_indent_part
+StatusListStatusBatal_Privilege = status_batal_daftar_status_indent_part
+StatusListStatusKirim_Privilege = status_kirim_daftar_status_indent_part
+StatusListStatusDealerConfirmation_Privilege = status_dealer_konfirmasi_daftar_status_indent_part
+StatusListEditDetail_Privilege = edit_detail_daftar_status_indent_part
+SalesmanPartViewCreateID_Privilege = lihat_buatid_salesman_part
+SalesmanPartCreateBuatID_Privilege = buat_buatid_salesman_part
+SalesmanPartDownloadCreate_Privilege = download_buat_salesman_part
+SalesmanPartListView_Privilege = lihat_daftar_salesman_part
+SalesmanPartListViewDetail_Privilege = lihat_detail_daftar_salesman_part
+SalesmanPartEditDetail_Privilege = edit_detail_daftar_salesman_part
+SalesmanPartDownload_Privilege = download_daftar_salesman_part
+StatusListStatusBatalOrder_Privilege = status_batal_order_daftar_status_indent_part
+
+#Marketing
+forum_baru_marketing_lihat_privilege=forum_baru_marketing_lihat
+forum_baru_marketing_buat_privilege=forum_baru_marketing_buat
+forum_baru_marketing_member_privilege=forum_baru_marketing_member
+MerkMaintenanceView_Privilege = merk_maintenance_lihat
+MerkMaintenanceEdit_Privilege = merk_maintenance_ubah
+TypeMaintenanceView_Privilege = tipe_maintenance_lihat
+TypeMaintenanceEdit_Privilege = tipe_maintenance_ubah
+TypeMaintenanceImport_Privilege = tipe_maintenance_import
+CustomerProfileListView_Privilege = daftar_profile_konsumen_lihat
+CustomerProfileListEdit_Privilege = daftar_profile_konsumen_ubah
+CustomerProfileListDownload_Privilege = daftar_profile_konsumen_download
+CustomerProfileListSAPTransfer_Privilege = daftar_profile_konsumen_SAP_transfer
+KirimKendaraanDetailView_Privilege = kirim_kendaraan_detil_lihat
+KirimKendaraanDetailEdit_Privilege = kirim_kendaraan_detil_ubah
+KirimKendaraanListView_Privilege = daftar_kirim_kendaraan_lihat
+KirimKendaraanListDownload_Privilege = daftar_kirim_kendaraan_download
+KirimKendaraanListEdit_Privilege = daftar_kirim_kendaraan_ubah
+MarketPriceEntryView_Privilege = harga_pasar_entry_lihat
+MarketPriceEntrySave_Privilege = harga_pasar_entry_simpan
+MarketPriceListView_Privilege = daftar_harga_pasar_lihat
+MarketPriceListDownload_Privilege = daftar_harga_pasar_download
+MontlyReportListView_Privilege = daftar_rekap_bulanan_lihat
+MontlyReportListDownload_Privilege = daftar_rekap_bulanan_download
+MarketStockView_Privilege = stok_pasar_lihat
+MarketStockDownload_Privilege = stok_pasar_download
+MarketStockTransfer_Privilege = stok_pasar_transfer
+PermintaanMaterialPromotionListValidateDetail_Privilege = validasi_detail_daftar_permintaan_material_promosi
+PermintaanMaterialPromotionListDeleteDetail_Privilege = hapus_detail_daftar_permintaan_material_promo
+
+#CreditControl
+CCPembayaranLaporanPosisiCreditView_Privilege = pembayaran_laporan_posisi_kredit_lihat
+CCPembayaranLaporanPosisiCreditDownload_Privilege = pembayaran_laporan_posisi_kredit_down load
+CCPembayaranLaporanTemporaryOutStandingCreditView_Privilege = temporary_credit_outstanding_lihat
+CCPembayaranLaporanTemporaryOutStandingCreditDownload_Privilege = temporary_credit_outstanding_Download
+
+#Additional
+CustomerActivation_Privilege = konsumen_aktifkan_nonaktifkan
+BuatCatatanKTBDaftarStatus_Privilege = buat_catatan_ktb_daftar_status
+status_tolak_daftar_status_indent_part_Privilege = status_tolak_daftar_status_indent_part
+status_selesai_daftar_status_indent_part_Privilege = status_selesai_daftar_status_indent_part
+PQR_daftar_status_Baru_Privilege = PQR_daftar_status_Baru
+input_data_tenaga_penjual_Privilege = input_data_tenaga_penjual
+staff_service_lihat_daftar_Privilege = staff_service_lihat_daftar
+staff_service_download_daftar_Privilege = staff_service_download_daftar
+staff_service_lihat_detail_daftar_Privilege = staff_service_lihat_detail_daftar
+staff_service_edit_detail_daftar_Privilege = staff_service_edit_detail_daftar
+staff_service_lihat_buat_id_Privilege = staff_service_lihat_buat_id
+staff_service_buat_buat_id_Privilege = staff_service_buat_buat_id
+staff_service_download_buat_Privilege = staff_service_download_buat
+staff_service_input_data_Privilege = staff_service_input_data
+service_lihat_buat_data_pengunduran_diri_Privilege = service_lihat_buat_data_pengunduran_diri
+service_lihat_detail_buat_data_pengunduran_diri_Privilege = service_lihat_detail_buat_data_pengunduran_diri
+
+#TAF
+cf_entry_privilege = cf_entry
+cf_approve_application_privilege = cf_approve_application
+cf_approve_installment_privilege = cf_approve_installment
+cf_girofunding_privilege = cf_girofunding
+cf_contrack_taf_privilege = cf_contrack_taf
+cf_mutasibpkb_privilege = cf_mutasibpkb
+cf_changevehicle_privilege = cf_changevehicle
+dp_print_warning_letter_privilege = dp_print_warning_letter
+dp_submit_repossess_privilege = dp_submit_repossess
+rps_approve_privilege = rps_approve
+rps_cancel_privilege = rps_cancel
+rps_inventory_proses_privilege = rps_inventory_proses
+rps_writeoff_privilege = rps_writeoff
+rps_readyforsell_privilege = rps_readyforsell
+rpt_taf_privilege = rpt_taf
+rpt_dealer_privilege = rpt_dealer
+data_entry_payment_privilege = data_entry_payment
+ubah_periode_privilege = ubah_periode
+print_kwitansi_angsuran_privilege = print_kwitansi_angsuran
+edit_giro_funding_privilege = edit_giro_funding
+penugasan_kolektor_privilege = penugasan_kolektor
+val_bayar_tunai_privilege = val_bayar_tunai
+val_bayar_tunai_edit_privilege = val_bayar_tunai_edit
+val_bayar_gt_privilege = val_bayar_gt
+val_bayar_gt_edit_privilege = val_bayar_gt_edit
+et_entry_privilege = et_entry
+et_close_privilege = et_close
+ic_entry_privilege = ic_entry
+ic_close_privilege = ic_close
+general_manual_doc_privilege = general_manual_doc
+
+#CR
+setuju_rilis_respon_pk_privilege = setuju_rilis_respon_pk
+Un_freeze_status_baru_daftar_pk_privilege=Un_freeze_status_baru_daftar_pk
+
+#Remain Module
+konfirmasi_pass_ceiling_blocked_po_privilege=konfirmasi_pass_ceiling_blocked_po
+display_list_blocked_po_privilege=display_list_blocked_po
+pass_ceiling_release_simpan_blocked_po_privilege=pass_ceiling_release_simpan_blocked_po
+ceiling_master_lihat_privilege=ceiling_master_lihat
+ceiling_vs_alokasi_lihat_privilege=ceiling_vs_alokasi_lihat
+ceiling_vs_alokasi_download_cetak_privilege=ceiling_vs_alokasi_download_cetak
+daftar_pembayaran_ceiling_privilege=daftar_pembayaran_ceiling
+daftar_pembayaran_ubah_status_privilege=daftar_pembayaran_ubah_status
+factoring_ceiling_standard_download_privilege = factoring_ceiling_standard_download
+factoring_ceiling_standard_lihat_privilege = factoring_ceiling_standard_lihat
+sparepart_ceiling_lihat_privilege = sparepart_ceiling_lihat
+
+buat_jumlah_alokasi_material_promosi_privilege=buat_jumlah_alokasi_material_promosi
+buat_master_material_promosi_privilege=buat_master_material_promosi
+buat_nomor_pembayaran_privilege=buat_nomor_pembayaran
+buat_pengajuan_desain_iklan_privilege=buat_pengajuan_desain_iklan
+buat_pengajuan_event_babit_khusus_privilege=buat_pengajuan_event_babit_khusus
+buat_pengajuan_iklan_babit_khusus_privilege=buat_pengajuan_iklan_babit_khusus
+buat_pengajuan_pameran_babit_khusus_privilege=buat_pengajuan_pameran_babit_khusus
+buat_periode_material_promosi_privilege=buat_periode_material_promosi
+buat_permintaan_material_promosi_privilege=buat_permintaan_material_promosi
+buat_stock_material_promosi_privilege=buat_stock_material_promosi
+cetak_persetujuan_babit_privilege=cetak_persetujuan_babit
+daftar_permintaan_matprom_batal_privilege=daftar_permintaan_matprom_batal
+daftar_permintaan_matprom_disetujui_privilege=daftar_permintaan_matprom_disetujui
+daftar_permintaan_matprom_ditolak_privilege=daftar_permintaan_matprom_ditolak
+daftar_permintaan_matprom_validasi_privilege=daftar_permintaan_matprom_validasi
+download_alokasi_material_promosi_privilege=download_alokasi_material_promosi
+download_babit_privilege=download_babit
+download_daftar_pengajuan_babit_privilege=download_daftar_pengajuan_babit
+download_daftar_pengajuan_babit_khusus_privilege=download_daftar_pengajuan_babit_khusus
+download_item_daftar_pengajuan_iklan_privilege=download_item_daftar_pengajuan_iklan
+download_realisasi_daftar_pengajuan_babit_privilege=download_realisasi_daftar_pengajuan_babit
+download_realisasi_daftar_pengajuan_babit_khusus_privilege=download_realisasi_daftar_pengajuan_babit_khusus
+edit_daftar_permintaan_material_promosi_privilege=edit_daftar_permintaan_material_promosi
+edit_detail_daftar_permintaan_material_promosi_privilege=edit_detail_daftar_permintaan_material_promosi
+hapus_daftar_rencana_aktivitas_privilege=hapus_daftar_rencana_aktivitas
+hapus_detail_daftar_permintaan_material_promo_privilege=hapus_detail_daftar_permintaan_material_promo
+lihat_adjustment_stock_material_promosi_privilege=lihat_adjustment_stock_material_promosi
+lihat_alokasi_material_promosi_privilege=lihat_alokasi_material_promosi
+lihat_daftar_alokasi_babit_privilege=lihat_daftar_alokasi_babit
+lihat_daftar_good_issue_privilege=lihat_daftar_good_issue
+lihat_daftar_pengajuan_babit_privilege=lihat_daftar_pengajuan_babit
+lihat_daftar_pengajuan_babit_khusus_privilege=lihat_daftar_pengajuan_babit_khusus
+lihat_daftar_pengajuan_iklan_privilege=lihat_daftar_pengajuan_iklan
+lihat_daftar_permintaan_material_promosi_privilege=lihat_daftar_permintaan_material_promosi
+lihat_daftar_rencana_aktivitas_privilege=lihat_daftar_rencana_aktivitas
+lihat_dana_babit_daftar_alokasi_babit_privilege=lihat_dana_babit_daftar_alokasi_babit
+lihat_detail_daftar_alokasi_babit_privilege=lihat_detail_daftar_alokasi_babit
+lihat_detail_daftar_pengajuan_babit_privilege=lihat_detail_daftar_pengajuan_babit
+lihat_detail_daftar_pengajuan_babit_khusus_privilege=lihat_detail_daftar_pengajuan_babit_khusus
+lihat_detail_daftar_permintaan_material_promosi_privilege=lihat_detail_daftar_permintaan_material_promosi
+lihat_detail_in_out_material_promosi_privilege=lihat_detail_in_out_material_promosi
+lihat_download_babit_privilege=lihat_download_babit
+lihat_entry_babit_alokasi_privilege=lihat_entry_babit_alokasi
+lihat_history_material_promosi_privilege=lihat_history_material_promosi
+lihat_link_persetujuan_privilege=lihat_link_persetujuan
+lihat_master_material_promosi_privilege=lihat_master_material_promosi
+lihat_pembayaran_privilege=lihat_pembayaran
+lihat_pengajuan_babit_privilege=lihat_pengajuan_babit
+lihat_pengajuan_babit_khusus_privilege=lihat_pengajuan_babit_khusus
+lihat_pengajuan_desain_iklan_privilege=lihat_pengajuan_desain_iklan
+lihat_penggunaan_dana_babit_privilege=lihat_penggunaan_dana_babit
+lihat_periode_material_promosi_privilege=lihat_periode_material_promosi
+lihat_permintaan_material_promosi_privilege=lihat_permintaan_material_promosi
+lihat_persetujuan_babit_privilege=lihat_persetujuan_babit
+lihat_status_daftar_pengajuan_babit_privilege=lihat_status_daftar_pengajuan_babit
+lihat_stock_material_promosi_privilege=lihat_stock_material_promosi
+lihat_upload_alokasi_material_promosi_privilege=lihat_upload_alokasi_material_promosi
+lihat_upload_contoh_iklan_privilege=lihat_upload_contoh_iklan
+lihat_upload_rencana_aktivitas_privilege=lihat_upload_rencana_aktivitas
+masukkan_alokasi_reguler_entry_babit_alokasi_privilege=masukkan_alokasi_reguler_entry_babit_alokasi
+masukkan_alokasi_tambahan_entry_babit_alokasi_privilege=masukkan_alokasi_tambahan_entry_babit_alokasi
+masukkan_babit_khusus_entry_babit_alokasi_privilege=masukkan_babit_khusus_entry_babit_alokasi
+matprom_download_detail_permintaan_privilege=matprom_download_detail_permintaan
+pengajuan_babit_alokasi_babit_privilege=pengajuan_babit_alokasi_babit
+pengajuan_babit_event_privilege=pengajuan_babit_event
+pengajuan_babit_iklan_privilege=pengajuan_babit_iklan
+pengajuan_babit_pameran_privilege=pengajuan_babit_pameran
+rilis_daftar_alokasi_babit_privilege=rilis_daftar_alokasi_babit
+rilis_daftar_pengajuan_iklan_privilege=rilis_daftar_pengajuan_iklan
+simpan_download_babit_privilege=simpan_download_babit
+simpan_pembayaran_privilege=simpan_pembayaran
+#status_batal_babit_privilege=status_batal_babit #already exist in Promotion
+status_batal_daftar_pengajuan_babit_khusus_privilege=status_batal_daftar_pengajuan_babit_khusus
+status_batal_pengajuan_babit_privilege=status_batal_pengajuan_babit
+status_disetujui_daftar_pengajuan_babit_privilege=status_disetujui_daftar_pengajuan_babit
+status_disetujui_daftar_pengajuan_babit_khusus_privilege=status_disetujui_daftar_pengajuan_babit_khusus
+status_proses_daftar_pengajuan_babit_privilege=status_proses_daftar_pengajuan_babit
+status_proses_daftar_pengajuan_babit_khusus_privilege=status_proses_daftar_pengajuan_babit_khusus
+status_tolak_daftar_pengajuan_babit_privilege=status_tolak_daftar_pengajuan_babit
+status_tolak_daftar_pengajuan_babit_khusus_privilege=status_tolak_daftar_pengajuan_babit_khusus
+#status_validasi_babit_privilege=status_validasi_babit	#already exist in Promotion
+status_validasi_pengajuan_babit_privilege=status_validasi_pengajuan_babit
+status_validasi_pengajuan_babit_khusus_privilege=status_validasi_pengajuan_babit_khusus
+ubah_daftar_rencana_aktivitas_privilege=ubah_daftar_rencana_aktivitas
+ubah_detail_daftar_alokasi_babit_privilege=ubah_detail_daftar_alokasi_babit
+ubah_download_babit_privilege=ubah_download_babit
+ubah_pembayaran_privilege=ubah_pembayaran
+ubah_persetujuan_babit_privilege=ubah_persetujuan_babit
+upload_file_alokasi_material_promosi_privilege=upload_file_alokasi_material_promosi
+upload_file_contoh_iklan_privilege=upload_file_contoh_iklan
+upload_realisasi_daftar_pengajuan_babit_khusus_privilege=upload_realisasi_daftar_pengajuan_babit_khusus
+upload_relisasi_daftar_pengajuan_babit_privilege=upload_relisasi_daftar_pengajuan_babit
+upload_rencana_aktivitas_privilege=upload_rencana_aktivitas
+validasi_detail_daftar_permintaan_material_promosi_privilege=validasi_detail_daftar_permintaan_material_promosi
+
+#Start:GoLivePhase2
+ubah_status_material_privilege=ubah_status_material
+bebas_pph_lihat_privilege=bebas_pph_lihat
+bebas_pph_simpan_privilege=bebas_pph_simpan
+dealer_stock_lihat_privilege=dealer_stock_lihat
+dealer_stock_status_terjual_privilege=dealer_stock_status_terjual
+
+buat_permintaan_estimasi_indent_part_equipment_privilege=buat_permintaan_estimasi_indent_part_equipment
+kirim_permintaan_estimasi_indent_part_equipment_privilege=kirim_permintaan_estimasi_indent_part_equipment
+buat_upload_estimasi_indent_part_equipment_privilege=buat_upload_estimasi_indent_part_equipment
+ubah_status_estimasi_indent_part_equipment_privilege=ubah_status_estimasi_indent_part_equipment
+buat_pengajuan_order_indent_part_equipment_privilege=buat_pengajuan_order_indent_part_equipment
+kirim_pengajuan_order_indent_part_equipment_privilege=kirim_pengajuan_order_indent_part_equipment
+daftar_estimasi_indent_part_equipment_privilege=daftar_estimasi_indent_part_equipment
+lihat_daftar_pengajuan_order_indent_part_equipment_privilege=lihat_daftar_pengajuan_order_indent_part_equipment
+ubah_status_pengajuan_order_indent_part_equipment_privilege=ubah_status_pengajuan_order_indent_part_equipment
+lihat_alokasi_order_indent_part_equipment_privilege=lihat_alokasi_order_indent_part_equipment
+generate_po_indent_part_equipment_privilege=generate_po_indent_part_equipment
+lihat_daftar_po_indent_part_equipment_privilege=lihat_daftar_po_indent_part_equipment
+transfer_sap_po_indent_part_equipment_privilege=transfer_sap_po_indent_part_equipment
+buat_daftar_penerima_email_indent_part_equipment_privilege=buat_daftar_penerima_email_indent_part_equipment
+ubah_status_rilis_tolak_privilege=ubah_status_rilis_tolak
+
+#End:GoLivePhase2
+
+admin_lihat_role_ktb_privilege=admin_lihat_role_ktb
+sales_button_ceiling_block_privilege=sales_button_ceiling_block
+
+jaminan_lihat_privilege=jaminan_lihat
+jaminan_buat_privilege=jaminan_buat
+jaminan_edit_privilege=jaminan_edit
+jaminan_lihat_display_privilege=jaminan_lihat_display
+jaminan_download_privilege=jaminan_download
+
+sales_gyroinput_buat_privilege = sales_gyroinput_buat
+po_pembayaran_lihat_privilege = po_pembayaran_lihat
+po_pembayaran_download_report_privilege = po_pembayaran_download_report
+po_pembayaran_validasi_privilege = po_pembayaran_validasi
+po_pembayaran_transfer_privilege = po_pembayaran_transfer
+po_pembayaran_transfer_percepatan_privilege = po_pembayaran_transfer_percepatan
+po_pembayaran_edit_privilege = po_pembayaran_edit
+po_pembayaran_percepatan_privilege = po_pembayaran_percepatan
+po_pembayaran_delete_privilege = po_pembayaran_delete
+#ceiling_master_lihat_privilege = ceiling_master_lihat
+ceiling_master_tgl_validasi_lihat_privilege = ceiling_master_tgl_validasi_lihat
+ceiling_master_tgl_validasi_simpan_privilege = ceiling_master_tgl_validasi_simpan
+
+ubah_factoring_transcontrol_privilege = ubah_factoring_transcontrol
+factoring_interest_harga_kendaraan_lihat_privilege = factoring_interest_harga_kendaraan_lihat
+po_pengajuan_factoring_privilege = po_pengajuan_factoring
+factoring_ceiling_lihat_privilege = factoring_ceiling_lihat
+factoring_ceiling_upload_privilege = factoring_ceiling_upload
+factoring_ceiling_aktivasi_privilege = factoring_ceiling_aktivasi
+factoring_ceiling_edit_privilege = factoring_ceiling_edit
+daftar_cessie_lihat_privilege = daftar_cessie_lihat
+daftar_cessie_transfer_privilege = daftar_cessie_transfer
+daftar_cessie_input_privilege = daftar_cessie_input
+daftar_cessie_download_privilege = daftar_cessie_download
+factoring_gyro_upload_privilege = factoring_gyro_upload
+
+#SPK
+buat_spk_lihat_privilege = buat_spk_lihat
+buat_spk_simpan_privilege = buat_spk_simpan
+daftar_spk_lihat_privilege = daftar_spk_lihat
+daftar_spk_ubah_privilege = daftar_spk_ubah
+daftar_spk_download_privilege = daftar_spk_download
+
+#ChassisCampaign
+service_chassis_campaign_lihat_privilege = service_chassis_campaign_lihat
+service_chassis_campaign_simpan_privilege = service_chassis_campaign_simpan
+
+ubah_input_gyro_transcontrol_privilege = ubah_input_gyro_transcontrol
+
+po_tahan_do_privilege = po_tahan_do
+
+#CallCenter
+cc_akses_download_report_privilege = cc_akses_download_report
+cc_akses_feedback_privilege = cc_akses_feedback
+cc_akses_download_report_sales_privilege = cc_akses_download_report_sales
+cc_akses_download_report_aftersales_privilege = cc_akses_download_report_aftersales
+
+#Parking Fee
+parking_fee_lihat_privilege = parking_fee_lihat
+parking_fee_generate_bukti_potong_privilege = parking_fee_generate_bukti_potong
+parking_fee_daftar_status_lihat_privilege = parking_fee_daftar_status_lihat
+parking_fee_daftar_status_edit_detail_privilege = parking_fee_daftar_status_edit_detail
+parking_fee_daftar_status_process_privilege = parking_fee_daftar_status_process
+parking_fee_daftar_status_transfer_ke_sap_privilege = parking_fee_daftar_status_transfer_ke_sap
+
+#Redemption
+input_estimation_stok_redemption_privilege = input_estimation_stok_redemption
+ubah_max_contract_date_redemption_privilege = ubah_max_contract_date_redemption
+simpan_estimation_stok_redemption_privilege = simpan_estimation_stok_redemption
+download_estimation_stok_redemption_privilege = download_estimation_stok_redemption
+input_redemption_plan_privilege = input_redemption_plan
+input_redemption_plan_lihat_privilege = input_redemption_plan_lihat
+input_redemption_plan_ubah_privilege = input_redemption_plan_ubah
+input_redemption_plan_download_privilege = input_redemption_plan_download
+respon_redemption_plan_privilege = respon_redemption_plan
+respon_redemption_plan_lihat_privilege = respon_redemption_plan_lihat
+respon_redemption_plan_ubah_privilege = respon_redemption_plan_ubah
+respon_redemption_plan_auto_privilege = respon_redemption_plan_auto
+respon_redemption_plan_freeze_privilege = respon_redemption_plan_freeze
+respon_redemption_plan_download_privilege = respon_redemption_plan_download
+ubah_redemption_transcontrol_privilege = ubah_redemption_transcontrol
+ubah_tipe_hari_TOP_privilege = ubah_tipe_hari_TOP
+Ubah_tipe_kendaraan_privilege = Ubah_tipe_kendaraan
+Simpan_tipe_kendaraan_privilege = Simpan_tipe_kendaraan
+#SparePart Others
+BuatUploadPemesananOthers_Privilege = buat_upload_pemesanan_others
+KirimDaftarPemesananOthers_Privilege = kirim_daftar_pesanan_others
+
+#CreditAccount
+admin_setting_credit_account_Privilege = admin_setting_credit_account
+admin_lihat_credit_account_Privilege = admin_lihat_credit_account
+
+#SparePartAccessories
+lihat_setting_kategori_input_accessories_privilege = lihat_setting_kategori_input_accessories
+simpan_setting_kategori_input_accessories_privilege = simpan_setting_kategori_input_accessories
+lihat_master_barang_accessories_privilege = lihat_master_barang_accessories
+ubah_master_barang_accessories_privilege = ubah_master_barang_accessories
+lihat_laporan_penjualan_accessories_privilege = lihat_laporan_penjualan_accessories
+download_laporan_penjualan_accessories_privilege = download_laporan_penjualan_accessories
+input_penjualan_accessories_privilege = input_penjualan_accessories
+
+#MaxTOPDay->DealerNVechileType
+setting_maks_hari_top_lihat_privilege = setting_maks_hari_top_lihat
+setting_maks_hari_top_ubah_privilege = setting_maks_hari_top_ubah
+
+#General Tools
+tools_lihat_daftar_report_privilege = tools_lihat_daftar_report
+
+#PK Enhancement
+lihat_stock_ratio_privilege = lihat_stock_ratio
+input_stock_ratio_privilege = input_stock_ratio
+ubah_stock_ratio_privilege = ubah_stock_ratio
+download_stock_ratio_privilege = download_stock_ratio
+delete_stock_ratio_privilege = delete_stock_ratio
+lihat_dealer_stock_ratio_privilege = lihat_dealer_stock_ratio
+download_dealer_stock_ratio_privilege = download_dealer_stock_ratio
+transaction_control_input_pk_tambahan_privilege = transaction_control_input_pk_tambahan
+transaction_control_konfirmasi_pk_privilege = transaction_control_konfirmasi_pk
+sales_plan_meeting_privilege = sales_plan_meeting
+
+#TOPSP
+Input_TOPSP_Transfer_Payment_Privilege = Input_TOPSP_Transfer_Payment
+
+#Customer Case
+customer_case_view_privilege = customer_case_view
+customer_case_edit_privilege = customer_case_edit
+
+#BusinessSector
+simpan_industri_privilege = simpan_industri
+batal_industri_privilege = batal_industri
+delete_industri_privilege = delete_industri
+
+simpan_Domain_bisnis_privilege = simpan_Domain_bisnis
+batal_Domain_bisnis_privilege = batal_Domain_bisnis
+delete_Domain_bisnis_privilege = delete_Domain_bisnis
+#EndBusinessSector
+
+general_admin_reset_password_test123_privilege = general_admin_reset_password_test123  
+
+[strings.de]
+Raw = German Raw String
+StringArg(string name) = German With name argument {0}
+
+[strings.de-DE]
+Raw = Germany Raw String
+StringArg(string name) = German With name argument {0}
+

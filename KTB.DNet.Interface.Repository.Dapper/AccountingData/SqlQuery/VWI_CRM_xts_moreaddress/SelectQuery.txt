@@ -1,0 +1,84 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_moreaddress.company
+    , VWI_CRM_xts_moreaddress.businessunitcode
+    , VWI_CRM_xts_moreaddress.xts_moreaddressid
+    , VWI_CRM_xts_moreaddress.versionnumber
+    , VWI_CRM_xts_moreaddress.createdon
+    , VWI_CRM_xts_moreaddress.xts_provinceid
+    , VWI_CRM_xts_moreaddress.statuscodename
+    , VWI_CRM_xts_moreaddress.xts_customerid
+    , VWI_CRM_xts_moreaddress.modifiedbyyominame
+    , VWI_CRM_xts_moreaddress.owneridtype
+    , VWI_CRM_xts_moreaddress.createdonbehalfby
+    , VWI_CRM_xts_moreaddress.modifiedbyname
+    , VWI_CRM_xts_moreaddress.xts_moreaddress
+    , VWI_CRM_xts_moreaddress.xts_provinceidname
+    , VWI_CRM_xts_moreaddress.overriddencreatedon
+    , VWI_CRM_xts_moreaddress.xts_fax
+    , VWI_CRM_xts_moreaddress.xts_address2
+    , VWI_CRM_xts_moreaddress.createdonbehalfbyyominame
+    , VWI_CRM_xts_moreaddress.modifiedonbehalfby
+    , VWI_CRM_xts_moreaddress.xts_countryidname
+    , VWI_CRM_xts_moreaddress.xts_address4
+    , VWI_CRM_xts_moreaddress.owningteam
+    , VWI_CRM_xts_moreaddress.xts_residentialtypeidname
+    , VWI_CRM_xts_moreaddress.xts_mobilephone
+    , VWI_CRM_xts_moreaddress.statecode
+    , VWI_CRM_xts_moreaddress.owneridname
+    , VWI_CRM_xts_moreaddress.timezoneruleversionnumber
+    , VWI_CRM_xts_moreaddress.xts_villageandstreetid
+    , VWI_CRM_xts_moreaddress.xts_homephone
+    , VWI_CRM_xts_moreaddress.xts_locking
+    , VWI_CRM_xts_moreaddress.xts_villageandstreetidname
+    , VWI_CRM_xts_moreaddress.xts_otherphone
+    , VWI_CRM_xts_moreaddress.xts_countryid
+    , VWI_CRM_xts_moreaddress.createdonbehalfbyname
+    , VWI_CRM_xts_moreaddress.xts_cityid
+    , VWI_CRM_xts_moreaddress.utcconversiontimezonecode
+    , VWI_CRM_xts_moreaddress.xts_email
+    , VWI_CRM_xts_moreaddress.xts_customeridyominame
+    , VWI_CRM_xts_moreaddress.ownerid
+    , VWI_CRM_xts_moreaddress.modifiedon
+    , VWI_CRM_xts_moreaddress.importsequencenumber
+    , VWI_CRM_xts_moreaddress.owneridyominame
+    , VWI_CRM_xts_moreaddress.xts_businessphone
+    , VWI_CRM_xts_moreaddress.xts_customeridname
+    , VWI_CRM_xts_moreaddress.xts_customerlookuptype
+    , VWI_CRM_xts_moreaddress.xts_residentialtypeid
+    , VWI_CRM_xts_moreaddress.createdbyname
+    , VWI_CRM_xts_moreaddress.xts_businessunitid
+    , VWI_CRM_xts_moreaddress.modifiedonbehalfbyname
+    , VWI_CRM_xts_moreaddress.xts_address3
+    , VWI_CRM_xts_moreaddress.xts_cityidname
+    , VWI_CRM_xts_moreaddress.xts_contactidname
+    , VWI_CRM_xts_moreaddress.xts_postalcode
+    , VWI_CRM_xts_moreaddress.xts_addresstype
+    , VWI_CRM_xts_moreaddress.xts_addresstypename
+    , VWI_CRM_xts_moreaddress.createdby
+    , VWI_CRM_xts_moreaddress.modifiedby
+    , VWI_CRM_xts_moreaddress.xts_website
+    , VWI_CRM_xts_moreaddress.createdbyyominame
+    , VWI_CRM_xts_moreaddress.owninguser
+    , VWI_CRM_xts_moreaddress.xts_customerlookupname
+    , VWI_CRM_xts_moreaddress.owningbusinessunit
+    , VWI_CRM_xts_moreaddress.xts_contactid
+    , VWI_CRM_xts_moreaddress.statuscode
+    , VWI_CRM_xts_moreaddress.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_moreaddress.xts_contactidyominame
+    , VWI_CRM_xts_moreaddress.statecodename
+    , VWI_CRM_xts_moreaddress.xts_businessunitidname
+    , VWI_CRM_xts_moreaddress.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_moreaddress a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_moreaddress 

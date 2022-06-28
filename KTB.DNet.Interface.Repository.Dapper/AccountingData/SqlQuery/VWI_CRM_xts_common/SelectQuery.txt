@@ -1,0 +1,49 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/  
+	  VWI_CRM_xts_common.createdonbehalfbyyominame
+	, VWI_CRM_xts_common.modifiedonbehalfby
+	, VWI_CRM_xts_common.ktb_isshow
+	, VWI_CRM_xts_common.xts_locking
+	, VWI_CRM_xts_common.statecode
+	, VWI_CRM_xts_common.xts_pkcombinationkey
+	, VWI_CRM_xts_common.statecodename
+	, VWI_CRM_xts_common.ktb_isinstallment
+	, VWI_CRM_xts_common.ktb_isshowname
+	, VWI_CRM_xts_common.createdonbehalfby
+	, VWI_CRM_xts_common.ktb_numberofinstallment
+	, VWI_CRM_xts_common.xts_commonid
+	, VWI_CRM_xts_common.ktb_isdefault
+	, VWI_CRM_xts_common.ktb_isdefaultname
+	, VWI_CRM_xts_common.xts_sortorder
+	, VWI_CRM_xts_common.xts_categoryname
+	, VWI_CRM_xts_common.importsequencenumber
+	, VWI_CRM_xts_common.organizationidname
+	, VWI_CRM_xts_common.modifiedbyyominame
+	, VWI_CRM_xts_common.ktb_isinstallmentname
+	, VWI_CRM_xts_common.xts_value
+	, VWI_CRM_xts_common.utcconversiontimezonecode
+	, VWI_CRM_xts_common.createdbyyominame
+	, VWI_CRM_xts_common.modifiedbyname
+	, VWI_CRM_xts_common.versionnumber
+	, VWI_CRM_xts_common.modifiedby
+	, VWI_CRM_xts_common.createdby
+	, VWI_CRM_xts_common.timezoneruleversionnumber
+	, VWI_CRM_xts_common.statuscodename
+	, VWI_CRM_xts_common.xts_category
+	, VWI_CRM_xts_common.ktb_isdisplayinwoname
+	, VWI_CRM_xts_common.modifiedon
+	, VWI_CRM_xts_common.xts_common
+	, VWI_CRM_xts_common.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_common.statuscode
+	, VWI_CRM_xts_common.createdbyname
+	, VWI_CRM_xts_common.createdon
+	, VWI_CRM_xts_common.organizationid
+	, VWI_CRM_xts_common.createdonbehalfbyname
+	, VWI_CRM_xts_common.ktb_isdisplayinwo
+	, VWI_CRM_xts_common.modifiedonbehalfbyname
+	, VWI_CRM_xts_common.overriddencreatedon
+	, VWI_CRM_xts_common.xts_description
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_common as VWI_CRM_xts_common WITH (NOLOCK) 
+{0}

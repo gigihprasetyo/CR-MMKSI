@@ -1,0 +1,7 @@
+﻿SELECT 
+	/**PagingIndexQuery**/  
+	MMCComModel3
+	/**EndPagingIndexQuery**/ 
+FROM 
+	AssistChassisMaster WITH (NOLOCK) 
+{0}

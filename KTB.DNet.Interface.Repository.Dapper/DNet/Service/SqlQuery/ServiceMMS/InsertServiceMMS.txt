@@ -1,0 +1,38 @@
+INSERT INTO ServiceMMS
+(
+	DealerID
+	, DealerBranchID
+	, WONumber
+	, ServiceDate
+	, ChassisMasterID
+	, PlateNo
+	, NextEstimatedServiceDate
+	, Notes
+	, Status
+	, RowStatus
+	, CreatedBy
+	, CreatedTime
+	, LastUpdateBy
+	, LastUpdateTime
+)
+VALUES
+(
+	@DealerID
+	, @DealerBranchID
+	, @WONumber
+	, @ServiceDate
+	, @ChassisMasterID
+	, @PlateNo
+	, @NextEstimatedServiceDate
+	, @Notes
+	, @Status
+	, @RowStatus
+	, @CreatedBy
+	, @CreatedTime
+	, @LastUpdateBy
+	, @LastUpdateTime
+);
+
+SELECT SCOPE_IDENTITY();  
+
+

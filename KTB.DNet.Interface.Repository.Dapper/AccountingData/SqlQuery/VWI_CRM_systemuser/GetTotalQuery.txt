@@ -1,0 +1,14 @@
+SELECT 
+	COUNT(1)
+from (
+	SELECT    
+          b.ktb_bucompany company  
+        , b.ktb_dealercode businessunitcode  
+        , a.*   
+        , b.msdyn_companycode  
+    FROM CRM_systemuser a   WITH(NOLOCK)
+    INNER JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.[businessunitid]
+    --WHERE a.islicensed = 1
+    {0}
+) VWI_CRM_systemuser

@@ -1,0 +1,113 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xts_parentbusinessunitid
+	,versionnumber
+	,xts_consumptiontax2idname
+	,createdon
+	,xts_nvsoaccessoriesid
+	,xts_consumptiontax1id
+	,xts_eventdata
+	,statuscodename
+	,xts_pluginflag
+	,xts_unitprice
+	,xts_description
+	,modifiedbyyominame
+	,owneridtype
+	,xts_discountamountbeforetax
+	,createdonbehalfby
+	,modifiedbyname
+	,xjp_accessoriesestimatedcost
+	,xts_totaldiscountamount
+	,owneridname
+	,overriddencreatedon
+	,xts_nvsqaccessoriesid
+	,xts_nvsqaccessoriesidname
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_totalconsumptiontaxamount_base
+	,xts_mandatoryaccessoriesname
+	,xts_transactionamount_base
+	,xts_consumptiontax2id
+	,xts_newvehiclesalesorderid
+	,xts_totalbaseamount
+	,xts_accessoriesinstallationcategoryidname
+	,xts_pricetype
+	,xts_totalprice
+	,statecode
+	,xts_totaldiscountamount_base
+	,xts_nvsoaccessories
+	,xts_consumptiontax1amount_base
+	,timezoneruleversionnumber
+	,xts_acquisitiontaxprice
+	,xts_warehouseidname
+	,xts_totalconsumptiontaxamount
+	,xts_locking
+	,xts_totalamountbeforediscount
+	,xjp_pdidetailid
+	,xts_quantity
+	,xts_consumptiontax1idname
+	,xts_purchaseorderdetailidname
+	,xts_accessoriesid
+	,xts_accessoriesinstallationcategoryid
+	,xts_newvehiclesalesorderidname
+	,xts_totalbaseamount_base
+	,xts_accessoriesidname
+	,utcconversiontimezonecode
+	,xts_warehouseid
+	,xts_totalprice_base
+	,xts_freetype
+	,xts_vendoridname
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xjp_pdidetailidname
+	,xjp_accessoriesestimatedcost_base
+	,xts_acquisitiontaxprice_base
+	,xts_siteid
+	,createdbyname
+	,xts_businessunitid
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,xts_pricetypename
+	,xts_consumptiontax2amount
+	,transactioncurrencyid
+	,owningteam
+	,createdby
+	,modifiedby
+	,xts_unitprice_base
+	,xts_mandatoryaccessories
+	,xts_parentbusinessunitidname
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,owningbusinessunit
+	,xts_locationid
+	,xts_consumptiontax1amount
+	,xts_consumptiontax2amount_base
+	,xts_transactionamount
+	,xts_vendorid
+	,xts_discountamountbeforetax_base
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_siteidname
+	,xts_purchaseorderdetailid
+	,xts_freetypename
+	,xts_totalamountbeforediscount_base
+	,xts_locationidname
+	,statecodename
+	,xts_businessunitidname
+	,RowStatus
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_nvsoaccessories a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK)
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_nvsoaccessoriesid = @Id
+) VWI_CRM_xts_nvsoaccessories 

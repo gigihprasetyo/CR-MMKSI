@@ -1,0 +1,100 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_outsourceworkorderreceipt.company
+	, VWI_CRM_xts_outsourceworkorderreceipt.businessunitcode
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_parentbusinessunitid
+	, VWI_CRM_xts_outsourceworkorderreceipt.versionnumber
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_totaltaxamount_base
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_totaltaxamount
+	, VWI_CRM_xts_outsourceworkorderreceipt.statuscodename
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_status
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_customerid
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_vendorinvoicedate
+	, VWI_CRM_xts_outsourceworkorderreceipt.modifiedbyyominame
+	, VWI_CRM_xts_outsourceworkorderreceipt.createdon
+	, VWI_CRM_xts_outsourceworkorderreceipt.owneridtype
+	, VWI_CRM_xts_outsourceworkorderreceipt.processid
+	, VWI_CRM_xts_outsourceworkorderreceipt.createdonbehalfby
+	, VWI_CRM_xts_outsourceworkorderreceipt.modifiedbyname
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_platenumber
+	, VWI_CRM_xts_outsourceworkorderreceipt.xjp_idempotentmessage
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_totalbillingamountaftertax
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_outsourceworkorderid
+	, VWI_CRM_xts_outsourceworkorderreceipt.owneridname
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_totalbillingamountbeforetax_base
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_totalbillingamountbeforetax
+	, VWI_CRM_xts_outsourceworkorderreceipt.overriddencreatedon
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_originalworkorderreferenceidname
+	, VWI_CRM_xts_outsourceworkorderreceipt.createdonbehalfbyyominame
+	, VWI_CRM_xts_outsourceworkorderreceipt.modifiedonbehalfby
+	, VWI_CRM_xts_outsourceworkorderreceipt.exchangerate
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_customeridyominame
+	, VWI_CRM_xts_outsourceworkorderreceipt.owningteam
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_outsourceworkorderidname
+	, VWI_CRM_xts_outsourceworkorderreceipt.statecode
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_outsourceworkorderreceipt
+	, VWI_CRM_xts_outsourceworkorderreceipt.timezoneruleversionnumber
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_totalwithholdingtaxamount_base
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_outsourceworkorderreceiptpersoninchargeid
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_locking
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_outsourceworkorderdate
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_outsourceworkorderreceiptid
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_customernumber
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_destinationworkorderidname
+	, VWI_CRM_xts_outsourceworkorderreceipt.createdonbehalfbyname
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_handling
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_automaticallycreateapvoucher
+	, VWI_CRM_xts_outsourceworkorderreceipt.utcconversiontimezonecode
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_vehicleidentificationid
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_statusname
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_outsourceworkshopidname
+	, VWI_CRM_xts_outsourceworkorderreceipt.ownerid
+	, VWI_CRM_xts_outsourceworkorderreceipt.modifiedon
+	, VWI_CRM_xts_outsourceworkorderreceipt.importsequencenumber
+	, VWI_CRM_xts_outsourceworkorderreceipt.owneridyominame
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_originalworkorderreferenceid
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_category
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_transactiondate
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_outsourceworkshopid
+	, VWI_CRM_xts_outsourceworkorderreceipt.createdbyname
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_totalwithholdingtaxamount
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_businessunitid
+	, VWI_CRM_xts_outsourceworkorderreceipt.modifiedonbehalfbyname
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_vehicleidentificationidname
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_automaticallycreateapvouchername
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_categoryname
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_handlingname
+	, VWI_CRM_xts_outsourceworkorderreceipt.transactioncurrencyid
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_businessunitidname
+	, VWI_CRM_xts_outsourceworkorderreceipt.createdby
+	, VWI_CRM_xts_outsourceworkorderreceipt.modifiedby
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_vehiclemodelname
+	, VWI_CRM_xts_outsourceworkorderreceipt.stageid
+	, VWI_CRM_xts_outsourceworkorderreceipt.createdbyyominame
+	, VWI_CRM_xts_outsourceworkorderreceipt.owninguser
+	, VWI_CRM_xts_outsourceworkorderreceipt.transactioncurrencyidname
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_customeridname
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_destinationworkorderid
+	, VWI_CRM_xts_outsourceworkorderreceipt.owningbusinessunit
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_parentbusinessunitidname
+	, VWI_CRM_xts_outsourceworkorderreceipt.traversedpath
+	, VWI_CRM_xts_outsourceworkorderreceipt.statuscode
+	, VWI_CRM_xts_outsourceworkorderreceipt.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_deliveryinvoicenumber
+	, VWI_CRM_xts_outsourceworkorderreceipt.statecodename
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_totalbillingamountaftertax_base
+	, VWI_CRM_xts_outsourceworkorderreceipt.xts_outsourceworkorderreceiptpersoninchargeidname
+	, VWI_CRM_xts_outsourceworkorderreceipt.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_outsourceworkorderreceipt a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_outsourceworkorderreceipt

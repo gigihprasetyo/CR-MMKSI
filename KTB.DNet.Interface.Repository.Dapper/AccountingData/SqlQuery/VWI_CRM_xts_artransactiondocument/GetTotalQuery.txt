@@ -1,0 +1,13 @@
+SELECT 
+    COUNT(1)
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+     FROM CRM_xts_artransactiondocument a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    {0}
+) VWI_CRM_xts_artransactiondocument  

@@ -1,0 +1,34 @@
+﻿<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="{{activePageTitle}}">
+
+                <div ba-panel ba-panel-title="User Info" ba-panel-class="unbox-panel custom-wizard-panel">
+                    <form name="form">
+                        <div class="col-md-6">
+                            <input-text label="UserName" name="UserName" ng-model="user.UserName" required></input-text>
+                            <input-text label="Email" name="Email" ng-model="user.Email" required></input-text>
+                            <input-text label="FirstName" name="FirstName" ng-model="user.FirstName"></input-text>
+                            <input-text label="LastName" name="LastName" ng-model="user.LastName"></input-text>
+                            <input-text label="PhoneNumber" name="PhoneNumber" ng-model="user.PhoneNumber"></input-text>
+                            <input-text label="Street1" name="Street1" ng-model="user.Street1"></input-text>
+
+                        </div>
+                        <div class="col-md-6">
+                            <input-text label="City" name="City" ng-model="user.City"></input-text>
+                            <input-text label="State" name="State" ng-model="user.State"></input-text>
+                            <input-text label="PostalCode" name="PostalCode" ng-model="user.PostalCode"></input-text>
+                            <input-text label="Country" name="Country" ng-model="user.Country"></input-text>
+                            <input-text label="Company" name="Company" ng-model="user.Company"></input-text>
+                        </div>
+
+                        <div class="col-md-12 text-right">
+                            <button class="btn btn-primary m-t-15 waves-effect" ng-click="updateUserInfo()">Save</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

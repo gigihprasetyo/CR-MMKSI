@@ -1,0 +1,2 @@
+﻿DELETE FROM [APIClientRole]
+ WHERE Id IN @listOfId

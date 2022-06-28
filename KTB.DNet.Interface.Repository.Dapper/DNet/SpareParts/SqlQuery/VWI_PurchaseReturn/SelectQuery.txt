@@ -1,0 +1,22 @@
+﻿SELECT 
+	/**PagingIndexQuery**/  
+    [DealerCode]
+	,[ClaimNo]
+    ,[ClaimDate]
+    ,[DONumberRef]
+    ,[BillingNumber]
+    ,[SONumber]
+    ,[DONumber]
+    ,[SORetur]
+    ,[SOReturDate]
+    ,[FakturRetur]
+    ,[PartNumber]
+    ,[PartName]
+    ,[Qty]
+    ,[RetailPrice]
+    ,[TotalPrice]  
+    ,[LastUpdateTime]
+	/**EndPagingIndexQuery**/ 
+FROM 
+	VWI_PurchaseReturn
+{0}

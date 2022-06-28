@@ -1,0 +1,104 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_recommendedproduct.company
+    , VWI_CRM_xts_recommendedproduct.businessunitcode
+    , VWI_CRM_xts_recommendedproduct.xts_startdate
+    , VWI_CRM_xts_recommendedproduct.xts_titleregistrationfee
+    , VWI_CRM_xts_recommendedproduct.versionnumber
+    , VWI_CRM_xts_recommendedproduct.xts_accessorytotaldiscount_base
+    , VWI_CRM_xts_recommendedproduct.createdon
+    , VWI_CRM_xts_recommendedproduct.xts_ontheroadprice
+    , VWI_CRM_xts_recommendedproduct.xts_productconfigurationid
+    , VWI_CRM_xts_recommendedproduct.xts_consumptiontax1id
+    , VWI_CRM_xts_recommendedproduct.statuscodename
+    , VWI_CRM_xts_recommendedproduct.xts_productinteriorcolorid
+    , VWI_CRM_xts_recommendedproduct.xts_mandatorycolorname
+    , VWI_CRM_xts_recommendedproduct.xts_vehiclediscount
+    , VWI_CRM_xts_recommendedproduct.modifiedbyyominame
+    , VWI_CRM_xts_recommendedproduct.owneridtype
+    , VWI_CRM_xts_recommendedproduct.xts_gradenumber
+    , VWI_CRM_xts_recommendedproduct.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_recommendedproduct.xts_productstyleidname
+    , VWI_CRM_xts_recommendedproduct.owneridname
+    , VWI_CRM_xts_recommendedproduct.xts_defaultbrand
+    , VWI_CRM_xts_recommendedproduct.overriddencreatedon
+    , VWI_CRM_xts_recommendedproduct.xts_maximumdiscountamount_base
+    , VWI_CRM_xts_recommendedproduct.xts_netsalesprice_base
+    , VWI_CRM_xts_recommendedproduct.xts_gradeid
+    , VWI_CRM_xts_recommendedproduct.createdonbehalfbyyominame
+    , VWI_CRM_xts_recommendedproduct.modifiedonbehalfby
+    , VWI_CRM_xts_recommendedproduct.exchangerate
+    , VWI_CRM_xts_recommendedproduct.createdby
+    , VWI_CRM_xts_recommendedproduct.xts_consumptiontax2id
+    , VWI_CRM_xts_recommendedproduct.owningteam
+    , VWI_CRM_xts_recommendedproduct.modifiedonbehalfbyname
+    , VWI_CRM_xts_recommendedproduct.xts_mandatoryaccessoryname
+    , VWI_CRM_xts_recommendedproduct.xts_productidname
+    , VWI_CRM_xts_recommendedproduct.xts_accessorysalesprice_base
+    , VWI_CRM_xts_recommendedproduct.statecode
+    , VWI_CRM_xts_recommendedproduct.timezoneruleversionnumber
+    , VWI_CRM_xts_recommendedproduct.xts_netsalesprice
+    , VWI_CRM_xts_recommendedproduct.xts_productstyleid
+    , VWI_CRM_xts_recommendedproduct.xts_locking
+    , VWI_CRM_xts_recommendedproduct.xts_totalsalesprice
+    , VWI_CRM_xts_recommendedproduct.xts_mandatorycolor
+    , VWI_CRM_xts_recommendedproduct.xts_consumptiontax1idname
+    , VWI_CRM_xts_recommendedproduct.xts_baseprice_base
+    , VWI_CRM_xts_recommendedproduct.xts_consumptiontax2idname
+    , VWI_CRM_xts_recommendedproduct.xts_productexteriorcolorid
+    , VWI_CRM_xts_recommendedproduct.xts_recommendedproduct
+    , VWI_CRM_xts_recommendedproduct.xts_accessorysalesprice
+    , VWI_CRM_xts_recommendedproduct.xts_totalsalesprice_base
+    , VWI_CRM_xts_recommendedproduct.xts_maximumdiscountamount
+    , VWI_CRM_xts_recommendedproduct.utcconversiontimezonecode
+    , VWI_CRM_xts_recommendedproduct.xts_specialcolorprice
+    , VWI_CRM_xts_recommendedproduct.xts_titleregistrationfee_base
+    , VWI_CRM_xts_recommendedproduct.ownerid
+    , VWI_CRM_xts_recommendedproduct.modifiedon
+    , VWI_CRM_xts_recommendedproduct.importsequencenumber
+    , VWI_CRM_xts_recommendedproduct.owneridyominame
+    , VWI_CRM_xts_recommendedproduct.modifiedby
+    , VWI_CRM_xts_recommendedproduct.xts_pkcombinationkey
+    , VWI_CRM_xts_recommendedproduct.createdbyname
+    , VWI_CRM_xts_recommendedproduct.xts_businessunitid
+    , VWI_CRM_xts_recommendedproduct.createdonbehalfbyname
+    , VWI_CRM_xts_recommendedproduct.xts_offtheroadprice
+    , VWI_CRM_xts_recommendedproduct.xts_productexteriorcoloridname
+    , VWI_CRM_xts_recommendedproduct.xts_productconfigurationidname
+    , VWI_CRM_xts_recommendedproduct.xts_specialcolorprice_base
+    , VWI_CRM_xts_recommendedproduct.xts_gradeidname
+    , VWI_CRM_xts_recommendedproduct.xts_enddate
+    , VWI_CRM_xts_recommendedproduct.xts_productid
+    , VWI_CRM_xts_recommendedproduct.transactioncurrencyid
+    , VWI_CRM_xts_recommendedproduct.createdonbehalfby
+    , VWI_CRM_xts_recommendedproduct.xts_baseprice
+    , VWI_CRM_xts_recommendedproduct.xts_mandatoryaccessory
+    , VWI_CRM_xts_recommendedproduct.xts_vehiclediscount_base
+    , VWI_CRM_xts_recommendedproduct.createdbyyominame
+    , VWI_CRM_xts_recommendedproduct.owninguser
+    , VWI_CRM_xts_recommendedproduct.transactioncurrencyidname
+    , VWI_CRM_xts_recommendedproduct.xts_offtheroadprice_base
+    , VWI_CRM_xts_recommendedproduct.xts_recommendedproductid
+    , VWI_CRM_xts_recommendedproduct.xts_ontheroadprice_base
+    , VWI_CRM_xts_recommendedproduct.xts_productinteriorcoloridname
+    , VWI_CRM_xts_recommendedproduct.xts_accessorytotaldiscount
+    , VWI_CRM_xts_recommendedproduct.statuscode
+    , VWI_CRM_xts_recommendedproduct.modifiedbyname
+    , VWI_CRM_xts_recommendedproduct.xts_defaultbrandgeneration
+    , VWI_CRM_xts_recommendedproduct.statecodename
+    , VWI_CRM_xts_recommendedproduct.xts_businessunitidname
+    , VWI_CRM_xts_recommendedproduct.owningbusinessunit
+    , VWI_CRM_xts_recommendedproduct.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_recommendedproduct a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_recommendedproduct  

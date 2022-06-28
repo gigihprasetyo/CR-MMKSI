@@ -1,0 +1,43 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_villageandstreet.createdonbehalfbyyominame
+	, VWI_CRM_xts_villageandstreet.modifiedonbehalfby
+	, VWI_CRM_xts_villageandstreet.xts_villageandstreet
+	, VWI_CRM_xts_villageandstreet.xts_villageandstreetid
+	, VWI_CRM_xts_villageandstreet.statecode
+	, VWI_CRM_xts_villageandstreet.statecodename
+	, VWI_CRM_xts_villageandstreet.xts_locking
+	, VWI_CRM_xts_villageandstreet.createdonbehalfby
+	, VWI_CRM_xts_villageandstreet.xts_provinceid
+	, VWI_CRM_xts_villageandstreet.importsequencenumber
+	, VWI_CRM_xts_villageandstreet.organizationidname
+	, VWI_CRM_xts_villageandstreet.modifiedbyyominame
+	, VWI_CRM_xts_villageandstreet.xts_countryid
+	, VWI_CRM_xts_villageandstreet.utcconversiontimezonecode
+	, VWI_CRM_xts_villageandstreet.createdbyyominame
+	, VWI_CRM_xts_villageandstreet.modifiedbyname
+	, VWI_CRM_xts_villageandstreet.versionnumber
+	, VWI_CRM_xts_villageandstreet.modifiedby
+	, VWI_CRM_xts_villageandstreet.createdby
+	, VWI_CRM_xts_villageandstreet.timezoneruleversionnumber
+	, VWI_CRM_xts_villageandstreet.xts_address1
+	, VWI_CRM_xts_villageandstreet.statuscodename
+	, VWI_CRM_xts_villageandstreet.modifiedon
+	, VWI_CRM_xts_villageandstreet.xts_postalcode
+	, VWI_CRM_xts_villageandstreet.xts_countryidname
+	, VWI_CRM_xts_villageandstreet.xts_cityidname
+	, VWI_CRM_xts_villageandstreet.xts_provinceidname
+	, VWI_CRM_xts_villageandstreet.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_villageandstreet.statuscode
+	, VWI_CRM_xts_villageandstreet.createdbyname
+	, VWI_CRM_xts_villageandstreet.createdon
+	, VWI_CRM_xts_villageandstreet.organizationid
+	, VWI_CRM_xts_villageandstreet.createdonbehalfbyname
+	, VWI_CRM_xts_villageandstreet.modifiedonbehalfbyname
+	, VWI_CRM_xts_villageandstreet.xts_cityid
+	, VWI_CRM_xts_villageandstreet.overriddencreatedon
+	, VWI_CRM_xts_villageandstreet.xts_description
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_villageandstreet as VWI_CRM_xts_villageandstreet with (nolock)  
+{0}

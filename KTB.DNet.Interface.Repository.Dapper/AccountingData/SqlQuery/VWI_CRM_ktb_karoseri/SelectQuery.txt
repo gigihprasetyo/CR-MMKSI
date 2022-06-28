@@ -1,0 +1,57 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_karoseri.company
+	, VWI_CRM_ktb_karoseri.businessunitcode
+	, VWI_CRM_ktb_karoseri.createdonbehalfbyyominame
+	, VWI_CRM_ktb_karoseri.owninguser
+	, VWI_CRM_ktb_karoseri.ktb_karoseriid
+	, VWI_CRM_ktb_karoseri.statecode
+	, VWI_CRM_ktb_karoseri.owneridname
+	, VWI_CRM_ktb_karoseri.ktb_provinceidname
+	, VWI_CRM_ktb_karoseri.statecodename
+	, VWI_CRM_ktb_karoseri.createdonbehalfby
+	, VWI_CRM_ktb_karoseri.ktb_karoseri
+	, VWI_CRM_ktb_karoseri.ktb_cityid
+	, VWI_CRM_ktb_karoseri.importsequencenumber
+	, VWI_CRM_ktb_karoseri.modifiedbyyominame
+	, VWI_CRM_ktb_karoseri.ktb_code
+	, VWI_CRM_ktb_karoseri.ktb_provinceid
+	, VWI_CRM_ktb_karoseri.utcconversiontimezonecode
+	, VWI_CRM_ktb_karoseri.createdbyyominame
+	, VWI_CRM_ktb_karoseri.owningbusinessunit
+	, VWI_CRM_ktb_karoseri.modifiedbyname
+	, VWI_CRM_ktb_karoseri.owningteam
+	, VWI_CRM_ktb_karoseri.modifiedby
+	, VWI_CRM_ktb_karoseri.createdby
+	, VWI_CRM_ktb_karoseri.timezoneruleversionnumber
+	, VWI_CRM_ktb_karoseri.ktb_cityidname
+	, VWI_CRM_ktb_karoseri.owneridtype
+	, VWI_CRM_ktb_karoseri.statuscodename
+	, VWI_CRM_ktb_karoseri.ktb_isinterfaced
+	, VWI_CRM_ktb_karoseri.owneridyominame
+	, VWI_CRM_ktb_karoseri.ktb_isinterfacedname
+	, VWI_CRM_ktb_karoseri.modifiedon
+	, VWI_CRM_ktb_karoseri.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_karoseri.statuscode
+	, VWI_CRM_ktb_karoseri.createdbyname
+	, VWI_CRM_ktb_karoseri.createdon
+	, VWI_CRM_ktb_karoseri.createdonbehalfbyname
+	, VWI_CRM_ktb_karoseri.modifiedonbehalfbyname
+	, VWI_CRM_ktb_karoseri.versionnumber
+	, VWI_CRM_ktb_karoseri.modifiedonbehalfby
+	, VWI_CRM_ktb_karoseri.ownerid
+	, VWI_CRM_ktb_karoseri.overriddencreatedon
+	, VWI_CRM_ktb_karoseri.msdyn_companycode
+    /**EndPagingIndexQuery**/
+from (
+	select 
+		 b.ktb_bucompany as company
+		, b.ktb_dealercode as businessunitcode  
+		, a.*  
+		, b.msdyn_companycode  
+	from CRM_ktb_karoseri a with(nolock)  
+	left join CRM_businessunit b with(nolock)
+	on a.owningbusinessunit = b.businessunitid
+	{0}
+) VWI_CRM_ktb_karoseri

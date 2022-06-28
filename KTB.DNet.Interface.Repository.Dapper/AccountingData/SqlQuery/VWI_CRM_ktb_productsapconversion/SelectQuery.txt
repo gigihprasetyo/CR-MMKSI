@@ -1,0 +1,61 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_productsapconversion.company
+	, VWI_CRM_ktb_productsapconversion.businessunitcode
+	, VWI_CRM_ktb_productsapconversion.ktb_dnetid
+	, VWI_CRM_ktb_productsapconversion.ktb_productsapdesc
+	, VWI_CRM_ktb_productsapconversion.modifiedonbehalfby
+	, VWI_CRM_ktb_productsapconversion.owningteam
+	, VWI_CRM_ktb_productsapconversion.statecode
+	, VWI_CRM_ktb_productsapconversion.owneridname
+	, VWI_CRM_ktb_productsapconversion.statecodename
+	, VWI_CRM_ktb_productsapconversion.owninguser
+	, VWI_CRM_ktb_productsapconversion.createdonbehalfby
+	, VWI_CRM_ktb_productsapconversion.ktb_uomname
+	, VWI_CRM_ktb_productsapconversion.importsequencenumber
+	, VWI_CRM_ktb_productsapconversion.ktb_uom
+	, VWI_CRM_ktb_productsapconversion.ktb_productsapconversionid
+	, VWI_CRM_ktb_productsapconversion.utcconversiontimezonecode
+	, VWI_CRM_ktb_productsapconversion.createdbyyominame
+	, VWI_CRM_ktb_productsapconversion.ktb_typecode
+	, VWI_CRM_ktb_productsapconversion.ktb_productreferenceidname
+	, VWI_CRM_ktb_productsapconversion.modifiedbyname
+	, VWI_CRM_ktb_productsapconversion.versionnumber
+	, VWI_CRM_ktb_productsapconversion.modifiedby
+	, VWI_CRM_ktb_productsapconversion.modifiedbyyominame
+	, VWI_CRM_ktb_productsapconversion.createdby
+	, VWI_CRM_ktb_productsapconversion.timezoneruleversionnumber
+	, VWI_CRM_ktb_productsapconversion.owneridtype
+	, VWI_CRM_ktb_productsapconversion.ktb_productreferenceid
+	, VWI_CRM_ktb_productsapconversion.createdonbehalfbyyominame
+	, VWI_CRM_ktb_productsapconversion.ktb_isinterfaced
+	, VWI_CRM_ktb_productsapconversion.owneridyominame
+	, VWI_CRM_ktb_productsapconversion.ktb_isinterfacedname
+	, VWI_CRM_ktb_productsapconversion.modifiedon
+	, VWI_CRM_ktb_productsapconversion.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_productsapconversion.statuscode
+	, VWI_CRM_ktb_productsapconversion.createdbyname
+	, VWI_CRM_ktb_productsapconversion.createdon
+	, VWI_CRM_ktb_productsapconversion.ktb_productsap
+	, VWI_CRM_ktb_productsapconversion.ktb_productsapconversion
+	, VWI_CRM_ktb_productsapconversion.owningbusinessunit
+	, VWI_CRM_ktb_productsapconversion.statuscodename
+	, VWI_CRM_ktb_productsapconversion.modifiedonbehalfbyname
+	, VWI_CRM_ktb_productsapconversion.createdonbehalfbyname
+	, VWI_CRM_ktb_productsapconversion.ownerid
+	, VWI_CRM_ktb_productsapconversion.overriddencreatedon
+	, VWI_CRM_ktb_productsapconversion.RowStatus
+	, VWI_CRM_ktb_productsapconversion.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT  
+		  b.ktb_bucompany company
+		, b.ktb_dealercode businessunitcode
+		, a.*
+		, b.msdyn_companycode
+	FROM CRM_ktb_productsapconversion a
+	LEFT JOIN CRM_businessunit b 
+	ON b.businessunitid = a.owningbusinessunit
+	{0}
+) VWI_CRM_ktb_productsapconversion

@@ -1,0 +1,68 @@
+select count(1) from (
+	select 
+		sb.ID
+		, sb.ServiceBookingCode
+		, sb.ChassisNumber
+		, ISNULL(sb.StallMasterID, 0) as [StallMasterID]
+		, sb.PlateNumber
+		, sb.CustomerName
+		, sb.CustomerPhoneNumber
+		, sb.Odometer
+		, sb.ServiceAdvisorID
+		, sb.StandardTime
+		, sb.IncomingDateStart
+		, sb.IncomingDateEnd
+		, sb.WorkingTimeStart
+		, sb.WorkingTimeEnd
+		, IIF(sb.IsMitsubishi = 1, 'Ya', 'Tidak') as [IsMitsubishi]
+		, sb.Notes
+		, sb.RowStatus
+		, sb.CreatedBy
+		, sb.CreatedTime
+		, sb.LastUpdatedBy
+		, sb.LastUpdatedTime
+		, ISNULL(vt.VechileTypeCode, '') as [VehicleTypeCode]
+		, dl.DealerCode
+		, dl.DealerName
+		, dl.SearchTerm1
+		, ISNULL(tr.[Name], '') as ServiceAdvisorName
+		, sm.StallCode
+		, ISNULL(vm.[Description], '') as VechileModelDescription
+		, ISNULL(vt.[Description], '') as VechileTypeDescription
+		, ISNULL(pt.ValueDesc, '') as IncomingPlan		
+		, ISNULL(st.ValueDesc, '') as StallServiceType	
+		, ISNULL(ss.ValueDesc, '') as [Status]			
+	FROM ServiceBooking sb with(NOLOCK)
+	INNER JOIN Dealer  dl 
+	ON dl.ID = sb.DealerID
+	LEFT JOIN StallMaster sm with(NOLOCK) 
+	ON sm.ID = sb.StallMasterID
+	LEFT JOIN VechileModel  vm with(NOLOCK) 
+	ON vm.ID = sb.VechileModelID
+	LEFT JOIN VechileType  vt with(NOLOCK)
+	ON vt.ID = sb.VechileTypeID
+	LEFT JOIN TrTrainee  tr with(NOLOCK) 
+	ON tr.ID = sb.ServiceAdvisorID
+	LEFT JOIN StandardCode  pt with(NOLOCK) 
+	ON pt.ValueId = sb.PickupType
+		AND pt.Category = 'ServiceBooking.PickupType'
+	LEFT JOIN StandardCode  st with(NOLOCK)
+	ON st.ValueId = sb.StallServiceType
+		AND st.Category = 'ServiceBooking.StallServiceType'
+	LEFT JOIN StandardCode  ss with(NOLOCK) 
+	ON ss.ValueId = sb.[Status]
+		AND ss.Category = 'ServiceBooking.Status'
+	where 
+		sb.RowStatus = 0 
+		AND isnull(dl.RowStatus,0) = 0
+		AND isnull(sm.RowStatus,0) = 0
+		AND isnull(vm.RowStatus,0) = 0
+		AND isnull(vt.RowStatus,0) = 0
+		AND isnull(tr.RowStatus, 0) = 0
+		AND isnull(pt.RowStatus, 0) = 0
+		AND isnull(st.RowStatus, 0) = 0
+		AND isnull(ss.RowStatus, 0) = 0
+		and sb.[Status] in ('0','1')
+		and sb.CreatedBy not like dl.DealerCode + '_IF_%' -- Exclude Data From DMS 
+) as sb
+{0}

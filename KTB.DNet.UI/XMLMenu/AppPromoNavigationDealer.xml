@@ -1,0 +1,838 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AppNavigationSchema xmlns="http://tempuri.org/AppNavigationSchema.xsd">
+
+	<!--BABIT-->
+  <!--
+	<AppScreen>
+		<AppScreenId>9970</AppScreenId>
+		<ScreenName>BABIT</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>9970</AppMenuId>
+		<MenuName>BABIT</MenuName>
+		<ScreenId>9970</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	<AppToolbar>
+		<AppToolbarId>1</AppToolbarId>
+		<Name>Home</Name>
+		<ScreenId>100</ScreenId>
+		<SortOrder>1</SortOrder>
+	</AppToolbar>
+	<AppMenu>
+		<AppMenuId>987002</AppMenuId>
+		<MenuName>Daftar Alokasi BABIT</MenuName>
+		<ScreenId>987002</ScreenId>
+		<ParentMenuId>9970</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>987002</AppScreenId>
+		<ScreenName>Daftar Alokasi BABIT</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>987004</AppMenuId>
+		<MenuName>Daftar Pengajuan BABIT</MenuName>
+		<ScreenId>987004</ScreenId>
+		<ParentMenuId>9970</ParentMenuId>
+		<SortOrder>3</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>987004</AppScreenId>
+		<ScreenName>Daftar Pengajuan BABIT</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>987013</AppMenuId>
+		<MenuName>Pengajuan BABIT Khusus</MenuName>
+		<ScreenId>987013</ScreenId>
+		<ParentMenuId>9970</ParentMenuId>
+		<SortOrder>4</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>987013</AppScreenId>
+		<ScreenName>Pengajuan BABIT Khusus</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>987014</AppScreenId>
+		<ScreenName>Daftar Pengajuan BABIT Khusus</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>987014</AppMenuId>
+		<MenuName>Daftar Pengajuan BABIT Khusus</MenuName>
+		<ScreenId>987014</ScreenId>
+		<ParentMenuId>9970</ParentMenuId>
+		<SortOrder>5</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>987010</AppMenuId>
+		<MenuName>Penggunaan Dana BABIT</MenuName>
+		<ScreenId>987010</ScreenId>
+		<ParentMenuId>9970</ParentMenuId>
+		<SortOrder>6</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>987010</AppScreenId>
+		<ScreenName>Penggunaan Dana BABIT</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>987009</AppScreenId>
+		<ScreenName>Pembayaran</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>987009</AppMenuId>
+		<MenuName>Pembayaran</MenuName>
+		<ScreenId>987009</ScreenId>
+		<ParentMenuId>9970</ParentMenuId>
+		<SortOrder>7</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>987007</AppScreenId>
+		<ScreenName>Pengajuan Design Iklan</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>987007</AppMenuId>
+		<MenuName>Pengajuan Design Iklan</MenuName>
+		<ScreenId>987007</ScreenId>
+		<ParentMenuId>9970</ParentMenuId>
+		<SortOrder>8</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>987008</AppMenuId>
+		<MenuName>Daftar Pengajuan Iklan</MenuName>
+		<ScreenId>987008</ScreenId>
+		<ParentMenuId>9970</ParentMenuId>
+		<SortOrder>9</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>987008</AppScreenId>
+		<ScreenName>Daftar Pengajuan Iklan</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>987012</AppScreenId>
+		<ScreenName>Upload Rencana Aktivitas</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>987012</AppMenuId>
+		<MenuName>Upload Rencana Aktivitas</MenuName>
+		<ScreenId>987012</ScreenId>
+		<ParentMenuId>9970</ParentMenuId>
+		<SortOrder>10</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>9870999</AppScreenId>
+		<ScreenName>Daftar Rencana Aktivitas</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>9870999</AppMenuId>
+		<MenuName>Daftar Rencana Aktivitas</MenuName>
+		<ScreenId>9870999</ScreenId>
+		<ParentMenuId>9970</ParentMenuId>
+		<SortOrder>11</SortOrder>
+	</AppMenu>
+  -->
+
+  <AppScreen>
+    <AppScreenId>9970</AppScreenId>
+    <ScreenName>Babit</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>9970</AppMenuId>
+    <MenuName>Babit</MenuName>
+    <ScreenId>9970</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+
+  <AppMenu>
+    <AppMenuId>999903</AppMenuId>
+    <MenuName>Babit Alokasi Detail</MenuName>
+    <ScreenId>999903</ScreenId>
+    <ParentMenuId>9970</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>999903</AppScreenId>
+    <ScreenName>Babit Alokasi Detail</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  
+  <AppScreen>
+    <AppScreenId>987016</AppScreenId>
+    <ScreenName>Input Babit Event</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>987016</AppMenuId>
+    <MenuName>Input Babit Event</MenuName>
+    <ScreenId>987016</ScreenId>
+    <ParentMenuId>9970</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+
+  <AppScreen>
+    <AppScreenId>987615</AppScreenId>
+    <ScreenName>Input Babit Iklan</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>987615</AppMenuId>
+    <MenuName>Input Babit Iklan</MenuName>
+    <ScreenId>987615</ScreenId>
+    <ParentMenuId>9970</ParentMenuId>
+    <SortOrder>3</SortOrder>
+  </AppMenu>
+  
+  <AppScreen>
+    <AppScreenId>987017</AppScreenId>
+    <ScreenName>Input Babit Pameran</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>987017</AppMenuId>
+    <MenuName>Input Babit Pameran</MenuName>
+    <ScreenId>987017</ScreenId>
+    <ParentMenuId>9970</ParentMenuId>
+    <SortOrder>4</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99127</AppScreenId>
+    <ScreenName>Daftar Pengajuan Babit</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>99127</AppMenuId>
+    <MenuName>Daftar Pengajuan Babit</MenuName>
+    <ScreenId>99127</ScreenId>
+    <ParentMenuId>9970</ParentMenuId>
+    <SortOrder>5</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99135</AppScreenId>
+    <ScreenName>Input Laporan Babit Event</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>99135</AppMenuId>
+    <MenuName>Input Laporan Babit Event</MenuName>
+    <ScreenId>99135</ScreenId>
+    <ParentMenuId>9970</ParentMenuId>
+    <SortOrder>6</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>987020</AppScreenId>
+    <ScreenName>Input Laporan Babit Pameran</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>987020</AppMenuId>
+    <MenuName>Input Laporan Babit Pameran</MenuName>
+    <ScreenId>987020</ScreenId>
+    <ParentMenuId>9970</ParentMenuId>
+    <SortOrder>7</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>987021</AppScreenId>
+    <ScreenName>Input Laporan Babit Iklan</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>987021</AppMenuId>
+    <MenuName>Input Laporan Babit Iklan</MenuName>
+    <ScreenId>987021</ScreenId>
+    <ParentMenuId>9970</ParentMenuId>
+    <SortOrder>7</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99139</AppScreenId>
+    <ScreenName>Daftar Laporan Babit</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>99139</AppMenuId>
+    <MenuName>Daftar Laporan Babit</MenuName>
+    <ScreenId>99139</ScreenId>
+    <ParentMenuId>9970</ParentMenuId>
+    <SortOrder>8</SortOrder>
+  </AppMenu>
+  <AppMenu>
+    <AppMenuId>99131</AppMenuId>
+    <MenuName>Daftar Kuitansi Babit</MenuName>
+    <ScreenId>99131</ScreenId>
+    <ParentMenuId>9970</ParentMenuId>
+    <SortOrder>9</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99131</AppScreenId>
+    <ScreenName>Daftar Kuitansi</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>99133</AppMenuId>
+    <MenuName>Daftar Pencairan Babit</MenuName>
+    <ScreenId>99133</ScreenId>
+    <ParentMenuId>9970</ParentMenuId>
+    <SortOrder>10</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99133</AppScreenId>
+    <ScreenName>Daftar Pencairan Babit</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <!--END BABIT-->
+
+  <!--NATIONAL EVENT-->
+  <AppScreen>
+    <AppScreenId>9978</AppScreenId>
+    <ScreenName>Event Nasional</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>9978</AppMenuId>
+    <MenuName>Event Nasional</MenuName>
+    <ScreenId>9978</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>3</SortOrder>
+  </AppMenu>
+
+  <!--<AppMenu>
+    <AppMenuId>99140</AppMenuId>
+    <MenuName>Input Event Nasional</MenuName>
+    <ScreenId>99140</ScreenId>
+    <ParentMenuId>9978</ParentMenuId>
+    <SortOrder>4</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99140</AppScreenId>
+    <ScreenName>Input Event Nasional</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>-->
+
+  <AppMenu>
+    <AppMenuId>99150</AppMenuId>
+    <MenuName>Daftar Event Nasional</MenuName>
+    <ScreenId>99150</ScreenId>
+    <ParentMenuId>9978</ParentMenuId>
+    <SortOrder>5</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99150</AppScreenId>
+    <ScreenName>Daftar Event Nasional</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <!-- END NATIONAL EVENT -->
+  
+  <!--EVENT-->
+
+  <AppScreen>
+    <AppScreenId>38188</AppScreenId>
+    <ScreenName>Event</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>38188</AppMenuId>
+    <MenuName>Event</MenuName>
+    <ScreenId>38188</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+  <AppMenu>
+    <AppMenuId>99132</AppMenuId>
+    <MenuName>Daftar Event Dealer</MenuName>
+    <ScreenId>99132</ScreenId>
+    <ParentMenuId>38188</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99132</AppScreenId>
+    <ScreenName>Daftar Event Dealer</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppScreen>
+    <AppScreenId>987018</AppScreenId>
+    <ScreenName>Input Proposal Event</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>987018</AppMenuId>
+    <MenuName>Input Proposal Event</MenuName>
+    <ScreenId>987018</ScreenId>
+    <ParentMenuId>38188</ParentMenuId>
+    <SortOrder>3</SortOrder>
+  </AppMenu>
+  <AppMenu>
+    <AppMenuId>99128</AppMenuId>
+    <MenuName>Daftar Proposal Event</MenuName>
+    <ScreenId>99128</ScreenId>
+    <ParentMenuId>38188</ParentMenuId>
+    <SortOrder>4</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99128</AppScreenId>
+    <ScreenName>Daftar Proposal Event</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppScreen>
+    <AppScreenId>987019</AppScreenId>
+    <ScreenName>Input Laporan Event</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>987019</AppMenuId>
+    <MenuName>Input Laporan Event</MenuName>
+    <ScreenId>987019</ScreenId>
+    <ParentMenuId>38188</ParentMenuId>
+    <SortOrder>5</SortOrder>
+  </AppMenu>
+  <AppMenu>
+    <AppMenuId>99129</AppMenuId>
+    <MenuName>Daftar Laporan Event</MenuName>
+    <ScreenId>99129</ScreenId>
+    <ParentMenuId>38188</ParentMenuId>
+    <SortOrder>6</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99129</AppScreenId>
+    <ScreenName>Daftar Laporan Event</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>99134</AppMenuId>
+    <MenuName>Daftar Kuitansi Event</MenuName>
+    <ScreenId>99134</ScreenId>
+    <ParentMenuId>38188</ParentMenuId>
+    <SortOrder>7</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99134</AppScreenId>
+    <ScreenName>Daftar Kuitansi Event</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>99136</AppMenuId>
+    <MenuName>Daftar Pencairan Event</MenuName>
+    <ScreenId>99136</ScreenId>
+    <ParentMenuId>38188</ParentMenuId>
+    <SortOrder>10</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99136</AppScreenId>
+    <ScreenName>Daftar Pencairan Event</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <!--END EVENT-->
+  
+  <!--MATERIAL PROMOSI -->
+	<AppScreen>
+		<AppScreenId>380</AppScreenId>
+		<ScreenName>Material Promosi</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>380</AppMenuId>
+		<MenuName>Material Promosi</MenuName>
+		<ScreenId>380</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>1</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>385</AppScreenId>
+		<ScreenName>Daftar Permintaan Material Promosi</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>385</AppMenuId>
+		<MenuName>Daftar Permintaan Material Promosi</MenuName>
+		<ScreenId>385</ScreenId>
+		<ParentMenuId>380</ParentMenuId>
+		<SortOrder>5</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>391</AppScreenId>
+		<ScreenName>Permintaan Material Promosi</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>391</AppMenuId>
+		<MenuName>Permintaan Material Promosi</MenuName>
+		<ScreenId>391</ScreenId>
+		<ParentMenuId>380</ParentMenuId>
+		<SortOrder>4</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>384</AppScreenId>
+		<ScreenName>Alokasi material Promosi</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>384</AppMenuId>
+		<MenuName>Alokasi Material Promosi</MenuName>
+		<ScreenId>384</ScreenId>
+		<ParentMenuId>380</ParentMenuId>
+		<SortOrder>3</SortOrder>
+	</AppMenu>
+	<!--END MATERIAL PROMOSI-->
+	
+	<!--EVENT-->
+  <!--
+	<AppMenu>
+		<AppMenuId>9995</AppMenuId>
+		<MenuName>Event</MenuName>
+		<ScreenId>9995</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>9995</AppScreenId>
+		<ScreenName>Event</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+  -->
+    <!--
+	<AppScreen>
+		<AppScreenId>99953</AppScreenId>
+		<ScreenName>Daftar Event</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99953</AppMenuId>
+		<MenuName>Daftar Event</MenuName>
+		<ScreenId>99953</ScreenId>
+		<ParentMenuId>9995</ParentMenuId>
+		<SortOrder>3</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>99956</AppMenuId>
+		<MenuName>Konfirmasi Event</MenuName>
+		<ScreenId>99956</ScreenId>
+		<ParentMenuId>9995</ParentMenuId>
+		<SortOrder>6</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99956</AppScreenId>
+		<ScreenName>Konfirmasi Event</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>99957</AppScreenId>
+		<ScreenName>Daftar Info Event</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99957</AppMenuId>
+		<MenuName>Daftar Info Event</MenuName>
+		<ScreenId>99957</ScreenId>
+		<ParentMenuId>9995</ParentMenuId>
+		<SortOrder>7</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99961</AppScreenId>
+		<ScreenName>List Dokumen</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99961</AppMenuId>
+		<MenuName>List Dokumen</MenuName>
+		<ScreenId>99961</ScreenId>
+		<ParentMenuId>9995</ParentMenuId>
+		<SortOrder>7</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99958</AppScreenId>
+		<ScreenName>Realisasi Event</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99958</AppMenuId>
+		<MenuName>Realisasi Event</MenuName>
+		<ScreenId>99958</ScreenId>
+		<ParentMenuId>9995</ParentMenuId>
+		<SortOrder>8</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99959</AppScreenId>
+		<ScreenName>Daftar Realisasi Event</ScreenName>
+		<NavigateUrl>default_promotion.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99959</AppMenuId>
+		<MenuName>Daftar Realisasi Event</MenuName>
+		<ScreenId>99959</ScreenId>
+		<ParentMenuId>9995</ParentMenuId>
+		<SortOrder>9</SortOrder>
+	</AppMenu>
+	-->
+    <!--
+    <AppScreen>
+        <AppScreenId>999603</AppScreenId>
+        <ScreenName>List Parameter Event</ScreenName>
+        <NavigateUrl>default_promotion.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>999603</AppMenuId>
+        <MenuName>List Parameter Event</MenuName>
+        <ScreenId>999603</ScreenId>
+        <ParentMenuId>9995</ParentMenuId>
+        <SortOrder>1</SortOrder>
+    </AppMenu>
+    <AppScreen>
+        <AppScreenId>9996040</AppScreenId>
+        <ScreenName>Form Truck Campaign Event</ScreenName>
+        <NavigateUrl>default_promotion.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>9996040</AppMenuId>
+        <MenuName>Form Truck Campaign Event</MenuName>
+        <ScreenId>9996040</ScreenId>
+        <ParentMenuId>9995</ParentMenuId>
+        <SortOrder>2</SortOrder>
+    </AppMenu>
+    <AppScreen>
+        <AppScreenId>9996041</AppScreenId>
+        <ScreenName>Form Small Gathering Event</ScreenName>
+        <NavigateUrl>default_promotion.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>9996041</AppMenuId>
+        <MenuName>Form Small Gathering Event</MenuName>
+        <ScreenId>9996041</ScreenId>
+        <ParentMenuId>9995</ParentMenuId>
+        <SortOrder>3</SortOrder>
+    </AppMenu>
+    <AppScreen>
+        <AppScreenId>9996042</AppScreenId>
+        <ScreenName>Form Strada Triton Event</ScreenName>
+        <NavigateUrl>default_promotion.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>9996042</AppMenuId>
+        <MenuName>Form Strada Triton Event</MenuName>
+        <ScreenId>9996042</ScreenId>
+        <ParentMenuId>9995</ParentMenuId>
+        <SortOrder>4</SortOrder>
+    </AppMenu>
+    <AppScreen>
+        <AppScreenId>9996043</AppScreenId>
+        <ScreenName>Form Event Lainnya</ScreenName>
+        <NavigateUrl>default_promotion.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>9996043</AppMenuId>
+        <MenuName>Form Event Lainnya</MenuName>
+        <ScreenId>9996043</ScreenId>
+        <ParentMenuId>9995</ParentMenuId>
+        <SortOrder>5</SortOrder>
+    </AppMenu>
+    <AppScreen>
+        <AppScreenId>999605</AppScreenId>
+        <ScreenName>List Proposal</ScreenName>
+        <NavigateUrl>default_promotion.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>999605</AppMenuId>
+        <MenuName>List Proposal</MenuName>
+        <ScreenId>999605</ScreenId>
+        <ParentMenuId>9995</ParentMenuId>
+        <SortOrder>6</SortOrder>
+    </AppMenu>
+    <AppScreen>
+        <AppScreenId>999606</AppScreenId>
+        <ScreenName>List Persetujuan</ScreenName>
+        <NavigateUrl>default_promotion.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>999606</AppMenuId>
+        <MenuName>List Persetujuan</MenuName>
+        <ScreenId>999606</ScreenId>
+        <ParentMenuId>9995</ParentMenuId>
+        <SortOrder>7</SortOrder>
+    </AppMenu>
+    <AppScreen>
+        <AppScreenId>9996050</AppScreenId>
+        <ScreenName>List Penyelesaian</ScreenName>
+        <NavigateUrl>default_promotion.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>9996050</AppMenuId>
+        <MenuName>List Penyelesaian</MenuName>
+        <ScreenId>9996050</ScreenId>
+        <ParentMenuId>9995</ParentMenuId>
+        <SortOrder>8</SortOrder>
+    </AppMenu>
+    <AppScreen>
+        <AppScreenId>20091116</AppScreenId>
+        <ScreenName>Form/Report Laporan Penjualan</ScreenName>
+        <NavigateUrl>default_promotion.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>20091116</AppMenuId>
+        <MenuName>Form/Report Laporan Penjualan</MenuName>
+        <ScreenId>20091116</ScreenId>
+        <ParentMenuId>9995</ParentMenuId>
+        <SortOrder>8</SortOrder>
+    </AppMenu>
+    -->
+    <!--END EVENT-->
+
+  <!--Start Babit Improvement-->
+  <AppMenu>
+    <AppMenuId>99170</AppMenuId>
+    <MenuName>Report SPK Status</MenuName>
+    <ScreenId>99170</ScreenId>
+    <ParentMenuId>9978</ParentMenuId>
+    <SortOrder>12</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99170</AppScreenId>
+    <ScreenName>Report SPK Status</ScreenName>
+    <NavigateUrl>default_promotion.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <!--End Babit Improvement-->
+
+</AppNavigationSchema>

@@ -1,0 +1,25 @@
+SELECT 
+	IDRow
+	,company
+	,businessunitcode
+	,xts_stocknumber
+	,xts_warehouse
+	,xts_productexteriorcolor
+	,xts_totalvalue
+	,xts_product
+	,xts_productdescription
+	,ktb_applicationno
+	,xts_keynumber
+	,xts_chassisnumber
+	,ktb_vendorid
+	,xts_vendor
+	,iskaroseri
+	,xts_purchaseprice
+	,ktb_caroseriesamount
+	,description
+	,ktb_bucompany
+	,stockstatus
+	,availabilitystatus
+	,msdyn_companycode
+FROM VWI_CRM_SLS_VehicleStock WITH (NOLOCK)
+WHERE ID = @Id

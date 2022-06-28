@@ -1,0 +1,55 @@
+SELECT 
+    ROW_NUMBER() OVER (Order by 0) AS IDRow
+      ,company
+      ,businessunitcode
+      ,createdonbehalfbyyominame
+      ,owninguser
+      ,ktb_karoseriid
+      ,statecode
+      ,owneridname
+      ,ktb_provinceidname
+      ,statecodename
+      ,createdonbehalfby
+      ,ktb_karoseri
+      ,ktb_cityid
+      ,importsequencenumber
+      ,modifiedbyyominame
+      ,ktb_code
+      ,ktb_provinceid
+      ,utcconversiontimezonecode
+      ,createdbyyominame
+      ,owningbusinessunit
+      ,modifiedbyname
+      ,owningteam
+      ,modifiedby
+      ,createdby
+      ,timezoneruleversionnumber
+      ,ktb_cityidname
+      ,owneridtype
+      ,statuscodename
+      ,ktb_isinterfaced
+      ,owneridyominame
+      ,ktb_isinterfacedname
+      ,modifiedon
+      ,modifiedonbehalfbyyominame
+      ,statuscode
+      ,createdbyname
+      ,createdon
+      ,createdonbehalfbyname
+      ,modifiedonbehalfbyname
+      ,versionnumber
+      ,modifiedonbehalfby
+      ,ownerid
+      ,overriddencreatedon
+      ,msdyn_companycode
+from (
+	select 
+		 b.ktb_bucompany as company
+		, b.ktb_dealercode as businessunitcode  
+		, a.*  
+		, b.msdyn_companycode  
+	from CRM_ktb_karoseri a with(nolock)  
+	left join CRM_businessunit b with(nolock)
+	on a.owningbusinessunit = b.businessunitid
+	where ktb_karoseriid = @Id
+) VWI_CRM_ktb_karoseri

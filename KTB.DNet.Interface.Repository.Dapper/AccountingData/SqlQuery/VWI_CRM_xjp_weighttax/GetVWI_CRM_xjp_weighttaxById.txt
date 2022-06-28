@@ -1,0 +1,47 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow  
+	, xjp_weighttaxdimension4id
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, xjp_weighttaxdimension1id
+	, xjp_weighttax
+	, statecodename
+	, createdonbehalfby
+	, xjp_weighttaxdimension2id
+	, xjp_weighttaxdimension5id
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, statecode
+	, xjp_weighttaxdimension3idname
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, xjp_locking
+	, createdby
+	, timezoneruleversionnumber
+	, xjp_weighttaxid
+	, xjp_weighttaxdimension6idname
+	, xjp_weighttaxdimension1idname
+	, xjp_description
+	, xjp_weighttaxdimension6id
+	, modifiedon
+	, xjp_weighttaxdimension2idname
+	, xjp_weighttaxdimension4idname
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, statuscodename
+	, modifiedonbehalfbyname
+	, xjp_weighttaxdimension3id
+	, xjp_accountid
+	, xjp_weighttaxdimension5idname
+	, overriddencreatedon
+	, xjp_accountidname
+FROM CRM_xjp_weighttax as VWI_CRM_xjp_weighttax with (nolock)
+WHERE xjp_weighttaxid = @Id

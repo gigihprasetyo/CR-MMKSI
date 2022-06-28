@@ -1,0 +1,70 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,statecode
+	,xts_businessunitidname
+	,owneridname
+	,statecodename
+	,xts_codetrigger
+	,createdonbehalfby
+	,transactioncurrencyid
+	,xts_handlingname
+	,xts_handling
+	,xts_writeoffbalanceid
+	,xts_writeofflimit
+	,xts_customeridname
+	,xts_parentbusinessunitid
+	,importsequencenumber
+	,modifiedbyyominame
+	,xts_parrentbusinessunitid
+	,xts_statusname
+	,xts_transactiondate
+	,xts_customeridyominame
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,xts_writeofflimit_base
+	,owneridyominame
+	,modifiedon
+	,exchangerate
+	,xts_customerid
+	,xts_customernumber
+	,xts_writeofftype
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,xts_writeofftypename
+	,createdonbehalfbyname
+	,xts_status
+	,modifiedonbehalfbyname
+	,xts_writeoffbalancenumber
+	,xts_parrentbusinessunitidname
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,xts_parentbusinessunitidname
+	,RowStatus
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_writeoffbalance a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_writeoffbalanceid = @Id
+) VWI_CRM_xts_writeoffbalance 

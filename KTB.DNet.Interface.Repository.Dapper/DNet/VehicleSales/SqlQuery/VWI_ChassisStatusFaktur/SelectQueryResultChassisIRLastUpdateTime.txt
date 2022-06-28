@@ -1,0 +1,73 @@
+﻿	SELECT 
+/**PagingIndexQuery**/ 
+VWI_ChassisStatusFaktur.ID,
+VWI_ChassisStatusFaktur.ChassisNumber,
+VWI_ChassisStatusFaktur.DealerCode,
+VWI_ChassisStatusFaktur.DealerName,
+VWI_ChassisStatusFaktur.RevisionStatus,
+VWI_ChassisStatusFaktur.RevisionDate,
+VWI_ChassisStatusFaktur.RevisionType,
+VWI_ChassisStatusFaktur.SPKNumber,
+VWI_ChassisStatusFaktur.DealerSPKNumber,
+VWI_ChassisStatusFaktur.FakturNumber,
+VWI_ChassisStatusFaktur.FakturDate,
+VWI_ChassisStatusFaktur.OpenFakturDate,
+VWI_ChassisStatusFaktur.ValidateDate,
+VWI_ChassisStatusFaktur.ConfirmDate,
+VWI_ChassisStatusFaktur.DownloadDate,
+VWI_ChassisStatusFaktur.PrintedDate,
+VWI_ChassisStatusFaktur.FakturStatus,
+VWI_ChassisStatusFaktur.ETDDate,
+VWI_ChassisStatusFaktur.EffectiveDate,
+VWI_ChassisStatusFaktur.ReleaseDate,
+VWI_ChassisStatusFaktur.ATDDate,
+VWI_ChassisStatusFaktur.ETADate,
+VWI_ChassisStatusFaktur.ATADate
+/**EndPagingIndexQuery**/
+FROM
+(
+   SELECT a.ID, a.ChassisNumber, a.SoldDealerID, e.DealerCode, e.DealerName, RevisionStatus = e.RevisionStatusDesc, RevisionDate=e.CreatedTime, RevisionType = e.RevisionTypeDesc, e.SPKNumber,e.DealerSPKNumber,
+	   b.FakturNumber, b.FakturDate, b.OpenFakturDate, ValidateDate=b.ValidateTime, ConfirmDate=b.ConfirmTime, DownloadDate=b.DownloadTime, PrintedDate=b.PrintedTime, FakturStatus = e.RevisionStatus
+	   , a.ETDDate, a.EffectiveDate, a.ReleaseDate, a.GIDate as ATDDate, a.ETA as ETADate, a.ATA as ATADate
+   FROM
+   (
+          SELECT a.ChassisMasterID , a.EndCustomerId,a.OldEndCustomerID,a.SPKHeaderID,
+                 a.RevisionStatus, a.RevisionStatusDesc,
+				 a.RevisionTypeID, a.RevisionTypeDesc, a.NewConfirmationDate, a.CreatedTime, a.LastUpdateTime,
+				 c.DealerCode, c.DealerName, d.SPKNumber,d.DealerSPKNumber
+          FROM
+          (
+	              SELECT ChassisMasterID , a.EndCustomerId, d.EndCustomerID as OldEndCustomerID,d.SPKHeaderID,
+				         RevisionStatus, RevisionStatusDesc = CASE a.RevisionStatus WHEN 0 THEN 'AWAL' WHEN 1 THEN 'VALIDASI' WHEN 2 THEN 'KONFIRMASI' WHEN 3 THEN 'PROCESS' WHEN 4 THEN 'SELESAI' WHEN -1 THEN 'BATAL' END, 
+						 RevisionTypeID, b.Description as RevisionTypeDesc, 
+				         a.NewConfirmationDate, a.CreatedTime, a.LastUpdateTime 
+	              FROM RevisionFaktur a WITH (NOLOCK)
+	              LEFT JOIN RevisionType b WITH (NOLOCK) on a.RevisionTypeID = b.ID and b.RowStatus = 0
+				  LEFT JOIN ChassisMaster c WITH (NOLOCK) on a.ChassisMasterID=c.ID and c.RowStatus=0
+				  LEFT JOIN SPKFaktur d WITH (NOLOCK) on c.EndCustomerID=d.EndCustomerID and d.RowStatus=0
+	              where a.RowStatus = 0 and a.LastUpdateTime > @LastUpdateTime
+		  ) a               
+		  CROSS APPLY FNI_GetLatestSPKForChassis(a.ChassisMasterID) b 
+		  JOIN Dealer c WITH(NOLOCK) on b.DealerID = c.ID and c.RowStatus = 0 
+		  JOIN SPKHeader d WITH(NOLOCK) on a.SPKHeaderID = d.ID and d.RowStatus = 0
+		  WHERE c.DealerCode = @DealerCode
+   ) e 
+   JOIN
+   (
+	   SELECT a.* 
+	          ,b.ReqAllocationDateTime as ETDDate, b.EffectiveDate
+	          ,case when b.ReleaseYear = 0 then cast('1753-1-1' as datetime) else CONVERT(Datetime,cast(b.ReleaseYear as varchar)+'-'+cast(b.ReleaseMonth as varchar)+'-'+cast(b.ReleaseDate as varchar)) end as ReleaseDate
+			  ,c.ETA, c.ATA
+	   FROM
+	   (
+	      SELECT * FROM ChassisMaster a WITH(NOLOCK) where RowStatus = 0
+	   ) a
+	   LEFT JOIN POHeader b WITH (NOLOCK) on a.SONumber = b.SONumber and b.RowStatus = 0
+	   LEFT JOIN ChassisMasterATA c WITH (NOLOCK) on a.ID = c.ChassisMasterID and c.RowStatus = 0
+   ) a on a.ID = e.ChassisMasterID
+   JOIN 
+   (
+	   SELECT * FROM EndCustomer b WITH(NOLOCK) WHERE RowStatus = 0 --and b.FakturDate >= '2017-04-01'
+   ) b  ON e.EndCustomerID = b.ID
+   JOIN StandardCode d WITH(NOLOCK) on a.FakturStatus = d.ValueId and d.Category = 'EnumFakturStatus' and d.RowStatus = 0
+) VWI_ChassisStatusFaktur

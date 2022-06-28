@@ -1,0 +1,68 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_discountsetup.company
+    , VWI_CRM_xts_discountsetup.businessunitcode
+    , VWI_CRM_xts_discountsetup.xts_discountsetupid
+    , VWI_CRM_xts_discountsetup.modifiedbyyominame
+    , VWI_CRM_xts_discountsetup.createdbyname
+    , VWI_CRM_xts_discountsetup.xts_discountsetup
+    , VWI_CRM_xts_discountsetup.modifiedon
+    , VWI_CRM_xts_discountsetup.xts_discountcategory
+    , VWI_CRM_xts_discountsetup.createdbyyominame
+    , VWI_CRM_xts_discountsetup.modifiedbyname
+    , VWI_CRM_xts_discountsetup.xts_discounttypename
+    , VWI_CRM_xts_discountsetup.modifiedby
+    , VWI_CRM_xts_discountsetup.modifiedonbehalfby
+    , VWI_CRM_xts_discountsetup.ownerid
+    , VWI_CRM_xts_discountsetup.xts_locking
+    , VWI_CRM_xts_discountsetup.xts_currencyid
+    , VWI_CRM_xts_discountsetup.owneridname
+    , VWI_CRM_xts_discountsetup.createdby
+    , VWI_CRM_xts_discountsetup.importsequencenumber
+    , VWI_CRM_xts_discountsetup.xts_effectiveto
+    , VWI_CRM_xts_discountsetup.xts_offertype
+    , VWI_CRM_xts_discountsetup.xts_businessunitidname
+    , VWI_CRM_xts_discountsetup.xts_parentbusinessunitid
+    , VWI_CRM_xts_discountsetup.xts_discountcategoryname
+    , VWI_CRM_xts_discountsetup.versionnumber
+    , VWI_CRM_xts_discountsetup.createdon
+    , VWI_CRM_xts_discountsetup.xts_description
+    , VWI_CRM_xts_discountsetup.owneridtype
+    , VWI_CRM_xts_discountsetup.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_discountsetup.xts_offertypename
+    , VWI_CRM_xts_discountsetup.xts_pkcombinationkey
+    , VWI_CRM_xts_discountsetup.createdonbehalfby
+    , VWI_CRM_xts_discountsetup.overriddencreatedon
+    , VWI_CRM_xts_discountsetup.createdonbehalfbyname
+    , VWI_CRM_xts_discountsetup.owninguser
+    , VWI_CRM_xts_discountsetup.statuscodename
+    , VWI_CRM_xts_discountsetup.createdonbehalfbyyominame
+    , VWI_CRM_xts_discountsetup.owningbusinessunit
+    , VWI_CRM_xts_discountsetup.timezoneruleversionnumber
+    , VWI_CRM_xts_discountsetup.xts_currencyidname
+    , VWI_CRM_xts_discountsetup.statecodename
+    , VWI_CRM_xts_discountsetup.owningteam
+    , VWI_CRM_xts_discountsetup.modifiedonbehalfbyname
+    , VWI_CRM_xts_discountsetup.statuscode
+    , VWI_CRM_xts_discountsetup.xts_discounttype
+    , VWI_CRM_xts_discountsetup.statecode
+    , VWI_CRM_xts_discountsetup.xts_businessunitid
+    , VWI_CRM_xts_discountsetup.owneridyominame
+    , VWI_CRM_xts_discountsetup.xts_parentbusinessunitidname
+    , VWI_CRM_xts_discountsetup.ktb_keyclonediscountsetup
+    , VWI_CRM_xts_discountsetup.xts_effectivefrom
+    , VWI_CRM_xts_discountsetup.utcconversiontimezonecode
+    , VWI_CRM_xts_discountsetup.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_discountsetup a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_discountsetup  

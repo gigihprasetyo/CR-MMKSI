@@ -1,0 +1,90 @@
+SELECT 
+      ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , xts_uvsoreferralinformation
+    , versionnumber
+    , xts_consumptiontaxid
+    , createdon
+    , statuscodename
+    , xts_methodofpaymentidname
+    , xjp_accounttypename
+    , xts_reasonid
+    , xts_uvsqreferralinformationlineidname
+    , xts_consumptiontaxidname
+    , xts_totalpaymentamount
+    , xts_commission
+    , owneridtype
+    , xts_referralidname
+    , modifiedbyname
+    , xts_salesorderid
+    , xts_salesorderidname
+    , owneridname
+    , overriddencreatedon
+    , xts_referralid
+    , xts_referraldescription
+    , createdonbehalfbyyominame
+    , modifiedonbehalfby
+    , exchangerate
+    , xts_apvoucheridname
+    , owningteam
+    , xts_balance
+    , statecode
+    , timezoneruleversionnumber
+    , xts_uvsqreferralinformationlineid
+    , xts_totalpaymentamount_base
+    , xts_parentbusinessunitid
+    , xts_commission_base
+    , xts_consumptiontaxamount
+    , xts_totalamount_base
+    , createdonbehalfbyname
+    , xts_referralidyominame
+    , xts_locking
+    , createdby
+    , utcconversiontimezonecode
+    , xts_businessunitid
+    , ownerid
+    , modifiedon
+    , importsequencenumber
+    , xts_consumptiontaxamount_base
+    , statuscode
+    , createdbyname
+    , owninguser
+    , xts_methodofpaymentid
+    , modifiedonbehalfbyname
+    , xts_balance_base
+    , transactioncurrencyid
+    , createdonbehalfby
+    , modifiedby
+    , xts_referralvendorid
+    , createdbyyominame
+    , xts_reasonidname
+    , transactioncurrencyidname
+    , xts_accountnumber
+    , owningbusinessunit
+    , modifiedbyyominame
+    , xts_parentbusinessunitidname
+    , xts_totalamount
+    , xts_bankid
+    , xjp_accounttype
+    , xts_referralvendoridname
+    , modifiedonbehalfbyyominame
+    , owneridyominame
+    , xts_apvoucherid
+    , xts_uvsoreferralinformationid
+    , xts_bankidname
+    , statecodename
+    , xts_businessunitidname
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_uvsoreferralinformation a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_uvsoreferralinformationid = @Id
+) as VWI_CRM_xts_uvsoreferralinformation  
+

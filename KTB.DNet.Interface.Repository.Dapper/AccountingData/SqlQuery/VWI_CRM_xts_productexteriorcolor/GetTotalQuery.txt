@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xts_productexteriorcolor as VWI_CRM_xts_productexteriorcolor with (nolock)  
+{0}

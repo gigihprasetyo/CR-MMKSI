@@ -1,0 +1,41 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_xts_productinteriorcolor.xts_interiorcoloridname
+    , VWI_CRM_xts_productinteriorcolor.createdonbehalfbyyominame
+    , VWI_CRM_xts_productinteriorcolor.modifiedonbehalfby
+    , VWI_CRM_xts_productinteriorcolor.statecode
+    , VWI_CRM_xts_productinteriorcolor.statecodename
+    , VWI_CRM_xts_productinteriorcolor.createdonbehalfby
+    , VWI_CRM_xts_productinteriorcolor.xts_pkcombinationkey
+    , VWI_CRM_xts_productinteriorcolor.xts_interiorcolorid
+    , VWI_CRM_xts_productinteriorcolor.importsequencenumber
+    , VWI_CRM_xts_productinteriorcolor.organizationidname
+    , VWI_CRM_xts_productinteriorcolor.modifiedbyyominame
+    , VWI_CRM_xts_productinteriorcolor.utcconversiontimezonecode
+    , VWI_CRM_xts_productinteriorcolor.createdbyyominame
+    , VWI_CRM_xts_productinteriorcolor.modifiedbyname
+    , VWI_CRM_xts_productinteriorcolor.versionnumber
+    , VWI_CRM_xts_productinteriorcolor.modifiedby
+    , VWI_CRM_xts_productinteriorcolor.createdby
+    , VWI_CRM_xts_productinteriorcolor.timezoneruleversionnumber
+    , VWI_CRM_xts_productinteriorcolor.xts_productinteriorcolor
+    , VWI_CRM_xts_productinteriorcolor.statuscodename
+    , VWI_CRM_xts_productinteriorcolor.xts_sharedproductidname
+    , VWI_CRM_xts_productinteriorcolor.xts_sharedproductid
+    , VWI_CRM_xts_productinteriorcolor.modifiedon
+    , VWI_CRM_xts_productinteriorcolor.xts_eventdata
+    , VWI_CRM_xts_productinteriorcolor.xts_entitytag
+    , VWI_CRM_xts_productinteriorcolor.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_productinteriorcolor.statuscode
+    , VWI_CRM_xts_productinteriorcolor.createdbyname
+    , VWI_CRM_xts_productinteriorcolor.createdon
+    , VWI_CRM_xts_productinteriorcolor.organizationid
+    , VWI_CRM_xts_productinteriorcolor.createdonbehalfbyname
+    , VWI_CRM_xts_productinteriorcolor.modifiedonbehalfbyname
+    , VWI_CRM_xts_productinteriorcolor.xts_productinteriorcolorid
+    , VWI_CRM_xts_productinteriorcolor.overriddencreatedon
+    , VWI_CRM_xts_productinteriorcolor.xts_description
+    /**EndPagingIndexQuery**/
+FROM CRM_xts_productinteriorcolor as VWI_CRM_xts_productinteriorcolor WITH (NOLOCK) 
+{0}

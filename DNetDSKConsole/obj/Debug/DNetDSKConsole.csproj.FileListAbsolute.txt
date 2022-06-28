@@ -1,0 +1,8 @@
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\DNetDSKConsole\bin\Debug\DNetDSKConsole.exe.config
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\DNetDSKConsole\bin\Debug\DNetDSKConsole.exe
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\DNetDSKConsole\bin\Debug\DNetDSKConsole.pdb
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\DNetDSKConsole\bin\Debug\System.Net.Http.Formatting.dll
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\DNetDSKConsole\bin\Debug\Newtonsoft.Json.dll
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\DNetDSKConsole\bin\Debug\System.Net.Http.Formatting.xml
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\DNetDSKConsole\obj\Debug\DNetDSKConsole.exe
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\DNetDSKConsole\obj\Debug\DNetDSKConsole.pdb

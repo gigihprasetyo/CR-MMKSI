@@ -1,0 +1,25 @@
+SELECT 
+ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow,
+VWI_CRM_ktb_lkpp.ktb_lkppid,
+VWI_CRM_ktb_lkpp.company,
+VWI_CRM_ktb_lkpp.businessunitcode,
+VWI_CRM_ktb_lkpp.ktb_tanggalpengajuan,
+VWI_CRM_ktb_lkpp.ktb_nopengadaan,
+VWI_CRM_ktb_lkpp.ktb_metodepengadaan,
+VWI_CRM_ktb_lkpp.ktb_namacustomer,
+VWI_CRM_ktb_lkpp.ktb_deskripsi,
+VWI_CRM_ktb_lkpp.ktb_status,
+VWI_CRM_ktb_lkpp.ktb_catatan,
+VWI_CRM_ktb_lkpp.createdon,
+VWI_CRM_ktb_lkpp.modifiedon
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_ktb_lkpp a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.ktb_businessunitid    
+	where a.ktb_lkppid = @Id
+) as VWI_CRM_ktb_lkpp

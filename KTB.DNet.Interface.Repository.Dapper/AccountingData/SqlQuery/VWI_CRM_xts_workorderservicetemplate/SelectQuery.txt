@@ -1,0 +1,78 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_workorderservicetemplate.company
+	, VWI_CRM_xts_workorderservicetemplate.businessunitcode
+	, VWI_CRM_xts_workorderservicetemplate.xts_workorderid
+	, VWI_CRM_xts_workorderservicetemplate.createdonbehalfbyyominame
+	, VWI_CRM_xts_workorderservicetemplate.owninguser
+	, VWI_CRM_xts_workorderservicetemplate.xts_locking
+	, VWI_CRM_xts_workorderservicetemplate.statecode
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicecategoryid
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicetemplatesubgroupid
+	, VWI_CRM_xts_workorderservicetemplate.owneridname
+	, VWI_CRM_xts_workorderservicetemplate.xts_workorderservicetemplate
+	, VWI_CRM_xts_workorderservicetemplate.statecodename
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicetemplateparentgroupid
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicetemplateid
+	, VWI_CRM_xts_workorderservicetemplate.createdonbehalfby
+	, VWI_CRM_xts_workorderservicetemplate.xts_workorderidname
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicetemplateidname
+	, VWI_CRM_xts_workorderservicetemplate.xts_parentbusinessunitid
+	, VWI_CRM_xts_workorderservicetemplate.xts_reasonidname
+	, VWI_CRM_xts_workorderservicetemplate.xts_reasonid
+	, VWI_CRM_xts_workorderservicetemplate.importsequencenumber
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicetemplategroupidname
+	, VWI_CRM_xts_workorderservicetemplate.modifiedbyyominame
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicetemplategroupid
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicetemplatesubgroupidname
+	, VWI_CRM_xts_workorderservicetemplate.utcconversiontimezonecode
+	, VWI_CRM_xts_workorderservicetemplate.createdbyyominame
+	, VWI_CRM_xts_workorderservicetemplate.owningbusinessunit
+	, VWI_CRM_xts_workorderservicetemplate.modifiedbyname
+	, VWI_CRM_xts_workorderservicetemplate.owningteam
+	, VWI_CRM_xts_workorderservicetemplate.modifiedby
+	, VWI_CRM_xts_workorderservicetemplate.createdby
+	, VWI_CRM_xts_workorderservicetemplate.timezoneruleversionnumber
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicetemplatevehiclepriceclassidname
+	, VWI_CRM_xts_workorderservicetemplate.owneridtype
+	, VWI_CRM_xts_workorderservicetemplate.statuscodename
+	, VWI_CRM_xts_workorderservicetemplate.xts_workorderservicetemplateid
+	, VWI_CRM_xts_workorderservicetemplate.ktb_intervaltimeday
+	, VWI_CRM_xts_workorderservicetemplate.xts_businessunitidname
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicecategoryidname
+	, VWI_CRM_xts_workorderservicetemplate.owneridyominame
+	, VWI_CRM_xts_workorderservicetemplate.modifiedon
+	, VWI_CRM_xts_workorderservicetemplate.xts_departmentidname
+	, VWI_CRM_xts_workorderservicetemplate.xts_calculationmethodname
+	, VWI_CRM_xts_workorderservicetemplate.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_workorderservicetemplate.statuscode
+	, VWI_CRM_xts_workorderservicetemplate.createdbyname
+	, VWI_CRM_xts_workorderservicetemplate.createdon
+	, VWI_CRM_xts_workorderservicetemplate.xts_businessunitid
+	, VWI_CRM_xts_workorderservicetemplate.createdonbehalfbyname
+	, VWI_CRM_xts_workorderservicetemplate.xts_departmentid
+	, VWI_CRM_xts_workorderservicetemplate.modifiedonbehalfbyname
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicetemplatevehiclepriceclassid
+	, VWI_CRM_xts_workorderservicetemplate.xts_calculationmethod
+	, VWI_CRM_xts_workorderservicetemplate.xts_parentbusinessunitidname
+	, VWI_CRM_xts_workorderservicetemplate.versionnumber
+	, VWI_CRM_xts_workorderservicetemplate.modifiedonbehalfby
+	, VWI_CRM_xts_workorderservicetemplate.xts_servicetemplateparentgroupidname
+	, VWI_CRM_xts_workorderservicetemplate.ktb_kindcode
+	, VWI_CRM_xts_workorderservicetemplate.ownerid
+	, VWI_CRM_xts_workorderservicetemplate.overriddencreatedon
+	, VWI_CRM_xts_workorderservicetemplate.xts_description
+	, VWI_CRM_xts_workorderservicetemplate.RowStatus
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_xts_workorderservicetemplate a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.xts_businessunitid 
+	{0}
+) VWI_CRM_xts_workorderservicetemplate

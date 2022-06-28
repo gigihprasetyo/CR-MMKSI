@@ -1,0 +1,2 @@
+SELECT COUNT(1)
+FROM CRM_xts_inventorynewvehicle WITH (NOLOCK) {0}

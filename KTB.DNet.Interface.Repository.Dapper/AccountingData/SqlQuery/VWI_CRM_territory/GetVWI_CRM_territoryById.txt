@@ -1,0 +1,40 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, transactioncurrencyidname
+	, manageridname
+	, description
+	, managerid
+	, createdonbehalfby
+	, transactioncurrencyid
+	, entityimage_timestamp
+	, name
+	, entityimageid
+	, importsequencenumber
+	, organizationidname
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, territoryid
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, modifiedbyyominame
+	, createdby
+	, timezoneruleversionnumber
+	, modifiedon
+	, exchangerate
+	, manageridyominame
+	, modifiedonbehalfbyyominame
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, modifiedonbehalfbyname
+	, parentterritoryid
+	, entityimage
+	, parentterritoryidname
+	, overriddencreatedon
+	, entityimage_url
+FROM [dbo].[CRM_territory] as VWI_CRM_territory with(nolock)
+WHERE territoryid = @Id

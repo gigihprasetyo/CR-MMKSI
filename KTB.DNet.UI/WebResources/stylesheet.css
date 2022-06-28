@@ -1,0 +1,220 @@
+a {color:#585E80;}
+a:hover {color:#ff0000; text-decoration: none;}
+
+a.white {
+	font-family:Sans-Serif, Arial; font-size:11px; color:#FFFFFF; font-weight: normal;}
+
+a.red {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FF0000; margin:0px; font-weight: normal;}
+
+a.menuLeft {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; text-decoration:none;}
+
+a.menuLeft2 {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; font-weight: bold; text-decoration:none;}
+
+body {
+	background-color:#ffffff;}
+
+.mandatory00 {
+	background-color:#f3f5bc;
+	}
+.mandatory11 {
+BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #cccccc 1px solid; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid; BACKGROUND-COLOR: #f3f5bc
+}
+td.copyRight{
+	font-family: arial, Sans-Serif, Trebuchet MS, Geneva, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight:normal;}
+	
+.help {
+	cursor:help;}
+.menuImage {
+	cursor:hand;}
+		
+body, form, table {
+	margin:0px; padding:0px;
+}
+
+td, input, select, textarea, caption, label {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; }
+
+input.textRight {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; text-align:right;}
+
+td.welcomeLogin {
+	font-family: Sans-Serif, Trebuchet MS, Geneva, Arial; font-size:12px; color:#000000; margin:0px;}
+
+input.welcomeLogin {
+	font-family: Sans-Serif, Trebuchet MS, Geneva, Arial; font-size:12px; color:#000000; margin:0px;}
+
+	 
+.bottomLine {
+	font-family: Sans-Serif, Trebuchet MS, Geneva, Arial; 
+	border-bottom:#cdcdcd 1px solid;
+	background-color:#FFFFFF;	
+}	
+
+	 
+.generalTable {
+	background-color:#FDF1F2;}
+
+
+.darkSoft {
+	background-color:#F6F6F6;}
+
+.dark {
+	background-color:#cdcdcd;}
+
+.white {
+	background-color:#ffffff;}
+
+.black {
+	background-color:#000000;}
+
+td.bold {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; height:auto; font-weight:bold}
+
+.menuHor {
+	font-family: Sans-Serif, Arial; font-size:12px; color:#000000; margin:0px; text-decoration:none; font-weight:bold}
+
+.menuHor2 {
+	font-family: Sans-Serif, Arial; font-size:12px; color:#ff0000; margin:0px; text-decoration:underline; font-weight:bold}
+
+.titleTableParts {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #E38024; text-align:center;}
+
+.titleTablePrint {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; font-weight: bold; background: #CDCDCD; text-align:center;}
+
+.titleTablePrint2 {
+	font-family: Sans-Serif, Arial; font-size:12px; color:#000000; margin:0px; font-weight: bold; background: #CDCDCD; text-align:center;}
+	
+
+.titleTableParts3 {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #2E5D8B; text-align:left;}
+
+.titleTableSales {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #939AA0; text-align:center;}
+
+.titleTablePromo {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #C9A557; text-align:center;}
+
+.titleTableMrk {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #EFC299; text-align:center;}
+
+.titleTableCust {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #86C530; text-align:center;}
+
+
+.titleTableSales2 {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; font-weight: bold; background: #EDD0B5; text-align:center;}
+
+
+.titleTableGeneral {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #DA332B; text-align:center;}
+	
+.titleTableRsd {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #7CC5A8; text-align:center;}
+	
+.titleTableService {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #109949; text-align:center;}
+
+.titleField {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; font-weight: bold; text-align: left;}
+
+
+.titlePage {
+	font-family: Sans-Serif, Arial; font-size:11pt; color:#990000; margin:0px; font-weight: bold;}
+
+.titlePanel {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#666666; margin:0px; font-weight: bold; text-align: left;}
+.uppercase 
+{
+	TEXT-TRANSFORM: uppercase;
+}
+p.segitiga {margin-top:5px;}
+p.navipage {margin-top:2px;}
+p.data {margin-left:2px; margin-right:2px;}
+p.data2 {margin-left:4px; margin-right:4px;}
+
+
+
+td.red {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#ff0000; margin:0px; font-weight: bold;}
+
+td.blue {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#000099; margin:0px; font-weight: bold;}
+
+font.blue {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#000099; margin:0px; font-weight: bold;}
+
+font.blue2 {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#000099; margin:0px; font-weight: normal;}
+
+font.red {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#ff0000; margin:0px; font-weight: bold;}
+
+font.white {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#ffffff; margin:0px; font-weight: bold;}
+
+td.date {
+	font-family:arial, Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#ffffff; margin:0px; font-weight: bold; }
+
+td.error {
+	font-family:arial, Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#CF1F54; margin:0px; font-weight: normal; }
+
+.gridtooltip
+{
+	VISIBILITY: hidden;
+	POSITION: absolute;
+	TOP: 0px;
+	LEFT: 0px;
+	WIDTH: 200px;
+	BORDER-TOP: black 1px solid;
+	BORDER-RIGHT: black 1px solid;
+	BORDER-BOTTOM: black 1px solid;
+	BORDER-LEFT: black 1px solid;
+	PADDING-RIGHT: 4px;
+	PADDING-LEFT: 4px;
+	PADDING-BOTTOM: 4px;
+	PADDING-TOP: 4px;
+	Z-INDEX: 200;
+	BACKGROUND-COLOR: #ffffff;
+	FONT: 10pt bold arial,sans-serif;
+	COLOR: #000000;
+ }
+
+input[type=submit]:disabled,
+input[type=submit][disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+select[disabled] { 
+    opacity: 0.6;
+    pointer-events: none;
+ }
+
+.scheduler_traditional_event_bar{
+    background-color:#554d4d!important;
+}
+.scheduler_traditional_event_inner{
+    color:whitesmoke;
+}
+.select2{font-size:11px!important;}
+.select2-container {font-size:11px!important;}
+.ui-datepicker {font-size:11px!important;}
+.textboxCalendar{position:relative; top:-6px; width:90px}
+.timepicker{width:110px;}
+.setMargin input{margin-right:3px!important;}
+.setMargin label {
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+}
+.LabelSet td {color:whitesmoke!important;}
+.ui-widget-header {
+    background: #2E5D8B;
+    font-size:12px;
+    color:white;
+}
+table.setMargin input{margin-right:3px!important;}

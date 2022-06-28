@@ -1,0 +1,6 @@
+select
+	count(1)
+from DepositADetail as VWI_DepositADetail with(nolock)
+{0}
+
+

@@ -1,0 +1,1 @@
+exec sp_Service_DailyReport {0}

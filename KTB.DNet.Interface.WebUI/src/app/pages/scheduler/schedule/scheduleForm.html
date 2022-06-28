@@ -1,0 +1,47 @@
+﻿<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="Schedule Details" ba-panel-class="with-scroll">
+                <form name="form" ng-submit="Submit()">
+                    <div class="col-md-6">
+                        <input-text label="Name" name="Name" ng-model="schedule.Name" required></input-text>
+                    </div>
+                    <div class="col-md-6">
+                        <standard-select label="Schedule Type" name="ScheduleType" ng-model="schedule.ScheduleType" options="listOfScheduleTypeOptions"></standard-select>
+                    </div>
+                    <div class="col-md-6">
+                        <standard-select label="Schedule Day" name="ScheduleDay" ng-model="schedule.ScheduleDay" options="listOfScheduleDayOptions"></standard-select>
+                    </div>
+                    <div class="col-md-6">
+                        <input-text type="number" label="Month Day" name="MonthDay" ng-model="schedule.MonthDay" />
+                    </div>
+                    <div class="col-md-6">
+                        <input-text type="number" label="Interval" name="Interval" ng-model="schedule.Interval" required />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group" ng-class="{ 'has-error': form.ScheduleTime.$invalid && form.ScheduleTime.$touched }">
+                            <label for="{{name}}">Schedule Time
+                                <span class='required'>*</span>
+                            </label>
+                            <div class="input-group" moment-picker="schedule.ScheduleTime" format="HH:mm:ss">
+                                <span class="input-group-addon">
+                                    <i class="ion-android-time"></i>
+                                </span>
+                                <input required name="ScheduleTime" autocomplete="off" class="form-control" placeholder="Select a time" ng-model="schedule.ScheduleTime" ng-model-options="{ updateOn: 'blur' }">
+                            </div>
+                            <span ng-show="form.ScheduleTime.$invalid && form.ScheduleTime.$touched" class="help-block">Schedule Time is required</span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <standard-select label="Dealer Code" name="DealerCode" ng-model="schedule.DealerCode" options="listOfDealerOptions" value="DealerCode"
+                            text="DealerCode"></standard-select>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <a ui-sref="scheduler.schedule.list" class="btn btn-default-red m-t-15 waves-effect">Cancel</a>
+                        <input ng-disabled="form.$invalid" type="submit" value="Save" class="btn btn-primary m-t-15 waves-effect">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

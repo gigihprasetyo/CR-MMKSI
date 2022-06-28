@@ -1,0 +1,82 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow 
+	,company
+	,businessunitcode
+	,xts_transactiontypename
+	,xts_parentbusinessunitid
+	,versionnumber
+	,createdon
+	,ktb_itemtypefortransactionname
+	,statuscodename
+	,xts_inventorytransactionreferenceid
+	,xts_status
+	,modifiedbyyominame
+	,xts_inventorytransferid
+	,xts_inventorytransactionnumber
+	,xts_log
+	,xts_personinchargeid
+	,createdonbehalfby
+	,xts_loaddataname
+	,modifiedbyname
+	,owneridname
+	,overriddencreatedon
+	,xts_itemtypefortransactionname
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,xts_workorderidname
+	,owningteam
+	,xts_processcode
+	,statecode
+	,xts_transactiontype
+	,timezoneruleversionnumber
+	,ktb_actualreceiptdate
+	,xts_handling
+	,ktb_updatetosparepartstock
+	,createdonbehalfbyname
+	,xts_inventorytransactionreferenceidname
+	,xts_inventorytransferidname
+	,utcconversiontimezonecode
+	,xts_statusname
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_locking
+	,xts_personinchargeidname
+	,xts_transactiondate
+	,xts_inventorytransactionid
+	,xts_workorderid
+	,createdbyname
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,ktb_ribbondataproductwarehouse
+	,xts_handlingname
+	,xts_sourcedata
+	,xts_loaddata
+	,createdby
+	,modifiedby
+	,ktb_updatetosparepartstockname
+	,xts_itemtypefortransaction
+	,createdbyyominame
+	,owninguser
+	,owningbusinessunit
+	,xts_parentbusinessunitidname
+	,owneridtype
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,ktb_itemtypefortransaction
+	,statecodename
+	,xts_businessunitidname
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.*  
+        , b.msdyn_companycode
+    FROM CRM_xts_inventorytransaction a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_inventorytransactionid = @Id
+) VWI_CRM_xts_inventorytransaction 

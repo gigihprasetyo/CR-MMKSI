@@ -1,0 +1,46 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ AX_TSTransStockMutations.CompanyCode
+	,AX_TSTransStockMutations.InventTransRecId
+	,AX_TSTransStockMutations.ItemId
+	,AX_TSTransStockMutations.UnitId
+	,AX_TSTransStockMutations.Qty
+	,AX_TSTransStockMutations.InventSiteId
+	,AX_TSTransStockMutations.InventLocationId
+	,AX_TSTransStockMutations.WMSLocationId
+	,AX_TSTransStockMutations.StatusIssue
+	,AX_TSTransStockMutations.StatusReceipt
+	,AX_TSTransStockMutations.CostAmountPhysical
+	,AX_TSTransStockMutations.CostAmountAdjustment
+	,AX_TSTransStockMutations.ReferenceCategory
+	,AX_TSTransStockMutations.ReferenceId
+	,AX_TSTransStockMutations.DatePhysical
+	,AX_TSTransStockMutations.InventTransOrigin
+	,AX_TSTransStockMutations.PackingSlipId
+	,AX_TSTransStockMutations.TransactionType
+	,AX_TSTransStockMutations.ValueOpen
+	,AX_TSTransStockMutations.InventTransModifiedDateTime
+	,AX_TSTransStockMutations.Dimension1
+	,AX_TSTransStockMutations.Dimension2
+	,AX_TSTransStockMutations.Dimension3
+	,AX_TSTransStockMutations.Dimension4
+	,AX_TSTransStockMutations.Dimension5
+	,AX_TSTransStockMutations.Dimension6
+	,AX_TSTransStockMutations.inventSerialId
+	,AX_TSTransStockMutations.MainAccount
+	,AX_TSTransStockMutations.xtsvin
+	,AX_TSTransStockMutations.DMSProductClassName
+	,AX_TSTransStockMutations.DMSProductType
+	,AX_TSTransStockMutations.configId
+	,AX_TSTransStockMutations.InventColorId
+	,AX_TSTransStockMutations.InventSizeId
+	,AX_TSTransStockMutations.InventStyleId
+	,AX_TSTransStockMutations.dataAreaId
+	,AX_TSTransStockMutations.PARTITION
+	,AX_TSTransStockMutations.RecordId
+	,AX_TSTransStockMutations.RECVERSION
+	,AX_TSTransStockMutations.TranPeriodID
+	,AX_TSTransStockMutations.DealerCode
+	,AX_TSTransStockMutations.SourceType
+/**EndPagingIndexQuery**/
+FROM AX_TSTransStockMutations {0}

@@ -1,0 +1,87 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_writeoffbalancedetail.company
+	, VWI_CRM_xts_writeoffbalancedetail.businessunitcode
+	, VWI_CRM_xts_writeoffbalancedetail.versionnumber
+	, VWI_CRM_xts_writeoffbalancedetail.createdon
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension5idname
+	, VWI_CRM_xts_writeoffbalancedetail.xts_referencenumber
+	, VWI_CRM_xts_writeoffbalancedetail.statuscodename
+	, VWI_CRM_xts_writeoffbalancedetail.xts_customerid
+	, VWI_CRM_xts_writeoffbalancedetail.xts_accountname
+	, VWI_CRM_xts_writeoffbalancedetail.modifiedbyyominame
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffbalancedetailid
+	, VWI_CRM_xts_writeoffbalancedetail.owneridtype
+	, VWI_CRM_xts_writeoffbalancedetail.createdonbehalfby
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension1id
+	, VWI_CRM_xts_writeoffbalancedetail.modifiedbyname
+	, VWI_CRM_xts_writeoffbalancedetail.owneridname
+	, VWI_CRM_xts_writeoffbalancedetail.overriddencreatedon
+	, VWI_CRM_xts_writeoffbalancedetail.xts_type
+	, VWI_CRM_xts_writeoffbalancedetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_writeoffbalancedetail.modifiedonbehalfby
+	, VWI_CRM_xts_writeoffbalancedetail.exchangerate
+	, VWI_CRM_xts_writeoffbalancedetail.xts_referencearinvoiceidname
+	, VWI_CRM_xts_writeoffbalancedetail.xts_customeridyominame
+	, VWI_CRM_xts_writeoffbalancedetail.owningteam
+	, VWI_CRM_xts_writeoffbalancedetail.xts_balance
+	, VWI_CRM_xts_writeoffbalancedetail.statecode
+	, VWI_CRM_xts_writeoffbalancedetail.xts_referencearreceiptidname
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension6id
+	, VWI_CRM_xts_writeoffbalancedetail.xts_sourcetype
+	, VWI_CRM_xts_writeoffbalancedetail.timezoneruleversionnumber
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffbalanceid
+	, VWI_CRM_xts_writeoffbalancedetail.xts_customernumber
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension3id
+	, VWI_CRM_xts_writeoffbalancedetail.createdonbehalfbyname
+	, VWI_CRM_xts_writeoffbalancedetail.utcconversiontimezonecode
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffbalancedetailnumber
+	, VWI_CRM_xts_writeoffbalancedetail.xts_typename
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension6idname
+	, VWI_CRM_xts_writeoffbalancedetail.ownerid
+	, VWI_CRM_xts_writeoffbalancedetail.modifiedon
+	, VWI_CRM_xts_writeoffbalancedetail.importsequencenumber
+	, VWI_CRM_xts_writeoffbalancedetail.owneridyominame
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffbalanceidname
+	, VWI_CRM_xts_writeoffbalancedetail.xts_customeridname
+	, VWI_CRM_xts_writeoffbalancedetail.xts_account
+	, VWI_CRM_xts_writeoffbalancedetail.createdbyname
+	, VWI_CRM_xts_writeoffbalancedetail.xts_businessunitid
+	, VWI_CRM_xts_writeoffbalancedetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension1idname
+	, VWI_CRM_xts_writeoffbalancedetail.xts_balance_base
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension2id
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension5id
+	, VWI_CRM_xts_writeoffbalancedetail.createdby
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension4idname
+	, VWI_CRM_xts_writeoffbalancedetail.modifiedby
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension4id
+	, VWI_CRM_xts_writeoffbalancedetail.createdbyyominame
+	, VWI_CRM_xts_writeoffbalancedetail.owninguser
+	, VWI_CRM_xts_writeoffbalancedetail.transactioncurrencyidname
+	, VWI_CRM_xts_writeoffbalancedetail.xts_referencearinvoiceid
+	, VWI_CRM_xts_writeoffbalancedetail.owningbusinessunit
+	, VWI_CRM_xts_writeoffbalancedetail.transactioncurrencyid
+	, VWI_CRM_xts_writeoffbalancedetail.xts_referencedate
+	, VWI_CRM_xts_writeoffbalancedetail.xts_sourcetypename
+	, VWI_CRM_xts_writeoffbalancedetail.statuscode
+	, VWI_CRM_xts_writeoffbalancedetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension2idname
+	, VWI_CRM_xts_writeoffbalancedetail.xts_referencearreceiptid
+	, VWI_CRM_xts_writeoffbalancedetail.statecodename
+	, VWI_CRM_xts_writeoffbalancedetail.xts_businessunitidname
+	, VWI_CRM_xts_writeoffbalancedetail.xts_writeoffdimension3idname
+	, VWI_CRM_xts_writeoffbalancedetail.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_writeoffbalancedetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_writeoffbalancedetail

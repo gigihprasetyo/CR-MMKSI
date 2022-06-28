@@ -1,0 +1,100 @@
+<html>
+	<head>		
+		<script src="jquery-1.8.2.min.js"></script>
+		<script>
+			function doTest(){
+				var content = $('#content').text();
+				$.ajax({
+					type:"POST", 
+					Origin : "172.17.25.12:888", 
+					url: "http://172.17.25.12:888/ktb.dnet.ws/api/saplistener/SendData",
+					crossDomain:true, 
+					data: content
+				}).done(function() {
+					//alert('success');				  
+				});
+			}
+			
+			function doTestCreateSO(){
+				var content = $('#contentCreateSO').text();
+				$.ajax({
+					type:"POST", 
+					Origin : "172.17.25.12:888", 
+					url: "http://localhost:888/ktb.dnet.ws/api/saplistener/SendData",
+					crossDomain:true, 
+					data: content
+				}).done(function(str) {
+					alert('success. Status = ' + str.Status + '. Message = '+str.Message);				  
+				});
+			}
+			
+			function doTestChangeSO(){
+				var content = $('#contentChangeSO').text();
+				$.ajax({
+					type:"POST", 
+					Origin : "172.17.25.12:888", 
+					url: "http://localhost:888/ktb.dnet.ws/api/saplistener/SendData",
+					crossDomain:true, 
+					data: content
+				}).done(function(str) {
+					alert('success. Status = ' + str.Status + '. Message = '+str.Message);				  
+				});
+			}
+			
+			
+			function doTestCeiling(){
+				var content = $('#content').text();
+				$.ajax({
+					type:"POST", 
+					Origin : "172.17.31.123:888", 
+					url: "http://172.17.31.123:888/ktb.dnet.ws/api/saplistener/SendData",
+					crossDomain:true, 
+					data: content
+				}).done(function(str) {
+					alert('success. Status = ' + str.Status + '. Message = '+str.Message);				  
+				});
+			}
+            //Origin : "172.17.31.61:888", 
+            //    url: "http://172.17.31.61:888/ktb.dnet.ws/api/saplistener/SendData",
+			function doSubmitCeilingReport(){
+			var content = $('#divCeilingReport').text();
+				$.ajax({
+					type:"POST", 
+					Origin: "172.17.25.12:888",
+				    url: "http://localhost:888/ktb.dnet.ws/api/saplistener/SendData",
+				    //Origin : "172.17.31.61:888", 
+				    //    url: "http://172.17.31.61:888/ktb.dnet.ws/api/saplistener/SendData",
+					crossDomain:true, 
+					data: content
+				}).done(function(str) {
+					alert('success. Status = ' + str.Status + '. Message = '+str.Message);				  
+				});
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" id="submit" value="Test WS.." onclick="doTestCeiling();" />
+		<div id="content">K;TRANSFERCEILING_20161013150055\nH;100012;S102;COD\nD;20161013;24966000000\nD;20161014;24966000000\nD;20161015;24966000000\nD;20161016;24966000000\nD;20161017;24966000000\nD;20161018;24966000000\nD;20161019;24966000000\nD;20161020;24966000000\nD;20161021;24966000000\nD;20161022;24966000000\nD;20161023;24966000000\nD;20161024;24966000000\nD;20161025;24966000000\nD;20161026;24966000000\nD;20161027;24966000000\nD;20161028;24966000000\nD;20161029;24966000000\nD;20161030;24966000000\nD;20161031;24966000000\n</div>
+		
+		<div id="contentOld">K;TRANSFERCEILING_20160913095214\nH;100002;S101;TOP\nD;20160901;10000000000\nD;20160902;10000000000\nD;20160903;10000000000\nD;20160904;10000000000\nD;20160905;10000000000\n</div>
+		
+		<input type="button" id="submitCreateSO" value="Test Create SO" onclick="doTestCreateSO();" />
+		<div id="contentCreateSO">K;SOCREATE_201609191531\nH;PO16034207;1015342433;ZA52;20160919;20160919;89800000;365318;1144950;\nD;JTW10KBC;1\n</div>
+		
+		<div style="display:none;" >K;SOCREATE_20160919135030\nH;P3;1015342431;ZA52;20160919;20160919;89800000;365318;1144950;\nD;JTW10KBC;1\n</div>
+		
+		<input type="button" id="submitChangeSO" value="Test Change SO" onclick="doTestChangeSO();" />
+		<div id="contentChangeSO">K;SOCHANGE_20160920133000\nH;;1015342443;123;PO16034201;20160919;Z100;20160922;ZA52;20160920;20160920;89800005;365318;1144950;;; 0;\nD;JTW10KBC;1\n</div>
+		
+		<input type="button" id="submitCeilingReport" value="Test submitCeilingReport" onclick="doSubmitCeilingReport();" />
+		<div id="divCeilingReport">K;TRANSCEILINGDETAIL_20161013135057\nH;100013;S102;COD;20161014;25206000000\nD;S;1015350522;88300000\n</div>
+		<div id="divCeilingReportOld" style="display:none;">K;TRANSCEILINGDETAIL_20160930111249\nH;100002;S102;COD;20160930;15102100000\nD;S;1015342464;134450000\n</div>
+<div style="display:none;">
+B3RL1@nDn3T201S
+</div>
+		
+	</body>
+</html>
+
+

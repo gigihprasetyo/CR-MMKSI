@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xts_cashandbank as VWI_CRM_xts_cashandbank WITH (NOLOCK) 
+{0}

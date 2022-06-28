@@ -1,0 +1,10 @@
+select 
+/**PagingIndexQuery**/ 
+	ID
+	, CountryName
+	, CountryCode
+	, LastUpdatedTime
+/**EndPagingIndexQuery**/
+from SPKMasterCountryCodePhone as VWI_SPKMasterCountryCodePhone with(Nolock) 
+where ID = @Id
+and RowStatus = 0

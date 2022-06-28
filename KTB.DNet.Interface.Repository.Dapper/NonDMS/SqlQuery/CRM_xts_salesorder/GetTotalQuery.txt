@@ -1,0 +1,2 @@
+SELECT COUNT(1)
+FROM CRM_xts_salesorder WITH (NOLOCK) {0}

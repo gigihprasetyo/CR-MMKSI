@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_xts_province as VWI_CRM_xts_province with(nolock) 
+{0}

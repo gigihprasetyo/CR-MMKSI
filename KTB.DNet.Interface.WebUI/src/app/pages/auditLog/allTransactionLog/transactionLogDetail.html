@@ -1,0 +1,99 @@
+﻿<section>
+    <div class="widgets">
+        <div class="row">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="{{title}}" ba-panel-class="with-scroll">
+
+                    <div class="horizontal-scroll text-left">
+                        <div class="col-md-12"></div>
+                        <table class="table table-bordered table-striped table-text-left">
+                            <tbody>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>: {{transactionLogDetail.Id || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>IP</td>
+                                    <td>: {{transactionLogDetail.SenderIP || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>ParentID</td>
+                                    <td>: {{transactionLogDetail.ParentId || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Endpoint</td>
+                                    <td>: {{transactionLogDetail.Endpoint || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>AppID</td>
+                                    <td>: {{transactionLogDetail.AppId || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>DealerCode</td>
+                                    <td>: {{transactionLogDetail.DealerCode || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Username</td>
+                                    <td>: {{transactionLogDetail.Username || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Token</td>
+                                    <td><button class="btn btn-info m-t-15 waves-effect" ng-click="showToken()">Display Token</button></td>
+                                    <!-- <td>: {{transactionLogDetail.Token || "-"}}</td> -->
+                                </tr>
+                                <tr>
+                                    <td>Status</td>
+                                    <td>: {{transactionLogDetail.StatusStr || "-"}}</td>
+                                </tr>
+                                <tr ng-hide="transactionLogDetail.Status">
+                                    <td>Resolved</td>
+                                    <td>: {{transactionLogDetail.IsResolved ? "Yes" : "No" || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>CreatedBy</td>
+                                    <td>: {{transactionLogDetail.CreatedBy || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>CreatedTime</td>
+                                    <td>: {{transactionLogDetail.CreatedTime || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>UpdatedBy</td>
+                                    <td>: {{transactionLogDetail.UpdatedBy || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>UpdatedTime</td>
+                                    <td>: {{transactionLogDetail.UpdatedTime || "-"}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Input</td>
+                                    <td><button class="btn btn-info m-t-15 waves-effect" ng-click="showInput()">Display Input</button></td>
+                                    <!--<td>: {{transactionLogDetail.Input | json}}</td>-->
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Output :</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="padding-top: 10px">
+                                        <pre ng-if="jsonObjectOutput">{{jsonObjectOutput | json}}</pre>
+                                        <span ng-if="!jsonObjectOutput">{{transactionLogDetail.Output}}</span>
+                                    </td>
+                                </tr>
+                        </table>
+                    </div>
+
+                </div>
+                <div ba-panel ba-panel-title="Resend Transaction Log" ba-panel-class="with-scroll" ng-hide="transactionLogDetail.Status">
+                    <div class="horizontal-scroll text-left">
+                        <div general-table offline="true" table-definition="resendTableDefinition"></div>
+                    </div>
+                </div>
+                <div ba-panel>
+                    <div class="col-md-12 text-right margin-top-bottom-10">
+                        <button class="btn btn-info m-t-15 waves-effect" ng-click="back()">Back</button>                    
+                        <button class="btn btn-primary m-t-15 waves-effect" ng-hide="transactionLogDetail.IsResolved || !allowToResolve" ng-click="resolve()">Resolve</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>

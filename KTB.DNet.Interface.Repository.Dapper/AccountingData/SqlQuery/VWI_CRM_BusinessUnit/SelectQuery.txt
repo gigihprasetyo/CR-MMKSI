@@ -1,0 +1,28 @@
+SELECT 
+    /**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_BusinessUnit.businessunitid
+	, VWI_CRM_BusinessUnit.businessunitcode
+	, VWI_CRM_BusinessUnit.name
+	, VWI_CRM_BusinessUnit.msdyn_companycode
+	, VWI_CRM_BusinessUnit.ktb_bucompany
+	, VWI_CRM_BusinessUnit.description
+	, VWI_CRM_BusinessUnit.xts_mainaddress1
+	, VWI_CRM_BusinessUnit.xts_phone
+	/**EndPagingIndexQuery**/
+from
+(	
+	select 
+		ktb_bucompany as company
+		, ktb_dealercode AS businessunitcode
+		, name
+		, msdyn_companycode
+		, ktb_bucompany
+		, description
+		, xts_mainaddress1
+		, xts_phone
+		, businessunitid
+		, modifiedon 
+	from CRM_businessunit WITH(NOLOCK)
+	{0}
+) VWI_CRM_BusinessUnit

@@ -1,0 +1,16 @@
+
+SELECT 
+    TOP {=Take}
+	   [ErrorId]
+      ,[Application]
+      ,[Host]
+      ,[Type]
+      ,[Message]
+      ,[User]
+      ,[StatusCode]
+      ,[TimeUtc]
+FROM [dbo].[ELMAH_Error]
+WHERE 
+	(@AppName = '' OR [Application] = @AppName) AND
+	((@StatusCode = -1 AND StatusCode >= 500) OR StatusCode = @StatusCode)
+ORDER BY TimeUtc DESC

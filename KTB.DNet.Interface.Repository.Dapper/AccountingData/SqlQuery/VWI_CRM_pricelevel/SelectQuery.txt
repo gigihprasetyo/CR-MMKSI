@@ -1,0 +1,45 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_pricelevel.createdonbehalfbyyominame
+    , VWI_CRM_pricelevel.modifiedonbehalfby
+    , VWI_CRM_pricelevel.transactioncurrencyidname
+    , VWI_CRM_pricelevel.freighttermscode
+    , VWI_CRM_pricelevel.enddate
+    , VWI_CRM_pricelevel.description
+    , VWI_CRM_pricelevel.statecodename
+    , VWI_CRM_pricelevel.begindate
+    , VWI_CRM_pricelevel.createdonbehalfby
+    , VWI_CRM_pricelevel.transactioncurrencyid
+    , VWI_CRM_pricelevel.name
+    , VWI_CRM_pricelevel.pricelevelid
+    , VWI_CRM_pricelevel.importsequencenumber
+    , VWI_CRM_pricelevel.organizationidname
+    , VWI_CRM_pricelevel.statecode
+    , VWI_CRM_pricelevel.shippingmethodcode
+    , VWI_CRM_pricelevel.paymentmethodcode
+    , VWI_CRM_pricelevel.utcconversiontimezonecode
+    , VWI_CRM_pricelevel.createdbyyominame
+    , VWI_CRM_pricelevel.modifiedbyname
+    , VWI_CRM_pricelevel.versionnumber
+    , VWI_CRM_pricelevel.modifiedby
+    , VWI_CRM_pricelevel.modifiedbyyominame
+    , VWI_CRM_pricelevel.createdby
+    , VWI_CRM_pricelevel.timezoneruleversionnumber
+    , VWI_CRM_pricelevel.shippingmethodcodename
+    , VWI_CRM_pricelevel.statuscodename
+    , VWI_CRM_pricelevel.paymentmethodcodename
+    , VWI_CRM_pricelevel.freighttermscodename
+    , VWI_CRM_pricelevel.modifiedon
+    , VWI_CRM_pricelevel.exchangerate
+    , VWI_CRM_pricelevel.modifiedonbehalfbyyominame
+    , VWI_CRM_pricelevel.statuscode
+    , VWI_CRM_pricelevel.createdbyname
+    , VWI_CRM_pricelevel.createdon
+    , VWI_CRM_pricelevel.organizationid
+    , VWI_CRM_pricelevel.createdonbehalfbyname
+    , VWI_CRM_pricelevel.modifiedonbehalfbyname
+    , VWI_CRM_pricelevel.overriddencreatedon
+    /**EndPagingIndexQuery**/
+FROM CRM_pricelevel as VWI_CRM_pricelevel WITH (NOLOCK) 
+{0}

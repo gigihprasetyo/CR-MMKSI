@@ -1,0 +1,11 @@
+﻿SELECT [Id]
+      ,[ClientUserId]
+      ,[PermissionId]
+      ,[IsCustomPermission]
+      ,[IsDismantledPermission]
+      ,[CreatedBy]
+      ,[CreatedTime]
+      ,[UpdatedBy]
+      ,[UpdatedTime]
+FROM [APIUserPermission]
+WHERE Id = @Id

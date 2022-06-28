@@ -1,0 +1,2 @@
+SELECT COUNT(1)
+FROM CRM_xts_serviceproportionalinvoice WITH (NOLOCK) {0}

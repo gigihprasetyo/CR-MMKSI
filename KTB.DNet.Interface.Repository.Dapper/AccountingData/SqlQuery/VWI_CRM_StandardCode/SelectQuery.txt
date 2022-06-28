@@ -1,0 +1,17 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	VWI_CRM_StandardCode.[ID]
+	,VWI_CRM_StandardCode.[Category]
+	,VWI_CRM_StandardCode.[ValueId]
+	,VWI_CRM_StandardCode.[ValueCode]
+	,VWI_CRM_StandardCode.[ValueDesc]
+	,VWI_CRM_StandardCode.[Sequence]
+	,VWI_CRM_StandardCode.[RowStatus]
+	,VWI_CRM_StandardCode.[CreatedBy]
+	,VWI_CRM_StandardCode.[CreatedTime]
+	,VWI_CRM_StandardCode.[LastUpdateBy]
+	,VWI_CRM_StandardCode.[LastUpdateTime]
+    /**EndPagingIndexQuery**/
+FROM CRM_StandardCode as VWI_CRM_StandardCode with (nolock)  
+{0}

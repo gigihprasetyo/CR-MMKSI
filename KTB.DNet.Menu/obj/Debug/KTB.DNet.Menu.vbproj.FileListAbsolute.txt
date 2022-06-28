@@ -1,0 +1,6 @@
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.Menu\bin\KTB.DNet.Menu.dll
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.Menu\bin\KTB.DNet.Menu.pdb
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.Menu\obj\Debug\KTB.DNET.Menu.Resources.resources
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.Menu\obj\Debug\KTB.DNet.Menu.vbproj.GenerateResource.Cache
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.Menu\obj\Debug\KTB.DNet.Menu.dll
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.Menu\obj\Debug\KTB.DNet.Menu.pdb

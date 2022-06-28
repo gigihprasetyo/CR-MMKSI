@@ -1,0 +1,173 @@
+<div class="horizontal-scroll">
+    <form name="filter">
+        <div class="row" style="margin-bottom:20px">
+            <div class="col-md-12">
+                <div class="col-md-12">
+                    <label>Filter Criterias</label>
+                    <hr style="margin-top: 0px;"/>
+                </div>
+                <div class="col-md-4">
+                    <ui-select name="ApplicationOptions" theme="bootstrap" ng-model="selected.AppId" on-select="onSelectCallback()"
+                               class="btn-group bootstrap-select form-control"
+                               append-to-body="true" search-enabled="true">
+                        <ui-select-match placeholder="Filter by Application">
+                            <span> {{$select.selected.Name}} </span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="app.AppId as app in listOfApplications | filter: $select.search">
+                            <span ng-bind-html="app.Name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <div class="col-md-4">
+                    <ui-select theme="bootstrap" ng-model="selected.ClientId" on-select="onSelectCallback()"
+                               class="btn-group bootstrap-select form-control"
+                               append-to-body="true" search-enabled="true">
+                        <ui-select-match placeholder="Filter by Client">
+                            <span> {{$select.selected.Name}} </span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="client.ClientId as client in listOfClients | filter: $select.search">
+                            <span ng-bind-html="client.Name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+                <div class="col-md-4">
+                    <ui-select theme="bootstrap" ng-model="selected.Dealer.DealerCode" options="listOfDealers" value="Id" text="DealerCode"
+                               class="btn-group bootstrap-select form-control" on-select="onSelectCallback()"
+                               append-to-body="true" search-enabled="true"
+                               ng-show="isShowDealer">
+                        <ui-select-match placeholder="Filter by Dealer">
+                            <span> {{$select.selected.DealerCode}} - {{$select.selected.DealerName}} </span>
+                        </ui-select-match>
+                        <ui-select-choices repeat="dealer.DealerCode as dealer in listOfDealers | filter: $select.search">
+                            <span ng-bind-html="dealer.DealerCode + ' - ' + dealer.DealerName"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="form-group" ng-class="{ 'has-error': form.beginDate.$invalid && form.beginDate.$touched }">
+                        <label for="beginDate">
+                            Start From
+                        </label>
+                        <div class="input-group" moment-picker="selected.Date.From" format="DD MMMM YYYY">
+                            <span class="input-group-addon">
+                                <i class="ion-android-calendar"></i>
+                            </span>
+                            <input required name="To" autocomplete="off" class="form-control" placeholder="Select a date" ng-model="selected.Date.From" ng-model-options="{ updateOn: 'blur' }">
+                        </div>
+                        <span ng-show="form.beginDate.$invalid && form.beginDate.$touched" class="help-block">Start Date is required</span>
+                    </div>
+                    <!-- <p class="input-group">
+                        <input type="text" class="form-control" ng-change="reload()" uib-datepicker-popup="dd-MMMM-yyyy" ng-model="beginDate" is-open="beginDateOpened" ng-required="false" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openBeginDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p> -->
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group" ng-class="{ 'has-error': form.endDate.$invalid && form.endDate.$touched }">
+                        <label for="To">
+                            To
+                        </label>
+                        <div class="input-group" moment-picker="selected.Date.To" format="DD MMMM YYYY">
+                            <span class="input-group-addon">
+                                <i class="ion-android-calendar"></i>
+                            </span>
+                            <input required name="To" autocomplete="off" class="form-control" placeholder="Select a date" ng-model="selected.Date.To" ng-model-options="{ updateOn: 'blur' }">
+                        </div>
+                        <span ng-show="form.endDate.$invalid && form.endDate.$touched" class="help-block">End Date is required</span>
+                    </div>
+                    <!-- <p class="input-group">
+                        <input type="text" class="form-control" ng-change="reload()" uib-datepicker-popup="dd-MMMM-yyyy" ng-model="endDate" is-open="endDateOpened" ng-required="false" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="false" />
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="openEndDate()"><i class="glyphicon glyphicon-calendar"></i></button>
+                        </span>
+                    </p> -->
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px">
+            <div class="col-md-12">
+                <div class="col-md-9">
+                    <div class="row form-inline">
+                        <div class="form-group col-sm-3 col-xs-6">
+                            <ui-select name="propName" theme="bootstrap" ng-model="selected.Property"
+                                       class="btn-group bootstrap-select form-control"
+                                       append-to-body="true"
+                                       search-enabled="false">
+                                <ui-select-match placeholder="Select Other Filter">
+                                    <span> {{$select.selected.label}}</span>
+                                </ui-select-match>
+                                <ui-select-choices repeat="property in propertyNameList | filter: $select.search">
+                                    <span ng-bind-html="property.label"></span>
+                                </ui-select-choices>
+                            </ui-select>
+                        </div>
+                        <div class="form-group col-sm-3 col-xs-6">
+                            <input type="text" ng-model="propValue" ng-change="propValueOnChange()" ng-model-options="{ updateOn: 'blur' }" class="form-control" id="propValue" placeholder="Search...">
+                        </div>
+                        <div class="form-group col-sm-3 col-xs-6">
+                            <button class="btn btn-info waves-effect" style="width: 100px" ng-click="reload()">Search</button>
+                        </div>
+                    </div>
+                </div>                    
+            </div>
+        </div>
+                <hr />
+                <table class="table table-hover" ng-attr-st-pipe="offline ? null : renderData " st-table="transactionLogTableDefinition.dataSource">
+                    <thead>
+                        <tr class="sortable">
+                            <th ng-attr-st-sort="{{column.action ? '' : column.name}}" ng-repeat="column in transactionLogTableDefinition.columns" class="{{column.attrClass}}">{{column.label}}</th>
+                        </tr>
+                        <tr>
+                            <th ng-repeat="column in transactionLogTableDefinition.columns">
+                                <input name="search{{column.name}}" type="search" ng-if="column.name != 'Actions' && column.name.indexOf('Time') === -1 && column.name.indexOf('Resolved') === -1" st-search="{{column.name}}" class="form-control" placeholder="Search..." />
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody ng-show="!isLoading">
+                        <tr row-data="row" ng-repeat="row in (transactionLogTableDefinition.dataSource||[])">
+                            <td ng-repeat="column in transactionLogTableDefinition.columns" class="{{column.attrClass}}">
+                                <div class="buttons" ng-if="column.action">
+                                    <a ng-if="transactionLogTableDefinition.action.update" ui-sref="{{transactionLogTableDefinition.action.update}}({id: row[transactionLogTableDefinition.key]})">
+                                        <button class="btn btn-primary editable-table-button btn-xs">
+                                            Edit
+                                        </button>
+                                    </a>
+                                    <a ng-repeat="action in transactionLogTableDefinition.action.customActions" ui-sref="{{action.state}}({id: row[transactionLogTableDefinition.key]})" ng-click="action.action(row)">
+                                        <button class="btn editable-table-button btn-xs btn-{{action.customType? action.customType(row) : action.type}}">
+                                            {{action.customText? action.customText(row) : action.text}}
+                                        </button>
+                                    </a>
+                                    
+                                    <!--<button ng-repeat="action in transactionLogTableDefinition.action.customActions" class="btn editable-table-button btn-xs btn-{{action.customType? action.customType(row) : action.type}}" ng-click="action.action(row)">{{action.customText? action.customText(row) : action.text}}</button>-->
+                                </div>
+                                <span ng-else>
+                                    <span ng-switch="column.datatype">
+                                        <span ng-switch-when="boolean" class="label" ng-class="{'label-success' : getDisplayedValue(row, column.name), 'label-danger' : !getDisplayedValue(row, column.name)}">{{getDisplayedValue(row, column.name) ? "Yes" : "No"}}</span>
+                                        <span ng-switch-when="option">{{getOptionValue(column.options, column.optionKey, column.optionText, getDisplayedValue(row, column.name))}}</span>
+                                        <span ng-switch-when="date">{{getDisplayedValue(row, column.name) | date: column.format}}</span>
+                                        <span ng-switch-when="action"><a href="" ng-click="column.onClick(row, getDisplayedValue(row, column.name))">{{getDisplayedValue(row, column.name)}}</a></span>
+                                        <span ng-switch-default>{{getDisplayedValue(row, column.name)}}</span>
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody ng-show="isLoading">
+                        <tr>
+                            <td colspan="{{transactionLogTableDefinition.columns.length}}" class="text-center">Loading ... </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td class="text-right" custom-pagination="" st-displayed-pages="10" st-items-by-page="transactionLogTableDefinition.tablePageSize||25"
+                                colspan="{{transactionLogTableDefinition.columns.length}}"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+    </form>
+</div>

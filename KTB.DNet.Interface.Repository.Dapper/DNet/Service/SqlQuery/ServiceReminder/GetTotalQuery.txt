@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM ServiceReminder WITH (NOLOCK) {0}

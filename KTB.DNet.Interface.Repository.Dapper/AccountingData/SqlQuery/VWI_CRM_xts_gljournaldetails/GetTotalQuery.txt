@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xts_gljournaldetails as VWI_CRM_xts_gljournaldetails WITH (NOLOCK) 
+{0}

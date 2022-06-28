@@ -1,0 +1,20 @@
+SELECT 
+	IDRow
+	,businessunitcode
+	,xts_purchaseordernumber
+	,xts_accountpayablevouchernumber
+	,TransactionDate
+	,PurchaseReceiptDate
+	,xts_packingslipnumber
+	,xts_vendor
+	,xts_product
+	,xts_description
+	,ktb_modelcode
+	,xts_uom
+	,xts_receivedquantity
+	,xts_unitcost
+	,xts_discountamount
+	,xts_totalconsumptiontaxamount
+	,xts_totalamount
+FROM VWI_CRM_PRT_SparepartPurchase WITH (NOLOCK)
+WHERE ID = @Id

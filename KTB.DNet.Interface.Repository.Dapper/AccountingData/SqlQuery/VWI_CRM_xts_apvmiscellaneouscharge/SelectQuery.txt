@@ -1,0 +1,66 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_apvmiscellaneouscharge.company
+	, VWI_CRM_xts_apvmiscellaneouscharge.businessunitcode
+	, VWI_CRM_xts_apvmiscellaneouscharge.createdonbehalfbyyominame
+	, VWI_CRM_xts_apvmiscellaneouscharge.owninguser
+	, VWI_CRM_xts_apvmiscellaneouscharge.transactioncurrencyidname
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_locking
+	, VWI_CRM_xts_apvmiscellaneouscharge.statecode
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_businessunitidname
+	, VWI_CRM_xts_apvmiscellaneouscharge.owneridname
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_amount_base
+	, VWI_CRM_xts_apvmiscellaneouscharge.statecodename
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_amount
+	, VWI_CRM_xts_apvmiscellaneouscharge.createdonbehalfby
+	, VWI_CRM_xts_apvmiscellaneouscharge.transactioncurrencyid
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_miscellaneouschargeidname
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_parentbusinessunitid
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_currencyidname
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_accountpayablevoucheridname
+	, VWI_CRM_xts_apvmiscellaneouscharge.importsequencenumber
+	, VWI_CRM_xts_apvmiscellaneouscharge.modifiedbyyominame
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_accountpayablevoucherid
+	, VWI_CRM_xts_apvmiscellaneouscharge.utcconversiontimezonecode
+	, VWI_CRM_xts_apvmiscellaneouscharge.createdbyyominame
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_miscellaneouschargeid
+	, VWI_CRM_xts_apvmiscellaneouscharge.owningbusinessunit
+	, VWI_CRM_xts_apvmiscellaneouscharge.modifiedbyname
+	, VWI_CRM_xts_apvmiscellaneouscharge.owningteam
+	, VWI_CRM_xts_apvmiscellaneouscharge.modifiedby
+	, VWI_CRM_xts_apvmiscellaneouscharge.createdby
+	, VWI_CRM_xts_apvmiscellaneouscharge.timezoneruleversionnumber
+	, VWI_CRM_xts_apvmiscellaneouscharge.owneridtype
+	, VWI_CRM_xts_apvmiscellaneouscharge.statuscodename
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_apvmiscellaneouscharge
+	, VWI_CRM_xts_apvmiscellaneouscharge.owneridyominame
+	, VWI_CRM_xts_apvmiscellaneouscharge.modifiedon
+	, VWI_CRM_xts_apvmiscellaneouscharge.exchangerate
+	, VWI_CRM_xts_apvmiscellaneouscharge.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_apvmiscellaneouscharge.statuscode
+	, VWI_CRM_xts_apvmiscellaneouscharge.createdbyname
+	, VWI_CRM_xts_apvmiscellaneouscharge.createdon
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_businessunitid
+	, VWI_CRM_xts_apvmiscellaneouscharge.createdonbehalfbyname
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_currencyid
+	, VWI_CRM_xts_apvmiscellaneouscharge.modifiedonbehalfbyname
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_parentbusinessunitidname
+	, VWI_CRM_xts_apvmiscellaneouscharge.versionnumber
+	, VWI_CRM_xts_apvmiscellaneouscharge.modifiedonbehalfby
+	, VWI_CRM_xts_apvmiscellaneouscharge.ownerid
+	, VWI_CRM_xts_apvmiscellaneouscharge.overriddencreatedon
+	, VWI_CRM_xts_apvmiscellaneouscharge.xts_apvmiscellaneouschargeid
+	, VWI_CRM_xts_apvmiscellaneouscharge.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_apvmiscellaneouscharge a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_apvmiscellaneouscharge 

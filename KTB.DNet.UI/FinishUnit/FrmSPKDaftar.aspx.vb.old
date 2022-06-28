@@ -1,0 +1,1792 @@
+#Region "Custom Namespace Imports"
+Imports KTB.DNet.Domain
+Imports KTB.DNet.BusinessFacade.PK
+Imports KTB.DNet.BusinessFacade.FinishUnit
+Imports KTB.DNet.BusinessFacade.General
+Imports KTB.DNet.BusinessFacade.Service
+Imports KTB.DNet.BusinessFacade.Salesman
+Imports KTB.DNet.Utility
+Imports KTB.DNet.Domain.Search
+Imports KTB.DNet.UI.Helper
+Imports KTB.DNet.Security
+Imports System.IO
+Imports System.Text
+#End Region
+
+Public Class FrmSPKDaftar
+    Inherits System.Web.UI.Page
+
+#Region " Web Form Designer Generated Code "
+
+    'This call is required by the Web Form Designer.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+
+    End Sub
+    Protected WithEvents txtKodeDealer As System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblSearchDealer As System.Web.UI.WebControls.Label
+    Protected WithEvents dtgcari As System.Web.UI.WebControls.DataGrid
+    Protected WithEvents Label3 As System.Web.UI.WebControls.Label
+    Protected WithEvents Textbox3 As System.Web.UI.WebControls.TextBox
+    Protected WithEvents btnCari As System.Web.UI.WebControls.Button
+    Protected WithEvents Textbox2 As System.Web.UI.WebControls.TextBox
+    Protected WithEvents Textbox1 As System.Web.UI.WebControls.TextBox
+    Protected WithEvents btnDownload As System.Web.UI.WebControls.Button
+    Protected WithEvents Textbox4 As System.Web.UI.WebControls.TextBox
+    Protected WithEvents Label1 As System.Web.UI.WebControls.Label
+    Protected WithEvents Textbox5 As System.Web.UI.WebControls.TextBox
+    Protected WithEvents Label2 As System.Web.UI.WebControls.Label
+    Protected WithEvents Label4 As System.Web.UI.WebControls.Label
+    Protected WithEvents Label5 As System.Web.UI.WebControls.Label
+    Protected WithEvents lboxStatus As System.Web.UI.WebControls.ListBox
+    Protected WithEvents ddlKategori As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlSPKMonth1 As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlSPKYear1 As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlSPKMonth2 As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlSPKYear2 As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlTipe As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlTipeWarna As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlPropinsi As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlKota As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtSalesmanCode As System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblShowSalesman As System.Web.UI.WebControls.Label
+    Protected WithEvents lblSalesman As System.Web.UI.WebControls.Label
+    Protected WithEvents lblTotalUnit As System.Web.UI.WebControls.Label
+    Protected WithEvents lblTotalHarga As System.Web.UI.WebControls.Label
+    Protected WithEvents Label7 As System.Web.UI.WebControls.Label
+    Protected WithEvents ddlProses As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents btnProses As System.Web.UI.WebControls.Button
+    Protected WithEvents tblOperator As System.Web.UI.HtmlControls.HtmlTable
+    Protected WithEvents ddlFakturMonth1 As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlFakturYear1 As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlFakturMonth2 As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlFakturYear2 As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtSPKRegistered As System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtSPKDealer As System.Web.UI.WebControls.TextBox
+    Protected WithEvents btnSetKonsumen As System.Web.UI.WebControls.Button
+    Protected WithEvents txt1 As System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtRed As System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtYellow As System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtWhiteSmoke As System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtGainsboro As System.Web.UI.WebControls.TextBox
+    Protected WithEvents chkValidate As System.Web.UI.WebControls.CheckBox
+    Protected WithEvents lblStatusFaktur As System.Web.UI.WebControls.Label
+    Protected WithEvents lblStatusFakturSpr As System.Web.UI.WebControls.Label
+    Protected WithEvents txtIndentNumber As System.Web.UI.WebControls.TextBox
+    'NOTE: The following placeholder declaration is required by the Web Form Designer.
+    'Do not delete or move it.
+    Private designerPlaceholderDeclaration As System.Object
+
+    Private Sub Page_Init(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Init
+        'CODEGEN: This method call is required by the Web Form Designer
+        'Do not modify it using the code editor.
+        InitializeComponent()
+    End Sub
+
+#End Region
+
+#Region "Custom Variable Declaration"
+    Private arlSPKHeader As ArrayList
+    Private arlSPK As ArrayList
+    Private objSPKHeader As SPKHeader
+    Private sessionHelper As New sessionHelper
+    Private objUserInfo As UserInfo
+    Private objDealer As Dealer
+#End Region
+
+#Region "Event handler"
+
+    Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Response.Cache.SetCacheability(HttpCacheability.NoCache)
+        objDealer = sessionHelper.GetSession("DEALER")
+        UserPrivilege()
+        If Not IsPostBack Then
+            BindToDropDownList()
+            CommonFunction.BindVehicleSubCategoryToDDL(ddlTipe, ddlKategori.SelectedItem.Text)
+            ddlKategori_SelectedIndexChanged(sender, e)
+            InitiatePage()
+            If GetSessionCriteria() Then
+                BindGrid()
+            End If
+            'SetControlAccess(False)
+        End If
+        lblSearchDealer.Attributes("onclick") = "ShowPPDealerSelection();"
+        lblShowSalesman.Attributes("onClick") = "ShowSalesmanSelection();"
+    End Sub
+
+    Private Sub ddlKategori_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlKategori.SelectedIndexChanged
+        CommonFunction.BindVehicleSubCategoryToDDL(ddlTipe, ddlKategori.SelectedItem.Text)
+        ddlTipeWarna.Enabled = True
+        Select Case ddlKategori.SelectedItem.Text
+            Case "PC"
+                ddlTipeWarna.Items.Clear()
+                ddlTipeWarna.Enabled = False
+            Case "CV"
+                BindDdlTipeWarna("CBU_BODYTYPE1")
+            Case "LCV"
+                BindDdlTipeWarna("CBU_BODYTYPELCV1")
+        End Select
+
+    End Sub
+
+    Private Sub btnCari_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCari.Click
+        If Not Page.IsValid Then
+            Return
+        End If
+        dtgcari.CurrentPageIndex = 0
+        BindGrid()
+        'SetControlAccess(True)
+    End Sub
+
+    Private Sub ddlPropinsi_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles ddlPropinsi.SelectedIndexChanged
+        ddlKota.Items.Clear()
+        If ddlPropinsi.SelectedIndex <> 0 Then
+            Dim criterias As CriteriaComposite = New CriteriaComposite(New Criteria(GetType(City), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+            criterias.opAnd(New Criteria(GetType(City), "Province.ID", MatchType.Exact, ddlPropinsi.SelectedValue))
+            criterias.opAnd(New Criteria(GetType(City), "Status", MatchType.Exact, "A"))
+            ddlKota.DataSource = New CityFacade(User).RetrieveActiveList(criterias, "CityName", Sort.SortDirection.ASC)
+            ddlKota.DataTextField = "CityName".ToUpper
+            ddlKota.DataValueField = "ID"
+            ddlKota.DataBind()
+        End If
+        ddlKota.Items.Insert(0, New ListItem("Silakan Pilih", 0))
+        ddlKota.SelectedIndex = 0
+    End Sub
+
+    
+
+    Private Sub dtgcari_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs) Handles dtgcari.ItemDataBound
+        'Dim intTotalUnit As Integer = 0
+        'Dim dblTotalHarga As Double = 0
+        Dim lblKodeKategori As String = String.Empty
+
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+            If Not (arlSPKHeader Is Nothing) Then
+                objSPKHeader = arlSPKHeader(e.Item.ItemIndex)
+
+                Dim EnumStatus As EnumStatusSPK.Status = objSPKHeader.Status
+                Dim lblStatusString As Label = CType(e.Item.FindControl("lblStatusString"), Label)
+
+                e.Item.Cells(2).Text = (e.Item.ItemIndex + 1 + (dtgcari.PageSize * dtgcari.CurrentPageIndex)).ToString
+                lblStatusString.Text = EnumStatus.ToString
+                e.Item.Cells(7).Text = objSPKHeader.CreatedTime.ToString("dd-MM-yyyy")
+                'e.Item.Cells(7).Text = objSPKHeader.PlanDeliveryMonth.ToString() + "-" + objSPKHeader.PlanDeliveryYear.ToString() 'Periode Pengajuan SPK
+                e.Item.Cells(8).Text = objSPKHeader.CreatedTime.Month.ToString() + "-" + objSPKHeader.CreatedTime.Year.ToString() 'Periode Pengajuan SPK
+                e.Item.Cells(9).Text = objSPKHeader.PlanInvoiceMonth.ToString() + "-" + objSPKHeader.PlanInvoiceYear.ToString() 'Rencana Pengajuan Faktur
+                Dim _category As String = String.Empty
+                For Each detail As SPKDetail In objSPKHeader.SPKDetails
+                    If ddlKategori.SelectedIndex > 0 Then
+                        If detail.Category.CategoryCode = ddlKategori.SelectedItem.Text Then
+                            e.Item.Cells(10).Text = detail.Category.CategoryCode
+                        End If
+                    Else
+                        If Not (_category.IndexOf(detail.Category.CategoryCode) >= 0) Then
+                            _category = _category & IIf(_category.Trim = String.Empty, "", ",") & detail.Category.CategoryCode
+                        End If
+                        e.Item.Cells(10).Text = _category
+                    End If
+                Next
+                Dim strUnitAmount As String = GetTotalUnitAmountSPK(objSPKHeader)
+                Dim arr As String() = strUnitAmount.Split(";")
+                e.Item.Cells(11).Text = FormatNumber(CType(arr(0), Integer), 0, TriState.UseDefault, TriState.True, TriState.UseDefault)
+                If Not objSPKHeader.SPKCustomer Is Nothing Then
+                    e.Item.Cells(13).Text = objSPKHeader.SPKCustomer.City.Province.ProvinceName 'Propinsi
+                Else
+                    e.Item.Cells(13).Text = String.Empty 'Propinsi
+                End If
+                If Not objSPKHeader.SPKCustomer Is Nothing Then
+                    e.Item.Cells(14).Text = objSPKHeader.SPKCustomer.City.CityName 'Kota
+                Else
+                    e.Item.Cells(15).Text = String.Empty 'Kota
+                End If
+
+                Dim lblDealer As Label = CType(e.Item.FindControl("lblDealer"), Label)
+                If Not IsNothing(lblDealer) Then
+                    lblDealer.ToolTip = objSPKHeader.Dealer.SearchTerm1
+                End If
+
+                Dim lblHistoryStatus As Label = CType(e.Item.FindControl("lblHistoryStatus"), Label)
+                lblHistoryStatus.Attributes("onclick") = GeneralScript.GetPopUpEventReference("../PopUp/PopUpChangeStatusHistory.aspx?DocType=" & LookUp.DocumentType.Surat_Pesanan_Kendaraan & "&DocNumber=" & objSPKHeader.SPKNumber, "", 400, 400, "DealerSelection")
+
+                Dim linkbtnEdit As LinkButton = e.Item.FindControl("lbnEdit")
+                linkbtnEdit.Text = "<img src=""../images/Edit.gif"" border=""0"" alt=""Ubah"">"
+
+                Dim linkbtnView As LinkButton = e.Item.FindControl("lbnView")
+                linkbtnView.Text = "<img src=""../images/detail.gif"" border=""0"" alt=""Lihat"">"
+
+                Dim lbnProfile As LinkButton = e.Item.FindControl("lbnProfile")
+                lbnProfile.Text = "<img src=""../images/dok.gif"" border=""0"" alt=""Profile"">"
+
+                If objDealer.Title = EnumDealerTittle.DealerTittle.KTB Then
+                    linkbtnEdit.Visible = False
+                    linkbtnView.Visible = True
+                    lbnProfile.Visible = False
+                Else
+                    If objSPKHeader.Dealer.DealerGroup.ID <> objDealer.DealerGroup.ID Then
+                        linkbtnEdit.Visible = False
+                        linkbtnView.Visible = True
+                        lbnProfile.Visible = False
+                    Else
+                        If ((objSPKHeader.Status <> EnumStatusSPK.Status.Closed) AndAlso (objSPKHeader.Status <> EnumStatusSPK.Status.Selesai)) OrElse ((Not (objSPKHeader.Dealer Is Nothing)) AndAlso (objSPKHeader.Dealer.DealerGroup.ID <> objDealer.DealerGroup.ID)) Then
+                            linkbtnEdit.Visible = True
+                            linkbtnView.Visible = False
+                            lbnProfile.Visible = True
+                            'linkbtn.Visible = SecurityProvider.Authorize(Context.User, SR.DaftarPKIconView_Privilege)
+                        Else
+                            lbnProfile.Visible = False
+                            linkbtnEdit.Visible = False
+                            linkbtnView.Visible = True
+                        End If
+                    End If
+                End If
+
+
+                Dim criteria As CriteriaComposite = New CriteriaComposite(New criteria(GetType(StatusChangeHistory), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+                criteria.opAnd(New criteria(GetType(StatusChangeHistory), "DocumentType", MatchType.Exact, CType(LookUp.DocumentType.Surat_Pesanan_Kendaraan, Integer)))
+                criteria.opAnd(New criteria(GetType(StatusChangeHistory), "DocumentRegNumber", MatchType.Exact, objSPKHeader.SPKNumber))
+
+                Dim sortColl As SortCollection = New SortCollection
+                sortColl.Add(New Sort(GetType(StatusChangeHistory), "CreatedTime", Sort.SortDirection.DESC))
+
+                Dim objStatusChangeHistoryFacade As New StatusChangeHistoryFacade(User)
+                Dim arlStatusHistory As ArrayList = objStatusChangeHistoryFacade.Retrieve(criteria, sortColl)
+                If arlStatusHistory.Count > 0 Then
+                    Dim objStatusChangeHistory As StatusChangeHistory = arlStatusHistory(0)
+                    Dim diffDay As Integer = DateDiff(DateInterval.Day, objStatusChangeHistory.CreatedTime, Date.Now)
+                    If diffDay >= 7 And diffDay <= 14 Then
+                        If Not (objSPKHeader.Status = EnumStatusSPK.Status.Selesai Or objSPKHeader.Status = EnumStatusSPK.Status.Batal) Then
+                            e.Item.BackColor = System.Drawing.Color.Yellow
+                        End If
+                    ElseIf diffDay > 14 Then
+                        If Not (objSPKHeader.Status = EnumStatusSPK.Status.Selesai Or objSPKHeader.Status = EnumStatusSPK.Status.Batal) Then
+                            e.Item.BackColor = System.Drawing.Color.Red
+                        End If
+                    End If
+                End If
+
+                If CType(objSPKHeader.Status, Integer) = EnumStatusSPK.Status.Selesai Then
+                    If objSPKHeader.CustomerRequestID > 0 Then
+                        e.Item.BackColor = System.Drawing.Color.LightGreen
+                    Else
+                        e.Item.BackColor = System.Drawing.Color.Orange
+                    End If
+                End If
+                If e.Item.BackColor.ToString = System.Drawing.Color.White.ToString Then
+                    If Not IsNothing(objSPKHeader.SPKCustomer) AndAlso objSPKHeader.SPKCustomer.ID > 0 Then
+                        If objSPKHeader.SPKCustomer.MCPStatus = EnumMCPStatus.MCPStatus.NotVerifiedMCP Then
+                            e.Item.BackColor = System.Drawing.Color.Gainsboro
+                        End If
+                    End If
+                End If
+            End If
+
+        End If
+    End Sub
+
+    Private Sub dtgcari_ItemCommand(ByVal source As Object, ByVal e As System.Web.UI.WebControls.DataGridCommandEventArgs) Handles dtgcari.ItemCommand
+        sessionHelper.SetSession("PrevPage", Request.Url.ToString())
+        SetSessionCriteria()
+        If e.CommandName = "Edit" Then
+            Response.Redirect("FrmSPKHeader.aspx?Id=" & e.Item.Cells(1).Text & "&Mode=1&isBack=0")
+        ElseIf e.CommandName = "View" Then
+            Response.Redirect("FrmSPKHeader.aspx?Id=" & e.Item.Cells(1).Text & "&Mode=2&isBack=0")
+        ElseIf e.CommandName = "Profile" Then
+            Response.Redirect("FrmSPKHeaderProfile.aspx?Id=" & e.Item.Cells(1).Text)
+        End If
+
+    End Sub
+
+    Private Sub dtgcari_SortCommand(ByVal source As Object, ByVal e As System.Web.UI.WebControls.DataGridSortCommandEventArgs) Handles dtgcari.SortCommand
+        If CType(ViewState("CurrentSortColumn"), String) = e.SortExpression Then
+            Select Case CType(ViewState("CurrentSortDirect"), Sort.SortDirection)
+
+                Case Sort.SortDirection.ASC
+                    ViewState("CurrentSortDirect") = Sort.SortDirection.DESC
+
+                Case Sort.SortDirection.DESC
+                    ViewState("CurrentSortDirect") = Sort.SortDirection.ASC
+            End Select
+        Else
+            ViewState("CurrentSortColumn") = e.SortExpression
+            ViewState("CurrentSortDirect") = Sort.SortDirection.ASC
+        End If
+
+        dtgcari.SelectedIndex = -1
+        dtgcari.CurrentPageIndex = 0
+        BindDataToGrid(dtgcari.CurrentPageIndex)
+    End Sub
+
+    Private Sub btnProses_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProses.Click
+        Dim listSPK As ArrayList
+        Dim iStatus As Integer
+        Dim iProfileChecking As Boolean = False
+        Dim strMessage As String = ""
+        Select Case ddlProses.SelectedValue
+            Case 0 'Awal
+                'SetAwal()
+            Case 1 'Tanda Jadi
+                listSPK = PopulateSPKHeaderTandaJadi()
+                strMessage = "Tanda Jadi"
+                iProfileChecking = True
+                iStatus = EnumStatusSPK.Status.Tanda_Jadi
+                'SetTandaJadi()
+            Case 2 'Lunas
+                listSPK = PopulateSPKHeaderLunas()
+                strMessage = "Lunas"
+                iProfileChecking = True
+                iStatus = EnumStatusSPK.Status.Lunas
+                'SetLunas()
+            Case 3 'Batal
+                listSPK = PopulateSPKHeaderBatal()
+                strMessage = "Batal"
+                iProfileChecking = False
+                iStatus = EnumStatusSPK.Status.Batal
+                'SetBatal()
+            Case 4 'Pending
+                listSPK = PopulateSPKHeaderPending()
+                strMessage = "Pending"
+                iProfileChecking = False
+                iStatus = EnumStatusSPK.Status.Pending
+                'SetPending()
+            Case 5 'Selesai
+                listSPK = PopulateSPKHeaderSelesai()
+                strMessage = "Selesai"
+                iProfileChecking = False
+                iStatus = EnumStatusSPK.Status.Selesai
+                'SetSelesai()
+            Case 6 'Closed
+                listSPK = PopulateSPKHeaderClosed()
+                strMessage = "Closed"
+                iProfileChecking = False
+                iStatus = EnumStatusSPK.Status.Closed
+                'SetClosed()
+            Case 7 'Indent
+                listSPK = PopulateSPKHeaderIndent()
+                strMessage = "Indent"
+                iProfileChecking = True
+                iStatus = EnumStatusSPK.Status.Indent
+                'SetIndent()
+        End Select
+        If listSPK.Count = 0 Then
+            MessageBox.Show(SR.DataNotSelectedByStatus("SPK", strMessage))
+        Else
+            If iProfileChecking Then
+                Dim msg As New StringBuilder
+                For Each spkHeader As spkHeader In listSPK
+                    For Each spkDetail As spkDetail In spkHeader.SPKDetails
+                        If spkDetail.SPKProfiles.Count = 0 Then
+                            msg.Append(spkDetail.SPKHeader.SPKNumber.ToString & "\n")
+                        End If
+                    Next
+                Next
+                If msg.Length > 0 Then
+                    MessageBox.Show("Nomor SPK berikut : \n" & msg.ToString & " belum ada profile. Mohon diupdate profile terlebih dahulu")
+                    Exit Sub
+                End If
+            End If
+            Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+
+            RecordStatusChangeHistory(listSPK, iStatus)
+            Dim iReturn As Integer = objSPKHeaderFacade.UpdateSPKStatus(listSPK, iStatus)
+            If iStatus = EnumStatusSPK.Status.Indent AndAlso iReturn <> -1 Then
+                MessageBox.Show("Proses Registrasi Indent Number berhasil dilakukan")
+            End If
+            BindGrid()
+        End If
+    End Sub
+
+    Private Sub btnDownload_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDownload.Click
+        Dim arlSPKChecked As New ArrayList
+        arlSPKChecked = PopulateSPKCheckedList()
+
+        Dim arlSPK As New ArrayList
+        arlSPK = GetDataSPKDetail(chkValidate.Checked) 'GetDataSPK()
+
+        If arlSPKChecked.Count <> 0 Then
+            
+            Dim arlIntersection As New ArrayList
+            If chkValidate.Checked Then
+                For Each head As SPKHeader In arlSPKChecked
+                    For Each item As V_SPKChassis In arlSPK
+                        If head.SPKNumber = item.SPKNumber Then
+                            arlIntersection.Add(item)
+                            Exit For
+                        End If
+                    Next
+                Next
+            Else
+                For Each head As SPKHeader In arlSPKChecked
+                    For Each item As V_SPKDetailInfo In arlSPK
+                        If head.ID = item.SPKHeaderID Then
+                            arlIntersection.Add(item)
+                            Exit For
+                        End If
+                    Next
+                Next
+            End If
+            DoDownload(arlIntersection, chkValidate.Checked)
+        Else
+            DoDownload(arlSPK, chkValidate.Checked)
+        End If
+    End Sub
+
+    Private Sub btnSetKonsumen_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSetKonsumen.Click
+        Dim listSPKHeader As ArrayList = PopulateSPKHeaderList()
+
+        If listSPKHeader.Count = 0 Then
+            MessageBox.Show(SR.DataNotSelectedByStatus("SPK", "Selesai dan belum jadi konsumen"))
+        Else
+            For Each _header As SPKHeader In listSPKHeader
+                CopyToCustomerRequest(_header)
+            Next
+            BindGrid()
+        End If
+    End Sub
+
+#End Region
+
+#Region "Custom Method"
+
+
+    Private Sub CopyToCustomerRequest(ByVal _header As SPKHeader)
+        Dim objCustomerRequestFacade As New CustomerRequestFacade(User)
+        Dim objCustomerRequest As CustomerRequest = New CustomerRequest
+        Dim _customer = _header.SPKCustomer
+        objUserInfo = CType(sessionHelper.GetSession("LOGINUSERINFO"), UserInfo)
+        objDealer = sessionHelper.GetSession("DEALER")
+        Try
+            objCustomerRequest.CustomerCode = String.Empty
+            objCustomerRequest.RequestNo = String.Empty
+            objCustomerRequest.RequestDate = DateTime.Today
+            objCustomerRequest.RequestType = EnumTipePengajuanCustomerRequest.TipePengajuanCustomerRequest.Baru
+            objCustomerRequest.RequestUserID = objUserInfo.ID
+            objCustomerRequest.Dealer = objDealer
+            objCustomerRequest.RefRequestNo = String.Empty
+            objCustomerRequest.Status1 = 0
+            objCustomerRequest.Name1 = _customer.Name1
+            objCustomerRequest.Name2 = _customer.Name2
+            objCustomerRequest.Name3 = _customer.Name3
+            objCustomerRequest.Alamat = _customer.Alamat
+            objCustomerRequest.Kelurahan = _customer.Kelurahan
+            objCustomerRequest.Kecamatan = _customer.Kecamatan
+            objCustomerRequest.CityID = _customer.City.ID
+            objCustomerRequest.PhoneNo = _customer.PhoneNo
+            objCustomerRequest.ReffCode = String.Empty
+            objCustomerRequest.PrintRegion = _customer.PrintRegion
+            objCustomerRequest.Email = _customer.Email
+            objCustomerRequest.PreArea = _customer.PreArea
+            objCustomerRequest.TipePerusahaan = _customer.TipePerusahaan
+            objCustomerRequest.PostalCode = _customer.PostalCode
+            objCustomerRequest.Attachment = String.Empty
+
+            Dim arrProfiles As ArrayList = _customer.SPKCustomerProfiles
+
+            Dim iReturn As Integer = objCustomerRequestFacade.InsertFromSPKCustomer(objCustomerRequest, arrProfiles)
+
+            If iReturn > 0 Then
+                Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+                _header.CustomerRequestID = iReturn
+                objSPKHeaderFacade.Update(_header)
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Private Function PopulateSPKCheckedList() As ArrayList
+        Dim oDataGridItem As DataGridItem
+        Dim chkExport As System.Web.UI.WebControls.CheckBox
+        Dim oExArgs As New System.Collections.ArrayList
+        Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+
+        For Each oDataGridItem In dtgcari.Items
+            chkExport = oDataGridItem.FindControl("cbCheck")
+            If chkExport.Checked Then
+                Dim _spk As New KTB.Dnet.Domain.SPKHeader
+                _spk.ID = oDataGridItem.Cells(1).Text
+                _spk = objSPKHeaderFacade.Retrieve(_spk.ID)
+                oExArgs.Add(_spk)
+            End If
+        Next
+        Return oExArgs
+    End Function
+
+    Private Function PopulateSPKHeaderList() As ArrayList
+        Dim oDataGridItem As DataGridItem
+        Dim chkExport As System.Web.UI.WebControls.CheckBox
+        Dim oExArgs As New System.Collections.ArrayList
+        Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+
+        For Each oDataGridItem In dtgcari.Items
+            chkExport = oDataGridItem.FindControl("cbCheck")
+            If chkExport.Checked Then
+                Dim _spk As New KTB.Dnet.Domain.SPKHeader
+                _spk.ID = oDataGridItem.Cells(1).Text
+                _spk.Status = CType(oDataGridItem.FindControl("lblStatus"), Label).Text
+                If _spk.Status = EnumStatusSPK.Status.Selesai And _spk.CustomerRequestID < 1 Then
+                    _spk = objSPKHeaderFacade.Retrieve(_spk.ID)
+                    oExArgs.Add(_spk)
+                End If
+            End If
+        Next
+        Return oExArgs
+    End Function
+
+    Private Sub DoDownload(ByVal dataSPK As ArrayList, ByVal isValidated As Boolean)
+        Dim sFileName As String
+        sFileName = "Daftar SPK [" & Now.Year & Now.Month & Now.Day & Now.Hour & Now.Minute & Now.Second & Now.Millisecond & "]"
+
+        '-- Temp file must be a randomly named file!
+        Dim SPKData As String = Server.MapPath("") & "\..\DataTemp\" & sFileName & ".xls"
+
+        '-- Impersonation to manipulate file in server
+        Dim _user As String = ConfigurationSettings.AppSettings.Get("User")
+        Dim _password As String = ConfigurationSettings.AppSettings.Get("Password")
+        Dim _webServer As String = ConfigurationSettings.AppSettings.Get("WebServer")
+        Dim imp As SAPImpersonate = New SAPImpersonate(_user, _password, _webServer)
+
+        Try
+            If imp.Start() Then
+
+                Dim finfo As FileInfo = New FileInfo(SPKData)
+                If finfo.Exists Then
+                    finfo.Delete()  '-- Delete temp file if exists
+                End If
+
+                '-- Create file stream
+                Dim fs As FileStream = New FileStream(SPKData, FileMode.CreateNew)
+                '-- Create stream writer
+                Dim sw As StreamWriter = New StreamWriter(fs)
+
+                '-- Write data to temp file
+                If isValidated Then
+                    WriteSPKValidated(sw, dataSPK)
+                Else
+                    WriteSPKDetail2(sw, dataSPK)
+                End If
+
+                sw.Close()
+                fs.Close()
+
+                imp.StopImpersonate()
+                imp = Nothing
+
+            End If
+
+            '-- Download invoice data to client!
+            Response.Redirect("../downloadlocal.aspx?file=DataTemp\" & sFileName & ".xls", True)
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Function GetDataSPKDetail(ByVal isValidated As Boolean) As ArrayList
+        Dim spkColl As New ArrayList
+        Dim critsSPK As CriteriaComposite
+        Try
+            If isValidated Then
+                If sessionHelper.GetSession("SearchSPK.critsChassis") Is Nothing Then
+                    MessageBox.Show("Download data gagal ")
+                    Exit Function
+                End If
+                critsSPK = CType(sessionHelper.GetSession("SearchSPK.critsChassis"), CriteriaComposite)
+                spkColl = New V_SPKChassisFacade(User).Retrieve(critsSPK)
+            Else
+                If sessionHelper.GetSession("SearchSPK.critsSPK2") Is Nothing Then
+                    MessageBox.Show("Download data gagal ")
+                    Exit Function
+                End If
+                critsSPK = CType(sessionHelper.GetSession("SearchSPK.critsSPK2"), CriteriaComposite)
+                spkColl = New V_SPKDetailInfoFacade(User).Retrieve(critsSPK)
+            End If
+
+
+
+        Catch ex As Exception
+
+        End Try
+        Return spkColl
+    End Function
+
+    Private Sub WriteSPKDetail(ByVal sw As StreamWriter, ByVal dataSPK As ArrayList)
+
+        Dim tab As Char = Chr(9)  '-- Separator character <Tab>
+        Dim itemLine As StringBuilder = New StringBuilder
+        itemLine.Remove(0, itemLine.Length)  '-- Empty line
+        itemLine.Append("SPK - DAFTAR SPK")
+        sw.WriteLine(itemLine)
+        itemLine.Remove(0, itemLine.Length)
+        itemLine.Append(" " & tab & tab)
+        sw.WriteLine(itemLine)
+        sw.WriteLine(" ")
+
+
+        '======SPK DETAIL=======
+        If (dataSPK.Count > 0) Then
+            itemLine.Remove(0, itemLine.Length)
+            itemLine.Append(" " & tab)
+            sw.WriteLine(itemLine)
+            itemLine.Remove(0, itemLine.Length)
+            itemLine.Append("NO" & tab)
+            itemLine.Append("STATUS" & tab)
+            itemLine.Append("KODE DEALER" & tab)
+            itemLine.Append("NAMA DEALER" & tab)
+            itemLine.Append("KOTA DEALER" & tab)
+            itemLine.Append("NOMOR SPK" & tab)
+            itemLine.Append("NOMOR INDENT" & tab)
+            itemLine.Append("TANGGAL PENGAJUAN SPK (dd-MM-yyyy)" & tab)
+            itemLine.Append("PERIODE PENGAJUAN SPK" & tab)
+            itemLine.Append("PERIODE PENGAJUAN FAKTUR" & tab)
+            itemLine.Append("KATEGORI" & tab)
+            itemLine.Append("UNIT" & tab)
+            itemLine.Append("HARGA PER UNIT (OTR / DEALER PRICE)" & tab)
+            itemLine.Append("KODE KENDARAAN" & tab)
+            itemLine.Append("NAMA KENDARAAN" & tab)
+            itemLine.Append("WARNA " & tab)
+            itemLine.Append("MODEL BODY" & tab)
+            itemLine.Append("NAMA CUSTOMER" & tab)
+            itemLine.Append("PROPINSI" & tab)
+            itemLine.Append("KOTA" & tab)
+            itemLine.Append("NO TELP" & tab)
+            itemLine.Append("NAMA SALESMAN" & tab)
+            itemLine.Append("POSISI SALESMAN" & tab)
+            itemLine.Append("LEVEL SALESMAN" & tab)
+            itemLine.Append("SUPERVISOR" & tab)
+            itemLine.Append("MANAGER" & tab)
+            'itemLine.Append("CARA PEMBAYARAN" & tab)
+            'itemLine.Append("KEPEMILIKAN KENDARAAN" & tab)
+            'itemLine.Append("KENDARAAN INI SBG. KEND." & tab)
+            'itemLine.Append("USIA PEMILIK" & tab)
+            'itemLine.Append("PENGGUNAAN UTAMA" & tab)
+            'itemLine.Append("BIDAN USAHA KONSUMEN" & tab)
+            'itemLine.Append("DAERAH UTAMA OPERASI" & tab)
+            'itemLine.Append("JENIS KENDARAAN" & tab)
+            'itemLine.Append("MODEL KENDARAAN" & tab)
+            sw.WriteLine(itemLine.ToString())
+            Dim i As Integer = 1
+            For Each header As SPKHeader In dataSPK
+                For Each item As SPKDetail In header.SPKDetails
+                    itemLine.Remove(0, itemLine.Length)
+                    itemLine.Append(i.ToString & tab)
+                    itemLine.Append(CType(CInt(header.Status), EnumStatusSPK.Status).ToString & tab)
+                    itemLine.Append(header.Dealer.DealerCode & tab)
+                    itemLine.Append(header.Dealer.DealerName & tab)
+                    itemLine.Append(header.Dealer.City.CityName & tab)
+                    itemLine.Append(Decimal.Round(header.SPKNumber, 0) & tab)
+                    itemLine.Append(header.IndentNumber & tab)
+                    itemLine.Append(header.CreatedTime.ToString("dd-MM-yyyy") & tab)
+                    itemLine.Append(header.PlanDeliveryDate.ToString("MM-yyyy") & tab)
+                    itemLine.Append(header.PlanInvoiceDate.ToString("MM-yyyy") & tab)
+                    If Not IsNothing(item.Category) Then
+                        itemLine.Append(item.Category.CategoryCode & tab)
+                    Else
+                        itemLine.Append(String.Empty & tab)
+                    End If
+                    itemLine.Append(item.Quantity & tab)
+                    itemLine.Append(Decimal.Round(item.Amount, 2) & tab)
+                    If Not IsNothing(item.VechileColor) Then
+                        If Not IsNothing(item.VechileColor.VechileType) Then
+                            itemLine.Append(item.VechileColor.VechileType.VechileTypeCode & tab)
+                            itemLine.Append(item.VechileColor.VechileType.Description & tab)
+                            itemLine.Append(item.VechileColor.ColorEngName & tab)
+                        Else
+                            itemLine.Append(item.VehicleTypeCode & tab)
+                            itemLine.Append(item.VehicleColorCode & tab)
+                            itemLine.Append(item.VehicleColorName & tab)
+                        End If
+
+                    Else
+                        itemLine.Append(String.Empty & tab)
+                        itemLine.Append(String.Empty & tab)
+                        itemLine.Append(String.Empty & tab)
+                    End If
+
+                    If Not IsNothing(item.ProfileDetail) Then
+                        itemLine.Append(item.ProfileDetail.Description & tab)
+                    Else
+                        itemLine.Append(String.Empty & tab)
+                    End If
+                    If Not IsNothing(header.SPKCustomer) Then
+                        itemLine.Append(header.SPKCustomer.Name1 & tab)
+                        itemLine.Append(header.SPKCustomer.City.Province.ProvinceName & tab)
+                        itemLine.Append(header.SPKCustomer.City.CityName & tab)
+                        If header.SPKCustomer.PhoneNo.Trim = "" Then
+                            itemLine.Append(header.SPKCustomer.HpNo & tab)
+                        Else
+                            itemLine.Append(header.SPKCustomer.PhoneNo & tab)
+                        End If
+                    Else
+                        itemLine.Append(String.Empty & tab)
+                        itemLine.Append(String.Empty & tab)
+                        itemLine.Append(String.Empty & tab)
+                        itemLine.Append(String.Empty & tab)
+                    End If
+                    If Not IsNothing(header.SalesmanHeader) Then
+                        itemLine.Append(header.SalesmanHeader.Name & tab)
+                        itemLine.Append(header.SalesmanHeader.JobPosition.Description & tab)
+                        itemLine.Append(header.SalesmanHeader.SalesmanLevel.Description & tab)
+                        If Not IsNothing(header.SalesmanHeader.LeaderId) Then
+                            Dim objSpv As SalesmanHeader = New SalesmanHeaderFacade(User).Retrieve(header.SalesmanHeader.LeaderId)
+                            If Not IsNothing(objSpv) Then
+                                itemLine.Append(objSpv.Name & tab)
+                                If Not IsNothing(objSpv.LeaderId) Then
+                                    Dim objMgr As SalesmanHeader = New SalesmanHeaderFacade(User).Retrieve(objSpv.LeaderId)
+                                    If Not IsNothing(objMgr) Then
+                                        itemLine.Append(objMgr.Name & tab)
+                                    Else
+                                        itemLine.Append(String.Empty & tab)
+                                    End If
+                                Else
+                                    itemLine.Append(String.Empty & tab)
+                                End If
+                            Else
+                                itemLine.Append(String.Empty & tab)
+                            End If
+                        Else
+                            itemLine.Append(String.Empty & tab)
+                            itemLine.Append(String.Empty & tab)
+                        End If
+                    Else
+                        itemLine.Append(String.Empty & tab)
+                        itemLine.Append(String.Empty & tab)
+                        itemLine.Append(String.Empty & tab)
+                        itemLine.Append(String.Empty & tab)
+                        itemLine.Append(String.Empty & tab)
+                    End If
+
+                    sw.WriteLine(itemLine.ToString())
+                    i = i + 1
+                Next
+            Next
+        End If
+
+        itemLine.Remove(0, itemLine.Length)
+        itemLine.Append(" " & tab & tab)
+        sw.WriteLine(itemLine)
+
+    End Sub
+
+    Private Sub WriteSPKDetail2(ByVal sw As StreamWriter, ByVal dataSPK As ArrayList)
+
+        Dim tab As Char = Chr(9)  '-- Separator character <Tab>
+        Dim itemLine As StringBuilder = New StringBuilder
+        itemLine.Remove(0, itemLine.Length)  '-- Empty line
+        itemLine.Append("SPK - DAFTAR SPK")
+        sw.WriteLine(itemLine)
+        itemLine.Remove(0, itemLine.Length)
+        itemLine.Append(" " & tab & tab)
+        sw.WriteLine(itemLine)
+        sw.WriteLine(" ")
+
+
+        '======SPK DETAIL=======
+        If (dataSPK.Count > 0) Then
+            itemLine.Remove(0, itemLine.Length)
+            itemLine.Append(" " & tab)
+            sw.WriteLine(itemLine)
+            itemLine.Remove(0, itemLine.Length)
+            itemLine.Append("NO" & tab)
+            itemLine.Append("STATUS" & tab)
+            itemLine.Append("ALASAN BATAL" & tab)
+            itemLine.Append("KODE DEALER" & tab)
+            itemLine.Append("NAMA DEALER" & tab)
+            itemLine.Append("KOTA DEALER" & tab)
+            itemLine.Append("NOMOR SPK" & tab)
+            itemLine.Append("NOMOR INDENT" & tab)
+            itemLine.Append("TANGGAL PENGAJUAN SPK (dd-MM-yyyy)" & tab)
+            itemLine.Append("PERIODE PENGAJUAN SPK" & tab)
+            itemLine.Append("PERIODE PENGAJUAN FAKTUR" & tab)
+            itemLine.Append("KATEGORI" & tab)
+            itemLine.Append("UNIT" & tab)
+            itemLine.Append("HARGA PER UNIT (OTR / DEALER PRICE)" & tab)
+            itemLine.Append("KODE KENDARAAN" & tab)
+            itemLine.Append("NAMA KENDARAAN" & tab)
+            itemLine.Append("WARNA " & tab)
+            itemLine.Append("MODEL BODY" & tab)
+            itemLine.Append("NAMA CUSTOMER" & tab)
+            itemLine.Append("PROPINSI" & tab)
+            itemLine.Append("KOTA" & tab)
+            itemLine.Append("NO TELP" & tab)
+            itemLine.Append("NAMA SALESMAN" & tab)
+            itemLine.Append("POSISI SALESMAN" & tab)
+            itemLine.Append("LEVEL SALESMAN" & tab)
+            itemLine.Append("SUPERVISOR" & tab)
+            itemLine.Append("MANAGER" & tab)
+            itemLine.Append("CARA PEMBAYARAN" & tab)
+            itemLine.Append("KEPEMILIKAN KENDARAAN" & tab)
+            itemLine.Append("KENDARAAN INI SBG. KEND." & tab)
+            itemLine.Append("USIA PEMILIK" & tab)
+            itemLine.Append("PENGGUNAAN UTAMA" & tab)
+            itemLine.Append("BIDAN USAHA KONSUMEN" & tab)
+            itemLine.Append("DAERAH UTAMA OPERASI" & tab)
+            itemLine.Append("JENIS KENDARAAN" & tab)
+            itemLine.Append("MODEL KENDARAAN" & tab)
+
+            sw.WriteLine(itemLine.ToString())
+            Dim i As Integer = 1
+            Try
+                For Each item As V_SPKDetailInfo In dataSPK
+                    itemLine.Remove(0, itemLine.Length)
+                    itemLine.Append(i.ToString & tab)
+                    itemLine.Append(CType(CInt(item.HeaderStatus), EnumStatusSPK.Status).ToString & tab)
+                    itemLine.Append(item.RejectedReasonDetail & tab)
+                    itemLine.Append(item.DealerCode & tab)
+                    itemLine.Append(item.DealerName & tab)
+                    itemLine.Append(item.CityName & tab)
+                    itemLine.Append(Decimal.Round(item.SPKNumber, 0) & tab)
+                    itemLine.Append(item.IndentNumber & tab)
+                    itemLine.Append(item.CreatedTime.ToString("dd-MM-yyyy") & tab)
+                    itemLine.Append(item.CreatedTime.ToString("MM-yyyy") & tab)
+                    itemLine.Append(item.PlanInvoiceDate.ToString("MM-yyyy") & tab)
+                    itemLine.Append(item.CategoryCode & tab)
+                    itemLine.Append(item.Quantity & tab)
+                    itemLine.Append(Decimal.Round(item.Amount, 2) & tab)
+                    itemLine.Append(item.VechileTypeCode & tab)
+                    itemLine.Append(item.Description & tab)
+                    itemLine.Append(item.ColorEngName & tab)
+                    itemLine.Append(item.ProfileDescription & tab)
+                    itemLine.Append(item.Name1 & tab)
+                    itemLine.Append(item.ProvinceName & tab)
+                    itemLine.Append(item.CityName & tab)
+                    If item.PhoneNo.Trim = "" Then
+                        itemLine.Append(item.HpNo & tab)
+                    Else
+                        itemLine.Append(item.PhoneNo & tab)
+                    End If
+                    itemLine.Append(item.SalesName & tab)
+                    itemLine.Append(item.SalesPosition & tab)
+                    itemLine.Append(item.SalesLevel & tab)
+                    itemLine.Append(item.Supervisor & tab)
+                    itemLine.Append(item.Manager & tab)
+                    itemLine.Append(item.CaraPembayaran & tab)
+                    itemLine.Append(item.KepemilikanKendaraan & tab)
+                    itemLine.Append(item.KendaraanSebagai & tab)
+                    itemLine.Append(item.UsiaPemilik & tab)
+                    itemLine.Append(item.PenggunaanUtamaKendaraan & tab)
+                    itemLine.Append(item.BidangUsaha & tab)
+                    itemLine.Append(item.DaerahUtama & tab)
+                    itemLine.Append(item.JenisKendaraan & tab)
+                    itemLine.Append(item.ModelKendaraan & tab)
+                    sw.WriteLine(itemLine.ToString())
+                    i = i + 1
+                Next
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+        End If
+
+        itemLine.Remove(0, itemLine.Length)
+        itemLine.Append(" " & tab & tab)
+        sw.WriteLine(itemLine)
+
+    End Sub
+
+    Private Sub WriteSPKValidated(ByVal sw As StreamWriter, ByVal dataSPK As ArrayList)
+
+        Dim tab As Char = Chr(9)  '-- Separator character <Tab>
+        Dim itemLine As StringBuilder = New StringBuilder
+        itemLine.Remove(0, itemLine.Length)  '-- Empty line
+        itemLine.Append("SPK - DAFTAR SPK FAKTUR")
+        sw.WriteLine(itemLine)
+        itemLine.Remove(0, itemLine.Length)
+        itemLine.Append(" " & tab & tab)
+        sw.WriteLine(itemLine)
+        sw.WriteLine(" ")
+
+
+        '======SPK DETAIL=======
+        If (dataSPK.Count > 0) Then
+            itemLine.Remove(0, itemLine.Length)
+            itemLine.Append(" " & tab)
+            sw.WriteLine(itemLine)
+            itemLine.Remove(0, itemLine.Length)
+            itemLine.Append("NO" & tab)
+            itemLine.Append("KODE DEALER" & tab)
+            itemLine.Append("NAMA DEALER" & tab)
+            itemLine.Append("NOMOR SPK" & tab)
+            itemLine.Append("NOMOR SPK DEALER" & tab)
+            itemLine.Append("NOMOR INDENT" & tab)
+            itemLine.Append("NOMOR CHASSIS" & tab)
+            itemLine.Append("STATUS FAKTUR" & tab)
+            itemLine.Append("NOMOR FAKTUR" & tab)
+            itemLine.Append("TGL VALIDASI FAKTUR" & tab)
+            itemLine.Append("VALIDASI OLEH" & tab)
+            sw.WriteLine(itemLine.ToString())
+            Dim i As Integer = 1
+            Try
+                For Each item As V_SPKChassis In dataSPK
+                    itemLine.Remove(0, itemLine.Length)
+                    itemLine.Append(i.ToString & tab)
+                    itemLine.Append(item.DealerCode & tab)
+                    itemLine.Append(item.DealerName & tab)
+                    itemLine.Append(Decimal.Round(item.SPKNumber, 0) & tab)
+                    itemLine.Append(item.DealerSPKNumber.ToString & tab)
+                    itemLine.Append(item.IndentNumber.ToString & tab)
+                    itemLine.Append(item.ChassisNumber & tab)
+                    itemLine.Append(EnumChassisMaster.FakturStatusDesc(item.FakturStatus.ToString) & tab)
+                    itemLine.Append(item.FakturNumber & tab)
+                    itemLine.Append(item.FakturValidateTime.ToString("dd-MM-yyyy") & tab)
+                    itemLine.Append(item.FakturValidateBy & tab)
+
+                    sw.WriteLine(itemLine.ToString())
+                    i = i + 1
+                Next
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+        End If
+
+        itemLine.Remove(0, itemLine.Length)
+        itemLine.Append(" " & tab & tab)
+        sw.WriteLine(itemLine)
+
+    End Sub
+
+    Private Sub RecordStatusChangeHistory(ByVal arrListSPK As ArrayList, ByVal newStatus As Integer)
+        For Each item As SPKHeader In arrListSPK
+            Dim objStatusChangeHistoryFacade As New StatusChangeHistoryFacade(User)
+            objStatusChangeHistoryFacade.Insert(CInt(LookUp.DocumentType.Surat_Pesanan_Kendaraan), item.SPKNumber, item.Status, newStatus)
+        Next
+    End Sub
+
+    Private Sub SetIndent()
+        Dim listSPK As ArrayList = PopulateSPKHeaderIndent()
+
+        If listSPK.Count = 0 Then
+            MessageBox.Show(SR.DataNotSelectedByStatus("SPK", "Indent"))
+        Else
+            Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+            RecordStatusChangeHistory(listSPK, CType(EnumStatusSPK.Status.Indent, Integer))
+            objSPKHeaderFacade.UpdateSPKStatus(listSPK, CType(EnumStatusSPK.Status.Indent, Integer))
+            BindGrid()
+        End If
+    End Sub
+
+    Private Sub SetTandaJadi()
+        Dim listSPK As ArrayList = PopulateSPKHeaderTandaJadi()
+
+        If listSPK.Count = 0 Then
+            MessageBox.Show(SR.DataNotSelectedByStatus("SPK", "Tanda Jadi"))
+        Else
+            Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+            RecordStatusChangeHistory(listSPK, CType(EnumStatusSPK.Status.Tanda_Jadi, Integer))
+            objSPKHeaderFacade.UpdateSPKStatus(listSPK, CType(EnumStatusSPK.Status.Tanda_Jadi, Integer))
+            BindGrid()
+        End If
+    End Sub
+
+    Private Sub SetLunas()
+        Dim listSPK As ArrayList = PopulateSPKHeaderLunas()
+
+        If listSPK.Count = 0 Then
+            MessageBox.Show(SR.DataNotSelectedByStatus("SPK", "Lunas"))
+        Else
+            Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+            RecordStatusChangeHistory(listSPK, CType(EnumStatusSPK.Status.Lunas, Integer))
+            objSPKHeaderFacade.UpdateSPKStatus(listSPK, CType(EnumStatusSPK.Status.Lunas, Integer))
+            BindGrid()
+        End If
+    End Sub
+
+    Private Sub SetBatal()
+        Dim listSPK As ArrayList = PopulateSPKHeaderBatal()
+
+        If listSPK.Count = 0 Then
+            MessageBox.Show(SR.DataNotSelectedByStatus("SPK", "Batal"))
+        Else
+            Dim isReasonExist As Boolean = True
+            For Each objSPKHeader As SPKHeader In listSPK
+                If objSPKHeader.RejectedReason = String.Empty Then
+                    isReasonExist = False
+                    Exit For
+                End If
+            Next
+            If isReasonExist Then
+                Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+                RecordStatusChangeHistory(listSPK, CType(EnumStatusSPK.Status.Batal, Integer))
+                objSPKHeaderFacade.UpdateSPKStatus(listSPK, CType(EnumStatusSPK.Status.Batal, Integer))
+                BindGrid()
+            Else
+                MessageBox.Show("Alasan pembatalan harus diisi")
+            End If
+        End If
+    End Sub
+
+    Private Sub SetPending()
+        Dim listSPK As ArrayList = PopulateSPKHeaderPending()
+
+        If listSPK.Count = 0 Then
+            MessageBox.Show(SR.DataNotSelectedByStatus("SPK", "Pending"))
+        Else
+            Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+            RecordStatusChangeHistory(listSPK, CType(EnumStatusSPK.Status.Pending, Integer))
+            objSPKHeaderFacade.UpdateSPKStatus(listSPK, CType(EnumStatusSPK.Status.Pending, Integer))
+            BindGrid()
+        End If
+    End Sub
+
+    Private Sub SetSelesai()
+        Dim listSPK As ArrayList = PopulateSPKHeaderSelesai()
+
+        If listSPK.Count = 0 Then
+            MessageBox.Show(SR.DataNotSelectedByStatus("SPK", "Selesai"))
+        Else
+            Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+            RecordStatusChangeHistory(listSPK, CType(EnumStatusSPK.Status.Selesai, Integer))
+            objSPKHeaderFacade.UpdateSPKStatus(listSPK, CType(EnumStatusSPK.Status.Selesai, Integer))
+            BindGrid()
+        End If
+    End Sub
+
+    Private Sub SetClosed()
+        Dim listSPK As ArrayList = PopulateSPKHeaderClosed()
+
+        If listSPK.Count = 0 Then
+            MessageBox.Show(SR.DataNotSelectedByStatus("SPK", "Closed"))
+        Else
+            Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+            RecordStatusChangeHistory(listSPK, CType(EnumStatusSPK.Status.Closed, Integer))
+            objSPKHeaderFacade.UpdateSPKStatus(listSPK, CType(EnumStatusSPK.Status.Closed, Integer))
+            BindGrid()
+        End If
+    End Sub
+
+    Private Function PopulateSPKHeaderTandaJadi() As ArrayList
+        Dim oDataGridItem As DataGridItem
+        Dim chkExport As System.Web.UI.WebControls.CheckBox
+        Dim oExArgs As New System.Collections.ArrayList
+        Dim status As New EnumStatusSPK
+        Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+
+        For Each oDataGridItem In dtgcari.Items
+            chkExport = oDataGridItem.FindControl("cbCheck")
+            If chkExport.Checked Then
+                Dim _spk As New KTB.Dnet.Domain.SPKHeader
+                _spk.ID = oDataGridItem.Cells(1).Text 'CType(oDataGridItem.FindControl("lblID"), Label).Text
+                _spk.Status = CType(oDataGridItem.FindControl("lblStatus"), Label).Text
+                If _spk.Status = EnumStatusSPK.Status.Awal Or _spk.Status = EnumStatusSPK.Status.Indent Then
+                    _spk = objSPKHeaderFacade.Retrieve(_spk.ID)
+                    '_spk.Status = status.Status.Tanda_Jadi
+                    oExArgs.Add(_spk)
+                End If
+            End If
+        Next
+        status = Nothing
+        Return oExArgs
+    End Function
+
+    Private Function PopulateSPKHeaderIndent() As ArrayList
+        Dim oDataGridItem As DataGridItem
+        Dim chkExport As System.Web.UI.WebControls.CheckBox
+        Dim oExArgs As New System.Collections.ArrayList
+        Dim status As New EnumStatusSPK
+        Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+
+        For Each oDataGridItem In dtgcari.Items
+            chkExport = oDataGridItem.FindControl("cbCheck")
+            If chkExport.Checked Then
+                Dim _spk As New KTB.Dnet.Domain.SPKHeader
+                _spk.ID = oDataGridItem.Cells(1).Text 'CType(oDataGridItem.FindControl("lblID"), Label).Text
+                _spk.Status = CType(oDataGridItem.FindControl("lblStatus"), Label).Text
+                If _spk.Status = EnumStatusSPK.Status.Awal Then
+                    _spk = objSPKHeaderFacade.Retrieve(_spk.ID)
+                    '_spk.Status = status.Status.Tanda_Jadi
+                    oExArgs.Add(_spk)
+                End If
+            End If
+        Next
+        status = Nothing
+        Return oExArgs
+    End Function
+
+    Private Function PopulateSPKHeaderLunas() As ArrayList
+        Dim oDataGridItem As DataGridItem
+        Dim chkExport As System.Web.UI.WebControls.CheckBox
+        Dim oExArgs As New System.Collections.ArrayList
+        Dim status As New EnumStatusSPK
+        Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+
+        For Each oDataGridItem In dtgcari.Items
+            chkExport = oDataGridItem.FindControl("cbCheck")
+            If chkExport.Checked Then
+                Dim _spk As New KTB.Dnet.Domain.SPKHeader
+                _spk.ID = oDataGridItem.Cells(1).Text 'CType(oDataGridItem.FindControl("lblID"), Label).Text
+                _spk.Status = CType(oDataGridItem.FindControl("lblStatus"), Label).Text
+                If _spk.Status = EnumStatusSPK.Status.Awal Or _spk.Status = EnumStatusSPK.Status.Indent Or _spk.Status = EnumStatusSPK.Status.Tanda_Jadi Or _spk.Status = EnumStatusSPK.Status.Pending Then
+                    _spk = objSPKHeaderFacade.Retrieve(_spk.ID)
+                    '_spk.Status = status.Status.Lunas
+                    oExArgs.Add(_spk)
+                End If
+            End If
+        Next
+        status = Nothing
+        Return oExArgs
+    End Function
+
+    Private Function PopulateSPKHeaderBatal() As ArrayList
+        Dim oDataGridItem As DataGridItem
+        Dim chkExport As System.Web.UI.WebControls.CheckBox
+        Dim oExArgs As New System.Collections.ArrayList
+        Dim txtReason As System.Web.UI.WebControls.TextBox
+        Dim status As New EnumStatusSPK
+        Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+
+        For Each oDataGridItem In dtgcari.Items
+            chkExport = oDataGridItem.FindControl("cbCheck")
+            txtReason = oDataGridItem.FindControl("txtRejectedReason")
+            If chkExport.Checked Then
+                Dim _spk As New KTB.Dnet.Domain.SPKHeader
+                _spk.ID = oDataGridItem.Cells(1).Text 'CType(oDataGridItem.FindControl("lblID"), Label).Text
+                _spk.Status = CType(oDataGridItem.FindControl("lblStatus"), Label).Text
+                If _spk.Status = EnumStatusSPK.Status.Awal Or _spk.Status = EnumStatusSPK.Status.Tanda_Jadi Or _spk.Status = EnumStatusSPK.Status.Lunas Or _spk.Status = EnumStatusSPK.Status.Pending Then
+                    _spk = objSPKHeaderFacade.Retrieve(_spk.ID)
+                    '_spk.Status = status.Status.Batal
+                    _spk.RejectedReason = txtReason.Text
+                    oExArgs.Add(_spk)
+                End If
+            End If
+        Next
+        status = Nothing
+        Return oExArgs
+    End Function
+
+    Private Function PopulateSPKHeaderPending() As ArrayList
+        Dim oDataGridItem As DataGridItem
+        Dim chkExport As System.Web.UI.WebControls.CheckBox
+        Dim txtReason As System.Web.UI.WebControls.TextBox
+        Dim oExArgs As New System.Collections.ArrayList
+        Dim status As New EnumStatusSPK
+        Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+
+        For Each oDataGridItem In dtgcari.Items
+            chkExport = oDataGridItem.FindControl("cbCheck")
+            txtReason = oDataGridItem.FindControl("txtRejectedReason")
+            If chkExport.Checked Then
+                Dim _spk As New KTB.Dnet.Domain.SPKHeader
+                _spk.ID = oDataGridItem.Cells(1).Text 'CType(oDataGridItem.FindControl("lblID"), Label).Text
+                _spk.Status = CType(oDataGridItem.FindControl("lblStatus"), Label).Text
+                If _spk.Status = EnumStatusSPK.Status.Awal Or _
+                    _spk.Status = EnumStatusSPK.Status.Tanda_Jadi Or _
+                    _spk.Status = EnumStatusSPK.Status.Lunas Then
+                    _spk = objSPKHeaderFacade.Retrieve(_spk.ID)
+                    '_spk.Status = status.Status.Batal
+                    _spk.RejectedReason = txtReason.Text
+                    oExArgs.Add(_spk)
+                End If
+            End If
+        Next
+        status = Nothing
+        Return oExArgs
+    End Function
+
+    Private Function PopulateSPKHeaderSelesai() As ArrayList
+        Dim oDataGridItem As DataGridItem
+        Dim chkExport As System.Web.UI.WebControls.CheckBox
+        Dim oExArgs As New System.Collections.ArrayList
+        Dim status As New EnumStatusSPK
+        Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+
+        For Each oDataGridItem In dtgcari.Items
+            chkExport = oDataGridItem.FindControl("cbCheck")
+            If chkExport.Checked Then
+                Dim _spk As New KTB.Dnet.Domain.SPKHeader
+                _spk.ID = oDataGridItem.Cells(1).Text 'CType(oDataGridItem.FindControl("lblID"), Label).Text
+                _spk.Status = CType(oDataGridItem.FindControl("lblStatus"), Label).Text
+                If _spk.Status = EnumStatusSPK.Status.Lunas Then
+                    _spk = objSPKHeaderFacade.Retrieve(_spk.ID)
+                    '_spk.Status = status.Status.Selesai
+                    oExArgs.Add(_spk)
+                End If
+            End If
+        Next
+        status = Nothing
+        Return oExArgs
+    End Function
+
+    Private Function PopulateSPKHeaderClosed() As ArrayList
+        Dim oDataGridItem As DataGridItem
+        Dim chkExport As System.Web.UI.WebControls.CheckBox
+        Dim oExArgs As New System.Collections.ArrayList
+        Dim status As New EnumStatusSPK
+        Dim objSPKHeaderFacade As New SPKHeaderFacade(User)
+
+        For Each oDataGridItem In dtgcari.Items
+            chkExport = oDataGridItem.FindControl("cbCheck")
+            If chkExport.Checked Then
+                Dim _spk As New KTB.Dnet.Domain.SPKHeader
+                _spk.ID = oDataGridItem.Cells(1).Text
+                _spk.Status = CType(oDataGridItem.FindControl("lblStatus"), Label).Text
+                If _spk.Status = EnumStatusSPK.Status.Selesai Then
+                    _spk = objSPKHeaderFacade.Retrieve(_spk.ID)
+                    oExArgs.Add(_spk)
+                End If
+            End If
+        Next
+        status = Nothing
+        Return oExArgs
+    End Function
+
+    Private Sub UserPrivilege()
+        If Not SecurityProvider.Authorize(Context.User, SR.daftar_spk_lihat_privilege) Then
+            Response.Redirect("../frmAccessDenied.aspx?modulName=Daftar SPK")
+        End If
+        Dim IsAuthorizedUbah As Boolean = SecurityProvider.Authorize(Context.User, SR.daftar_spk_ubah_privilege)
+        Dim IsAuthorizedDownload As Boolean = SecurityProvider.Authorize(Context.User, SR.daftar_spk_download_privilege)
+        Label7.Visible = IsAuthorizedUbah 'lbl ubah status
+        ddlProses.Visible = IsAuthorizedUbah 'SecurityProvider.Authorize(Context.User, SR.daftar_spk_ubah_privilege)
+        btnProses.Visible = IsAuthorizedUbah 'SecurityProvider.Authorize(Context.User, SR.daftar_spk_ubah_privilege)
+        btnSetKonsumen.Visible = IsAuthorizedUbah 'SecurityProvider.Authorize(Context.User, SR.daftar_spk_ubah_privilege)
+        btnDownload.Visible = IsAuthorizedDownload ' SecurityProvider.Authorize(Context.User, SR.daftar_spk_download_privilege)
+        If objDealer.Title = EnumDealerTittle.DealerTittle.DEALER Then
+            lblStatusFaktur.Visible = False
+            lblStatusFakturSpr.Visible = False
+            chkValidate.Checked = False
+            chkValidate.Visible = False
+        End If
+
+    End Sub
+
+    Private Sub SetControlAccess(ByVal val As Boolean)
+        objDealer = CType(sessionHelper.GetSession("DEALER"), Dealer)
+        If (CInt(objDealer.Title) = EnumDealerTittle.DealerTittle.KTB) Then
+            Label7.Visible = False 'lbl ubah status
+            ddlProses.Enabled = False
+            btnProses.Enabled = False
+            btnSetKonsumen.Enabled = False
+        Else
+            Label7.Visible = val 'lbl ubah status
+            ddlProses.Enabled = val
+            btnProses.Enabled = val
+            btnSetKonsumen.Enabled = val
+        End If
+        btnDownload.Enabled = val
+
+    End Sub
+
+    Private Sub InitiatePage()
+        ViewState("CurrentSortColumn") = "SPKNumber"
+        ViewState("CurrentSortDirect") = Sort.SortDirection.DESC
+    End Sub
+
+    Private Sub BindDdlTipeWarna(ByVal kode As String)
+        ddlTipeWarna.Items.Clear()
+        Dim blankItem As New listItem("Silahkan Pilih", 0)
+        ddlTipeWarna.Items.Add(blankItem)
+
+        Dim criteria As CriteriaComposite = New CriteriaComposite(New criteria(GetType(ProfileDetail), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        criteria.opAnd(New criteria(GetType(ProfileDetail), "ProfileHeader.Code", MatchType.Exact, kode))
+        Try
+            Dim arrayListTipeWarna As ArrayList = New ProfileDetailFacade(User).Retrieve(criteria)
+            For Each item As ProfileDetail In arrayListTipeWarna
+                Dim listItem As New listItem(item.Description, item.ID)
+                listItem.Selected = False
+                ddlTipeWarna.Items.Add(listItem)
+            Next
+            ddlTipeWarna.ClearSelection()
+
+        Catch ex As Exception
+            MessageBox.Show("Error Binding ddlKategori, silahkan kirim error ini ke dnet admin")
+        End Try
+    End Sub
+
+    Private Sub BindToDropDownList()
+        '--DropDownList SPK Month 1
+        Try
+            ddlSPKMonth1.Items.Clear()
+            ddlSPKMonth1.Items.Insert(0, New listItem("Silahkan Pilih", -1))
+            For Each item As listItem In LookUp.ArrayMonth()
+                item.Selected = False
+                ddlSPKMonth1.Items.Add(item)
+            Next
+            ddlSPKMonth1.ClearSelection()
+            'ddlSPKMonth1.SelectedIndex = 0 
+            'ddlSPKMonth1.SelectedValue = CType(Format(DateTime.Now, "MM").ToString, Integer)
+            Dim iMonth As Integer = CType(Format(DateTime.Now, "MM").ToString, Integer)
+            If (iMonth - 3) < 0 Then
+                ddlSPKMonth1.SelectedValue = iMonth + 10
+            ElseIf (iMonth - 3) = 0 Then
+                ddlSPKMonth1.SelectedIndex = 1
+            Else
+                ddlSPKMonth1.SelectedValue = iMonth - 2
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error Binding ddlSPKMonth1, silahkan kirim error ini ke dnet admin")
+        End Try
+
+        '--DropDownList SPK Month 2
+        Try
+            ddlSPKMonth2.Items.Clear()
+            ddlSPKMonth2.Items.Insert(0, New listItem("Silahkan Pilih", -1))
+            For Each item As listItem In LookUp.ArrayMonth()
+                item.Selected = False
+                ddlSPKMonth2.Items.Add(item)
+            Next
+            ddlSPKMonth2.ClearSelection()
+            'ddlSPKMonth2.SelectedIndex = 0
+            ddlSPKMonth2.SelectedValue = CType(Format(DateTime.Now, "MM").ToString, Integer)
+
+        Catch ex As Exception
+            MessageBox.Show("Error Binding ddlSPKMonth2, silahkan kirim error ini ke dnet admin")
+        End Try
+
+        '--DropDownList SPK Year 1
+        Try
+            ddlSPKYear1.Items.Clear()
+            ddlSPKYear1.Items.Insert(0, New listItem("Silahkan Pilih", -1))
+            For Each item As listItem In LookUp.ArrayYear(True, 2, 8, Date.Now.Year.ToString)
+                item.Selected = False
+                ddlSPKYear1.Items.Add(item)
+            Next
+            ddlSPKYear1.ClearSelection()
+            'ddlSPKYear1.SelectedIndex = 0
+            'ddlSPKYear1.SelectedValue = Format(DateTime.Now, "yyyy").ToString
+            Dim iMonth As Integer = CType(Format(DateTime.Now, "MM").ToString, Integer)
+            Dim iYear As Integer = CType(Format(DateTime.Now, "yyyy").ToString, Integer)
+            If (iMonth - 3) < 0 Then
+                ddlSPKYear1.SelectedValue = (iYear - 1).ToString
+            Else
+                ddlSPKYear1.SelectedValue = iYear
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error Binding ddlSPKYear1, silahkan kirim error ini ke dnet admin")
+        End Try
+
+        '--DropDownList SPK Year 2
+        Try
+            ddlSPKYear2.Items.Clear()
+            ddlSPKYear2.Items.Insert(0, New listItem("Silahkan Pilih", -1))
+            For Each item As listItem In LookUp.ArrayYear(True, 2, 8, Date.Now.Year.ToString)
+                item.Selected = False
+                ddlSPKYear2.Items.Add(item)
+            Next
+            ddlSPKYear2.ClearSelection()
+            'ddlSPKYear2.SelectedIndex = 0
+            ddlSPKYear2.SelectedValue = Format(DateTime.Now, "yyyy").ToString
+        Catch ex As Exception
+            MessageBox.Show("Error Binding ddlSPKYear2, silahkan kirim error ini ke dnet admin")
+        End Try
+
+        '--DropDownList Faktur Month 1
+        Try
+            ddlFakturMonth1.Items.Clear()
+            ddlFakturMonth1.Items.Insert(0, New listItem("Silahkan Pilih", -1))
+            For Each item As listItem In LookUp.ArrayMonth()
+                item.Selected = False
+                ddlFakturMonth1.Items.Add(item)
+            Next
+            ddlFakturMonth1.ClearSelection()
+            ddlFakturMonth1.SelectedIndex = 0
+            'ddlFakturMonth1.SelectedValue = CType(Format(DateTime.Now, "MM").ToString, Integer)
+        Catch ex As Exception
+            MessageBox.Show("Error Binding ddlFakturMonth1, silahkan kirim error ini ke dnet admin")
+        End Try
+
+        '--DropDownList Faktur Year
+        Try
+            ddlFakturYear1.Items.Clear()
+            ddlFakturYear1.Items.Insert(0, New listItem("Silahkan Pilih", -1))
+            For Each item As listItem In LookUp.ArrayYear(True, 2, 8, Date.Now.Year.ToString)
+                item.Selected = False
+                ddlFakturYear1.Items.Add(item)
+            Next
+            ddlFakturYear1.ClearSelection()
+            'ddlFakturYear1.SelectedValue = Format(DateTime.Now, "yyyy").ToString
+            ddlFakturYear1.SelectedIndex = 0
+        Catch ex As Exception
+            MessageBox.Show("Error Binding ddlFakturYear1, silahkan kirim error ini ke dnet admin")
+        End Try
+
+        '--DropDownList Faktur Month 2
+        Try
+            ddlFakturMonth2.Items.Clear()
+            ddlFakturMonth2.Items.Insert(0, New listItem("Silahkan Pilih", -1))
+            For Each item As listItem In LookUp.ArrayMonth()
+                item.Selected = False
+                ddlFakturMonth2.Items.Add(item)
+            Next
+            ddlFakturMonth2.ClearSelection()
+            ddlFakturMonth2.SelectedIndex = 0
+            'ddlFakturMonth2.SelectedValue = CType(Format(DateTime.Now, "MM").ToString, Integer)
+        Catch ex As Exception
+            MessageBox.Show("Error Binding ddlFakturMonth2, silahkan kirim error ini ke dnet admin")
+        End Try
+
+        '--DropDownList Faktur Year
+        Try
+            ddlFakturYear2.Items.Clear()
+            ddlFakturYear2.Items.Insert(0, New listItem("Silahkan Pilih", -1))
+            For Each item As listItem In LookUp.ArrayYear(True, 2, 8, Date.Now.Year.ToString)
+                item.Selected = False
+                ddlFakturYear2.Items.Add(item)
+            Next
+            ddlFakturYear2.ClearSelection()
+            'ddlFakturYear2.SelectedValue = Format(DateTime.Now, "yyyy").ToString
+            ddlFakturYear2.SelectedIndex = 0
+        Catch ex As Exception
+            MessageBox.Show("Error Binding ddlFakturYear2, silahkan kirim error ini ke dnet admin")
+        End Try
+
+        '--DropDownList Status
+        Try
+            lboxStatus.Items.Clear()
+            For Each item As listItem In LookUp.ArrayStatusSPK
+                item.Selected = False
+                lboxStatus.Items.Add(item)
+            Next
+            lboxStatus.ClearSelection()
+            'lboxStatus.SelectedIndex = -1
+        Catch ex As Exception
+            MessageBox.Show("Error Binding lboxStatus, silahkan kirim error ini ke dnet admin")
+        End Try
+
+
+        '--DropDownList Propinsi
+        Dim Provice_criteria As CriteriaComposite = New CriteriaComposite(New Criteria(GetType(Province), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        Try
+            ddlPropinsi.Items.Clear()
+            ddlPropinsi.DataSource = New ProvinceFacade(User).RetrieveActiveList(Provice_criteria, "ProvinceName", Sort.SortDirection.ASC)
+            ddlPropinsi.DataTextField = "ProvinceName"
+            ddlPropinsi.DataValueField = "ID"
+            ddlPropinsi.DataBind()
+            ddlPropinsi.Items.Insert(0, New listItem("Silakan Pilih", 0))
+            ddlPropinsi.SelectedIndex = 0
+            ddlPropinsi_SelectedIndexChanged(Me, System.EventArgs.Empty)
+        Catch ex As Exception
+            MessageBox.Show("Error Binding ddlPropinsi, silahkan kirim error ini ke dnet admin")
+        End Try
+
+
+        ''--DropDownList Kategori
+        Try
+            Dim arrayListCategory As ArrayList = New SPKHeaderFacade(User).RetrieveListCategory
+            Dim blankItem As New listItem("Silahkan Pilih", 0)
+            ddlKategori.Items.Add(blankItem)
+            For Each item As Category In arrayListCategory
+                Dim listItem As New listItem(item.CategoryCode, item.ID)
+                listItem.Selected = False
+                ddlKategori.Items.Add(listItem)
+                'If item.CategoryCode = "PC" Then
+                '    If SecurityProvider.Authorize(Context.User, SR.PKCategoryAll_Privilege) OrElse SecurityProvider.Authorize(Context.User, SR.PKCategoryPC_Privilege) Then
+                '        ddlKategori.Items.Add(listItem)
+                '    End If
+                'ElseIf item.CategoryCode = "LCV" Then
+                '    If SecurityProvider.Authorize(Context.User, SR.PKCategoryAll_Privilege) OrElse SecurityProvider.Authorize(Context.User, SR.PKCategoryLCV_Privilege) Then
+                '        ddlKategori.Items.Add(listItem)
+                '    End If
+                'ElseIf item.CategoryCode = "CV" Then
+                '    If SecurityProvider.Authorize(Context.User, SR.PKCategoryAll_Privilege) OrElse SecurityProvider.Authorize(Context.User, SR.PKCategoryCV_Privilege) Then
+                '        ddlKategori.Items.Add(listItem)
+                '    End If
+                'End If
+            Next
+            If ddlKategori.Items.Count > 0 Then
+                ddlKategori.SelectedIndex = 0
+            Else
+                ddlKategori.ClearSelection()
+            End If
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error Binding ddlKategori, silahkan kirim error ini ke dnet admin")
+        End Try
+
+
+    End Sub
+
+    Private Sub SetSessionCriteria()
+        Dim objSSPK As ArrayList = New ArrayList
+        objSSPK.Add(txtKodeDealer.Text.Trim) '0
+        objSSPK.Add(ddlSPKMonth1.SelectedValue) '1
+        objSSPK.Add(ddlSPKYear1.SelectedValue) '2
+        objSSPK.Add(ddlSPKMonth2.SelectedValue) '3
+        objSSPK.Add(ddlSPKYear2.SelectedValue) '4
+        objSSPK.Add(ddlFakturMonth1.SelectedValue) '5
+        objSSPK.Add(ddlFakturYear1.SelectedValue) '6
+        objSSPK.Add(ddlFakturMonth2.SelectedValue) '7
+        objSSPK.Add(ddlFakturYear2.SelectedValue) '8
+        objSSPK.Add(ddlPropinsi.SelectedValue) '9
+        objSSPK.Add(ddlKota.SelectedValue) '10
+        objSSPK.Add(GetSelectedItem(lboxStatus)) '11
+        objSSPK.Add(ddlKategori.SelectedValue) '12
+        objSSPK.Add(ddlTipe.SelectedValue) '13
+        objSSPK.Add(ddlTipeWarna.SelectedValue) '14
+        objSSPK.Add(txtSalesmanCode.Text) '15
+        objSSPK.Add(dtgcari.CurrentPageIndex) '16
+        objSSPK.Add(CType(ViewState("CurrentSortColumn"), String)) '17
+        objSSPK.Add(CType(ViewState("CurrentSortDirect"), Sort.SortDirection)) '18
+        objSSPK.Add(txtSPKRegistered.Text) '19
+        objSSPK.Add(txtSPKDealer.Text) '20
+        sessionHelper.SetSession("SESSIONSEARCHSPK", objSSPK)
+    End Sub
+
+    Private Function GetSessionCriteria() As Boolean
+        Dim objSSPK As ArrayList = sessionHelper.GetSession("SESSIONSEARCHSPK")
+        If Not objSSPK Is Nothing Then
+            txtKodeDealer.Text = objSSPK.Item(0)
+            ddlSPKMonth1.SelectedValue = objSSPK.Item(1)
+            ddlSPKYear1.SelectedValue = objSSPK.Item(2)
+            ddlSPKMonth2.SelectedValue = objSSPK.Item(3)
+            ddlSPKYear2.SelectedValue = objSSPK.Item(4)
+            ddlFakturMonth1.SelectedValue = objSSPK.Item(5)
+            ddlFakturYear1.SelectedValue = objSSPK.Item(6)
+            ddlFakturMonth2.SelectedValue = objSSPK.Item(7)
+            ddlFakturYear2.SelectedValue = objSSPK.Item(8)
+            ddlPropinsi.SelectedValue = objSSPK.Item(9)
+            ddlKota.SelectedValue = objSSPK.Item(10)
+            Dim str() As String = objSSPK.Item(11).ToString().Split(",")
+            For Each item As ListItem In lboxStatus.Items
+                For i As Integer = 0 To str.Length - 1
+                    If item.Value.ToString = str(i).ToString Then
+                        item.Selected = True
+                        Exit For
+                    End If
+                Next
+            Next
+            ddlKategori.SelectedValue = objSSPK.Item(12)
+            CommonFunction.BindVehicleSubCategoryToDDL(ddlTipe, ddlKategori.SelectedItem.Text)
+            ddlTipe.SelectedValue = objSSPK.Item(13)
+            ddlTipeWarna.SelectedValue = objSSPK.Item(14)
+            txtSalesmanCode.Text = objSSPK.Item(15)
+            dtgcari.CurrentPageIndex = CType(objSSPK.Item(16), Integer)
+            ViewState("CurrentSortColumn") = objSSPK.Item(17)
+            ViewState("CurrentSortDirect") = objSSPK.Item(18)
+            txtSPKRegistered.Text = objSSPK.Item(19)
+            txtSPKDealer.Text = objSSPK.Item(20)
+            Return True
+        End If
+        Return False
+    End Function
+
+    Private Sub BindGrid()
+        BindDataToGrid(dtgcari.CurrentPageIndex)
+    End Sub
+
+    Private Sub BindDataToGrid(ByVal currentPageIndex As Integer)
+        Dim total As Integer = 0
+
+        Dim criterias As CriteriaComposite = New CriteriaComposite(New Criteria(GetType(SPKHeader), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        'Dim criterias2 As CriteriaComposite = New CriteriaComposite(New Criteria(GetType(V_SPKDetailInfo), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        Dim criterias2 As CriteriaComposite = New CriteriaComposite(New Criteria(GetType(V_SPKDetailInfo), "RowStatus", MatchType.No, -555))
+        Dim critChassis As CriteriaComposite = New CriteriaComposite(New Criteria(GetType(V_SPKChassis), "RowStatus", MatchType.No, -555))
+        Dim sqlFaktur As String = "(SELECT ID FROM V_SPKChassis WHERE 1 = 1 "
+        'Dealer
+        objDealer = Session("DEALER")
+        If objDealer.Title = EnumDealerTittle.DealerTittle.DEALER Then
+            Dim strDealerIn As String = DealerFacade.GenerateDealerCodeSelection(objDealer, User)
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "Dealer.DealerCode", MatchType.InSet, strDealerIn))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "DealerCode", MatchType.InSet, DealerFacade.GenerateDealerCodeSelection(objDealer, User)))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "DealerCode", MatchType.InSet, DealerFacade.GenerateDealerCodeSelection(objDealer, User)))
+            sqlFaktur &= " AND DealerCode in " & strDealerIn
+        End If
+        If txtKodeDealer.Text.Trim() <> "" Then
+            Dim strKodeDealerIn As String = "('" & txtKodeDealer.Text.Trim().Replace(";", "','") & "')"
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "Dealer.DealerCode", MatchType.InSet, strKodeDealerIn))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "DealerCode", MatchType.InSet, strKodeDealerIn))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "DealerCode", MatchType.InSet, strKodeDealerIn))
+            sqlFaktur &= " AND DealerCode in " & strKodeDealerIn
+        End If
+
+        'pengajuan spk
+        If txtSPKRegistered.Text.Trim <> String.Empty Then
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "SPKNumber", MatchType.Partial, txtSPKRegistered.Text.Trim))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "SPKNumber", MatchType.Partial, txtSPKRegistered.Text.Trim))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "SPKNumber", MatchType.Partial, txtSPKRegistered.Text.Trim))
+            sqlFaktur &= " AND SPKNumber like '%" & txtSPKRegistered.Text.Trim & "%'"
+        End If
+        'IndentNumber
+        If txtIndentNumber.Text.Trim <> String.Empty Then
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "IndentNumber", MatchType.Partial, txtIndentNumber.Text.Trim))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "IndentNumber", MatchType.Partial, txtIndentNumber.Text.Trim))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "IndentNumber", MatchType.Partial, txtIndentNumber.Text.Trim))
+            sqlFaktur &= " AND IndentNumber like '%" & txtIndentNumber.Text.Trim & "%'"
+        End If
+        If txtSPKDealer.Text.Trim <> String.Empty Then
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "DealerSPKNumber", MatchType.Partial, txtSPKDealer.Text.Trim))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "DealerSPKNumber", MatchType.Partial, txtSPKDealer.Text.Trim))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "DealerSPKNumber", MatchType.Partial, txtSPKDealer.Text.Trim))
+            sqlFaktur &= " AND DealerSPKNumber like '%" & txtSPKDealer.Text.Trim & "%'"
+        End If
+
+        If ddlSPKMonth1.SelectedIndex <> 0 And ddlSPKYear1.SelectedIndex <> 0 Then
+            Dim spkDate1 As New DateTime(ddlSPKYear1.SelectedValue, ddlSPKMonth1.SelectedValue, 1)
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "CreatedTime", MatchType.GreaterOrEqual, spkDate1))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "CreatedTime", MatchType.GreaterOrEqual, spkDate1))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "CreatedTime", MatchType.GreaterOrEqual, spkDate1))
+            sqlFaktur &= " AND CreatedTime >= '" & ddlSPKYear1.SelectedValue.ToString & "/" & ddlSPKMonth1.SelectedValue.ToString & "/01'"
+        End If
+
+        If ddlSPKMonth2.SelectedIndex <> 0 And ddlSPKYear2.SelectedIndex <> 0 Then
+            Dim spkDate2 As New DateTime(ddlSPKYear2.SelectedValue, ddlSPKMonth2.SelectedValue, Date.DaysInMonth(ddlSPKYear2.SelectedValue, ddlSPKMonth2.SelectedValue))
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "CreatedTime", MatchType.Lesser, spkDate2.AddDays(1)))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "CreatedTime", MatchType.Lesser, spkDate2.AddDays(1)))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "CreatedTime", MatchType.Lesser, spkDate2.AddDays(1)))
+            sqlFaktur &= " AND CreatedTime <= '" & ddlSPKYear2.SelectedValue.ToString & "/" & ddlSPKMonth2.SelectedValue.ToString & "/" & Date.DaysInMonth(ddlSPKYear2.SelectedValue, ddlSPKMonth2.SelectedValue).ToString & " 23:59:59'"
+        End If
+
+        'pengajuan faktur
+        If ddlFakturMonth1.SelectedIndex <> 0 And ddlFakturYear1.SelectedIndex <> 0 And ddlFakturMonth2.SelectedIndex <> 0 And ddlFakturYear2.SelectedIndex <> 0 Then
+            Dim fakturDate1 As New DateTime(ddlFakturYear1.SelectedValue, ddlFakturMonth1.SelectedValue, 1)
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "PlanInvoiceDate", MatchType.GreaterOrEqual, fakturDate1))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "PlanInvoiceDate", MatchType.GreaterOrEqual, fakturDate1))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "PlanInvoiceDate", MatchType.GreaterOrEqual, fakturDate1))
+            sqlFaktur &= " AND PlanInvoiceDate >= '" & ddlFakturYear1.SelectedValue.ToString & "/" & ddlFakturMonth1.SelectedValue.ToString & "/01'"
+        End If
+
+        If ddlFakturMonth2.SelectedIndex <> 0 And ddlFakturYear2.SelectedIndex <> 0 Then
+            Dim fakturDate2 As New DateTime(ddlFakturYear2.SelectedValue, ddlFakturMonth2.SelectedValue, 1)
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "PlanInvoiceDate", MatchType.Lesser, fakturDate2.AddDays(1)))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "PlanInvoiceDate", MatchType.Lesser, fakturDate2.AddDays(1)))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "PlanInvoiceDate", MatchType.Lesser, fakturDate2.AddDays(1)))
+            sqlFaktur &= " AND CreatedTime <= '" & ddlFakturYear2.SelectedValue.ToString & "/" & ddlFakturMonth2.SelectedValue.ToString & "/" & Date.DaysInMonth(ddlFakturYear2.SelectedValue, ddlFakturMonth2.SelectedValue).ToString & " 23:59:59'"
+        End If
+
+        'propinsi
+        If ddlPropinsi.SelectedIndex <> 0 Then
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "SPKCustomer.City.Province.ID", MatchType.Exact, ddlPropinsi.SelectedValue))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "ProvinceID", MatchType.Exact, ddlPropinsi.SelectedValue))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "SPKCustomer.City.Province.ID", MatchType.Exact, ddlPropinsi.SelectedValue))
+        End If
+        'kota
+        If ddlKota.SelectedIndex <> 0 Then
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "SPKCustomer.City.ID", MatchType.Exact, ddlKota.SelectedValue))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "CityID", MatchType.Exact, ddlKota.SelectedValue))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "SPKCustomer.City.ID", MatchType.Exact, ddlKota.SelectedValue))
+        End If
+
+        'status
+        If lboxStatus.SelectedIndex <> -1 Then
+            Dim SelectedStatus As String = GetSelectedItem(lboxStatus)
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "Status", MatchType.InSet, "(" & SelectedStatus & ")"))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "HeaderStatus", MatchType.InSet, "(" & SelectedStatus & ")"))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "Status", MatchType.InSet, "(" & SelectedStatus & ")"))
+            sqlFaktur &= " AND Status IN (" & SelectedStatus & ")"
+        End If
+
+        If ddlKategori.SelectedIndex > 0 Then
+            'category
+            Dim sqlCategory As String = ""
+            sqlCategory &= "Select h.id "
+            sqlCategory &= "from spkheader as h, spkdetail as det "
+            sqlCategory &= "where(h.id = det.spkheaderid And det.CategoryId=" & ddlKategori.SelectedValue & ")"
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "ID", MatchType.InSet, "(" & sqlCategory & ")"))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "CategoryID", MatchType.Exact, ddlKategori.SelectedValue))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "ID", MatchType.InSet, "(" & sqlCategory & ")"))
+            sqlFaktur &= " AND ID IN (" & sqlCategory & ")"
+            'tipe
+            If ddlTipe.SelectedValue <> -1 Then
+                Dim Sql As String = ""
+                Dim oEVSC As EnumVehicleSubCategory = New EnumVehicleSubCategory
+                Dim sVals As String = oEVSC.GetSQLValue(ddlKategori.SelectedItem.Text, ddlTipe.SelectedValue)
+
+                Sql &= " select distinct(head.id) from SPKDetail pkd, SPKHeader as head,  VechileType vt "
+                Sql &= " where pkd.SPKHeaderID = head.ID And pkd.VehicleTypeCode = vt.VechileTypeCode" ' And pkd.Status=0"
+                Dim i As Integer
+                For i = 0 To sVals.Split(";").Length - 1
+                    If i = 0 Then
+                        Sql &= " and (vt.Description like '" & sVals.Split(";")(i) & "' "
+                        If sVals.Split(";").Length = 1 Then Sql &= ")"
+                    ElseIf i = sVals.Split(";").Length - 1 Then
+                        Sql &= " or vt.Description like '" & sVals.Split(";")(i) & "') "
+                    Else
+                        Sql &= " or vt.Description like '" & sVals.Split(";")(i) & "'"
+                    End If
+                Next
+                criterias.opAnd(New Criteria(GetType(SPKHeader), "ID", MatchType.InSet, "(" & Sql & ")"))
+                criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "SPKHeaderID", MatchType.InSet, "(" & Sql & ")"))
+                If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "ID", MatchType.InSet, "(" & Sql & ")"))
+                sqlFaktur &= " AND ID IN (" & Sql & ")"
+            End If
+            'tipe body
+            If ddlTipeWarna.SelectedIndex > 0 Then
+                Dim Sql As String = ""
+                Sql &= " select distinct(head.id) from SPKDetail det, SPKHeader as head"
+                'Sql &= " where det.SPKHeaderID = head.ID and det.Status = 0 And det.ProfileDetailID =" & ddlTipeWarna.SelectedValue
+                Sql &= " where det.SPKHeaderID = head.ID And det.ProfileDetailID =" & ddlTipeWarna.SelectedValue
+                criterias.opAnd(New Criteria(GetType(SPKHeader), "ID", MatchType.InSet, "(" & Sql & ")"))
+                criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "ProfileDetailID", MatchType.Exact, ddlTipeWarna.SelectedValue))
+                If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "ID", MatchType.InSet, "(" & Sql & ")"))
+                sqlFaktur &= " AND ID IN (" & Sql & ")"
+            End If
+        End If
+        Dim objSPKDetail As SPKDetail
+
+        'salesman
+        If txtSalesmanCode.Text.Trim <> String.Empty Then
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "SalesmanHeader.SalesmanCode", MatchType.Exact, txtSalesmanCode.Text.Trim))
+            criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "SalesmanCode", MatchType.Exact, txtSalesmanCode.Text.Trim))
+            If chkValidate.Checked Then critChassis.opAnd(New Criteria(GetType(V_SPKChassis), "SalesmanHeader.SalesmanCode", MatchType.Exact, txtSalesmanCode.Text.Trim))
+        End If
+        '
+        sqlFaktur &= " )"
+
+        If chkValidate.Checked And sqlFaktur <> "" Then
+            criterias.opAnd(New Criteria(GetType(SPKHeader), "ID", MatchType.InSet, sqlFaktur))
+        End If
+
+        sessionHelper.SetSession("SearchSPK.critsSPK", criterias)
+        sessionHelper.SetSession("SearchSPK.critsSPK2", criterias2)
+        sessionHelper.SetSession("SearchSPK.critsChassis", critChassis)
+
+        arlSPKHeader = New SPKHeaderFacade(User).RetrieveActiveList(criterias, currentPageIndex + 1, dtgcari.PageSize, _
+                total, CType(ViewState("CurrentSortColumn"), String), _
+                CType(ViewState("CurrentSortDirect"), Sort.SortDirection))
+
+        dtgcari.DataSource = arlSPKHeader
+        dtgcari.VirtualItemCount = total
+        If arlSPKHeader.Count > 0 Then
+            dtgcari.DataBind()
+        Else
+            dtgcari.DataBind()
+            MessageBox.Show("Data Tidak Ditemukan")
+        End If
+
+        Dim spkDetailInfo As V_SPKDetailInfoFacade = New V_SPKDetailInfoFacade(User)
+        Dim aggAmount As Aggregate = New Aggregate(GetType(V_SPKDetailInfo), "Amount", AggregateType.Sum)
+        Dim aggUnit As Aggregate = New Aggregate(GetType(V_SPKDetailInfo), "Quantity", AggregateType.Sum)
+        'criterias2.opAnd(New Criteria(GetType(V_SPKDetailInfo), "DetailStatus", MatchType.Exact, 0))
+
+        Dim TotalAmount As Decimal = spkDetailInfo.GetAggregateResult(aggAmount, criterias2)
+        Dim TotalUnit As Decimal = spkDetailInfo.GetAggregateResult(aggUnit, criterias2)
+
+        sessionHelper.SetSession("TotalAmount", TotalAmount)
+
+        lblTotalUnit.Text = FormatNumber(TotalUnit, 0, TriState.False, TriState.True, TriState.True)
+        lblTotalHarga.Text = FormatNumber(TotalAmount, 0, TriState.False, TriState.True, TriState.True)
+    End Sub
+
+    Private Function GetSelectedItem(ByVal listboxStatus As ListBox) As String
+        Dim _strStatus As String = String.Empty
+        For Each item As ListItem In listboxStatus.Items
+            If item.Selected Then
+                If _strStatus = String.Empty Then
+                    _strStatus = item.Value
+                Else
+                    _strStatus = _strStatus & "," & item.Value
+                End If
+            End If
+        Next
+        Return _strStatus
+    End Function
+
+    Private Function GetTotalUnitAmountSPK(ByVal objSPK As SPKHeader) As String
+        Dim strReturn As String = String.Empty
+        Dim unit As Integer = 0
+        Dim amount As Decimal = 0
+        For Each item As SPKDetail In objSPK.SPKDetails
+            unit += item.Quantity
+            amount += item.TotalAmount
+        Next
+        strReturn = unit.ToString + ";" + amount.ToString
+        Return strReturn
+    End Function
+
+#End Region
+
+    Private Sub dtgcari_PageIndexChanged(ByVal source As Object, ByVal e As System.Web.UI.WebControls.DataGridPageChangedEventArgs) Handles dtgcari.PageIndexChanged
+        dtgcari.CurrentPageIndex = e.NewPageIndex
+        BindDataToGrid(dtgcari.CurrentPageIndex)
+    End Sub
+End Class

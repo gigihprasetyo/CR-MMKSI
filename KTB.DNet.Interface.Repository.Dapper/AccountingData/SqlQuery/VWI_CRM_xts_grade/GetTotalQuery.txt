@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xts_grade as VWI_CRM_xts_grade with (nolock) 
+{0}

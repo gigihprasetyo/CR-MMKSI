@@ -1,0 +1,89 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_cashandbankaccount.company
+	, VWI_CRM_xts_cashandbankaccount.businessunitcode
+	, VWI_CRM_xts_cashandbankaccount.xts_accountidname
+	, VWI_CRM_xts_cashandbankaccount.versionnumber
+	, VWI_CRM_xts_cashandbankaccount.createdon
+	, VWI_CRM_xts_cashandbankaccount.owninguser
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension8id
+	, VWI_CRM_xts_cashandbankaccount.statuscodename
+	, VWI_CRM_xts_cashandbankaccount.xts_accountname
+	, VWI_CRM_xts_cashandbankaccount.modifiedbyyominame
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension5id
+	, VWI_CRM_xts_cashandbankaccount.createdonbehalfby
+	, VWI_CRM_xts_cashandbankaccount.modifiedbyname
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension2id
+	, VWI_CRM_xts_cashandbankaccount.owneridname
+	, VWI_CRM_xts_cashandbankaccount.overriddencreatedon
+	, VWI_CRM_xts_cashandbankaccount.xts_virtualaccountstartnumber
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension6idname
+	, VWI_CRM_xts_cashandbankaccount.createdonbehalfbyyominame
+	, VWI_CRM_xts_cashandbankaccount.modifiedonbehalfby
+	, VWI_CRM_xts_cashandbankaccount.exchangerate
+	, VWI_CRM_xts_cashandbankaccount.owningteam
+	, VWI_CRM_xts_cashandbankaccount.xts_balance
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension4id
+	, VWI_CRM_xts_cashandbankaccount.statecode
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension9idname
+	, VWI_CRM_xts_cashandbankaccount.xts_currencyidname
+	, VWI_CRM_xts_cashandbankaccount.timezoneruleversionnumber
+	, VWI_CRM_xts_cashandbankaccount.xjp_accounttype
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension10idname
+	, VWI_CRM_xts_cashandbankaccount.xts_locking
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension10id
+	, VWI_CRM_xts_cashandbankaccount.createdonbehalfbyname
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension7idname
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension1id
+	, VWI_CRM_xts_cashandbankaccount.utcconversiontimezonecode
+	, VWI_CRM_xts_cashandbankaccount.xts_cashandbankaccountnumber
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension5idname
+	, VWI_CRM_xts_cashandbankaccount.xts_cashandbankaccountid
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension3idname
+	, VWI_CRM_xts_cashandbankaccount.ownerid
+	, VWI_CRM_xts_cashandbankaccount.modifiedon
+	, VWI_CRM_xts_cashandbankaccount.importsequencenumber
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension6id
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension7id
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension2idname
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension8idname
+	, VWI_CRM_xts_cashandbankaccount.createdbyname
+	, VWI_CRM_xts_cashandbankaccount.xts_businessunitid
+	, VWI_CRM_xts_cashandbankaccount.modifiedonbehalfbyname
+	, VWI_CRM_xts_cashandbankaccount.xts_balance_base
+	, VWI_CRM_xts_cashandbankaccount.transactioncurrencyid
+	, VWI_CRM_xts_cashandbankaccount.createdby
+	, VWI_CRM_xts_cashandbankaccount.modifiedby
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension1idname
+	, VWI_CRM_xts_cashandbankaccount.xjp_accounttypename
+	, VWI_CRM_xts_cashandbankaccount.xts_virtualaccountendnumber
+	, VWI_CRM_xts_cashandbankaccount.createdbyyominame
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension4idname
+	, VWI_CRM_xts_cashandbankaccount.transactioncurrencyidname
+	, VWI_CRM_xts_cashandbankaccount.owningbusinessunit
+	, VWI_CRM_xts_cashandbankaccount.xts_currencyid
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension9id
+	, VWI_CRM_xts_cashandbankaccount.xts_bankid
+	, VWI_CRM_xts_cashandbankaccount.owneridtype
+	, VWI_CRM_xts_cashandbankaccount.statuscode
+	, VWI_CRM_xts_cashandbankaccount.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_cashandbankaccount.xts_accountid
+	, VWI_CRM_xts_cashandbankaccount.owneridyominame
+	, VWI_CRM_xts_cashandbankaccount.statecodename
+	, VWI_CRM_xts_cashandbankaccount.xts_bankidname
+	, VWI_CRM_xts_cashandbankaccount.xts_dimension3id
+	, VWI_CRM_xts_cashandbankaccount.xts_businessunitidname
+	, VWI_CRM_xts_cashandbankaccount.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_cashandbankaccount a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_cashandbankaccount  

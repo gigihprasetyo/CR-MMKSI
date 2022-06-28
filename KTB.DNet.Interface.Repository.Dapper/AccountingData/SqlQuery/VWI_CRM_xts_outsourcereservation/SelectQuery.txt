@@ -1,0 +1,95 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_xts_outsourcereservation.company
+    , VWI_CRM_xts_outsourcereservation.businessunitcode
+    , VWI_CRM_xts_outsourcereservation.xts_parentbusinessunitid
+    , VWI_CRM_xts_outsourcereservation.versionnumber
+    , VWI_CRM_xts_outsourcereservation.createdon
+    , VWI_CRM_xts_outsourcereservation.statuscodename
+    , VWI_CRM_xts_outsourcereservation.xts_scheduledarrivaldateandtime
+    , VWI_CRM_xts_outsourcereservation.xts_finishpatternname
+    , VWI_CRM_xts_outsourcereservation.xts_scheduledoustourcefinishdateandtime
+    , VWI_CRM_xts_outsourcereservation.xts_status
+    , VWI_CRM_xts_outsourcereservation.xts_customerid
+    , VWI_CRM_xts_outsourcereservation.modifiedon
+    , VWI_CRM_xts_outsourcereservation.xts_scheduledfinishdateandtime
+    , VWI_CRM_xts_outsourcereservation.owneridtype
+    , VWI_CRM_xts_outsourcereservation.modifiedbyname
+    , VWI_CRM_xts_outsourcereservation.xts_platenumber
+    , VWI_CRM_xts_outsourcereservation.xts_vehiclemodelname
+    , VWI_CRM_xts_outsourcereservation.xts_vehiclemodelidname
+    , VWI_CRM_xts_outsourcereservation.owneridname
+    , VWI_CRM_xts_outsourcereservation.overriddencreatedon
+    , VWI_CRM_xts_outsourcereservation.xts_vehiclemodelid
+    , VWI_CRM_xts_outsourcereservation.xts_deliverymemo
+    , VWI_CRM_xts_outsourcereservation.xts_outsourcereservationid
+    , VWI_CRM_xts_outsourcereservation.xts_scheduledoutsourceservicestartdate
+    , VWI_CRM_xts_outsourcereservation.createdonbehalfbyyominame
+    , VWI_CRM_xts_outsourcereservation.modifiedonbehalfby
+    , VWI_CRM_xts_outsourcereservation.xts_category
+    , VWI_CRM_xts_outsourcereservation.xts_outsourcereservationnumber
+    , VWI_CRM_xts_outsourcereservation.xts_customeridyominame
+    , VWI_CRM_xts_outsourcereservation.owningteam
+    , VWI_CRM_xts_outsourcereservation.xts_originalreservationid
+    , VWI_CRM_xts_outsourcereservation.xts_arrivalmemo
+    , VWI_CRM_xts_outsourcereservation.xts_loadinggroupid
+    , VWI_CRM_xts_outsourcereservation.statecode
+    , VWI_CRM_xts_outsourcereservation.timezoneruleversionnumber
+    , VWI_CRM_xts_outsourcereservation.xts_reservationmanhour
+    , VWI_CRM_xts_outsourcereservation.xts_handling
+    , VWI_CRM_xts_outsourcereservation.xts_customernumber
+    , VWI_CRM_xts_outsourcereservation.createdonbehalfbyname
+    , VWI_CRM_xts_outsourcereservation.xts_outsourcereservationmemo
+    , VWI_CRM_xts_outsourcereservation.xts_locking
+    , VWI_CRM_xts_outsourcereservation.createdby
+    , VWI_CRM_xts_outsourcereservation.utcconversiontimezonecode
+    , VWI_CRM_xts_outsourcereservation.xts_vehicleidentificationid
+    , VWI_CRM_xts_outsourcereservation.xts_categoryname
+    , VWI_CRM_xts_outsourcereservation.xts_statusname
+    , VWI_CRM_xts_outsourcereservation.xts_vendoridname
+    , VWI_CRM_xts_outsourcereservation.xts_outsourceworkshopidname
+    , VWI_CRM_xts_outsourcereservation.ownerid
+    , VWI_CRM_xts_outsourcereservation.xts_loadinggroupidname
+    , VWI_CRM_xts_outsourcereservation.importsequencenumber
+    , VWI_CRM_xts_outsourcereservation.owneridyominame
+    , VWI_CRM_xts_outsourcereservation.xts_customeridname
+    , VWI_CRM_xts_outsourcereservation.xts_transactiondate
+    , VWI_CRM_xts_outsourcereservation.xts_outsourceworkshopid
+    , VWI_CRM_xts_outsourcereservation.xts_arrivalpatternname
+    , VWI_CRM_xts_outsourcereservation.createdbyname
+    , VWI_CRM_xts_outsourcereservation.xts_businessunitid
+    , VWI_CRM_xts_outsourcereservation.modifiedonbehalfbyname
+    , VWI_CRM_xts_outsourcereservation.xts_vehicleidentificationidname
+    , VWI_CRM_xts_outsourcereservation.xts_reservationclassid
+    , VWI_CRM_xts_outsourcereservation.xts_handlingname
+    , VWI_CRM_xts_outsourcereservation.createdonbehalfby
+    , VWI_CRM_xts_outsourcereservation.modifiedby
+    , VWI_CRM_xts_outsourcereservation.createdbyyominame
+    , VWI_CRM_xts_outsourcereservation.owninguser
+    , VWI_CRM_xts_outsourcereservation.xts_originalreservationidname
+    , VWI_CRM_xts_outsourcereservation.owningbusinessunit
+    , VWI_CRM_xts_outsourcereservation.modifiedbyyominame
+    , VWI_CRM_xts_outsourcereservation.xts_parentbusinessunitidname
+    , VWI_CRM_xts_outsourcereservation.xts_vendorid
+    , VWI_CRM_xts_outsourcereservation.xts_finishpattern
+    , VWI_CRM_xts_outsourcereservation.statuscode
+    , VWI_CRM_xts_outsourcereservation.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_outsourcereservation.xts_scheduledoutsourcearrivaldateandtime
+    , VWI_CRM_xts_outsourcereservation.xts_arrivalpattern
+    , VWI_CRM_xts_outsourcereservation.statecodename
+    , VWI_CRM_xts_outsourcereservation.xts_businessunitidname
+    , VWI_CRM_xts_outsourcereservation.xts_reservationclassidname
+    , VWI_CRM_xts_outsourcereservation.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_outsourcereservation a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_outsourcereservation

@@ -1,0 +1,5 @@
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.EventLogConsole\bin\KTB.DNet.EventLogConsole.exe.config
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.EventLogConsole\bin\KTB.DNet.EventLogConsole.exe
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.EventLogConsole\bin\KTB.DNet.EventLogConsole.pdb
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.EventLogConsole\obj\Debug\KTB.DNet.EventLogConsole.exe
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.EventLogConsole\obj\Debug\KTB.DNet.EventLogConsole.pdb

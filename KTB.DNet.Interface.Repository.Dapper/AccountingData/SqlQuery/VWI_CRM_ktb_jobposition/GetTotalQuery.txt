@@ -1,0 +1,4 @@
+﻿SELECT
+	COUNT(1)
+FROM CRM_ktb_jobposition as VWI_CRM_ktb_jobposition with (nolock) 
+{0}

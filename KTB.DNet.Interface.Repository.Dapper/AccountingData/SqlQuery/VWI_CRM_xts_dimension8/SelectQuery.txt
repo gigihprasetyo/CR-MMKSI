@@ -1,0 +1,35 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_dimension8.createdonbehalfbyyominame
+	, VWI_CRM_xts_dimension8.modifiedonbehalfby
+	, VWI_CRM_xts_dimension8.xts_locking
+	, VWI_CRM_xts_dimension8.statecode
+	, VWI_CRM_xts_dimension8.statecodename
+	, VWI_CRM_xts_dimension8.xts_dimension8
+	, VWI_CRM_xts_dimension8.createdonbehalfby
+	, VWI_CRM_xts_dimension8.importsequencenumber
+	, VWI_CRM_xts_dimension8.organizationidname
+	, VWI_CRM_xts_dimension8.modifiedbyyominame
+	, VWI_CRM_xts_dimension8.utcconversiontimezonecode
+	, VWI_CRM_xts_dimension8.createdbyyominame
+	, VWI_CRM_xts_dimension8.modifiedbyname
+	, VWI_CRM_xts_dimension8.versionnumber
+	, VWI_CRM_xts_dimension8.modifiedby
+	, VWI_CRM_xts_dimension8.createdby
+	, VWI_CRM_xts_dimension8.timezoneruleversionnumber
+	, VWI_CRM_xts_dimension8.statuscodename
+	, VWI_CRM_xts_dimension8.modifiedon
+	, VWI_CRM_xts_dimension8.modifiedonbehalfbyname
+	, VWI_CRM_xts_dimension8.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_dimension8.statuscode
+	, VWI_CRM_xts_dimension8.createdbyname
+	, VWI_CRM_xts_dimension8.createdon
+	, VWI_CRM_xts_dimension8.organizationid
+	, VWI_CRM_xts_dimension8.createdonbehalfbyname
+	, VWI_CRM_xts_dimension8.xts_description
+	, VWI_CRM_xts_dimension8.overriddencreatedon
+	, VWI_CRM_xts_dimension8.xts_dimension8id
+    /**EndPagingIndexQuery**/
+FROM [dbo].[CRM_xts_dimension8] as VWI_CRM_xts_dimension8 with(nolock)
+{0}

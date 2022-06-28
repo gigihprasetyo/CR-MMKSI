@@ -1,0 +1,27 @@
+﻿<section>
+    <div class="widgets">
+        <div class="row">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="{{activePageTitle}}" ba-panel-class="with-scroll">
+                    <form name="form" ng-submit="Submit()">
+                        <div class="col-md-6">
+                            <standard-select label="Endpoint Group" name="EndpointGroupId" ng-model="entity.EndpointGroupId" search-enabled="false" options="listOfEndpointGroup"
+                                value="Value" text="Text" on-select-callback="onSelectEndpointGroupCallback()" required/>
+                        </div>
+
+                        <div ng-show="entity.EndpointGroupId" class="col-md-12">
+                            <multi-select-jquery label="Endpoint" all-button="true" name="EndpointIds" ng-model="entity.EndpointIds" options="listOfEndpoints"
+                                value="Id" text="Name" required/>
+                        </div>
+
+                        <div class="col-md-12 text-right">
+                            <!-- <a ui-sref="accessControl.entity.list" class="btn btn-default m-t-15 waves-effect">Cancel</a> -->
+                            <input type="button" ng-click="clearForm()" class="btn btn-default m-t-15 waves-effect" value="Cancel" />
+                            <input ng-disabled="form.$invalid" type="submit" value="Save" class="btn btn-primary m-t-15 waves-effect">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

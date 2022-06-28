@@ -1,0 +1,66 @@
+SELECT 
+    /**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_xjp_automobiletax.company
+    , VWI_CRM_xjp_automobiletax.businessunitcode
+    , VWI_CRM_xjp_automobiletax.createdonbehalfbyyominame
+    , VWI_CRM_xjp_automobiletax.modifiedonbehalfby
+    , VWI_CRM_xjp_automobiletax.owningteam
+    , VWI_CRM_xjp_automobiletax.statecode
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension6idname
+    , VWI_CRM_xjp_automobiletax.owneridname
+    , VWI_CRM_xjp_automobiletax.statecodename
+    , VWI_CRM_xjp_automobiletax.owninguser
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension5id
+    , VWI_CRM_xjp_automobiletax.createdonbehalfby
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension1idname
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxid
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension2id
+    , VWI_CRM_xjp_automobiletax.importsequencenumber
+    , VWI_CRM_xjp_automobiletax.modifiedbyyominame
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension3idname
+    , VWI_CRM_xjp_automobiletax.utcconversiontimezonecode
+    , VWI_CRM_xjp_automobiletax.createdbyyominame
+    , VWI_CRM_xjp_automobiletax.modifiedby
+    , VWI_CRM_xjp_automobiletax.owningbusinessunit
+    , VWI_CRM_xjp_automobiletax.modifiedbyname
+    , VWI_CRM_xjp_automobiletax.versionnumber
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension4id
+    , VWI_CRM_xjp_automobiletax.xjp_locking
+    , VWI_CRM_xjp_automobiletax.createdby
+    , VWI_CRM_xjp_automobiletax.timezoneruleversionnumber
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension5idname
+    , VWI_CRM_xjp_automobiletax.owneridtype
+    , VWI_CRM_xjp_automobiletax.statuscodename
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletax
+    , VWI_CRM_xjp_automobiletax.xjp_description
+    , VWI_CRM_xjp_automobiletax.owneridyominame
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension6id
+    , VWI_CRM_xjp_automobiletax.modifiedon
+    , VWI_CRM_xjp_automobiletax.xjp_automobileaccountid
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension2idname
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension1id
+    , VWI_CRM_xjp_automobiletax.modifiedonbehalfbyyominame
+    , VWI_CRM_xjp_automobiletax.statuscode
+    , VWI_CRM_xjp_automobiletax.createdbyname
+    , VWI_CRM_xjp_automobiletax.createdon
+    , VWI_CRM_xjp_automobiletax.createdonbehalfbyname
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension4idname
+    , VWI_CRM_xjp_automobiletax.modifiedonbehalfbyname
+    , VWI_CRM_xjp_automobiletax.xjp_automobiletaxdimension3id
+    , VWI_CRM_xjp_automobiletax.xjp_automobileaccountidname
+    , VWI_CRM_xjp_automobiletax.ownerid
+    , VWI_CRM_xjp_automobiletax.overriddencreatedon
+    , VWI_CRM_xjp_automobiletax.msdyn_companycode
+    /**EndPagingIndexQuery**/
+from (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM [CRM_xjp_automobiletax] a
+    INNER JOIN CRM_businessunit b 
+    ON b.businessunitid = a.[owningbusinessunit]
+    {0}
+) VWI_CRM_xjp_automobiletax 

@@ -1,0 +1,37 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_employeeclass.createdonbehalfbyyominame
+	, VWI_CRM_xts_employeeclass.modifiedonbehalfby
+	, VWI_CRM_xts_employeeclass.xts_locking
+	, VWI_CRM_xts_employeeclass.statecode
+	, VWI_CRM_xts_employeeclass.statecodename
+	, VWI_CRM_xts_employeeclass.createdonbehalfby
+	, VWI_CRM_xts_employeeclass.xts_employeeclasstype
+	, VWI_CRM_xts_employeeclass.xts_employeeclass
+	, VWI_CRM_xts_employeeclass.importsequencenumber
+	, VWI_CRM_xts_employeeclass.organizationidname
+	, VWI_CRM_xts_employeeclass.modifiedbyyominame
+	, VWI_CRM_xts_employeeclass.xts_employeeclasstypename
+	, VWI_CRM_xts_employeeclass.utcconversiontimezonecode
+	, VWI_CRM_xts_employeeclass.createdbyyominame
+	, VWI_CRM_xts_employeeclass.modifiedbyname
+	, VWI_CRM_xts_employeeclass.versionnumber
+	, VWI_CRM_xts_employeeclass.modifiedby
+	, VWI_CRM_xts_employeeclass.createdby
+	, VWI_CRM_xts_employeeclass.timezoneruleversionnumber
+	, VWI_CRM_xts_employeeclass.statuscodename
+	, VWI_CRM_xts_employeeclass.xts_employeeclassid
+	, VWI_CRM_xts_employeeclass.modifiedon
+	, VWI_CRM_xts_employeeclass.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_employeeclass.statuscode
+	, VWI_CRM_xts_employeeclass.createdbyname
+	, VWI_CRM_xts_employeeclass.createdon
+	, VWI_CRM_xts_employeeclass.organizationid
+	, VWI_CRM_xts_employeeclass.createdonbehalfbyname
+	, VWI_CRM_xts_employeeclass.modifiedonbehalfbyname
+	, VWI_CRM_xts_employeeclass.overriddencreatedon
+	, VWI_CRM_xts_employeeclass.xts_description
+    /**EndPagingIndexQuery**/
+FROM CRM_xts_employeeclass as VWI_CRM_xts_employeeclass with (nolock) 
+{0}

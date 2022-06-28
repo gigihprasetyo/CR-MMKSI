@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM VWI_CRM_PRT_OutgoingTransaction WITH (NOLOCK) {0}

@@ -1,0 +1,36 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_manufacturer.xts_description
+	, VWI_CRM_xts_manufacturer.overriddencreatedon
+	, VWI_CRM_xts_manufacturer.xjp_companyname
+	, VWI_CRM_xts_manufacturer.modifiedonbehalfbyname
+	, VWI_CRM_xts_manufacturer.createdonbehalfbyname
+	, VWI_CRM_xts_manufacturer.organizationid
+	, VWI_CRM_xts_manufacturer.createdon
+	, VWI_CRM_xts_manufacturer.createdbyname
+	, VWI_CRM_xts_manufacturer.statuscode
+	, VWI_CRM_xts_manufacturer.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_manufacturer.xts_manufacturer
+	, VWI_CRM_xts_manufacturer.modifiedon
+	, VWI_CRM_xts_manufacturer.statuscodename
+	, VWI_CRM_xts_manufacturer.timezoneruleversionnumber
+	, VWI_CRM_xts_manufacturer.createdby
+	, VWI_CRM_xts_manufacturer.modifiedby
+	, VWI_CRM_xts_manufacturer.versionnumber
+	, VWI_CRM_xts_manufacturer.modifiedbyname
+	, VWI_CRM_xts_manufacturer.createdbyyominame
+	, VWI_CRM_xts_manufacturer.utcconversiontimezonecode
+	, VWI_CRM_xts_manufacturer.modifiedbyyominame
+	, VWI_CRM_xts_manufacturer.organizationidname
+	, VWI_CRM_xts_manufacturer.importsequencenumber
+	, VWI_CRM_xts_manufacturer.xts_manufacturerid
+	, VWI_CRM_xts_manufacturer.createdonbehalfby
+	, VWI_CRM_xts_manufacturer.statecodename
+	, VWI_CRM_xts_manufacturer.statecode
+	, VWI_CRM_xts_manufacturer.xts_locking
+	, VWI_CRM_xts_manufacturer.modifiedonbehalfby
+	, VWI_CRM_xts_manufacturer.createdonbehalfbyyominame
+    /**EndPagingIndexQuery**/
+FROM [dbo].[CRM_xts_manufacturer] as VWI_CRM_xts_manufacturer with(nolock) 
+{0}

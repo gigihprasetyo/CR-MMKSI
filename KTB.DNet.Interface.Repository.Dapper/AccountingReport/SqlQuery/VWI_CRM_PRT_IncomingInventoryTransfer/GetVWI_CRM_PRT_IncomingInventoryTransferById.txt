@@ -1,0 +1,14 @@
+SELECT 
+	businessunitcode
+	,frombusinessunitcode
+	,IDRow
+	,sitename
+	,transactionunitname
+	,warehousename
+	,xts_inventorytransactionnumber
+	,xts_product
+	,xts_productdescription
+	,xts_quantity
+	,xts_transactiondate
+FROM VWI_CRM_PRT_IncomingInventoryTransfer WITH (NOLOCK)
+WHERE ID = @Id

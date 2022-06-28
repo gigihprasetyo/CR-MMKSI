@@ -1,0 +1,37 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_newvehicleexteriorcolor.createdonbehalfbyyominame
+	, VWI_CRM_xts_newvehicleexteriorcolor.modifiedonbehalfby
+	, VWI_CRM_xts_newvehicleexteriorcolor.statecode
+	, VWI_CRM_xts_newvehicleexteriorcolor.statecodename
+	, VWI_CRM_xts_newvehicleexteriorcolor.xts_newvehicleexteriorcolor
+	, VWI_CRM_xts_newvehicleexteriorcolor.createdonbehalfby
+	, VWI_CRM_xts_newvehicleexteriorcolor.xts_newvehicleexteriorcolorid
+	, VWI_CRM_xts_newvehicleexteriorcolor.importsequencenumber
+	, VWI_CRM_xts_newvehicleexteriorcolor.organizationidname
+	, VWI_CRM_xts_newvehicleexteriorcolor.modifiedbyyominame
+	, VWI_CRM_xts_newvehicleexteriorcolor.utcconversiontimezonecode
+	, VWI_CRM_xts_newvehicleexteriorcolor.createdbyyominame
+	, VWI_CRM_xts_newvehicleexteriorcolor.modifiedbyname
+	, VWI_CRM_xts_newvehicleexteriorcolor.versionnumber
+	, VWI_CRM_xts_newvehicleexteriorcolor.modifiedby
+	, VWI_CRM_xts_newvehicleexteriorcolor.createdby
+	, VWI_CRM_xts_newvehicleexteriorcolor.timezoneruleversionnumber
+	, VWI_CRM_xts_newvehicleexteriorcolor.statuscodename
+	, VWI_CRM_xts_newvehicleexteriorcolor.modifiedon
+	, VWI_CRM_xts_newvehicleexteriorcolor.xts_eventdata
+	, VWI_CRM_xts_newvehicleexteriorcolor.xts_entitytag
+	, VWI_CRM_xts_newvehicleexteriorcolor.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_newvehicleexteriorcolor.statuscode
+	, VWI_CRM_xts_newvehicleexteriorcolor.createdbyname
+	, VWI_CRM_xts_newvehicleexteriorcolor.createdon
+	, VWI_CRM_xts_newvehicleexteriorcolor.organizationid
+	, VWI_CRM_xts_newvehicleexteriorcolor.createdonbehalfbyname
+	, VWI_CRM_xts_newvehicleexteriorcolor.modifiedonbehalfbyname
+	, VWI_CRM_xts_newvehicleexteriorcolor.overriddencreatedon
+	, VWI_CRM_xts_newvehicleexteriorcolor.xts_description
+	, VWI_CRM_xts_newvehicleexteriorcolor.RowStatus
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_newvehicleexteriorcolor as VWI_CRM_xts_newvehicleexteriorcolor WITH (NOLOCK) 
+{0}

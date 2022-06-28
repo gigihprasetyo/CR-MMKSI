@@ -1,0 +1,42 @@
+INSERT INTO SparePartOutstandingOrderDetail
+(
+	AllocationAmount,
+	AllocationQty,
+	CreatedBy,
+	CreatedTime,
+	EstimateFillDate,
+	ID,
+	LastUpdateBy,
+	LastUpdateTime,
+	OpenAmount,
+	OpenQty,
+	OrderQty,
+	PartName,
+	PartNumber,
+	RowStatus,
+	SparePartOutstandingOrderID,
+	Status,
+	SubtitutePartNumber
+)
+VALUES
+(
+	@AllocationAmount,
+	@AllocationQty,
+	@CreatedBy,
+	@CreatedTime,
+	@EstimateFillDate,
+	@ID,
+	@LastUpdateBy,
+	@LastUpdateTime,
+	@OpenAmount,
+	@OpenQty,
+	@OrderQty,
+	@PartName,
+	@PartNumber,
+	@RowStatus,
+	@SparePartOutstandingOrderID,
+	@Status,
+	@SubtitutePartNumber
+);  
+
+

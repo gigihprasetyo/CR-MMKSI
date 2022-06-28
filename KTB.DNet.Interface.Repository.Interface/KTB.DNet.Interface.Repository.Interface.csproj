@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BDA6354B-FD81-4566-A335-55AF3BBEA64A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KTB.DNet.Interface.Repository.Interface</RootNamespace>
+    <AssemblyName>KTB.DNet.Interface.Repository.Interface</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|x64' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountingData\IAX_TSTransStockMutationsRepository.cs" />
+    <Compile Include="AccountingData\ICRM_ktb_openfactureRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_accountRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_appointmentRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_bookableresourcebookingRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_bookingstatusRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_BusinessUnitRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_campaignactivityRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_campaignRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_campaignresponseRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_contactRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_customworkorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_equipmentRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_invalidcustomerRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_lkppdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_lkppRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_benefitRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_daerahlogisticRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_daftardepositadetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_daftardepositaRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_daftardepositbdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_daftardepositbRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_daftardepositcdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_daftardepositcRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_depositc2Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_externaldealerinterfacelogRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_jobpositionRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_karoseriRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_kontrabonRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_leasingcompanyRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_mastervehiclemodelRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_perlengkapanstandardRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_productsapconversionRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_purchaserequisitionhistoryRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_saleschannelRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_salesquotationRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_servicereminderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_servicetemplateproductnongenuineRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_userareaassignmentRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_ktb_vendorlogisticRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_leadRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_opportunityRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_pricelevelRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_serviceappointmentRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_systemuserRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_teamRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_territoryRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xid_documentregistrationRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xid_registrationmonitoringRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xid_registrationprogressstageRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_automobiletaxRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_pdidetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_pdireceiptdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_pdireceiptRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_predeliveryinspectionRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_registrationcolorRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_registrationdocumentRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_registrationrequestRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_standardplateRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_vehiclecostinputdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_vehiclecostinputRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_vehicletransferRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xjp_weighttaxRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_accessoriesinstallationcategoryRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_accessorieskitgroupRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_accountpayablepaymentdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_accountpayablepaymentRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_accountpayablevoucherRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_accountreceivableinvoicedetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_accountreceivableinvoiceRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_accountreceivablereceiptdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_accountreceivablereceiptotherexpenseRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_accountreceivablereceiptRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_aptransactiondocumentdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_aptransactiondocumentRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_apvdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_apvlandedcostRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_apvmiscellaneouschargeRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_artransactiondocumentdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_artransactiondocumentRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_assessmentRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_assigntosalespersonRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_bankRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_businessunitinquiryRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_cashandbankaccountRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_cashandbankRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_cashtransactiondetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_cashtransactionRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_chartofaccountRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_cityRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_commonbusinessunitRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_commonRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_consumptiontaxRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_customerclassRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_customerpublicRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_damageorlossRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_deliveryorderdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_deliveryordermiscellaneouschargeRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_deliveryorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_departmentRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_dimension10Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_dimension1Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_dimension2Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_dimension3Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_dimension4Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_dimension5Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_dimension6Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_dimension7Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_dimension8Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_dimension9Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_discountsetupdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_discountsetupRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_employeeclassRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_employeeRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_generateinventorylistRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_gljournaldetailsRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_gljournalRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_globalworkorderhistorydetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_globalworkorderhistoryRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_goodsreceiptRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_gradeRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_incomingoutsourceworkorderdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_incomingoutsourceworkorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_incomingpdiandserviceinstructionRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_inventbatchRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_inventorynewvehicleRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_inventorytransactiondetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_inventorytransactionRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_inventorytransferdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_inventorytransferRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_inventserialRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_inventtransRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_kitRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_landedcostRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_locationRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_manufacturerRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_matchunmatchRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_miscellaneouschargeRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_miscellaneouschargetemplateRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_moreaddressRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_newvehicledeliveryorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_newvehicleexteriorcolorRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_newvehicleinteriorcolorRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_newvehiclesalesorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_newvehiclesalesquoteRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_newvehiclewholesaleorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_nonsalesdeliveryRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_nvsoaccessoriesRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_nvsomiscellaneouschargeRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_nvsonumberregistrationdetailsRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_nvsoreferralRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_nvsqaccessoriesRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_nvsqmiscellaneouschargeRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_ordertypeRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_outsourcereservationRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_outsourceworkorderdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_outsourceworkorderreceiptdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_outsourceworkorderreceiptRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_outsourceworkorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_outsourceworkshopconfigurationRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_partsforecastRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_physicalinventorylistdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_physicalinventorylistRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_pricelistdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_pricelistRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productclassRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productcrossreferenceRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productexteriorcolorRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productinteriorcolorRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productsegment1Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productsegment2Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productsegment3Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productsegment4Repository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productstyleRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productsubstituteRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_productvariantRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_provinceRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_purchaseorderdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_purchaseorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_purchasereceiptdetaillandedcostRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_purchasereceiptdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_purchasereceiptRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_purchaserequisitiondetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_purchaserequisitionpurchaseordertypeRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_purchaserequisitionRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_ratetypeRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_reasonRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_recommendedproductRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_reservationtransactionRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_salesorderdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_salesorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicecampaignRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicecategorygroupRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicecategoryRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_serviceinstructionRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicemiscellaneouschargeRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicemmsRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_serviceproportionalinvoiceRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicereceiptRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicereservationclassRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicetemplateactivityRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicetemplatedetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicetemplateparentgroupdetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicetemplateparentgroupRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_servicetemplateRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_serviceworkshopsettingRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_sharedproductRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_siteinquiryRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_siteRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_styleRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_subsidyanddiscountRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_termofpaymentRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_transferorderrequestingRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_uomconversionRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_uomRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_usedvehicledeliveryorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_usedvehiclesalesorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_uvsoreferralinformationRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vehiclebrandRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vehicleinformationRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vehiclemodelRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vehiclepricedetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vehiclepriceRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vehiclepublicRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vehiclerecognizedmodelRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vehiclespecificationRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vehicletransactionhistoryRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vehicletransferhistoryRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vendorclassRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_vendorRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_villageandstreetRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_warehouseinquiryRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_warehouseRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_workorderpartmaterialandserviceRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_workorderRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_workorderservicetemplateRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_workordertimeregisterRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_writeoffbalancedetailRepository.cs" />
+    <Compile Include="AccountingData\IVWI_CRM_xts_writeoffbalanceRepository.cs" />
+    <Compile Include="AccountingData\IVWI_Zombie_CampaignRepository.cs" />
+    <Compile Include="AccountingData\IVWI_Zombie_ReservationRepository.cs" />
+    <Compile Include="AccountingData\IVWI_Zombie_SuspectRepository.cs" />
+    <Compile Include="AccountingData\IVWI_Zombie_WOTimeRegisterRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_AX_PRT_FlowReportPartRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_AX_PRT_StockMovementRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_AX_SLS_BankTransactionRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_AX_SLS_FlowReportVehicleRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_AX_SLS_LedgerTransactionRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_AX_SLS_StockMutationRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_IncomingInventoryTransferOutletRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_IncomingInventoryTransferRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_IncomingInventoryTransferWarehouseRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_IncomingTransactionRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_OutgoingInventoryTransferOutletRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_OutgoingInventoryTransferRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_OutgoingInventoryTransferWarehouseRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_OutgoingTransactionRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_PurchaseRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_PurchaseReturnRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_SparepartPurchaseRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_SparepartSalesRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_SparepartSalesReturnRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_PRT_SparepartSalesToPartshopRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SLS_APBalanceRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SLS_ARBalanceRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SLS_DailyActivityMonitoring_LeadRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SLS_DailyActivityMonitoring_SPKRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SLS_DailyActivityMonitoring_VDORepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SLS_SalesmanActivityRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SLS_SalesUnitRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SLS_StockMutationRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SLS_StockSummaryRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SLS_VehicleStockRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SOInvoiceDetailRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SOInvoiceRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SVC_ARReceiptDetailBasedOnWORepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SVC_ARReceiptRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SVC_DailyReportRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_SVC_FreeServiceToBeInvoicedRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_VehicleInvoiceDetailRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_VehicleInvoiceRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_WOInvoiceDetailRepository.cs" />
+    <Compile Include="AccountingReport\IVWI_CRM_WOInvoiceRepository.cs" />
+    <Compile Include="DNet\FinishUnit\IDSFLeasingClaimRepository.cs" />
+    <Compile Include="DNet\Master\ICustomerVehicleRepository.cs" />
+    <Compile Include="DNet\Master\IDealerCompanyToDealerRepository.cs" />
+    <Compile Include="DNet\Master\IDealerCompanyRepository.cs" />
+    <Compile Include="DNet\Master\IDMSAnnouncementRepository.cs" />
+    <Compile Include="DNet\Master\ISFDContactRepository.cs" />
+    <!--<Compile Include="DNet\Master\IDealerDNETRepository.cs" />-->
+    <Compile Include="DNet\Master\ISparePartMasterRepository.cs" />
+    <Compile Include="DNet\IStandardCodeRepository.cs" />
+    <Compile Include="DNet\Master\IDealerBranchRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_CampaignRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_ChassisStatusFakturRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_DepositADetailRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_DepositARepository.cs" />
+    <Compile Include="DNet\Master\IVWI_DepositBDetailRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_DepositBHeaderRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_DepositC2LineRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_DepositC2Repository.cs" />
+    <Compile Include="DNet\Master\IVWI_DepositRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_EmployeePartsRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_EmployeeSalesRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_EmployeeServicesRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_IPAddressRestrictionRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_OpenFakturRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_UsernameRestrictionRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_VehicleTypeRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_DepositLineRepository.cs" />
+    <Compile Include="DNet\Master\IVWI_BabitMasterRetailTargetRepository.cs" />
+    <Compile Include="DNet\Sales\ITrStatusToLeadStatusCodeToLeadStateCode.cs" />
+    <Compile Include="DNet\Sales\ITrLeadStatusToStatusRepository.cs" />
+    <Compile Include="DNet\Sales\ISalesmanHeaderRepository.cs" />
+    <Compile Include="DNet\Service\IAssistServiceIncomingBPRepository.cs" />
+    <Compile Include="DNet\Service\IAssistChassisMasterRepository.cs" />
+    <Compile Include="DNet\Service\IDealerSuggestionServiceRepository.cs" />
+    <Compile Include="DNet\Service\IGetServiceTypeRepository.cs" />
+    <Compile Include="DNet\Service\IServiceBookingRepository.cs" />
+    <Compile Include="DNet\Service\IServiceHistoryRepository.cs" />
+    <Compile Include="DNet\Service\IServiceMMSRepository.cs" />
+    <Compile Include="DNet\Service\IServiceRecommendationRepository.cs" />
+    <Compile Include="DNet\Service\IStallWorkingTimeRepository.cs" />
+    <Compile Include="DNet\Service\IServiceReminderRepository.cs" />
+    <Compile Include="DNet\Service\IVWI_MobileServiceReminderRepository.cs" />
+    <Compile Include="DNet\SpareParts\ISparePartClaimRepository.cs" />
+    <Compile Include="DNet\SpareParts\ISparePartForecastRepository.cs" />
+    <Compile Include="DNet\SpareParts\ISparePartOutstandingOrderDetailRepository.cs" />
+    <Compile Include="DNet\SpareParts\ISparePartOutstandingOrderRepository.cs" />
+    <Compile Include="DNet\SpareParts\ISparePartPenaltyDetailRepository.cs" />
+    <Compile Include="DNet\SpareParts\ISparePartPenaltyHeaderRepository.cs" />
+    <Compile Include="DNet\Service\IVWI_ServiceStandardTimeRepository.cs" />
+    <Compile Include="DNet\Service\IVWI_ServiceTemplateDetailRepository.cs" />
+    <Compile Include="DNet\Service\IVWI_ServiceTemplateHeaderRepository.cs" />
+    <Compile Include="DNet\Service\IVWI_PDIExpiredRepository.cs" />
+    <Compile Include="DNet\SpareParts\IVWI_PQRRepository.cs" />
+    <Compile Include="DNet\SpareParts\IVWI_PQRSparePartMasterRepository.cs" />
+    <Compile Include="DNet\SpareParts\IVWI_PurchaseReturnRepository.cs" />
+    <Compile Include="DNet\SpareParts\IAssistPartSalesRepository.cs" />
+    <Compile Include="DNet\SpareParts\IAssistPartStockRepository.cs" />
+    <Compile Include="DNet\Master\IPartShopRepository.cs" />
+    <Compile Include="DNet\SpareParts\ISparePartPODODetailRepository.cs" />
+    <Compile Include="DNet\Master\IVehicleInformationRepository.cs" />
+    <Compile Include="DNet\SpareParts\IPRHistoryPOStatusCancelRepository.cs" />
+    <Compile Include="DNet\SpareParts\ISparePartPODORepository.cs" />
+    <Compile Include="DNet\SpareParts\ISparePartPOEstimateDetailRepository.cs" />
+    <Compile Include="DNet\SpareParts\ISparePartPOEstimateRepository.cs" />
+    <Compile Include="DNet\VehiclePurchase\IVWI_POReceiptDealerRepository.cs" />
+    <Compile Include="DNet\VehicleSales\ISAPCustomerLeadRepository.cs" />
+    <Compile Include="DNet\VehicleSales\ISAPCustomerRepository.cs" />
+    <Compile Include="DNet\VehicleSales\IVWI_ChassisMasterPKTRepository.cs" />
+    <Compile Include="DNet\VehicleSales\IVWI_SPKMasterCountryCodePhoneRepository.cs" />
+    <Compile Include="IApplicationConfigRepository.cs" />
+    <Compile Include="IBaseDNetRepository.cs" />
+    <Compile Include="IMsAppVersionRepository.cs" />
+    <Compile Include="IClientUserRepository.cs" />
+    <Compile Include="IClientRoleRepository.cs" />
+    <Compile Include="IDealerRepository.cs" />
+    <Compile Include="IElmahErrorRepository.cs" />
+    <Compile Include="IEndpointScheduleRepository.cs" />
+    <Compile Include="IMsApplicationRepository.cs" />
+    <Compile Include="IRolePermissionRepository.cs" />
+    <Compile Include="IUserRoleRepository.cs" />
+    <Compile Include="IRoleRepository.cs" />
+    <Compile Include="IBaseRepository.cs" />
+    <Compile Include="IClientRepository.cs" />
+    <Compile Include="IEndpointPermissionRepository.cs" />
+    <Compile Include="IScheduleRepository.cs" />
+    <Compile Include="ITransactionRuntimeRepository.cs" />
+    <Compile Include="IThrottleRepository.cs" />
+    <Compile Include="ITransactionLogRepository.cs" />
+    <Compile Include="IUserActivityRepository.cs" />
+    <Compile Include="IUserPermissionRepository.cs" />
+    <Compile Include="IUserRepository.cs" />
+    <Compile Include="NonDMS\ICRM_accountRepository.cs" />
+    <Compile Include="NonDMS\ICRM_appointmentRepository.cs" />
+    <Compile Include="NonDMS\ICRM_bookableresourcebookingRepository.cs" />
+    <Compile Include="NonDMS\ICRM_campaignRepository.cs" />
+    <Compile Include="NonDMS\ICRM_campaignresponseRepository.cs" />
+    <Compile Include="NonDMS\ICRM_contactRepository.cs" />
+    <Compile Include="NonDMS\ICRM_equipmentRepository.cs" />
+    <Compile Include="NonDMS\ICRM_ktb_kontrabondetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_ktb_kontrabonRepository.cs" />
+    <Compile Include="NonDMS\ICRM_leadRepository.cs" />
+    <Compile Include="NonDMS\ICRM_opportunityRepository.cs" />
+    <Compile Include="NonDMS\ICRM_serviceappointmentRepository.cs" />
+    <Compile Include="NonDMS\ICRM_teamRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xid_documentregistrationRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xid_registrationmonitoringRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xjp_pdidetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xjp_pdireceiptRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xjp_predeliveryinspectionRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xjp_vehiclecostinputRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xjp_vehicletransferRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_accessoriesinstallationcategoryRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_accountpayablepaymentdetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_accountpayablepaymentRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_accountpayablevoucherRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_accountreceivableinvoicedetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_accountreceivableinvoiceRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_accountreceivablereceiptdetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_accountreceivablereceiptRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_apvdetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_assessmentRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_assigntosalespersonRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_businessunitinquiryRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_customerpublicRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_damageorlossRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_deliveryorderdetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_deliveryorderRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_employeeRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_incomingoutsourceworkorderdetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_inventorynewvehicleRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_inventorytransactiondetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_inventorytransactionRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_inventorytransferdetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_inventorytransferRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_inventserialRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_inventtransRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_landedcostRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_matchunmatchRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_moreaddressRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_newvehicleaccessoriesRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_newvehicledeliveryorderRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_newvehicleexteriorcolorRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_newvehiclesalesorderRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_newvehiclesalesquoteRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_newvehiclewholesaleorderRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_nonsalesdeliveryRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_nvsonumberregistrationdetailsRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_outsourcereservationRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_outsourceworkorderdetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_outsourceworkorderreceiptdetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_outsourceworkorderreceiptRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_outsourceworkorderRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_outsourceworkshopconfigurationRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_productlistRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_productRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_purchaseorderdetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_purchaseorderRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_purchasereceiptdetaillandedcostRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_purchasereceiptdetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_purchasereceiptRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_purchaserequisitiondetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_purchaserequisitionRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_reservationtransactionRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_salesorderdetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_salesorderRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_servicecampaignRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_servicemmsRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_serviceproportionalinvoiceRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_servicequeueRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_siteinquiryRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_siteRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_vehicleinformationRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_vehiclepricedetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_vehiclepriceRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_vehiclepublicRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_vendorRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_warehouseinquiryRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_warehouseRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_workorderpartmaterialandserviceRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_workorderRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_workordertimeregisterRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_writeoffbalancedetailRepository.cs" />
+    <Compile Include="NonDMS\ICRM_xts_writeoffbalanceRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KTB.DNet.Domain.Search\KTB.DNet.Domain.Search.vbproj">
+      <Project>{06a29192-8b96-4dfb-9c6c-aa5b4ddf8d36}</Project>
+      <Name>KTB.DNet.Domain.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain\KTB.DNet.Domain.vbproj">
+      <Project>{f4cc7463-4cbb-4336-aeaf-ac8fbc38dd9a}</Project>
+      <Name>KTB.DNet.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Domain\KTB.DNet.Interface.Domain.csproj">
+      <Project>{26475885-56e1-4f74-a2c1-2da985ce3999}</Project>
+      <Name>KTB.DNet.Interface.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Framework\KTB.DNet.Interface.Framework.csproj">
+      <Project>{35cd5278-bb7f-44d7-ab5b-ff5e551a916b}</Project>
+      <Name>KTB.DNet.Interface.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Model\KTB.DNet.Interface.Model.csproj">
+      <Project>{88bf0ed7-1491-4582-993f-80494ef9de0e}</Project>
+      <Name>KTB.DNet.Interface.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="obj\App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

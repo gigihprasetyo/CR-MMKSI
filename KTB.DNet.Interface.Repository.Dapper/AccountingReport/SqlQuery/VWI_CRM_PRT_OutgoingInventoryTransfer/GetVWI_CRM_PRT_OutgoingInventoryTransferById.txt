@@ -1,0 +1,17 @@
+SELECT 
+	businessunitcode
+	,fromsitename
+	,fromwarehousename
+	,IDRow
+	,ktb_cogstrx
+	,tobusinessunitcode
+	,tositename
+	,towarehousename
+	,transactiontypename
+	,xts_inventorytransfernumber
+	,xts_product
+	,xts_productdescription
+	,xts_quantity
+	,xts_transactiondate
+FROM VWI_CRM_PRT_OutgoingInventoryTransfer WITH (NOLOCK)
+WHERE ID = @Id

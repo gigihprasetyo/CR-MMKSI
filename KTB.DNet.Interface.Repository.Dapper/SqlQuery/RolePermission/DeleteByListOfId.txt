@@ -1,0 +1,1 @@
+﻿DELETE FROM APIRolePermission WHERE ID IN @listOfId

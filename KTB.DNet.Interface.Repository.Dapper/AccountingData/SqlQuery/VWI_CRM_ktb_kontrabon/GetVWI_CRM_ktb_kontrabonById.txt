@@ -1,0 +1,62 @@
+SELECT 
+    ROW_NUMBER() OVER (Order by 0) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,statecode
+	,owneridname
+	,statecodename
+	,ktb_vendorid
+	,createdonbehalfby
+	,ktb_tanggalkontrabon
+	,ktb_status
+	,importsequencenumber
+	,modifiedbyyominame
+	,ktb_statusname
+	,ktb_total_base
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,ktb_vendoridname
+	,ktb_businessunitid
+	,ktb_say
+	,owneridyominame
+	,ktb_kontrabonno
+	,modifiedon
+	,exchangerate
+	,ktb_handling
+	,ktb_total
+	,transactioncurrencyid
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,ktb_kontrabonid
+	,ktb_businessunitidname
+	,versionnumber
+	,modifiedonbehalfby
+	,ktb_handlingname
+	,ownerid
+	,overriddencreatedon
+	,RowStatus
+from (
+	select 
+		 b.ktb_bucompany as company
+		, b.ktb_dealercode as businessunitcode  
+		, a.*  
+		, b.msdyn_companycode  
+	from CRM_ktb_kontrabon a with(nolock)  
+	left join CRM_businessunit b with(nolock)
+	on a.ktb_businessunitid = b.businessunitid
+	where ktb_kontrabonid = @Id
+) VWI_CRM_ktb_kontrabon

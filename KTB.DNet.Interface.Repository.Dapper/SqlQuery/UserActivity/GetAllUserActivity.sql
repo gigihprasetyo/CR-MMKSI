@@ -1,0 +1,15 @@
+﻿SELECT [Id]
+      ,[Username]
+      ,[Endpoint]
+      ,[Activity]
+      ,[ActivityTime]
+      ,[ActivityDesc]
+      ,[DealerCode]
+      ,[AppId]
+      ,[CreatedBy]
+      ,[CreatedTime]
+      ,[UpdatedBy]
+      ,[UpdatedTime]
+  FROM [UserActivity]
+
+

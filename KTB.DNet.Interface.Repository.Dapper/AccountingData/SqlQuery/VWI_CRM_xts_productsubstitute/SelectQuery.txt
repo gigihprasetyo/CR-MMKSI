@@ -1,0 +1,76 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_productsubstitute.company
+	, VWI_CRM_xts_productsubstitute.businessunitcode
+	, VWI_CRM_xts_productsubstitute.createdonbehalfbyyominame
+	, VWI_CRM_xts_productsubstitute.owninguser
+	, VWI_CRM_xts_productsubstitute.xts_methodforprocurement
+	, VWI_CRM_xts_productsubstitute.statecode
+	, VWI_CRM_xts_productsubstitute.xts_productsubstitutedescription
+	, VWI_CRM_xts_productsubstitute.xts_methodforsalesorder
+	, VWI_CRM_xts_productsubstitute.owneridname
+	, VWI_CRM_xts_productsubstitute.statecodename
+	, VWI_CRM_xts_productsubstitute.xts_productsubstituteproductidname
+	, VWI_CRM_xts_productsubstitute.createdonbehalfby
+	, VWI_CRM_xts_productsubstitute.xts_startdate
+	, VWI_CRM_xts_productsubstitute.xts_pkcombinationkey
+	, VWI_CRM_xts_productsubstitute.xts_parentbusinessunitid
+	, VWI_CRM_xts_productsubstitute.xts_useforsalesordername
+	, VWI_CRM_xts_productsubstitute.importsequencenumber
+	, VWI_CRM_xts_productsubstitute.xts_productsubstitutenumber
+	, VWI_CRM_xts_productsubstitute.modifiedbyyominame
+	, VWI_CRM_xts_productsubstitute.xts_productdescription
+	, VWI_CRM_xts_productsubstitute.xts_enddate
+	, VWI_CRM_xts_productsubstitute.xts_useforworkordername
+	, VWI_CRM_xts_productsubstitute.xts_methodforprocurementname
+	, VWI_CRM_xts_productsubstitute.xts_productidname
+	, VWI_CRM_xts_productsubstitute.utcconversiontimezonecode
+	, VWI_CRM_xts_productsubstitute.createdbyyominame
+	, VWI_CRM_xts_productsubstitute.xts_useforprocurementname
+	, VWI_CRM_xts_productsubstitute.owningbusinessunit
+	, VWI_CRM_xts_productsubstitute.modifiedbyname
+	, VWI_CRM_xts_productsubstitute.owningteam
+	, VWI_CRM_xts_productsubstitute.xts_useforprocurement
+	, VWI_CRM_xts_productsubstitute.modifiedby
+	, VWI_CRM_xts_productsubstitute.createdby
+	, VWI_CRM_xts_productsubstitute.timezoneruleversionnumber
+	, VWI_CRM_xts_productsubstitute.owneridtype
+	, VWI_CRM_xts_productsubstitute.statuscodename
+	, VWI_CRM_xts_productsubstitute.xts_businessunitidname
+	, VWI_CRM_xts_productsubstitute.xts_useforsalesorder
+	, VWI_CRM_xts_productsubstitute.xts_methodforworkordername
+	, VWI_CRM_xts_productsubstitute.xts_methodforsalesordername
+	, VWI_CRM_xts_productsubstitute.owneridyominame
+	, VWI_CRM_xts_productsubstitute.modifiedon
+	, VWI_CRM_xts_productsubstitute.xts_methodforworkorder
+	, VWI_CRM_xts_productsubstitute.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_productsubstitute.statuscode
+	, VWI_CRM_xts_productsubstitute.createdbyname
+	, VWI_CRM_xts_productsubstitute.createdon
+	, VWI_CRM_xts_productsubstitute.xts_businessunitid
+	, VWI_CRM_xts_productsubstitute.xts_useforworkorder
+	, VWI_CRM_xts_productsubstitute.createdonbehalfbyname
+	, VWI_CRM_xts_productsubstitute.modifiedonbehalfbyname
+	, VWI_CRM_xts_productsubstitute.xts_productsubstituteid
+	, VWI_CRM_xts_productsubstitute.xts_productsubstituteproductid
+	, VWI_CRM_xts_productsubstitute.versionnumber
+	, VWI_CRM_xts_productsubstitute.modifiedonbehalfby
+	, VWI_CRM_xts_productsubstitute.xts_productid
+	, VWI_CRM_xts_productsubstitute.ownerid
+	, VWI_CRM_xts_productsubstitute.overriddencreatedon
+	, VWI_CRM_xts_productsubstitute.xts_parentbusinessunitidname
+	, VWI_CRM_xts_productsubstitute.RowStatus
+	, VWI_CRM_xts_productsubstitute.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.*
+        , b.msdyn_companycode
+    FROM CRM_xts_productsubstitute a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_productsubstitute

@@ -1,0 +1,37 @@
+SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,statecode
+	,ktb_id
+	,statecodename
+	,createdonbehalfby
+	,xts_productsegment2
+	,importsequencenumber
+	,organizationidname
+	,modifiedbyyominame
+	,xts_productsegment2typename
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,modifiedbyname
+	,versionnumber
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,xts_productsegment2id
+	,statuscodename
+	,modifiedon
+	,xts_entitytag
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,organizationid
+	,createdonbehalfbyname
+	,xts_productsegment2type
+	,modifiedonbehalfbyname
+	,overriddencreatedon
+	,xts_description
+	,RowStatus
+FROM CRM_xts_productsegment2 as VWI_CRM_xts_productsegment2 WITH (NOLOCK)
+WHERE xts_productsegment2id = @Id

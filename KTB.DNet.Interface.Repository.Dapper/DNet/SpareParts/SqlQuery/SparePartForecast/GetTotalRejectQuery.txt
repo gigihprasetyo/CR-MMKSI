@@ -1,0 +1,30 @@
+﻿select 
+	count(1)
+from 
+(
+select 
+		  a.ID
+		, e.DealerCode
+		, d.PartNumber
+		, 1 as isReject
+		, a.PoNumber
+		, DMSPRNo 
+		, a.Rowstatus
+		, case when a.LastUpdatedby is null then a.Createdby else a.LastUpdatedby end as LastUpdatedby
+		, case when a.LastUpdatedtime is null then a.CreatedTime else a.LastUpdatedtime end as LastUpdatetime
+		, b.[Status]
+	from SparePartForecastHeader a with(nolock)
+	left join SparePartForecastDetail b with(nolock) 
+	on a.ID = b.SparePartForecastHeaderID
+	left join sparepartforecastmaster c with(nolock) 
+	on c.ID = b.sparepartforecastmasterID
+	left join SparePartMaster d with(nolock) 
+	on d.ID = c.SparePartMasterID
+	left join Dealer e with(nolock) 
+	on e.ID = a.DealerID
+	where b.RowStatus = 0
+		and c.RowStatus = 0
+		and d.RowStatus = 0
+		and e.RowStatus = 0
+) Reject
+{0}

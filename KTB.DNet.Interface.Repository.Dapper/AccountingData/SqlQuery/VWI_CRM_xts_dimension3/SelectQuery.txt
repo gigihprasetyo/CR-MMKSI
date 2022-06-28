@@ -1,0 +1,39 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_dimension3.createdonbehalfbyyominame
+	, VWI_CRM_xts_dimension3.modifiedonbehalfby
+	, VWI_CRM_xts_dimension3.xts_locking
+	, VWI_CRM_xts_dimension3.statecode
+	, VWI_CRM_xts_dimension3.statecodename
+	, VWI_CRM_xts_dimension3.createdonbehalfby
+	, VWI_CRM_xts_dimension3.xts_dimensiontype
+	, VWI_CRM_xts_dimension3.importsequencenumber
+	, VWI_CRM_xts_dimension3.organizationidname
+	, VWI_CRM_xts_dimension3.modifiedbyyominame
+	, VWI_CRM_xts_dimension3.utcconversiontimezonecode
+	, VWI_CRM_xts_dimension3.createdbyyominame
+	, VWI_CRM_xts_dimension3.xts_dimension3
+	, VWI_CRM_xts_dimension3.modifiedbyname
+	, VWI_CRM_xts_dimension3.versionnumber
+	, VWI_CRM_xts_dimension3.modifiedby
+	, VWI_CRM_xts_dimension3.createdby
+	, VWI_CRM_xts_dimension3.timezoneruleversionnumber
+	, VWI_CRM_xts_dimension3.statuscodename
+	, VWI_CRM_xts_dimension3.modifiedon
+	, VWI_CRM_xts_dimension3.xts_dimensionnumbername
+	, VWI_CRM_xts_dimension3.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_dimension3.statuscode
+	, VWI_CRM_xts_dimension3.createdbyname
+	, VWI_CRM_xts_dimension3.createdon
+	, VWI_CRM_xts_dimension3.organizationid
+	, VWI_CRM_xts_dimension3.xts_dimensiontypename
+	, VWI_CRM_xts_dimension3.xts_dimension3id
+	, VWI_CRM_xts_dimension3.xts_dimensionnumber
+	, VWI_CRM_xts_dimension3.modifiedonbehalfbyname
+	, VWI_CRM_xts_dimension3.createdonbehalfbyname
+	, VWI_CRM_xts_dimension3.overriddencreatedon
+	, VWI_CRM_xts_dimension3.xts_description
+    /**EndPagingIndexQuery**/
+FROM CRM_xts_dimension3 as VWI_CRM_xts_dimension3 with (nolock)  
+{0}

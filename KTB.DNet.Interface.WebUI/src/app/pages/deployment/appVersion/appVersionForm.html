@@ -1,0 +1,26 @@
+﻿<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="Application Version" ba-panel-class="with-scroll">
+                <form name="form" ng-submit="Submit()">
+                    <div class="col-md-12">
+                        <standard-select label="Application" name="AppId" ng-model="appVersion.AppId" options="appOptions" value="AppId" text="Name" required />
+                    </div>
+                    <div class="col-md-12">
+                        <input-text label="Version" name="Version" ng-model="appVersion.Version" required></input-text>
+                    </div>
+                    <div class="col-md-12">
+                        <text-area label="Description" name="Description" ng-model="appVersion.Description" required></text-area>
+                    </div>
+                    <div class="col-md-12">
+                        <switcher label="Current Deployment" name="IsCurrentDeployment" switcher-style="info" text-on="YES" text-off="NO" ng-model="appVersion.IsCurrentDeployment"></switcher>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <a ui-sref="deployment.appVersion.list" class="btn btn-default m-t-15 waves-effect">Cancel</a>
+                        <input ng-disabled="form.$invalid" type="submit" value="Save" class="btn btn-primary m-t-15 waves-effect">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

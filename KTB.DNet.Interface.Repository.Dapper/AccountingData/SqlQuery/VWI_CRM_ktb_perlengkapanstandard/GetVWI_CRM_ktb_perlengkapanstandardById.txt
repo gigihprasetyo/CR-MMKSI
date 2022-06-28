@@ -1,0 +1,41 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,createdonbehalfbyyominame
+	,owninguser
+	,statecode
+	,ktb_newvehiclemodelid
+	,owneridname
+	,statecodename
+	,createdonbehalfby
+	,ktb_perlengkapanstandard
+	,ktb_perlengkapanstandardid
+	,ktb_vehiclemodelidname
+	,importsequencenumber
+	,modifiedbyyominame
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,ktb_newvehiclemodelidname
+	,owneridyominame
+	,modifiedon
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,versionnumber
+	,modifiedonbehalfby
+	,ktb_vehiclemodelid
+	,ownerid
+	,overriddencreatedon
+	,RowStatus
+FROM CRM_ktb_perlengkapanstandard as VWI_CRM_ktb_perlengkapanstandard WITH (NOLOCK) 
+WHERE ktb_perlengkapanstandardid = @Id

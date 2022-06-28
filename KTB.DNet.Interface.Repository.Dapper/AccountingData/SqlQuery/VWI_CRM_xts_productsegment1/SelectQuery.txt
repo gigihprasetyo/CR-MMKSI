@@ -1,0 +1,38 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_productsegment1.xts_description
+	, VWI_CRM_xts_productsegment1.overriddencreatedon
+	, VWI_CRM_xts_productsegment1.xts_productsegment1
+	, VWI_CRM_xts_productsegment1.modifiedonbehalfbyname
+	, VWI_CRM_xts_productsegment1.createdonbehalfbyname
+	, VWI_CRM_xts_productsegment1.organizationid
+	, VWI_CRM_xts_productsegment1.createdon
+	, VWI_CRM_xts_productsegment1.createdbyname
+	, VWI_CRM_xts_productsegment1.statuscode
+	, VWI_CRM_xts_productsegment1.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_productsegment1.xts_entitytag
+	, VWI_CRM_xts_productsegment1.modifiedon
+	, VWI_CRM_xts_productsegment1.xts_productsegment1id
+	, VWI_CRM_xts_productsegment1.statuscodename
+	, VWI_CRM_xts_productsegment1.xts_productsegment1type
+	, VWI_CRM_xts_productsegment1.timezoneruleversionnumber
+	, VWI_CRM_xts_productsegment1.createdby
+	, VWI_CRM_xts_productsegment1.modifiedby
+	, VWI_CRM_xts_productsegment1.versionnumber
+	, VWI_CRM_xts_productsegment1.modifiedbyname
+	, VWI_CRM_xts_productsegment1.createdbyyominame
+	, VWI_CRM_xts_productsegment1.utcconversiontimezonecode
+	, VWI_CRM_xts_productsegment1.xts_productsegment1typename
+	, VWI_CRM_xts_productsegment1.modifiedbyyominame
+	, VWI_CRM_xts_productsegment1.organizationidname
+	, VWI_CRM_xts_productsegment1.importsequencenumber
+	, VWI_CRM_xts_productsegment1.createdonbehalfby
+	, VWI_CRM_xts_productsegment1.statecodename
+	, VWI_CRM_xts_productsegment1.ktb_id
+	, VWI_CRM_xts_productsegment1.statecode
+	, VWI_CRM_xts_productsegment1.modifiedonbehalfby
+	, VWI_CRM_xts_productsegment1.createdonbehalfbyyominame
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_productsegment1 as VWI_CRM_xts_productsegment1 WITH (NOLOCK) 
+{0}

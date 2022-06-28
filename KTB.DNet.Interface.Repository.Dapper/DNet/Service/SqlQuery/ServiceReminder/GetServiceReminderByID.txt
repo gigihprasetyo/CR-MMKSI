@@ -1,0 +1,38 @@
+SELECT 
+ID
+,SalesforceID
+,DealerID
+,DealerBranchID
+,ChassisNumber
+,EngineNumber
+,ChassisMasterID
+,VehicleType
+,CategoryID
+,ServiceReminderDate
+,MaxFUDealerDate
+,BookingDate
+,convert(datetime, BookingTime)
+,CaseNumber
+,CustomerName
+,CustomerPhoneNumber
+,ContactPersonName
+,ContactPersonPhoneNumber
+,PMKindID
+,TransactionType
+,AssistServiceIncomingID
+,WONumber
+,ServiceActualDate
+,ActualKM
+,ActualServiceDealerID
+,ActualServiceDealerBranchID
+,PKTDate
+,SourceFlag
+,Remark
+,Status
+,RowStatus
+,CreatedBy
+,CreatedTime
+,LastUpdateBy
+,LastUpdateTime
+FROM ServiceReminder with(nolock)
+WHERE ID = @ID

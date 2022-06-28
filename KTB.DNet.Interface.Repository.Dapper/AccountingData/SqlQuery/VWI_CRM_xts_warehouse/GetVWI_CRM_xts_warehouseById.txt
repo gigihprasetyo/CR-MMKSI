@@ -1,0 +1,53 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY  ModifiedOn DESC ) AS IDRow
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,statecode
+	,xts_description
+	,statecodename
+	,xts_defaultreceiptlocationid
+	,createdonbehalfby
+	,ktb_claim
+	,xts_warehouseid
+	,importsequencenumber
+	,organizationidname
+	,modifiedbyyominame
+	,xts_company
+	,ktb_identificationtypename
+	,xts_quarantinewarehouseidname
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,xts_transitwarehouseid
+	,modifiedbyname
+	,versionnumber
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,xts_defaultissuelocationid
+	,xts_transitwarehouseidname
+	,statuscodename
+	,xts_defaultissuelocationidname
+	,xts_siteid
+	,modifiedon
+	,xts_type
+	,xts_entitytag
+	,ktb_claimname
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,organizationid
+	,ktb_identificationtype
+	,createdonbehalfbyname
+	,xts_typename
+	,modifiedonbehalfbyname
+	,xts_quarantinewarehouseid
+	,xts_siteidname
+	,xts_defaultreceiptlocationidname
+	,overriddencreatedon
+	,xts_warehouse
+	,RowStatus
+	,ktb_carpool
+	,ktb_carpoolname
+FROM CRM_xts_warehouse as VWI_CRM_xts_warehouse WITH (NOLOCK) 
+WHERE xts_warehouseid = @Id

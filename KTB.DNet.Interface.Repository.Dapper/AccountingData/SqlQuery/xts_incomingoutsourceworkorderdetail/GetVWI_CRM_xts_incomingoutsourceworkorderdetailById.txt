@@ -1,0 +1,113 @@
+SELECT 
+	
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xts_servicecategoryid
+	,xts_producttype
+	,versionnumber
+	,createdon
+	,xts_commentdescription
+	,xts_incomingoutsourceworkorderidname
+	,xts_consumptiontax1id
+	,statuscodename
+	,xts_discountrate
+	,xts_unitpricelaborrate_base
+	,modifiedbyyominame
+	,xts_incomingoutsourceworkorderid
+	,owneridtype
+	,xts_unitidname
+	,xts_totaltransactionamount_base
+	,xts_totalbaseamount_base
+	,createdonbehalfby
+	,modifiedbyname
+	,xts_incomingoutsourceworkorderdetail
+	,owneridname
+	,overriddencreatedon
+	,xts_productsegment1id
+	,xts_originaloutsrcwodetailireferenceid
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_totalconsumptiontaxamount_base
+	,xts_transactionamount_base
+	,xts_consumptiontax2id
+	,owningteam
+	,xts_totalbaseamount
+	,xts_productsegment3idname
+	,xts_productidname
+	,xts_commentid
+	,statecode
+	,xts_consumptiontax1amount_base
+	,timezoneruleversionnumber
+	,xts_parentbusinessunitid
+	,xts_totalconsumptiontaxamount
+	,xts_locking
+	,xts_producttypename
+	,xts_totalamountbeforediscount
+	,xts_originaloutsrcwodetailireferenceidname
+	,xts_commentidname
+	,xts_servicecategorydescription
+	,xts_consumptiontax1idname
+	,createdonbehalfbyname
+	,xts_consumptiontax2idname
+	,xts_productid
+	,xts_productsegment1idname
+	,xts_quantitymanhour
+	,utcconversiontimezonecode
+	,xts_servicepartsandmaterialsid
+	,xts_incomingpdiandserviceinstructionid
+	,xts_discountamount
+	,xts_unitpricelaborrate
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_servicepartsandmaterialsidname
+	,xts_partidname
+	,xts_partid
+	,xts_productsegment2id
+	,xts_unitid
+	,xts_partcodedescription
+	,createdbyname
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_productsegment4id
+	,xts_incomingoutsourceworkorderdetailid
+	,xts_discountamount_base
+	,xts_productsegment2idname
+	,xts_consumptiontax2amount
+	,transactioncurrencyid
+	,createdby
+	,modifiedby
+	,xts_incomingpdiandserviceinstructionidname
+	,xts_parentbusinessunitidname
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_productsegment4idname
+	,owningbusinessunit
+	,xts_consumptiontax1amount
+	,xts_consumptiontax2amount_base
+	,xts_transactionamount
+	,xts_productsegment3id
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_totalamountbeforediscount_base
+	,xts_totaltransactionamount
+	,xts_runningnumber
+	,xts_productdescription
+	,xts_servicecategoryidname
+	,statecodename
+	,xts_businessunitidname
+	,RowStatus
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_incomingoutsourceworkorderdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_incomingoutsourceworkorderdetailid = @Id
+) VWI_CRM_xts_incomingoutsourceworkorderdetail 

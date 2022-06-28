@@ -1,0 +1,83 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,xts_servicecategoryid
+	,versionnumber
+	,createdon
+	,ktb_showinservicetemplate
+	,statuscodename
+	,modifiedbyyominame
+	,xts_freeofchargereason
+	,owneridtype
+	,xts_servicecategorytypename
+	,createdonbehalfby
+	,modifiedbyname
+	,owneridname
+	,overriddencreatedon
+	,xts_discountcategoryname
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_servicecategorygroupid
+	,xts_labourrate
+	,owningteam
+	,xts_servicecategory
+	,ktb_showinservicetemplatename
+	,xts_exchangeratedate
+	,statecode
+	,timezoneruleversionnumber
+	,xts_exchangerateamount
+	,xts_locking
+	,xts_discountcategory
+	,xts_servicecategorydescription
+	,createdonbehalfbyname
+	,ktb_serviceincdnetidname
+	,xts_exchangeratetypeidname
+	,utcconversiontimezonecode
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,ktb_svcincdnetcode
+	,xts_freeofchargename
+	,ktb_svcincdnetcodename
+	,createdbyname
+	,xts_businessunitid
+	,xts_exchangerateamount_base
+	,xts_exchangeratetypeid
+	,xts_pkcombinationkey
+	,ktb_isreaddatafrompbuname
+	,ktb_kindcode
+	,transactioncurrencyid
+	,createdby
+	,modifiedby
+	,xts_servicecategorytype
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_regularservice
+	,xts_freeofcharge
+	,xts_servicecategorygroupidname
+	,modifiedonbehalfbyname
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,ktb_isreaddatafrompbu
+	,xts_labourrate_base
+	,ktb_serviceincdnetid
+	,statecodename
+	,xts_businessunitidname
+	,owningbusinessunit
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicecategory a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_servicecategoryid = @Id
+) VWI_CRM_xts_servicecategory

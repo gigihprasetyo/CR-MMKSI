@@ -1,0 +1,23 @@
+<section>
+    <div class="widgets">
+        <div class="row">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="{{activePageTitle}}" ba-panel-class="with-scroll">
+                    <button class="pull-right btn btn-info" ng-click="getUploadTemplate()">
+                        User Template
+                    </button>
+                    <div>
+                        <input class="btn btn-primary"  type="file" accept=".xls,.xlsx" ngf-select="UploadFiles($files)" />
+                        <hr />
+                        Uploded Files:
+                        <ul>
+                            <li ng-repeat="file in SelectedFiles">{{file.name}}</li>
+                        </ul>
+                        <div id="dvProgress" class="progress" ng-show="Progress >= 0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

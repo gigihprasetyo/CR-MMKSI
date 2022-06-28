@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xts_uom as VWI_CRM_xts_uom WITH (NOLOCK) 
+{0}

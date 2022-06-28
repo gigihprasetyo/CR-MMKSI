@@ -1,0 +1,54 @@
+﻿SELECT 
+ COUNT(*) FROM
+	(SELECT DISTINCT SalesmanHeader.ID, SalesmanHeader.SalesmanCode,	SalesmanHeader.Name, A.BirthCityID BirthCityID, SalesmanHeader.PlaceOfBirth PlaceOfBirth, SalesmanHeader.DateOfBirth, 
+		SalesmanHeader.Gender, SalesmanHeader.MarriedStatus, SalesmanHeader.Address,A.AddressCityID AddressCityID, SalesmanHeader.City AddressCityName, SalesmanHeader.SalesmanLevelID, 
+		SalesmanHeader.JobPositionId_Main as JobPositionId, SalesmanHeader.LeaderId, Lead.SalesmanCode AS LeaderSalesmanCode,
+		Lead.Name AS LeaderSalesmanName, SalesmanHeader.HireDate, SalesmanHeader.ResignDate, SalesmanHeader.ResignReason, SalesmanHeader.DealerId,
+		Dealer.DealerCode, SalesmanHeader.DealerBranchID , DealerBranch.DealerBranchCode,				
+		Status = CASE WHEN SalesmanHeader.RowStatus = -1 THEN SalesmanHeader.RowStatus
+						ELSE CASE	WHEN SalesmanHeader.Status = 2 THEN 0
+								ELSE -1
+							END
+					END ,
+		SalesmanArea.AreaDesc AS SalesmanAreaDesc,
+		SalesmanLevel.Description AS SalesmanLevelDesc,
+		JobPosition.Description AS JobPositionDesc,
+		KTPProfile.ProfileValue AS NoKTP,
+		EmailProfile.ProfileValue AS Email,
+		NoHPProfile.ProfileValue AS NoHP,
+		KategoriProfile.ProfileValue AS Kategori,
+		PendidikanProfile.ProfileValue AS Pendidikan,
+		SalesmanHeader.LastUpdateTime,
+		SalesmanHeader.Status as SalesmanStatusDNET,
+		StatusDNET = CASE WHEN SalesmanHeader.RowStatus = -1 THEN 'SALES SUDAH TIDAK BISA DIGUNAKAN OLEH ADMINISTRATOR'
+		                  ELSE CASE WHEN SalesmanHeader.Status = 2 THEN 'AKTIF'
+						       ELSE CASE WHEN SalesmanHeader.Status = 3 THEN 'RESIGN'
+							        ELSE CASE WHEN SalesmanHeader.Status = 4 THEN 'KONFIRMASI AKTIF KEMBALI DARI APM'
+									     ELSE CASE WHEN SalesmanHeader.IsRequestID = 1 THEN 'STATUS BARU SUDAH REQUEST SALESMAN CODE'
+										      ELSE 'STATUS BARU BELUM REQUEST SALESMAN CODE'
+											  END
+									     END
+									END
+							   END
+						  END
+	FROM SalesmanHeader WITH ( NOLOCK )
+		JOIN Dealer WITH ( NOLOCK ) ON SalesmanHeader.DealerId = Dealer.ID AND Dealer.RowStatus = 0
+		
+		LEFT JOIN DealerBranch WITH ( NOLOCK ) ON SalesmanHeader.DealerId = DealerBranch.DealerID AND SalesmanHeader.DealerBranchID = DealerBranch.ID AND DealerBranch.RowStatus = 0	  
+		LEFT JOIN SalesmanHeader Lead WITH (NOLOCK) ON SalesmanHeader.LeaderId = Lead.ID AND Lead.RowStatus = 0
+		LEFT JOIN SalesmanArea WITH (NOLOCK) ON SalesmanArea.ID = SalesmanHeader.SalesmanAreaId AND SalesmanArea.RowStatus = 0
+		LEFT JOIN SalesmanLevel WITH (NOLOCK) ON SalesmanLevel.ID = SalesmanHeader.SalesmanLevelId AND SalesmanLevel.RowStatus = 0
+		LEFT JOIN JobPosition WITH (NOLOCK) ON JobPosition.ID = SalesmanHeader.JobPositionId_Main AND JobPosition.RowStatus = 0
+		LEFT JOIN SalesmanProfile KTPProfile WITH (NOLOCK) ON KTPProfile.SalesmanHeaderID = SalesmanHeader.ID AND KTPProfile.ProfileHeaderId = 29 AND KTPProfile.RowStatus = 0
+		LEFT JOIN SalesmanProfile EmailProfile WITH (NOLOCK) ON EmailProfile.SalesmanHeaderID = SalesmanHeader.ID AND EmailProfile.ProfileHeaderId = 26 AND EmailProfile.RowStatus = 0
+		LEFT JOIN SalesmanProfile NoHPProfile WITH (NOLOCK) ON NoHPProfile.SalesmanHeaderID = SalesmanHeader.ID AND NoHPProfile.ProfileHeaderId = 33 AND NoHPProfile.RowStatus = 0
+		LEFT JOIN SalesmanProfile KategoriProfile WITH (NOLOCK) ON KategoriProfile.SalesmanHeaderID = SalesmanHeader.ID AND KategoriProfile.ProfileHeaderId = 45 AND KategoriProfile.RowStatus = 0
+		LEFT JOIN SalesmanProfile PendidikanProfile WITH (NOLOCK) ON PendidikanProfile.SalesmanHeaderID = SalesmanHeader.ID AND PendidikanProfile.ProfileHeaderId = 31 AND PendidikanProfile.RowStatus = 0
+		LEFT JOIN Category Category WITH (NOLOCK) ON Category.CategoryCode = KategoriProfile.ProfileValue 		
+		LEFT JOIN SalesmanAdditionalInfo A WITH(NOLOCK) ON a.SalesmanHeaderID = SalesmanHeader.ID AND A.RowStatus = 0
+
+	WHERE SalesmanHeader.SalesIndicator = 1 AND ISNULL(SalesmanHeader.SalesmanCode,'') <> ''
+	AND (Category.ID IN @DealerCategoryIdList
+			OR @CheckDealerCategory = 0)
+			) VWI_EmployeeSales 
+{0}

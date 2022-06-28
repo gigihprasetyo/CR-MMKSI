@@ -1,0 +1,12 @@
+SELECT 
+	businessunitcode
+	,fullname
+	,IDRow
+	,ktb_superiors
+	,statuscode
+	,subject
+	,xts_employee
+	,xts_leaddate
+	,xts_productsegment2
+FROM VWI_CRM_SLS_DailyActivityMonitoring_Lead WITH (NOLOCK)
+WHERE ID = @Id

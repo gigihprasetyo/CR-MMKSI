@@ -1,0 +1,53 @@
+﻿	SELECT 
+/**PagingIndexQuery**/ 
+VWI_ChassisStatusFaktur.ID,
+VWI_ChassisStatusFaktur.ChassisNumber,
+VWI_ChassisStatusFaktur.DealerCode,
+VWI_ChassisStatusFaktur.DealerName,
+VWI_ChassisStatusFaktur.RevisionStatus,
+VWI_ChassisStatusFaktur.RevisionDate,
+VWI_ChassisStatusFaktur.RevisionType,
+VWI_ChassisStatusFaktur.SPKNumber,
+VWI_ChassisStatusFaktur.FakturNumber,
+VWI_ChassisStatusFaktur.FakturDate,
+VWI_ChassisStatusFaktur.OpenFakturDate,
+VWI_ChassisStatusFaktur.ValidateDate,
+VWI_ChassisStatusFaktur.ConfirmDate,
+VWI_ChassisStatusFaktur.DownloadDate,
+VWI_ChassisStatusFaktur.PrintedDate,
+VWI_ChassisStatusFaktur.FakturStatus,
+VWI_ChassisStatusFaktur.ETDDate,
+VWI_ChassisStatusFaktur.EffectiveDate,
+VWI_ChassisStatusFaktur.ReleaseDate,
+VWI_ChassisStatusFaktur.ATDDate,
+VWI_ChassisStatusFaktur.ETADate,
+VWI_ChassisStatusFaktur.ATADate
+/**EndPagingIndexQuery**/
+FROM
+(
+   SELECT a.ID, a.ChassisNumber, a.SoldDealerID, a.DealerCode, a.DealerName, RevisionStatus = null, RevisionDate=null, RevisionType = null, SPKNumber= null,
+		  FakturNumber = null, FakturDate = null, OpenFakturDate = null, ValidateDate = null, ConfirmDate = null, DownloadDate = null, PrintedDate = null, FakturStatus = null
+		  , a.ETDDate, a.EffectiveDate, a.ReleaseDate, a.GIDate as ATDDate, a.ETA as ETADate, a.ATA as ATADate
+   FROM
+   (
+   SELECT a.ID, a.ChassisNumber, a.SoldDealerID, c.DealerCode, c.DealerName, b.IsTemporary, EndCustomerId = b.Id, a.ETDDate, a.EffectiveDate, a.ReleaseDate, a.GIDate, a.ETA, a.ATA
+   FROM
+   (
+	   SELECT a.* 
+	          ,b.ReqAllocationDateTime as ETDDate, b.EffectiveDate
+	          ,case when b.ReleaseYear = 0 then cast('1753-1-1' as datetime) else CONVERT(Datetime,cast(b.ReleaseYear as varchar)+'-'+cast(b.ReleaseMonth as varchar)+'-'+cast(b.ReleaseDate as varchar)) end as ReleaseDate
+			  ,c.ETA, c.ATA
+	   FROM
+	   (
+	      SELECT * FROM ChassisMaster a WITH(NOLOCK) where RowStatus = 0 AND ID = @ChassisMasterID 
+	   ) a
+	   LEFT JOIN POHeader b WITH (NOLOCK) on a.SONumber = b.SONumber and b.RowStatus = 0
+	   LEFT JOIN ChassisMasterATA c WITH (NOLOCK) on a.ID = c.ChassisMasterID and c.RowStatus = 0
+   ) a
+   LEFT JOIN
+   (
+	   SELECT * FROM EndCustomer b WITH(NOLOCK) WHERE RowStatus = 0 --and b.FakturDate >= '2017-04-01'
+   ) b  ON a.EndCustomerID = b.ID
+   JOIN Dealer c WITH(NOLOCK) on a.SoldDealerID = c.ID and c.RowStatus = 0 
+   ) a WHERE a.IsTemporary = -1 Or a.EndCustomerId is NULL
+) VWI_ChassisStatusFaktur

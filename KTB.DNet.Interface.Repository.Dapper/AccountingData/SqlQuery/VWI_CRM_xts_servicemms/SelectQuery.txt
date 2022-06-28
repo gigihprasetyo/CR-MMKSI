@@ -1,0 +1,106 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_servicemms.company
+    , VWI_CRM_xts_servicemms.businessunitcode
+    , VWI_CRM_xts_servicemms.xts_rearlefttireflaw
+    , VWI_CRM_xts_servicemms.xts_parentbusinessunitid
+    , VWI_CRM_xts_servicemms.versionnumber
+    , VWI_CRM_xts_servicemms.createdon
+    , VWI_CRM_xts_servicemms.xts_mmspersoninchargeid
+    , VWI_CRM_xts_servicemms.xts_frontrightoffcentered
+    , VWI_CRM_xts_servicemms.xts_scheduledarrivaldateandtime
+    , VWI_CRM_xts_servicemms.xts_workorderid
+    , VWI_CRM_xts_servicemms.xts_frontrighttireflawname
+    , VWI_CRM_xts_servicemms.xts_frontlefttireflawname
+    , VWI_CRM_xts_servicemms.xts_customerid
+    , VWI_CRM_xts_servicemms.ownerid
+    , VWI_CRM_xts_servicemms.modifiedon
+    , VWI_CRM_xts_servicemms.owneridtype
+    , VWI_CRM_xts_servicemms.xts_typeoftirename
+    , VWI_CRM_xts_servicemms.createdonbehalfby
+    , VWI_CRM_xts_servicemms.modifiedbyname
+    , VWI_CRM_xts_servicemms.xts_platenumber
+    , VWI_CRM_xts_servicemms.xts_frontrightmm
+    , VWI_CRM_xts_servicemms.xts_vehiclemodelname
+    , VWI_CRM_xts_servicemms.xts_vehicleidentificationid
+    , VWI_CRM_xts_servicemms.xts_frontleftkpa
+    , VWI_CRM_xts_servicemms.xts_mmstemplateid
+    , VWI_CRM_xts_servicemms.overriddencreatedon
+    , VWI_CRM_xts_servicemms.ktb_wodescription
+    , VWI_CRM_xts_servicemms.xts_nextservicenote
+    , VWI_CRM_xts_servicemms.xts_nextestimatedservicedate
+    , VWI_CRM_xts_servicemms.xts_rearleftoffcentered
+    , VWI_CRM_xts_servicemms.xts_frontrighttireflaw
+    , VWI_CRM_xts_servicemms.createdonbehalfbyyominame
+    , VWI_CRM_xts_servicemms.modifiedonbehalfby
+    , VWI_CRM_xts_servicemms.xts_workorderidname
+    , VWI_CRM_xts_servicemms.xts_frontlefttireflaw
+    , VWI_CRM_xts_servicemms.xts_customeridyominame
+    , VWI_CRM_xts_servicemms.owningteam
+    , VWI_CRM_xts_servicemms.statecode
+    , VWI_CRM_xts_servicemms.owneridname
+    , VWI_CRM_xts_servicemms.timezoneruleversionnumber
+    , VWI_CRM_xts_servicemms.xts_mmstemplateidname
+    , VWI_CRM_xts_servicemms.xts_frontleftoffcentered
+    , VWI_CRM_xts_servicemms.xts_locking
+    , VWI_CRM_xts_servicemms.xts_rearbrakepad
+    , VWI_CRM_xts_servicemms.xts_customernumber
+    , VWI_CRM_xts_servicemms.xts_servicemmsid
+    , VWI_CRM_xts_servicemms.xts_createdon
+    , VWI_CRM_xts_servicemms.createdonbehalfbyname
+    , VWI_CRM_xts_servicemms.xts_rearrightmm
+    , VWI_CRM_xts_servicemms.utcconversiontimezonecode
+    , VWI_CRM_xts_servicemms.xts_frontbrakepad
+    , VWI_CRM_xts_servicemms.xts_rearrighttireflawname
+    , VWI_CRM_xts_servicemms.xts_rearrightoffcentered
+    , VWI_CRM_xts_servicemms.importsequencenumber
+    , VWI_CRM_xts_servicemms.owneridyominame
+    , VWI_CRM_xts_servicemms.xts_rearrightkpa
+    , VWI_CRM_xts_servicemms.xts_rearlefttireflawname
+    , VWI_CRM_xts_servicemms.xts_rearleftkpa
+    , VWI_CRM_xts_servicemms.xts_servicecategoryid
+    , VWI_CRM_xts_servicemms.ktb_wommsidname
+    , VWI_CRM_xts_servicemms.createdbyname
+    , VWI_CRM_xts_servicemms.xts_businessunitid
+    , VWI_CRM_xts_servicemms.modifiedonbehalfbyname
+    , VWI_CRM_xts_servicemms.xts_rearleftmm
+    , VWI_CRM_xts_servicemms.xts_vehicleidentificationidname
+    , VWI_CRM_xts_servicemms.xts_rearrightoffcenteredname
+    , VWI_CRM_xts_servicemms.ktb_wommsid
+    , VWI_CRM_xts_servicemms.xts_servicemms
+    , VWI_CRM_xts_servicemms.createdby
+    , VWI_CRM_xts_servicemms.modifiedby
+    , VWI_CRM_xts_servicemms.createdbyyominame
+    , VWI_CRM_xts_servicemms.owninguser
+    , VWI_CRM_xts_servicemms.xts_frontleftmm
+    , VWI_CRM_xts_servicemms.xts_customeridname
+    , VWI_CRM_xts_servicemms.owningbusinessunit
+    , VWI_CRM_xts_servicemms.modifiedbyyominame
+    , VWI_CRM_xts_servicemms.xts_frontleftoffcenteredname
+    , VWI_CRM_xts_servicemms.xts_parentbusinessunitidname
+    , VWI_CRM_xts_servicemms.xts_frontrightoffcenteredname
+    , VWI_CRM_xts_servicemms.statuscode
+    , VWI_CRM_xts_servicemms.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_servicemms.xts_typeoftire
+    , VWI_CRM_xts_servicemms.xts_rearleftoffcenteredname
+    , VWI_CRM_xts_servicemms.xts_frontrightkpa
+    , VWI_CRM_xts_servicemms.xts_mmspersoninchargeidname
+    , VWI_CRM_xts_servicemms.statuscodename
+    , VWI_CRM_xts_servicemms.xts_rearrighttireflaw
+    , VWI_CRM_xts_servicemms.xts_servicecategoryidname
+    , VWI_CRM_xts_servicemms.statecodename
+    , VWI_CRM_xts_servicemms.xts_businessunitidname
+    , VWI_CRM_xts_servicemms.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicemms a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_servicemms  

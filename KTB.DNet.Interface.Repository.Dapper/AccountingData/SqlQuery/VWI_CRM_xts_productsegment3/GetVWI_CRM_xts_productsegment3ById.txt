@@ -1,0 +1,38 @@
+SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, xts_description
+	, overriddencreatedon
+	, xts_productsegment3
+	, ktb_serviceincominginterface
+	, xts_productsegment3id
+	, modifiedonbehalfbyname
+	, createdonbehalfbyname
+	, organizationid
+	, createdon
+	, createdbyname
+	, statuscode
+	, modifiedonbehalfbyyominame
+	, xts_entitytag
+	, modifiedon
+	, statuscodename
+	, timezoneruleversionnumber
+	, createdby
+	, modifiedby
+	, xts_productsegment3type
+	, versionnumber
+	, modifiedbyname
+	, createdbyyominame
+	, utcconversiontimezonecode
+	, modifiedbyyominame
+	, organizationidname
+	, importsequencenumber
+	, createdonbehalfby
+	, statecodename
+	, ktb_id
+	, ktb_serviceincominginterfacename
+	, xts_productsegment3typename
+	, statecode
+	, modifiedonbehalfby
+	, createdonbehalfbyyominame
+FROM CRM_xts_productsegment3 as VWI_CRM_xts_productsegment3 WITH (NOLOCK)
+WHERE xts_productsegment3id = @Id

@@ -1,0 +1,2 @@
+SELECT COUNT(1)
+FROM CRM_xts_workordertimeregister WITH (NOLOCK) {0}

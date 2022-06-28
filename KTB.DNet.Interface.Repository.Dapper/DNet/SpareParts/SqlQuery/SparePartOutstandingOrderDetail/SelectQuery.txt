@@ -1,0 +1,92 @@
+SELECT  
+	/**PagingIndexQuery**/ 
+	SparePartOutstandingOrderDetail.AllocationAmount,
+	SparePartOutstandingOrderDetail.AllocationQty,
+	--SparePartOutstandingOrderDetail.CreatedBy,
+	--SparePartOutstandingOrderDetail.CreatedTime,
+	SparePartOutstandingOrderDetail.EstimateFillDate,
+	SparePartOutstandingOrderDetail.EstimateFillQty,	
+	SparePartOutstandingOrderDetail.ID,
+	--SparePartOutstandingOrderDetail.LastUpdateBy,
+	SparePartOutstandingOrderDetail.LastUpdateTime,
+	SparePartOutstandingOrderDetail.OpenAmount,
+	SparePartOutstandingOrderDetail.OpenQty,
+	SparePartOutstandingOrderDetail.OrderQty,
+	SparePartOutstandingOrderDetail.PartName,
+	SparePartOutstandingOrderDetail.PartNumber,
+	SparePartOutstandingOrderDetail.RowStatus,
+	SparePartOutstandingOrderDetail.SparePartOutstandingOrderID,
+	SparePartOutstandingOrderDetail.Status,
+	SparePartOutstandingOrderDetail.SubtitutePartNumber,
+	SparePartOutstandingOrderDetail.DealerCode,
+	SparePartOutstandingOrderDetail.DMSPRNo,
+	SparePartOutstandingOrderDetail.PONumber
+	/**EndPagingIndexQuery**/
+FROM
+(
+	SELECT
+		A.AllocationAmount,
+		A.AllocationQty,
+		--A.CreatedBy,
+		--A.CreatedTime,
+		--MinEstimateDate.EstimateFillDate,
+		--MinEstimateDate.ID,
+		--SUM(A.EstimateFillQty) [EstimateFillQty],
+		--A.LastUpdateBy,
+		--MaxLastUpdateTime.LastUpdateTime,
+		A.EstimateFillDate,
+		A.ID,
+		A.EstimateFillQty,
+		A.LastUpdateTime,
+		A.OpenAmount,
+		A.OpenQty,
+		A.OrderQty,
+		A.PartName,
+		A.PartNumber,
+		A.RowStatus,
+		A.SparePartOutstandingOrderID,
+		A.Status,
+		A.SubtitutePartNumber,
+		D.DealerCode,
+		C.DMSPRNo,
+		C.PONumber
+	FROM SparePartOutstandingOrderDetail A
+	JOIN SparePartOutstandingOrder B ON B.ID = A.SparePartOutstandingOrderID AND A.RowStatus = 0 AND B.RowStatus = 0
+	JOIN SparePartPO C ON C.ID = B.SparePartPOID
+	JOIN Dealer D ON D.ID = C.DealerID
+	--OUTER APPLY (
+	--	SELECT TOP 1 X.EstimateFillDate, X.ID
+	--	FROM SparePartOutstandingOrderDetail X 
+	--	WHERE 
+	--		X.SparePartOutstandingOrderID = A.SparePartOutstandingOrderID
+	--		AND X.PartNumber = A.PartNumber
+	--	ORDER BY X.EstimateFillDate
+	--)MinEstimateDate
+	--OUTER APPLY (
+	--	SELECT TOP 1 X.LastUpdateTime
+	--	FROM SparePartOutstandingOrderDetail X 
+	--	WHERE 
+	--		X.SparePartOutstandingOrderID = A.SparePartOutstandingOrderID
+	--		AND X.PartNumber = A.PartNumber
+	--	ORDER BY X.LastUpdateTime DESC
+	--)MaxLastUpdateTime
+	--GROUP BY
+	--	A.AllocationAmount,
+	--	A.AllocationQty,
+	--	MinEstimateDate.EstimateFillDate,
+	--	MinEstimateDate.ID,
+	--	--A.EstimateFillQty,
+	--	MaxLastUpdateTime.LastUpdateTime,
+	--	A.OpenAmount,
+	--	A.OpenQty,
+	--	A.OrderQty,
+	--	A.PartName,
+	--	A.PartNumber,
+	--	A.RowStatus,
+	--	A.SparePartOutstandingOrderID,
+	--	A.Status,
+	--	A.SubtitutePartNumber,
+	--	D.DealerCode,
+	--	C.DMSPRNo,
+	--	C.PONumber
+) SparePartOutstandingOrderDetail {0}

@@ -1,0 +1,252 @@
+------------------------------------------------------------------------
+/*
+	Start of Query
+	Check Table Temp Exists
+*/
+------------------------------------------------------------------------
+IF OBJECT_ID('tempdb..#temp_servicesBooking') IS NOT NULL 
+BEGIN
+	DROP TABLE #temp_servicesBooking
+END
+IF OBJECT_ID('tempdb..#temp_serviceBookingAct') IS NOT NULL
+BEGIN
+	DROP TABLE #temp_serviceBookingAct
+END
+
+------------------------------------------------------------------------
+/*
+	Create Table Temp
+*/
+------------------------------------------------------------------------
+
+create table #temp_servicesBooking (
+	ID							int
+	, ServiceBookingCode		nvarchar(200)
+	, ChassisNumber				nvarchar(200)
+	, StallMasterID				int
+	, PlateNumber				nvarchar(20)
+	, CustomerName				nvarchar(200)
+	, CustomerPhoneNumber		nvarchar(20)
+	, Odometer					int
+	, ServiceAdvisorID			int
+	, StandardTime				decimal(18,2)
+	, IncomingDateStart			datetime
+	, IncomingDateEnd			datetime
+	, WorkingTimeStart			datetime
+	, WorkingTimeEnd			datetime
+	, IsMitsubishi				nvarchar(10)
+	, Notes						nvarchar(max)
+	, RowStatus					smallint
+	, CreatedBy					nvarchar(150)
+	, CreatedTime				datetime
+	, LastUpdatedBy				nvarchar(150)
+	, LastUpdatedTime			datetime
+	, VechileTypeCode			nvarchar(150)
+	, DealerCode				nvarchar(150)
+	, DealerName				nvarchar(200)
+	, [SearchTerm1]				nvarchar(200)
+	, ServiceAdvisorName		nvarchar(200)
+	, StallCode					nvarchar(150)
+	, VechileModelDescription	nvarchar(200)
+	, VechileTypeDescription	nvarchar(200)
+	, IncomingPlan				nvarchar(200)
+	, StallServiceType			nvarchar(200)
+	, [Status]					nvarchar(200)
+)	
+
+create table #temp_serviceBookingAct (
+	ServiceBookingID				int
+	, ServiceTypeID				int
+	, ServiceType				nvarchar(200)
+	, KindCode					nvarchar(200)
+	, [Description]				nvarchar(255)
+)
+
+------------------------------------------------------------------------
+/*
+	Insert into table temp #temp_servicesBooking
+*/
+------------------------------------------------------------------------
+
+insert into #temp_servicesBooking
+select 
+	* 
+	/**EndPagingIndexQuery**/
+from (
+	select 
+		sb.ID
+		, sb.ServiceBookingCode
+		, sb.ChassisNumber
+		, ISNULL(sb.StallMasterID, 0) as [StallMasterID]
+		, sb.PlateNumber
+		, sb.CustomerName
+		, sb.CustomerPhoneNumber
+		, sb.Odometer
+		, sb.ServiceAdvisorID
+		, sb.StandardTime
+		, sb.IncomingDateStart
+		, sb.IncomingDateEnd
+		, sb.WorkingTimeStart
+		, sb.WorkingTimeEnd
+		, IIF(sb.IsMitsubishi = 1, 'Ya', 'Tidak') as [IsMitsubishi]
+		, sb.Notes
+		, sb.RowStatus
+		, sb.CreatedBy
+		, sb.CreatedTime
+		, sb.LastUpdatedBy
+		, sb.LastUpdatedTime
+		, ISNULL(vt.VechileTypeCode, '') as [VehicleTypeCode]
+		, dl.DealerCode
+		, dl.DealerName
+		, dl.SearchTerm1
+		, ISNULL(tr.[Name], '') as ServiceAdvisorName
+		, sm.StallCode
+		, ISNULL(vm.[Description], '') as VechileModelDescription
+		, ISNULL(vt.[Description], '') as VechileTypeDescription
+		, ISNULL(pt.ValueDesc, '') as IncomingPlan		
+		, ISNULL(st.ValueDesc, '') as StallServiceType	
+		, ISNULL(ss.ValueDesc, '') as [Status]			
+	FROM ServiceBooking sb with(NOLOCK)
+	INNER JOIN Dealer  dl 
+	ON dl.ID = sb.DealerID
+	LEFT JOIN StallMaster sm with(NOLOCK) 
+	ON sm.ID = sb.StallMasterID
+	LEFT JOIN VechileModel  vm with(NOLOCK) 
+	ON vm.ID = sb.VechileModelID
+	LEFT JOIN VechileType  vt with(NOLOCK)
+	ON vt.ID = sb.VechileTypeID
+	LEFT JOIN TrTrainee  tr with(NOLOCK) 
+	ON tr.ID = sb.ServiceAdvisorID
+	LEFT JOIN StandardCode  pt with(NOLOCK) 
+	ON pt.ValueId = sb.PickupType
+		AND pt.Category = 'ServiceBooking.PickupType'
+	LEFT JOIN StandardCode  st with(NOLOCK)
+	ON st.ValueId = sb.StallServiceType
+		AND st.Category = 'ServiceBooking.StallServiceType'
+	LEFT JOIN StandardCode  ss with(NOLOCK) 
+	ON ss.ValueId = sb.[Status]
+		AND ss.Category = 'ServiceBooking.Status'
+	where 
+		sb.RowStatus = 0 
+		AND isnull(dl.RowStatus,0) = 0
+		AND isnull(sm.RowStatus,0) = 0
+		AND isnull(vm.RowStatus,0) = 0
+		AND isnull(vt.RowStatus,0) = 0
+		AND isnull(tr.RowStatus, 0) = 0
+		AND isnull(pt.RowStatus, 0) = 0
+		AND isnull(st.RowStatus, 0) = 0
+		AND isnull(ss.RowStatus, 0) = 0
+		and sb.[Status] in ('0','1')
+		and sb.CreatedBy not like dl.DealerCode + '_IF_%' -- Exclude Data From DMS 
+) as sb
+{0}
+
+------------------------------------------------------------------------
+/*
+	Insert into table temp #temp_serviceBookingAct
+*/
+------------------------------------------------------------------------
+
+insert into #temp_serviceBookingAct
+SELECT distinct
+	sa.ServiceBookingID,
+	sa.ServiceTypeID,
+	ISNULL(st.ValueDesc, '') [ServiceType],
+	CASE WHEN sa.ServiceTypeID = 1 THEN ISNULL(fs.KindCode, '')
+		WHEN sa.ServiceTypeID = 2 THEN ISNULL(pm.KindCode, '')
+		WHEN sa.ServiceTypeID = 3 THEN ISNULL(ff.RecallRegNo, '')
+		WHEN sa.ServiceTypeID = 4 THEN ISNULL(gr.KindCode, '')
+	ELSE '' END [KindCode],
+	CASE WHEN sa.ServiceTypeID = 1 THEN ISNULL(fs.KindDescription, '')
+		WHEN sa.ServiceTypeID = 2 THEN ISNULL(pm.KindDescription, '')
+		WHEN sa.ServiceTypeID = 3 THEN ISNULL(ff.[Description], '')
+		WHEN sa.ServiceTypeID = 4 THEN ISNULL(gr.KindDescription, '')
+	ELSE '' END [Description]
+FROM ServiceBookingActivity  sa with(NOLOCK)
+LEFT JOIN StandardCode st ON st.ValueId = sa.ServiceTypeID
+	AND st.Category = 'ServiceBooking.ServiceType'
+	AND st.RowStatus = 0
+OUTER APPLY 
+(
+	SELECT fs.KindCode, fs.KindDescription FROM FSKind  fs with(NOLOCK)
+	WHERE fs.ID = sa.KindCode AND fs.RowStatus = 0
+) fs
+OUTER APPLY 
+(
+	SELECT pm.KindCode, pm.KindDescription FROM PMKind  pm with(NOLOCK)
+	WHERE pm.ID = sa.KindCode AND pm.RowStatus = 0
+) pm
+OUTER APPLY 
+(
+	SELECT ff.RecallRegNo, ff.[Description] FROM RecallCategory  ff with(NOLOCK)
+	WHERE ff.ID = sa.KindCode AND ff.RowStatus = 0
+) ff
+OUTER APPLY 
+(
+	SELECT gr.KindCode, gr.KindDescription FROM GRKind  gr with(NOLOCK)
+	WHERE gr.ID = sa.KindCode AND gr.RowStatus = 0
+) gr
+WHERE --sa.ServiceBookingID = sb.ID AND 
+	sa.RowStatus = 0
+	
+------------------------------------------------------------------------
+/*
+	Execute Final Query
+*/
+------------------------------------------------------------------------
+
+SELECT 
+	sb.ID,
+	sb.ServiceBookingCode,
+	sb.DealerCode,
+	CONCAT(sb.DealerName, ' ', sb.SearchTerm1) [DealerName],
+	sb.ChassisNumber,
+	sb.[StallMasterID],
+	sb.StallCode,
+	sb.VechileTypeCode,
+	sb.VechileModelDescription,
+	sb.VechileTypeDescription,
+	sb.PlateNumber,
+	sb.CustomerName,
+	sb.CustomerPhoneNumber,
+	sb.Odometer,
+	sb.ServiceAdvisorID,
+	sb.[ServiceAdvisorName],
+	sb.IncomingPlan,
+	sb.StallServiceType,
+	sb.StandardTime,
+	sb.IncomingDateStart,
+	sb.IncomingDateEnd,
+	sb.WorkingTimeStart,
+	sb.WorkingTimeEnd,
+	sb.[IsMitsubishi],
+	sb.[Status],
+	sb.Notes,
+	(
+		SELECT 
+			[ServiceType],
+			[KindCode],
+			[Description],
+			(
+				SELECT 
+					JasaService,
+					JSON_QUERY(Details) [Details]
+				FROM [VWI_ServiceCostEstimation] vs with(NOLOCK)
+				WHERE vs.ServiceType = X.ServiceTypeID
+					AND vs.Varian = LEFT(sb.VechileTypeCode, 2)
+					AND vs.VechileTypeCode = sb.VechileTypeCode
+					AND vs.KindCode = X.KindCode
+					AND vs.DealerCode = sb.DealerCode
+				FOR JSON PATH, INCLUDE_NULL_VALUES  
+			) EstimationCosts
+		FROM #temp_serviceBookingAct X with(nolock)
+		where x.ServiceBookingID = sb.ID
+		FOR JSON PATH, INCLUDE_NULL_VALUES    
+	) ServiceBookingActivities,
+	sb.RowStatus,
+	sb.CreatedBy,
+	sb.CreatedTime,
+	sb.LastUpdatedBy,
+	sb.LastUpdatedTime
+FROM #temp_servicesBooking sb with(nolock)
+

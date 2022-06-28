@@ -1,0 +1,48 @@
+SELECT 
+    ROW_NUMBER() OVER (Order by 0) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,statecode
+	,owneridname
+	,statecodename
+	,createdonbehalfby
+	,ktb_vehiclemodelcode
+	,importsequencenumber
+	,modifiedbyyominame
+	,ktb_name
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,owneridyominame
+	,modifiedon
+	,ktb_mastervehiclemodelid
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,RowStatus
+from (
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_ktb_mastervehiclemodel a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.owningbusinessunit
+	where ktb_mastervehiclemodelid = @Id
+) VWI_CRM_ktb_mastervehiclemodel 

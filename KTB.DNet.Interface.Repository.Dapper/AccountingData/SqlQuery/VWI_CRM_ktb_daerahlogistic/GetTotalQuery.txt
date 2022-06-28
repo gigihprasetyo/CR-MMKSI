@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_ktb_daerahlogistic as VWI_CRM_ktb_daerahlogistic with (nolock)  
+{0}

@@ -1,0 +1,32 @@
+﻿<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="{{activePageTitle}}" ba-panel-class="with-scroll">
+                <form name="form" ng-submit="Submit()">
+                    <div class="col-md-6 col-xs-12">
+                        <standard-select label="Config Key" name="ConfigKey" ng-model="systemConfig.ConfigKey" options="configKeyOptions"
+                                         ng-disabled="isEditMode" required />
+                        <input-text label="Name" name="Name" ng-model="systemConfig.Name" required></input-text>
+                        
+                        <standard-select label="Data Type" name="DataType" ng-model="systemConfig.DataType" options="dataTypeOptions" required />
+                        
+                        <div class="animate-switch-container" ng-switch on="systemConfig.DataType">
+                            <input-text class="animate-switch" ng-switch-when="1" label="Value" name="Value" ng-model="systemConfig.DisplayedValue" required></input-text>
+                            <input-text class="animate-switch" ng-switch-when="2" type="number" label="Value" name="Value" ng-model="systemConfig.DisplayedValue" required></input-text>
+                            <switcher class="animate-switch" ng-switch-when="3" label="Value" name="Value" switcher-style="info" text-on="YES" text-off="NO" ng-model="systemConfig.DisplayedValue"></switcher>
+                        </div>
+                        
+                        <switcher label="Is Active" name="IsActive" switcher-style="info" text-on="YES" text-off="NO" ng-model="systemConfig.IsActive"></switcher>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <text-area label="Description" name="Description" ng-model="systemConfig.Description" required></text-area>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <a ui-sref="configuration.systemConfig.list" class="btn btn-default m-t-15 waves-effect">Back</a>
+                        <input ng-disabled="form.$invalid" type="submit" value="Save" class="btn btn-primary m-t-15 waves-effect">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

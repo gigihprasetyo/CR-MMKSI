@@ -1,0 +1,8 @@
+<div class="form-group" ng-class="{ 'has-error': form.{{name}}.$invalid && form.{{name}}.$touched }">
+    <label for="{{name}}">{{label}}
+        <span class='required' ng-if="required">*</span>
+    </label>
+    <input ng-model="ngModel" type="{{type || 'text'}}" class="form-control" name="{{name}}" placeholder="{{label}}" ng-required="required" ng-readonly="readonly"
+        ng-disabled="ngDisabled">
+    <span ng-show="form.{{name}}.$invalid && form.{{name}}.$touched" class="help-block">{{label}} is required</span>
+</div>

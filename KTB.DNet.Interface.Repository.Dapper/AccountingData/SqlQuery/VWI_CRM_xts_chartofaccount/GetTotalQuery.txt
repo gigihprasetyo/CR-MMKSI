@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+from CRM_xts_chartofaccount as VWI_CRM_xts_chartofaccount with(nolock) 
+{0}

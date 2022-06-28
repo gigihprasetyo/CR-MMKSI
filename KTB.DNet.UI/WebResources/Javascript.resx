@@ -1,0 +1,1113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            <xsd:complexType>
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" />
+                            <xsd:attribute name="type" type="xsd:string" />
+                            <xsd:attribute name="mimetype" type="xsd:string" />
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" />
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
+            </xsd:complexType>
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="ResMimeType">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="Version">
+        <value>1.0.0.0</value>
+    </resheader>
+    <resheader name="Reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="Writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="Callback">
+        <value>var __callbackObject = new Object();
+function WebForm_DoCallback(eventTarget, eventArgument, eventCallback, context, errorCallback) {
+    re = new RegExp("\\x2B", "g");
+    if (__nonMSDOMBrowser) {
+        var xmlRequest = new XMLHttpRequest();
+        postData = __theFormPostData +
+                   "__CALLBACKID=" + eventTarget +
+                   "&amp;__CALLBACKPARAM=" + escape(eventArgument).replace(re, "%2B");
+        if (pageUrl.indexOf("?") != -1) {
+            xmlRequest.open("GET", pageUrl + "&amp;" + postData, false);
+        }
+        else {
+            xmlRequest.open("GET", pageUrl + "?" + postData, false);
+        }    
+        xmlRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xmlRequest.send(null);
+        response = xmlRequest.responseText;
+        if (response.charAt(0) == "s") {
+            if (eventCallback != null) {
+                eventCallback(response.substring(1), context);
+            }
+        }
+        else {
+            if (errorCallback != null) {
+                errorCallback(response.substring(1), context);
+            }
+        }
+    }
+    else {
+        var xmlRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        xmlRequest.onreadystatechange = WebForm_CallbackComplete;
+        __callbackObject.xmlRequest = xmlRequest;
+        __callbackObject.eventCallback = eventCallback;
+        __callbackObject.context = context;
+        __callbackObject.errorCallback = errorCallback;
+        postData = __theFormPostData +
+                   "__CALLBACKID=" + eventTarget +
+                   "&amp;__CALLBACKPARAM=" + escape(eventArgument).replace(re, "%2B");
+        usePost = false;
+        if (pageUrl.length + postData.length + 1 &gt; 2067) {
+            usePost = true;
+        }
+        if (usePost) {
+            xmlRequest.open("POST", pageUrl, true);
+            xmlRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlRequest.send(postData);
+        }
+        else {            
+            if (pageUrl.indexOf("?") != -1) {
+                xmlRequest.open("GET", pageUrl + "&amp;" + postData, true);
+            }
+            else {
+                xmlRequest.open("GET", pageUrl + "?" + postData, true);
+            }
+            xmlRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xmlRequest.send();
+        }
+    }
+}
+function WebForm_CallbackComplete() {
+    if (__callbackObject.xmlRequest.readyState == 4) {
+        response = __callbackObject.xmlRequest.responseText;
+        if (response.charAt(0) == "s") {
+            if (__callbackObject.eventCallback != null) {
+                __callbackObject.eventCallback(response.substring(1), __callbackObject.context);
+            }
+        }
+        else {
+            if (__callbackObject.errorCallback != null) {
+                __callbackObject.errorCallback(response.substring(1), __callbackObject.context);
+            }
+        }
+    }
+}
+var __nonMSDOMBrowser = (window.navigator.appName.toLowerCase().indexOf('explorer') == -1);
+var __theFormPostData = "";
+function WebForm_InitCallback(theForm) {
+    count = theForm.elements.length;
+    var element;
+    re = new RegExp("\\x2B", "g");
+    for (i = 0; i &lt; count; i++) {
+        element = theForm.elements[i];
+         if (element.tagName.toLowerCase() == "input") {
+            __theFormPostData += element.name + "=" + element.value.replace(re, "%2B") + "&amp;";
+         }
+         else if (element.tagName.toLowerCase() == "select") {
+            selectCount = element.children.length;
+            for (j = 0; j &lt; selectCount; j++) {
+                selectChild = element.children[j];
+                if ((selectChild.tagName.toLowerCase() == "option") &amp;&amp; (selectChild.selected == true)) {
+                    __theFormPostData += element.name + "=" + selectChild.value.replace(re, "%2B") + "&amp;";                
+                }                
+            }
+         }
+    }
+}</value>
+    </data>
+    <data name="PopUp">
+        <value>function showPopUp(Url, Parameters, Height, Width, CallbackFunction)
+{
+	var strFeature = 'dialogHeight:' + Height + 'px;';	
+	strFeature += 'dialogWidth:' + Width + 'px';
+	strFeature += 'center:yes;';	
+	strFeature += 'status:no;';
+	strFeature += 'help:no;';
+	strFeature += 'resizable:no;';
+	
+	var retVal = window.showModalDialog(Url, Parameters,strFeature);
+	
+	if (CallbackFunction != null &amp;&amp; retVal != null) {
+        CallbackFunction(retVal);
+    }
+}</value>
+    </data>
+    <data name="Global">
+        <value>var oLastBtn=0;
+bIsMenu = false;
+
+//No RIGHT CLICK************************
+// ****************************
+if (window.Event) document.captureEvents(Event.MOUSEUP); 
+function nocontextmenu()
+{ 
+	event.cancelBubble = true 
+	event.returnValue = false; 
+	return false; 
+} 
+
+function norightclick(e) 
+{ 
+	if (window.Event) 
+	{ 
+		if (e.which !=1) 
+		return false; 
+	} 
+	else if (event.button !=1) 
+	{ 
+		event.cancelBubble = true 
+		event.returnValue = false; 
+		return false; 
+	} 
+} 
+
+document.oncontextmenu = nocontextmenu; 
+document.onmousedown = norightclick; 
+
+
+//**************************************
+// ****************************
+// Block backspace onKeyDown************
+// ***************************
+
+
+function document.onkeydown() 
+{
+	if ( (event.altKey) || ((event.keyCode == 8) &amp;&amp; 
+			(event.srcElement.type != "text" &amp;&amp;
+			event.srcElement.type != "textarea" &amp;&amp;
+			event.srcElement.type != "password")) || 
+			((event.ctrlKey) &amp;&amp; ((event.keyCode == 78) || (event.keyCode == 82)) ) || (event.keyCode == 116) ) {
+	 			event.keyCode = 0;
+	 			event.returnValue = false;
+	 		}
+}</value>
+    </data>
+    <data name="Printing">
+        <value>		function printHidden(url) 
+		{
+			document.body.insertAdjacentHTML("beforeEnd",
+				"&lt;iframe name=printHiddenFrame width=0 height=0&gt;&lt;/iframe&gt;");
+			var doc = printHiddenFrame.document;
+			doc.open();
+			doc.write("&lt;body onload=\"parent.DoPrint()\"&gt;");
+			doc.write("&lt;iframe name=printMe width=0 height=0 src=\"" + 
+				url + "\"&gt;&lt;/iframe&gt;");
+			doc.write("&lt;/body&gt;");
+			doc.close();					
+		}
+			
+		function DoPrint()
+		{
+			document.body.insertAdjacentHTML("beforeEnd",
+				"&lt;object id=\"printWB\" width=0 height=0 \
+				classid=\"clsid:8856F961-340A-11D0-A96B-00C04FD705A2\"&gt;");
+			document.printHiddenFrame.printMe.focus();
+			execScript("printWB.ExecWB 6,2,3", "VBScript");
+		}	
+</value>
+    </data>
+    <data name="CheckNumeric">
+        <value>function CheckNumeric(objTextBox, isInteger, intTotalLength, intDecimalLength)
+			{
+				vKey = window.event.keyCode;
+				if (intDecimalLength == null)
+				{
+					if (!isInteger)
+					{
+						intDecimalLength = 2;
+					}
+					else
+					{
+						intDecimalLength = 0;
+					}
+				}
+				if (objTextBox.value.length &gt;= intTotalLength)
+				{
+					window.event.keyCode = 0;
+					return;
+				}
+				if (vKey == 46 || vKey == 44)
+				{
+					if (!isInteger)
+					{
+						if (objTextBox.value.indexOf(".") != -1 || 
+						    objTextBox.value.indexOf(",") != -1  )
+						{
+							window.event.keyCode = 0;
+						}
+					}
+					else
+					{
+						window.event.keyCode = 0;
+					}
+				}
+				else
+				{
+					if ( vKey &gt; 47 &amp;&amp; vKey &lt; 58 || ( vKey==45) )
+					{
+						vPos = objTextBox.value.indexOf(".");
+						if (vPos != -1)
+						{
+							if (objTextBox.value.substr(vPos).length &gt; intDecimalLength)
+							{
+								window.event.keyCode=0;
+							}
+						}
+					}
+					else
+					{
+						window.event.keyCode = 0;
+					}
+				}
+			}</value>
+    </data>
+    <data name="SOFunction">
+        <value>			function CustomerCallbackFunction(data, context)
+			{
+				var xmlDoc = new ActiveXObject("Msxml2.DOMDocument");
+				var objNodeList;
+				
+				xmlDoc.async = false;
+				xmlDoc.resolveExternals = false;
+				xmlDoc.loadXML(data);
+				if (xmlDoc.parseError.errorCode != 0) 
+				{
+					var myErr = xmlDoc.parseError;
+					alert("You have error " + myErr.reason);
+				}
+				else 
+				{
+					objNodeList1 = xmlDoc.getElementsByTagName("Code");
+					Code = objNodeList1.item(0).text;
+					objNodeList2 = xmlDoc.getElementsByTagName("Name");
+					Name = objNodeList2.item(0).text;
+					objNodeList3 = xmlDoc.getElementsByTagName("NPWP");
+					NPWP = objNodeList3.item(0).text;
+					objNodeList4 = xmlDoc.getElementsByTagName("Address");
+					Address = objNodeList4.item(0).text;
+					objNodeList5 = xmlDoc.getElementsByTagName("City");
+					City = objNodeList5.item(0).text;
+					objNodeList6 = xmlDoc.getElementsByTagName("NPWPAdd");
+					NPWPAdd = objNodeList6.item(0).text;
+				}
+				
+				document.getElementById("txtCustomerName").value = Name;
+				document.getElementById("txtNoNPWP").value = NPWP;
+				document.getElementById("txtNPWPAddress").value = NPWPAdd;
+				
+				var simpleTaxCB = document.getElementById("cbSP2");
+				if (NPWP.length &gt; 0)
+				{
+					simpleTaxCB.checked = false;
+					simpleTaxCB.disabled = false;
+				}
+				else
+				{
+					simpleTaxCB.checked = true;
+					simpleTaxCB.disabled = true;
+				}
+				document.getElementById("txtReceiverName").value = Name;
+				document.getElementById("txtReceiverAddress").value = Address;
+				document.getElementById("ddlReceiverCity").value = City;
+				
+				document.getElementById("txtSTNKReceiver").value = Name;
+				document.getElementById("txtBPKBReceiver").value = Name;
+			}		
+
+			// CUSTOMER CODE NOT EXIST
+			function CustomerCallbackError(data, context)
+			{
+				var label0 = document.getElementById("txtCustomerCode");
+				if (data != "")
+				{
+					alert("Customer dengan kode " + label0.value + " tidak ditemukan!");
+				}
+									
+				label0.value = "";
+
+				document.getElementById("txtNPWPAddress").value = "";
+				document.getElementById("txtCustomerName").value = "";
+				document.getElementById("txtNoNPWP").value = "";
+				document.getElementById("txtCustomerInfo").value;
+				document.getElementById("txtSTNKReceiver").value = "";
+				document.getElementById("txtBPKBReceiver").value = "";
+				document.getElementById("txtReceiverName").value = "";
+				document.getElementById("txtReceiverAddress").value = "";
+				document.getElementById("ddlReceiverCity").value = "";
+			}		
+			
+			// OTHER COST OR MEDIATOR COST, COUNT TOTAL OTHER COST
+			function TotalCostCallbackFunction (data,context)
+			{
+				var xmlDoc = new ActiveXObject("Msxml2.DOMDocument");
+				var objNodeList;
+				
+				xmlDoc.async = false;
+				xmlDoc.resolveExternals = false;
+				xmlDoc.loadXML(data);
+				if (xmlDoc.parseError.errorCode != 0) 
+				{
+					var myErr = xmlDoc.parseError;
+					alert("You have error " + myErr.reason);
+				}
+				else 
+				{
+					objNodeList1 = xmlDoc.getElementsByTagName("TotalOther");
+					TotalOther = objNodeList1.item(0).text;
+					objNodeList2 = xmlDoc.getElementsByTagName("TotalUnitPrice");
+					TotalUnitPrice = objNodeList2.item(0).text;
+					objNodeList3 = xmlDoc.getElementsByTagName("TotalDiscount");
+					TotalDiscount = objNodeList3.item(0).text;
+					objNodeList4 = xmlDoc.getElementsByTagName("TotalDPP");
+					TotalDPP = objNodeList4.item(0).text;
+					objNodeList5 = xmlDoc.getElementsByTagName("TotalPPN");
+					TotalPPN = objNodeList5.item(0).text;
+					objNodeList6 = xmlDoc.getElementsByTagName("TotalSTNK");
+					TotalSTNK = objNodeList6.item(0).text;
+					objNodeList7 = xmlDoc.getElementsByTagName("TotalAmount");
+					TotalAmount = objNodeList7.item(0).text;
+				}
+				
+				document.getElementById("txtTotalOtherCost").value = TotalOther;
+				document.getElementById("txtTotalUnitPrice").value = TotalUnitPrice;
+				document.getElementById("txtTotalDiscount").value = TotalDiscount;
+				document.getElementById("txtDPP").value = TotalDPP;
+				document.getElementById("txtTotalPPN").value = TotalPPN;
+				document.getElementById("txtTotalSTNK").value = TotalSTNK;
+				document.getElementById("txtTotalAmount").value = TotalAmount;				
+			}
+			
+			function SOSignerCallbackFunction(data,context)
+			{
+				var xmlDoc = new ActiveXObject("Msxml2.DOMDocument");
+				var objNodeList;
+				
+				xmlDoc.async = false;
+				xmlDoc.resolveExternals = false;
+				xmlDoc.loadXML(data);
+				if (xmlDoc.parseError.errorCode != 0) 
+				{
+					var myErr = xmlDoc.parseError;
+					alert("You have error " + myErr.reason);
+				}
+				else 
+				{
+					objNodeList1 = xmlDoc.getElementsByTagName("SignerCode");
+					SignerCode = objNodeList1.item(0).text;
+				}
+				
+				document.getElementById("txtSalesOrderSigner").value = SignerCode;
+			}
+			
+			function SalesPersonCallbackFunction(data,context)
+			{
+				var xmlDoc = new ActiveXObject("Msxml2.DOMDocument");
+				var objNodeList;
+				
+				xmlDoc.async = false;
+				xmlDoc.resolveExternals = false;
+				xmlDoc.loadXML(data);
+				if (xmlDoc.parseError.errorCode != 0) 
+				{
+					var myErr = xmlDoc.parseError;
+					alert("You have error " + myErr.reason);
+				}
+				else 
+				{
+					objNodeList1 = xmlDoc.getElementsByTagName("SalesPersonCode");
+					SalesPersonCode = objNodeList1.item(0).text;
+				}
+				
+				document.getElementById("txtSalesPersonCode").value = SalesPersonCode;
+			}
+			
+			function LeasingCallbackFunction(data,context)
+			{
+				var xmlDoc = new ActiveXObject("Msxml2.DOMDocument");
+				var objNodeList;
+				
+				xmlDoc.async = false;
+				xmlDoc.resolveExternals = false;
+				xmlDoc.loadXML(data);
+				if (xmlDoc.parseError.errorCode != 0) 
+				{
+					var myErr = xmlDoc.parseError;
+					alert("You have error " + myErr.reason);
+				}
+				else 
+				{
+					objNodeList1 = xmlDoc.getElementsByTagName("LeasingCompCode");
+					LeasingCompCode = objNodeList1.item(0).text;
+					objNodeList2 = xmlDoc.getElementsByTagName("LeasingCompName");
+					LeasingCompName = objNodeList2.item(0).text;
+				}
+				
+				document.getElementById("txtLeasingCode").value = LeasingCompCode;
+				document.getElementById("txtBPKBReceiver").value = LeasingCompName;
+			}
+			
+			function TOPCallbackFunction(data, context)
+			{
+				var xmlDoc = new ActiveXObject("Msxml2.DOMDocument");
+				var objNodeList;
+				
+				xmlDoc.async = false;
+				xmlDoc.resolveExternals = false;
+				xmlDoc.loadXML(data);
+				if (xmlDoc.parseError.errorCode != 0) 
+				{
+					var myErr = xmlDoc.parseError;
+					alert("You have error " + myErr.reason);
+				}
+				else 
+				{
+					objNodeList1 = xmlDoc.getElementsByTagName("TOPCode");
+					TOPDesc = objNodeList1.item(0).text;
+				}
+				
+				document.getElementById("txtTopCode").value = TOPDesc;			
+			}
+			
+			function SetCustomer(selectedCode)
+			{
+				var custCode = document.getElementById("txtCustomerCode");
+				custCode.value = Trim(selectedCode);
+				custCode.focus();
+				document.getElementById("txtReceiverName").focus();
+			}
+
+			// SALESPERSON CODE ENTERED, FILL RELATED DETAIL
+			function SetSalesPersonName()
+			{
+				var salesPersonCode = document.getElementById("txtSalesPersonCode");
+				var salesPersonName = document.getElementById("ddlSalesPerson");
+				salesPersonName.value = salesPersonCode.value.toUpperCase();
+				salesPersonCode.value = salesPersonName.value;
+			}
+
+			// SALES ORDER SIGNER CODE ENTERED, FILL RELATED DETAIL
+			function SetSalesOrderSignerName()
+			{
+				var salesOrderSignerCode = document.getElementById("txtSalesOrderSigner");
+				var salesOrderSignerName = document.getElementById("ddlSalesOrderSigner");
+				salesOrderSignerName.value = salesOrderSignerCode.value.toUpperCase();
+				salesOrderSignerCode.value = salesOrderSignerName.value;
+			}
+			
+			// LEASING COMPANY CODE ENTERED, FILL RELATED DETAIL
+			function SetLeasingCompName()
+			{
+				var leasingCompCode = document.getElementById("txtLeasingCode");
+				var leasingCompName = document.getElementById("ddlLeasing");
+				leasingCompName.value = leasingCompCode.value.toUpperCase();
+				leasingCompCode.value = leasingCompName.value;
+
+				document.getElementById("txtBPKBReceiver").value = leasingCompName.getElementsByTagName("OPTION")[parseInt(leasingCompName.selectedIndex)].text;
+			}
+			
+			function SetTOPDesc()
+			{
+				var topCode = document.getElementById("txtTopCode");
+				var topDesc = document.getElementById("ddlTOP");
+				topDesc.value = topCode.value.toUpperCase();
+				topCode.value = topDesc.value;
+			}
+			
+			function SalesTypeCallbackFunction(data,context)
+			{
+				var divTOPData = data.substring(0,data.indexOf("&lt;/select&gt;")+9);
+				var divTOP = document.getElementById("topDIV");
+				divTOP.innerHTML = divTOPData;
+				document.getElementById("ddlTOP").value = "";
+				
+				var data2 = data.replace(divTOPData,'');
+				var divLeasingData = data2.substring(0,data2.indexOf("&lt;/select&gt;")+9);
+				var divLeasing = document.getElementById("leasingDIV");
+				divLeasing.innerHTML = divLeasingData;
+				document.getElementById("ddlLeasing").value = "";
+				
+				document.getElementById("txtTopCode").value = "";
+				
+				var otherData = data2.substring(data2.lastIndexOf("&lt;/select&gt;")+9).split(";");
+				var salesTypeTB = document.getElementById("txtSalesTypeCode");
+				var salesTypeDDL = document.getElementById("ddlSalesType");
+				salesTypeTB.value = otherData[0];
+				salesTypeDDL.value = otherData[0];
+				
+				var leasingDdl = document.getElementById("ddlLeasing");
+				var leasingTB = document.getElementById("txtLeasingCode");
+				leasingDdl.value = "";
+				leasingTB.value = "";
+				
+				if (otherData[1] == "L" || otherData[1] == "M" || otherData[1] == "F")
+				{
+					leasingDdl.disabled = false;
+					leasingDdl.style.display = "";
+					//leasingDdl.width = 176;
+					leasingTB.readOnly = false;
+					leasingTB.className = "mandatoryField";
+					leasingTB.style.display = "";
+					//leasingTB.width = 35;
+					document.getElementById("txtBPKBReceiver").readOnly = true;
+				}
+				else
+				{
+					leasingDdl.disabled = true;
+					//leasingDdl.width = 0;
+					leasingDdl.style.display = "none";
+					leasingTB.readOnly = true;
+					leasingTB.className = "disableField";
+					//leasingTB.width = 0;
+					leasingTB.style.display = "none";
+					document.getElementById("txtBPKBReceiver").readOnly = false;
+				}
+
+				if (otherData[1] == "L" || otherData[1] == "F")
+				{
+					document.getElementById("txtCreditTime").readOnly = false;
+					document.getElementById("txtCreditTime").className = "mandatoryField";
+				}
+				else
+				{
+					document.getElementById("txtCreditTime").value = "";
+					document.getElementById("txtCreditTime").readOnly = true;
+					document.getElementById("txtCreditTime").className = "disableField";
+				}
+				
+			}
+			
+			// RENDER GRID
+			function SaveSODetailCallbackFunction(data,context)
+			{
+				var divTable = document.getElementById("SODetailDiv");
+				divTable.innerHTML = data;
+			}
+			
+			// RENDER GRID AND SET TOTAL PRICE
+			function SaveSODetailCallbackFunctionWithFillTotalPrice(data, context)
+			{
+				var divTableData = data.substring(0,data.lastIndexOf("&lt;/table&gt;")+8);
+				SaveSODetailCallbackFunction(divTableData,context);
+				
+				var otherData = data.substring(data.lastIndexOf("&lt;/table&gt;")+8).split(";");
+				document.getElementById("txtTotalUnitPrice").value = otherData[0];
+				if (otherData.length &gt; 1)
+					document.getElementById("txtTotalDiscount").value = otherData[1];
+				else
+					document.getElementById("txtTotalDiscount").value = "";
+				if (otherData.length &gt; 2)
+					document.getElementById("txtDPP").value = otherData[2];
+				else
+					document.getElementById("txtDPP").value = "";
+				if (otherData.length &gt; 3)
+					document.getElementById("txtTotalPPN").value = otherData[3];
+				else
+					document.getElementById("txtTotalPPN").value = "";
+				if (otherData.length &gt; 4)
+					document.getElementById("txtTotalSTNK").value = otherData[4];
+				else
+					document.getElementById("txtTotalSTNK").value = "";
+				if (otherData.length &gt; 5)
+					document.getElementById("txtTotalAmount").value = otherData[5];
+				else
+					document.getElementById("txtTotalAmount").value = "";
+				if (otherData.length &gt; 6)
+					document.getElementById("txtTotalOtherCost").value = otherData[6];
+				else
+					document.getElementById("txtTotalOtherCost").value = "";	
+			}
+
+			// GET AND RETURN FOOTER DATA
+			function PassFooterData(datagridID, actionFrom)
+			{
+				var dgSODetail = document.getElementById(datagridID);
+				return PassUpdateData(datagridID, dgSODetail.rows.length-2, actionFrom);
+			}
+			
+			function PassPriceData(datagridID, priceCode, actionFrom)
+			{
+				document.getElementById("txtPriceCode").value = priceCode;
+				document.getElementById("ddlPrice").value = priceCode;
+				return PassFooterData(datagridID,actionFrom);
+			}
+						
+			// GET AND RETURN EDIT ITEM DATA
+			function PassUpdateData(datagridID, editIndex, actionFrom)
+			{
+				
+				var dgSODetail = document.getElementById(datagridID);
+				var footer = dgSODetail.rows[editIndex+1];
+				var result = "";
+				
+				if (actionFrom == "TypeDdl")
+				{
+					// UnitTypeCode
+					result = footer.cells[1].getElementsByTagName("SELECT")[0].value;
+				}
+				else
+				{
+					// UnitTypeCode
+					result = footer.cells[1].getElementsByTagName("INPUT")[0].value;
+				}
+				
+				if (actionFrom == "TypeDdl" || actionFrom == "TypeTB")
+				{
+					// ColorCode
+					result += ";";
+				}
+				else if (actionFrom == "ColorDdl")
+				{
+					// ColorCode
+					result += ";" + footer.cells[1].getElementsByTagName("SELECT")[1].value;
+				}
+				else
+				{
+					// ColorCode
+					result += ";" + footer.cells[1].getElementsByTagName("INPUT")[1].value;
+				}
+				
+				if (actionFrom == "ColorDdl" || actionFrom == "ColorTB")
+				{
+					// QTY
+					result += ";";
+				}
+				else
+				{
+					// QTY
+					result += ";" + footer.cells[2].getElementsByTagName("INPUT")[0].value;
+				}
+				
+				if (actionFrom == "DiscPct")
+				{
+					// DiscPct
+					result += ";" + footer.cells[6].getElementsByTagName("INPUT")[0].value;
+					// Disc Amt
+					result += ";";
+					footer.cells[11].getElementsByTagName("SPAN")[1].focus();
+				}
+				else if (actionFrom == "DiscAmt")
+				{
+					// DiscPct
+					result += ";";
+					// DiscAmt
+					result += ";" + footer.cells[6].getElementsByTagName("INPUT")[1].value;
+				}
+				else if (actionFrom == "QTY")
+				{
+					// DiscPct
+					result += ";";
+					// DiscAmt
+					result += ";"
+				}
+				else
+				{
+					// DiscPct
+					result += ";" + footer.cells[6].getElementsByTagName("INPUT")[0].value;
+					// DiscAmt
+					result += ";" + footer.cells[6].getElementsByTagName("INPUT")[1].value;
+				}
+				
+				if (actionFrom == "TypeTB" || actionFrom == "TypeDdl")
+				{
+					// STNK Cost
+					result += ";";
+				}
+				else
+				{
+					// STNK Cost
+					result += ";" + footer.cells[10].getElementsByTagName("INPUT")[0].value;
+				}
+
+				// Grid Edit Item Index
+				result += ";" + editIndex;
+				
+				// STNK Checked
+				var stnkCB = document.getElementById("cbSTNK");
+				result += ";" + stnkCB.checked;
+				
+				// Selected Price Condition
+				var priceDdl = document.getElementById("ddlPrice");
+				result += ";" + priceDdl.selectedIndex;
+				
+				// Unit Price
+				result += ";" + footer.cells[3].getElementsByTagName("SPAN")[0].innerText;
+				
+				result += ";;" + footer.cells[7].getElementsByTagName("INPUT")[0].value;
+
+				if (actionFrom == "DiscPct" || actionFrom == "DiscAmt")
+				{
+					result += ";d";
+				}
+				else
+				{
+					result += ";";
+				}
+							
+				return result;
+			}
+
+			// GET AND RETURN ITEM DATA
+			function PassEditData(datagridID, editIndex)
+			{
+				document.getElementById("cbSTNK").disabled = true;
+				document.getElementById("txtPriceCode").readOnly = true;
+				document.getElementById("btnSave").disabled = true;
+				document.getElementById("ddlPrice").disabled = true;
+							
+				var dgSODetail = document.getElementById(datagridID);
+				var footer = dgSODetail.rows[editIndex+1];
+				var result = footer.cells[1].getElementsByTagName("SPAN")[0].innerText;
+				result += ";" + footer.cells[1].getElementsByTagName("SPAN")[2].innerText;
+				result += ";" + footer.cells[2].getElementsByTagName("SPAN")[0].innerText;
+				result += ";" + footer.cells[6].getElementsByTagName("SPAN")[0].innerText;
+				result += ";" + footer.cells[6].getElementsByTagName("SPAN")[2].innerText;
+				result += ";" + footer.cells[10].getElementsByTagName("SPAN")[0].innerText;
+								
+				result += ";" + editIndex;
+				result += ";" + document.getElementById("cbSTNK").checked;
+				result += ";" + document.getElementById("ddlPrice").selectedIndex;
+				result += ";;" + document.getElementById("txtSalesTypeCode").value;
+				result += ";" + footer.cells[7].getElementsByTagName("SPAN")[0].innerText;
+				return result;
+			}
+			
+			// GET AND RETURN SAVE FOOTER DATA
+			function SaveFooterData(datagridID)
+			{
+				var dgSODetail = document.getElementById(datagridID);
+				return UpdateSODetail(datagridID,dgSODetail.rows.length-2);
+			}
+			
+			// GET AND RETURN EDIT ITEM DATA
+			function UpdateSODetail(datagridID, editIndex)
+			{
+				document.getElementById("cbSTNK").disabled = false;
+				document.getElementById("txtPriceCode").readOnly = false;
+				document.getElementById("ddlPrice").disabled = false;
+				document.getElementById("btnSave").disabled = false;
+			
+				var dgSODetail = document.getElementById(datagridID);
+				var detail = dgSODetail.rows[editIndex+1];
+
+				if (detail.cells[11].getElementsByTagName("SPAN")[0] != null)
+				{
+					detail.cells[11].getElementsByTagName("SPAN")[0].disabled = true;
+				}
+
+				var result = detail.cells[1].getElementsByTagName("INPUT")[0].value;
+				result += ";" + (detail.cells[1].getElementsByTagName("SELECT")[0]).getElementsByTagName("OPTION")[parseInt(detail.cells[1].getElementsByTagName("SELECT")[0].selectedIndex)].text;
+				result += ";" + detail.cells[1].getElementsByTagName("INPUT")[1].value;
+				result += ";" + (detail.cells[1].getElementsByTagName("SELECT")[1]).getElementsByTagName("OPTION")[parseInt(detail.cells[1].getElementsByTagName("SELECT")[1].selectedIndex)].text;
+				result += ";" + detail.cells[2].getElementsByTagName("INPUT")[0].value;
+				result += ";" + detail.cells[3].getElementsByTagName("SPAN")[0].innerText;
+				result += ";" + detail.cells[4].getElementsByTagName("SPAN")[0].innerText;
+				result += ";" + detail.cells[5].getElementsByTagName("SPAN")[0].innerText;
+				result += ";" + detail.cells[6].getElementsByTagName("INPUT")[0].value;
+				result += ";" + detail.cells[6].getElementsByTagName("INPUT")[1].value;
+				result += ";" + detail.cells[8].getElementsByTagName("SPAN")[0].innerText;
+				result += ";" + detail.cells[9].getElementsByTagName("SPAN")[0].innerText;
+				result += ";" + detail.cells[10].getElementsByTagName("INPUT")[0].value;
+				
+				result += ";" + editIndex;
+				
+				result += ";" + document.getElementById("cbSTNK").checked;
+				result += ";" + document.getElementById("ddlPrice").selectedIndex;
+				result += ";" + detail.cells[7].getElementsByTagName("INPUT")[0].value;
+				return result;
+			}			
+			
+			function QuantityCallbackError(data, context)
+			{
+				var param = data.split(";");
+
+				alert(param[3]);
+					
+				var dgSODetail = document.getElementById(param[0]);
+				var editItem = dgSODetail.rows[parseInt(param[1])+1];
+				var qtyTB = editItem.cells[2].getElementsByTagName("INPUT")[0];
+				qtyTB.value = param[2];
+				qtyTB.focus();
+			}
+			
+			function DiscountCallbackError(data, context)
+			{
+				var param = data.split(";");
+
+				alert(param[2]);
+					
+				var dgSODetail = document.getElementById(param[0]);
+				var editItem = dgSODetail.rows[parseInt(param[1])+1];
+				
+				editItem.cells[6].getElementsByTagName("INPUT")[0].value = "";
+				editItem.cells[6].getElementsByTagName("INPUT")[1].value = "";
+			}
+
+			function AddDetailCallBackError(data, context)
+			{
+				alert(data);
+			}
+			
+			function CancelEdit(data)
+			{
+				document.getElementById("cbSTNK").disabled = false;
+				document.getElementById("txtPriceCode").readOnly = false;
+				document.getElementById("ddlPrice").disabled = false;
+				document.getElementById("btnSave").disabled = false;
+			
+				return data;
+			}
+
+			function CheckNumeric(objTextBox, isInteger, intTotalLength, intDecimalLength)
+			{
+				vKey = window.event.keyCode;
+				if (intDecimalLength == null)
+				{
+					if (!isInteger)
+					{
+						intDecimalLength = 2;
+					}
+					else
+					{
+						intDecimalLength = 0;
+					}
+				}
+				if (objTextBox.value.length &gt;= intTotalLength)
+				{
+					window.event.keyCode = 0;
+					return;
+				}
+				if (vKey == 46)
+				{
+					if (!isInteger)
+					{
+						if (objTextBox.value.indexOf(".") != -1)
+						{
+							window.event.keyCode = 0;
+						}
+					}
+					else
+					{
+						window.event.keyCode = 0;
+					}
+				}
+				else
+				{
+					if ( vKey &gt; 47 &amp;&amp; vKey &lt; 58 )
+					{
+						vPos = objTextBox.value.indexOf(".");
+						if (vPos != -1)
+						{
+							if (objTextBox.value.substr(vPos).length &gt; intDecimalLength)
+							{
+								window.event.keyCode=0;
+							}
+						}
+					}
+					else
+					{
+						window.event.keyCode = 0;
+					}
+				}
+			}
+			
+			function LeasingClientValidate(source, arguments)
+			{
+				var LeasingTB = document.getElementById("txtLeasingCode");
+				if (LeasingTB.readOnly)
+				{
+					arguments.IsValid = true;
+				}
+				else
+				{
+					if (LeasingTB.value.length &gt; 0)
+					{
+						arguments.IsValid = true;
+					}
+					else
+					{
+						arguments.IsValid = false;
+					}
+				}
+			}
+			
+			function GridClientValidate(source, arguments)
+			{
+				var dg = document.getElementById("dtgSalesOrderDetails");
+				if ( (!dg.disabled &amp;&amp; dg.rows.length &gt; 2) || (dg.disabled &amp;&amp; dg.rows.length &gt; 1) )
+				{
+					arguments.IsValid = true;
+				}
+				else
+				{
+					arguments.IsValid = false;
+					alert('Silahkan masukkan detil Sales Order');
+				}
+			}
+			
+			function ValidateCreditTime(source, arguments)
+			{
+				var CreditTimeTB = document.getElementById("txtCreditTime");
+				if (CreditTimeTB.readOnly)
+				{
+					arguments.IsValid = true;
+				}
+				else
+				{
+					if (CreditTimeTB.value.length &gt; 0)
+					{
+						arguments.IsValid = true;
+					}
+					else
+					{
+						arguments.IsValid = false;
+					}
+				}
+			}
+			
+			function Trim(source)
+			{
+				return source.replace(/^\s+/g, '').replace(/\s+$/g, '');
+			}
+			
+			function ShowCustomerHistory()
+			{
+				var custCode = document.getElementById("txtCustomerCode").value;
+				if (custCode.length &gt; 0)
+				{
+					showPopUp('../Dialogs/PopUpCustomerHistory.aspx?CustomerID=' + custCode,'',500,700,null)
+				}
+				else
+				{
+					alert("Silahkan pilih pelanggan");
+				}
+			}
+			
+			function ValidatePrice(source, arguments)
+			{
+				var priceTB = document.getElementById("");
+				var priceDdl = document.getElementById("");
+
+				if (priceTB.length &gt; 0 &amp;&amp; priceDdl.selectedIndex &gt; -1)
+				{
+					arguments.IsValid = true;
+				}
+				else
+				{
+					arguments.IsValid = false;
+				}			
+			}
+			
+			function SetGrossDiscount(index)
+			{
+				var dgSODetail = document.getElementById("dtgSalesOrderDetails");
+				
+				if (index = -1)
+				{
+					index = dgSODetail.rows.length-2;
+				}
+
+				var gridRow = dgSODetail.rows[index+1];
+				
+				if (gridRow.cells[11].getElementsByTagName("SPAN")[0] != null)
+				{
+					gridRow.cells[11].getElementsByTagName("SPAN")[0].disabled = true;
+				}
+
+				if (gridRow.cells[6].getElementsByTagName("INPUT")[1] != null &amp;&amp; gridRow.cells[6].getElementsByTagName("INPUT")[1].value.length &gt; 0)
+				{
+					var cleanDiscount = gridRow.cells[6].getElementsByTagName("INPUT")[1].value;
+					gridRow.cells[6].getElementsByTagName("INPUT")[1].value = Math.round((parseFloat(cleanDiscount)*1.1));
+				}
+			}
+</value>
+    </data>
+    <data name="Trim">
+        <value>function trim(inputString) {
+				if (typeof inputString != "string") { return inputString; }
+				var retValue = inputString;
+				var ch = retValue.substring(0, 1);
+				while (ch == " ") { // Check for spaces at the beginning of the string
+							retValue = retValue.substring(1, retValue.length);
+							ch = retValue.substring(0, 1);
+				}
+				ch = retValue.substring(retValue.length-1, retValue.length);
+				while (ch == " ") { // Check for spaces at the end of the string
+							retValue = retValue.substring(0, retValue.length-1);
+							ch = retValue.substring(retValue.length-1, retValue.length);
+				}
+				while (retValue.indexOf("  ") != -1) { // Note that there are two spaces in the string - look for multiple spaces within the string
+							retValue = retValue.substring(0, retValue.indexOf("  ")) + retValue.substring(retValue.indexOf("  ")+1, retValue.length); // Again, there are two spaces in each of the strings
+				}
+				return retValue; // Return the trimmed string back to the user
+			}</value>
+    </data>
+    <data name="NPWPValidation">
+        <value>function ValidateNPWP(textboxtName)
+{ 
+    var re = new RegExp("(\\d{2})([.](\\d{3})){2}[.](\\d)[-](\\d{3})[.](\\d{3})"); 
+
+    if (textboxtName.value.length &gt; 0)
+    {
+       if (! textboxtName.value.match(re)) 
+       { 
+	    alert("Format NPWP yang anda masukkan salah");
+	    textboxtName.focus();
+       }
+    }
+} 
+</value>
+    </data>
+    <data name="NumericText">
+        <value>function numericOnly()
+{
+	pressedKey = event.keyCode;
+					
+	if (pressedKey &gt;=48 &amp;&amp; pressedKey&lt;=57)
+	{
+		return true;
+	}
+	else
+	{
+		event.returnValue=false;
+	}
+}</value>
+    </data>
+    <data name="AlphaNumeric">
+        <value>function alphaNumeric()
+				{
+					pressedKey = event.keyCode;
+						
+					if ((pressedKey &gt;=48 &amp;&amp; pressedKey&lt;=57) || (pressedKey &gt;=97 &amp;&amp; pressedKey &lt;=122))
+						return true;
+					else
+						event.returnValue=false;
+				}</value>
+    </data>
+    <data name="coba">
+        <value>window.onload += alert("abc");
+        </value>
+    </data>
+</root>

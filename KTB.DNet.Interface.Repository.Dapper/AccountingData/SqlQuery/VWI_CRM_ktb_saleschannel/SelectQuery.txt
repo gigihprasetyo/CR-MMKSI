@@ -1,0 +1,46 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_ktb_saleschannel.ktb_dnetid
+    , VWI_CRM_ktb_saleschannel.createdonbehalfbyyominame
+    , VWI_CRM_ktb_saleschannel.owninguser
+    , VWI_CRM_ktb_saleschannel.statecode
+    , VWI_CRM_ktb_saleschannel.owneridname
+    , VWI_CRM_ktb_saleschannel.statecodename
+    , VWI_CRM_ktb_saleschannel.createdonbehalfby
+    , VWI_CRM_ktb_saleschannel.ktb_saleschannelcode
+    , VWI_CRM_ktb_saleschannel.importsequencenumber
+    , VWI_CRM_ktb_saleschannel.ktb_saleschannelid
+    , VWI_CRM_ktb_saleschannel.modifiedbyyominame
+    , VWI_CRM_ktb_saleschannel.ktb_name
+    , VWI_CRM_ktb_saleschannel.utcconversiontimezonecode
+    , VWI_CRM_ktb_saleschannel.createdbyyominame
+    , VWI_CRM_ktb_saleschannel.ktb_isdefaultoncreatewo
+    , VWI_CRM_ktb_saleschannel.owningbusinessunit
+    , VWI_CRM_ktb_saleschannel.modifiedbyname
+    , VWI_CRM_ktb_saleschannel.owningteam
+    , VWI_CRM_ktb_saleschannel.modifiedby
+    , VWI_CRM_ktb_saleschannel.createdby
+    , VWI_CRM_ktb_saleschannel.timezoneruleversionnumber
+    , VWI_CRM_ktb_saleschannel.ktb_description
+    , VWI_CRM_ktb_saleschannel.owneridtype
+    , VWI_CRM_ktb_saleschannel.statuscodename
+    , VWI_CRM_ktb_saleschannel.ktb_isinterfaced
+    , VWI_CRM_ktb_saleschannel.ktb_saleschanneltype
+    , VWI_CRM_ktb_saleschannel.owneridyominame
+    , VWI_CRM_ktb_saleschannel.ktb_isinterfacedname
+    , VWI_CRM_ktb_saleschannel.modifiedon
+    , VWI_CRM_ktb_saleschannel.ktb_isdefaultoncreatewoname
+    , VWI_CRM_ktb_saleschannel.modifiedonbehalfbyyominame
+    , VWI_CRM_ktb_saleschannel.statuscode
+    , VWI_CRM_ktb_saleschannel.createdbyname
+    , VWI_CRM_ktb_saleschannel.createdon
+    , VWI_CRM_ktb_saleschannel.createdonbehalfbyname
+    , VWI_CRM_ktb_saleschannel.modifiedonbehalfbyname
+    , VWI_CRM_ktb_saleschannel.versionnumber
+    , VWI_CRM_ktb_saleschannel.modifiedonbehalfby
+    , VWI_CRM_ktb_saleschannel.ownerid
+    , VWI_CRM_ktb_saleschannel.overriddencreatedon
+    /**EndPagingIndexQuery**/
+FROM CRM_ktb_saleschannel as VWI_CRM_ktb_saleschannel with(nolock)
+{0}

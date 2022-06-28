@@ -1,0 +1,12 @@
+SELECT 
+	[IDRow]
+	, [ID]
+	, [PDIID]
+	, [DealerCode]
+	, [ChassisNumber]
+	, [WorkOrderNumber]
+	, [ExpiredPDIDate]
+	, [CreatedTime]
+	, [LastUpdatedTime]
+FROM VWI_PDIExpired WITH (NOLOCK) 
+WHERE ID = @Id

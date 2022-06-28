@@ -1,0 +1,30 @@
+INSERT INTO SparePartOutstandingOrder
+(
+	CreatedBy,
+	CreatedTime,
+	DocumentType,
+	ID,
+	LastUpdateBy,
+	LastUpdateTime,
+	OrderType,
+	PODate,
+	RowStatus,
+	SparePartPOID,
+	ValidTo
+)
+VALUES
+(
+	@CreatedBy,
+	@CreatedTime,
+	@DocumentType,
+	@ID,
+	@LastUpdateBy,
+	@LastUpdateTime,
+	@OrderType,
+	@PODate,
+	@RowStatus,
+	@SparePartPOID,
+	@ValidTo
+);  
+
+

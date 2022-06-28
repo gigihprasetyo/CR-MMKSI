@@ -1,0 +1,65 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,statecode
+	,owneridname
+	,ktb_accessservicename
+	,statecodename
+	,ktb_defaulttrans
+	,createdonbehalfby
+	,ktb_defaulttransname
+	,ktb_accesspart
+	,ktb_accessvhcpurc
+	,ktb_useridyominame
+	,importsequencenumber
+	,ktb_useridname
+	,modifiedbyyominame
+	,ktb_teamidname
+	,ktb_accesspartname
+	,ktb_accessvhcslsname
+	,ktb_userareaassignment
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,ktb_teamidyominame
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,ktb_teamid
+	,owneridtype
+	,statuscodename
+	,ktb_userid
+	,ktb_accessvhcsls
+	,ktb_accessvhcpurcname
+	,ktb_businessunitid
+	,owneridyominame
+	,modifiedon
+	,ktb_accessservice
+	,ktb_userareaassignmentid
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,ktb_businessunitidname
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,RowStatus
+from (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_ktb_userareaassignment a with(nolock)
+	LEFT JOIN CRM_businessunit b  with(nolock)
+    ON b.businessunitid = a.ktb_businessunitid
+    where ktb_userareaassignmentid = @Id
+) VWI_CRM_ktb_userareaassignment

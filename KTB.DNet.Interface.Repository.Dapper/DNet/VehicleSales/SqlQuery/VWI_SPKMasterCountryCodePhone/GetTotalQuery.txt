@@ -1,0 +1,2 @@
+select COUNT(*)
+from SPKMasterCountryCodePhone as VWI_SPKMasterCountryCodePhone with(Nolock) {0}

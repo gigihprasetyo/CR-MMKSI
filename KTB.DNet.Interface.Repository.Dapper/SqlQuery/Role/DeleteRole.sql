@@ -1,0 +1,1 @@
+﻿DELETE FROM APIRole WHERE Id = @Id

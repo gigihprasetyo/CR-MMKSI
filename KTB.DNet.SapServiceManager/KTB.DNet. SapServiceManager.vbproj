@@ -1,0 +1,278 @@
+<VisualStudioProject>
+    <VisualBasic
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{0F795AB6-071C-4DBD-A01D-0987C1EF71C9}"
+        SccProjectName = "SAK"
+        SccLocalPath = "SAK"
+        SccAuxPath = "SAK"
+        SccProvider = "SAK"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "KTB.DNet. SapServiceManager"
+                AssemblyOriginatorKeyFile = ""
+                AssemblyOriginatorKeyMode = "None"
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "WinExe"
+                OptionCompare = "Binary"
+                OptionExplicit = "On"
+                OptionStrict = "Off"
+                RootNamespace = ""
+                StartupObject = "KTB.DNet.SapServiceManager.SAPServiceManager"
+            >
+                <Config
+                    Name = "Debug"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    DebugSymbols = "true"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+                <Config
+                    Name = "Release"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    DebugSymbols = "false"
+                    IncrementalBuild = "false"
+                    Optimize = "true"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                />
+                <Reference
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                />
+                <Reference
+                    Name = "System.ServiceProcess"
+                    AssemblyName = "System.ServiceProcess"
+                    HintPath = "C:\WINNT\Microsoft.NET\Framework\v1.1.4322\System.ServiceProcess.dll"
+                />
+                <Reference
+                    Name = "KTB.DNet.Parser"
+                    Project = "{E04276C6-A965-47B4-AFA8-B02359BEFC69}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.Cryptography"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.Cryptography"
+                    HintPath = "..\Binary Reference\Enterprise Library\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling"
+                    HintPath = "..\Binary Reference\Enterprise Library\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Common"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Common"
+                    HintPath = "..\Binary Reference\Enterprise Library\Microsoft.Practices.EnterpriseLibrary.Common.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Configuration"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Configuration"
+                    HintPath = "..\Binary Reference\Enterprise Library\Microsoft.Practices.EnterpriseLibrary.Configuration.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design"
+                    HintPath = "..\Binary Reference\Enterprise Library\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Logging"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Logging"
+                    HintPath = "..\Binary Reference\Enterprise Library\Microsoft.Practices.EnterpriseLibrary.Logging.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Data"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Data"
+                    HintPath = "..\Binary Reference\Enterprise Library\Microsoft.Practices.EnterpriseLibrary.Data.dll"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Drawing" />
+                <Import Namespace = "System.Diagnostics" />
+                <Import Namespace = "System.Windows.Forms" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "app.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "AssemblyInfo.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "cachingconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "dataconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "DomainDataMap.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "exceptionhandlingconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "FrmSAPProcessor.vb"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "FrmSAPProcessor.resx"
+                    DependentUpon = "FrmSAPProcessor.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "frmSAPServiceManager.vb"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "frmSAPServiceManager.resx"
+                    DependentUpon = "frmSAPServiceManager.vb"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "loggingconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "loggingdistributorconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "SAPListenerManager.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SAPServiceManager.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "securityconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "securitycryptographyconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "ServiceManagerApplicationContext.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "bin\cachingconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\dataconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\DomainDataMap.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "bin\exceptionhandlingconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\loggingconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\loggingdistributorconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\securityconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "bin\securitycryptographyconfiguration.config"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "images\icon_folder_open.gif"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\PauseServer.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\sap_start.ico"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\sap_stop.ico"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\StartServer.bmp"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "images\StopServer.bmp"
+                    BuildAction = "Content"
+                />
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>
+

@@ -1,0 +1,35 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,statecode
+	,statecodename
+	,xts_newvehicleexteriorcolor
+	,createdonbehalfby
+	,xts_newvehicleexteriorcolorid
+	,importsequencenumber
+	,organizationidname
+	,modifiedbyyominame
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,modifiedbyname
+	,versionnumber
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,statuscodename
+	,modifiedon
+	,xts_eventdata
+	,xts_entitytag
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,organizationid
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,overriddencreatedon
+	,xts_description
+	,RowStatus
+FROM CRM_xts_newvehicleexteriorcolor as VWI_CRM_xts_newvehicleexteriorcolor WITH (NOLOCK) 
+WHERE xts_newvehicleexteriorcolorid = @Id

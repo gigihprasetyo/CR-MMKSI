@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.312" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">c:\program files\microsoft fxcop 1.312\Xml\FxCopReport.Xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <PermitAnalysis>True</PermitAnalysis>
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>100</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>10</RuleExceptionsThreshold>
+  <Spelling Locale="en-us" />
+  <VersionAware>False</VersionAware>
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+ </ProjectOptions>
+ <Targets>
+  <Target Name="$(ProjectDir)/bin/Debug/Microsoft.Practices.EnterpriseLibrary.Common.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.312">
+  <Targets>
+   <Target Name="$(ProjectDir)/bin/Debug/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+    <Modules>
+     <Module Name="microsoft.practices.enterpriselibrary.common.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2004-12-27 16:48:10Z">
+        <Issue Name="NoStrongName">
+         <Item>Microsoft.Practices.EnterpriseLibrary.Common</Item>
+        </Issue>
+        <Notes>
+         <User Name="v-bribut">
+          <Note Id="7" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Common">
+        <Types>
+         <Type Name="DataCollection">
+          <Members>
+           <Member Name=".ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <Messages>
+             <Message Id="context" TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801" Status="Excluded" Created="2004-12-27 16:48:10Z" FixCategory="Breaking">
+              <Issue>
+               <Item>context</Item>
+               <Item>DataCollection..ctor(SerializationInfo, StreamingContext)</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="0" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DataCollection+KeysCollection">
+          <Messages>
+           <Message TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034" Status="Excluded" Created="2004-12-27 16:48:10Z">
+            <Issue>
+             <Item>Microsoft.Practices.EnterpriseLibrary.Common.DataCollection+KeysCollection</Item>
+            </Issue>
+            <Notes>
+             <User Name="v-bribut">
+              <Note Id="3" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="SR+Keys">
+          <Messages>
+           <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Excluded" Created="2004-12-27 16:48:10Z">
+            <Issue>
+             <Item>Microsoft.Practices.EnterpriseLibrary.Common.SR+Keys</Item>
+            </Issue>
+            <Notes>
+             <User Name="v-bribut">
+              <Note Id="17" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="GetString(System.String,System.Object[]):System.String">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2004-12-27 16:48:10Z">
+              <Issue>
+               <Item>Keys.GetString(String, Object[]):String</Item>
+               <Item>System.String.Format(System.String,System.Object[])</Item>
+               <Item>System.String.Format(System.IFormatProvider,System.String,System.Object[])</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Common.Cryptography">
+        <Types>
+         <Type Name="CryptographyUtility">
+          <Members>
+           <Member Name="GetBytesFromHexString(System.String):System.Byte[]">
+            <Messages>
+             <Message Id="0#hexidecimal" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2004-12-27 16:48:10Z">
+              <Issue Name="Parameter">
+               <Item>CryptographyUtility.GetBytesFromHexString(String):Byte[]</Item>
+               <Item>hexidecimal</Item>
+               <Item>hexidecimalNumber</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DpapiCryptographer">
+          <Messages>
+           <Message Id="Dpapi" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2004-12-27 16:48:10Z">
+            <Issue Name="Type">
+             <Item>Dpapi</Item>
+             <Item>DpapiCryptographer</Item>
+            </Issue>
+            <Notes>
+             <User Name="v-bribut">
+              <Note Id="5" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="DpapiStorageMode">
+          <Messages>
+           <Message Id="Dpapi" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2004-12-27 16:48:10Z">
+            <Issue Name="Type">
+             <Item>Dpapi</Item>
+             <Item>DpapiStorageMode</Item>
+            </Issue>
+            <Notes>
+             <User Name="v-bribut">
+              <Note Id="4" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="HashCryptographer">
+          <Members>
+           <Member Name="GetHashAlgorithm():System.Security.Cryptography.HashAlgorithm">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Status="Excluded" Created="2004-12-27 16:48:10Z">
+              <Issue>
+               <Item>HashCryptographer.GetHashAlgorithm():HashAlgorithm</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="19" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="NativeMethods+CryptProtectPromptStruct">
+          <Messages>
+           <Message TypeName="TypesThatOwnNativeResourcesShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1049" Status="Excluded" Created="2004-12-27 16:48:10Z">
+            <Issue>
+             <Item>CryptProtectPromptStruct</Item>
+            </Issue>
+            <Notes>
+             <User Name="v-bribut">
+              <Note Id="16" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="NativeMethods+DataBlob">
+          <Messages>
+           <Message TypeName="TypesThatOwnNativeResourcesShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1049" Status="Excluded" Created="2004-12-27 16:48:10Z">
+            <Issue>
+             <Item>DataBlob</Item>
+            </Issue>
+            <Notes>
+             <User Name="v-bribut">
+              <Note Id="15" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="SymmetricCryptographer">
+          <Members>
+           <Member Name="GetSymmetricAlgorithm(System.String):System.Security.Cryptography.SymmetricAlgorithm">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Status="Excluded" Created="2004-12-27 16:48:10Z">
+              <Issue>
+               <Item>SymmetricCryptographer.GetSymmetricAlgorithm(String):SymmetricAlgorithm</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Common.Instrumentation">
+        <Types>
+         <Type Name="EventLogger">
+          <Messages>
+           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Excluded" Created="2004-12-27 16:48:10Z" FixCategory="Breaking">
+            <Issue>
+             <Item>Microsoft.Practices.EnterpriseLibrary.Common.Instrumentation.EventLogger</Item>
+             <Item>System.Diagnostics.EventLog</Item>
+            </Issue>
+            <Notes>
+             <User Name="v-bribut">
+              <Note Id="1" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="InstrumentedEvent">
+          <Members>
+           <Member Name="FireEvent(System.String):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-27 16:48:10Z">
+              <Issue>
+               <Item>FireEvent</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="14" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FireEvent(System.String,Microsoft.Practices.EnterpriseLibrary.Common.Instrumentation.PerformanceCounterInstances[],System.Int64[]):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-27 16:48:10Z">
+              <Issue>
+               <Item>FireEvent</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="20" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FireEvent(System.String,System.Diagnostics.EventLogEntryType):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-27 16:48:10Z">
+              <Issue>
+               <Item>FireEvent</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="18" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FireEvent(System.String,System.Int64):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-27 16:48:10Z">
+              <Issue>
+               <Item>FireEvent</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="13" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FireWmiEvent(System.Management.Instrumentation.BaseEvent):System.Void">
+            <Messages>
+             <Message TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030" Status="Excluded" Created="2004-12-27 17:50:48Z">
+              <Issue>
+               <Item>FireWmiEvent</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="12" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="FireWmiEventCore(System.Management.Instrumentation.BaseEvent):System.Void">
+            <Messages>
+             <Message TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102" Status="Excluded" Created="2004-12-27 17:50:48Z">
+              <Issue>
+               <Item>InstrumentedEvent.FireWmiEventCore(BaseEvent):Void</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="10" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2004-12-27 17:50:48Z">
+              <Issue>
+               <Item>InstrumentedEvent.FireWmiEventCore(BaseEvent):Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+              <Notes>
+               <User Name="v-bribut">
+                <Note Id="9" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="PerformanceCounterInstances">
+          <Messages>
+           <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Excluded" Created="2004-12-27 16:48:10Z" FixCategory="Breaking">
+            <Issue>
+             <Item>Microsoft.Practices.EnterpriseLibrary.Common.Instrumentation.PerformanceCounterInstances</Item>
+             <Item>System.Diagnostics.PerformanceCounter</Item>
+            </Issue>
+            <Notes>
+             <User Name="v-bribut">
+              <Note Id="2" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Notes>
+   <User Name="v-bribut">
+    <Note Id="0" Modified="2004-12-27 16:49:10Z">This parameter is included because it is needed to adhere to the serialization constructor pattern</Note>
+    <Note Id="1" Modified="2004-12-27 16:49:52Z">This object is always used in a static context, and should last throughout the application lifetime. It cannot be fixed without redesigning the instrumentation system completely</Note>
+    <Note Id="2" Modified="2004-12-27 16:49:58Z">This object is always used in a static context, and should last throughout the application lifetime. It cannot be fixed without redesigning the instrumentation system completely</Note>
+    <Note Id="3" Modified="2004-12-27 17:17:01Z">Necessary with current design. KeyCollection is used to expose internal collection of keys that has special access to the outer DataCollection</Note>
+    <Note Id="4" Modified="2004-12-27 17:51:06Z">This is spelled correctly</Note>
+    <Note Id="5" Modified="2004-12-27 17:51:14Z">This is spelled correctly</Note>
+    <Note Id="6" Modified="2004-12-27 17:51:21Z">this is spelled correctly</Note>
+    <Note Id="7" Modified="2004-12-27 17:54:10Z">Since we're shipping source, we do not care about strongly naming our assemblies</Note>
+    <Note Id="8" Modified="2004-12-27 17:54:28Z">This is autogenerated code over which we have no control</Note>
+    <Note Id="9" Modified="2004-12-27 17:57:13Z">We don't know the correct kind of exception to catch, and we need access to the exception message. For this reason, we need to catch Exception</Note>
+    <Note Id="10" Modified="2004-12-27 19:30:16Z">Data from exception is needed, so we can't use the generic catch pattern</Note>
+    <Note Id="11" Modified="2004-12-27 19:30:52Z">Need data from exception, so we need to have the catch for Exception</Note>
+    <Note Id="12" Modified="2004-12-27 19:31:49Z">Design decision. We are not changing the design of instrumentation without redesigning it</Note>
+    <Note Id="13" Modified="2004-12-27 19:32:32Z">Design decision. We are not changing instrumentation without redesigning it</Note>
+    <Note Id="14" Modified="2004-12-27 19:32:38Z">Design decision. We are not changing instrumentation without redesigning it</Note>
+    <Note Id="15" Modified="2004-12-27 19:45:06Z">Not an issue in this case, as the IntPtr is always IntPtr.Zero</Note>
+    <Note Id="16" Modified="2004-12-27 19:47:13Z">Managed through code, not through IDisposable</Note>
+    <Note Id="17" Modified="2004-12-27 19:48:32Z">Generated code</Note>
+    <Note Id="18" Modified="2004-12-27 19:48:57Z">By design. We are not redesigning instrumentation right now</Note>
+    <Note Id="19" Modified="2004-12-27 19:50:14Z">Need data from thrown Exception, so can't use generic catch block</Note>
+    <Note Id="20" Modified="2004-12-27 19:50:32Z">By design. instrumentation needs redesign</Note>
+   </User>
+  </Notes>
+  <Rules>
+   <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+    <Name>Assemblies should have valid strong names</Name>
+    <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+    <Resolution Name="NoStrongName">Sign '{0}' with a strong name key.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/AssembliesShouldHaveValidStrongNames.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812">
+    <Name>Avoid uninstantiated internal classes</Name>
+    <Description>An internal class was detected that is apparently never instantiated. This rule does not attempt to detect late-bound creation and will generate false positives if instances of a type are only created in this way (for example, by means of Activator.CreateInstance or by passing the type as an argument to a TypeConverter constructor).</Description>
+    <Resolution Name="Default">'{0}' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/AvoidUninstantiatedInternalClasses.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AvoidUnusedParameters" Category="Microsoft.Performance" CheckId="CA1801">
+    <Name>Avoid unused parameters</Name>
+    <Description>Avoid declaring parameters that are not used in the method body. Unused parameters incur maintenance and performance costs. Sometimes a violation of this rule can point to an implementation bug in the method (i.e. the parameter should actually have been used in the method body). Exclude warnings of this rule if the parameter has to exist because of backward compatibility.</Description>
+    <Resolution Name="Default">Parameter '{0}' of {1} is never used. Remove the parameter or use it in the method body.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/AvoidUnusedParameters.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="CatchNonClsCompliantExceptionsInGeneralHandlers" Category="Microsoft.Security" CheckId="CA2102">
+    <Name>Catch non-CLSCompliant exceptions in general handlers</Name>
+    <Description>Exception handlers which are truly intended to catch all exceptions should handle non-CLSCompliant exceptions if there is a possibility one can be raised. If possible, catch handlers should only catch specific exceptions or exception base types. In circumstances where a handler is required to catch all exceptions (e.g., when a try block wraps arbitrary plug-in code), the handler should also include a generic catch handler (in C#, catch{ ... }) to handle non-CLSCompliant exceptions. It is possible to raise non-CLSCompliant exceptions by modifying and recompiling IL.</Description>
+    <Resolution Name="Default">{0} contains a catch(Exception) handler that is not matched with a generic catch clause (catch{{}} in C#, catch(System::Object*){{}} in mc++) for non-CLSCompliant exception. Eliminate the catch(Exception) clause by catching a specific set of Exceptions or add a generic catch (catch() in C#) that duplicates the code contained within the catch(Exception) handler.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Security/CatchNonClsCompliantExceptionsInGeneralHandlers.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="80">Error</MessageLevel>
+    <File Name="SecurityRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Name>Do not catch Exceptions or SystemExceptions</Name>
+    <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+    <Resolution Name="Default">Modify '{0}' to catch a more specific exception than '{1}' or rethrow the exception.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/DoNotCatchGeneralExceptionTypes.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+    <Name>Identifiers should be spelled correctly</Name>
+    <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+    <Resolution Name="Parameter">In {0}, correct the spelling of the unrecognized token '{1}' in parameter name '{2}' or strip it entirely if it represents any sort of hungarian notation.</Resolution>
+    <Resolution Name="Type">Correct the spelling of the unrecognized token '{0}' in type '{1}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Naming/IdentifiersShouldBeSpelledCorrectly.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="NestedTypesShouldNotBeVisible" Category="Microsoft.Design" CheckId="CA1034">
+    <Name>Nested types should not be visible</Name>
+    <Description>Do not use public, protected or protected internal (Protected Friend) nested types as a way of grouping types. Use namespaces for this purpose. There are very limited scenarios where nested types are the best design. Also, nested type member accessibility is not clearly understood by all audiences. Enumerators are exempt from this rule.</Description>
+    <Resolution Name="Default">Do not nest type '{0}' or change its accessibility so that it is not externally visible.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/NestedTypesShouldNotBeVisible.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="90">Error</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+    <Name>Specify IFormatProvider</Name>
+    <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the common language runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture.</Description>
+    <Resolution Name="Default">{0} makes a call to {1} that does not explicitly provide an IFormatProvider. This should be replaced with a call to {2}.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Globalization/SpecifyIFormatProvider.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Error</MessageLevel>
+    <File Name="GlobalizationRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+    <Name>Types that own disposable fields should be disposable</Name>
+    <Description>Types that declare disposable members should also implement IDisposable. If the type does not own any unmanaged resources, do not implement a finalizer on it.</Description>
+    <Resolution Name="Default">Implement IDisposable on '{0}' as it instantiates members of the following IDisposable types: {1}</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/TypesThatOwnDisposableFieldsShouldBeDisposable.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="TypesThatOwnNativeResourcesShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1049">
+    <Name>Types that own native resources should be disposable</Name>
+    <Description>Types that allocate unmanaged resources should implement IDisposable to allow callers to release those resources on demand. Failure to implement IDisposable can result in unmanaged resources being unavailable or underutilized.</Description>
+    <Resolution Name="Default">Implement IDisposable on '{0}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/TypesThatOwnNativeResourcesShouldBeDisposable.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="50">CriticalError</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="UseEventsWhereAppropriate" Category="Microsoft.Design" CheckId="CA1030">
+    <Name>Use events where appropriate</Name>
+    <Description>A method name suggestive of event functionality was encountered.</Description>
+    <Resolution Name="Default">Consider making '{0}' an event.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/UseEventsWhereAppropriate.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Warning</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

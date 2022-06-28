@@ -1,0 +1,14 @@
+<section>
+    <div class="widgets">
+        <div class="row">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="{{tableTopRankedAPIDefinition.name}}" ba-panel-class="with-scroll">
+                    <div general-table http-service="httpService" table-definition="tableTopRankedAPIDefinition" fn-name="GetRankedAPIList"></div>
+                    <div>
+                        <button class="btn btn-sm btn-primary m-t-15 waves-effect" ng-click="viewAPIDetail()">View Detail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

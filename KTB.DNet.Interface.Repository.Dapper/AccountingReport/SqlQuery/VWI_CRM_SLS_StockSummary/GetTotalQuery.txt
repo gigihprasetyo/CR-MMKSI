@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM VWI_CRM_SLS_StockSummary WITH (NOLOCK) {0}

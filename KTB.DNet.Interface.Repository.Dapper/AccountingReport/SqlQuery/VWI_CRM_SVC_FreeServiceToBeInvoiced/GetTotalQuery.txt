@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM VWI_CRM_SVC_FreeServiceToBeInvoiced WITH (NOLOCK) {0}

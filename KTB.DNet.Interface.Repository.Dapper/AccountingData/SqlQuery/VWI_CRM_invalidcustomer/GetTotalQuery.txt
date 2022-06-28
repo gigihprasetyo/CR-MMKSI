@@ -1,0 +1,16 @@
+SELECT 
+	COUNT(*)
+FROM (
+	SELECT DISTINCT
+		a.[accountid] as Id,
+		NGData = CASE	
+					WHEN Error_ID_Card=1 OR Error_Mobile_Nbr=1 OR Error_BirthDate=1 OR Error_EmailAddress=1 OR Error_Customer_Class=1
+					THEN 1
+					ELSE 0
+				END
+	FROM DQI_DetailCustomer a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON a.ktb_dealercode = b.[name]
+	{0}
+) as VWI_CRM_invalidcustomer
+{1}

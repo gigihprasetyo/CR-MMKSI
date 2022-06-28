@@ -1,0 +1,72 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_inventserial.company
+	, VWI_CRM_xts_inventserial.businessunitcode
+	, VWI_CRM_xts_inventserial.createdonbehalfbyyominame
+	, VWI_CRM_xts_inventserial.owninguser
+	, VWI_CRM_xts_inventserial.xts_locking
+	, VWI_CRM_xts_inventserial.statecode
+	, VWI_CRM_xts_inventserial.xts_remark
+	, VWI_CRM_xts_inventserial.xts_deliverydate
+	, VWI_CRM_xts_inventserial.owneridname
+	, VWI_CRM_xts_inventserial.statecodename
+	, VWI_CRM_xts_inventserial.createdonbehalfby
+	, VWI_CRM_xts_inventserial.xts_vehiclesource
+	, VWI_CRM_xts_inventserial.xts_stockstatusname
+	, VWI_CRM_xts_inventserial.xts_vehiclesourcename
+	, VWI_CRM_xts_inventserial.xts_reservedbusinessunitid
+	, VWI_CRM_xts_inventserial.xts_inventserialid
+	, VWI_CRM_xts_inventserial.importsequencenumber
+	, VWI_CRM_xts_inventserial.xts_reserveddate
+	, VWI_CRM_xts_inventserial.modifiedbyyominame
+	, VWI_CRM_xts_inventserial.xts_availabilitystatusname
+	, VWI_CRM_xts_inventserial.xts_availabilitystatus
+	, VWI_CRM_xts_inventserial.xts_stockstatus
+	, VWI_CRM_xts_inventserial.utcconversiontimezonecode
+	, VWI_CRM_xts_inventserial.createdbyyominame
+	, VWI_CRM_xts_inventserial.owningbusinessunit
+	, VWI_CRM_xts_inventserial.modifiedbyname
+	, VWI_CRM_xts_inventserial.owningteam
+	, VWI_CRM_xts_inventserial.modifiedby
+	, VWI_CRM_xts_inventserial.createdby
+	, VWI_CRM_xts_inventserial.timezoneruleversionnumber
+	, VWI_CRM_xts_inventserial.xts_reservedpersoninchargeidname
+	, VWI_CRM_xts_inventserial.owneridtype
+	, VWI_CRM_xts_inventserial.statuscodename
+	, VWI_CRM_xts_inventserial.xts_businessunitidname
+	, VWI_CRM_xts_inventserial.owneridyominame
+	, VWI_CRM_xts_inventserial.xts_reservedbusinessunitidname
+	, VWI_CRM_xts_inventserial.modifiedon
+	, VWI_CRM_xts_inventserial.xts_reservedpersoninchargeid
+	, VWI_CRM_xts_inventserial.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_inventserial.statuscode
+	, VWI_CRM_xts_inventserial.createdbyname
+	, VWI_CRM_xts_inventserial.createdon
+	, VWI_CRM_xts_inventserial.xts_businessunitid
+	, VWI_CRM_xts_inventserial.xts_dslinternalnumber
+	, VWI_CRM_xts_inventserial.createdonbehalfbyname
+	, VWI_CRM_xts_inventserial.xts_productidname
+	, VWI_CRM_xts_inventserial.modifiedonbehalfbyname
+	, VWI_CRM_xts_inventserial.xts_serialnumber
+	, VWI_CRM_xts_inventserial.xts_receiptdate
+	, VWI_CRM_xts_inventserial.versionnumber
+	, VWI_CRM_xts_inventserial.modifiedonbehalfby
+	, VWI_CRM_xts_inventserial.xts_productid
+	, VWI_CRM_xts_inventserial.ownerid
+	, VWI_CRM_xts_inventserial.overriddencreatedon
+	, VWI_CRM_xts_inventserial.xts_description
+	, VWI_CRM_xts_inventserial.RowStatus
+	, VWI_CRM_xts_inventserial.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.*  
+        , b.msdyn_companycode
+    FROM CRM_xts_inventserial a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_inventserial

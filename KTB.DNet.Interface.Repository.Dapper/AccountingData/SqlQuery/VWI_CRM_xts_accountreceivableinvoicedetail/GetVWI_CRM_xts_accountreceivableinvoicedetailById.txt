@@ -1,0 +1,94 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	,company
+	,businessunitcode
+	,xts_accountreceivableinvoicedetail
+	,xts_accountidname
+	,versionnumber
+	,createdon
+	,xts_amount
+	,owninguser
+	,xts_dimension8id
+	,xts_eventdata
+	,statuscodename
+	,xts_description
+	,modifiedbyyominame
+	,xts_dimension5id
+	,xts_reasonid
+	,createdonbehalfby
+	,modifiedbyname
+	,xts_accountreceivableinvoiceidname
+	,xts_dimension2id
+	,xts_dimension7idname
+	,overriddencreatedon
+	,xts_dimension6idname
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,owningteam
+	,xts_dimension4id
+	,xts_withholdingtaxamount
+	,statecode
+	,xts_dimension9idname
+	,owneridname
+	,xts_withholdingtaxpaymentmethodname
+	,timezoneruleversionnumber
+	,xts_dimension10idname
+	,xts_withholdingtaxid
+	,xts_locking
+	,xts_amount_base
+	,xts_withholdingtaxidname
+	,createdonbehalfbyname
+	,xts_dimension1id
+	,utcconversiontimezonecode
+	,xts_dimension5idname
+	,xts_dimension3idname
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,xts_dimension6id
+	,xts_dimension7id
+	,xts_dimension2idname
+	,xts_dimension8idname
+	,createdbyname
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,transactioncurrencyid
+	,xts_accountreceivableinvoiceid
+	,createdby
+	,modifiedby
+	,xts_accountreceivableinvoicedetailid
+	,xts_dimension10id
+	,createdbyyominame
+	,xts_dimension4idname
+	,transactioncurrencyidname
+	,xts_reasonidname
+	,owningbusinessunit
+	,xts_dimension1idname
+	,xts_dimension9id
+	,owneridtype
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_accountid
+	,owneridyominame
+	,xts_withholdingtaxamount_base
+	,statecodename
+	,xts_withholdingtaxpaymentmethod
+	,xts_dimension3id
+	,xts_businessunitidname
+	,RowStatus
+	,xts_whtperiodto
+	,xts_whtperiodfrom
+	,xts_whtcollectionpostdate
+	,msdyn_companycode
+from (
+	SELECT  
+		b.ktb_bucompany company
+		, b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xts_accountreceivableinvoicedetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	WHERE xts_accountreceivableinvoicedetail = @Id
+) VWI_CRM_xts_accountreceivableinvoicedetail

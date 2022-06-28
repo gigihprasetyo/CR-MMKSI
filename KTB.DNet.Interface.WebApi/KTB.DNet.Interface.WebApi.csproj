@@ -1,0 +1,2286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{01CDDDDC-F645-456C-9194-B5805CC40503}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KTB.DNet.Interface.WebApi</RootNamespace>
+    <AssemblyName>KTB.DNet.Interface.WebApi</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>9d6f61a6</NuGetPackageImportStamp>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <Use64BitIISExpress>
+    </Use64BitIISExpress>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <NoWarn>1591</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.9.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.9.1\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Contrib.WebApi, Version=1.0.10.25, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.Contrib.WebApi.1.0.10.25\lib\net45\Elmah.Contrib.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah.Mvc, Version=2.1.2.1389, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Elmah.MVC.2.1.2\lib\net40\Elmah.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Embarr.WebAPI.AntiXss, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ASPNetWebAPIAntiXss.1.0.0\lib\net45\Embarr.WebAPI.AntiXss.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Interop.MSDASC, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\RefferenceLib\EntLib\Interop.MSDASC.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.5.2.4\lib\net451\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.5.2.4\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.2.4\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Cors, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Cors.4.0.0\lib\net451\Microsoft.Owin.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging">
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging.RollingFlatFileSink">
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Logging.RollingFlatFileSink.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.3.3.0\lib\net45\Ninject.Web.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.Common.WebHost, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.Common.WebHost.3.3.0\lib\net45\Ninject.Web.Common.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.WebApi, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.WebApi.3.3.0\lib\net45\Ninject.Web.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Web.WebApi.WebHost, Version=3.3.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Web.WebApi.WebHost.3.3.0\lib\net45\Ninject.Web.WebApi.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cd1bb07a5ac7c7bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Core.5.6.0\lib\net40\Swashbuckle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Swashbuckle.Examples, Version=3.8.0.0, Culture=neutral, PublicKeyToken=aa1e9c5053bfbe95, processorArchitecture=MSIL">
+      <HintPath>..\packages\Swashbuckle.Examples.3.8.0\lib\net40\Swashbuckle.Examples.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.2.4\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Spatial, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.3\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.6\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.6\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Tracing.5.2.4\lib\net45\System.Web.Http.Tracing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Thinktecture.IdentityModel.Core, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Thinktecture.IdentityModel.Core.1.3.0\lib\net45\Thinktecture.IdentityModel.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\ContainerConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\SwaggerConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountingData\AX_TSTransStockMutationsController.cs" />
+    <Compile Include="Controllers\AccountingData\CRM_ktb_openfactureController.cs" />
+    <Compile Include="Controllers\AccountingData\DNet_EmployeeSalesController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_accountController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_appointmentController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_bookableresourcebookingController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_bookingstatusController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_BusinessUnitController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_campaignactivityController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_campaignController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_campaignresponseController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_contactController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_customworkorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_equipmentController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_invalidcustomerController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_lkppdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_lkppController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_benefitController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_daerahlogisticController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_daftardepositaController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_daftardepositadetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_daftardepositbController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_daftardepositbdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_daftardepositcController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_daftardepositcdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_depositc2Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_externaldealerinterfacelogController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_jobpositionController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_karoseriController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_kontrabonController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_leasingcompanyController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_mastervehiclemodelController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_perlengkapanstandardController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_productsapconversionController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_purchaserequisitionhistoryController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_saleschannelController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_salesquotationController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_servicereminderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_servicetemplateproductnongenuineController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_userareaassignmentController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_ktb_vendorlogisticController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_leadController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_opportunityController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_pricelevelController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_serviceappointmentController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_systemuserController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_teamController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_territoryController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xid_documentregistrationController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xid_registrationmonitoringController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xid_registrationprogressstageController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_automobiletaxController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_pdidetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_pdireceiptController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_pdireceiptdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_predeliveryinspectionController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_registrationcolorController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_registrationdocumentController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_registrationrequestController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_standardplateController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_vehiclecostinputController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_vehiclecostinputdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_vehicletransferController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xjp_weighttaxController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_accessoriesinstallationcategoryController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_accessorieskitgroupController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_accountpayablepaymentController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_accountpayablepaymentdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_accountpayablevoucherController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_accountreceivableinvoiceController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_accountreceivableinvoicedetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_accountreceivablereceiptController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_accountreceivablereceiptdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_accountreceivablereceiptotherexpenseController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_aptransactiondocumentController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_aptransactiondocumentdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_apvdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_apvlandedcostController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_apvmiscellaneouschargeController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_artransactiondocumentController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_artransactiondocumentdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_assessmentController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_assigntosalespersonController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_bankController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_businessunitinquiryController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_cashandbankaccountController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_cashandbankController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_cashtransactionController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_cashtransactiondetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_chartofaccountController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_cityController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_commonbusinessunitController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_commonController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_consumptiontaxController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_customerclassController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_customerpublicController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_damageorlossController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_deliveryorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_deliveryorderdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_deliveryordermiscellaneouschargeController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_departmentController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_dimension10Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_dimension1Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_dimension2Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_dimension3Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_dimension4Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_dimension5Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_dimension6Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_dimension7Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_dimension8Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_dimension9Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_discountsetupController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_discountsetupdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_employeeclassController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_employeeController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_generateinventorylistController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_gljournalController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_gljournaldetailsController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_globalworkorderhistoryController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_globalworkorderhistorydetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_goodsreceiptController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_gradeController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_incomingoutsourceworkorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_incomingoutsourceworkorderdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_incomingpdiandserviceinstructionController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_inventbatchController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_inventorynewvehicleController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_inventorytransactionController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_inventorytransactiondetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_inventorytransferController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_inventorytransferdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_inventserialController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_inventtransController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_kitController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_landedcostController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_locationController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_manufacturerController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_matchunmatchController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_miscellaneouschargeController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_miscellaneouschargetemplateController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_moreaddressController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_newvehicledeliveryorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_newvehicleexteriorcolorController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_newvehicleinteriorcolorController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_newvehiclesalesorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_newvehiclesalesquoteController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_newvehiclewholesaleorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_nonsalesdeliveryController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_nvsoaccessoriesController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_nvsomiscellaneouschargeController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_nvsonumberregistrationdetailsController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_nvsoreferralController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_nvsqaccessoriesController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_nvsqmiscellaneouschargeController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_ordertypeController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_outsourcereservationController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_outsourceworkorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_outsourceworkorderdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_outsourceworkorderreceiptController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_outsourceworkorderreceiptdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_outsourceworkshopconfigurationController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_partsforecastController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_physicalinventorylistController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_physicalinventorylistdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_pricelistController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_pricelistdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productclassController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productcrossreferenceController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productexteriorcolorController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productinteriorcolorController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productsegment1Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productsegment2Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productsegment3Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productsegment4Controller.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productstyleController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productsubstituteController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_productvariantController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_provinceController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_purchaseorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_purchaseorderdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_purchasereceiptController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_purchasereceiptdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_purchasereceiptdetaillandedcostController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_purchaserequisitionController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_purchaserequisitiondetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_purchaserequisitionpurchaseordertypeController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_ratetypeController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_reasonController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_recommendedproductController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_reservationtransactionController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_salesorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_salesorderdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicecampaignController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicecategoryController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicecategorygroupController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_serviceinstructionController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicemiscellaneouschargeController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicemmsController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_serviceproportionalinvoiceController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicereceiptController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicereservationclassController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicetemplateactivityController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicetemplateController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicetemplatedetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicetemplateparentgroupController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_servicetemplateparentgroupdetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_serviceworkshopsettingController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_sharedproductController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_siteController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_siteinquiryController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_styleController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_subsidyanddiscountController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_termofpaymentController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_transferorderrequestingController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_uomController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_uomconversionController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_usedvehicledeliveryorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_usedvehiclesalesorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_uvsoreferralinformationController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vehiclebrandController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vehicleinformationController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vehiclemodelController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vehiclepriceController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vehiclepricedetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vehiclepublicController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vehiclerecognizedmodelController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vehiclespecificationController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vehicletransactionhistoryController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vehicletransferhistoryController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vendorclassController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_vendorController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_villageandstreetController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_warehouseController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_warehouseinquiryController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_workorderController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_workorderpartmaterialandserviceController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_workorderservicetemplateController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_workordertimeregisterController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_writeoffbalanceController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_CRM_xts_writeoffbalancedetailController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_Zombie_CampaignController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_Zombie_ReservationController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_Zombie_SuspectController.cs" />
+    <Compile Include="Controllers\AccountingData\VWI_Zombie_WOTimeRegisterController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_AX_PRT_FlowReportPartController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_AX_PRT_StockMovementController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_AX_SLS_BankTransactionController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_AX_SLS_FlowReportVehicleController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_AX_SLS_LedgerTransactionController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_AX_SLS_StockMutationController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferOutletController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferWarehouseController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_IncomingTransactionController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferOutletController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferWarehouseController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_OutgoingTransactionController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_PurchaseController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_PurchaseReturnController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_SparepartPurchaseController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_SparepartSalesController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_SparepartSalesReturnController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_PRT_SparepartSalesToPartshopController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SLS_APBalanceController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SLS_ARBalanceController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_LeadController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_SPKController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_VDOController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SLS_SalesmanActivityController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SLS_SalesUnitController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SLS_StockMutationController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SLS_StockSummaryController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SLS_VehicleStockController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SOInvoiceController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SVC_ARReceiptController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SVC_ARReceiptDetailBasedOnWOController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SVC_DailyReportController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_SVC_FreeServiceToBeInvoicedController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_VehicleInvoiceController.cs" />
+    <Compile Include="Controllers\AccountingReport\VWI_CRM_WOInvoiceController.cs" />
+    <Compile Include="Controllers\FinishUnit\DSFCeilingController.cs" />
+    <Compile Include="Controllers\FinishUnit\DSFCeilingUpdateController.cs" />
+    <Compile Include="Controllers\FinishUnit\DSFPaymentUpdateController.cs" />
+    <Compile Include="Controllers\FinishUnit\DSFPaymentController.cs" />
+    <Compile Include="Controllers\FinishUnit\DSFLeasingClaimDAPPController.cs" />
+    <Compile Include="Controllers\FinishUnit\DSFLeasingClaimController.cs" />
+    <Compile Include="Controllers\LogController.cs" />
+    <Compile Include="Controllers\Masters\AssistWorkOrderCategoryController.cs" />
+    <Compile Include="Controllers\Masters\AssistWorkOrderTypeController.cs" />
+    <Compile Include="Controllers\Masters\DepositBController.cs" />
+    <Compile Include="Controllers\Masters\DepositC2Controller.cs" />
+    <Compile Include="Controllers\Masters\DepositController.cs" />
+    <Compile Include="Controllers\Masters\DMSAnnouncementController.cs" />
+    <Compile Include="Controllers\Masters\IPAddressRestrictionController.cs" />
+    <Compile Include="Controllers\Masters\LKPPHeaderController.cs" />
+    <Compile Include="Controllers\Masters\PMKindController.cs" />
+    <Compile Include="Controllers\Masters\PODestinationController.cs" />
+    <Compile Include="Controllers\Masters\QuickProductAllController.cs" />
+    <Compile Include="Controllers\Masters\SalesmanAreaController.cs" />
+    <Compile Include="Controllers\Masters\BusinessSectorController.cs" />
+    <Compile Include="Controllers\Masters\SalesChannelController.cs" />
+    <Compile Include="Controllers\Masters\CustomerController.cs" />
+    <Compile Include="Controllers\Masters\CustomerVehicleController.cs" />
+    <Compile Include="Controllers\Masters\EmployeeController.cs" />
+    <Compile Include="Controllers\Masters\EmployeeServiceController.cs" />
+    <Compile Include="Controllers\Masters\EmployeePartsController.cs" />
+    <Compile Include="Controllers\Masters\EmployeeSalesController.cs" />
+    <Compile Include="Controllers\Masters\PartShopController.cs" />
+    <Compile Include="Controllers\Masters\QuickProductController.cs" />
+    <Compile Include="Controllers\Masters\SalesmanLevelController.cs" />
+    <Compile Include="Controllers\Masters\SendASBSFIDController.cs" />
+    <Compile Include="Controllers\Masters\SFDContactController.cs" />
+    <Compile Include="Controllers\Masters\VehicleSpecificationController.cs" />
+    <Compile Include="Controllers\Masters\ServiceTemplateController.cs" />
+    <Compile Include="Controllers\Masters\VehicleExteriorColorController.cs" />
+    <Compile Include="Controllers\Masters\VehicleInformationController.cs" />
+    <Compile Include="Controllers\Masters\DepositAController.cs" />
+    <Compile Include="Controllers\Masters\VWI_BabitMasterRetailTargetController.cs" />
+    <Compile Include="Controllers\Masters\VWI_JobPositionPartsController.cs" />
+    <Compile Include="Controllers\Masters\VWI_JobPositionSalesController.cs" />
+    <Compile Include="Controllers\Masters\VWI_JobPositionServicesController.cs" />
+    <Compile Include="Controllers\Masters\VWI_ServiceAdvisorController.cs" />
+    <Compile Include="Controllers\Masters\VWI_SFDMobileSalesmanController.cs" />
+    <Compile Include="Controllers\Masters\VWI_VehicleTypeController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_accountController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_appointmentController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_bookableresourcebookingController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_campaignController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_campaignresponseController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_contactController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_equipmentController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_ktb_kontrabonController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_ktb_kontrabondetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_leadController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_opportunityController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_serviceappointmentController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_teamController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xid_documentregistrationController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xid_registrationmonitoringController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xjp_pdidetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xjp_pdireceiptController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xjp_predeliveryinspectionController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xjp_vehiclecostinputController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xjp_vehicletransferController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_accessoriesinstallationcategoryController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_accountpayablepaymentController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_accountpayablepaymentdetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_accountpayablevoucherController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_accountreceivableinvoiceController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_accountreceivableinvoicedetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_accountreceivablereceiptController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_accountreceivablereceiptdetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_apvdetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_assessmentController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_assigntosalespersonController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_businessunitinquiryController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_customerpublicController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_damageorlossController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_deliveryorderController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_deliveryorderdetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_employeeController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_incomingoutsourceworkorderdetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_inventorynewvehicleController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_inventorytransactionController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_inventorytransactiondetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_inventorytransferController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_inventorytransferdetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_inventserialController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_inventtransController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_landedcostController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_matchunmatchController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_moreaddressController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_newvehicleaccessoriesController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_newvehicledeliveryorderController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_newvehicleexteriorcolorController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_newvehiclesalesorderController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_newvehiclesalesquoteController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_newvehiclewholesaleorderController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_nonsalesdeliveryController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_nvsonumberregistrationdetailsController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_outsourcereservationController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_outsourceworkorderController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_outsourceworkorderdetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_outsourceworkorderreceiptController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_outsourceworkorderreceiptdetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_outsourceworkshopconfigurationController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_productController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_productlistController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_purchaseorderController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_purchaseorderdetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_purchasereceiptController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_purchasereceiptdetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_purchasereceiptdetaillandedcostController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_purchaserequisitionController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_purchaserequisitiondetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_reservationtransactionController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_salesorderController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_salesorderdetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_servicecampaignController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_servicemmsController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_serviceproportionalinvoiceController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_servicequeueController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_siteController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_siteinquiryController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_vehicleinformationController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_vehiclepriceController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_vehiclepricedetailController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_vehiclepublicController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_vendorController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_warehouseController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_warehouseinquiryController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_workorderController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_workorderpartmaterialandserviceController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_workordertimeregisterController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_writeoffbalanceController.cs" />
+    <Compile Include="Controllers\NonDMS\CRM_xts_writeoffbalancedetailController.cs" />
+    <Compile Include="Controllers\OCR\OCRKtpController.cs" />
+    <Compile Include="Controllers\OCR\OCRSIMController.cs" />
+    <Compile Include="Controllers\Services\AssistServiceIncomingBPController.cs" />
+    <Compile Include="Controllers\Services\DMSWOWarrantyController.cs" />
+    <Compile Include="Controllers\Services\DMSWorkOrderWSCStatusController.cs" />
+    <Compile Include="Controllers\Services\MobileServiceReminderController.cs" />
+    <Compile Include="Controllers\Services\MSPClaimController.cs" />
+    <Compile Include="Controllers\Services\MSPExMembershipController.cs" />
+    <Compile Include="Controllers\Services\PDIExpiredController.cs" />
+    <Compile Include="Controllers\Services\ServiceBookingController.cs" />
+    <Compile Include="Controllers\Services\ServiceMMSController.cs" />
+    <Compile Include="Controllers\Services\ServiceReminderController.cs" />
+    <Compile Include="Controllers\Services\ServiceStandardTimeController.cs" />
+    <Compile Include="Controllers\Services\ServiceTemplateActivityController.cs" />
+    <Compile Include="Controllers\Services\ServiceTemplateStallController.cs" />
+    <Compile Include="Controllers\Services\ServiceValidatorController.cs" />
+    <Compile Include="Controllers\Services\FieldFixServicedController.cs" />
+    <Compile Include="Controllers\Masters\ServicePlaceController.cs" />
+    <Compile Include="Controllers\Masters\ServiceTypeController.cs" />
+    <Compile Include="Controllers\Services\StallMasterController.cs" />
+    <Compile Include="Controllers\Services\StallWorkingTimeController.cs" />
+    <Compile Include="Controllers\Services\WarrantyActivationController.cs" />
+    <Compile Include="Controllers\SpareParts\PQRController.cs" />
+    <Compile Include="Controllers\SpareParts\PurchaseReturnController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartClaimController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartOutstandingOrderController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartOutstandingOrderDetailController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartPaymentController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartPenaltyController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartForecastController.cs" />
+    <Compile Include="Controllers\VehiclePurchases\ChassisMasterATAController.cs" />
+    <Compile Include="Controllers\VehiclePurchases\ChassisMasterClaimController.cs" />
+    <Compile Include="Controllers\VehicleSales\KaroseriController.cs" />
+    <Compile Include="Controllers\VehicleSales\ChassisStatusFakturController.cs" />
+    <Compile Include="Controllers\VehicleSales\SPKMasterCountryCodePhoneController.cs" />
+    <Compile Include="Controllers\VehicleSales\UnmatchSPKChassisController.cs" />
+    <Compile Include="Controllers\Masters\WholeSalesPriceController.cs" />
+    <Compile Include="Controllers\Services\ServiceHistoryController.cs" />
+    <Compile Include="Controllers\SpareParts\PRHistoryController.cs" />
+    <Compile Include="Controllers\SpareParts\APPaymentController.cs" />
+    <Compile Include="Controllers\SpareParts\ARReceiptController.cs" />
+    <Compile Include="Controllers\Services\AssistServiceIncomingController.cs" />
+    <Compile Include="Controllers\SpareParts\AssistPartStockController.cs" />
+    <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\Masters\SparePartPriceListController.cs" />
+    <Compile Include="Controllers\VehicleSales\CampaignReportController.cs" />
+    <Compile Include="Controllers\VehiclePurchases\CarrosserieController.cs" />
+    <Compile Include="Controllers\Masters\BusinessSectorDetailController.cs" />
+    <Compile Include="Controllers\Masters\BusinessSectorHeaderController.cs" />
+    <Compile Include="Controllers\SpareParts\AssistPartSalesController.cs" />
+    <Compile Include="Controllers\Services\CustomerCaseController.cs" />
+    <Compile Include="Controllers\Masters\FleetController.cs" />
+    <Compile Include="Controllers\Masters\BankController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\Masters\Area1Controller.cs" />
+    <Compile Include="Controllers\Masters\Area2Controller.cs" />
+    <Compile Include="Controllers\Masters\CampaignController.cs" />
+    <Compile Include="Controllers\Masters\CategoryController.cs" />
+    <Compile Include="Controllers\Services\FreeServiceController.cs" />
+    <Compile Include="Controllers\SpareParts\IndentPartHeaderController.cs" />
+    <Compile Include="Controllers\SpareParts\InventoryTransactionController.cs" />
+    <Compile Include="Controllers\SpareParts\InventoryTransferController.cs" />
+    <Compile Include="Controllers\Services\MSPMembershipController.cs" />
+    <Compile Include="Controllers\SpareParts\POOtherVendorController.cs" />
+    <Compile Include="Controllers\VehiclePurchases\POReceiptDealerController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\VehicleSales\ChassisMasterPKTController.cs" />
+    <Compile Include="Controllers\Masters\CityController.cs" />
+    <Compile Include="Controllers\Masters\DealerBranchController.cs" />
+    <Compile Include="Controllers\Masters\DealerGroupController.cs" />
+    <Compile Include="Controllers\Masters\EndCustomerController.cs" />
+    <Compile Include="Controllers\Masters\FSKindController.cs" />
+    <Compile Include="Controllers\Masters\LaborMasterController.cs" />
+    <Compile Include="Controllers\Masters\PaymentMethodController.cs" />
+    <Compile Include="Controllers\Masters\PaymentPurposeController.cs" />
+    <Compile Include="Controllers\Services\PDIController.cs" />
+    <Compile Include="Controllers\Masters\PositionWSCController.cs" />
+    <Compile Include="Controllers\Masters\PriceController.cs" />
+    <Compile Include="Controllers\Masters\ProvinceController.cs" />
+    <Compile Include="Controllers\Masters\DealerController.cs" />
+    <Compile Include="Controllers\Services\RecallServiceController.cs" />
+    <Compile Include="Controllers\Masters\SparePartConversionController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartDeliveryOrderController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartDOController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartPOController.cs" />
+    <Compile Include="Controllers\SpareParts\DepositLineController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartPOEstimateController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartPRFromVendorController.cs" />
+    <Compile Include="Controllers\SpareParts\SparePartSalesOrderController.cs" />
+    <Compile Include="Controllers\Masters\SparePartUoMController.cs" />
+    <Compile Include="Controllers\VehicleSales\SPKChassisController.cs" />
+    <Compile Include="Controllers\VehicleSales\SAPCustomerController.cs" />
+    <Compile Include="Controllers\VehicleSales\SPKController.cs" />
+    <Compile Include="Controllers\VehicleSales\SPKCustomerController.cs" />
+    <Compile Include="Controllers\SpareParts\EstimationEquipHeaderController.cs" />
+    <Compile Include="Controllers\Masters\SparePartMasterController.cs" />
+    <Compile Include="Controllers\VehicleSales\SPKHeaderController.cs" />
+    <Compile Include="Controllers\StandardCodes\StandardCodeCharController.cs" />
+    <Compile Include="Controllers\StandardCodes\StandardCodeController.cs" />
+    <Compile Include="Controllers\Masters\TermOfPaymentController.cs" />
+    <Compile Include="Controllers\Masters\VehicleClassController.cs" />
+    <Compile Include="Controllers\Masters\VehicleColorController.cs" />
+    <Compile Include="Controllers\Masters\VehicleKindController.cs" />
+    <Compile Include="Controllers\Masters\VehicleKindGroupController.cs" />
+    <Compile Include="Controllers\Masters\VehicleModelController.cs" />
+    <Compile Include="Controllers\VehiclePurchases\VehiclePurchaseController.cs" />
+    <Compile Include="Controllers\VehiclePurchases\PODealerController.cs" />
+    <Compile Include="Controllers\VehicleSales\OpenFakturController.cs" />
+    <Compile Include="Controllers\Masters\VehicleTypeController.cs" />
+    <Compile Include="Controllers\Services\WorkOrderPMController.cs" />
+    <Compile Include="Controllers\VehicleSales\LeasingController.cs" />
+    <Compile Include="Controllers\VehicleSales\OpenFakturForPDIController.cs" />
+    <Compile Include="Controllers\Masters\VWI_ProfileDetailFromHeaderCodeController.cs" />
+    <Compile Include="Helper\CustomAttribute\AddChallangeOnUnauthorizedResult.cs" />
+    <Compile Include="Helper\CustomAttribute\AuthenticationFailureResult.cs" />
+    <Compile Include="Helper\CustomAttribute\CustomJsonFormatter.cs" />
+    <Compile Include="Helper\CustomAttribute\JwtAuthenticationAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helper\CustomAttribute\ActionWebApiFilterAttribute.cs" />
+    <Compile Include="Helper\CustomAttribute\ApiGroupAttribute.cs" />
+    <Compile Include="Helper\CustomAttribute\PermissionAuthorizeAttribute.cs" />
+    <Compile Include="Helper\CustomAttribute\JsonValueValidation.cs" />
+    <Compile Include="Helper\CustomAttribute\ScheduleAuthorizeAttribute.cs" />
+    <Compile Include="Helper\CustomAttribute\SwaggerParameterAttribute.cs" />
+    <Compile Include="Helper\CustomFilter\CustomDocumentFilter.cs" />
+    <Compile Include="Helper\CustomFilter\FileUploadOperationFilter.cs" />
+    <Compile Include="Helper\Logger\LoggerService.cs" />
+    <Compile Include="Helper\Logger\ILoggerService.cs" />
+    <Compile Include="Helper\Messages\HttpCodeMessage.cs" />
+    <Compile Include="Helper\Schedule\IScheduleService.cs" />
+    <Compile Include="Helper\Schedule\ScheduleService.cs" />
+    <Compile Include="Helper\Throttle\ThrottleFilterAttribute.cs" />
+    <Compile Include="Helper\Throttle\ThrottleInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\Base\DataLogModel.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateAX_TSTransStockMutationsExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateCRM_ktb_openfactureExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_accountExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_BusinessUnitExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_campaignactivityExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_campaignExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_campaignresponseExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_contactExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_ktb_kontrabonExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_ktb_leasingcompanyExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_ktb_mastervehiclemodelExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_ktb_perlengkapanstandardExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_ktb_productsapconversionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_ktb_purchaserequisitionhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_ktb_userareaassignmentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_leadExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_opportunityExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_teamExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xid_documentregistrationExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xid_registrationmonitoringExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xjp_pdidetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xjp_pdireceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xjp_pdireceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xjp_predeliveryinspectionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xjp_vehicletransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_accountpayablepaymentdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_accountpayablepaymentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_accountpayablevoucherExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_accountreceivableinvoicedetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_accountreceivableinvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_accountreceivablereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_accountreceivablereceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_accountreceivablereceiptotherexpenseExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_aptransactiondocumentdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_aptransactiondocumentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_apvdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_apvlandedcostExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_apvmiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_artransactiondocumentdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_artransactiondocumentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_assigntosalespersonExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_cashandbankaccountExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_cashandbankExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_cashtransactiondetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_cashtransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_chartofaccountExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_commonbusinessunitExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_commonExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_consumptiontaxExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_customerclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_customerpublicExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_damageorlossExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_deliveryorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_deliveryorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_deliveryordermiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_employeeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_generateinventorylistExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_globalworkorderhistorydetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_globalworkorderhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_incomingoutsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_incomingoutsourceworkorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_incomingpdiandserviceinstructionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_inventorynewvehicleExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_inventorytransactiondetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_inventorytransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_inventorytransferdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_inventorytransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_inventserialExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_inventtransExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_matchunmatchExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_miscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_miscellaneouschargetemplateExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_newvehicledeliveryorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_newvehicleexteriorcolorExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_newvehiclesalesorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_newvehiclesalesquoteExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_newvehiclewholesaleorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_nonsalesdeliveryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_nvsoaccessoriesExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_nvsomiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_nvsonumberregistrationdetailsExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_nvsoreferralExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_nvsqaccessoriesExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_nvsqmiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_ordertypeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_outsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_outsourceworkorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_outsourceworkorderreceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_outsourceworkorderreceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_physicalinventorylistdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_physicalinventorylistExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_productclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_productExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_productsegment2Example.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_productsubstituteExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_purchaseorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_purchaseorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_purchasereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_purchasereceiptdetaillandedcostExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_purchasereceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_purchaserequisitiondetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_purchaserequisitionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_purchaserequisitionpurchaseordertypeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_reservationtransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_salesorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_salesorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_servicecampaignExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_servicecategoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_servicecategorygroupExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_servicemiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_serviceproportionalinvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_servicereservationclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_servicetemplateExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_servicetemplateparentgroupExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_sharedproductExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_siteExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_uomExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_vehicleinformationExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_vehiclemodelExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_vehiclepricedetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_vehiclepriceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_vehiclespecificationExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_vehicletransactionhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_vehicletransferhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_vendorclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_vendorExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_warehouseExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_workorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_workorderpartmaterialandserviceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_workorderservicetemplateExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_workordertimeregisterExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_writeoffbalancedetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APICreateVWI_CRM_xts_writeoffbalanceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteAX_TSTransStockMutationsExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteCRM_ktb_openfactureExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_accountExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_BusinessUnitExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_campaignactivityExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_campaignExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_campaignresponseExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_contactExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_ktb_kontrabonExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_ktb_leasingcompanyExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_ktb_mastervehiclemodelExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_ktb_perlengkapanstandardExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_ktb_productsapconversionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_ktb_purchaserequisitionhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_ktb_userareaassignmentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_leadExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_opportunityExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_teamExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xid_documentregistrationExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xid_registrationmonitoringExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xjp_pdidetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xjp_pdireceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xjp_pdireceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xjp_predeliveryinspectionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xjp_vehicletransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_accountpayablepaymentdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_accountpayablepaymentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_accountpayablevoucherExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_accountreceivableinvoicedetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_accountreceivableinvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_accountreceivablereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_accountreceivablereceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_accountreceivablereceiptotherexpenseExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_aptransactiondocumentdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_aptransactiondocumentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_apvdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_apvlandedcostExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_apvmiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_artransactiondocumentdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_artransactiondocumentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_assigntosalespersonExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_cashandbankaccountExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_cashandbankExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_cashtransactiondetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_cashtransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_chartofaccountExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_commonbusinessunitExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_commonExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_consumptiontaxExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_customerclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_customerpublicExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_damageorlossExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_deliveryorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_deliveryorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_deliveryordermiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_employeeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_generateinventorylistExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_globalworkorderhistorydetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_globalworkorderhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_incomingoutsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_incomingoutsourceworkorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_incomingpdiandserviceinstructionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_inventorynewvehicleExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_inventorytransactiondetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_inventorytransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_inventorytransferdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_inventorytransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_inventserialExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_inventtransExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_matchunmatchExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_miscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_miscellaneouschargetemplateExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_newvehicledeliveryorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_newvehicleexteriorcolorExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_newvehiclesalesorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_newvehiclesalesquoteExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_newvehiclewholesaleorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_nonsalesdeliveryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_nvsoaccessoriesExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_nvsomiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_nvsonumberregistrationdetailsExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_nvsoreferralExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_nvsqaccessoriesExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_nvsqmiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_ordertypeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_outsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_outsourceworkorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_outsourceworkorderreceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_outsourceworkorderreceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_physicalinventorylistdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_physicalinventorylistExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_productclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_productExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_productsegment2Example.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_productsubstituteExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_purchaseorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_purchaseorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_purchasereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_purchasereceiptdetaillandedcostExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_purchasereceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_purchaserequisitiondetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_purchaserequisitionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_purchaserequisitionpurchaseordertypeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_reservationtransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_salesorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_salesorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_servicecampaignExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_servicecategoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_servicecategorygroupExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_servicemiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_serviceproportionalinvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_servicereservationclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_servicetemplateExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_servicetemplateparentgroupExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_sharedproductExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_siteExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_uomExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_vehicleinformationExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_vehiclemodelExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_vehiclepricedetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_vehiclepriceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_vehiclespecificationExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_vehicletransactionhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_vehicletransferhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_vendorclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_vendorExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_warehouseExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_workorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_workorderpartmaterialandserviceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_workorderservicetemplateExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_workordertimeregisterExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_writeoffbalancedetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIDeleteVWI_CRM_xts_writeoffbalanceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateAX_TSTransStockMutationsExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateCRM_ktb_openfactureExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_accountExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_BusinessUnitExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_campaignactivityExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_campaignExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_campaignresponseExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_contactExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_ktb_kontrabonExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_ktb_leasingcompanyExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_ktb_mastervehiclemodelExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_ktb_perlengkapanstandardExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_ktb_productsapconversionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_ktb_purchaserequisitionhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_ktb_userareaassignmentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_leadExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_opportunityExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_teamExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xid_documentregistrationExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xid_registrationmonitoringExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xjp_pdidetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xjp_pdireceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xjp_pdireceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xjp_predeliveryinspectionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xjp_vehicletransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_accountpayablepaymentdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_accountpayablepaymentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_accountpayablevoucherExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_accountreceivableinvoicedetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_accountreceivableinvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_accountreceivablereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_accountreceivablereceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_accountreceivablereceiptotherexpenseExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_aptransactiondocumentdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_aptransactiondocumentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_apvdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_apvlandedcostExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_apvmiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_artransactiondocumentdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_artransactiondocumentExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_assigntosalespersonExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_cashandbankaccountExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_cashandbankExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_cashtransactiondetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_cashtransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_chartofaccountExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_commonbusinessunitExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_commonExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_consumptiontaxExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_customerclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_customerpublicExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_damageorlossExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_deliveryorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_deliveryorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_deliveryordermiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_employeeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_generateinventorylistExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_globalworkorderhistorydetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_globalworkorderhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_incomingoutsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_incomingoutsourceworkorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_incomingpdiandserviceinstructionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_inventorynewvehicleExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_inventorytransactiondetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_inventorytransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_inventorytransferdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_inventorytransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_inventserialExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_inventtransExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_matchunmatchExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_miscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_miscellaneouschargetemplateExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_newvehicledeliveryorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_newvehicleexteriorcolorExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_newvehiclesalesorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_newvehiclesalesquoteExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_newvehiclewholesaleorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_nonsalesdeliveryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_nvsoaccessoriesExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_nvsomiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_nvsonumberregistrationdetailsExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_nvsoreferralExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_nvsqaccessoriesExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_nvsqmiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_ordertypeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_outsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_outsourceworkorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_outsourceworkorderreceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_outsourceworkorderreceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_physicalinventorylistdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_physicalinventorylistExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_productclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_productExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_productsegment2Example.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_productsubstituteExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_purchaseorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_purchaseorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_purchasereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_purchasereceiptdetaillandedcostExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_purchasereceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_purchaserequisitiondetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_purchaserequisitionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_purchaserequisitionpurchaseordertypeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_reservationtransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_salesorderdetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_salesorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_servicecampaignExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_servicecategoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_servicecategorygroupExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_servicemiscellaneouschargeExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_serviceproportionalinvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_servicereservationclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_servicetemplateExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_servicetemplateparentgroupExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_sharedproductExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_siteExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_uomExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_vehicleinformationExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_vehiclemodelExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_vehiclepricedetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_vehiclepriceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_vehiclespecificationExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_vehicletransactionhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_vehicletransferhistoryExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_vendorclassExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_vendorExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_warehouseExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_workorderExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_workorderpartmaterialandserviceExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_workorderservicetemplateExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_workordertimeregisterExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_writeoffbalancedetailExample.cs" />
+    <Compile Include="Models\Examples\AccountingData\APIUpdateVWI_CRM_xts_writeoffbalanceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SOInvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_VehicleInvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_WOInvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SOInvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_VehicleInvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_WOInvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIRead_CRM_SVC_DailyReportExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_AX_PRT_FlowReportPartExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_AX_PRT_StockMovementExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_AX_SLS_BankTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_AX_SLS_LedgerTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_AX_SLS_StockMutationExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_IncomingInventoryTransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_IncomingInventoryTransferOutletExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_IncomingInventoryTransferWarehouseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_IncomingTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_OutgoingInventoryTransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_OutgoingInventoryTransferOutletExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_OutgoingInventoryTransferWarehouseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_OutgoingTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_PurchaseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_PurchaseReturnExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_SparepartPurchaseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_SparepartSalesExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_SparepartSalesReturnExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_PRT_SparepartSalesToPartshopExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SLS_APBalanceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SLS_ARBalanceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SLS_DailyActivityMonitoring_LeadExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SLS_DailyActivityMonitoring_SPKExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SLS_DailyActivityMonitoring_VDOExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SLS_SalesmanActivityExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SLS_SalesUnitExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SLS_StockMutationExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SLS_StockSummaryExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SLS_VehicleStockExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SVC_ARReceiptDetailBasedOnWOExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SVC_ARReceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APICreateVWI_CRM_SVC_FreeServiceToBeInvoicedExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_AX_PRT_FlowReportPartExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_AX_PRT_StockMovementExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_AX_SLS_BankTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_AX_SLS_LedgerTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_AX_SLS_StockMutationExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_IncomingInventoryTransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_IncomingInventoryTransferOutletExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_IncomingInventoryTransferWarehouseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_IncomingTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_OutgoingInventoryTransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_OutgoingInventoryTransferOutletExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_OutgoingInventoryTransferWarehouseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_OutgoingTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_PurchaseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_PurchaseReturnExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_SparepartPurchaseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_SparepartSalesExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_SparepartSalesReturnExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_PRT_SparepartSalesToPartshopExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SLS_APBalanceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SLS_ARBalanceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SLS_DailyActivityMonitoring_LeadExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SLS_DailyActivityMonitoring_SPKExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SLS_DailyActivityMonitoring_VDOExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SLS_SalesmanActivityExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SLS_SalesUnitExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SLS_StockMutationExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SLS_StockSummaryExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SLS_VehicleStockExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SVC_ARReceiptDetailBasedOnWOExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SVC_ARReceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIDeleteVWI_CRM_SVC_FreeServiceToBeInvoicedExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_AX_PRT_FlowReportPartExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_AX_PRT_StockMovementExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_AX_SLS_BankTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_AX_SLS_LedgerTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_AX_SLS_StockMutationExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_IncomingInventoryTransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_IncomingInventoryTransferOutletExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_IncomingInventoryTransferWarehouseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_IncomingTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_OutgoingInventoryTransferExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_OutgoingInventoryTransferOutletExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_OutgoingInventoryTransferWarehouseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_OutgoingTransactionExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_PurchaseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_PurchaseReturnExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_SparepartPurchaseExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_SparepartSalesExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_SparepartSalesReturnExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_PRT_SparepartSalesToPartshopExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SLS_APBalanceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SLS_ARBalanceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SLS_DailyActivityMonitoring_LeadExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SLS_DailyActivityMonitoring_SPKExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SLS_DailyActivityMonitoring_VDOExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SLS_SalesmanActivityExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SLS_SalesUnitExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SLS_StockMutationExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SLS_StockSummaryExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SLS_VehicleStockExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SOInvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SVC_ARReceiptDetailBasedOnWOExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SVC_ARReceiptExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_SVC_FreeServiceToBeInvoicedExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_VehicleInvoiceExample.cs" />
+    <Compile Include="Models\Examples\AccountingReport\APIUpdateVWI_CRM_WOInvoiceExample.cs" />
+    <Compile Include="Models\Examples\FinishUnit\APIDSFCeilingSample.cs" />
+    <Compile Include="Models\Examples\FinishUnit\APIDSFPaymentSample.cs" />
+    <Compile Include="Models\Examples\FinishUnit\APIDSFLeasingClaimCreateSample.cs" />
+    <Compile Include="Models\Examples\APIReadSPKChassisExample.cs" />
+    <Compile Include="Models\Examples\Masters\APICreateCustomerVehicleExample.cs" />
+    <Compile Include="Models\Examples\Masters\APICreateEmployeePartExample.cs" />
+    <Compile Include="Models\Examples\Masters\APICreateLKPPExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIEmployeeSalesExample.cs" />
+    <Compile Include="Models\Examples\Masters\APICustomerVehicleUploadImageExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIReadCityExample.cs" />
+    <Compile Include="Models\Examples\APIReadEmptyFilterExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIReadCustomerVehicleExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIReadFleetExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIReadIPAddressRestrictionExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIReadLKPPExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIReadPODestinationExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIReadSalesmanHeaderResignExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIReadSalesmanIDResignExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIReadVehicleExteriorColorExample.cs" />
+    <Compile Include="Models\Examples\Masters\APICreateEmployeeServiceExample.cs" />
+    <Compile Include="Models\Examples\Masters\APICreatePartShopExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIReadQuickProductExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIReadProvinceExample.cs" />
+    <Compile Include="Models\Examples\Masters\APISendASBSFIDCustomerExample.cs" />
+    <Compile Include="Models\Examples\Masters\APISendASBSFIDSuspectExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIUpdateCustomerVehicleExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIUpdateEmployeeServiceExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIUpdateEmployeePartExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIUpdateLKPPExample.cs" />
+    <Compile Include="Models\Examples\Masters\APIUpdatePartShopExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_bookableresourcebookingExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_bookableresourcebookingExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_bookableresourcebookingExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_bookableresourcebookingExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateAssistServiceIncomingBPExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_accountExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_appointmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_campaignExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_campaignresponseExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_contactExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_equipmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_ktb_kontrabondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_ktb_kontrabonExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_leadExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_opportunityExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_serviceappointmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_teamExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xid_documentregistrationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xid_registrationmonitoringExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xjp_pdidetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xjp_pdireceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xjp_predeliveryinspectionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xjp_vehiclecostinputExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xjp_vehicletransferExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_accessoriesinstallationcategoryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_accountpayablepaymentdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_accountpayablepaymentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_accountpayablevoucherExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_accountreceivableinvoicedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_accountreceivableinvoiceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_accountreceivablereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_accountreceivablereceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_apvdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_assessmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_assigntosalespersonExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_businessunitinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_customerpublicExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_damageorlossExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_deliveryorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_deliveryorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_employeeExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_incomingoutsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_inventorynewvehicleExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_inventorytransactiondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_inventorytransactionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_inventorytransferdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_inventorytransferExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_inventserialExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_inventtransExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_landedcostExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_matchunmatchExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_moreaddressExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_newvehicleaccessoriesExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_newvehicledeliveryorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_newvehicleexteriorcolorExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_newvehiclesalesorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_newvehiclesalesquoteExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_newvehiclewholesaleorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_nonsalesdeliveryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_nvsonumberregistrationdetailsExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_outsourcereservationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_outsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_outsourceworkorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_outsourceworkorderreceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_outsourceworkorderreceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_outsourceworkshopconfigurationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_productExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_productlistExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_purchaseorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_purchaseorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_purchasereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_purchasereceiptdetaillandedcostExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_purchasereceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_purchaserequisitiondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_purchaserequisitionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_reservationtransactionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_salesorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_salesorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_servicecampaignExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_servicemmsExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_serviceproportionalinvoiceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_servicequeueExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_siteExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_siteinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_vehicleinformationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_vehiclepricedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_vehiclepriceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_vehiclepublicExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_vendorExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_warehouseExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_warehouseinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_workorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_workorderpartmaterialandserviceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_workordertimeregisterExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_writeoffbalancedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APICreateCRM_xts_writeoffbalanceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_accountExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_appointmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_campaignExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_campaignresponseExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_contactExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_equipmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_ktb_kontrabondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_ktb_kontrabonExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_leadExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_opportunityExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_serviceappointmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_teamExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xid_documentregistrationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xid_registrationmonitoringExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xjp_pdidetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xjp_pdireceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xjp_predeliveryinspectionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xjp_vehiclecostinputExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xjp_vehicletransferExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_accessoriesinstallationcategoryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_accountpayablepaymentdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_accountpayablepaymentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_accountpayablevoucherExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_accountreceivableinvoicedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_accountreceivableinvoiceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_accountreceivablereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_accountreceivablereceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_apvdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_assessmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_assigntosalespersonExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_businessunitinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_customerpublicExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_damageorlossExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_deliveryorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_deliveryorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_employeeExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_incomingoutsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_inventorynewvehicleExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_inventorytransactiondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_inventorytransactionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_inventorytransferdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_inventorytransferExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_inventserialExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_inventtransExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_landedcostExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_matchunmatchExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_moreaddressExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_newvehicleaccessoriesExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_newvehicledeliveryorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_newvehicleexteriorcolorExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_newvehiclesalesorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_newvehiclesalesquoteExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_newvehiclewholesaleorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_nonsalesdeliveryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_nvsonumberregistrationdetailsExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_outsourcereservationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_outsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_outsourceworkorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_outsourceworkorderreceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_outsourceworkorderreceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_outsourceworkshopconfigurationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_productExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_productlistExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_purchaseorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_purchaseorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_purchasereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_purchasereceiptdetaillandedcostExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_purchasereceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_purchaserequisitiondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_purchaserequisitionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_reservationtransactionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_salesorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_salesorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_servicecampaignExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_servicemmsExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_serviceproportionalinvoiceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_servicequeueExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_siteExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_siteinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_vehicleinformationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_vehiclepricedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_vehiclepriceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_vehiclepublicExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_vendorExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_warehouseExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_warehouseinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_workorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_workorderpartmaterialandserviceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_workordertimeregisterExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_writeoffbalancedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIDeleteCRM_xts_writeoffbalanceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_accountExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_appointmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_campaignExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_campaignresponseExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_contactExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_equipmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_ktb_kontrabondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_ktb_kontrabonExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_leadExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_opportunityExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_serviceappointmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_teamExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xid_documentregistrationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xid_registrationmonitoringExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xjp_pdidetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xjp_pdireceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xjp_predeliveryinspectionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xjp_vehiclecostinputExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xjp_vehicletransferExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_accessoriesinstallationcategoryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_accountpayablepaymentdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_accountpayablepaymentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_accountpayablevoucherExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_accountreceivableinvoicedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_accountreceivableinvoiceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_accountreceivablereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_accountreceivablereceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_apvdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_assessmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_assigntosalespersonExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_businessunitinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_customerpublicExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_damageorlossExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_deliveryorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_deliveryorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_employeeExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_incomingoutsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_inventorynewvehicleExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_inventorytransactiondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_inventorytransactionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_inventorytransferdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_inventorytransferExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_inventserialExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_inventtransExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_landedcostExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_matchunmatchExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_moreaddressExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_newvehicleaccessoriesExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_newvehicledeliveryorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_newvehicleexteriorcolorExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_newvehiclesalesorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_newvehiclesalesquoteExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_newvehiclewholesaleorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_nonsalesdeliveryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_nvsonumberregistrationdetailsExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_outsourcereservationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_outsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_outsourceworkorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_outsourceworkorderreceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_outsourceworkorderreceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_outsourceworkshopconfigurationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_productExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_productlistExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_purchaseorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_purchaseorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_purchasereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_purchasereceiptdetaillandedcostExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_purchasereceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_purchaserequisitiondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_purchaserequisitionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_reservationtransactionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_salesorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_salesorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_servicecampaignExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_servicemmsExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_serviceproportionalinvoiceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_servicequeueExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_siteExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_siteinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_vehicleinformationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_vehiclepricedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_vehiclepriceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_vehiclepublicExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_vendorExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_warehouseExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_warehouseinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_workorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_workorderpartmaterialandserviceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_workordertimeregisterExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_writeoffbalancedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIReadCRM_xts_writeoffbalanceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_accountExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_appointmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_campaignExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_campaignresponseExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_contactExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_equipmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_ktb_kontrabondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_ktb_kontrabonExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_leadExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_opportunityExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_serviceappointmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_teamExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xid_documentregistrationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xid_registrationmonitoringExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xjp_pdidetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xjp_pdireceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xjp_predeliveryinspectionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xjp_vehiclecostinputExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xjp_vehicletransferExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_accessoriesinstallationcategoryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_accountpayablepaymentdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_accountpayablepaymentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_accountpayablevoucherExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_accountreceivableinvoicedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_accountreceivableinvoiceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_accountreceivablereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_accountreceivablereceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_apvdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_assessmentExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_assigntosalespersonExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_businessunitinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_customerpublicExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_damageorlossExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_deliveryorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_deliveryorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_employeeExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_incomingoutsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_inventorynewvehicleExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_inventorytransactiondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_inventorytransactionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_inventorytransferdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_inventorytransferExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_inventserialExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_inventtransExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_landedcostExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_matchunmatchExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_moreaddressExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_newvehicleaccessoriesExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_newvehicledeliveryorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_newvehicleexteriorcolorExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_newvehiclesalesorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_newvehiclesalesquoteExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_newvehiclewholesaleorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_nonsalesdeliveryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_nvsonumberregistrationdetailsExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_outsourcereservationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_outsourceworkorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_outsourceworkorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_outsourceworkorderreceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_outsourceworkorderreceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_outsourceworkshopconfigurationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_productExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_productlistExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_purchaseorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_purchaseorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_purchasereceiptdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_purchasereceiptdetaillandedcostExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_purchasereceiptExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_purchaserequisitiondetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_purchaserequisitionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_reservationtransactionExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_salesorderdetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_salesorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_servicecampaignExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_servicemmsExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_serviceproportionalinvoiceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_servicequeueExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_siteExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_siteinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_vehicleinformationExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_vehiclepricedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_vehiclepriceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_vehiclepublicExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_vendorExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_warehouseExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_warehouseinquiryExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_workorderExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_workorderpartmaterialandserviceExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_workordertimeregisterExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_writeoffbalancedetailExample.cs" />
+    <Compile Include="Models\Examples\NonDMS\APIUpdateCRM_xts_writeoffbalanceExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateDMSWOWarrantyExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateServiceBookingExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateServiceMMSExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateStallMasterExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateStallWorkingTimeExample.cs" />
+    <Compile Include="Models\Examples\Services\APIDealerSuggestionServiceExample.cs" />
+    <Compile Include="Models\Examples\Services\APIDeleteAssistServiceIncomingBPExample.cs" />
+    <Compile Include="Models\Examples\Services\APIDeleteServiceMMSExample.cs" />
+    <Compile Include="Models\Examples\Services\APIDeleteStallMasterExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateWarrantyActivationExample.cs" />
+    <Compile Include="Models\Examples\Services\APIFollowUpServiceReminderExample.cs" />
+    <Compile Include="Models\Examples\Services\APIDeleteFreeServiceExample.cs" />
+    <Compile Include="Models\Examples\Services\APIGetServiceTypeExample.cs" />
+    <Compile Include="Models\Examples\Services\APIReadMSPExMembershipExample.cs" />
+    <Compile Include="Models\Examples\Services\APIReadServiceTemplateActivityExample.cs" />
+    <Compile Include="Models\Examples\Services\APIReadStallMasterExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateRealtimeServiceBookingExample.cs" />
+    <Compile Include="Models\Examples\Services\APIServiceBookingEstimationCostExample.cs" />
+    <Compile Include="Models\Examples\Services\APIServiceRecommendationExample.cs" />
+    <Compile Include="Models\Examples\Services\APIUpdateAssistServiceIncomingBPExample.cs" />
+    <Compile Include="Models\Examples\Services\APIUpdateRealtimeServiceBookingExample.cs" />
+    <Compile Include="Models\Examples\Services\APIUpdateServiceBookingExample.cs" />
+    <Compile Include="Models\Examples\Services\APIGetPDFPDIExample.cs" />
+    <Compile Include="Models\Examples\Services\APIUpdateServiceMMSExample.cs" />
+    <Compile Include="Models\Examples\Services\APIUpdateServiceReminderFollowUpExample.cs" />
+    <Compile Include="Models\Examples\Services\APIUpdateMSPClaimExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateMSPClaimExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateServiceValidatorExample.cs" />
+    <Compile Include="Models\Examples\Services\APIReadServiceHistoryExample.cs" />
+    <Compile Include="Models\Examples\Services\APIReadMSPMembershipExample.cs" />
+    <Compile Include="Models\Examples\Services\APIUpdateStallMasterExample.cs" />
+    <Compile Include="Models\Examples\Services\APIUpdateStallWorkingTimeExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APICreateSparepartClaimExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APICreateSparePartForecastExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIPRHistoryDOExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIPRHistorySOExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIReadPRHistoryIndentStatusExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIReadSparePartClaimExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIReadSparePartOutstandingOrderDetailExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIReadSparePartOutstandingOrderExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APIChassisMasterATAUpdateExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APICreateChassisMasterClaimExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APIReadChassisMasterClaimExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APIUpdateChassisMasterClaimExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APIChassisStatusFakturExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APIChassisStatusFakturLastUpdateExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APICreateValidateChassisExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APISPKDocumentExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIAPPaymentExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIARReceiptExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APICreateSparePartDeliveryOrderExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APICreateAssistPartSalesExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APICreateCarrosserieExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateCustomerCaseExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APICreatePOOtherVendorExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateRecallServiceExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APICreateInventoryTransactionExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIInventoryTransferExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APIReadPODealerExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APISparePartPRFromVendorExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIUpdateAssistPartSalesExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APICampaignReportExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APICreateAssistServiceIncomingExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APICreateAssistPartStockExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APICreateIndentPartHeaderExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreateFreeServiceExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APICreateSPKChassisExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreatePDIExample.cs" />
+    <Compile Include="Models\Examples\Services\APICreatePMHeaderExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APICreateSparePartPOExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APICreateVehiclePurchaseDetailExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APICreateVehiclePurchaseHeaderExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APICreateEstimationEquipHeaderExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIReadSparePartPOOthersExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APIReadChassisMasterPKTExample.cs" />
+    <Compile Include="Models\Examples\Services\APIUpdateAssistServiceIncomingExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIUpdateAssistPartStockExample.cs" />
+    <Compile Include="Models\Examples\Services\APIUpdatePDIExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIUpdatePurchaseReceiptExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIUpdateSparePartPOExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APIUpdateIndentPartHeaderExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APIUpdateVehiclePurchaseDetailExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APIUpdateCarrosserieDetailExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APIUpdateVehiclePurchaseHeaderExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APIUpdateCarrosserieHeaderExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APICreateCarrosserieHeaderExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APICreateChassisMasterPKTExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APICreateCarrosserieDetailExample.cs" />
+    <Compile Include="Models\Examples\StandardCodes\APIUpdateStandardCodeCharExample.cs" />
+    <Compile Include="Models\Examples\StandardCodes\APICreateStandardCodeCharExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APISAPCustomerExample.cs" />
+    <Compile Include="Models\Examples\APIReadExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APIUnmatchSPKChassisExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APIUpdateChassisMasterPKTExample.cs" />
+    <Compile Include="Models\Examples\VehiclePurchases\APIVehiclePurchaseExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APIVehicleSalesOpenFakturForPDIExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APIVehicleSalesOpenFakturExample.cs" />
+    <Compile Include="Models\Examples\SpareParts\APISparePartSalesOrderExample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APISPKUpdateRequestSample.cs" />
+    <Compile Include="Models\Examples\VehicleSales\APISPKCreateRequestSample.cs" />
+    <Compile Include="Parameters\AssistServiceIncomingUpdateParameterDto.cs" />
+    <Compile Include="Parameters\AssistPartStockUpdateParameterDto.cs" />
+    <Compile Include="Parameters\PDIUpdateParameterDto.cs" />
+    <Compile Include="Parameters\SparePartPOOthersFilterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchaseDetailUpdateParameterDto.cs" />
+    <Compile Include="Parameters\VehiclePurchaseHeaderUpdateParameterDto.cs" />
+    <Compile Include="Parameters\CarrosserieHeaderUpdateParameterDto.cs" />
+    <Compile Include="Parameters\ChassisMasterPKTUpdateParameterDto.cs" />
+    <Compile Include="Parameters\CarrosserieDetailUpdateParameterDto.cs" />
+    <Compile Include="Parameters\StandardCodeCharUpdateParameterDto.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="parameters.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DomainDataMap.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Extensions\index.html" />
+    <EmbeddedResource Include="Extensions\ajax-loader.gif" />
+    <EmbeddedResource Include="Extensions\extension.css" />
+    <EmbeddedResource Include="Extensions\MitsubishiMotors.png" />
+    <EmbeddedResource Include="Extensions\onComplete.js" />
+    <EmbeddedResource Include="Extensions\favicon.ico" />
+    <EmbeddedResource Include="Extensions\mitsubishilogo.png" />
+    <EmbeddedResource Include="Extensions\pace.min.js" />
+    <EmbeddedResource Include="Extensions\mitsubishi-logo.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="cachingconfiguration.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="exceptionhandlingconfiguration.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="loggingconfiguration.config" />
+    <Content Include="loggingdistributorconfiguration.config" />
+    <Content Include="Config\dataconfiguration.QAStaging.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\dataconfiguration.Debug.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\dataconfiguration.Release.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="dataconfiguration.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\dataconfiguration.SIT.config" />
+    <Content Include="Config\dataconfiguration.DMS.config" />
+    <Content Include="Config\dataconfiguration.DMSTest.config" />
+    <Content Include="Config\dataconfiguration.QA.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\dataconfiguration.DEV.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\dataconfiguration.Training.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\dataconfiguration.CR.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Config\dataconfiguration.MIG.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\Apps-Mmksi.pubxml" />
+    <None Include="Properties\PublishProfiles\Local-WebApi.pubxml" />
+    <None Include="Properties\PublishProfiles\QA-Server-Mmksi.pubxml" />
+    <None Include="Properties\PublishProfiles\ProdServer- Mmksi-1.pubxml" />
+    <None Include="Properties\PublishProfiles\ProdServer-Mmksi-2.pubxml" />
+    <Content Include="index.html" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Web.CR.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.DEV.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.DMS.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.DMSTest.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.MIG.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.QA.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.QAStaging.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.SIT.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Training.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Files\" />
+    <Folder Include="App_Readme\" />
+    <Folder Include="Views\ChassisMasterClaim\" />
+    <Folder Include="Views\Claim\" />
+    <Folder Include="Views\SparePartClaim\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KTB.DNet.DataMapper.Framework\KTB.DNet.DataMapper.Framework.vbproj">
+      <Project>{cc23ff7e-bc14-4d66-9e96-6e0a51576a34}</Project>
+      <Name>KTB.DNet.DataMapper.Framework</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.DataMapper\KTB.DNet.DataMapper.vbproj">
+      <Project>{e021fe28-84e0-4b1f-804a-180be4f38f26}</Project>
+      <Name>KTB.DNet.DataMapper</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain.Search\KTB.DNet.Domain.Search.vbproj">
+      <Project>{06a29192-8b96-4dfb-9c6c-aa5b4ddf8d36}</Project>
+      <Name>KTB.DNet.Domain.Search</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain\KTB.DNet.Domain.vbproj">
+      <Project>{f4cc7463-4cbb-4336-aeaf-ac8fbc38dd9a}</Project>
+      <Name>KTB.DNet.Domain</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.BusinessLogic.Interface\KTB.DNet.Interface.BusinessLogic.Interface.csproj">
+      <Project>{3f64f8d0-a02e-4a08-8664-3abff617028f}</Project>
+      <Name>KTB.DNet.Interface.BusinessLogic.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.BusinessLogic\KTB.DNet.Interface.BusinessLogic.csproj">
+      <Project>{26c07e3b-8a44-4739-a96a-1c92dab73a3c}</Project>
+      <Name>KTB.DNet.Interface.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Domain\KTB.DNet.Interface.Domain.csproj">
+      <Project>{26475885-56e1-4f74-a2c1-2da985ce3999}</Project>
+      <Name>KTB.DNet.Interface.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Framework\KTB.DNet.Interface.Framework.csproj">
+      <Project>{35cd5278-bb7f-44d7-ab5b-ff5e551a916b}</Project>
+      <Name>KTB.DNet.Interface.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Model\KTB.DNet.Interface.Model.csproj">
+      <Project>{88bf0ed7-1491-4582-993f-80494ef9de0e}</Project>
+      <Name>KTB.DNet.Interface.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Repository.Dapper\KTB.DNet.Interface.Repository.Dapper.csproj">
+      <Project>{d558bc8f-0540-4838-b8e1-3b2bd0253a48}</Project>
+      <Name>KTB.DNet.Interface.Repository.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Repository.Interface\KTB.DNet.Interface.Repository.Interface.csproj">
+      <Project>{bda6354b-fd81-4566-a335-55af3bbea64a}</Project>
+      <Name>KTB.DNet.Interface.Repository.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Resources\KTB.DNet.Interface.Resources.csproj">
+      <Project>{2a4ee316-2430-45c8-b2ca-7952d52e3180}</Project>
+      <Name>KTB.DNet.Interface.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|x64' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>bin\KTB.DNet.Interface.WebApi.XML</DocumentationFile>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52850</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/MMKSIWebApiXX</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost/MMKSIWebApiXX</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" /> -->
+  <!-- <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''"> -->
+  <!-- <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" /> -->
+  <!-- <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" /> -->
+  <!-- </Target> -->
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>-->
+  <Target Name="BeforeBuild">
+    <Copy SourceFiles="$(ProjectDir)Config\dataconfiguration.$(ConfigurationName).config" DestinationFiles="$(ProjectDir)dataconfiguration.config" OverwriteReadOnlyFiles="true" SkipUnchangedFiles="false" />
+    <Copy SourceFiles="$(ProjectDir)Temp\parameters.xml" DestinationFiles="$(ProjectDir)parameters.xml" OverwriteReadOnlyFiles="true" Condition="Exists('$(ProjectDir)Temp\parameters.xml')" SkipUnchangedFiles="false" />
+  </Target>
+</Project>

@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_ktb_benefit as VWI_CRM_ktb_benefit WITH (NOLOCK) 
+{0}

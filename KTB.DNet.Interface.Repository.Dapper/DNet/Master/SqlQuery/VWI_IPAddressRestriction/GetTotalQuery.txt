@@ -1,0 +1,35 @@
+declare @ip nvarchar(100) = @param
+set @ip = (select 
+	cast(parsename(@ip, 4)*1000000000.0  as decimal(12, 0)) +
+	cast(parsename(@ip, 3)*1000000.0  as decimal(12, 0)) +
+	cast(parsename(@ip, 2)*1000.0  as decimal(12, 0)) +
+	cast(parsename(@ip, 1) as decimal(12, 0)))
+
+select 
+    Count(1)
+from (
+	select 
+        Id,
+        (
+            cast(parsename(Begin_IP_Address, 4)*1000000000.0  as decimal(12, 0)) +
+            cast(parsename(Begin_IP_Address, 3)*1000000.0  as decimal(12, 0)) +
+            cast(parsename(Begin_IP_Address, 2)*1000.0  as decimal(12, 0)) +
+            cast(parsename(Begin_IP_Address, 1) as decimal(12, 0))
+        ) as StartIP_Address,
+        (
+            cast(parsename(End_IP_Address, 4)*1000000000.0  as decimal(12, 0)) +
+            cast(parsename(End_IP_Address, 3)*1000000.0  as decimal(12, 0)) +
+            cast(parsename(End_IP_Address, 2)*1000.0  as decimal(12, 0)) +
+            cast(parsename(End_IP_Address, 1) as decimal(12, 0))
+        ) as EndIP_Address,
+        Begin_IP_Address,
+        End_IP_Address,
+        Country,
+        IsAllow,
+        CreatedTime,
+        CreatedBy,
+        LastUpdateTime,
+        LastUpdateBy
+      from IPAddressRestriction
+) t
+where @ip between StartIP_Address and EndIP_Address;

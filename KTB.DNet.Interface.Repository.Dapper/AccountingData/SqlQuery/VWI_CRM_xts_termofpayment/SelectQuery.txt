@@ -1,0 +1,38 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_termofpayment.createdonbehalfbyyominame
+	, VWI_CRM_xts_termofpayment.modifiedonbehalfby
+	, VWI_CRM_xts_termofpayment.xts_locking
+	, VWI_CRM_xts_termofpayment.statecode
+	, VWI_CRM_xts_termofpayment.statecodename
+	, VWI_CRM_xts_termofpayment.createdonbehalfby
+	, VWI_CRM_xts_termofpayment.importsequencenumber
+	, VWI_CRM_xts_termofpayment.organizationidname
+	, VWI_CRM_xts_termofpayment.modifiedbyyominame
+	, VWI_CRM_xts_termofpayment.utcconversiontimezonecode
+	, VWI_CRM_xts_termofpayment.createdbyyominame
+	, VWI_CRM_xts_termofpayment.modifiedbyname
+	, VWI_CRM_xts_termofpayment.versionnumber
+	, VWI_CRM_xts_termofpayment.xts_duetypename
+	, VWI_CRM_xts_termofpayment.modifiedby
+	, VWI_CRM_xts_termofpayment.createdby
+	, VWI_CRM_xts_termofpayment.timezoneruleversionnumber
+	, VWI_CRM_xts_termofpayment.xts_duetype
+	, VWI_CRM_xts_termofpayment.statuscodename
+	, VWI_CRM_xts_termofpayment.xts_testing
+	, VWI_CRM_xts_termofpayment.modifiedon
+	, VWI_CRM_xts_termofpayment.xts_duedays
+	, VWI_CRM_xts_termofpayment.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_termofpayment.statuscode
+	, VWI_CRM_xts_termofpayment.createdbyname
+	, VWI_CRM_xts_termofpayment.createdon
+	, VWI_CRM_xts_termofpayment.organizationid
+	, VWI_CRM_xts_termofpayment.createdonbehalfbyname
+	, VWI_CRM_xts_termofpayment.xts_termofpaymentid
+	, VWI_CRM_xts_termofpayment.modifiedonbehalfbyname
+	, VWI_CRM_xts_termofpayment.xts_termofpayment
+	, VWI_CRM_xts_termofpayment.overriddencreatedon
+	, VWI_CRM_xts_termofpayment.xts_description
+FROM [dbo].[CRM_xts_termofpayment] as VWI_CRM_xts_termofpayment with (nolock) 
+{0}

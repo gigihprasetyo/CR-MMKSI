@@ -1,0 +1,37 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, statecode
+	, xts_productidname
+	, statecodename
+	, createdonbehalfby
+	, xts_inventbatchid
+	, importsequencenumber
+	, organizationidname
+	, xts_company
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, modifiedbyyominame
+	, createdby
+	, timezoneruleversionnumber
+	, xts_expireddate
+	, statuscodename
+	, modifiedon
+	, modifiedonbehalfbyname
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, xts_batchnumber
+	, createdonbehalfbyname
+	, xts_description
+	, xts_receiptdate
+	, xts_productid
+	, overriddencreatedon
+FROM [dbo].[CRM_xts_inventbatch] as VWI_CRM_xts_inventbatch with(nolock)
+WHERE xts_inventbatchid = @Id

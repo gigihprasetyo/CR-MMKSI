@@ -1,0 +1,25 @@
+﻿SELECT 
+/**PagingIndexQuery**/ 
+	ID, SalesmanCode, Name, PlaceOfBirth, DateOfBirth, Gender, MarriedStatus, Address, City, 
+	SalesmanLevelID, JobPositionId, LeaderId, LeaderSalesmanCode, LeaderSalesmanName, 
+	HireDate, ResignDate, ResignReason, DealerId, DealerCode, 
+	DealerBranchID , DealerBranchCode, Status, LastUpdateTime
+/**EndPagingIndexQuery**/
+FROM
+	(SELECT	SalesmanHeader.ID, SalesmanHeader.SalesmanCode,	SalesmanHeader.Name, SalesmanHeader.PlaceOfBirth, SalesmanHeader.DateOfBirth, 
+		SalesmanHeader.Gender, SalesmanHeader.MarriedStatus, SalesmanHeader.Address, SalesmanHeader.City, SalesmanHeader.SalesmanLevelID, 
+		SalesmanHeader.JobPositionId_Main as JobPositionId, SalesmanHeader.LeaderId, Lead.SalesmanCode AS LeaderSalesmanCode,
+		Lead.Name AS LeaderSalesmanName, SalesmanHeader.HireDate, SalesmanHeader.ResignDate, SalesmanHeader.ResignReason, SalesmanHeader.DealerId,
+		Dealer.DealerCode, SalesmanHeader.DealerBranchID , DealerBranch.DealerBranchCode,				
+		Status = CASE WHEN SalesmanHeader.RowStatus = -1 THEN SalesmanHeader.RowStatus
+						ELSE CASE	WHEN SalesmanHeader.Status = 2 THEN 0
+								ELSE -1
+							END
+					END ,
+		SalesmanHeader.LastUpdateTime
+	FROM SalesmanHeader WITH ( NOLOCK )
+		LEFT JOIN Dealer WITH ( NOLOCK ) ON SalesmanHeader.DealerId = Dealer.ID AND Dealer.RowStatus = 0
+		LEFT JOIN DealerBranch WITH ( NOLOCK ) ON SalesmanHeader.DealerId = DealerBranch.DealerID AND SalesmanHeader.DealerBranchID = DealerBranch.ID AND DealerBranch.RowStatus = 0	  
+		LEFT JOIN SalesmanHeader Lead WITH (NOLOCK) ON SalesmanHeader.LeaderId = Lead.ID AND Lead.RowStatus = 0
+	WHERE SalesmanHeader.SalesIndicator = 1) VWI_EmployeeSales 
+{1}

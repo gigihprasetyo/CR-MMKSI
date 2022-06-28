@@ -1,0 +1,30 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_PRT_PurchaseReturn.company
+	,VWI_CRM_PRT_PurchaseReturn.businessunitcode
+	,VWI_CRM_PRT_PurchaseReturn.PurchaseOrderNo
+	,VWI_CRM_PRT_PurchaseReturn.PurchaseReceiptNo
+	,VWI_CRM_PRT_PurchaseReturn.TransactionDate
+	,VWI_CRM_PRT_PurchaseReturn.PurchaseReceiptType
+	,VWI_CRM_PRT_PurchaseReturn.PRPOType
+	,VWI_CRM_PRT_PurchaseReturn.PurchaseReceiptStatus
+	,VWI_CRM_PRT_PurchaseReturn.Vendor
+	,VWI_CRM_PRT_PurchaseReturn.Product
+	,VWI_CRM_PRT_PurchaseReturn.ProductDescription
+	,VWI_CRM_PRT_PurchaseReturn.ReceivedQuantity
+	,VWI_CRM_PRT_PurchaseReturn.PurchaseUnit
+	,VWI_CRM_PRT_PurchaseReturn.UnitCost
+	,VWI_CRM_PRT_PurchaseReturn.DiscountPercentage
+	,VWI_CRM_PRT_PurchaseReturn.DiscountAmount
+	,VWI_CRM_PRT_PurchaseReturn.ConsumptionTax1
+	,VWI_CRM_PRT_PurchaseReturn.ConsumptionTax1Amount
+	,VWI_CRM_PRT_PurchaseReturn.ConsumptionTax2
+	,VWI_CRM_PRT_PurchaseReturn.ConsumptionTax2Amount
+	,VWI_CRM_PRT_PurchaseReturn.TotalConsumptionTaxAmount
+	,VWI_CRM_PRT_PurchaseReturn.TotalBaseAmount
+	,VWI_CRM_PRT_PurchaseReturn.TransactionAmount
+	,VWI_CRM_PRT_PurchaseReturn.Site
+	,VWI_CRM_PRT_PurchaseReturn.Warehouse
+	,VWI_CRM_PRT_PurchaseReturn.msdyn_companycode
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_PRT_PurchaseReturn WITH (NOLOCK) {0}

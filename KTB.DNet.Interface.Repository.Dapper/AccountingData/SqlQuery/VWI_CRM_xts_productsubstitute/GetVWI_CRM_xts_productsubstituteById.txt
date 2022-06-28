@@ -1,0 +1,74 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,xts_methodforprocurement
+	,statecode
+	,xts_productsubstitutedescription
+	,xts_methodforsalesorder
+	,owneridname
+	,statecodename
+	,xts_productsubstituteproductidname
+	,createdonbehalfby
+	,xts_startdate
+	,xts_pkcombinationkey
+	,xts_parentbusinessunitid
+	,xts_useforsalesordername
+	,importsequencenumber
+	,xts_productsubstitutenumber
+	,modifiedbyyominame
+	,xts_productdescription
+	,xts_enddate
+	,xts_useforworkordername
+	,xts_methodforprocurementname
+	,xts_productidname
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,xts_useforprocurementname
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,xts_useforprocurement
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,xts_businessunitidname
+	,xts_useforsalesorder
+	,xts_methodforworkordername
+	,xts_methodforsalesordername
+	,owneridyominame
+	,modifiedon
+	,xts_methodforworkorder
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,xts_useforworkorder
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,xts_productsubstituteid
+	,xts_productsubstituteproductid
+	,versionnumber
+	,modifiedonbehalfby
+	,xts_productid
+	,ownerid
+	,overriddencreatedon
+	,xts_parentbusinessunitidname
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.*
+        , b.msdyn_companycode
+    FROM CRM_xts_productsubstitute a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_productsubstituteid = @Id
+) VWI_CRM_xts_productsubstitute

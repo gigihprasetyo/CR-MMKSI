@@ -1,0 +1,16 @@
+<div class="form-group" ng-class="{ 'has-error': form.{{name}}.$invalid && form.{{name}}.$touched }">
+    <label for="{{name}}">{{label}}
+        <span class='required' ng-if="required">*</span>
+    </label>
+    <ui-select name={{name}} theme="bootstrap" ng-model="$parent.ngModel" class="btn-group bootstrap-select form-control" ng-required="required"
+               ng-disabled="ngDisabled" append-to-body="true" search-enabled="::searchEnabled" on-select="onSelectCallback()">
+        <ui-select-match placeholder="{{label}}">
+            <span> {{getDisplayedValue($select.selected, text || 'Text') != undefined ? getDisplayedValue($select.selected, text || 'Text') : $select.selected}} </span>
+        </ui-select-match>
+        <ui-select-choices repeat="option[value || 'Value'] as option in options | filter: $select.search">
+            <span ng-bind-html="getDisplayedValue(option, text || 'Text')"></span>
+        </ui-select-choices>
+    </ui-select>
+    <span ng-show="!options.length && hasPendingRequest" style="position: absolute;z-index: 1;right: 37.6px;top: 26.5px;"><img src="src/assets/img/spin.gif" alt="Loading..">  </span>
+    <span ng-show="form.{{name}}.$invalid && form.{{name}}.$touched" class="help-block">{{label}} is required</span>
+</div>

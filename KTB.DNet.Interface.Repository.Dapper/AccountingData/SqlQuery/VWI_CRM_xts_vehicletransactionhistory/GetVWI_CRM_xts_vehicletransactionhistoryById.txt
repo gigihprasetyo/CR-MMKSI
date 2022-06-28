@@ -1,0 +1,110 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xts_transactiontypename
+	,xts_stockidname
+	,xts_parentbusinessunitid
+	,versionnumber
+	,xts_consumptiontaxid
+	,createdon
+	,xjp_airbagfee
+	,xts_referencenumber
+	,xts_interiorcolorid
+	,statuscodename
+	,xts_warehouseid
+	,xts_consumptiontaxidname
+	,modifiedbyyominame
+	,xts_uvstockbalanceupdate
+	,xjp_airbagfee_base
+	,xts_transactionuniquereference
+	,createdonbehalfby
+	,modifiedbyname
+	,xts_platenumber
+	,xjp_fundmanagementfee
+	,xts_vehiclemodelidname
+	,overriddencreatedon
+	,xts_uvstockbalanceupdatename
+	,xts_interiorcoloridname
+	,xjp_compulsoryinsuranceamount
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,xjp_shredderdustfee
+	,xts_stockinventorynewvehicleid
+	,xjp_compulsoryinsuranceamount_base
+	,xts_vehicletransactionhistoryid
+	,xts_productidname
+	,xts_styleid
+	,statecode
+	,xts_siteidname
+	,xts_transactiontype
+	,timezoneruleversionnumber
+	,xjp_informationmanagementfee_base
+	,xjp_fluorocarbonfee_base
+	,xts_warehouseidname
+	,xts_productdescription
+	,xts_manufactureridname
+	,xts_quantity
+	,xjp_informationmanagementfee
+	,xts_vehiclemodelid
+	,xjp_fundmanagementfee_base
+	,createdonbehalfbyname
+	,xts_consumptiontaxamount
+	,xts_serviceamount_base
+	,utcconversiontimezonecode
+	,xts_configurationid
+	,modifiedon
+	,importsequencenumber
+	,xts_consumptiontaxamount_base
+	,xts_exteriorcolorid
+	,xts_includeininventhistory
+	,xts_transactiondate
+	,xts_stockinventorynewvehicleidname
+	,xts_siteid
+	,createdbyname
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_includeininventhistoryname
+	,xts_transactionhistorynumber
+	,xts_vehicleamount
+	,xts_productid
+	,transactioncurrencyid
+	,createdby
+	,modifiedby
+	,xts_vehicleidentificationnumber
+	,xts_referencetype
+	,createdbyyominame
+	,transactioncurrencyidname
+	,xts_exteriorcoloridname
+	,xts_stockid
+	,xts_locationid
+	,xts_serviceamount
+	,xjp_shredderdustfee_base
+	,xts_parentbusinessunitidname
+	,xts_manufacturerid
+	,xts_referencetypename
+	,xts_locationidname
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_configurationidname
+	,organizationid
+	,xjp_fluorocarbonfee
+	,xts_vehicleamount_base
+	,xts_stocknumberlookupname
+	,organizationidname
+	,xts_stocknumberlookuptype
+	,xts_styleidname
+	,statecodename
+	,xts_businessunitidname
+	,RowStatus
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_vehicletransactionhistory a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_vehicletransactionhistoryid = @Id
+) VWI_CRM_xts_vehicletransactionhistory 

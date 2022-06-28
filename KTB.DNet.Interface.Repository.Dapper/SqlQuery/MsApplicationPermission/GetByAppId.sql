@@ -1,0 +1,1 @@
+﻿SELECT * FROM MsApplicationPermission WHERE AppId = @AppId

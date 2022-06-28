@@ -1,0 +1,36 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_newvehicleinteriorcolor.createdonbehalfbyyominame
+	, VWI_CRM_xts_newvehicleinteriorcolor.modifiedonbehalfby
+	, VWI_CRM_xts_newvehicleinteriorcolor.statecode
+	, VWI_CRM_xts_newvehicleinteriorcolor.statuscode
+	, VWI_CRM_xts_newvehicleinteriorcolor.createdonbehalfby
+	, VWI_CRM_xts_newvehicleinteriorcolor.importsequencenumber
+	, VWI_CRM_xts_newvehicleinteriorcolor.organizationidname
+	, VWI_CRM_xts_newvehicleinteriorcolor.modifiedbyyominame
+	, VWI_CRM_xts_newvehicleinteriorcolor.utcconversiontimezonecode
+	, VWI_CRM_xts_newvehicleinteriorcolor.createdbyyominame
+	, VWI_CRM_xts_newvehicleinteriorcolor.modifiedbyname
+	, VWI_CRM_xts_newvehicleinteriorcolor.versionnumber
+	, VWI_CRM_xts_newvehicleinteriorcolor.modifiedby
+	, VWI_CRM_xts_newvehicleinteriorcolor.createdby
+	, VWI_CRM_xts_newvehicleinteriorcolor.timezoneruleversionnumber
+	, VWI_CRM_xts_newvehicleinteriorcolor.statuscodename
+	, VWI_CRM_xts_newvehicleinteriorcolor.xts_newvehicleinteriorcolor
+	, VWI_CRM_xts_newvehicleinteriorcolor.xts_newvehicleinteriorcolorid
+	, VWI_CRM_xts_newvehicleinteriorcolor.modifiedon
+	, VWI_CRM_xts_newvehicleinteriorcolor.xts_eventdata
+	, VWI_CRM_xts_newvehicleinteriorcolor.xts_entitytag
+	, VWI_CRM_xts_newvehicleinteriorcolor.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_newvehicleinteriorcolor.statecodename
+	, VWI_CRM_xts_newvehicleinteriorcolor.createdbyname
+	, VWI_CRM_xts_newvehicleinteriorcolor.createdon
+	, VWI_CRM_xts_newvehicleinteriorcolor.organizationid
+	, VWI_CRM_xts_newvehicleinteriorcolor.createdonbehalfbyname
+	, VWI_CRM_xts_newvehicleinteriorcolor.modifiedonbehalfbyname
+	, VWI_CRM_xts_newvehicleinteriorcolor.overriddencreatedon
+	, VWI_CRM_xts_newvehicleinteriorcolor.xts_description
+	/**EndPagingIndexQuery**/
+FROM [dbo].[CRM_xts_newvehicleinteriorcolor] as VWI_CRM_xts_newvehicleinteriorcolor with (nolock) 
+{0}

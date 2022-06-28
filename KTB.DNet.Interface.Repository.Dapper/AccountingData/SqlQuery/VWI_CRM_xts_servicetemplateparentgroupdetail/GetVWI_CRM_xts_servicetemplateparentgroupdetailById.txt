@@ -1,0 +1,67 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , xts_productsegment2id
+    , modifiedbyyominame
+    , createdbyname
+    , xts_servicetemplatesubgroupid
+    , modifiedon
+    , xts_productsegment1idname
+    , xts_servicetemplatesubgroupidname
+    , xts_businessunitid
+    , modifiedbyname
+    , xts_productsegment3id
+    , modifiedonbehalfby
+    , modifiedonbehalfbyyominame
+    , createdonbehalfbyyominame
+    , importsequencenumber
+    , createdonbehalfby
+    , statecodename
+    , xts_productsegment3idname
+    , xts_businessunitidname
+    , xts_servicetemplateparentgroupdetailid
+    , modifiedonbehalfbyname
+    , xts_servicetemplategroupidname
+    , versionnumber
+    , createdon
+    , createdby
+    , owneridtype
+    , xts_locking
+    , xts_servicetemplateparentgroupidname
+    , xts_pkcombinationkey
+    , xts_productsegment1id
+    , modifiedby
+    , overriddencreatedon
+    , createdonbehalfbyname
+    , owneridname
+    , owninguser
+    , statuscodename
+    , xts_productsegment4idname
+    , owningbusinessunit
+    , timezoneruleversionnumber
+    , xts_servicetemplategroupid
+    , owningteam
+    , xts_servicetemplateparentgroupid
+    , xts_productsegment4id
+    , createdbyyominame
+    , statuscode
+    , statecode
+    , xts_productsegment2idname
+    , owneridyominame
+    , xts_servicetemplategroupdetail
+    , ownerid
+    , utcconversiontimezonecode
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicetemplateparentgroupdetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_servicetemplateparentgroupdetailid = @Id
+) as VWI_CRM_xts_servicetemplateparentgroupdetail  
+

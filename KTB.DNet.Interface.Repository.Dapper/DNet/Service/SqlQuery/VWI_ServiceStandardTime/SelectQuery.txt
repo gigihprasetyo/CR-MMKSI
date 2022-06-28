@@ -1,0 +1,70 @@
+SELECT 
+/**PagingIndexQuery**/ 
+VWI_ServiceStandardTime.ID,
+VWI_ServiceStandardTime.DealerID,
+VWI_ServiceStandardTime.DealerCode,
+VWI_ServiceStandardTime.KindCode,
+VWI_ServiceStandardTime.ServiceTemplateGroup,
+VWI_ServiceStandardTime.ServiceCategory,
+VWI_ServiceStandardTime.VechileTypeID,
+VWI_ServiceStandardTime.VechileTypeCode,
+VWI_ServiceStandardTime.SystemStandardTime,
+VWI_ServiceStandardTime.LastUpdatedTime
+/**EndPagingIndexQuery**/
+FROM
+(
+SELECT 
+	a.ID,
+	a.DealerID,
+	c.DealerCode,
+	a.KindCode,
+	b.ServiceTemplateGroup,
+	b.ServiceCategory,
+	a.VechileTypeID,
+	d.VechileTypeCode,
+	a.SystemStandardTime,
+	a.LastUpdatedTime
+FROM servicestandardtime a WITH (NOLOCK) 
+JOIN ( 
+SELECT 
+	a.ServiceTemplateGroup,
+	a.ServiceCategory,
+	a.KindCode
+FROM
+(
+	SELECT 
+		'Field Fix' AS ServiceTemplateGroup,
+		/**'FF '+(SELECT RecallRegNo FROM RecallCategory WHERE id=a.RecallCategoryID) AS ServiceCategory,**/
+		'Field Fix' AS ServiceCategory,
+		(SELECT RecallRegNo FROM RecallCategory WHERE id=a.RecallCategoryID) AS KindCode
+	FROM ServiceTemplateFFPartHeader a WITH (NOLOCK) 
+	UNION ALL
+	SELECT 
+		'Free Service' AS ServiceTemplateGroup,
+		'FS '+(SELECT KindCode+' ('+KindDescription+') 'FROM FSKind WHERE id=b.FSKindID) AS ServiceCategory,
+		(SELECT KindCode FROM FSKind WHERE id=b.FSKindID) AS KindCode
+	FROM ServiceTemplateFSPartHeader b WITH (NOLOCK) 
+	UNION ALL
+	SELECT 
+		'Periodical Maintenance' AS ServiceTemplateGroup,
+		'PM '+(SELECT KindCode+' ('+KindDescription+') ' FROM PMKind WHERE id=c.PMKindID) AS ServiceCategory,
+		(SELECT KindCode FROM PMKind WHERE id=c.PMKindID) AS KindCode
+	FROM ServiceTemplatePMPartHeader c WITH (NOLOCK) 
+	)a 
+GROUP BY 
+a.ServiceTemplateGroup,
+a.ServiceCategory,
+a.KindCode
+)b ON b.KindCode = a.KindCode
+JOIN Dealer c ON c.ID = a.DealerID
+JOIN VechileType d ON d.ID = a.VechileTypeID
+)VWI_ServiceStandardTime {0}
+
+
+
+
+
+
+
+
+

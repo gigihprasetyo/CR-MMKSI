@@ -1,0 +1,62 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , createdonbehalfbyyominame
+    , modifiedonbehalfby
+    , owningteam
+    , xts_locking
+    , createdbyname
+    , xts_businessunitidname
+    , xts_outsourceworkshopconfiguration
+    , owneridname
+    , statecodename
+    , owninguser
+    , createdonbehalfby
+    , xts_pkcombinationkey
+    , xts_taxzoneidname
+    , xts_outsourceworkshopconfigurationid
+    , xts_outsourcebusinessunitid
+    , xts_categoryname
+    , importsequencenumber
+    , statecode
+    , xts_outsourcebusinessunitidname
+    , utcconversiontimezonecode
+    , createdbyyominame
+    , owningbusinessunit
+    , modifiedbyname
+    , versionnumber
+    , modifiedby
+    , modifiedbyyominame
+    , createdby
+    , timezoneruleversionnumber
+    , owneridtype
+    , statuscodename
+    , xts_category
+    , owneridyominame
+    , modifiedon
+    , xts_outsourcebusinessunitdescription
+    , xts_taxzoneid
+    , modifiedonbehalfbyyominame
+    , statuscode
+    , xts_vendoridname
+    , createdon
+    , xts_businessunitid
+    , createdonbehalfbyname
+    , modifiedonbehalfbyname
+    , xts_vendorid
+    , ownerid
+    , overriddencreatedon
+    , xts_vendordescription
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_outsourceworkshopconfiguration a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    WHERE xts_outsourceworkshopconfigurationid = @Id
+) as VWI_CRM_xts_outsourceworkshopconfiguration 

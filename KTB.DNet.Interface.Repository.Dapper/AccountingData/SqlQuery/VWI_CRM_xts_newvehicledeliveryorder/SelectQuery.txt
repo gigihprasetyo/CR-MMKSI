@@ -1,0 +1,136 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_newvehicledeliveryorder.company
+	, VWI_CRM_xts_newvehicledeliveryorder.businessunitcode
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_stockidname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_parentbusinessunitid
+	, VWI_CRM_xts_newvehicledeliveryorder.versionnumber
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_delivertocustomernumber
+	, VWI_CRM_xts_newvehicledeliveryorder.createdon
+	, VWI_CRM_xts_newvehicledeliveryorder.xjp_billtocustomerid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_productconfigurationid
+	, VWI_CRM_xts_newvehicledeliveryorder.xjp_idempotentmessage
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_eventdata
+	, VWI_CRM_xts_newvehicledeliveryorder.statuscodename
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_productinteriorcolorid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_status
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_customerid
+	, VWI_CRM_xts_newvehicledeliveryorder.modifiedbyyominame
+	, VWI_CRM_xts_newvehicledeliveryorder.owneridtype
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_perlengkapanstandarid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_log
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_cancellednvdoreferenceidname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_personinchargeid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_financingcompanyid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_notes
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_financingcompanyidname
+	, VWI_CRM_xts_newvehicledeliveryorder.modifiedbyname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_platenumber
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_deliveryaddressidname
+	, VWI_CRM_xts_newvehicledeliveryorder.xjp_platenumbersegment4
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_vehicledescription
+	, VWI_CRM_xts_newvehicledeliveryorder.owneridname
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_vehiclecolorname
+	, VWI_CRM_xts_newvehicledeliveryorder.overriddencreatedon
+	, VWI_CRM_xts_newvehicledeliveryorder.xjp_platenumbersegment2
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_delivertocustomeridname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_type
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_deliveryaddressid
+	, VWI_CRM_xts_newvehicledeliveryorder.modifiedonbehalfby
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_customeridyominame
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_newvehiclesalesorderid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_ribboneventdata
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_bypassdp
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_productidname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_newvehicledeliveryorderid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_financingpurchaseordernumber
+	, VWI_CRM_xts_newvehicledeliveryorder.statecode
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_driver
+	, VWI_CRM_xts_newvehicledeliveryorder.timezoneruleversionnumber
+	, VWI_CRM_xts_newvehicledeliveryorder.xjp_platenumbersegment1id
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_delivertocustomeridyominame
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_warehouseidname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_productstyleid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_cancellednvdoreferenceid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_locking
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_handling
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_customernumber
+	, VWI_CRM_xts_newvehicledeliveryorder.xjp_platenumbersegment3
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_financingcompanyidyominame
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_deliverydate
+	, VWI_CRM_xts_newvehicledeliveryorder.traversedpath
+	, VWI_CRM_xts_newvehicledeliveryorder.createdonbehalfbyname
+	, VWI_CRM_xts_newvehicledeliveryorder.xjp_billtocustomernumber
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_newvehiclesalesorderidname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_productexteriorcolorid
+	, VWI_CRM_xts_newvehicledeliveryorder.createdonbehalfby
+	, VWI_CRM_xts_newvehicledeliveryorder.utcconversiontimezonecode
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_statusname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_typename
+	, VWI_CRM_xts_newvehicledeliveryorder.xjp_billtocustomeridname
+	, VWI_CRM_xts_newvehicledeliveryorder.ownerid
+	, VWI_CRM_xts_newvehicledeliveryorder.modifiedon
+	, VWI_CRM_xts_newvehicledeliveryorder.importsequencenumber
+	, VWI_CRM_xts_newvehicledeliveryorder.owneridyominame
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_alamatkirim
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_vehiclemodelid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_personinchargeidname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_customeridname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_siteid
+	, VWI_CRM_xts_newvehicledeliveryorder.processid
+	, VWI_CRM_xts_newvehicledeliveryorder.createdbyname
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_vehiclecategoryid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_businessunitid
+	, VWI_CRM_xts_newvehicledeliveryorder.modifiedonbehalfbyname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_productexteriorcoloridname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_productconfigurationidname
+	, VWI_CRM_xts_newvehicledeliveryorder.stageid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_handlingname
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_tanggalpkt
+	, VWI_CRM_xts_newvehicledeliveryorder.xjp_platenumbersegment1idname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_productid
+	, VWI_CRM_xts_newvehicledeliveryorder.owningteam
+	, VWI_CRM_xts_newvehicledeliveryorder.createdby
+	, VWI_CRM_xts_newvehicledeliveryorder.modifiedby
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_perlengkapanstandaridname
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_bypassdpname
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_vehiclemodelidname
+	, VWI_CRM_xts_newvehicledeliveryorder.createdbyyominame
+	, VWI_CRM_xts_newvehicledeliveryorder.owninguser
+	, VWI_CRM_xts_newvehicledeliveryorder.createdonbehalfbyyominame
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_stockid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_locationid
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_vehiclecategoryidname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_parentbusinessunitidname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_productinteriorcoloridname
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_interfaceexceptionmessage
+	, VWI_CRM_xts_newvehicledeliveryorder.xjp_billtocustomeridyominame
+	, VWI_CRM_xts_newvehicledeliveryorder.statuscode
+	, VWI_CRM_xts_newvehicledeliveryorder.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_siteidname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_warehouseid
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_dealerinternalnumber
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_delivertocustomerid
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_locationidname
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_newvehicledeliveryordernumber
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_productdescription
+	, VWI_CRM_xts_newvehicledeliveryorder.statecodename
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_businessunitidname
+	, VWI_CRM_xts_newvehicledeliveryorder.owningbusinessunit
+	, VWI_CRM_xts_newvehicledeliveryorder.xts_productstyleidname
+	, VWI_CRM_xts_newvehicledeliveryorder.RowStatus
+	, VWI_CRM_xts_newvehicledeliveryorder.ktb_skenariopenjualan
+	, VWI_CRM_xts_newvehicledeliveryorder.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_newvehicledeliveryorder a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_newvehicledeliveryorder 

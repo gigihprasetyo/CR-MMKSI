@@ -1,0 +1,131 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	   VWI_CRM_xts_purchaserequisitiondetail.company
+	,  VWI_CRM_xts_purchaserequisitiondetail.businessunitcode
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_productinteriorcoloridname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_parentbusinessunitid
+	, VWI_CRM_xts_purchaserequisitiondetail.versionnumber
+	, VWI_CRM_xts_purchaserequisitiondetail.createdon
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_closelinename
+	, VWI_CRM_xts_purchaserequisitiondetail.ktb_purchaserequisitionid
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_purchaserequisitionid
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_productconfigurationid
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_requestedbyidname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_consumptiontax1id
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_eventdata
+	, VWI_CRM_xts_purchaserequisitiondetail.statuscodename
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_productinteriorcolorid
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_quantityonpurchaseorder
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_description
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_purchaserequisitiondetail
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_quantityorder
+	, VWI_CRM_xts_purchaserequisitiondetail.owneridtype
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_totalbaseamount_base
+	, VWI_CRM_xts_purchaserequisitiondetail.ktb_qty
+	, VWI_CRM_xts_purchaserequisitiondetail.createdonbehalfby
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_departmentidname
+	, VWI_CRM_xts_purchaserequisitiondetail.modifiedbyname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_departmentid
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_promisedate
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_consumptiontax1idname
+	, VWI_CRM_xts_purchaserequisitiondetail.ktb_isconversionname
+	, VWI_CRM_xts_purchaserequisitiondetail.owneridname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_purchaserequisitiondetailid
+	, VWI_CRM_xts_purchaserequisitiondetail.overriddencreatedon
+	, VWI_CRM_xts_purchaserequisitiondetail.ktb_productsap
+	, VWI_CRM_xts_purchaserequisitiondetail.ktb_product
+	, VWI_CRM_xts_purchaserequisitiondetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_purchasefor
+	, VWI_CRM_xts_purchaserequisitiondetail.modifiedonbehalfby
+	, VWI_CRM_xts_purchaserequisitiondetail.exchangerate
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_totalconsumptiontaxamount_base
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_transactionamount_base
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_consumptiontax2id
+	, VWI_CRM_xts_purchaserequisitiondetail.owningteam
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_totalbaseamount
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_productidname
+	, VWI_CRM_xts_purchaserequisitiondetail.statecode
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_unitcost
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_consumptiontax1amount_base
+	, VWI_CRM_xts_purchaserequisitiondetail.timezoneruleversionnumber
+	, VWI_CRM_xts_purchaserequisitiondetail.ktb_purchaserequisitionidname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_productstyleid
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_totalconsumptiontaxamount
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_locking
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_totalamountbeforediscount
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_purchaseforname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_totalamount_base
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_purchaseorderdetailidname
+	, VWI_CRM_xts_purchaserequisitiondetail.createdonbehalfbyname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_consumptiontax2idname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_productexteriorcolorid
+	, VWI_CRM_xts_purchaserequisitiondetail.utcconversiontimezonecode
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_baseunitidname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_discountamount
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_unitcost_base
+	, VWI_CRM_xts_purchaserequisitiondetail.ownerid
+	, VWI_CRM_xts_purchaserequisitiondetail.modifiedon
+	, VWI_CRM_xts_purchaserequisitiondetail.importsequencenumber
+	, VWI_CRM_xts_purchaserequisitiondetail.owneridyominame
+	, VWI_CRM_xts_purchaserequisitiondetail.ktb_isapproved
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_closereason
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_purchaseunitidname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_purchaserequisitionidname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_transactiondate
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_siteid
+	, VWI_CRM_xts_purchaserequisitiondetail.createdbyname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_consumptiontax2amount
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_businessunitid
+	, VWI_CRM_xts_purchaserequisitiondetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_productexteriorcoloridname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_productconfigurationidname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_discountamount_base
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_closeline
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_discountpercentage
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_productid
+	, VWI_CRM_xts_purchaserequisitiondetail.transactioncurrencyid
+	, VWI_CRM_xts_purchaserequisitiondetail.createdby
+	, VWI_CRM_xts_purchaserequisitiondetail.modifiedby
+	, VWI_CRM_xts_purchaserequisitiondetail.ktb_productname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_purchaseunitid
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_parentbusinessunitidname
+	, VWI_CRM_xts_purchaserequisitiondetail.createdbyyominame
+	, VWI_CRM_xts_purchaserequisitiondetail.owninguser
+	, VWI_CRM_xts_purchaserequisitiondetail.transactioncurrencyidname
+	, VWI_CRM_xts_purchaserequisitiondetail.ktb_isconversion
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_requestedbyid
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_basequantityorder
+	, VWI_CRM_xts_purchaserequisitiondetail.owningbusinessunit
+	, VWI_CRM_xts_purchaserequisitiondetail.modifiedbyyominame
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_consumptiontax1amount
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_consumptiontax2amount_base
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_transactionamount
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_requireddate
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_totalamount
+	, VWI_CRM_xts_purchaserequisitiondetail.statuscode
+	, VWI_CRM_xts_purchaserequisitiondetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_siteidname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_purchaseorderdetailid
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_totalamountbeforediscount_base
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_basequantityonpurchaseorder
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_baseunitid
+	, VWI_CRM_xts_purchaserequisitiondetail.ktb_isapprovedname
+	, VWI_CRM_xts_purchaserequisitiondetail.ktb_qtyforecast
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_productdescription
+	, VWI_CRM_xts_purchaserequisitiondetail.statecodename
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_businessunitidname
+	, VWI_CRM_xts_purchaserequisitiondetail.xts_productstyleidname
+	, VWI_CRM_xts_purchaserequisitiondetail.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.*
+        , b.msdyn_companycode
+    FROM CRM_xts_purchaserequisitiondetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_purchaserequisitiondetail 

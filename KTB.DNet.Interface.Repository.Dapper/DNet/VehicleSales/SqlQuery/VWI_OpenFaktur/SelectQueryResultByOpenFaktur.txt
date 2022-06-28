@@ -1,0 +1,113 @@
+﻿    SELECT 
+/**PagingIndexQuery**/ 
+VWI_OpenFaktur.ChassisNumber,
+VWI_OpenFaktur.OpenFakturDate,
+VWI_OpenFaktur.SPKNumber,
+VWI_OpenFaktur.SoldDealerID,
+VWI_OpenFaktur.DealerCode,
+VWI_OpenFaktur.CreatedTime,
+VWI_OpenFaktur.LastUpdateTime,
+VWI_OpenFaktur.EndCustomerID
+/**EndPagingIndexQuery**/
+FROM
+(
+   SELECT a.ID, a.ChassisNumber, 
+		   CASE WHEN a.FakturStatus = 4 THEN b.FakturDate ELSE NULL END AS OpenFakturDate,   
+		   SPKNumber = case when b.ID is not null then case when b.IsTemporary = -1 then null else case when (b.IsTemporary = 0 or b.IsTemporary is null) then d.SPKNumber else '0000000000' end end else null end,
+		   --SPKNumber = coalesce (d.SPKNumber, '0000000000'),
+		   SoldDealerID = coalesce(d.DealerID, a.SoldDealerID) , 
+		   DealerCode = coalesce(e.DealerCode, f.DealerCode), b.LastUpdateTime, b.CreatedTime, a.EndCustomerID
+	FROM ChassisMaster a WITH ( NOLOCK )
+	JOIN (
+	      SELECT *
+		  FROM EndCustomer  WITH ( NOLOCK ) {0}
+	) b ON a.EndCustomerID = b.ID and b.RowStatus = 0
+	LEFT JOIN SPKFaktur c WITH ( NOLOCK ) ON b.ID = c.EndCustomerID and c.RowStatus = 0
+	LEFT JOIN SPKHeader d WITH ( NOLOCK ) ON c.SPKHeaderID = d.ID and d.RowStatus = 0
+	LEFT JOIN Dealer e WITH ( NOLOCK ) on d.DealerID = e.ID and e.RowStatus = 0
+	LEFT JOIN Dealer f WITH ( NOLOCK ) on a.SoldDealerID = f.ID and f.RowStatus = 0
+	WHERE a.RowStatus = 0 and a.ID not in (select ChassisMasterID from RevisionFaktur with (nolock) where RowStatus = 0)
+
+	UNION
+
+	SELECT ChassisMaster.ID, ChassisMaster.ChassisNumber, CASE WHEN ChassisMaster.FakturStatus = 4 THEN EndCustomer.FakturDate ELSE NULL END AS OpenFakturDate,
+           coalesce([SPKHeader].SPKNumber, y.SPKNumber) as SPKNumber, coalesce([SPKHeader].DealerID, y.DealerID) AS SoldDealerID, coalesce(Dealer.DealerCode, z.DealerCode) as DealerCode, 
+		   EndCustomer.LastUpdateTime, EndCustomer.CreatedTime, T0.EndCustomerID
+    FROM
+    (
+        SELECT T1.ChassisMasterID, MAX(T2.[ID]) As EndCustomerID, MAX(T3.[ID]) as RSPKID, MAX(T1.[ID]) as  RevID, MIN(T1.OldEndCustomerID) as FirstFakturID
+        FROM RevisionFaktur T1 WITH(NOLOCK)
+        JOIN dbo.[EndCustomer] T2 WITH(NOLOCK) ON T2.[ID] = T1.[EndCustomerID]
+        LEFT JOIN [dbo].[RevisionSPKFaktur] T3 WITH(NOLOCK) ON T3.[EndCustomerID] = T2.[ID] AND T3.[RowStatus] = 0
+        WHERE T1.RowStatus = 0 GROUP BY T1.[ChassisMasterID]
+    ) T0
+    JOIN EndCustomer WITH(NOLOCK)ON [T0].EndCustomerID = EndCustomer.ID AND EndCustomer.RowStatus = 0
+    JOIN ChassisMaster WITH(NOLOCK)ON T0.ChassisMasterID = ChassisMaster.ID AND ChassisMaster.RowStatus = 0
+    LEFT JOIN dbo.RevisionSPKFaktur WITH(NOLOCK) ON T0.[RSPKID] = RevisionSPKFaktur.ID AND RevisionSPKFaktur.RowStatus = 0
+    LEFT JOIN dbo.SPKFaktur WITH(NOLOCK) ON SPKFaktur.[EndCustomerID] = EndCustomer.[ID] AND SPKFaktur.[RowStatus] = 0
+    LEFT JOIN dbo.SPKHeader WITH(NOLOCK) ON ISNULL(RevisionSPKFaktur.SPKHeaderID, SPKFaktur.SPKHeaderID) = [SPKHeader].[ID] AND [SPKHeader].[RowStatus] = 0
+	LEFT JOIN dbo.SPKFaktur x WITH(NOLOCK) ON x.EndCustomerID = T0.FirstFakturID and x.RowStatus = 0
+	LEFT JOIN dbo.SPKHeader y WITH(NOLOCK) ON y.ID = x.SPKHeaderID and y.RowStatus = 0
+    --CROSS APPLY FNI_GetLatestSPKForChassis(T0.ChassisMasterID)  T1
+    LEFT JOIN Dealer WITH(NOLOCK)ON SPKHeader.DealerID = Dealer.ID AND Dealer.RowStatus = 0
+	LEFT JOIN Dealer z WITH(NOLOCK)ON y.DealerID = z.ID AND z.RowStatus = 0
+    {0}
+) VWI_OpenFaktur 
+OUTER APPLY(
+	SELECT X.ID  FROM ChassisMasterClaimHeader X WITH(NOLOCK)
+		INNER JOIN ChassisMasterClaimDetail Y WITH(NOLOCK) ON Y.ChassisMasterClaimHeaderID = X.ID AND X.RowStatus = 0 AND Y.RowStatus = 0
+	WHERE X.StatusID NOT IN(4,6) -- ChassisMasterClaim.StatusClaim 4=Tolak,6=Selesai
+		AND X.ResponClaim IN(1,5) -- ChassisMasterClaim.RespondClaim 1=Ganti_Unit, 5=Ganti_Uang
+		AND VWI_OpenFaktur.SoldDealerID = X.DealerID
+)CBUReturn 
+{1}
+/*
+--    SELECT 
+--/**PagingIndexQuery**/ 
+--VWI_OpenFaktur.ChassisNumber,
+--VWI_OpenFaktur.OpenFakturDate,
+--VWI_OpenFaktur.SPKNumber,
+--VWI_OpenFaktur.SoldDealerID,
+--VWI_OpenFaktur.DealerCode,
+--VWI_OpenFaktur.LastUpdateTime
+--/**EndPagingIndexQuery**/
+--FROM
+--(
+--   SELECT a.ID, a.ChassisNumber, 
+--		   CASE WHEN a.FakturStatus = 4 THEN b.FakturDate ELSE NULL END AS OpenFakturDate,   
+--		   SPKNumber = case when b.ID is not null then case when b.IsTemporary = -1 then null else case when (b.IsTemporary = 0 or b.IsTemporary is null) then d.SPKNumber else '0000000000' end end else null end,
+--		   --SPKNumber = coalesce (d.SPKNumber, '0000000000'),
+--		   SoldDealerID = coalesce(d.DealerID, a.SoldDealerID) , 
+--		   DealerCode = coalesce(e.DealerCode, f.DealerCode), b.LastUpdateTime
+--	FROM ChassisMaster a WITH ( NOLOCK )
+--	JOIN (
+--	      SELECT *
+--		  FROM EndCustomer  WITH ( NOLOCK ) {0}
+--	) b ON a.EndCustomerID = b.ID and b.RowStatus = 0
+--	LEFT JOIN SPKFaktur c WITH ( NOLOCK ) ON b.ID = c.EndCustomerID and c.RowStatus = 0
+--	LEFT JOIN SPKHeader d WITH ( NOLOCK ) ON c.SPKHeaderID = d.ID and d.RowStatus = 0
+--	LEFT JOIN Dealer e WITH ( NOLOCK ) on d.DealerID = e.ID and e.RowStatus = 0
+--	LEFT JOIN Dealer f WITH ( NOLOCK ) on a.SoldDealerID = f.ID and f.RowStatus = 0
+--	WHERE a.RowStatus = 0 and a.ID not in (select ChassisMasterID from RevisionFaktur with (nolock) where RowStatus = 0)
+
+--	UNION
+
+--	SELECT ChassisMaster.ID, ChassisMaster.ChassisNumber, CASE WHEN ChassisMaster.FakturStatus = 4 THEN EndCustomer.FakturDate ELSE NULL END AS OpenFakturDate,
+--           [SPKHeader].SPKNumber, [SPKHeader].DealerID AS SoldDealerID, Dealer.DealerCode, EndCustomer.LastUpdateTime
+--    FROM
+--    (
+--        SELECT T1.ChassisMasterID, MAX(T2.[ID]) As EndCustomerID, MAX(T3.[ID]) as RSPKID, MAX(T1.[ID]) as  RevID
+--        FROM RevisionFaktur T1 WITH(NOLOCK)
+--        JOIN dbo.[EndCustomer] T2 WITH(NOLOCK) ON T2.[ID] = T1.[EndCustomerID]
+--        LEFT JOIN [dbo].[RevisionSPKFaktur] T3 WITH(NOLOCK) ON T3.[EndCustomerID] = T2.[ID] AND T3.[RowStatus] = 0
+--        WHERE T1.RowStatus = 0 GROUP BY T1.[ChassisMasterID]
+--    ) T0
+--    JOIN EndCustomer WITH(NOLOCK)ON [T0].EndCustomerID = EndCustomer.ID AND EndCustomer.RowStatus = 0
+--    JOIN ChassisMaster WITH(NOLOCK)ON T0.ChassisMasterID = ChassisMaster.ID AND ChassisMaster.RowStatus = 0
+--    LEFT JOIN dbo.RevisionSPKFaktur WITH(NOLOCK) ON T0.[RSPKID] = RevisionSPKFaktur.ID AND RevisionSPKFaktur.RowStatus = 0
+--    LEFT JOIN dbo.SPKFaktur WITH(NOLOCK) ON SPKFaktur.[EndCustomerID] = EndCustomer.[ID] AND SPKFaktur.[RowStatus] = 0
+--    LEFT JOIN dbo.SPKHeader WITH(NOLOCK) ON ISNULL(RevisionSPKFaktur.SPKHeaderID, SPKFaktur.SPKHeaderID) = [SPKHeader].[ID] AND [SPKHeader].[RowStatus] = 0
+--    --CROSS APPLY FNI_GetLatestSPKForChassis(T0.ChassisMasterID)  T1
+--    LEFT JOIN Dealer WITH(NOLOCK)ON SPKHeader.DealerID = Dealer.ID AND Dealer.RowStatus = 0
+--    {0}
+--) VWI_OpenFaktur {1} */

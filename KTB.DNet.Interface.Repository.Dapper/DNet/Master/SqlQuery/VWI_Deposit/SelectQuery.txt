@@ -1,0 +1,26 @@
+select
+/**PagingIndexQuery**/ 
+	VWI_Deposit.ID
+	, VWI_Deposit.DealerID
+	, VWI_Deposit.DealerCode
+	, VWI_Deposit.Period
+	, VWI_Deposit.BegBalance
+	, VWI_Deposit.EndBalance
+	, VWI_Deposit.TotalDebit
+	, VWI_Deposit.TotalCredit
+	, VWI_Deposit.AvailableDeposit
+	, VWI_Deposit.GiroReceive
+	, VWI_Deposit.RO
+	, VWI_Deposit.Service
+	, VWI_Deposit.InClearing
+	, VWI_Deposit.LastUpdateTime
+/**EndPagingIndexQuery**/
+from (
+	select a.*, b.DealerCode
+	from Deposit a with(nolock)
+	left join Dealer b with(nolock)
+	on a.DealerID = b.ID
+) as VWI_Deposit 
+{0}
+
+

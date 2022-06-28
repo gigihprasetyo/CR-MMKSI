@@ -1,0 +1,1 @@
+﻿SELECT * FROM APIUserRole WHERE RoleId = @RoleId

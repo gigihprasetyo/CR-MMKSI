@@ -1,0 +1,33 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, xts_locking
+	, statecode
+	, statecodename
+	, createdonbehalfby
+	, importsequencenumber
+	, organizationidname
+	, xts_dimension10
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, modifiedbyyominame
+	, createdby
+	, timezoneruleversionnumber
+	, statuscodename
+	, xts_dimension10id
+	, modifiedon
+	, modifiedonbehalfbyname
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, xts_description
+	, overriddencreatedon
+FROM [dbo].[CRM_xts_dimension10] as VWI_CRM_xts_dimension10 with(nolock)
+WHERE xts_dimension10id = @Id

@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_StandardCode as VWI_CRM_StandardCode with (nolock)  
+{0}

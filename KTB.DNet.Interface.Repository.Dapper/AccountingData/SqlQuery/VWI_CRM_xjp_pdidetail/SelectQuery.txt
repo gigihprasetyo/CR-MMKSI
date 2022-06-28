@@ -1,0 +1,105 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xjp_pdidetail.company
+	, VWI_CRM_xjp_pdidetail.businessunitcode
+	, VWI_CRM_xjp_pdidetail.xjp_consumptiontax1rate
+	, VWI_CRM_xjp_pdidetail.versionnumber
+	, VWI_CRM_xjp_pdidetail.createdon
+	, VWI_CRM_xjp_pdidetail.xjp_installationcategoryatnvsoidname
+	, VWI_CRM_xjp_pdidetail.xjp_installationcategoryatnvsoid
+	, VWI_CRM_xjp_pdidetail.statuscodename
+	, VWI_CRM_xjp_pdidetail.xjp_businessunitidname
+	, VWI_CRM_xjp_pdidetail.xjp_consumptiontax1amount
+	, VWI_CRM_xjp_pdidetail.xjp_actualservicefee_base
+	, VWI_CRM_xjp_pdidetail.owneridtype
+	, VWI_CRM_xjp_pdidetail.xjp_accessoriesdescription
+	, VWI_CRM_xjp_pdidetail.xjp_consumptiontax2amount
+	, VWI_CRM_xjp_pdidetail.xjp_consumptiontax1amount_base
+	, VWI_CRM_xjp_pdidetail.xjp_parentbusinessunitid
+	, VWI_CRM_xjp_pdidetail.owneridname
+	, VWI_CRM_xjp_pdidetail.overriddencreatedon
+	, VWI_CRM_xjp_pdidetail.xjp_consumptiontax1idname
+	, VWI_CRM_xjp_pdidetail.xjp_invoicesubcontractfee_base
+	, VWI_CRM_xjp_pdidetail.xjp_estimatedsubcontractfee
+	, VWI_CRM_xjp_pdidetail.createdonbehalfbyyominame
+	, VWI_CRM_xjp_pdidetail.modifiedonbehalfby
+	, VWI_CRM_xjp_pdidetail.exchangerate
+	, VWI_CRM_xjp_pdidetail.xjp_invoicepartfee_base
+	, VWI_CRM_xjp_pdidetail.ktb_spkdetailidname
+	, VWI_CRM_xjp_pdidetail.xjp_actualsubcontractfee
+	, VWI_CRM_xjp_pdidetail.owningteam
+	, VWI_CRM_xjp_pdidetail.xjp_invoicesubcontractfee
+	, VWI_CRM_xjp_pdidetail.xjp_invoiceservicefee_base
+	, VWI_CRM_xjp_pdidetail.statecode
+	, VWI_CRM_xjp_pdidetail.xjp_consumptiontax2id
+	, VWI_CRM_xjp_pdidetail.xjp_pdidetailid
+	, VWI_CRM_xjp_pdidetail.timezoneruleversionnumber
+	, VWI_CRM_xjp_pdidetail.xjp_actualpartfee_base
+	, VWI_CRM_xjp_pdidetail.modifiedbyname
+	, VWI_CRM_xjp_pdidetail.ktb_karoseriname
+	, VWI_CRM_xjp_pdidetail.xjp_servicecategoryidname
+	, VWI_CRM_xjp_pdidetail.xjp_kitid
+	, VWI_CRM_xjp_pdidetail.xjp_businessunitid
+	, VWI_CRM_xjp_pdidetail.createdonbehalfbyname
+	, VWI_CRM_xjp_pdidetail.xjp_invoicepartfee
+	, VWI_CRM_xjp_pdidetail.xjp_consumptiontax1id
+	, VWI_CRM_xjp_pdidetail.createdonbehalfby
+	, VWI_CRM_xjp_pdidetail.xjp_estimatedpartfee
+	, VWI_CRM_xjp_pdidetail.xjp_actualservicefee
+	, VWI_CRM_xjp_pdidetail.xjp_estimatedpartfee_base
+	, VWI_CRM_xjp_pdidetail.utcconversiontimezonecode
+	, VWI_CRM_xjp_pdidetail.xjp_accessoriesid
+	, VWI_CRM_xjp_pdidetail.ownerid
+	, VWI_CRM_xjp_pdidetail.modifiedon
+	, VWI_CRM_xjp_pdidetail.importsequencenumber
+	, VWI_CRM_xjp_pdidetail.owneridyominame
+	, VWI_CRM_xjp_pdidetail.xjp_actualpartfee
+	, VWI_CRM_xjp_pdidetail.ktb_spkdetailid
+	, VWI_CRM_xjp_pdidetail.xjp_servicecategoryid
+	, VWI_CRM_xjp_pdidetail.xjp_pdidetailnumber
+	, VWI_CRM_xjp_pdidetail.createdbyname
+	, VWI_CRM_xjp_pdidetail.modifiedonbehalfbyname
+	, VWI_CRM_xjp_pdidetail.xjp_accessoriesidname
+	, VWI_CRM_xjp_pdidetail.ktb_karoseri
+	, VWI_CRM_xjp_pdidetail.xjp_quantity
+	, VWI_CRM_xjp_pdidetail.xjp_consumptiontax2amount_base
+	, VWI_CRM_xjp_pdidetail.xjp_estimatedsubcontractfee_base
+	, VWI_CRM_xjp_pdidetail.createdby
+	, VWI_CRM_xjp_pdidetail.xjp_kitidname
+	, VWI_CRM_xjp_pdidetail.modifiedby
+	, VWI_CRM_xjp_pdidetail.xjp_consumptiontax2rate
+	, VWI_CRM_xjp_pdidetail.createdbyyominame
+	, VWI_CRM_xjp_pdidetail.owninguser
+	, VWI_CRM_xjp_pdidetail.transactioncurrencyidname
+	, VWI_CRM_xjp_pdidetail.owningbusinessunit
+	, VWI_CRM_xjp_pdidetail.xjp_invoiceservicefee
+	, VWI_CRM_xjp_pdidetail.xjp_actualsubcontractfee_base
+	, VWI_CRM_xjp_pdidetail.modifiedbyyominame
+	, VWI_CRM_xjp_pdidetail.xjp_comment
+	, VWI_CRM_xjp_pdidetail.xjp_locking
+	, VWI_CRM_xjp_pdidetail.xjp_installationcategoryidname
+	, VWI_CRM_xjp_pdidetail.statuscode
+	, VWI_CRM_xjp_pdidetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xjp_pdidetail.xjp_installationcategoryid
+	, VWI_CRM_xjp_pdidetail.xjp_predeliveryinspectionid
+	, VWI_CRM_xjp_pdidetail.transactioncurrencyid
+	, VWI_CRM_xjp_pdidetail.xjp_estimatedservicefee_base
+	, VWI_CRM_xjp_pdidetail.xjp_consumptiontax2idname
+	, VWI_CRM_xjp_pdidetail.xjp_predeliveryinspectionidname
+	, VWI_CRM_xjp_pdidetail.statecodename
+	, VWI_CRM_xjp_pdidetail.xjp_parentbusinessunitidname
+	, VWI_CRM_xjp_pdidetail.xjp_estimatedservicefee
+	, VWI_CRM_xjp_pdidetail.RowStatus
+	/**EndPagingIndexQuery**/
+from (
+	SELECT  
+		  b.ktb_bucompany company,
+		  b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xjp_pdidetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xjp_businessunitid
+	{0}
+) VWI_CRM_xjp_pdidetail

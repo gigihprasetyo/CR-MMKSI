@@ -1,0 +1,20 @@
+SELECT 
+	IDRow
+	,company
+	,businessunitcode
+	,xts_newvehicledeliveryordernumber
+	,ktb_vehiclecolorname
+	,ktb_tanggalpkt
+	,sitename
+	,xts_productdescription
+	,personinchargename
+	,xts_driver
+	,xts_deliverydate
+	,customername
+	,xts_productexteriorcolor
+	,xts_warehouse
+	,productcategorycode
+	,productcategorydescription
+	,msdyn_companycode
+FROM VWI_CRM_SLS_SalesUnit WITH (NOLOCK)
+WHERE ID = @Id

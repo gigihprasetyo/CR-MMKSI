@@ -1,0 +1,48 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_landedcost.createdonbehalfbyyominame
+	, VWI_CRM_xts_landedcost.modifiedonbehalfby
+	, VWI_CRM_xts_landedcost.xts_landedcost
+	, VWI_CRM_xts_landedcost.xts_locking
+	, VWI_CRM_xts_landedcost.statecode
+	, VWI_CRM_xts_landedcost.statecodename
+	, VWI_CRM_xts_landedcost.xts_recognitioncategoryname
+	, VWI_CRM_xts_landedcost.createdonbehalfby
+	, VWI_CRM_xts_landedcost.importsequencenumber
+	, VWI_CRM_xts_landedcost.organizationidname
+	, VWI_CRM_xts_landedcost.modifiedbyyominame
+	, VWI_CRM_xts_landedcost.xts_company
+	, VWI_CRM_xts_landedcost.xts_consumptiontaxidname
+	, VWI_CRM_xts_landedcost.utcconversiontimezonecode
+	, VWI_CRM_xts_landedcost.createdbyyominame
+	, VWI_CRM_xts_landedcost.xts_taxablename
+	, VWI_CRM_xts_landedcost.modifiedbyname
+	, VWI_CRM_xts_landedcost.versionnumber
+	, VWI_CRM_xts_landedcost.modifiedby
+	, VWI_CRM_xts_landedcost.createdby
+	, VWI_CRM_xts_landedcost.timezoneruleversionnumber
+	, VWI_CRM_xts_landedcost.xts_landedcostid
+	, VWI_CRM_xts_landedcost.statuscodename
+	, VWI_CRM_xts_landedcost.xts_reasonid
+	, VWI_CRM_xts_landedcost.modifiedon
+	, VWI_CRM_xts_landedcost.xts_reasonidname
+	, VWI_CRM_xts_landedcost.xts_taxable
+	, VWI_CRM_xts_landedcost.xts_calculationmethodname
+	, VWI_CRM_xts_landedcost.xts_consumptiontaxid
+	, VWI_CRM_xts_landedcost.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_landedcost.statuscode
+	, VWI_CRM_xts_landedcost.createdbyname
+	, VWI_CRM_xts_landedcost.createdon
+	, VWI_CRM_xts_landedcost.organizationid
+	, VWI_CRM_xts_landedcost.createdonbehalfbyname
+	, VWI_CRM_xts_landedcost.xts_type
+	, VWI_CRM_xts_landedcost.xts_typename
+	, VWI_CRM_xts_landedcost.modifiedonbehalfbyname
+	, VWI_CRM_xts_landedcost.xts_calculationmethod
+	, VWI_CRM_xts_landedcost.xts_recognitioncategory
+	, VWI_CRM_xts_landedcost.overriddencreatedon
+	, VWI_CRM_xts_landedcost.xts_description
+    /**EndPagingIndexQuery**/
+FROM [dbo].[CRM_xts_landedcost] as VWI_CRM_xts_landedcost with(nolock) 
+{0}

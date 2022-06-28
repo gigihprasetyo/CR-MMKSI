@@ -1,0 +1,2 @@
+SELECT COUNT(1)
+FROM CRM_xjp_vehiclecostinput WITH (NOLOCK) {0}

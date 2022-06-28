@@ -1,0 +1,56 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , ktb_dnetid
+    , createdonbehalfbyyominame
+    , owninguser
+    , statecode
+    , owneridname
+    , statecodename
+    , createdonbehalfby
+    , ktb_saleschannelcode
+    , importsequencenumber
+    , ktb_saleschannelid
+    , modifiedbyyominame
+    , ktb_name
+    , utcconversiontimezonecode
+    , createdbyyominame
+    , ktb_isdefaultoncreatewo
+    , owningbusinessunit
+    , modifiedbyname
+    , owningteam
+    , modifiedby
+    , createdby
+    , timezoneruleversionnumber
+    , ktb_description
+    , owneridtype
+    , statuscodename
+    , ktb_isinterfaced
+    , ktb_saleschanneltype
+    , owneridyominame
+    , ktb_isinterfacedname
+    , modifiedon
+    , ktb_isdefaultoncreatewoname
+    , modifiedonbehalfbyyominame
+    , statuscode
+    , createdbyname
+    , createdon
+    , createdonbehalfbyname
+    , modifiedonbehalfbyname
+    , versionnumber
+    , modifiedonbehalfby
+    , ownerid
+    , overriddencreatedon
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_ktb_saleschannel a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    WHERE ktb_saleschannelid = @Id
+) as VWI_CRM_ktb_saleschannel

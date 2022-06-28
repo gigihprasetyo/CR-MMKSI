@@ -1,0 +1,6 @@
+﻿SELECT DISTINCT rp.PermissionId 
+FROM APIRolePermission rp
+JOIN APIClientRole cr ON cr.ClientId = @ClientId AND cr.Id = rp.ClientRoleId
+WHERE 
+	cr.RoleId IN @ListOfNewRoleId AND
+	rp.PermissionId NOT IN @ListOfExistingPermissionId

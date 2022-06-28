@@ -1,0 +1,48 @@
+SELECT DISTINCT * FROM 
+(
+	SELECT
+		/**PagingIndexQuery**/
+		a.[accountid] as Id,
+		a.[Error_ID_Card] as InvalidIDCard,
+		a.[InvalidLength] as InvalidIDCard_Length,
+		a.[InvalidFormat] as InvalidIDCard_Format,
+		a.[Duplicate] as InvalidIDCard_Duplicate,
+		a.[Dummy] as InvalidIDCard_Dummy,
+		a.[Error_Mobile_Nbr] as InvalidMobile,
+		a.[InvalidBlankMobile] as InvalidMobile_Blank,
+		a.[InvalidLengthMobile] as InvalidMobile_Length,
+		a.[InvalidFormatMobile] as InvalidMobile_Format,
+		a.[DuplicateMobile] as InvalidMobile_Duplicate,
+		a.[DummyMobile] as InvalidMobile_Dummy,
+		a.[Error_BirthDate] as InvalidBirthDate,
+		a.[InvalidBlankBirthDate] as InvalidBirthDate_Blank,
+		a.[InvalidRangeBD] as InvalidBirthDate_Range,
+		a.[Error_EmailAddress] as InvalidEmail,
+		a.[InvalidBlankEmail] as InvalidEmail_Blank,
+		a.[InvalidLengthEmail] as InvalidEmail_Length,
+		a.[InvalidFormatEmail] as InvalidEmail_Format,
+		a.[DuplicateEmail] as InvalidEmail_Duplicate,
+		a.[Error_Customer_Class] as InvalidCustClass,
+		a.[InvalidBlankCustClass] as InvalidCustClass_Blank,
+		a.[InvalidDataCustClass] as InvalidCustClass_Data,
+		a.[ID_Card_Error_Reason] as ID_Card_Error_Reason,
+		a.[Mobile_Nbr_Error_Reason] as Mobile_Nbr_Error_Reason,
+		a.[Birth_Date_Error_Reason] as Birth_Date_Error_Reason,
+		a.[Email_Address_Error_Reason] as Email_Address_Error_Reason,
+		a.[Customer_Class_Error_Reason] as Customer_Class_Error_Reason,
+		a.[LastCheckedTime],
+		a.[ktb_dealercode],
+		a.[ktb_bucompany],
+		NGData = CASE	
+					WHEN Error_ID_Card=1 OR Error_Mobile_Nbr=1 OR Error_BirthDate=1 OR Error_EmailAddress=1 OR Error_Customer_Class=1
+					THEN 1
+					ELSE 0
+				END,
+		a.ModifiedOn
+		/**EndPagingIndexQuery**/
+	FROM [DQI_DetailCustomer] a WITH (NOLOCK) 
+	LEFT JOIN CRM_businessunit b with (nolock) 
+	on a.ktb_dealercode = b.[name]
+	{0}
+) AS VWI_CRM_invalidcustomer
+{1}

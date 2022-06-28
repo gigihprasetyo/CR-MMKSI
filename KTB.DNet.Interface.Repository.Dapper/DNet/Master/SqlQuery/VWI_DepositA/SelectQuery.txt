@@ -1,0 +1,20 @@
+select
+	/**PagingIndexQuery**/ 
+		VWI_DepositA.ID
+		, VWI_DepositA.DealerID
+		, VWI_DepositA.DealerCode
+		, VWI_DepositA.ProductCategoryID
+		, VWI_DepositA.TransactionDate
+		, VWI_DepositA.BeginingBalance
+		, VWI_DepositA.EndBalance
+		, VWI_DepositA.DebetAmount
+		, VWI_DepositA.CreditAmount
+		, VWI_DepositA.LastUpdateTime
+	/**EndPagingIndexQuery**/
+from (
+	select a.*, b.DealerCode
+	from DepositA a with(nolock)
+	left join Dealer b with(nolock)
+	on a.DealerID = b.ID
+) as VWI_DepositA 
+{0}

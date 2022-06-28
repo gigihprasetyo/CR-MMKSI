@@ -1,0 +1,85 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xjp_totalconsumptiontaxamount_base
+	,xjp_consumptiontax1rate
+	,versionnumber
+	,createdon
+	,statuscodename
+	,xjp_parentbusinessunitidname
+	,xjp_consumptiontax1amount
+	,owneridtype
+	,xjp_accessoriesdescription
+	,xjp_consumptiontax2amount
+	,xjp_consumptiontax1amount_base
+	,xjp_pdireceiptdetailid
+	,xjp_parentbusinessunitid
+	,owneridname
+	,overriddencreatedon
+	,xjp_totalfee
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,owningteam
+	,xjp_servicefee
+	,statecode
+	,xjp_consumptiontax2id
+	,xjp_pdidetailid
+	,timezoneruleversionnumber
+	,modifiedbyname
+	,xjp_kitid
+	,xjp_pdidetailidname
+	,xjp_businessunitid
+	,createdonbehalfbyname
+	,xjp_consumptiontax1id
+	,createdonbehalfby
+	,utcconversiontimezonecode
+	,xjp_partfee
+	,xjp_totalfee_base
+	,xjp_accessoriesid
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,modifiedby
+	,xjp_pdireceiptidname
+	,createdbyname
+	,modifiedonbehalfbyname
+	,xjp_accessoriesidname
+	,xjp_subcontractfee
+	,xjp_pdireceiptdetailsnumber
+	,xjp_receivequantity
+	,xjp_consumptiontax2amount_base
+	,createdby
+	,xjp_kitidname
+	,xjp_subcontractfee_base
+	,xjp_totalconsumptiontaxamount
+	,xjp_consumptiontax2rate
+	,xjp_servicefee_base
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,owningbusinessunit
+	,transactioncurrencyid
+	,modifiedbyyominame
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xjp_businessunitidname
+	,statecodename
+	,xjp_partfee_base
+	,xjp_consumptiontax2idname
+	,xjp_pdireceiptid
+	,xjp_consumptiontax1idname
+	,xjp_locking
+	,RowStatus
+FROM (
+	SELECT 
+		  b.ktb_bucompany company,
+		  b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xjp_pdireceiptdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK)
+    ON b.businessunitid = a.xjp_businessunitid
+    WHERE xjp_pdireceiptdetailid = @Id
+) VWI_CRM_xjp_pdireceiptdetail

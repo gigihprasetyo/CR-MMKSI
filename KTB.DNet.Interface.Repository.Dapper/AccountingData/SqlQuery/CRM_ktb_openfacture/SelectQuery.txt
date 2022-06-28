@@ -1,0 +1,53 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_openfacture.company
+	, VWI_CRM_ktb_openfacture.owningteam
+	, VWI_CRM_ktb_openfacture.businessunitcode
+	, VWI_CRM_ktb_openfacture.statuscodename
+	, VWI_CRM_ktb_openfacture.statecode
+	, VWI_CRM_ktb_openfacture.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_openfacture.statecodename
+	, VWI_CRM_ktb_openfacture.owninguser
+	, VWI_CRM_ktb_openfacture.modifiedby
+	, VWI_CRM_ktb_openfacture.versionnumber
+	, VWI_CRM_ktb_openfacture.ownerid
+	, VWI_CRM_ktb_openfacture.ktb_openfactureid
+	, VWI_CRM_ktb_openfacture.modifiedonbehalfbyname
+	, VWI_CRM_ktb_openfacture.ktb_name
+	, VWI_CRM_ktb_openfacture.owneridname
+	, VWI_CRM_ktb_openfacture.ktb_nomorchassis
+	, VWI_CRM_ktb_openfacture.overriddencreatedon
+	, VWI_CRM_ktb_openfacture.statuscode
+	, VWI_CRM_ktb_openfacture.ktb_nomorfaktur
+	, VWI_CRM_ktb_openfacture.createdonbehalfbyname
+	, VWI_CRM_ktb_openfacture.modifiedbyname
+	, VWI_CRM_ktb_openfacture.ktb_tanggalfaktur
+	, VWI_CRM_ktb_openfacture.modifiedon
+	, VWI_CRM_ktb_openfacture.createdbyname
+	, VWI_CRM_ktb_openfacture.utcconversiontimezonecode
+	, VWI_CRM_ktb_openfacture.modifiedbyyominame
+	, VWI_CRM_ktb_openfacture.owningbusinessunit
+	, VWI_CRM_ktb_openfacture.createdonbehalfbyyominame
+	, VWI_CRM_ktb_openfacture.createdon
+	, VWI_CRM_ktb_openfacture.timezoneruleversionnumber
+	, VWI_CRM_ktb_openfacture.owneridtype
+	, VWI_CRM_ktb_openfacture.importsequencenumber
+	, VWI_CRM_ktb_openfacture.createdby
+	, VWI_CRM_ktb_openfacture.createdbyyominame
+	, VWI_CRM_ktb_openfacture.modifiedonbehalfby
+	, VWI_CRM_ktb_openfacture.owneridyominame
+	, VWI_CRM_ktb_openfacture.createdonbehalfby
+	, VWI_CRM_ktb_openfacture.msdyn_companycode
+	, VWI_CRM_ktb_openfacture.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	select    
+		 b.ktb_bucompany company  
+		 ,b.ktb_dealercode businessunitcode  
+		 ,a.*
+		 ,b.msdyn_companycode 
+	from CRM_ktb_openfacture a WITH(NOLOCK)
+	JOIN CRM_businessunit b WITH(NOLOCK) ON b.businessunitid = a.owningbusinessunit
+	{0}
+) VWI_CRM_ktb_openfacture 

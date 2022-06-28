@@ -1,0 +1,40 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	VWI_CRM_xid_registrationprogressstage.createdonbehalfbyyominame
+	, VWI_CRM_xid_registrationprogressstage.modifiedonbehalfby
+	, VWI_CRM_xid_registrationprogressstage.xid_stageordernumber
+	, VWI_CRM_xid_registrationprogressstage.statecode
+	, VWI_CRM_xid_registrationprogressstage.statuscode
+	, VWI_CRM_xid_registrationprogressstage.statecodename
+	, VWI_CRM_xid_registrationprogressstage.xid_leadtimeregistrationbycustomer
+	, VWI_CRM_xid_registrationprogressstage.createdonbehalfby
+	, VWI_CRM_xid_registrationprogressstage.importsequencenumber
+	, VWI_CRM_xid_registrationprogressstage.organizationidname
+	, VWI_CRM_xid_registrationprogressstage.modifiedbyyominame
+	, VWI_CRM_xid_registrationprogressstage.xid_leadtimereusecurrentplatenumber
+	, VWI_CRM_xid_registrationprogressstage.utcconversiontimezonecode
+	, VWI_CRM_xid_registrationprogressstage.createdbyyominame
+	, VWI_CRM_xid_registrationprogressstage.modifiedbyname
+	, VWI_CRM_xid_registrationprogressstage.versionnumber
+	, VWI_CRM_xid_registrationprogressstage.modifiedby
+	, VWI_CRM_xid_registrationprogressstage.createdby
+	, VWI_CRM_xid_registrationprogressstage.timezoneruleversionnumber
+	, VWI_CRM_xid_registrationprogressstage.xid_progressstage
+	, VWI_CRM_xid_registrationprogressstage.statuscodename
+	, VWI_CRM_xid_registrationprogressstage.xid_territoryidname
+	, VWI_CRM_xid_registrationprogressstage.xid_territoryid
+	, VWI_CRM_xid_registrationprogressstage.modifiedon
+	, VWI_CRM_xid_registrationprogressstage.xid_pkcombinationkey
+	, VWI_CRM_xid_registrationprogressstage.modifiedonbehalfbyyominame
+	, VWI_CRM_xid_registrationprogressstage.xid_registrationprogressstageid
+	, VWI_CRM_xid_registrationprogressstage.createdbyname
+	, VWI_CRM_xid_registrationprogressstage.createdon
+	, VWI_CRM_xid_registrationprogressstage.organizationid
+	, VWI_CRM_xid_registrationprogressstage.createdonbehalfbyname
+	, VWI_CRM_xid_registrationprogressstage.modifiedonbehalfbyname
+	, VWI_CRM_xid_registrationprogressstage.xid_leadtimenormalregistration
+	, VWI_CRM_xid_registrationprogressstage.overriddencreatedon
+	/**EndPagingIndexQuery**/
+FROM [dbo].[CRM_xid_registrationprogressstage] as VWI_CRM_xid_registrationprogressstage with(nolock) 
+{0}

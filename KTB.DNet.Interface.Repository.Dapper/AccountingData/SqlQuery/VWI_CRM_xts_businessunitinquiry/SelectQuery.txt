@@ -1,0 +1,85 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_businessunitinquiry.xts_quantityordered
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityonsalesorder
+	, VWI_CRM_xts_businessunitinquiry.xts_cancelstockreservationflag
+	, VWI_CRM_xts_businessunitinquiry.createdon
+	, VWI_CRM_xts_businessunitinquiry.xts_dialogremarks
+	, VWI_CRM_xts_businessunitinquiry.xts_businessunitinquiry
+	, VWI_CRM_xts_businessunitinquiry.statuscodename
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityonpurchaseorder
+	, VWI_CRM_xts_businessunitinquiry.xts_description
+	, VWI_CRM_xts_businessunitinquiry.modifiedbyyominame
+	, VWI_CRM_xts_businessunitinquiry.modifiedbyname
+	, VWI_CRM_xts_businessunitinquiry.xts_totalcost_base
+	, VWI_CRM_xts_businessunitinquiry.xts_exteriorcolordescription
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityonorder
+	, VWI_CRM_xts_businessunitinquiry.xts_interiorcoloridname
+	, VWI_CRM_xts_businessunitinquiry.createdonbehalfbyyominame
+	, VWI_CRM_xts_businessunitinquiry.modifiedonbehalfby
+	, VWI_CRM_xts_businessunitinquiry.exchangerate
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityavailable
+	, VWI_CRM_xts_businessunitinquiry.xts_button
+	, VWI_CRM_xts_businessunitinquiry.xts_productidname
+	, VWI_CRM_xts_businessunitinquiry.xts_styleid
+	, VWI_CRM_xts_businessunitinquiry.statecode
+	, VWI_CRM_xts_businessunitinquiry.xts_unitcost
+	, VWI_CRM_xts_businessunitinquiry.xts_company
+	, VWI_CRM_xts_businessunitinquiry.xts_configurationdescription
+	, VWI_CRM_xts_businessunitinquiry.xts_businessunitinquiryid
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityonworkorder
+	, VWI_CRM_xts_businessunitinquiry.xts_dialogquantity
+	, VWI_CRM_xts_businessunitinquiry.xts_reserved
+	, VWI_CRM_xts_businessunitinquiry.overriddencreatedon
+	, VWI_CRM_xts_businessunitinquiry.versionnumber
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityonhand
+	, VWI_CRM_xts_businessunitinquiry.xts_producttypename
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityphysicalreserved
+	, VWI_CRM_xts_businessunitinquiry.createdonbehalfbyname
+	, VWI_CRM_xts_businessunitinquiry.createdby
+	, VWI_CRM_xts_businessunitinquiry.utcconversiontimezonecode
+	, VWI_CRM_xts_businessunitinquiry.xts_productclassid
+	, VWI_CRM_xts_businessunitinquiry.timezoneruleversionnumber
+	, VWI_CRM_xts_businessunitinquiry.xts_configurationid
+	, VWI_CRM_xts_businessunitinquiry.xts_styledescription
+	, VWI_CRM_xts_businessunitinquiry.xts_unitcost_base
+	, VWI_CRM_xts_businessunitinquiry.modifiedon
+	, VWI_CRM_xts_businessunitinquiry.importsequencenumber
+	, VWI_CRM_xts_businessunitinquiry.xts_exteriorcolorid
+	, VWI_CRM_xts_businessunitinquiry.xts_interiorcolordescription
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityavailablephysical
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityontransferorder
+	, VWI_CRM_xts_businessunitinquiry.createdbyname
+	, VWI_CRM_xts_businessunitinquiry.xts_producttype
+	, VWI_CRM_xts_businessunitinquiry.xts_exteriorcoloridname
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityreserved
+	, VWI_CRM_xts_businessunitinquiry.xts_totalcost
+	, VWI_CRM_xts_businessunitinquiry.xts_productid
+	, VWI_CRM_xts_businessunitinquiry.transactioncurrencyid
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityposted
+	, VWI_CRM_xts_businessunitinquiry.createdonbehalfby
+	, VWI_CRM_xts_businessunitinquiry.modifiedby
+	, VWI_CRM_xts_businessunitinquiry.xts_stockreservationflagname
+	, VWI_CRM_xts_businessunitinquiry.xts_cancelstockreservationflagname
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityavailableordered
+	, VWI_CRM_xts_businessunitinquiry.xts_totalphysicalcost_base
+	, VWI_CRM_xts_businessunitinquiry.createdbyyominame
+	, VWI_CRM_xts_businessunitinquiry.transactioncurrencyidname
+	, VWI_CRM_xts_businessunitinquiry.xts_interiorcolorid
+	, VWI_CRM_xts_businessunitinquiry.xts_dialogid
+	, VWI_CRM_xts_businessunitinquiry.modifiedonbehalfbyname
+	, VWI_CRM_xts_businessunitinquiry.xts_stockreservationflag
+	, VWI_CRM_xts_businessunitinquiry.statuscode
+	, VWI_CRM_xts_businessunitinquiry.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_businessunitinquiry.organizationid
+	, VWI_CRM_xts_businessunitinquiry.xts_totalphysicalcost
+	, VWI_CRM_xts_businessunitinquiry.xts_quantityorderedreserved
+	, VWI_CRM_xts_businessunitinquiry.statecodename
+	, VWI_CRM_xts_businessunitinquiry.organizationidname
+	, VWI_CRM_xts_businessunitinquiry.xts_configurationidname
+	, VWI_CRM_xts_businessunitinquiry.xts_styleidname
+	, VWI_CRM_xts_businessunitinquiry.xts_productclassidname
+	/**EndPagingIndexQuery**/
+FROM [dbo].[CRM_xts_businessunitinquiry] as VWI_CRM_xts_businessunitinquiry with(nolock) 
+{0}

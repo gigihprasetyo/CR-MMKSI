@@ -1,0 +1,79 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_pricelistdetail.company
+    , VWI_CRM_xts_pricelistdetail.businessunitcode
+    , VWI_CRM_xts_pricelistdetail.ktb_dnetid
+    , VWI_CRM_xts_pricelistdetail.xts_quantity
+    , VWI_CRM_xts_pricelistdetail.owninguser
+    , VWI_CRM_xts_pricelistdetail.xts_partsprice
+    , VWI_CRM_xts_pricelistdetail.xts_locking
+    , VWI_CRM_xts_pricelistdetail.transactioncurrencyidname
+    , VWI_CRM_xts_pricelistdetail.xts_businessunitidname
+    , VWI_CRM_xts_pricelistdetail.xts_productidname
+    , VWI_CRM_xts_pricelistdetail.statecodename
+    , VWI_CRM_xts_pricelistdetail.transactioncurrencyid
+    , VWI_CRM_xts_pricelistdetail.xts_servicefee_base
+    , VWI_CRM_xts_pricelistdetail.createdonbehalfby
+    , VWI_CRM_xts_pricelistdetail.bsi_lastupdatepreviousdate
+    , VWI_CRM_xts_pricelistdetail.xts_pkcombinationkey
+    , VWI_CRM_xts_pricelistdetail.ownerid
+    , VWI_CRM_xts_pricelistdetail.xts_totalprice_base
+    , VWI_CRM_xts_pricelistdetail.bsi_previousprice_base
+    , VWI_CRM_xts_pricelistdetail.xts_producttypename
+    , VWI_CRM_xts_pricelistdetail.importsequencenumber
+    , VWI_CRM_xts_pricelistdetail.xts_servicefee
+    , VWI_CRM_xts_pricelistdetail.xts_productdescription
+    , VWI_CRM_xts_pricelistdetail.versionnumber
+    , VWI_CRM_xts_pricelistdetail.xts_producttype
+    , VWI_CRM_xts_pricelistdetail.statecode
+    , VWI_CRM_xts_pricelistdetail.utcconversiontimezonecode
+    , VWI_CRM_xts_pricelistdetail.createdbyyominame
+    , VWI_CRM_xts_pricelistdetail.xts_pricingmethod
+    , VWI_CRM_xts_pricelistdetail.owningbusinessunit
+    , VWI_CRM_xts_pricelistdetail.modifiedbyname
+    , VWI_CRM_xts_pricelistdetail.xts_unitidname
+    , VWI_CRM_xts_pricelistdetail.modifiedby
+    , VWI_CRM_xts_pricelistdetail.modifiedbyyominame
+    , VWI_CRM_xts_pricelistdetail.createdby
+    , VWI_CRM_xts_pricelistdetail.timezoneruleversionnumber
+    , VWI_CRM_xts_pricelistdetail.xts_pricelistid
+    , VWI_CRM_xts_pricelistdetail.xts_pricelistdetailid
+    , VWI_CRM_xts_pricelistdetail.owneridtype
+    , VWI_CRM_xts_pricelistdetail.statuscodename
+    , VWI_CRM_xts_pricelistdetail.owningteam
+    , VWI_CRM_xts_pricelistdetail.bsi_previousprice
+    , VWI_CRM_xts_pricelistdetail.createdonbehalfbyyominame
+    , VWI_CRM_xts_pricelistdetail.owneridyominame
+    , VWI_CRM_xts_pricelistdetail.modifiedon
+    , VWI_CRM_xts_pricelistdetail.xts_pricingmethodname
+    , VWI_CRM_xts_pricelistdetail.exchangerate
+    , VWI_CRM_xts_pricelistdetail.modifiedonbehalfbyname
+    , VWI_CRM_xts_pricelistdetail.statuscode
+    , VWI_CRM_xts_pricelistdetail.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_pricelistdetail.xts_pricelistdetail
+    , VWI_CRM_xts_pricelistdetail.createdbyname
+    , VWI_CRM_xts_pricelistdetail.createdon
+    , VWI_CRM_xts_pricelistdetail.xts_businessunitid
+    , VWI_CRM_xts_pricelistdetail.createdonbehalfbyname
+    , VWI_CRM_xts_pricelistdetail.xts_pricelistidname
+    , VWI_CRM_xts_pricelistdetail.xts_totalprice
+    , VWI_CRM_xts_pricelistdetail.owneridname
+    , VWI_CRM_xts_pricelistdetail.modifiedonbehalfby
+    , VWI_CRM_xts_pricelistdetail.xts_productid
+    , VWI_CRM_xts_pricelistdetail.xts_partsprice_base
+    , VWI_CRM_xts_pricelistdetail.xts_unitid
+    , VWI_CRM_xts_pricelistdetail.overriddencreatedon
+    , VWI_CRM_xts_pricelistdetail.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_pricelistdetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_pricelistdetail 

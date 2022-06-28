@@ -1,0 +1,1 @@
+﻿DELETE APIUserPermission WHERE Id = @id

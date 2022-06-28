@@ -1,0 +1,590 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <configSections>
+    <section name="enterpriselibrary.configurationSettings" type="Microsoft.Practices.EnterpriseLibrary.Configuration.ConfigurationManagerSectionHandler, Microsoft.Practices.EnterpriseLibrary.Configuration, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+    <section name="MicrosoftWebControls" type="System.Configuration.NameValueSectionHandler, System, Version=1.0.5000.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <!--<sectionGroup name="SAP.Middleware.Connector">
+      <sectionGroup name="ClientSettings">
+        <section name="DestinationConfiguration" type="SAP.Middleware.Connector.RfcDestinationConfiguration, sapnco"/>
+      </sectionGroup>
+    </sectionGroup>-->
+  </configSections>
+  <!--<SAP.Middleware.Connector>
+    <ClientSettings>
+      <DestinationConfiguration>
+        <destinations>
+          <add NAME="SAPConnectionString" USER="BSIFCT" PASSWD="redrose" CLIENT="150" LANG="EN" ASHOST="172.17.2.76" SYSNR="01" MAX_POOL_SIZE="20" IDLE_TIMEOUT="10"/>
+        </destinations>
+      </DestinationConfiguration>
+    </ClientSettings>
+  </SAP.Middleware.Connector>-->
+  <!--
+    For a description of web.config changes see http://go.microsoft.com/fwlink/?LinkId=235367.
+
+    The following attributes can be set on the <httpRuntime> tag.
+      <system.Web>
+        <httpRuntime targetFramework="4.5.2" />
+      </system.Web>
+  -->
+  <system.web>
+    <!--<httpHandlers>
+      -->
+    <!--<add verb="*" path="*.ashx" type="KTB.DNet.UI.AlertManagementHTTPHandler,KTB.DNet.UI" validate="false" />-->
+    <!--
+    </httpHandlers>-->
+    <machineKey validationKey="D9DD7A143844BB245DD4B33966393BFEF3C48A1031106F0D998AACF61B2A1509D72AA697179A4F721093D8738E86DD861DB87DB79599F18A493F0874E61BE665" decryptionKey="E98AFA31EFF3940D8D1239D4B26F9778313B88F081D0A62E" validation="SHA1" />
+    <!--<httpRuntime maxRequestLength="51200" requestValidationMode="2.0" targetFramework="4.5.2" requestLengthDiskThreshold="51200" />-->
+
+    <httpRuntime maxRequestLength="512000" requestValidationMode="2.0" targetFramework="4.5.2" requestLengthDiskThreshold="51200" maxQueryStringLength="10240" />
+
+    <pages validateRequest="false" controlRenderingCompatibilityVersion="3.5" clientIDMode="AutoID" />
+    <!--<identity impersonate="true" />-->
+
+    <customErrors defaultRedirect="Error.html" mode="Off" />
+    <authentication mode="Forms" />
+    <authorization>
+      <allow users="*" />
+
+      <!-- Allow all users -->
+      <!--  <allow     users="[comma separated list of users]"
+                             roles="[comma separated list of roles]"/>
+                  <deny      users="[comma separated list of users]"
+                             roles="[comma separated list of roles]"/>
+                  <deny  users="?" />
+            -->
+    </authorization>
+    <!--  APPLICATION-LEVEL TRACE LOGGING
+          Application-level tracing enables trace log output for every page within an application. 
+          Set trace enabled="true" to enable application trace logging.  If pageOutput="true", the
+          trace information will be displayed at the bottom of each page.  Otherwise, you can view the 
+          application trace log by browsing the "trace.axd" page from your web application
+          root. 
+    -->
+    <trace enabled="false" requestLimit="10" pageOutput="false" traceMode="SortByTime" localOnly="true" />
+    <!--  SESSION STATE SETTINGS
+          By default ASP.NET uses cookies to identify which requests belong to a particular session. 
+          If cookies are not available, a session can be tracked by adding a session identifier to the URL. 
+          To disable cookies, set sessionState cookieless="true".
+    -->
+    <sessionState mode="InProc" stateConnectionString="tcpip=127.0.0.1:42424" sqlConnectionString="data source=127.0.0.1;Trusted_Connection=yes" cookieless="false" timeout="2000" />
+    <!-- <sessionState mode="InProc" stateConnectionString="tcpip=127.0.0.1:42424" sqlConnectionString="data source=127.0.0.1;Trusted_Connection=yes" cookieless="true" timeout="2000" />  -->
+    <!--  GLOBALIZATION
+          This section sets the globalization settings of the application. 
+    
+   
+    -->
+    <httpHandlers>
+      <add verb="*" path="AlertManagement.ashx" type="KTB.DNet.UI.AlertManagementHTTPHandler,KTB.DNet.UI" validate="false" />
+      <add verb="*" path="CalculateDaysRemaining.ashx" type="KTB.DNet.UI.DaysRemainingCalculator,KTB.DNet.UI" validate="false" />
+    </httpHandlers>
+    <browserCaps>
+      <!-- 
+    Name:    BrowserCaps update for modern browsers, http://slingfive.com/pages/code/browserCaps/
+    Author:  Rob Eberhardt, http://slingfive.com/
+    History:
+      2004-11-19  improved detection of Safari, Konqueror &amp; Mozilla variants, added Opera detection
+      2003-12-21  updated TagWriter info
+      2003-12-03  first published
+    -->
+      <!-- GECKO Based Browsers (Netscape 6+, Mozilla/Firefox, ...) //-->
+      <case match="^Mozilla/5\.0 \([^)]*\) (Gecko/[-\d]+)(?'VendorProductToken' (?'type'[^/\d]*)([\d]*)/(?'version'(?'major'\d+)(?'minor'\.\d+)(?'letters'\w*)))?">
+        browser=Gecko
+        <filter>
+          <case match="(Gecko/[-\d]+)(?'VendorProductToken' (?'type'[^/\d]*)([\d]*)/(?'version'(?'major'\d+)(?'minor'\.\d+)(?'letters'\w*)))">
+            type=${type}
+          </case>
+          <case>
+            <!-- plain Mozilla if no VendorProductToken found -->
+            type=Mozilla
+          </case>
+        </filter>
+        frames=true
+        tables=true
+        cookies=true
+        javascript=true
+        javaapplets=true
+        ecmascriptversion=1.5
+        w3cdomversion=1.0
+        css1=true
+        css2=true
+        xml=true
+        tagwriter=System.Web.UI.HtmlTextWriter
+        <case match="rv:(?'version'(?'major'\d+)(?'minor'\.\d+)(?'letters'\w*))">
+          version=${version}
+          majorversion=0${major}
+          minorversion=0${minor}
+          <case match="^b" with="${letters}">
+            beta=true
+          </case>
+        </case>
+      </case>
+      <!-- AppleWebKit Based Browsers (Safari...) //-->
+      <case match="AppleWebKit/(?'version'(?'major'\d?)(?'minor'\d{2})(?'letters'\w*)?)">
+        browser=AppleWebKit
+        version=${version}
+        majorversion=0${major}
+        minorversion=0.${minor}
+        frames=true
+        tables=true
+        cookies=true
+        javascript=true
+        javaapplets=true
+        ecmascriptversion=1.5
+        w3cdomversion=1.0
+        css1=true
+        css2=true
+        xml=true
+        tagwriter=System.Web.UI.HtmlTextWriter
+        <case match="AppleWebKit/(?'version'(?'major'\d)(?'minor'\d+)(?'letters'\w*))(.* )?(?'type'[^/\d]*)/.*( |$)">
+          type=${type}
+        </case>
+      </case>
+      <!-- Konqueror //-->
+      <case match=".+[K|k]onqueror/(?'version'(?'major'\d+)(?'minor'(\.[\d])*)(?'letters'[^;]*));\s+(?'platform'[^;\)]*)(;|\))">
+        browser=Konqueror
+        version=${version}
+        majorversion=0${major}
+        minorversion=0${minor}
+        platform=${platform}
+        type=Konqueror
+        frames=true
+        tables=true
+        cookies=true
+        javascript=true
+        javaapplets=true
+        ecmascriptversion=1.5
+        w3cdomversion=1.0
+        css1=true
+        css2=true
+        xml=true
+        tagwriter=System.Web.UI.HtmlTextWriter
+      </case>
+      <!-- Opera //-->
+      <case match="Opera[ /](?'version'(?'major'\d+)(?'minor'\.(?'minorint'\d+))(?'letters'\w*))">
+        <filter match="[7-9]" with="${major}">
+          tagwriter=System.Web.UI.HtmlTextWriter
+        </filter>
+        <filter>
+          <case match="7" with="${major}">
+            <filter>
+              <case match="[5-9]" with="${minorint}">
+                ecmascriptversion=1.5
+              </case>
+              <case>
+                ecmascriptversion=1.4
+              </case>
+            </filter>
+          </case>
+          <case match="[8-9]" with="${major}">
+            ecmascriptversion=1.5
+          </case>
+        </filter>
+      </case>
+    </browserCaps>
+    <globalization requestEncoding="utf-8" responseEncoding="utf-8" />
+    <xhtmlConformance mode="Legacy" />
+    <!--  <identity impersonate="true"/>-->
+    <compilation debug="true" numRecompilesBeforeAppRestart="1500">
+      <assemblies>
+        <add assembly="System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+        <add assembly="System.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+        <add assembly="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+        <add assembly="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089" />
+        <add assembly="System.Configuration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B03F5F7F11D50A3A" />
+      </assemblies>
+    </compilation>
+  </system.web>
+
+  <appSettings>
+
+    <!-- Privilege Start-->
+    <add key="AppID" value="MMKSI.DNet.UI" />
+    <add key="CompanyCode" value="MMC" />
+    <add key="Password" value="7Karakter" />
+    <add key="SMTP" value="172.17.2.69" />
+    <add key="SyslogSecondaryServerHostName" value="localhost" />
+    <add key="SyslogServerHostName" value="localhost" />
+    <add key="SyslogServerPortNumber" value="1468" />
+    <add key="EULAPATH" value="D:\Application\MMKSI\MMKSI.DNet.UI\" />
+    <!-- Privilege End-->
+
+    <!-- Checklist Start-->
+
+    <add key="Checklist.Server" value="172.17.31.121" />
+    <add key="Checklist.EmailMessage" value="[MMKSI-DNet] email Testing Berhasil. Abaikan email ini" />
+    <add key="Checklist.FileName" value="D-Net Maintenance Checklist.pdf" />
+    <add key="Checklist.SMSMessage" value="D-Net SMS service available" />
+    <add key="Checklist.UserName" value="donas#ktb#085645302578#doni-n@bsi.co.id;firman#ktb#081314517608#firmanm93@yahoo.com;yurike#ktb#085220262629#yurike@bsi.co.id;angga_g#ktb#085721462561#angga.gauvana@bsi.co.id;nana#ktb#085693318426#anna@bsi.co.id;akhmad_rendy#ktb#08155558528#akhmad@bsi.co.id;bsi00769#ktb#085959568978#ali.akbar@bsi.co.id;opa_p#ktb#081222141255#Opa.Permadi@bsi.co.id;gugun_sugandi#ktb#085723746278#Gugun.Sugandi@bsi.co.id" />
+    <!-- Checklist End-->
+
+    <!-- Call Center Start-->
+    <add key="CC_Server" value="172.17.31.124" />
+    <add key="CC_User" value="sap" />
+    <add key="CC_Password" value="7Karakter" />
+    <add key="CallCenterURL" value="http://172.17.31.124/MMKSI.CC/Default.aspx" />
+    <add key="CC_FEEDBACK" value="\\172.17.31.124\CallCenterReport_MMKSI\" />
+    <add key="CC_REPORT" value="\\172.17.31.124\CallCenterReport_MMKSI\" />
+    <!-- Call Center  End-->
+
+    <!-- BCP Start-->
+    <add key="DL_User" value="Administrator" />
+    <add key="DL_Password" value="P@ssw0rd" />
+    <add key="DL_Folder" value="\\172.17.31.121\bcp\" />
+    <add key="DL_Server" value="172.17.31.121" />
+    <!-- BCP  End-->
+
+    <!-- SAP Start -->
+    <add key="SAP_CONNECTION" value="NAME=SAPCONN;APPSERVERHOST=172.17.4.30;USERNAME=BSIFCT;PASSWORD=redrose;CLIENT=251;SYSTEMNUM=00;LANGUAGE=EN;POOLSIZE=5;IDLE_TIMEOUT=600" />
+    <add key="SAPConnectionStringEmpty" value="NAME=SAPCONN;APPSERVERHOST=172.17.4.30;USERNAME={0};PASSWORD={1};CLIENT=251;SYSTEMNUM=00;LANGUAGE=EN;POOLSIZE=5;IDLE_TIMEOUT=600" />
+    <add key="SAPConnectionString" value="NAME=SAPCONN;APPSERVERHOST=172.17.4.30;USERNAME=BSIFCT;PASSWORD=redrose;CLIENT=251;SYSTEMNUM=00;LANGUAGE=EN;POOLSIZE=5;IDLE_TIMEOUT=600" />
+    <!-- SAP End -->
+
+    <!-- Folder Setting Start hanya untuk upload tapi gak diambil datanya seharusnya diubah ke repository-->
+    <add key="AnnualDiscountDirectory" value="\\localhost\AnnualDiscount\;\\localhost\AnnualDiscount\" />
+    <add key="BuletinDirectory" value="\\localhost\BULETIN\;\\localhost\BULETIN\" />
+    <add key="EquipmentDirectory" value="\\localhost\Equipment\;\\localhost\Equipment\" />
+    <add key="TrainingScheduleDirectory" value="\\localhost\Training\Schedule;\\localhost\Training\Schedule" />
+    <add key="WSCDirectory" value="\\localhost\WSC\;\\localhost\WSC\" />
+    <!-- Folder Setting End-->
+
+    <!-- Repository Start-->
+    <add key="SAN" value="\\172.17.31.121\MDNET\Repository\BSI-Net\" />
+    <add key="SAN1" value="\\172.17.31.121\MDNET\" />
+    <add key="SAPServer" value="172.17.31.121" />
+    <add key="SAPServerFolder" value="\\172.17.31.121\MDNET\SAP" />
+    <add key="CessieFileDirectory" value="\\172.17.31.121\MDNET\Repository\BSI-Net\DNet\SAP\FACTORINGFILE" />
+    <add key="DNetServerFolder" value="\\172.17.31.121\MDNET\DNet\Sparepart\" />
+    <add key="FactoringFileDirectory" value="\\172.17.31.121\MDNET\Repository\BSI-Net\DNet\SAP\MOFile" />
+    <add key="FinishUnitFileDirectory" value="\\172.17.31.121\MDNET\sap\FinishUnit" />
+    <add key="InvoiceFileDirectory" value="\\172.17.31.121\MDNET\Repository\BSI-Net\DNET\SAP\INVOICEFILE" />
+    <add key="MOFileDirectory" value="\\172.17.31.121\MDNET\Repository\BSI-Net\DNet\SAP\MOFile" />
+    <add key="PKFolder" value="\\172.17.31.121\MDNET\Repository\BSI-Net\DNet\SAP\PK\" />
+    <add key="SAPFolder" value="\\172.17.31.121\MDNET\Repository\BSI-Net\DNet\SAP\" />
+    <add key="SOFileDirectory" value="\\172.17.31.121\MDNET\Repository\BSI-Net\DNet\SAP\SOFile" />
+    <add key="SPFileDirectory" value="\\172.17.31.121\MDNET\Repository\BSI-Net\DNet\SAP\SPAREPART" />
+    <!-- Repository End -->
+
+    <!--Data File Start-->
+    <add key="AnnualDiscountAchivementFileDirectory" value="DataFile\AnnualDiscountAchivement" />
+    <add key="AnnualDiscountFileDirectory" value="DataFile\AnnualDiscount" />
+    <add key="BuletinDestFileDirectory" value="DataFile\BULETIN" />
+    <add key="DaftarDokumenDestFileDirectory" value="DataFile\DaftarDokumen" />
+    <add key="DailyPaymentDestFileDirectory" value="DataFile\DailyPayment\" />
+    <add key="EqDestFileDirectory" value="DataFile\Equipment\" />
+    <add key="EventDestFileDirectory" value="DataFile\Event" />
+    <add key="FILE_DATA_ASS" value="DataFile\CS\DATA_PELANGGAN_ASS.xlsx"/>
+    <add key="InvoiceDestFileDirectory" value="DataFile\InvoiceFile" />
+    <add key="MODestFileDirectory" value="DataFile\MOFile" />
+    <add key="OutStandingMODestFileDirectory" value="DataFile\OutStandingMO\" />
+    <add key="PPQtyDestFileDirectory" value="DataFile\PPQty\" />
+    <add key="SODestFileDirectory" value="DataFile\SOFile" />
+    <add key="SPDestFileDirectory" value="DataFile\SPAREPART" />
+    <add key="SPLFileDirectory" value="DataFile\SPL" />
+    <add key="TrainingScheduleDestFileDirectory" value="DataFile\Training\Schedule\" />
+    <add key="URPDestFileDirectory" value="DataFile\PKProductionPlan\" />
+    <add key="WSCEvidenceBBFileDirectory" value="DataFile\WSCBB" />
+    <add key="WSCEvidenceFileDirectory" value="DataFile\WSC" />
+    <!--Data File End-->
+
+    <!-- Email Setting Start -->
+    <add key="EmailAddressRecovery" value="admin.d-net@mitsubishi-motors.co.id" />
+    <add key="EmailAdminDNET" value="admin.d-net@mitsubishi-motors.co.id" />
+    <add key="EmailAdminTC" value="yurike@bsi.co.id;ali.akbar@bsi.co.id;angga.gauvana@bsi.co.id;anna@bsi.co.id" />
+    <add key="EmailCompanyCode" value="MMKSI" />
+    <add key="EmailFrom" value="admin.d-net@ktb.co.id" />
+    <add key="EmailIndentCC1" value="" />
+    <add key="EmailIndentCC2" value="" />
+    <add key="EmailIndentCC3" value="" />
+    <add key="EmailIndentCC4" value="" />
+    <add key="EmailIndentCC5" value="" />
+    <add key="EmailIndentRecipient" value="yurike@bsi.co.id;ali.akbar@bsi.co.id;angga.gauvana@bsi.co.id;anna@bsi.co.id" />
+    <add key="EmailIndentRecipientCC" value="yurike@bsi.co.id;ali.akbar@bsi.co.id;angga.gauvana@bsi.co.id;anna@bsi.co.id" />
+    <add key="EmailIndentSignedJob" value="(Dept. Head Part Sales)" />
+    <add key="EmailIndentSignedName" value="Agus Nevianto" />
+    <add key="EmailPTRecipient" value="yurike@bsi.co.id;ali.akbar@bsi.co.id;angga.gauvana@bsi.co.id;anna@bsi.co.id" />
+    <add key="EmailSPAdmin" value="yurike@bsi.co.id;ali.akbar@bsi.co.id;angga.gauvana@bsi.co.id;anna@bsi.co.id" />
+    <!-- Email Setting End-->
+
+    <add key="ActivationCodeExpiredTime" value="1" />
+    <add key="AkhirBatasPOTambahan" value="16:00" />
+    <add key="AlertManagement" value="AlertManagement" />
+    <add key="AnnouncementPath" value="SysManage\Announcement" />
+    <add key="Audit" value="Audit" />
+    <add key="AuditAssesmentResult" value="Audit\AssesmentResult" />
+    <add key="AwalBatasPOTambahan" value="11:01" />
+    <add key="BABITActivity" value="BABIT\Activity" />
+    <add key="BabitKhususDir" value="Babit-Khusus" />
+    <add key="BackboneSoldDate" value="01122011" />
+    <add key="BankName" value="PMATA AEJ;NIAGA GMA;UOB BUANA;NIAGA AAH" />
+    <add key="BARCODE" value="DataTemp\BC\" />
+    <add key="BatasPembayaranPertamaP3B" value="40" />
+    <add key="BatasPOHarian" value="11:00" />
+    <add key="BingoCombination" value="3" />
+    <add key="BingoDimensiX" value="3" />
+    <add key="BingoDimensiY" value="7" />
+    <add key="BingoReminderDay" value="7" />
+    <add key="BingoWidth" value="2" />
+    <add key="BLOCK_VEHICLE_CODE" value="" />
+    <add key="BlockedDaysKTBConfirm" value="14" />
+    <add key="BManCode" value="SBM" />
+    <add key="ClaimDownload" value="ClaimDownload" />
+    <add key="ClaimEvidenceDir" value="Claim-Evidence" />
+    <add key="CloseMessage" value="Module ini sedang di tutup, sampai dengan 10 Oktober 2014" />
+    <add key="CommonKeyName" value="SLM;SCN;SPV;SSM;SBM" />
+    <add key="CustomerRequestDir" value="CustRequest" />
+    <add key="DATABASE_ERROR_CODE" value="DNET-1000" />
+    <add key="DirectionBABIT" value="BABIT\Direction" />
+    <add key="DNETPhisingGuard" value="DNETPhisingGuard" />
+    <add key="DownloadAllocMatPromotion" value="MatPromotion\Download" />
+    <add key="DownloadPQRFormatProfile" value="PQR_BODY;PQR_MUATAN;AREAOPERASI;PQR_JALAN" />
+    <add key="DownloadSalesmanUniformOrder" value="SalesmanUniformOrder\Download" />
+    <add key="DS" value="" />
+    <add key="EnableSyslog" value="false" />
+    <add key="EstimationIndentPartDownload" value="EstimationIndentPartDownload" />
+    <add key="Event" value="EventParameter" />
+    <add key="EventDir" value="Event" />
+    <add key="ExpiredCount" value="1000" />
+    <add key="FilterVerificationCustomer" value="DR;PT;CV;H.;SE;IR;SH;H;DRS;SH;BA;ST;MM;PT.;,PT;Hj;Hj.;Hj,;Hj .;Hj ,; Hj;, Hj" />
+    <add key="FM" value="N" />
+    <add key="ForumAttnDir" value="ForumAttachment" />
+    <add key="FSSpecialColor" value="MTGM" />
+    <add key="FSSpecialColorOri" value="0STG" />
+    <add key="GeneralForumCategory" value="General" />
+    <add key="HASIL_ANNUAL_DISCOUNT_FILe_NAME" value="" />
+    <add key="HeaderKTB" value="D-NET" />
+    <add key="HPSERVER" value="08121163638" />
+    <add key="IdleP3B" value="30" />
+    <add key="IdUpdateSiswaTraining" value="346" />
+    <add key="IklanBABIT" value="BABIT\Iklan" />
+    <add key="ImageHeight" value="200" />
+    <add key="ImpelementFactoring" value="1" />
+    <add key="IndentPartDownload" value="IndentPartDownload" />
+    <add key="INVALIDBROWSERMESSAGE" value="Maaf Browser yang anda gunakan tidak valid, hubungi D-NET Help Desk !" />
+    <add key="INVALIDBROWSERTYPE" value="" />
+    <add key="InvalidCharacter" value=".,-?!*()^%$#@!':;" />
+    <add key="InvWord01" value="Pelunasan pemesanan biaya seragam tenaga penjual tahun " />
+    <add key="InvWord02" value="Jumlah biaya pelunasan dipotong dari Deposit A Sales Dealer " />
+    <add key="IsEnableCallCenter" value="true" />
+    <add key="IsEnableCallCenterForDealer" value="true" />
+    <add key="IsLeasingAvailable" value="true" />
+    <add key="IsSyslogUseUDP" value="false" />
+    <add key="IsUsedSecurityPrivilege" value="true" />
+    <add key="JUNIOR" value="M1" />
+    <add key="ListOfMCPName" value="BADAN *;BALAI * ;BANK INDONESIA;BIRO *;BPD *;BUPATI *;DIN*;DIREKTORAT *;DITJEN *;FAKULTAS *;GUBERNUR *;INSPEKTORAT *;IRJEN *;KA*;KAN*;KECAMATAN *;KEJAKSAAN *;KEMENTERIAN *;KEPALA *;KEPOLISIAN *;KOMISI *;KOMITE *;KOPERASI *;LEMBAGA *;MAHKAMAH *;PALANG MERAH INDONESIA;PD*;PEMDA *;PEMERINTAH *;PEMERINTAH DAERAH *;PEMKAB *;PEMKOT *;PEMPROV * ;PENGADILAN *;PERUM *;PERUSAHAAN *;PERUSAHAAN DAERAH *;PERUSAHAAN NEGARA *;PERUSAHAAN UMUM *;PERUSDA *;PERWAKILAN *;PN*;POL*;POLITEKNIK *;POLWIL *;PT. BANK PEMBANGUNAN DAERAH *;PT. PELABUHAN INDONESIA *;PT. PERKEBUNAN *;PUSAT *;PUSKESMAS *;RSU *;RUMAH SAKIT UMUM *;SATKER *;SAT*;SEKOLAH *;SEKOLAH TINGGI *;SEKRETARIAT *;UNIVERSITAS *;WALIKOTA *;YAYASAN *;DEPARTEMEN *;UNIT KERJA *;RSJ  *;DEWAN *;DP*;* (PERSERO);INSTITUT *;SEKOLAH*;KEDUTAAN *;PAN*;PUS*;UNIT *;POLTEK *;SEKDA *;KOPEG*;DIS*;KOPEL*;PT*BANK PEMBANGUNAN DAERAH*;PT*PELABUHAN INDONESIA*;PT*PERKEBUNAN*;PT*BRANTAS ABIPRAYA;PANG*;LAN*;KO*;DIR*;AKADEMI *;OMBUDSMAN *;OTORITAS *;TIM *;MAJELIS *;DEPUTI *;NASIONAL *;MARKAS *;PNS *;PEGAWAI NEGERI *;BPJS *;" />
+    <add key="LOGERROR" value="YES" />
+    <add key="LoginLock" value="15" />
+    <add key="LoginMode" value="LIVE" />
+    <add key="ManualDoc" value="SysManage\ManualDoc" />
+    <add key="MarketingForumCategory" value="Marketing" />
+    <add key="MASTER" value="M3A,M3C,M3E,M3N,MGP" />
+    <add key="MaximumFileSize" value="1024000" />
+    <add key="MaximumIklanFileSize" value="1024000" />
+    <add key="MitsubishiCode" value="MTS" />
+    <add key="ParkingFeeDirectory" value="DNet\SAP\PARKINGFILE" />
+    <add key="PartIncidentalPriorityIDOther" value="0" />
+    <add key="PartSalesmanPosisi" value="8,11,12,18" />
+    <add key="PCPhisingCookiesExpires" value="2000" />
+    <add key="PengajuanBabit" value="BABIT\PengajuanBabit" />
+    <add key="PETUNJUK_PELAKSANAAN_FILe_NAME" value="" />
+    <add key="PhisingGuardImageCount" value="4" />
+    <add key="PhotoSize" value="30720" />
+    <add key="PKTemporary" value="DataTemp\PK\" />
+    <add key="PODateAllowed" value="20150731" />
+    <add key="PQRAddtionalInfoAttachment" value="PQRAddtionalInfoAttachment" />
+    <add key="PQRAttachmentBBDir" value="PQRAttachmentBB" />
+    <add key="PQRAttachmentDir" value="PQRAttachment" />
+    <add key="PQREmailPIC" value=" su.D-net@bsi.co.id" />
+    <add key="PROGRAM_ANNUAL_DISCOUNT_FILe_NAME" value="" />
+    <add key="PRPDir" value="" />
+    <add key="Question1" value="Makanan kesukaan" />
+    <add key="Question2" value="Kota yang disenangi" />
+    <add key="Question3" value="Judul Film yang menarik " />
+    <add key="Question4" value="Judul Buku yang digemari " />
+    <add key="Question5" value="Tokoh yang disukai" />
+    <add key="RealisasiBabit" value="BABIT\RealizationBabit" />
+    <add key="SALESDOCUMENT" value="SalesDocument\" />
+    <add key="SalesTrainingDownload" value="SalesTraining" />
+    <add key="SAPMaxItems" value="20" />
+    <add key="SAPMaxMaterial" value="8" />
+    <add key="SAPTesting" value="DataFile\SAP\DNETTesting.txt" />
+    <add key="SCntCode" value="SCN" />
+    <add key="SENIOR" value="M2A,M2C,M2D,M2E,M2G,M2M,M2P" />
+    <add key="SlmanCode" value="SLM" />
+    <add key="SManCode" value="SSM" />
+    <add key="SManTarget" value="8" />
+    <add key="SMS" value="Y" />
+    <add key="SPAFDoc" value="SPAF-DOC" />
+    <add key="SPECIALIS_DTEC" value="M2ELEMATIC,M2CHAPTAIN" />
+    <add key="SPECIALIS_EGFS" value="M2GAFUSY,M2DIFUSY" />
+    <add key="SPKMandatory" value="1" />
+    <add key="SPKTemporary" value="DataTemp\SPK\" />
+    <add key="SPLAttachment" value="" />
+    <add key="SPSTATUSSAP" value="X=Material tidak ada Ada;Y=Material di Blok;Z=Ada la yau" />
+    <add key="SSpvCode" value="SPV" />
+    <add key="SSpvTarget" value="5" />
+    <add key="TAFRootPath" value="D:\Project\Phase4\Solution\KTB.DNet\KTB.DNet.UI\" />
+    <add key="UploadAllocMatPromotion" value="MatPromotion\Upload" />
+    <add key="UploadDealerProfile" value="DealerProfile" />
+    <add key="UrlPartEmpGenerate" value="https://d-net.mitsubishi-motors.co.id/BSI.DNet/default_parts.aspx?screenid=9962" />
+    <add key="UrlPartEmpList" value="https://d-net.mitsubishi-motors.co.id/BSI.DNet/default_parts.aspx?screenid=9963" />
+    <add key="User" value="sap" />
+    <add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
+    <add key="VALIDBROWSER" value="GECKO;IE;InternetExplorer;AppleWebKit;NETSCAPE" />
+    <add key="VALIDBROWSERTYPE" value="FIREFOX;IE6;IE7;IE8;IE9;IE10;InternetExplorer11;MOZILLA;Ubuntu;GUTSY;SUSE;Safari;Netscape5" />
+    <add key="WebServer" value="localhost" />
+    <add key="WSCTeamEmail" value="anna@bsi.co.id" />
+    <add key="WSMTesting" value="\\172.17.31.121\LOG\" />
+    <add key="WSMTestingFile" value="DNetParser.log" />
+
+    <!--Menu Start -->
+    <add key="TreeMenu.XML.PathFromRootCallCenter" value="XMLMenu/AppCCNavigationDealer.xml" />
+    <add key="TreeMenu.XML.PathFromRootFreeService" value="XMLMenu/AppFSNavigationKTB.xml" />
+    <add key="TreeMenu.XML.PathFromRootFreeServiceDealer" value="XMLMenu/AppFSNavigationDealer.xml" />
+    <add key="TreeMenu.XML.PathFromRootFreeServiceLeasing" value="XMLMenu/AppFSNavigationLeasing.xml" />
+    <add key="TreeMenu.XML.PathFromRootFU" value="XMLMenu/AppFUNavigationKTB.xml" />
+    <add key="TreeMenu.XML.PathFromRootFUDealer" value="XMLMenu/AppFUNavigationDealer.xml" />
+    <add key="TreeMenu.XML.PathFromRootFUDealerNoFactoring" value="XMLMenu/AppFUNavigationDealerNoFactoring.xml" />
+    <add key="TreeMenu.XML.PathFromRootFUDealerNoFactoringTransfer" value="XMLMenu/AppFUNavigationDealerNoFactoringTransfer.xml" />
+    <add key="TreeMenu.XML.PathFromRootFUDealerTransfer" value="XMLMenu/AppFUNavigationDealerTransfer.xml" />
+    <add key="TreeMenu.XML.PathFromRootFULeasing" value="XMLMenu/AppFUNavigationLeasing.xml" />
+    <add key="TreeMenu.XML.PathFromRootFULeasingNoFactoring" value="XMLMenu/AppFUNavigationLeasingNoFactoring.xml" />
+    <add key="TreeMenu.XML.PathFromRootGeneral" value="XMLMenu/AppGeneralNavigationKTB.xml" />
+    <add key="TreeMenu.XML.PathFromRootGeneralDealer" value="XMLMenu/AppGeneralNavigationDealer.xml" />
+    <add key="TreeMenu.XML.PathFromRootGeneralLeasing" value="XMLMenu/AppGeneralNavigationLeasing.xml" />
+    <add key="TreeMenu.XML.PathFromRootMarketing" value="XMLMenu/AppMarketingNavigationKTB.xml" />
+    <add key="TreeMenu.XML.PathFromRootMarketingDealer" value="XMLMenu/AppMarketingNavigationDealer.xml" />
+    <add key="TreeMenu.XML.PathFromRootMarketingLeasing" value="XMLMenu/AppMarketingNavigationLeasing.xml" />
+    <add key="TreeMenu.XML.PathFromRootPROMO" value="XMLMenu/AppPromoNavigationKTB.xml" />
+    <add key="TreeMenu.XML.PathFromRootPROMODealer" value="XMLMenu/AppPromoNavigationDealer.xml" />
+    <add key="TreeMenu.XML.PathFromRootPROMOLeasing" value="XMLMenu/AppPromoNavigationLeasing.xml" />
+    <add key="TreeMenu.XML.PathFromRootRSD" value="XMLMenu/AppRSDNavigationKTB.xml" />
+    <add key="TreeMenu.XML.PathFromRootRSDDealer" value="XMLMenu/AppRSDNavigationDealer.xml" />
+    <add key="TreeMenu.XML.PathFromRootRSDLeasing" value="XMLMenu/AppRSDNavigationLeasing.xml" />
+    <add key="TreeMenu.XML.PathFromRootServiceDealerNoTraining" value="XMLMenu/AppFSNavigationDealerNoTraining.xml" />
+    <add key="TreeMenu.XML.PathFromRootSparePart" value="XMLMenu/AppSPNavigationKTB.xml" />
+    <add key="TreeMenu.XML.PathFromRootSparePartDealer" value="XMLMenu/AppSPNavigationDealer.xml" />
+    <add key="TreeMenu.XML.PathFromRootSparePartLeasing" value="XMLMenu/AppSPNavigationLeasing.xml" />
+    <add key="TreeMenu.XML.PathFromRootTAF" value="XMLMenu/AppTAFNavigationKTB.xml" />
+    <add key="TreeMenu.XML.PathFromRootTAFDealer" value="XMLMenu/AppTAFNavigationDealer.xml" />
+    <add key="TreeMenu.XML.PathFromRootTAFLeasing" value="XMLMenu/AppTAFNavigationTAF.xml" />
+    <!-- Menu End-->
+  </appSettings>
+  <!--  MicrosoftWebControls
+      To Set Root Folder for IE WebControls Images
+  -->
+  <MicrosoftWebControls>
+    <add key="CommonFiles" value="images" />
+  </MicrosoftWebControls>
+  <enterpriselibrary.configurationSettings applicationName="Application" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.microsoft.com/practices/enterpriselibrary/08-31-2004/configuration">
+    <configurationSections>
+      <configurationSection xsi:type="ReadOnlyConfigurationSectionData" name="cachingConfiguration" encrypt="false">
+        <storageProvider xsi:type="XmlFileStorageProviderData" name="XML File Storage Provider" path="cachingConfiguration.config" />
+        <dataTransformer xsi:type="XmlSerializerTransformerData" name="Xml Serializer Transformer">
+          <includeTypes />
+        </dataTransformer>
+      </configurationSection>
+      <configurationSection xsi:type="ReadOnlyConfigurationSectionData" name="dataConfiguration" encrypt="false">
+        <storageProvider xsi:type="XmlFileStorageProviderData" name="XML File Storage Provider" path="dataConfiguration.config" />
+        <dataTransformer xsi:type="XmlSerializerTransformerData" name="Xml Serializer Transformer">
+          <includeTypes />
+        </dataTransformer>
+      </configurationSection>
+      <configurationSection xsi:type="ReadOnlyConfigurationSectionData" name="exceptionHandlingConfiguration" encrypt="false">
+        <storageProvider xsi:type="XmlFileStorageProviderData" name="XML File Storage Provider" path="exceptionHandlingConfiguration.config" />
+        <dataTransformer xsi:type="XmlSerializerTransformerData" name="Xml Serializer Transformer">
+          <includeTypes>
+            <includeType name="LoggingExceptionHandlerData" type="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration.LoggingExceptionHandlerData, Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+          </includeTypes>
+        </dataTransformer>
+      </configurationSection>
+      <configurationSection xsi:type="ReadOnlyConfigurationSectionData" name="loggingConfiguration" encrypt="false">
+        <storageProvider xsi:type="XmlFileStorageProviderData" name="XML File Storage Provider" path="loggingConfiguration.config" />
+        <dataTransformer xsi:type="XmlSerializerTransformerData" name="Xml Serializer Transformer">
+          <includeTypes />
+        </dataTransformer>
+      </configurationSection>
+      <configurationSection xsi:type="ReadOnlyConfigurationSectionData" name="loggingDistributorConfiguration" encrypt="false">
+        <storageProvider xsi:type="XmlFileStorageProviderData" name="XML File Storage Provider" path="loggingDistributorConfiguration.config" />
+        <dataTransformer xsi:type="XmlSerializerTransformerData" name="Xml Serializer Transformer">
+          <includeTypes>
+            <includeType name="RollingFlatFileSinkData" type="Microsoft.Practices.EnterpriseLibrary.Logging.Sinks.RollingFlatFile.Configuration.RollingFlatFileSinkData, Microsoft.Practices.EnterpriseLibrary.Logging.RollingFlatFileSink, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+          </includeTypes>
+        </dataTransformer>
+      </configurationSection>
+      <configurationSection xsi:type="ReadOnlyConfigurationSectionData" name="securityConfiguration" encrypt="false">
+        <storageProvider xsi:type="XmlFileStorageProviderData" name="XML File Storage Provider" path="securityConfiguration.config" />
+        <dataTransformer xsi:type="XmlSerializerTransformerData" name="Xml Serializer Transformer">
+          <includeTypes>
+            <includeType name="DbRolesProviderData" type="Microsoft.Practices.EnterpriseLibrary.Security.Database.Configuration.DbRolesProviderData, Microsoft.Practices.EnterpriseLibrary.Security.Database, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+            <includeType name="DbAuthenticationProviderData" type="Microsoft.Practices.EnterpriseLibrary.Security.Database.Authentication.Configuration.DbAuthenticationProviderData, Microsoft.Practices.EnterpriseLibrary.Security.Database.Authentication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+            <includeType name="DbRulesAuthorizationProviderData" type="KTB.DNet.Security.Database.Authorization.DbRulesAuthorizationProviderData, KTB.DNet.Security.Database.Authorization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+          </includeTypes>
+        </dataTransformer>
+      </configurationSection>
+      <configurationSection xsi:type="ReadOnlyConfigurationSectionData" name="securityCryptographyConfiguration" encrypt="false">
+        <storageProvider xsi:type="XmlFileStorageProviderData" name="XML File Storage Provider" path="securityCryptographyConfiguration.config" />
+        <dataTransformer xsi:type="XmlSerializerTransformerData" name="Xml Serializer Transformer">
+          <includeTypes />
+        </dataTransformer>
+      </configurationSection>
+    </configurationSections>
+    <keyAlgorithmStorageProvider xsi:nil="true" />
+    <includeTypes />
+  </enterpriselibrary.configurationSettings>
+  <!--<system.webServer>
+    <modules>
+      <add name="ErrorHandlerModule" type="System.Web.Mobile.ErrorHandlerModule, System.Web.Mobile, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" preCondition="managedHandler" />
+      <add name="ServiceModel" type="System.ServiceModel.Activation.HttpModule, System.ServiceModel.Activation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" preCondition="managedHandler" />
+    </modules>
+    <handlers>
+      <add name="*.vbhtml_*" path="*.vbhtml" verb="*" type="System.Web.HttpForbiddenHandler" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*.vbhtm_*" path="*.vbhtm" verb="*" type="System.Web.HttpForbiddenHandler" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*.cshtml_*" path="*.cshtml" verb="*" type="System.Web.HttpForbiddenHandler" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*.cshtm_*" path="*.cshtm" verb="*" type="System.Web.HttpForbiddenHandler" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*.aspq_*" path="*.aspq" verb="*" type="System.Web.HttpForbiddenHandler" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*.xamlx_*" path="*.xamlx" verb="*" type="System.Xaml.Hosting.XamlHttpHandlerFactory, System.Xaml.Hosting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*.xoml_*" path="*.xoml" verb="*" type="System.ServiceModel.Activation.HttpHandler, System.ServiceModel.Activation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*.svc_*" path="*.svc" verb="*" type="System.ServiceModel.Activation.HttpHandler, System.ServiceModel.Activation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*.soap_*" path="*.soap" verb="*" type="System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory, System.Runtime.Remoting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*.rem_*" path="*.rem" verb="*" type="System.Runtime.Remoting.Channels.Http.HttpRemotingHandlerFactory, System.Runtime.Remoting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*.asmx_*" path="*.asmx" verb="*" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="ScriptResource.axd_GET,HEAD" path="ScriptResource.axd" verb="GET,HEAD" type="System.Web.Handlers.ScriptResourceHandler, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*_AppService.axd_*" path="*_AppService.axd" verb="*" type="System.Web.Script.Services.ScriptHandlerFactory, System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="eurl.axd_*" path="eurl.axd" verb="*" type="System.Web.HttpNotFoundHandler" preCondition="integratedMode,runtimeVersionv2.0" />
+      <add name="*.ashx_*" path="*.ashx" verb="*" type="KTB.DNet.UI.AlertManagementHTTPHandler,KTB.DNet.UI" preCondition="integratedMode,runtimeVersionv4.0" />
+    </handlers>
+    <validation validateIntegratedModeConfiguration="false" />
+     
+  </system.webServer>-->
+  <system.data>
+    <!--<DbProviderFactories>
+      <remove invariant="MySql.Data.MySqlClient"/>
+      <add name="MySQL Data Provider" invariant="MySql.Data.MySqlClient" description=".Net Framework Data Provider for MySQL" type="MySql.Data.MySqlClient.MySqlClientFactory, MySql.Data, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d"/>
+    </DbProviderFactories>-->
+  </system.data>
+  <system.webServer>
+    <defaultDocument>
+      <files>
+        <clear />
+        <add value="default.php" />
+        <add value="Default.htm" />
+        <add value="Default.asp" />
+        <add value="index.htm" />
+        <add value="index.html" />
+        <add value="iisstart.htm" />
+        <add value="default.aspx" />
+        <add value="index.php" />
+      </files>
+    </defaultDocument>
+    <security>
+      <requestFiltering>
+        <requestLimits maxUrl="40960" maxQueryString="20480" />
+      </requestFiltering>
+    </security>
+    <httpProtocol>
+      <customHeaders>
+        <add name="X-UA-Compatible" value="IE=EmulateIE8" />
+      </customHeaders>
+    </httpProtocol>
+  </system.webServer>
+</configuration>

@@ -1,0 +1,82 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , xts_moreaddressid
+    , versionnumber
+    , createdon
+    , xts_provinceid
+    , statuscodename
+    , xts_customerid
+    , modifiedbyyominame
+    , owneridtype
+    , createdonbehalfby
+    , modifiedbyname
+    , xts_moreaddress
+    , xts_provinceidname
+    , overriddencreatedon
+    , xts_fax
+    , xts_address2
+    , createdonbehalfbyyominame
+    , modifiedonbehalfby
+    , xts_countryidname
+    , xts_address4
+    , owningteam
+    , xts_residentialtypeidname
+    , xts_mobilephone
+    , statecode
+    , owneridname
+    , timezoneruleversionnumber
+    , xts_villageandstreetid
+    , xts_homephone
+    , xts_locking
+    , xts_villageandstreetidname
+    , xts_otherphone
+    , xts_countryid
+    , createdonbehalfbyname
+    , xts_cityid
+    , utcconversiontimezonecode
+    , xts_email
+    , xts_customeridyominame
+    , ownerid
+    , modifiedon
+    , importsequencenumber
+    , owneridyominame
+    , xts_businessphone
+    , xts_customeridname
+    , xts_customerlookuptype
+    , xts_residentialtypeid
+    , createdbyname
+    , xts_businessunitid
+    , modifiedonbehalfbyname
+    , xts_address3
+    , xts_cityidname
+    , xts_contactidname
+    , xts_postalcode
+    , xts_addresstype
+    , xts_addresstypename
+    , createdby
+    , modifiedby
+    , xts_website
+    , createdbyyominame
+    , owninguser
+    , xts_customerlookupname
+    , owningbusinessunit
+    , xts_contactid
+    , statuscode
+    , modifiedonbehalfbyyominame
+    , xts_contactidyominame
+    , statecodename
+    , xts_businessunitidname
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_moreaddress a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    where xts_moreaddressid = @id
+) as VWI_CRM_xts_moreaddress 

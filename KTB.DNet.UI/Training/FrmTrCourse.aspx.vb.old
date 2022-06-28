@@ -1,0 +1,446 @@
+Imports KTB.DNet.Domain
+Imports KTB.DNet.Domain.Search
+Imports KTB.DNet.BusinessFacade
+Imports KTB.DNet.BusinessFacade.Training
+Imports KTB.DNet.BusinessFacade.Helper
+Imports KTB.DNet.Utility
+Imports KTB.DNet.UI
+Imports KTB.DNet.Security
+
+Public Class FrmTrCourse
+    Inherits System.Web.UI.Page
+    Dim sHCourse As SessionHelper = New SessionHelper
+    Protected WithEvents txtBtsLulus As System.Web.UI.WebControls.TextBox
+    Protected WithEvents RequiredFieldValidator3 As System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents RangeValidator1 As System.Web.UI.WebControls.RangeValidator
+    Protected WithEvents txtNotes As System.Web.UI.WebControls.TextBox
+    Protected WithEvents btnCari As System.Web.UI.WebControls.Button
+    Protected WithEvents ddlCategory As System.Web.UI.WebControls.DropDownList
+    Private m_bFormPrivilege As Boolean = False
+
+#Region " Web Form Designer Generated Code "
+
+    'This call is required by the Web Form Designer.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+
+    End Sub
+    Protected WithEvents RequiredFieldValidator1 As System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents RequiredFieldValidator2 As System.Web.UI.WebControls.RequiredFieldValidator
+    Protected WithEvents btnSimpan As System.Web.UI.WebControls.Button
+    Protected WithEvents btnBatal As System.Web.UI.WebControls.Button
+    Protected WithEvents ddlStatus As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtCourseCode As System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtCourseName As System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtDescCourse As System.Web.UI.WebControls.TextBox
+    Protected WithEvents dtgCourse As System.Web.UI.WebControls.DataGrid
+    Protected WithEvents chkRequireWorkDate As System.Web.UI.WebControls.CheckBox
+    Protected WithEvents RegularExpressionValidator1 As System.Web.UI.WebControls.RegularExpressionValidator
+
+    'NOTE: The following placeholder declaration is required by the Web Form Designer.
+    'Do not delete or move it.
+    Private designerPlaceholderDeclaration As System.Object
+
+    Private Sub Page_Init(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Init
+        'CODEGEN: This method call is required by the Web Form Designer
+        'Do not modify it using the code editor.
+        InitializeComponent()
+    End Sub
+
+#End Region
+
+    Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Response.Cache.SetCacheability(HttpCacheability.NoCache)
+        ActivateUserPrivilege()
+        If Not IsPostBack Then
+            InitiatePage()
+            BindddlCourse()
+            BindDdlCategory()
+            BindDataGrid(0)
+        End If
+    End Sub
+
+    Private Sub SetControlPrivilege()
+        btnSimpan.Visible = m_bFormPrivilege
+        btnBatal.Visible = m_bFormPrivilege
+    End Sub
+
+    Private Sub ActivateUserPrivilege()
+        m_bFormPrivilege = SecurityProvider.Authorize(Context.User, SR.TrainingUpdateCategory_Privilege)
+
+        If Not SecurityProvider.Authorize(Context.User, SR.TrainingViewCategory_Privilege) Then
+            Server.Transfer("../FrmAccessDenied.aspx?modulName=TRAINING - Kategori")
+        End If
+
+    End Sub
+
+    Private Sub InitiatePage()
+        ClearData()
+        SetControlPrivilege()
+        ViewState("CurrentSortColumn") = "CourseCode"
+        ViewState("CurrentSortDirect") = Sort.SortDirection.ASC
+    End Sub
+
+    Private Sub BindddlCourse()
+        ddlStatus.Items.Clear()
+        ddlStatus.Items.Add(New ListItem("Semua Status", "-1"))
+        Dim obj As New EnumTrDataStatus
+        Dim arlStatusReg As ArrayList = obj.Retrieve()
+        For Each en As EnumDataStatus In arlStatusReg
+            Dim lItem As ListItem = New ListItem(en.NameType, en.ValueType.ToString())
+            ddlStatus.Items.Add(lItem)
+        Next
+        ddlStatus.ClearSelection()
+        ddlStatus.SelectedIndex = 2
+    End Sub
+
+    Private Sub BindDdlCategory()
+        ddlCategory.Items.Clear()
+        ddlCategory.Items.Add(New ListItem("Semua Kategori", "-1"))
+        Dim arrListEnumTrClass As ArrayList = EnumTrClass.RetrieveEnumTrClass()
+        Dim objClassCat As New TrClassCategory
+        For i As Integer = 0 To arrListEnumTrClass.Count - 1
+            objClassCat = CType(arrListEnumTrClass(i), TrClassCategory)
+            ddlCategory.Items.Add(New ListItem(objClassCat.Name, objClassCat.ID.ToString()))
+        Next i
+        ddlCategory.ClearSelection()
+        ddlCategory.SelectedIndex = 0
+    End Sub
+
+    Private Function CreateCriteriaComposite() As CriteriaComposite
+        Dim criterias As CriteriaComposite = New CriteriaComposite(New Criteria(GetType(TrCourse), _
+        "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+
+        If txtCourseCode.Text.Trim() <> "" Then
+            criterias.opAnd(New Criteria(GetType(TrCourse), _
+               "CourseCode", MatchType.Partial, txtCourseCode.Text.Trim()))
+        End If
+
+        If txtCourseName.Text.Trim() <> "" Then
+            criterias.opAnd(New Criteria(GetType(TrCourse), _
+                "CourseName", MatchType.Partial, txtCourseName.Text.Trim()))
+        End If
+
+        If Not ddlStatus.SelectedValue = "-1" Then
+            criterias.opAnd(New Criteria(GetType(TrCourse), _
+                "Status", MatchType.Exact, ddlStatus.SelectedValue))
+        End If
+
+
+        If Not ddlCategory.SelectedValue = "-1" Then
+            ' If ddlCategory.SelectedValue = "0" Then
+            'criterias.opAnd(New Criteria(GetType(TrCourse), _
+            '    "Category", MatchType.No, CInt(EnumTrClass.EnumTrClassCategory.GENERAL_WAJIB)))
+            'criterias.opAnd(New Criteria(GetType(TrCourse), _
+            '    "Category", MatchType.No, CInt(EnumTrClass.EnumTrClassCategory.MSTEP)))
+            ' Else
+            criterias.opAnd(New Criteria(GetType(TrCourse), _
+                "Category", MatchType.Exact, ddlCategory.SelectedValue))
+            'End If
+        End If
+
+        Return criterias
+    End Function
+
+    Private Sub BindDataGrid(ByVal indexPage As Integer)
+        Dim totalRow As Integer = 0
+
+        If (indexPage >= 0) Then
+            dtgCourse.DataSource = New TrCourseFacade(User).RetrieveActiveList(CreateCriteriaComposite, indexPage + 1, dtgCourse.PageSize, totalRow, CType(ViewState("CurrentSortColumn"), String), _
+              CType(ViewState("CurrentSortDirect"), Sort.SortDirection))
+            dtgCourse.VirtualItemCount = totalRow
+            dtgCourse.DataBind()
+        End If
+    End Sub
+
+    Private Sub ClearData()
+        Me.txtCourseCode.ReadOnly = False
+        Me.txtCourseName.ReadOnly = False
+        Me.txtDescCourse.ReadOnly = False
+        Me.chkRequireWorkDate.Enabled = True
+        Me.ddlStatus.Enabled = True
+        Me.ddlCategory.Enabled = True
+        Me.txtCourseName.Text() = String.Empty
+        Me.txtCourseCode.Text() = String.Empty
+        Me.txtDescCourse.Text() = String.Empty
+        Me.txtNotes.Text() = String.Empty
+        Me.ddlStatus.SelectedValue = 1
+        Me.ddlCategory.SelectedValue = 0
+        Me.chkRequireWorkDate.Checked = True
+        If dtgCourse.Items.Count > 0 Then
+            dtgCourse.SelectedIndex = -1
+        End If
+        btnSimpan.Enabled = True
+        ViewState.Add("vsProcess", "Insert")
+    End Sub
+    Private Sub btnTutup_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        ViewState.Clear()
+        Response.Redirect("../Default.aspx")
+    End Sub
+
+    Private Sub btnSimpan_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSimpan.Click
+        If Not Page.IsValid Then
+            Return
+        End If
+
+        If Not IsUnhack() Then
+            MessageBox.Show("< dan > bukan karakter valid")
+            Return
+        End If
+        Me.txtBtsLulus.ReadOnly = False
+        Dim objTrCourse As TrCourse = New TrCourse
+        Dim objTrCourseFacade As TrCourseFacade = New TrCourseFacade(User)
+        Dim nResult = -1
+        Me.txtCourseCode.Enabled = True
+        If CType(ViewState("vsProcess"), String) = "Insert" Then
+            If objTrCourseFacade.ValidateCode(Me.txtCourseCode.Text) = 0 Then
+                objTrCourse.PassingScore = Me.txtBtsLulus.Text
+                objTrCourse.CourseCode = Me.txtCourseCode.Text
+                objTrCourse.CourseName = Me.txtCourseName.Text
+                objTrCourse.Description = Me.txtDescCourse.Text
+                objTrCourse.RequireWorkDate = Me.chkRequireWorkDate.Checked
+                objTrCourse.Status = Me.ddlStatus.SelectedValue
+                objTrCourse.Category = Me.ddlCategory.SelectedValue
+                objTrCourse.Notes = Me.txtNotes.Text.Trim
+                nResult = New TrCourseFacade(User).Insert(objTrCourse)
+                If nResult = -1 Then
+                    MessageBox.Show(SR.SaveFail)
+                Else
+
+                    MessageBox.Show(SR.SaveSuccess)
+                End If
+            Else
+                MessageBox.Show(SR.DataIsExist("Course"))
+            End If
+        Else
+            UpdateGroup()
+        End If
+
+        'ClearData()
+        txtCourseCode.Text = ""
+        txtCourseName.Text = ""
+        txtDescCourse.Text = ""
+        txtNotes.Text = ""
+        dtgCourse.SelectedIndex = -1
+        dtgCourse.CurrentPageIndex = 0
+        BindDataGrid(dtgCourse.CurrentPageIndex)
+    End Sub
+
+    Private Function IsExistGroup(ByVal strGroupCode As String) As Boolean
+        Dim objTrCourseFacade As TrCourseFacade = New TrCourseFacade(User)
+        If objTrCourseFacade.ValidateCode(strGroupCode) > 0 Then
+            MessageBox.Show(SR.DataIsExist("Kode Course"))
+            Return True
+        End If
+        Return False
+    End Function
+
+    Private Function InsertGroup() As Integer
+        Dim objTrCourse As TrCourse = New TrCourse
+        Dim nResult As Integer = -1
+        If Not IsExistGroup(txtCourseCode.Text) Then
+            objTrCourse.CourseCode = Me.txtCourseCode.Text
+            objTrCourse.CourseName = Me.txtCourseName.Text
+            objTrCourse.Description = Me.txtDescCourse.Text
+            objTrCourse.Status = Me.ddlStatus.SelectedValue
+            objTrCourse.Category = Me.ddlCategory.SelectedValue
+            objTrCourse.RequireWorkDate = Me.chkRequireWorkDate.Checked
+            nResult = New TrCourseFacade(User).Insert(objTrCourse)
+        Else
+        End If
+        Return nResult
+    End Function
+
+    Private Sub dtgCourse_ItemDataBound(ByVal sender As System.Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs) Handles dtgCourse.ItemDataBound
+        If e.Item.ItemIndex <> -1 Then
+            e.Item.Cells(7).Text = EnumTrClass.RetrieveTrClassCategory(CInt(CType(e.Item.DataItem, TrCourse).Category))
+        End If
+
+        If Not e.Item.FindControl("btnHapus") Is Nothing Then
+            CType(e.Item.FindControl("btnHapus"), LinkButton).Attributes.Add("OnClick", "return confirm('Yakin Data ini akan dihapus?');")
+        End If
+
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Or e.Item.ItemType = ListItemType.SelectedItem Then
+            CType(e.Item.FindControl("lblNo"), Label).Text = e.Item.ItemIndex + 1 + (dtgCourse.CurrentPageIndex * dtgCourse.PageSize)
+        End If
+
+        'privilege
+        If Not e.Item.FindControl("btnHapus") Is Nothing Then
+            CType(e.Item.FindControl("btnHapus"), LinkButton).Visible = m_bFormPrivilege
+        End If
+        If Not e.Item.FindControl("btnUbah") Is Nothing Then
+            CType(e.Item.FindControl("btnUbah"), LinkButton).Visible = m_bFormPrivilege
+        End If
+    End Sub
+
+    Private Sub UpdateGroup()
+        Dim objTrCourse As TrCourse = CType(sHCourse.GetSession("vsTrCourse"), TrCourse)
+        objTrCourse.PassingScore = Me.txtBtsLulus.Text
+        objTrCourse.CourseCode = Me.txtCourseCode.Text
+        objTrCourse.CourseName = Me.txtCourseName.Text
+        objTrCourse.Description = Me.txtDescCourse.Text
+        objTrCourse.RequireWorkDate = Me.chkRequireWorkDate.Checked
+        objTrCourse.Status = Me.ddlStatus.SelectedValue
+        objTrCourse.Category = Me.ddlCategory.SelectedValue
+        objTrCourse.Notes = Me.txtNotes.Text.Trim
+        Dim nResult = New TrCourseFacade(User).Update(objTrCourse)
+    End Sub
+
+    Private Sub dtgCourse_ItemCommand(ByVal source As System.Object, ByVal e As System.Web.UI.WebControls.DataGridCommandEventArgs) Handles dtgCourse.ItemCommand
+        If (e.CommandName = "View") Then
+            ViewState.Add("vsProcess", "View")
+            ViewGroup(e.Item.Cells(0).Text, False)
+            Me.txtCourseCode.ReadOnly = True
+            Me.txtCourseName.ReadOnly = True
+            Me.txtDescCourse.ReadOnly = True
+            Me.txtBtsLulus.ReadOnly = True
+            Me.ddlStatus.Enabled = False
+            Me.ddlCategory.Enabled = False
+            Me.chkRequireWorkDate.Enabled = False
+            Me.txtNotes.ReadOnly = True
+            dtgCourse.SelectedIndex = -1
+        ElseIf e.CommandName = "Edit" Then
+            ViewState.Add("vsProcess", "Edit")
+            ViewGroup(e.Item.Cells(0).Text, True)
+            dtgCourse.SelectedIndex = e.Item.ItemIndex
+            Me.txtCourseCode.ReadOnly = True
+            Me.txtCourseName.ReadOnly = False
+            Me.txtDescCourse.ReadOnly = False
+            Me.txtNotes.ReadOnly = False
+            Me.txtBtsLulus.ReadOnly = False
+            Me.ddlStatus.Enabled = True
+            Me.ddlCategory.Enabled = True
+            Me.chkRequireWorkDate.Enabled = True
+        ElseIf e.CommandName = "Delete" Then
+
+            DeleteCourse(e.Item.Cells(0).Text)
+        End If
+    End Sub
+
+    Private Function CreateCriteriaForCheckRecord(ByVal DomainType As Type, _
+    ByVal TrCourseID As Integer) As CriteriaComposite
+        Dim criterias As New CriteriaComposite(New Criteria(DomainType, "RowStatus", _
+        MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        criterias.opAnd(New Criteria(DomainType, "TrCourse", MatchType.Exact, TrCourseID))
+        Return criterias
+    End Function
+
+    Private Function CreateAggreateForCheckRecord(ByVal DomainType As Type) As Aggregate
+        Dim aggregates As New Aggregate(DomainType, "ID", AggregateType.Count)
+        Return aggregates
+    End Function
+
+    Private Sub DeleteCourse(ByVal nID As Integer)
+        'Modifikasi u/ bugfixed
+        If (New HelperFacade(User, GetType(TrPreRequire)).IsRecordExist(CreateCriteriaForCheckRecord(GetType(TrPreRequire), nID), _
+            CreateAggreateForCheckRecord(GetType(TrPreRequire)))) Or (New HelperFacade(User, GetType(TrClass)).IsRecordExist(CreateCriteriaForCheckRecord(GetType(TrClass), nID), _
+            CreateAggreateForCheckRecord(GetType(TrClass)))) Or (New HelperFacade(User, GetType(TrCourseEvaluation)).IsRecordExist(CreateCriteriaForCheckRecord(GetType(TrCourseEvaluation), nID), _
+            CreateAggreateForCheckRecord(GetType(TrCourseEvaluation)))) Then
+            MessageBox.Show(SR.CannotDelete)
+
+        Else
+            Dim objTrCourse As TrCourse = New TrCourseFacade(User).Retrieve(nID)
+            'objTrCourse.RowStatus = DBRowStatus.Deleted
+            'Dim nResult = New TrCourseFacade(User).Update(objTrCourse)
+            Dim facade As TrCourseFacade = New TrCourseFacade(User)
+            Try
+                facade.DeleteFromDB(objTrCourse)
+                MessageBox.Show(SR.DeleteSucces)
+                dtgCourse.CurrentPageIndex = 0
+                BindDataGrid(dtgCourse.CurrentPageIndex)
+                ClearData()
+            Catch ex As Exception
+                MessageBox.Show(SR.DeleteFail)
+            End Try
+
+        End If
+    End Sub
+
+
+    Private Sub ViewGroup(ByVal nID As Integer, ByVal EditStatus As Boolean)
+        Dim objTrCourse As TrCourse = New TrCourseFacade(User).Retrieve(nID)
+        sHCourse.SetSession("vsTrCourse", objTrCourse)
+        Me.txtCourseCode.Text = objTrCourse.CourseCode
+        Me.txtCourseName.Text = objTrCourse.CourseName
+        Me.txtDescCourse.Text = objTrCourse.Description
+        Me.txtBtsLulus.Text = objTrCourse.PassingScore
+        Me.txtNotes.Text = objTrCourse.Notes
+        'default is true
+        If IsNothing(objTrCourse.RequireWorkDate) Then
+            Me.chkRequireWorkDate.Checked = True
+        Else
+            Me.chkRequireWorkDate.Checked = objTrCourse.RequireWorkDate
+        End If
+        'default is tidak aktif like in ui binding data
+        If IsNothing(objTrCourse.Status) Or objTrCourse.Status = "" Then
+            Me.ddlStatus.SelectedValue = "0"
+        Else
+            Me.ddlStatus.SelectedValue = objTrCourse.Status
+        End If
+
+        If objTrCourse.Category >= 0 Then
+            Me.ddlCategory.SelectedValue = objTrCourse.Category
+        End If
+        Me.btnSimpan.Enabled = EditStatus
+    End Sub
+
+    Private Sub btnBatal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBatal.Click
+        ClearData()
+    End Sub
+
+    Private Sub dtgCourse_SortCommand(ByVal source As System.Object, ByVal e As System.Web.UI.WebControls.DataGridSortCommandEventArgs) Handles dtgCourse.SortCommand
+        If CType(ViewState("CurrentSortColumn"), String) = e.SortExpression Then
+            Select Case CType(ViewState("CurrentSortDirect"), Sort.SortDirection)
+
+                Case Sort.SortDirection.ASC
+                    ViewState("CurrentSortDirect") = Sort.SortDirection.DESC
+
+                Case Sort.SortDirection.DESC
+                    ViewState("CurrentSortDirect") = Sort.SortDirection.ASC
+            End Select
+        Else
+            ViewState("CurrentSortColumn") = e.SortExpression
+            ViewState("CurrentSortDirect") = Sort.SortDirection.ASC
+        End If
+
+        dtgCourse.SelectedIndex = -1
+        dtgCourse.CurrentPageIndex = 0
+        BindDataGrid(dtgCourse.CurrentPageIndex)
+        ClearData()
+    End Sub
+
+    Private Sub dtgCourse_PageIndexChanged(ByVal source As System.Object, ByVal e As System.Web.UI.WebControls.DataGridPageChangedEventArgs) Handles dtgCourse.PageIndexChanged
+        dtgCourse.SelectedIndex = -1
+        dtgCourse.CurrentPageIndex = e.NewPageIndex
+        BindDataGrid(dtgCourse.CurrentPageIndex)
+        ClearData()
+    End Sub
+
+    Private Sub findClassCategory()
+        dtgCourse.CurrentPageIndex = 0
+        BindDataGrid(0)
+    End Sub
+
+    Private Function IsUnhack() As Boolean
+        If txtCourseCode.Text.IndexOf("<") >= 0 Or txtCourseCode.Text.IndexOf(">") >= 0 Or txtCourseCode.Text.IndexOf("'") >= 0 Then
+            Return False
+        End If
+
+        If txtCourseName.Text.IndexOf("<") >= 0 Or txtCourseName.Text.IndexOf(">") >= 0 Or txtCourseName.Text.IndexOf("'") >= 0 Then
+            Return False
+        End If
+
+        If txtDescCourse.Text.IndexOf("<") >= 0 Or txtDescCourse.Text.IndexOf(">") >= 0 Or txtDescCourse.Text.IndexOf("'") >= 0 Then
+            Return False
+        End If
+
+        If txtNotes.Text.IndexOf("<") >= 0 Or txtNotes.Text.IndexOf(">") >= 0 Or txtNotes.Text.IndexOf("'") >= 0 Then
+            Return False
+        End If
+        Return True
+    End Function
+
+    Private Sub btnCari_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnCari.Click
+        findClassCategory()
+    End Sub
+End Class
+

@@ -1,0 +1,12 @@
+﻿SELECT    
+	dd.ID, dd.SparePartDOID, s.SONumber, sm.PartNumber, 
+	sm.PartName, bd.Quantity as Qty, bd.Tax, bd.Discount, 
+	bd.RetailPrice
+FROM dbo.SparePartDODetail AS dd WITH (NOLOCK) 
+LEFT OUTER JOIN dbo.SparePartDO AS d WITH (NOLOCK) ON dd.SparePartDOID = d.ID AND d.RowStatus = 0 
+INNER JOIN dbo.SparePartBillingDetail AS bd WITH (NOLOCK) ON dd.ID = bd.SparePartDODetailID AND bd.RowStatus = 0 
+INNER JOIN dbo.SparePartBilling AS b WITH (NOLOCK) ON b.ID = bd.SparePartBillingID AND b.RowStatus = 0 
+INNER JOIN dbo.SparePartPOEstimate AS s WITH (NOLOCK) ON dd.SparePartPOEstimateID = s.ID AND s.ID = dd.SparePartPOEstimateID AND s.RowStatus = 0 
+INNER JOIN dbo.SparePartMaster AS sm WITH (NOLOCK) ON sm.ID = dd.SparePartMasterID AND sm.RowStatus = 0 
+INNER JOIN dbo.SparepartPOEstimateDetail AS sd WITH (NOLOCK) ON sd.SparePartPOEstimateID = s.ID AND sd.PartNumber = sm.PartNumber AND sd.RowStatus =  0
+WHERE (d.RowStatus = 0) AND (b.BillingDate IS NOT NULL) AND d.ID IN @ListOfDOId

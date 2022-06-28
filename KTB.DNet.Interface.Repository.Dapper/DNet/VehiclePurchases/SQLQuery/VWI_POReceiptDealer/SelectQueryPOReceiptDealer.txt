@@ -1,0 +1,20 @@
+﻿	SELECT 
+Count(*)
+FROM
+(
+    SELECT a.ID, a.EndCustomerID, a.ChassisNumber, a.CategoryID, a.DONumber, a.SONumber, a.DiscountAmount, a.PONumber, a.EngineNumber, a.DODate, a.GIDate, a.ParkingAmount, a.ProductionYear 
+	       , b.ColorCode as VehicleColorCode, b.ColorIndName as VehicleColorDesc, b.MaterialNumber, b.MaterialDescription
+		   , c.Code as VehicleKindCode, c.Description as VehicleKindDesc
+		   , d.VechileTypeCode as VehicleTypeCode, d.Description as VehicleTypeDesc
+		   , e.DealerCode as SoldDealerCode, e.DealerName as SoldDealerName
+		   , a.GIDate as ATDDate, f.ETA as ETADate, f.ATA as ATADate
+    FROM 
+	(
+	    SELECT * FROM ChassisMaster WITH (NOLOCK) where RowStatus = 0 AND SoldDealerID = {0} 	
+	) a 
+	LEFT JOIN VechileColor b WITH (NOLOCK) ON a.VechileColorID = b.ID and b.RowStatus = 0
+	LEFT JOIN VehicleKind c WITH (NOLOCK) ON a.VehicleKindID = c.ID and c.RowStatus = 0
+	LEFT JOIN VechileType d WITH (NOLOCK) ON b.VechileTypeID = d.ID	 and d.RowStatus = 0
+	JOIN Dealer e WITH (NOLOCK) ON a.SoldDealerID = e.ID and e.RowStatus = 0
+	LEFT JOIN ChassisMasterATA f WITH (NOLOCK) ON a.ID = f.ChassisMasterID and f.RowStatus = 0
+) VWI_POReceiptDealer {1}

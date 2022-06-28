@@ -1,0 +1,75 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_xts_kit.company
+    , VWI_CRM_xts_kit.businessunitcode
+    , VWI_CRM_xts_kit.xjp_kitcategoryidname
+    , VWI_CRM_xts_kit.owninguser
+    , VWI_CRM_xts_kit.owningteam
+    , VWI_CRM_xts_kit.xts_locking
+    , VWI_CRM_xts_kit.transactioncurrencyidname
+    , VWI_CRM_xts_kit.xts_businessunitidname
+    , VWI_CRM_xts_kit.owneridname
+    , VWI_CRM_xts_kit.createdon
+    , VWI_CRM_xts_kit.transactioncurrencyid
+    , VWI_CRM_xts_kit.createdonbehalfby
+    , VWI_CRM_xts_kit.overriddencreatedon
+    , VWI_CRM_xts_kit.xts_kit
+    , VWI_CRM_xts_kit.xjp_estimatetotalpartcost_base
+    , VWI_CRM_xts_kit.importsequencenumber
+    , VWI_CRM_xts_kit.xjp_estimatetotalpartcost
+    , VWI_CRM_xts_kit.xjp_storecostaddition
+    , VWI_CRM_xts_kit.xjp_acquisitiontaxcategoryname
+    , VWI_CRM_xts_kit.xjp_kitcategoryid
+    , VWI_CRM_xts_kit.utcconversiontimezonecode
+    , VWI_CRM_xts_kit.createdbyyominame
+    , VWI_CRM_xts_kit.xts_consumptiontaxid
+    , VWI_CRM_xts_kit.owningbusinessunit
+    , VWI_CRM_xts_kit.xts_consumptiontaxidname
+    , VWI_CRM_xts_kit.versionnumber
+    , VWI_CRM_xts_kit.modifiedby
+    , VWI_CRM_xts_kit.modifiedbyyominame
+    , VWI_CRM_xts_kit.createdby
+    , VWI_CRM_xts_kit.timezoneruleversionnumber
+    , VWI_CRM_xts_kit.xjp_estimatesubcontractcost_base
+    , VWI_CRM_xts_kit.modifiedbyname
+    , VWI_CRM_xts_kit.owneridtype
+    , VWI_CRM_xts_kit.statuscodename
+    , VWI_CRM_xts_kit.ownerid
+    , VWI_CRM_xts_kit.xts_kitid
+    , VWI_CRM_xts_kit.createdonbehalfbyyominame
+    , VWI_CRM_xts_kit.xts_kittype
+    , VWI_CRM_xts_kit.owneridyominame
+    , VWI_CRM_xts_kit.modifiedon
+    , VWI_CRM_xts_kit.exchangerate
+    , VWI_CRM_xts_kit.statecode
+    , VWI_CRM_xts_kit.xts_businessunitid
+    , VWI_CRM_xts_kit.statuscode
+    , VWI_CRM_xts_kit.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_kit.statecodename
+    , VWI_CRM_xts_kit.createdbyname
+    , VWI_CRM_xts_kit.xjp_storecostaddition_base
+    , VWI_CRM_xts_kit.xts_description2
+    , VWI_CRM_xts_kit.createdonbehalfbyname
+    , VWI_CRM_xts_kit.xjp_estimatesubcontractcost
+    , VWI_CRM_xts_kit.modifiedonbehalfbyname
+    , VWI_CRM_xts_kit.xts_kittypename
+    , VWI_CRM_xts_kit.modifiedonbehalfby
+    , VWI_CRM_xts_kit.xts_productid
+    , VWI_CRM_xts_kit.xts_defaultduration
+    , VWI_CRM_xts_kit.xts_productidname
+    , VWI_CRM_xts_kit.xjp_acquisitiontaxcategory
+    , VWI_CRM_xts_kit.xts_description1
+    , VWI_CRM_xts_kit.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.*  
+        , b.msdyn_companycode
+    FROM CRM_xts_kit a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_kit

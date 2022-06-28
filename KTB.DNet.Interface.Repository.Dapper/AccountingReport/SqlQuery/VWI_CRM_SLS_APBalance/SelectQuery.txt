@@ -1,0 +1,23 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SLS_APBalance.company
+	,VWI_CRM_SLS_APBalance.businessunitcode
+	,VWI_CRM_SLS_APBalance.IdentificationType
+	,VWI_CRM_SLS_APBalance.APVoucherNo
+	,VWI_CRM_SLS_APBalance.TransactionDate
+	,VWI_CRM_SLS_APBalance.Vendor
+	,VWI_CRM_SLS_APBalance.TransactionType
+	,VWI_CRM_SLS_APBalance.DueDate
+	,VWI_CRM_SLS_APBalance.VendorInvoiceNumber
+	,VWI_CRM_SLS_APBalance.APVoucherDetailNo
+	,VWI_CRM_SLS_APBalance.PaymentTerms
+	,VWI_CRM_SLS_APBalance.GrandTotal
+	,VWI_CRM_SLS_APBalance.Balance
+	,VWI_CRM_SLS_APBalance.PaymentAmount
+	,VWI_CRM_SLS_APBalance.ConsumptionTax1Amount
+	,VWI_CRM_SLS_APBalance.ConsumptionTax2Amount
+	,VWI_CRM_SLS_APBalance.Description
+	,VWI_CRM_SLS_APBalance.DocState
+	,VWI_CRM_SLS_APBalance.msdyn_companycode
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SLS_APBalance WITH (NOLOCK) {0}

@@ -1,0 +1,37 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, currencysymbol
+	, modifiedon
+	, statecode
+	, entityimage_timestamp
+	, statecodename
+	, createdonbehalfby
+	, transactioncurrencyid
+	, entityimage
+	, entityimageid
+	, importsequencenumber
+	, organizationid
+	, modifiedbyyominame
+	, currencyprecision
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, isocurrencycode
+	, modifiedby
+	, createdby
+	, statuscodename
+	, uniquedscid
+	, exchangerate
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, createdonbehalfbyname
+	, modifiedonbehalfbyname
+	, currencyname
+	, overriddencreatedon
+	, entityimage_url
+FROM [dbo].[CRM_transactioncurrency] as VWI_CRM_transactioncurrency with (nolock)
+WHERE transactioncurrencyid = @Id

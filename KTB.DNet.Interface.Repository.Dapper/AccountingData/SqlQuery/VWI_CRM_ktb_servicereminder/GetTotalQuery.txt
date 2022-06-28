@@ -1,0 +1,96 @@
+SELECT 
+	COUNT(1)
+from (
+	SELECT      
+		  b.ktb_bucompany as company    
+		, b.ktb_dealercode as businessunitcode    
+		, a.versionnumber
+		, a.createdon
+		, a.ktb_servicereminderid
+		, a.owningbusinessunitname
+		, a.statuscodename
+		, a.ktb_maximaltanggalfollowup
+		, a.ktb_plateno
+		, a.ktb_vehiclepublicid
+		, a.modifiedbyyominame
+		, a.ktb_vehiclepublicidname
+		, a.ktb_transactiontype
+		, a.owneridtype
+		, a.ktb_businessunitid
+		, a.modifiedbyname
+		, a.owneridname
+		, a.overriddencreatedon
+		, a.ktb_tanggalbooking
+		, a.ktb_serviceincdnetcode
+		, a.ktb_notemms
+		, a.ktb_servicereminderiddnet
+		, a.createdonbehalfbyyominame
+		, a.modifiedonbehalfby
+		, a.ktb_responname
+		, a.owningteam
+		, a.ktb_respon
+		, a.ktb_nommsrefidname
+		, a.ktb_lastkm
+		, a.statecode
+		, a.ktb_noworefmmsid
+		, a.ktb_noworefmmsidname
+		, a.timezoneruleversionnumber
+		, a.ktb_isinterface
+		, a.ktb_parentbusinessunitid
+		, a.modifiedby
+		, a.ktb_followupdate
+		, a.ktb_businessunitidname
+		, a.ktb_vehicleidentificationnoid
+		, a.ktb_noworefidname
+		, a.ktb_customername
+		, a.ktb_servicereminderdms
+		, a.ktb_statusname
+		, a.createdonbehalfbyname
+		, a.ktb_chassisnumber
+		, a.createdby
+		, a.utcconversiontimezonecode
+		, a.ktb_sourcedata
+		, a.ktb_engineno
+		, a.ownerid
+		, a.modifiedon
+		, a.importsequencenumber
+		, a.owneridyominame
+		, a.ktb_tipekendaraan
+		, a.ktb_noworefid
+		, a.ktb_sourcedataname
+		, a.ktb_isinterfacename
+		, a.ktb_description
+		, a.ktb_reinterface
+		, a.createdbyname
+		, a.modifiedonbehalfbyname
+		, a.ktb_handling
+		, a.createdonbehalfby
+		, a.ktb_customerphonenumber
+		, a.ktb_interfaceresult
+		, a.createdbyyominame
+		, a.owninguser
+		, a.ktb_reinterfacename
+		, a.ktb_reminderservicedate
+		, a.owningbusinessunit
+		, a.ktb_handlingname
+		, a.ktb_contactphonenumber
+		, a.ktb_dateupdatefrominterface
+		, a.statuscode
+		, a.modifiedonbehalfbyyominame
+		, a.ktb_parentbusinessunitidname
+		, a.ktb_nommsrefid
+		, a.statecodename
+		, a.ktb_contactname
+		, a.ktb_vehicleidentificationnoidname
+		, a.ktb_status
+		, a.ktb_casenumber
+		, a.DealerCode
+		, a.SourceType
+		, a.RowStatus
+		, a.LastSyncDate  
+		, b.msdyn_companycode    
+	FROM CRM_ktb_servicereminder a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.ktb_businessunitid 
+	{0}
+) CRM_ktb_servicereminder

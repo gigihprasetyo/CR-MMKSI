@@ -1,0 +1,14 @@
+SELECT 
+    COUNT(1)
+FROM (
+	SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow,
+    B.ktb_bucompany company,
+    B.ktb_dealercode businessunitcode
+    ,A.* 
+    ,B.msdyn_companycode
+    FROM CRM_ktb_externaldealerinterfacelog A WITH(NOLOCK)
+    LEFT JOIN {0}dbo.CRM_businessunit B WITH(NOLOCK) 
+        ON B.businessunitid = A.owningbusinessunit
+) as VWI_CRM_ktb_externaldealerinterfacelog
+{1}

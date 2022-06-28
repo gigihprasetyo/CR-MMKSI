@@ -1,0 +1,129 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_inventorytransferdetail.company
+	, VWI_CRM_xts_inventorytransferdetail.businessunitcode
+	, VWI_CRM_xts_inventorytransferdetail.versionnumber
+	, VWI_CRM_xts_inventorytransferdetail.createdon
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromexteriorcoloridname
+	, VWI_CRM_xts_inventorytransferdetail.xts_tobatchid
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromwarehouseidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_consumptiontaxinid
+	, VWI_CRM_xts_inventorytransferdetail.xts_eventdata
+	, VWI_CRM_xts_inventorytransferdetail.statuscodename
+	, VWI_CRM_xts_inventorytransferdetail.xts_basequantity
+	, VWI_CRM_xts_inventorytransferdetail.xts_toserialid
+	, VWI_CRM_xts_inventorytransferdetail.xts_inventorytransferidname
+	, VWI_CRM_xts_inventorytransferdetail.modifiedbyyominame
+	, VWI_CRM_xts_inventorytransferdetail.xts_inventorytransferid
+	, VWI_CRM_xts_inventorytransferdetail.xts_tointeriorcoloridname
+	, VWI_CRM_xts_inventorytransferdetail.owneridtype
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromconfigurationidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_tostyleidname
+	, VWI_CRM_xts_inventorytransferdetail.createdonbehalfby
+	, VWI_CRM_xts_inventorytransferdetail.modifiedbyname
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromlocationid
+	, VWI_CRM_xts_inventorytransferdetail.xts_inventoryunitid
+	, VWI_CRM_xts_inventorytransferdetail.owneridname
+	, VWI_CRM_xts_inventorytransferdetail.xts_inventorytransferdetailid
+	, VWI_CRM_xts_inventorytransferdetail.overriddencreatedon
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromserialid
+	, VWI_CRM_xts_inventorytransferdetail.xts_tostyleid
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromserialidname
+	, VWI_CRM_xts_inventorytransferdetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_inventorytransferdetail.transactioncurrencyidname
+	, VWI_CRM_xts_inventorytransferdetail.modifiedonbehalfby
+	, VWI_CRM_xts_inventorytransferdetail.xjp_antiqueledgerid
+	, VWI_CRM_xts_inventorytransferdetail.xts_stockinventorynewvehicleid
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromlocationidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromsiteidname
+	, VWI_CRM_xts_inventorytransferdetail.owningteam
+	, VWI_CRM_xts_inventorytransferdetail.xts_transactionunitid
+	, VWI_CRM_xts_inventorytransferdetail.xts_servicepartsandmaterialidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_productidname
+	, VWI_CRM_xts_inventorytransferdetail.statecode
+	, VWI_CRM_xts_inventorytransferdetail.xts_tositeidname
+	, VWI_CRM_xts_inventorytransferdetail.timezoneruleversionnumber
+	, VWI_CRM_xts_inventorytransferdetail.xts_consumptiontaxinidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromstyleid
+	, VWI_CRM_xts_inventorytransferdetail.xts_towarehouseid
+	, VWI_CRM_xts_inventorytransferdetail.xts_frombusinessunitidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_toexteriorcolorid
+	, VWI_CRM_xts_inventorytransferdetail.xts_transactionunitidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromsiteid
+	, VWI_CRM_xts_inventorytransferdetail.xts_quantity
+	, VWI_CRM_xts_inventorytransferdetail.xjp_antiqueledgeridname
+	, VWI_CRM_xts_inventorytransferdetail.ktb_latestpurchaseprice_base
+	, VWI_CRM_xts_inventorytransferdetail.createdonbehalfbyname
+	, VWI_CRM_xts_inventorytransferdetail.ktb_chassisnumber
+	, VWI_CRM_xts_inventorytransferdetail.ktb_latestpurchaseprice
+	, VWI_CRM_xts_inventorytransferdetail.xts_productid
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromstyleidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_locking
+	, VWI_CRM_xts_inventorytransferdetail.utcconversiontimezonecode
+	, VWI_CRM_xts_inventorytransferdetail.xts_tobusinessunitidname
+	, VWI_CRM_xts_inventorytransferdetail.ownerid
+	, VWI_CRM_xts_inventorytransferdetail.modifiedon
+	, VWI_CRM_xts_inventorytransferdetail.importsequencenumber
+	, VWI_CRM_xts_inventorytransferdetail.owneridyominame
+	, VWI_CRM_xts_inventorytransferdetail.ktb_cogstrx
+	, VWI_CRM_xts_inventorytransferdetail.xts_tositeid
+	, VWI_CRM_xts_inventorytransferdetail.xts_toconfigurationidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_tobusinessunitid
+	, VWI_CRM_xts_inventorytransferdetail.xts_toserialidname
+	, VWI_CRM_xts_inventorytransferdetail.exchangerate
+	, VWI_CRM_xts_inventorytransferdetail.xts_tointeriorcolorid
+	, VWI_CRM_xts_inventorytransferdetail.xts_stocknumberlookuptype
+	, VWI_CRM_xts_inventorytransferdetail.xts_frombusinessunitid
+	, VWI_CRM_xts_inventorytransferdetail.xts_towarehouseidname
+	, VWI_CRM_xts_inventorytransferdetail.createdbyname
+	, VWI_CRM_xts_inventorytransferdetail.xts_inventoryunitidname
+	, VWI_CRM_xts_inventorytransferdetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_inventorytransferdetail.xts_tolocationidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_tolocationid
+	, VWI_CRM_xts_inventorytransferdetail.xts_frombatchid
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromexteriorcolorid
+	, VWI_CRM_xts_inventorytransferdetail.xts_inventorytransferdetail
+	, VWI_CRM_xts_inventorytransferdetail.xts_sourcedata
+	, VWI_CRM_xts_inventorytransferdetail.transactioncurrencyid
+	, VWI_CRM_xts_inventorytransferdetail.createdby
+	, VWI_CRM_xts_inventorytransferdetail.xts_toexteriorcoloridname
+	, VWI_CRM_xts_inventorytransferdetail.modifiedby
+	, VWI_CRM_xts_inventorytransferdetail.ktb_cogstrx_base
+	, VWI_CRM_xts_inventorytransferdetail.xts_vehicleidentificationnumber
+	, VWI_CRM_xts_inventorytransferdetail.xts_stockinventorynewvehicleidname
+	, VWI_CRM_xts_inventorytransferdetail.createdbyyominame
+	, VWI_CRM_xts_inventorytransferdetail.owninguser
+	, VWI_CRM_xts_inventorytransferdetail.xts_frominteriorcoloridname
+	, VWI_CRM_xts_inventorytransferdetail.xts_frombatchidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_stockid
+	, VWI_CRM_xts_inventorytransferdetail.xts_stockidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_consumptiontaxoutidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_tobatchidname
+	, VWI_CRM_xts_inventorytransferdetail.xts_consumptiontaxoutid
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromconfigurationid
+	, VWI_CRM_xts_inventorytransferdetail.statuscode
+	, VWI_CRM_xts_inventorytransferdetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_inventorytransferdetail.xts_frominteriorcolorid
+	, VWI_CRM_xts_inventorytransferdetail.xts_remarks
+	, VWI_CRM_xts_inventorytransferdetail.xts_fromwarehouseid
+	, VWI_CRM_xts_inventorytransferdetail.xts_stocknumberlookupname
+	, VWI_CRM_xts_inventorytransferdetail.xts_productdescription
+	, VWI_CRM_xts_inventorytransferdetail.xts_servicepartsandmaterialid
+	, VWI_CRM_xts_inventorytransferdetail.statecodename
+	, VWI_CRM_xts_inventorytransferdetail.xts_toconfigurationid
+	, VWI_CRM_xts_inventorytransferdetail.owningbusinessunit
+	, VWI_CRM_xts_inventorytransferdetail.RowStatus
+	, VWI_CRM_xts_inventorytransferdetail.ktb_ata
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.*  
+        , b.msdyn_companycode
+    FROM CRM_xts_inventorytransferdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    {0}
+) VWI_CRM_xts_inventorytransferdetail

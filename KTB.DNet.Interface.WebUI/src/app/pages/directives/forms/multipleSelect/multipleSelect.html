@@ -1,0 +1,14 @@
+﻿<div class="form-group" ng-class="{ 'has-error': form.{{name}}.$invalid && form.{{name}}.$touched }">
+    <label for="{{name}}">{{label}}
+        <span class='required' ng-if="required">*</span>
+    </label>
+    <ui-select name={{name}} multiple ng-model="$parent.ngModel" theme="bootstrap" close-on-select="false" title="Choose"
+        ng-required="required" ng-disabled="::ngDisabled" append-to-body="true" search-enabled="true">
+        <ui-select-match placeholder="Select..">{{$item[text || 'Text']}}</ui-select-match>
+        <ui-select-choices repeat="option[value || 'Value'] as option in options | filter:$select.search">
+            {{option[text || 'Text']}}
+        </ui-select-choices>
+    </ui-select>
+    <span ng-show="!options.length && hasPendingRequest" style="position: absolute;z-index: 1;right: 37.6px;top: 26.5px;"><img src="src/assets/img/spin.gif" alt="Loading..">  </span>
+    <span ng-show="form.{{name}}.$invalid && form.{{name}}.$touched" class="help-block">{{label}} is required</span>
+</div>

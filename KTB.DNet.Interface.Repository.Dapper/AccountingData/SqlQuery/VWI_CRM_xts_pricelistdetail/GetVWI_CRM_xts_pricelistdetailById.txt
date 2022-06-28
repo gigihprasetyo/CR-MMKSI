@@ -1,0 +1,77 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , ktb_dnetid
+    , xts_quantity
+    , owninguser
+    , xts_partsprice
+    , xts_locking
+    , transactioncurrencyidname
+    , xts_businessunitidname
+    , xts_productidname
+    , statecodename
+    , transactioncurrencyid
+    , xts_servicefee_base
+    , createdonbehalfby
+    , bsi_lastupdatepreviousdate
+    , xts_pkcombinationkey
+    , ownerid
+    , xts_totalprice_base
+    , bsi_previousprice_base
+    , xts_producttypename
+    , importsequencenumber
+    , xts_servicefee
+    , xts_productdescription
+    , versionnumber
+    , xts_producttype
+    , statecode
+    , utcconversiontimezonecode
+    , createdbyyominame
+    , xts_pricingmethod
+    , owningbusinessunit
+    , modifiedbyname
+    , xts_unitidname
+    , modifiedby
+    , modifiedbyyominame
+    , createdby
+    , timezoneruleversionnumber
+    , xts_pricelistid
+    , xts_pricelistdetailid
+    , owneridtype
+    , statuscodename
+    , owningteam
+    , bsi_previousprice
+    , createdonbehalfbyyominame
+    , owneridyominame
+    , modifiedon
+    , xts_pricingmethodname
+    , exchangerate
+    , modifiedonbehalfbyname
+    , statuscode
+    , modifiedonbehalfbyyominame
+    , xts_pricelistdetail
+    , createdbyname
+    , createdon
+    , xts_businessunitid
+    , createdonbehalfbyname
+    , xts_pricelistidname
+    , xts_totalprice
+    , owneridname
+    , modifiedonbehalfby
+    , xts_productid
+    , xts_partsprice_base
+    , xts_unitid
+    , overriddencreatedon
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_pricelistdetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_pricelistdetail 

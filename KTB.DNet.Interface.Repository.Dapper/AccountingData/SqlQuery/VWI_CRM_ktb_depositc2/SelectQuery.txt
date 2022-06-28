@@ -1,0 +1,66 @@
+SELECT 
+	/**PagingIndexQuery**/
+	/**RowNumber**/ 
+		VWI_CRM_ktb_depositc2.[ktb_depositc2id]
+		,VWI_CRM_ktb_depositc2.[statuscode]
+		,VWI_CRM_ktb_depositc2.[modifiedbyyominame]
+		,VWI_CRM_ktb_depositc2.[createdbyname]
+		,VWI_CRM_ktb_depositc2.[transactioncurrencyid]
+		,VWI_CRM_ktb_depositc2.[modifiedon]
+		,VWI_CRM_ktb_depositc2.[ktb_dealerid]
+		,VWI_CRM_ktb_depositc2.[modifiedbyname]
+		,VWI_CRM_ktb_depositc2.[modifiedonbehalfby]
+		,VWI_CRM_ktb_depositc2.[owningbusinessunitname]
+		,VWI_CRM_ktb_depositc2.[ownerid]
+		,VWI_CRM_ktb_depositc2.[createdonbehalfbyyominame]
+		,VWI_CRM_ktb_depositc2.[ktb_documentno]
+		,VWI_CRM_ktb_depositc2.[owneridname]
+		,VWI_CRM_ktb_depositc2.[importsequencenumber]
+		,VWI_CRM_ktb_depositc2.[modifiedby]
+		,VWI_CRM_ktb_depositc2.[owninguser]
+		,VWI_CRM_ktb_depositc2.[ktb_businessunitid]
+		,VWI_CRM_ktb_depositc2.[ktb_depositc2]
+		,VWI_CRM_ktb_depositc2.[modifiedonbehalfbyname]
+		,VWI_CRM_ktb_depositc2.[statecode]
+		,VWI_CRM_ktb_depositc2.[versionnumber]
+		,VWI_CRM_ktb_depositc2.[createdon]
+		,VWI_CRM_ktb_depositc2.[createdby]
+		,VWI_CRM_ktb_depositc2.[owneridtype]
+		,VWI_CRM_ktb_depositc2.[modifiedonbehalfbyyominame]
+		,VWI_CRM_ktb_depositc2.[ktb_iddetail]
+		,VWI_CRM_ktb_depositc2.[ktb_period]
+		,VWI_CRM_ktb_depositc2.[ktb_businessunitidname]
+		,VWI_CRM_ktb_depositc2.[ktb_depositc2amount]
+		,VWI_CRM_ktb_depositc2.[overriddencreatedon]
+		,VWI_CRM_ktb_depositc2.[ktb_depositc2amount_base]
+		,VWI_CRM_ktb_depositc2.[createdonbehalfbyname]
+		,VWI_CRM_ktb_depositc2.[exchangerate]
+		,VWI_CRM_ktb_depositc2.[ktb_idheader]
+		,VWI_CRM_ktb_depositc2.[statuscodename]
+		,VWI_CRM_ktb_depositc2.[owningbusinessunit]
+		,VWI_CRM_ktb_depositc2.[timezoneruleversionnumber]
+		,VWI_CRM_ktb_depositc2.[statecodename]
+		,VWI_CRM_ktb_depositc2.[owningteam]
+		,VWI_CRM_ktb_depositc2.[transactioncurrencyidname]
+		,VWI_CRM_ktb_depositc2.[createdbyyominame]
+		,VWI_CRM_ktb_depositc2.[createdonbehalfby]
+		,VWI_CRM_ktb_depositc2.[ktb_depositc2no]
+		,VWI_CRM_ktb_depositc2.[ktb_documentdate]
+		,VWI_CRM_ktb_depositc2.[owneridyominame]
+		,VWI_CRM_ktb_depositc2.[ktb_billingnumber]
+		,VWI_CRM_ktb_depositc2.[utcconversiontimezonecode]
+		,VWI_CRM_ktb_depositc2.[DealerCode]
+		,VWI_CRM_ktb_depositc2.[SourceType]
+		,VWI_CRM_ktb_depositc2.[RowStatus]
+		,VWI_CRM_ktb_depositc2.[LastSyncDate]
+		, VWI_CRM_ktb_depositc2.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		a.*  
+		, b.msdyn_companycode    
+	FROM [CRM_ktb_depositc2] a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.ktb_businessunitid   
+	{0}
+) as VWI_CRM_ktb_depositc2

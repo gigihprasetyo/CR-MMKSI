@@ -1,0 +1,68 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_uomconversion.company
+    , VWI_CRM_xts_uomconversion.businessunitcode
+    , VWI_CRM_xts_uomconversion.modifiedbyyominame
+    , VWI_CRM_xts_uomconversion.createdbyname
+    , VWI_CRM_xts_uomconversion.createdonbehalfbyname
+    , VWI_CRM_xts_uomconversion.modifiedon
+    , VWI_CRM_xts_uomconversion.xts_factor
+    , VWI_CRM_xts_uomconversion.ktb_isinterfaced
+    , VWI_CRM_xts_uomconversion.createdbyyominame
+    , VWI_CRM_xts_uomconversion.modifiedbyname
+    , VWI_CRM_xts_uomconversion.modifiedonbehalfby
+    , VWI_CRM_xts_uomconversion.xts_tounitofmeasureid
+    , VWI_CRM_xts_uomconversion.createdonbehalfbyyominame
+    , VWI_CRM_xts_uomconversion.xts_numerator
+    , VWI_CRM_xts_uomconversion.importsequencenumber
+    , VWI_CRM_xts_uomconversion.modifiedby
+    , VWI_CRM_xts_uomconversion.xts_roundingname
+    , VWI_CRM_xts_uomconversion.statuscodename
+    , VWI_CRM_xts_uomconversion.xts_businessunitidname
+    , VWI_CRM_xts_uomconversion.xts_fromunitofmeasureid
+    , VWI_CRM_xts_uomconversion.xts_rounding
+    , VWI_CRM_xts_uomconversion.versionnumber
+    , VWI_CRM_xts_uomconversion.createdon
+    , VWI_CRM_xts_uomconversion.createdby
+    , VWI_CRM_xts_uomconversion.owneridtype
+    , VWI_CRM_xts_uomconversion.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_uomconversion.ktb_isinterfacedname
+    , VWI_CRM_xts_uomconversion.xts_pkcombinationkey
+    , VWI_CRM_xts_uomconversion.statecode
+    , VWI_CRM_xts_uomconversion.xts_uomconversionid
+    , VWI_CRM_xts_uomconversion.ktb_typecode
+    , VWI_CRM_xts_uomconversion.overriddencreatedon
+    , VWI_CRM_xts_uomconversion.xts_fromunitofmeasureidname
+    , VWI_CRM_xts_uomconversion.owneridname
+    , VWI_CRM_xts_uomconversion.statuscode
+    , VWI_CRM_xts_uomconversion.owninguser
+    , VWI_CRM_xts_uomconversion.xts_productid
+    , VWI_CRM_xts_uomconversion.owningbusinessunit
+    , VWI_CRM_xts_uomconversion.timezoneruleversionnumber
+    , VWI_CRM_xts_uomconversion.xts_denominator
+    , VWI_CRM_xts_uomconversion.statecodename
+    , VWI_CRM_xts_uomconversion.ownerid
+    , VWI_CRM_xts_uomconversion.owningteam
+    , VWI_CRM_xts_uomconversion.xts_unitofmeasureconversion
+    , VWI_CRM_xts_uomconversion.modifiedonbehalfbyname
+    , VWI_CRM_xts_uomconversion.createdonbehalfby
+    , VWI_CRM_xts_uomconversion.ktb_dnetid
+    , VWI_CRM_xts_uomconversion.xts_businessunitid
+    , VWI_CRM_xts_uomconversion.owneridyominame
+    , VWI_CRM_xts_uomconversion.xts_tounitofmeasureidname
+    , VWI_CRM_xts_uomconversion.xts_productidname
+    , VWI_CRM_xts_uomconversion.utcconversiontimezonecode
+    , VWI_CRM_xts_uomconversion.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_uomconversion a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_uomconversion  

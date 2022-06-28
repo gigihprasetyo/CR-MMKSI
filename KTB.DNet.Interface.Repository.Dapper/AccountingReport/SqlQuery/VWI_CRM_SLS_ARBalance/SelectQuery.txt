@@ -1,0 +1,31 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SLS_ARBalance.company
+	,VWI_CRM_SLS_ARBalance.businessunitcode
+	,VWI_CRM_SLS_ARBalance.InvoiceNumber
+	,VWI_CRM_SLS_ARBalance.TransactionDate
+	,VWI_CRM_SLS_ARBalance.DueDate
+	,VWI_CRM_SLS_ARBalance.DocState
+	,VWI_CRM_SLS_ARBalance.DocType
+	,VWI_CRM_SLS_ARBalance.SourceType
+	,VWI_CRM_SLS_ARBalance.OrderNo
+	,VWI_CRM_SLS_ARBalance.DeliveryOrderNo
+	,VWI_CRM_SLS_ARBalance.CustomerNo
+	,VWI_CRM_SLS_ARBalance.Customer
+	,VWI_CRM_SLS_ARBalance.InvoiceAmount
+	,VWI_CRM_SLS_ARBalance.Balance
+	,VWI_CRM_SLS_ARBalance.FinancingCompanyNo
+	,VWI_CRM_SLS_ARBalance.FinancingCompany
+	,VWI_CRM_SLS_ARBalance.FinancingCompanyInvoiceAmount
+	,VWI_CRM_SLS_ARBalance.FinancingCompanyBalance
+	,VWI_CRM_SLS_ARBalance.Reversing
+	,VWI_CRM_SLS_ARBalance.SPKNo
+	,VWI_CRM_SLS_ARBalance.ChassisNo
+	,VWI_CRM_SLS_ARBalance.EngineNumber
+	,VWI_CRM_SLS_ARBalance.ColorDescription
+	,VWI_CRM_SLS_ARBalance.Product
+	,VWI_CRM_SLS_ARBalance.ProductionYear
+	,VWI_CRM_SLS_ARBalance.ProductDescription
+	,VWI_CRM_SLS_ARBalance.msdyn_companycode
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SLS_ARBalance WITH (NOLOCK) {0}

@@ -1,0 +1,61 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,xts_locking
+	,statecode
+	,xts_businessunitidname
+	,owneridname
+	,statecodename
+	,createdonbehalfby
+	,xts_pkcombinationkey
+	,xts_parentbusinessunitid
+	,xts_reservationmanhour
+	,importsequencenumber
+	,modifiedbyyominame
+	,xts_servicecategoryid
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,xts_reservationclass
+	,owneridtype
+	,statuscodename
+	,xts_servicecategoryidname
+	,owneridyominame
+	,modifiedon
+	,xts_ordertypeid
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,xts_parentbusinessunitidname
+	,versionnumber
+	,modifiedonbehalfby
+	,xts_ordertypeidname
+	,xts_servicereservationclassid
+	,ownerid
+	,overriddencreatedon
+	,xts_description
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicereservationclass a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_servicereservationclassid = @Id
+) VWI_CRM_xts_servicereservationclass

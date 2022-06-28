@@ -1,0 +1,43 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_leasingcompany.createdonbehalfbyyominame
+	, VWI_CRM_ktb_leasingcompany.owninguser
+	, VWI_CRM_ktb_leasingcompany.statecode
+	, VWI_CRM_ktb_leasingcompany.ktb_leasingcompanyid
+	, VWI_CRM_ktb_leasingcompany.owneridname
+	, VWI_CRM_ktb_leasingcompany.statecodename
+	, VWI_CRM_ktb_leasingcompany.createdonbehalfby
+	, VWI_CRM_ktb_leasingcompany.ktb_leasingname
+	, VWI_CRM_ktb_leasingcompany.importsequencenumber
+	, VWI_CRM_ktb_leasingcompany.modifiedbyyominame
+	, VWI_CRM_ktb_leasingcompany.utcconversiontimezonecode
+	, VWI_CRM_ktb_leasingcompany.createdbyyominame
+	, VWI_CRM_ktb_leasingcompany.owningbusinessunit
+	, VWI_CRM_ktb_leasingcompany.modifiedbyname
+	, VWI_CRM_ktb_leasingcompany.owningteam
+	, VWI_CRM_ktb_leasingcompany.modifiedby
+	, VWI_CRM_ktb_leasingcompany.createdby
+	, VWI_CRM_ktb_leasingcompany.timezoneruleversionnumber
+	, VWI_CRM_ktb_leasingcompany.owneridtype
+	, VWI_CRM_ktb_leasingcompany.statuscodename
+	, VWI_CRM_ktb_leasingcompany.ktb_isinterfaced
+	, VWI_CRM_ktb_leasingcompany.owneridyominame
+	, VWI_CRM_ktb_leasingcompany.ktb_isinterfacedname
+	, VWI_CRM_ktb_leasingcompany.modifiedon
+	, VWI_CRM_ktb_leasingcompany.ktb_leasingcode
+	, VWI_CRM_ktb_leasingcompany.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_leasingcompany.statuscode
+	, VWI_CRM_ktb_leasingcompany.createdbyname
+	, VWI_CRM_ktb_leasingcompany.createdon
+	, VWI_CRM_ktb_leasingcompany.ktb_leasingcompany
+	, VWI_CRM_ktb_leasingcompany.createdonbehalfbyname
+	, VWI_CRM_ktb_leasingcompany.modifiedonbehalfbyname
+	, VWI_CRM_ktb_leasingcompany.versionnumber
+	, VWI_CRM_ktb_leasingcompany.modifiedonbehalfby
+	, VWI_CRM_ktb_leasingcompany.ownerid
+	, VWI_CRM_ktb_leasingcompany.overriddencreatedon
+	, VWI_CRM_ktb_leasingcompany.RowStatus
+	/**EndPagingIndexQuery**/
+FROM CRM_ktb_leasingcompany as VWI_CRM_ktb_leasingcompany WITH (NOLOCK) 
+{0}

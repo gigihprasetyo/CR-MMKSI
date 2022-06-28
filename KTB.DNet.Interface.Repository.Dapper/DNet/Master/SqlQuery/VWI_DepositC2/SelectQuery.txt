@@ -1,0 +1,17 @@
+select
+/**PagingIndexQuery**/ 
+	VWI_DepositC2.ID
+	, VWI_DepositC2.DealerID
+	, VWI_DepositC2.DealerCode
+	, VWI_DepositC2.Period
+	, VWI_DepositC2.LastUpdateTime
+/**EndPagingIndexQuery**/
+from (
+	select a.*, b.DealerCode
+	from DepositC2 a with(nolock)
+	left join Dealer b with(nolock)
+	on a.DealerID = b.ID
+) as VWI_DepositC2 
+{0}
+
+

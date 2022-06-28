@@ -1,0 +1,15 @@
+SELECT 
+	IDRow
+	,company
+	,businessunitcode
+	,xts_stocknumber
+	,xts_product
+	,xts_description
+	,xts_productinteriorcolor
+	,xts_productexteriorcolor
+	,xts_scheduledshipmentdate
+	,xts_referencenumber
+	,xts_receivingdate
+	,msdyn_companycode
+FROM VWI_CRM_SLS_StockSummary WITH (NOLOCK)
+WHERE ID = @Id

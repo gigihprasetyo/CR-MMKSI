@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_ktb_salesquotation as VWI_CRM_ktb_salesquotation with (nolock) 
+{0}

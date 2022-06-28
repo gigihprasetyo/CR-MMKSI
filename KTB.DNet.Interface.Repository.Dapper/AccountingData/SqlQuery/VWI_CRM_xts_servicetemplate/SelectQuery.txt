@@ -1,0 +1,73 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_servicetemplate.company
+	, VWI_CRM_xts_servicetemplate.businessunitcode
+	, VWI_CRM_xts_servicetemplate.xts_servicetemplatevehiclepricepatternidname
+	, VWI_CRM_xts_servicetemplate.createdonbehalfbyyominame
+	, VWI_CRM_xts_servicetemplate.owninguser
+	, VWI_CRM_xts_servicetemplate.xts_locking
+	, VWI_CRM_xts_servicetemplate.statecode
+	, VWI_CRM_xts_servicetemplate.xts_servicecategoryid
+	, VWI_CRM_xts_servicetemplate.xts_servicetemplatesubgroupid
+	, VWI_CRM_xts_servicetemplate.owneridname
+	, VWI_CRM_xts_servicetemplate.statecodename
+	, VWI_CRM_xts_servicetemplate.createdonbehalfby
+	, VWI_CRM_xts_servicetemplate.xts_pkcombinationkey
+	, VWI_CRM_xts_servicetemplate.xts_parentbusinessunitid
+	, VWI_CRM_xts_servicetemplate.importsequencenumber
+	, VWI_CRM_xts_servicetemplate.xts_servicetemplategroupidname
+	, VWI_CRM_xts_servicetemplate.modifiedbyyominame
+	, VWI_CRM_xts_servicetemplate.xts_servicetemplate
+	, VWI_CRM_xts_servicetemplate.xts_servicetemplategroupid
+	, VWI_CRM_xts_servicetemplate.xts_servicetemplatesubgroupidname
+	, VWI_CRM_xts_servicetemplate.utcconversiontimezonecode
+	, VWI_CRM_xts_servicetemplate.createdbyyominame
+	, VWI_CRM_xts_servicetemplate.owningbusinessunit
+	, VWI_CRM_xts_servicetemplate.modifiedbyname
+	, VWI_CRM_xts_servicetemplate.owningteam
+	, VWI_CRM_xts_servicetemplate.modifiedby
+	, VWI_CRM_xts_servicetemplate.xts_servicetemplateid
+	, VWI_CRM_xts_servicetemplate.timezoneruleversionnumber
+	, VWI_CRM_xts_servicetemplate.owneridtype
+	, VWI_CRM_xts_servicetemplate.statuscodename
+	, VWI_CRM_xts_servicetemplate.xts_businessunitidname
+	, VWI_CRM_xts_servicetemplate.ktb_intervaltimeday
+	, VWI_CRM_xts_servicetemplate.ktb_isinterfaced
+	, VWI_CRM_xts_servicetemplate.xts_servicecategoryidname
+	, VWI_CRM_xts_servicetemplate.owneridyominame
+	, VWI_CRM_xts_servicetemplate.ktb_isinterfacedname
+	, VWI_CRM_xts_servicetemplate.modifiedon
+	, VWI_CRM_xts_servicetemplate.ktb_claimtoatpm
+	, VWI_CRM_xts_servicetemplate.xts_calculationmethodname
+	, VWI_CRM_xts_servicetemplate.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_servicetemplate.statuscode
+	, VWI_CRM_xts_servicetemplate.createdbyname
+	, VWI_CRM_xts_servicetemplate.createdon
+	, VWI_CRM_xts_servicetemplate.xts_businessunitid
+	, VWI_CRM_xts_servicetemplate.xts_servicetemplatevehiclepricepatternid
+	, VWI_CRM_xts_servicetemplate.createdonbehalfbyname
+	, VWI_CRM_xts_servicetemplate.createdby
+	, VWI_CRM_xts_servicetemplate.modifiedonbehalfbyname
+	, VWI_CRM_xts_servicetemplate.xts_calculationmethod
+	, VWI_CRM_xts_servicetemplate.xts_parentbusinessunitidname
+	, VWI_CRM_xts_servicetemplate.versionnumber
+	, VWI_CRM_xts_servicetemplate.modifiedonbehalfby
+	, VWI_CRM_xts_servicetemplate.ktb_kindcode
+	, VWI_CRM_xts_servicetemplate.ownerid
+	, VWI_CRM_xts_servicetemplate.overriddencreatedon
+	, VWI_CRM_xts_servicetemplate.xts_description
+	, VWI_CRM_xts_servicetemplate.RowStatus
+	, VWI_CRM_xts_servicetemplate.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicetemplate a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_servicetemplate

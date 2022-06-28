@@ -1,0 +1,10 @@
+update vechilemodel
+set rowstatus = -1, lastupdateBy = 'ADMIN-DMS', Lastupdatetime = GETDATE()
+where lastupdateBy <> 'ws'
+
+
+update a
+set a.categoryID = b.categoryID
+from VechileType a
+join [172.17.31.122].bsidnet_mmksi.dbo.VechileType b on a.vechiletypecode = b.vechiletypecode
+where a.CategoryID <> b.CategoryID

@@ -1,0 +1,51 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_mastervehiclemodel.company
+	, VWI_CRM_ktb_mastervehiclemodel.businessunitcode
+	, VWI_CRM_ktb_mastervehiclemodel.createdonbehalfbyyominame
+	, VWI_CRM_ktb_mastervehiclemodel.owninguser
+	, VWI_CRM_ktb_mastervehiclemodel.statecode
+	, VWI_CRM_ktb_mastervehiclemodel.owneridname
+	, VWI_CRM_ktb_mastervehiclemodel.statecodename
+	, VWI_CRM_ktb_mastervehiclemodel.createdonbehalfby
+	, VWI_CRM_ktb_mastervehiclemodel.ktb_vehiclemodelcode
+	, VWI_CRM_ktb_mastervehiclemodel.importsequencenumber
+	, VWI_CRM_ktb_mastervehiclemodel.modifiedbyyominame
+	, VWI_CRM_ktb_mastervehiclemodel.ktb_name
+	, VWI_CRM_ktb_mastervehiclemodel.utcconversiontimezonecode
+	, VWI_CRM_ktb_mastervehiclemodel.createdbyyominame
+	, VWI_CRM_ktb_mastervehiclemodel.owningbusinessunit
+	, VWI_CRM_ktb_mastervehiclemodel.modifiedbyname
+	, VWI_CRM_ktb_mastervehiclemodel.owningteam
+	, VWI_CRM_ktb_mastervehiclemodel.modifiedby
+	, VWI_CRM_ktb_mastervehiclemodel.createdby
+	, VWI_CRM_ktb_mastervehiclemodel.timezoneruleversionnumber
+	, VWI_CRM_ktb_mastervehiclemodel.owneridtype
+	, VWI_CRM_ktb_mastervehiclemodel.statuscodename
+	, VWI_CRM_ktb_mastervehiclemodel.owneridyominame
+	, VWI_CRM_ktb_mastervehiclemodel.modifiedon
+	, VWI_CRM_ktb_mastervehiclemodel.ktb_mastervehiclemodelid
+	, VWI_CRM_ktb_mastervehiclemodel.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_mastervehiclemodel.statuscode
+	, VWI_CRM_ktb_mastervehiclemodel.createdbyname
+	, VWI_CRM_ktb_mastervehiclemodel.createdon
+	, VWI_CRM_ktb_mastervehiclemodel.createdonbehalfbyname
+	, VWI_CRM_ktb_mastervehiclemodel.modifiedonbehalfbyname
+	, VWI_CRM_ktb_mastervehiclemodel.versionnumber
+	, VWI_CRM_ktb_mastervehiclemodel.modifiedonbehalfby
+	, VWI_CRM_ktb_mastervehiclemodel.ownerid
+	, VWI_CRM_ktb_mastervehiclemodel.overriddencreatedon
+	, VWI_CRM_ktb_mastervehiclemodel.RowStatus
+	/**EndPagingIndexQuery**/
+from (
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_ktb_mastervehiclemodel a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.owningbusinessunit
+	{0}
+) VWI_CRM_ktb_mastervehiclemodel 

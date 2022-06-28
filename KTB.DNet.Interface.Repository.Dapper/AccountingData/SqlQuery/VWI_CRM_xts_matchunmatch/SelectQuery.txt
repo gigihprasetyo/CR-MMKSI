@@ -1,0 +1,117 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_matchunmatch.company
+	, VWI_CRM_xts_matchunmatch.businessunitcode
+	, VWI_CRM_xts_matchunmatch.xts_stockidname
+	, VWI_CRM_xts_matchunmatch.xts_parentbusinessunitid
+	, VWI_CRM_xts_matchunmatch.versionnumber
+	, VWI_CRM_xts_matchunmatch.createdon
+	, VWI_CRM_xts_matchunmatch.xts_requesteddeliverydate
+	, VWI_CRM_xts_matchunmatch.xts_productconfigurationid
+	, VWI_CRM_xts_matchunmatch.statuscodename
+	, VWI_CRM_xts_matchunmatch.xts_productinteriorcolorid
+	, VWI_CRM_xts_matchunmatch.xts_status
+	, VWI_CRM_xts_matchunmatch.xts_customerid
+	, VWI_CRM_xts_matchunmatch.xts_description
+	, VWI_CRM_xts_matchunmatch.modifiedbyyominame
+	, VWI_CRM_xts_matchunmatch.ktb_applicationno
+	, VWI_CRM_xts_matchunmatch.owneridtype
+	, VWI_CRM_xts_matchunmatch.processid
+	, VWI_CRM_xts_matchunmatch.xts_unmatchreferenceidname
+	, VWI_CRM_xts_matchunmatch.createdonbehalfby
+	, VWI_CRM_xts_matchunmatch.ktb_vehicledescription
+	, VWI_CRM_xts_matchunmatch.xts_chassisnumber
+	, VWI_CRM_xts_matchunmatch.owneridname
+	, VWI_CRM_xts_matchunmatch.ktb_nvsoregistrationdetailnumberid
+	, VWI_CRM_xts_matchunmatch.overriddencreatedon
+	, VWI_CRM_xts_matchunmatch.xts_type
+	, VWI_CRM_xts_matchunmatch.xts_eventdata
+	, VWI_CRM_xts_matchunmatch.modifiedonbehalfby
+	, VWI_CRM_xts_matchunmatch.xts_registrationrequesteddate
+	, VWI_CRM_xts_matchunmatch.xts_customeridyominame
+	, VWI_CRM_xts_matchunmatch.xts_newvehiclesalesorderid
+	, VWI_CRM_xts_matchunmatch.xts_productidname
+	, VWI_CRM_xts_matchunmatch.statecode
+	, VWI_CRM_xts_matchunmatch.timezoneruleversionnumber
+	, VWI_CRM_xts_matchunmatch.modifiedbyname
+	, VWI_CRM_xts_matchunmatch.createdonbehalfbyyominame
+	, VWI_CRM_xts_matchunmatch.xts_warehouseidname
+	, VWI_CRM_xts_matchunmatch.xts_productstyleid
+	, VWI_CRM_xts_matchunmatch.xts_productdescription
+	, VWI_CRM_xts_matchunmatch.xts_handling
+	, VWI_CRM_xts_matchunmatch.xts_keynumber
+	, VWI_CRM_xts_matchunmatch.xts_matchingreferenceidname
+	, VWI_CRM_xts_matchunmatch.ktb_newvehiclewholesaleorderid
+	, VWI_CRM_xts_matchunmatch.owningteam
+	, VWI_CRM_xts_matchunmatch.traversedpath
+	, VWI_CRM_xts_matchunmatch.createdonbehalfbyname
+	, VWI_CRM_xts_matchunmatch.xts_matchingreferenceid
+	, VWI_CRM_xts_matchunmatch.xts_productexteriorcolorid
+	, VWI_CRM_xts_matchunmatch.xts_locking
+	, VWI_CRM_xts_matchunmatch.utcconversiontimezonecode
+	, VWI_CRM_xts_matchunmatch.xts_statusname
+	, VWI_CRM_xts_matchunmatch.xts_typename
+	, VWI_CRM_xts_matchunmatch.ktb_vehiclemodelidname
+	, VWI_CRM_xts_matchunmatch.ownerid
+	, VWI_CRM_xts_matchunmatch.modifiedon
+	, VWI_CRM_xts_matchunmatch.importsequencenumber
+	, VWI_CRM_xts_matchunmatch.owneridyominame
+	, VWI_CRM_xts_matchunmatch.ktb_vehiclecolorname
+	, VWI_CRM_xts_matchunmatch.ktb_vehiclemodelid
+	, VWI_CRM_xts_matchunmatch.xts_customeridname
+	, VWI_CRM_xts_matchunmatch.xts_customerdescription
+	, VWI_CRM_xts_matchunmatch.xts_siteid
+	, VWI_CRM_xts_matchunmatch.createdbyname
+	, VWI_CRM_xts_matchunmatch.ktb_vehiclecategoryid
+	, VWI_CRM_xts_matchunmatch.xts_businessunitid
+	, VWI_CRM_xts_matchunmatch.modifiedonbehalfbyname
+	, VWI_CRM_xts_matchunmatch.xts_productexteriorcoloridname
+	, VWI_CRM_xts_matchunmatch.xts_productconfigurationidname
+	, VWI_CRM_xts_matchunmatch.stageid
+	, VWI_CRM_xts_matchunmatch.xts_matchingnumber
+	, VWI_CRM_xts_matchunmatch.xts_handlingname
+	, VWI_CRM_xts_matchunmatch.ktb_remark
+	, VWI_CRM_xts_matchunmatch.xts_productid
+	, VWI_CRM_xts_matchunmatch.ktb_nvsoregistrationdetailnumberidname
+	, VWI_CRM_xts_matchunmatch.xts_matchunmatchid
+	, VWI_CRM_xts_matchunmatch.createdby
+	, VWI_CRM_xts_matchunmatch.modifiedby
+	, VWI_CRM_xts_matchunmatch.xts_parentbusinessunitidname
+	, VWI_CRM_xts_matchunmatch.xts_newvehiclesalesorderidname
+	, VWI_CRM_xts_matchunmatch.createdbyyominame
+	, VWI_CRM_xts_matchunmatch.owninguser
+	, VWI_CRM_xts_matchunmatch.xts_productstyleidname
+	, VWI_CRM_xts_matchunmatch.xts_otherbusinessunitstock
+	, VWI_CRM_xts_matchunmatch.ktb_newvehiclewholesaleorderidname
+	, VWI_CRM_xts_matchunmatch.xts_stockid
+	, VWI_CRM_xts_matchunmatch.xts_locationid
+	, VWI_CRM_xts_matchunmatch.ktb_vehiclecategoryidname
+	, VWI_CRM_xts_matchunmatch.ktb_isinterfacedname
+	, VWI_CRM_xts_matchunmatch.xts_date
+	, VWI_CRM_xts_matchunmatch.xts_productinteriorcoloridname
+	, VWI_CRM_xts_matchunmatch.ktb_interfaceexceptionmessage
+	, VWI_CRM_xts_matchunmatch.statuscode
+	, VWI_CRM_xts_matchunmatch.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_matchunmatch.xts_siteidname
+	, VWI_CRM_xts_matchunmatch.xts_warehouseid
+	, VWI_CRM_xts_matchunmatch.xts_locationidname
+	, VWI_CRM_xts_matchunmatch.ktb_isinterfaced
+	, VWI_CRM_xts_matchunmatch.xts_enginenumber
+	, VWI_CRM_xts_matchunmatch.statecodename
+	, VWI_CRM_xts_matchunmatch.xts_businessunitidname
+	, VWI_CRM_xts_matchunmatch.owningbusinessunit
+	, VWI_CRM_xts_matchunmatch.xts_unmatchreferenceid
+	, VWI_CRM_xts_matchunmatch.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_matchunmatch a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+	{0}
+) VWI_CRM_xts_matchunmatch WITH (NOLOCK)

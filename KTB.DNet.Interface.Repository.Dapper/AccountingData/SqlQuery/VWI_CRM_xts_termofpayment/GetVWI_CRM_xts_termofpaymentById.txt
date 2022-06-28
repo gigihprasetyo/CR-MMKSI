@@ -1,0 +1,37 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, xts_locking
+	, statecode
+	, statecodename
+	, createdonbehalfby
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, xts_duetypename
+	, modifiedby
+	, createdby
+	, timezoneruleversionnumber
+	, xts_duetype
+	, statuscodename
+	, xts_testing
+	, modifiedon
+	, xts_duedays
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, xts_termofpaymentid
+	, modifiedonbehalfbyname
+	, xts_termofpayment
+	, overriddencreatedon
+	, xts_description
+FROM [dbo].[CRM_xts_termofpayment] as VWI_CRM_xts_termofpayment with(nolock)
+WHERE xts_termofpaymentid = @Id

@@ -1,0 +1,59 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_AX_PRT_FlowReportPart.Company
+ ,VWI_AX_PRT_FlowReportPart.Product
+ ,VWI_AX_PRT_FlowReportPart.ProductDescription
+	,VWI_AX_PRT_FlowReportPart.Site
+	,VWI_AX_PRT_FlowReportPart.Warehouse
+	,VWI_AX_PRT_FlowReportPart.Period
+	,VWI_AX_PRT_FlowReportPart.StockUOM
+	,VWI_AX_PRT_FlowReportPart.TransactionDateFrom
+	,VWI_AX_PRT_FlowReportPart.TransactionDateTo
+	,VWI_AX_PRT_FlowReportPart.BeginningQty
+	,VWI_AX_PRT_FlowReportPart.BeginningAmount
+	,ISNULL(VWI_AX_PRT_FlowReportPart.QtyIn,0) QtyIn
+	,ISNULL(VWI_AX_PRT_FlowReportPart.AmountIn,0) AmountIn
+	,ISNULL(VWI_AX_PRT_FlowReportPart.QtyOut,0) QtyOut
+	,ISNULL(VWI_AX_PRT_FlowReportPart.AmountOut,0) AmountOut
+	,ISNULL(VWI_AX_PRT_FlowReportPart.BeginningQty,0) +	 ISNULL(VWI_AX_PRT_FlowReportPart.QtyIn,0) - ABS(ISNULL(VWI_AX_PRT_FlowReportPart.QtyOut,0)) QtyEnding	
+	,ISNULL(VWI_AX_PRT_FlowReportPart.BeginningAmount,0) + ISNULL(VWI_AX_PRT_FlowReportPart.AmountIn,0) - ABS(ISNULL(VWI_AX_PRT_FlowReportPart.AmountOut,0)) AmountEnding
+/**EndPagingIndexQuery**/
+FROM (
+	SELECT DISTINCT ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+		,A.DATAAREAID Company
+			,Product = A.[ITEMID]
+		,ProductDescription = B.xts_description
+		  ,Site = A.[INVENTSITEID]
+		  ,Warehouse = A.[INVENTLOCATIONID]
+		  --,Location = A.[WMSLOCATIONID]
+		  ,Period = A.[TRANPERIODID]
+	  ,StockUOM = C.xts_uom
+	  ,'#DATEFROM#' TransactionDateFrom
+	  ,'#DATETO#' TransactionDateTo
+		  ,BeginningQty = SUM(A.[TRANBEGQTY])
+		  , SUM(A.TRANBEGCOSTAMTPHYS) BeginningAmount
+		  ,QtyIn =(SELECT SUM(ISNULL(c.Qty,0)) FROM AX_TSTRANSSTOCKMUTATIONS C WHERE C.QTY > 0 AND C.DMSPRODUCTTYPE <> 'Newvehicle' AND C.TRANPERIODID = A.TRANPERIODID AND C.INVENTLOCATIONID = A.INVENTLOCATIONID AND C.ITEMID = A.ITEMID AND C.DATEPHYSICAL BETWEEN '#DATEFROM#' AND '#DATETO#')
+		  ,(SELECT SUM(ISNULL(c.COSTAMOUNTPHYSICAL,0)) FROM AX_TSTRANSSTOCKMUTATIONS C WHERE C.QTY > 0 AND C.DMSPRODUCTTYPE <> 'Newvehicle' AND C.TRANPERIODID = A.TRANPERIODID AND C.INVENTLOCATIONID = A.INVENTLOCATIONID AND C.ITEMID = A.ITEMID AND C.DATEPHYSICAL BETWEEN '#DATEFROM#' AND '#DATETO#') AS AmountIn
+		  ,(SELECT SUM(ISNULL(c.Qty,0)) FROM AX_TSTRANSSTOCKMUTATIONS C WHERE C.QTY < 0 AND C.DMSPRODUCTTYPE <> 'Newvehicle' AND C.TRANPERIODID = A.TRANPERIODID AND C.INVENTLOCATIONID = A.INVENTLOCATIONID AND C.ITEMID = A.ITEMID AND C.DATEPHYSICAL BETWEEN '#DATEFROM#' AND '#DATETO#') QtyOut
+		  ,(SELECT SUM(ISNULL(c.COSTAMOUNTPHYSICAL,0)) FROM AX_TSTRANSSTOCKMUTATIONS C WHERE C.QTY < 0 AND C.DMSPRODUCTTYPE <> 'Newvehicle' AND C.TRANPERIODID = A.TRANPERIODID AND C.INVENTLOCATIONID = A.INVENTLOCATIONID AND C.ITEMID = A.ITEMID AND C.DATEPHYSICAL BETWEEN '#DATEFROM#' AND '#DATETO#') AS AmountOut
+	  FROM [dbo].[AX_TSTRANSSTOCKSUMMARY] A WITH (NOLOCK) 
+		  LEFT JOIN CRM_xts_product B WITH (NOLOCK) ON B.xts_product = A.ITEMID AND B.xts_company = A.dataAreaId
+		  LEFT JOIN CRM_xts_uom C WITH (NOLOCK) ON C.xts_uomid = B.xts_purchaseunitid AND C.xts_uom <> 'UNIT'
+		  --INNER JOIN MAP_BUSite D WITH (NOLOCK) ON D.DealerCode = A.Dimension2 AND D.Site = A.InventSiteId
+		  --LEFT JOIN AX_TSTransStockMutations E WITH (NOLOCK) ON A.ItemId = E.ITEMID AND A.dataAreaId = E.DATAAREAID AND A.Dimension2 = E.DIMENSION2
+	  --WHERE 
+		--A.TRANPERIODID = '201909' 
+		--AND A.ITEMID = '1500a098a' AND A.INVENTLOCATIONID = 'TJA-CRB-SERVICE'
+	GROUP BY
+		A.DATAAREAID
+	,A.[ITEMID]
+		  ,A.[INVENTSITEID]
+		  ,A.[INVENTLOCATIONID]
+		  --,A.[WMSLOCATIONID]
+		  ,A.[TRANPERIODID]
+		  --,A.[TRANBEGQTY]
+		  --, A.TRANBEGCOSTAMTPHYS 
+		  ,C.xts_uom --, E.UNITID
+	  --,A.DIMENSION2
+		  ,B.xts_description
+)VWI_AX_PRT_FlowReportPart {0} AND (BeginningQty > 0 or QtyIn > 0 Or QtyOut < 0) AND StockUOM <> 'UNIT'

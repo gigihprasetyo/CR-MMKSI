@@ -1,0 +1,9 @@
+SELECT 
+	IDRow
+	,businessunitcode
+	,xts_transferhistorynumber
+	,transfersourcesitename
+	,transferdestinationsitename
+	,xts_transferdate
+FROM VWI_CRM_SLS_StockMutation WITH (NOLOCK)
+WHERE ID = @Id

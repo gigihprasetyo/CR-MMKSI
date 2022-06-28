@@ -1,0 +1,258 @@
+Imports KTB.DNet.Domain
+Imports KTB.DNet.BusinessFacade
+Imports KTB.DNet.BusinessFacade.FinishUnit
+Imports KTB.DNet.BusinessFacade.PK
+Imports KTB.DNet.BusinessFacade.Helper
+Imports KTB.DNet.Utility
+Imports KTB.DNet.Domain.Search
+Imports Ktb.DNet.Security
+
+Public Class FrmSPLHeader
+    Inherits System.Web.UI.Page
+
+#Region " Web Form Designer Generated Code "
+
+    'This call is required by the Web Form Designer.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+
+    End Sub
+    Protected WithEvents lblColon3 As System.Web.UI.WebControls.Label
+    Protected WithEvents Label3 As System.Web.UI.WebControls.Label
+    Protected WithEvents lblName As System.Web.UI.WebControls.Label
+    Protected WithEvents Label1 As System.Web.UI.WebControls.Label
+    Protected WithEvents lblSPLNumber As System.Web.UI.WebControls.Label
+    Protected WithEvents lblCustName As System.Web.UI.WebControls.Label
+    Protected WithEvents txtDealerName As System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtSPLNumber As System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtCustName As System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblStatus As System.Web.UI.WebControls.Label
+    Protected WithEvents ddlStatus As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents lblColon4 As System.Web.UI.WebControls.Label
+    Protected WithEvents btnSearch As System.Web.UI.WebControls.Button
+    Protected WithEvents dgSPLHeader As System.Web.UI.WebControls.DataGrid
+    Protected WithEvents txtBerlakuPada As System.Web.UI.WebControls.TextBox
+    Protected WithEvents Label2 As System.Web.UI.WebControls.Label
+    ' Protected WithEvents lbtnNew As System.Web.UI.WebControls.LinkButton
+    Protected WithEvents Label4 As System.Web.UI.WebControls.Label
+
+    'NOTE: The following placeholder declaration is required by the Web Form Designer.
+    'Do not delete or move it.
+    Private designerPlaceholderDeclaration As System.Object
+
+    Private Sub Page_Init(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Init
+        'CODEGEN: This method call is required by the Web Form Designer
+        'Do not modify it using the code editor.
+        InitializeComponent()
+    End Sub
+
+#End Region
+
+#Region "PrivateVariables"
+    Private _SPLFacade As New SPLFacade(User)
+    Private _create As Boolean
+    Private _edit As Boolean
+    Private _view As Boolean
+    Private _download As Boolean
+    Private sessHelper As New SessionHelper
+
+#End Region
+
+#Region "PrivateCustomMethods"
+    Private Function IsValidToDelete(ByVal idSPL As Integer) As Boolean
+        Dim IsValid As Boolean = True
+        Dim arrList As New ArrayList
+        Dim ObjSPL As SPL = _SPLFacade.Retrieve(idSPL)
+
+        Dim criterias As New CriteriaComposite(New Criteria(GetType(PKHeader), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        criterias.opAnd(New Criteria(GetType(PKHeader), "SPLNumber", MatchType.Exact, ObjSPL.SPLNumber))
+        arrList = New PKHeaderFacade(User).Retrieve(criterias)
+        If arrList.Count > 0 Then
+            IsValid = False
+            Return IsValid
+        End If
+
+        criterias = New CriteriaComposite(New Criteria(GetType(ContractHeader), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        criterias.opAnd(New Criteria(GetType(ContractHeader), "SPLNumber", MatchType.Exact, ObjSPL.SPLNumber))
+        arrList = New ContractHeaderFacade(User).Retrieve(criterias)
+        If arrList.Count > 0 Then
+            IsValid = False
+            Return IsValid
+        End If
+
+        Return IsValid
+    End Function
+    Private Sub CreateCriterias(ByVal criterias As CriteriaComposite)
+        If txtSPLNumber.Text.Length > 0 Then
+            criterias.opAnd(New Criteria(GetType(SPL), "SPLNumber", MatchType.Partial, txtSPLNumber.Text.Trim()))
+        End If
+        If txtDealerName.Text.Length > 0 Then
+            criterias.opAnd(New Criteria(GetType(SPL), "DealerName", MatchType.Partial, txtDealerName.Text.Trim()))
+        End If
+        If txtCustName.Text.Length > 0 Then
+            criterias.opAnd(New Criteria(GetType(SPL), "CustomerName", MatchType.Partial, txtCustName.Text.Trim()))
+        End If
+        If txtBerlakuPada.Text.Length > 0 Then
+            Try
+                Dim tanggal As New DateTime(CInt(txtBerlakuPada.Text.Substring(2, 4)), CInt(txtBerlakuPada.Text.Substring(0, 2)), 1)
+                criterias.opAnd(New Criteria(GetType(SPL), "ValidFrom", MatchType.LesserOrEqual, tanggal))
+                criterias.opAnd(New Criteria(GetType(SPL), "ValidTo", MatchType.GreaterOrEqual, tanggal))
+            Catch ex As Exception
+
+            End Try
+        End If
+        criterias.opAnd(New Criteria(GetType(SPL), "Status", MatchType.Exact, CInt(ddlStatus.SelectedValue)))
+    End Sub
+    Private Sub BindDataGrid(ByVal idxPage As Integer)
+        Dim totalRow As Integer = 0
+        Dim arrList As New ArrayList
+        arrList = _SPLFacade.RetrieveByCriteria(CType(sessHelper.GetSession("CRITERIAS"), CriteriaComposite), idxPage + 1, dgSPLHeader.PageSize, totalRow, _
+    CType(ViewState("CurrentSortColumn"), String), CType(ViewState("CurrentSortDirect"), Sort.SortDirection))
+
+        dgSPLHeader.DataSource = arrList
+        dgSPLHeader.VirtualItemCount = totalRow
+        dgSPLHeader.DataBind()
+    End Sub
+    Private Sub BindDdlStatus()
+        ddlStatus.Items.Clear()
+        ddlStatus.DataSource = EnumStatusSPL.RetrieveStatus
+        ddlStatus.DataValueField = "ValStatus"
+        ddlStatus.DataTextField = "NameStatus"
+        ddlStatus.DataBind()
+    End Sub
+    Private Sub Initialize()
+        txtSPLNumber.Text = ""
+        txtDealerName.Text = ""
+        txtCustName.Text = ""
+        txtBerlakuPada.Text = Format(DateTime.Now, "MMyyyy")
+        BindDdlStatus()
+        ViewState("CurrentSortColumn") = "SPLNumber"
+        ViewState("CurrentSortDirect") = Sort.SortDirection.ASC
+    End Sub
+    Private Sub CheckPrivilege()
+        If Not SecurityProvider.Authorize(context.User, SR.ENHPKDaftarAplikasiLihat_Privilege) Then
+            Server.Transfer("../FrmAccessDenied.aspx?modulName=UMUM - Daftar SPL")
+        End If
+
+        _create = SecurityProvider.Authorize(context.User, SR.ENHPKDaftarAplikasiBuat_Privilege)
+        _edit = SecurityProvider.Authorize(context.User, SR.ENHPKDaftarAplikasiUbah_Privilege)
+        _view = SecurityProvider.Authorize(context.User, SR.ENHPKDaftarAplikasiDetail_Privilege)
+        _download = SecurityProvider.Authorize(context.User, SR.ENHPKDaftarAplikasiDownload_Privilege)
+
+
+        btnSearch.Visible = _view
+
+    End Sub
+#End Region
+
+#Region "EventHandlers"
+    Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        CheckPrivilege()
+        If Not IsPostBack Then
+            Initialize()
+            Dim criterias As New CriteriaComposite(New Criteria(GetType(SPL), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+            CreateCriterias(criterias)
+            sessHelper.SetSession("CRITERIAS", criterias)
+            BindDataGrid(0)
+        End If
+    End Sub
+    Private Sub btnNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        sessHelper.SetSession("Status", "Insert")
+        Response.Redirect("FrmSPLDetail.aspx")
+    End Sub
+    Private Sub btnSearch_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnSearch.Click
+        Dim criterias As New CriteriaComposite(New Criteria(GetType(SPL), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        CreateCriterias(criterias)
+        sessHelper.SetSession("CRITERIAS", criterias)
+        dgSPLHeader.CurrentPageIndex = 0
+        BindDataGrid(0)
+    End Sub
+    Private Sub dgSPLHeader_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs) Handles dgSPLHeader.ItemDataBound
+        If Not e.Item.DataItem Is Nothing Then
+            Dim objSPL As SPL = e.Item.DataItem
+            Dim lblPeriode As Label = e.Item.FindControl("lblPeriode")
+            lblPeriode.Text = Format(objSPL.ValidFrom, "MMM yyyy") & " s/d " & Format(objSPL.ValidTo, "MMM yyyy")
+            Dim lblFasilitasTOP As Label = e.Item.FindControl("lblFasilitasTOP")
+            Dim lbtnDealer As Label = e.Item.FindControl("lbtnDealer")
+            lbtnDealer.Attributes("onclick") = "showPopUp('../General/../PopUp/PopUpDealerInSPL.aspx?SPLID= " & Integer.Parse(e.Item.Cells(0).Text) & "','',500,600,'');"
+            e.Item.Cells(1).Text = e.Item.ItemIndex + 1 + (dgSPLHeader.CurrentPageIndex * dgSPLHeader.PageSize)
+            Dim lbtnVw As LinkButton = CType(e.Item.FindControl("lbtnView"), LinkButton)
+            Dim lbtnEd As LinkButton = CType(e.Item.FindControl("lbtnEdit"), LinkButton)
+            'Dim lbtnDel As LinkButton = CType(e.Item.FindControl("lbtnDelete"), LinkButton)
+            Dim lbtnDown As LinkButton = CType(e.Item.FindControl("lbtnDownload"), LinkButton)
+            lbtnVw.Visible = _view
+            lbtnEd.Visible = _edit
+            'lbtnDel.Visible = _edit
+            'lbtnDel.Attributes("onclick") = "return confirm('" & SR.DeleteConfirmation() & "')"
+            If _download Then
+                If Not CType(e.Item.DataItem, SPL).Attachment = "" Then
+                    lbtnDown.CommandArgument = CType(e.Item.DataItem, SPL).Attachment
+                Else
+                    lbtnDown.Visible = False
+                End If
+            Else
+                lbtnDown.Visible = _download
+            End If
+        End If
+    End Sub
+    Private Sub dgSPLHeader_ItemCommand(ByVal source As Object, ByVal e As System.Web.UI.WebControls.DataGridCommandEventArgs) Handles dgSPLHeader.ItemCommand
+        If e.CommandName = "View" Then
+            sessHelper.SetSession("Status", "View")
+            sessHelper.SetSession("IDSPLHeader", CInt(e.Item.Cells(0).Text))
+            Response.Redirect("FrmSPLDetail.aspx")
+        ElseIf e.CommandName = "Edit" Then
+            sessHelper.SetSession("Status", "Update")
+            sessHelper.SetSession("IDSPLHeader", CInt(e.Item.Cells(0).Text))
+            Response.Redirect("FrmSPLDetail.aspx")
+        ElseIf e.CommandName = "Delete" Then
+            If IsValidToDelete(CInt(e.Item.Cells(0).Text)) Then
+                Dim ObjSPL As SPL = _SPLFacade.Retrieve(CInt(e.Item.Cells(0).Text))
+                Try
+                    _SPLFacade.Delete(ObjSPL)
+                    Initialize()
+                    BindDataGrid(0)
+                    MessageBox.Show(SR.DeleteSucces)
+                Catch ex As Exception
+                    MessageBox.Show(SR.DeleteFail)
+                End Try
+            Else
+                MessageBox.Show(SR.CannotDelete())
+            End If
+        ElseIf e.CommandName = "Download" Then
+            Dim file As String = e.CommandArgument
+            Dim fInfo As New System.IO.FileInfo(ConfigurationSettings.AppSettings.Item("SAN") & file)
+            Try
+                Response.Redirect("../Download.aspx?file=" & file)
+            Catch ex As Exception
+                MessageBox.Show(SR.DownloadFail(file))
+            End Try
+        End If
+    End Sub
+    Private Sub dgSPLHeader_PageIndexChanged(ByVal source As Object, ByVal e As System.Web.UI.WebControls.DataGridPageChangedEventArgs) Handles dgSPLHeader.PageIndexChanged
+        dgSPLHeader.CurrentPageIndex = e.NewPageIndex
+        BindDataGrid(dgSPLHeader.CurrentPageIndex)
+    End Sub
+    Private Sub dgSPLHeader_SortCommand(ByVal source As Object, ByVal e As System.Web.UI.WebControls.DataGridSortCommandEventArgs) Handles dgSPLHeader.SortCommand
+        If CType(ViewState("CurrentSortColumn"), String) = e.SortExpression Then
+            Select Case CType(ViewState("CurrentSortDirect"), Sort.SortDirection)
+
+                Case Sort.SortDirection.ASC
+                    ViewState("CurrentSortDirect") = Sort.SortDirection.DESC
+
+                Case Sort.SortDirection.DESC
+                    ViewState("CurrentSortDirect") = Sort.SortDirection.ASC
+            End Select
+        Else
+            ViewState("CurrentSortColumn") = e.SortExpression
+            ViewState("CurrentSortDirect") = Sort.SortDirection.ASC
+        End If
+        dgSPLHeader.SelectedIndex = -1
+        dgSPLHeader.CurrentPageIndex = 0
+        BindDataGrid(dgSPLHeader.CurrentPageIndex)
+    End Sub
+#End Region
+    
+    'Private Sub lbtnNew_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles lbtnNew.Click
+    '    sessHelper.SetSession("Status", "Insert")
+    '    Response.Redirect("FrmSPLDetail.aspx")
+    'End Sub
+End Class

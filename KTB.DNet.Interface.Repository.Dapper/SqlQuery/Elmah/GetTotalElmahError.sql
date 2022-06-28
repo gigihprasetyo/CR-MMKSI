@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM [ELMAH_Error]

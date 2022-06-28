@@ -1,0 +1,9 @@
+﻿<div class="modal-content">
+    <div class="modal-header bg-info">
+        <h3><i class="ion-information-circled modal-icon"></i><span>{{message.title}}</span></h3>
+    </div>
+    <div class="modal-body"><h5><pre>{{message.data | json}}</pre></h5></div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-info mdl-btn" ng-click="$close()">OK</button>
+    </div>
+</div>

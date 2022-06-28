@@ -1,0 +1,32 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdbyyominame
+	, modifiedby
+	, organizationidname
+	, statecode
+	, statuscode
+	, createdonbehalfbyyominame
+	, modifiedonbehalfbyyominame
+	, modifiedbyyominame
+	, createdbyname
+	, versionnumber
+	, modifiedonbehalfby
+	, createdonbehalfby
+	, timezoneruleversionnumber
+	, statuscodename
+	, importsequencenumber
+	, modifiedonbehalfbyname
+	, createdby
+	, ktb_daerahlogisticid
+	, modifiedbyname
+	, ktb_company
+	, modifiedon
+	, overriddencreatedon
+	, organizationid
+	, ktb_daerahlogistic
+	, utcconversiontimezonecode
+	, createdonbehalfbyname
+	, createdon
+	, statecodename
+FROM [dbo].[CRM_ktb_daerahlogistic] as VWI_CRM_ktb_daerahlogistic with(nolock)
+WHERE ktb_daerahlogisticid = @Id

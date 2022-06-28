@@ -1,0 +1,108 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	,company
+	,businessunitcode
+	,xts_idempotentmessage
+	,xts_vendordescription
+	,xts_parentbusinessunitid
+	,versionnumber
+	,createdon
+	,owninguser
+	,xts_totalremainingbalance_base
+	,xts_methodofpaymentidname
+	,statuscodename
+	,xts_status
+	,xts_cashandbankid
+	,xts_totalpaymentamount
+	,xts_accountpayablevoucherreferenceid
+	,xts_cancelledname
+	,xts_accountpayablereferenceid
+	,createdonbehalfby
+	,modifiedbyname
+	,owneridname
+	,overriddencreatedon
+	,xts_paymentsettlement_base
+	,xts_totalotherexpenses_base
+	,xts_cashandbankidname
+	,xts_type
+	,xts_accountpayablepaymentid
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,ktb_isinterfacedname
+	,owningteam
+	,statecode
+	,xts_sourcetype
+	,xts_chequenumber
+	,timezoneruleversionnumber
+	,xts_totalpaymentamount_base
+	,xts_locking
+	,xts_handling
+	,xts_totaloutstandingbalance_base
+	,createdonbehalfbyname
+	,ktb_girono
+	,xts_totalotherexpenses
+	,utcconversiontimezonecode
+	,xts_businessunitid
+	,xts_statusname
+	,xts_typename
+	,xts_chequedate
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,ktb_cancelreason
+	,modifiedbyyominame
+	,xts_appliedtodocument_base
+	,xts_transactiondate
+	,xts_cancelled
+	,ktb_salesorderno
+	,createdbyname
+	,xts_appliedtodocument
+	,xts_methodofpaymentid
+	,modifiedonbehalfbyname
+	,ktb_bankgiro
+	,xts_postinglayername
+	,xts_handlingname
+	,transactioncurrencyid
+	,ktb_giroduedate
+	,createdby
+	,modifiedby
+	,xts_parentbusinessunitidname
+	,createdbyyominame
+	,xts_totaloutstandingbalance
+	,transactioncurrencyidname
+	,xts_totalchangeamount_base
+	,ktb_actualpaymentdate
+	,owningbusinessunit
+	,xts_postinglayer
+	,xts_vendorid
+	,xts_accountpayablepaymentnumber
+	,xts_paymentsettlement
+	,xts_accountpayablevoucherreferenceidname
+	,xts_sourcetypename
+	,owneridtype
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,ktb_invoiceno
+	,ktb_say
+	,xts_totalremainingbalance
+	,xts_accountpayablereferenceidname
+	,xts_totalchangeamount
+	,ktb_isinterfaced
+	,statecodename
+	,xts_businessunitidname
+	,xts_vendoridname
+	,RowStatus
+	,ktb_externalcode
+	,msdyn_companycode
+FROM (
+	SELECT  
+		b.ktb_bucompany company
+		, b.ktb_dealercode businessunitcode
+		, a.*
+		, b.msdyn_companycode
+	FROM CRM_xts_accountpayablepayment a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+) as VWI_CRM_xts_accountpayablepayment 
+WHERE ID = @Id

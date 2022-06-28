@@ -1,0 +1,73 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_locking
+	,statecode
+	,xts_businessunitidname
+	,xts_totaltransactionamount_base
+	,owneridname
+	,xts_totalcontrolamount_base
+	,statecodename
+	,createdonbehalfby
+	,transactioncurrencyid
+	,xts_handlingname
+	,xts_cashtransactionid
+	,xts_parentbusinessunitid
+	,xts_cashandbankid
+	,importsequencenumber
+	,xts_cashandbankidname
+	,modifiedbyyominame
+	,xts_totaltransactionamount
+	,xts_cashtransactiondate
+	,xts_handling
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,exchangerate
+	,xts_totalcontrolamount
+	,xts_hascancelledname
+	,xts_cashtransactiontype
+	,xts_cashtransactiontypename
+	,owneridyominame
+	,xts_cashtransactionreferenceid
+	,modifiedon
+	,xts_hascancelled
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,xts_cashtransaction
+	,createdonbehalfbyname
+	,xts_status
+	,modifiedonbehalfbyname
+	,xts_cashtransactionreferenceidname
+	,xts_parentbusinessunitidname
+	,versionnumber
+	,modifiedonbehalfby
+	,xts_statusname
+	,ownerid
+	,overriddencreatedon
+	,xts_description
+	,RowStatus
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_cashtransaction a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_cashtransactionid = @Id
+) VWI_CRM_xts_cashtransaction 

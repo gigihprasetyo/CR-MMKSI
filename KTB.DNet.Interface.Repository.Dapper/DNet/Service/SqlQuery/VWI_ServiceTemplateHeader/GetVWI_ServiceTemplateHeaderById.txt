@@ -1,0 +1,73 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow,
+	VWI_ServiceTemplateHeader.ServiceTemplate,
+	VWI_ServiceTemplateHeader.ServiceTemplateGroup,
+	VWI_ServiceTemplateHeader.ServiceTemplateSubGroup,
+	VWI_ServiceTemplateHeader.Description,
+	VWI_ServiceTemplateHeader.ServiceCategory,
+	VWI_ServiceTemplateHeader.IntervalTime,
+	VWI_ServiceTemplateHeader.ServiceTemplateVehiclePricePattern,
+	VWI_ServiceTemplateHeader.CalculationMethod,
+	VWI_ServiceTemplateHeader.KindCode,
+	VWI_ServiceTemplateHeader.KindID,
+	VWI_ServiceTemplateHeader.LastUpdatedTime,
+	VWI_ServiceTemplateHeader.VechileTypeID,
+	VWI_ServiceTemplateHeader.ID
+FROM
+(
+SELECT 
+	'FF '+(rc.RecallRegNo)+' '+(vt.VechileTypeCode) AS ServiceTemplate,
+	'Field Fix' AS ServiceTemplateGroup,
+	vt.VechileTypeCode AS ServiceTemplateSubGroup,
+	'FF '+(rc.RecallRegNo)+' '+(vt.VechileTypeCode) AS Description,
+	'Field Fix' AS ServiceCategory,
+	0 AS IntervalTime,
+	'' AS ServiceTemplateVehiclePricePattern,
+	'Rate Master' AS CalculationMethod,
+	'' AS KindCode,
+	'FF'+CONVERT(VARCHAR(12), a.RecallCategoryID) AS KindID,
+	a.LastUpdatedTime,
+	(vt.ID) AS VechileTypeID,
+	'FF'+CONVERT(VARCHAR(12), a.ID) AS ID
+FROM ServiceTemplateFFPartHeader a WITH (NOLOCK) 
+INNER JOIN dbo.RecallCategory rc WITH (NOLOCK) ON rc.ID = a.RecallCategoryID
+INNER JOIN dbo.VechileType vt WITH (NOLOCK) ON a.Varian = LEFT(vt.VechileTypeCode, 2)
+
+UNION ALL
+SELECT 
+	'FS '+(fk.KindCode+' ('+fk.KindDescription+') ')+(vt.VechileTypeCode) AS ServiceTemplate,
+	'Free Service' AS ServiceTemplateGroup,
+	(vt.VechileTypeCode) AS ServiceTemplateSubGroup,
+	'FS '+(fk.KindCode+' ('+fk.KindDescription+') ')+(vt.VechileTypeCode) AS Description,
+	'FS '+(fk.KindCode+' ('+fk.KindDescription+') ') AS ServiceCategory,
+	0 AS IntervalTime,
+	'' AS ServiceTemplateVehiclePricePattern,
+	'Service Template' AS CalculationMethod,
+	(fk.KindCode) AS KindCode,
+	'FS'+CONVERT(VARCHAR(12), b.FSKindID) AS KindID,
+	b.LastUpdatedTime,
+	b.VechileTypeID AS VechileTypeID,
+	'FS'+CONVERT(VARCHAR(12), b.ID) AS ID
+FROM ServiceTemplateFSPartHeader b WITH (NOLOCK) 
+INNER JOIN dbo.VechileType vt WITH (NOLOCK) ON b.VechileTypeID = vt.ID
+INNER JOIN dbo.FSKind fk WITH (NOLOCK) ON fk.ID = b.FSKindID
+
+UNION ALL
+SELECT 
+	'PM '+(fk.KindCode+' ('+fk.KindDescription+') ')+(vt.VechileTypeCode) AS ServiceTemplate, 
+	'Periodical Maintenance' AS ServiceTemplateGroup,
+	vt.VechileTypeCode AS ServiceTemplateSubGroup,
+	'PM '+(fk.KindCode+' ('+fk.KindDescription+') ')+(vt.VechileTypeCode) AS Description,
+	'PM '+(fk.KindCode+' ('+fk.KindDescription+') ') AS ServiceCategory,
+	0 AS IntervalTime,
+	'' AS ServiceTemplateVehiclePricePattern,
+	'Rate Master' AS CalculationMethod,
+	(fk.KindCode) AS KindCode,
+	'PM'+CONVERT(VARCHAR(12), c.PMKindID) AS KindID,
+	c.LastUpdatedTime,
+	(vt.ID) AS VechileTypeID,
+	'PM'+CONVERT(VARCHAR(12), c.ID) AS ID
+FROM ServiceTemplatePMPartHeader c WITH (NOLOCK) 
+INNER JOIN dbo.VechileType vt WITH (NOLOCK) ON c.Varian = LEFT(vt.VechileTypeCode, 2)
+INNER JOIN dbo.PMKind fk WITH (NOLOCK) ON fk.ID = c.PMKindID
+)VWI_ServiceTemplateHeader WHERE ID = @Id

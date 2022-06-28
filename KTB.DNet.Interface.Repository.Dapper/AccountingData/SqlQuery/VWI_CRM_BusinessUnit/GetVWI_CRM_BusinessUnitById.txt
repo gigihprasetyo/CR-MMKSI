@@ -1,0 +1,19 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	, businessunitid
+	, businessunitcode
+	, name
+	, msdyn_companycode
+	, ktb_bucompany
+	, description
+	, xts_mainaddress1
+	, xts_phone
+from
+(	
+	select 
+		ktb_bucompany as company,
+		ktb_dealercode AS businessunitcode,
+		*
+	from CRM_businessunit WITH(NOLOCK)
+	where businessunitid = @Id
+) VWI_CRM_BusinessUnit

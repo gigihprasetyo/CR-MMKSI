@@ -1,0 +1,64 @@
+SELECT 
+ ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,xid_parentbusinessunitidname
+	,xid_leadtime
+	,statecode
+	,owneridname
+	,statecodename
+	,xid_newvehiclesalesorderidname
+	,createdonbehalfby
+	,xid_stageordernumber
+	,xid_actualdate
+	,xid_remarks
+	,xid_newvehiclesalesorderid
+	,xid_parentbusinessunitid
+	,importsequencenumber
+	,modifiedbyyominame
+	,xid_followup
+	,xid_progressstageidname
+	,xid_idealdate
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,xid_progressstageid
+	,xid_transactiontype
+	,owneridtype
+	,statuscodename
+	,xid_gap
+	,owneridyominame
+	,modifiedon
+	,xid_transactiontypename
+	,xid_registrationmonitoringid
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,createdonbehalfbyname
+	,xid_businessunitid
+	,modifiedonbehalfbyname
+	,xid_registrationmonitoringnumber
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,xid_businessunitidname
+	,RowStatus
+from (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xid_registrationmonitoring a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xid_businessunitid
+    where xid_registrationmonitoringid = @id
+) VWI_CRM_xid_registrationmonitoring 

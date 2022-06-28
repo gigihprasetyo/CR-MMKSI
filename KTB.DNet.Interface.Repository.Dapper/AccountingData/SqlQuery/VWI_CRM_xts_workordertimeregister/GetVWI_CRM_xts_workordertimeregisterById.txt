@@ -1,0 +1,80 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	,company
+	,businessunitcode
+	,xts_starttime
+	,createdonbehalfbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_locking
+	,statecode
+	,xts_businessunitidname
+	,owneridname
+	,statecodename
+	,modifiedbyyominame
+	,createdonbehalfby
+	,transactioncurrencyid
+	,xts_handlingname
+	,xts_workorderidname
+	,xts_handling
+	,xts_employeeidname
+	,xts_workordertimeregister
+	,xts_serviceactivityidname
+	,xts_addlaborrateperhour_base
+	,xts_completedname
+	,xts_workorderid
+	,xts_laborcost_base
+	,importsequencenumber
+	,xts_completed
+	,xts_workordertimeregisterid
+	,xts_statusname
+	,xts_workordernumber
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,xts_stopreasonname
+	,ktb_description
+	,owneridtype
+	,statuscodename
+	,xts_exchangeratedate
+	,xts_parentbusinessunitid
+	,owneridyominame
+	,modifiedon
+	,xts_addlaborrateperhour
+	,exchangerate
+	,xts_serviceactivityid
+	,xts_endtime
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,xts_stopreason
+	,createdonbehalfbyname
+	,xts_status
+	,xts_laborcost
+	,modifiedonbehalfbyname
+	,versionnumber
+	,modifiedonbehalfby
+	,xts_employeeid
+	,ownerid
+	,overriddencreatedon
+	,xts_parentbusinessunitidname
+	,RowStatus
+	,msdyn_companycode
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_xts_workordertimeregister a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.xts_businessunitid 
+	Where xts_workordertimeregisterid = @Id
+) VWI_CRM_xts_workordertimeregister

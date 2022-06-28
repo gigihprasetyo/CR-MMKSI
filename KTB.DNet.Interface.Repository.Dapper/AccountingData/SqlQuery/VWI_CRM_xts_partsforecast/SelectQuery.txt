@@ -1,0 +1,59 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_xts_partsforecast.[company]
+    , VWI_CRM_xts_partsforecast.[businessunitcode]
+    , VWI_CRM_xts_partsforecast.[xts_state]
+    , VWI_CRM_xts_partsforecast.[createdonbehalfbyyominame]
+    , VWI_CRM_xts_partsforecast.[modifiedonbehalfby]
+    , VWI_CRM_xts_partsforecast.[owningteam]
+    , VWI_CRM_xts_partsforecast.[statecode]
+    , VWI_CRM_xts_partsforecast.[xts_businessunitidname]
+    , VWI_CRM_xts_partsforecast.[xts_partsforecast]
+    , VWI_CRM_xts_partsforecast.[statecodename]
+    , VWI_CRM_xts_partsforecast.[owninguser]
+    , VWI_CRM_xts_partsforecast.[createdonbehalfby]
+    , VWI_CRM_xts_partsforecast.[xts_handling]
+    , VWI_CRM_xts_partsforecast.[importsequencenumber]
+    , VWI_CRM_xts_partsforecast.[xts_partsforecastid]
+    , VWI_CRM_xts_partsforecast.[utcconversiontimezonecode]
+    , VWI_CRM_xts_partsforecast.[createdbyyominame]
+    , VWI_CRM_xts_partsforecast.[owningbusinessunit]
+    , VWI_CRM_xts_partsforecast.[modifiedbyname]
+    , VWI_CRM_xts_partsforecast.[versionnumber]
+    , VWI_CRM_xts_partsforecast.[modifiedby]
+    , VWI_CRM_xts_partsforecast.[modifiedbyyominame]
+    , VWI_CRM_xts_partsforecast.[createdby]
+    , VWI_CRM_xts_partsforecast.[timezoneruleversionnumber]
+    , VWI_CRM_xts_partsforecast.[owneridtype]
+    , VWI_CRM_xts_partsforecast.[xts_handlingname]
+    , VWI_CRM_xts_partsforecast.[xts_statename]
+    , VWI_CRM_xts_partsforecast.[owneridyominame]
+    , VWI_CRM_xts_partsforecast.[modifiedon]
+    , VWI_CRM_xts_partsforecast.[xts_forecastyear]
+    , VWI_CRM_xts_partsforecast.[modifiedonbehalfbyyominame]
+    , VWI_CRM_xts_partsforecast.[statuscode]
+    , VWI_CRM_xts_partsforecast.[createdbyname]
+    , VWI_CRM_xts_partsforecast.[createdon]
+    , VWI_CRM_xts_partsforecast.[xts_businessunitid]
+    , VWI_CRM_xts_partsforecast.[createdonbehalfbyname]
+    , VWI_CRM_xts_partsforecast.[statuscodename]
+    , VWI_CRM_xts_partsforecast.[modifiedonbehalfbyname]
+    , VWI_CRM_xts_partsforecast.[xts_forecastmonth]
+    , VWI_CRM_xts_partsforecast.[owneridname]
+    , VWI_CRM_xts_partsforecast.[xts_forecastmonthname]
+    , VWI_CRM_xts_partsforecast.[ownerid]
+    , VWI_CRM_xts_partsforecast.[overriddencreatedon]
+    , VWI_CRM_xts_partsforecast.[msdyn_companycode]
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM [CRM_xts_partsforecast] a with(nolock)
+	left JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_partsforecast 

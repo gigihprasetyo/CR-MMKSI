@@ -1,0 +1,98 @@
+INSERT INTO AssistServiceIncomingBP
+(
+	AssistUploadLogID
+	, ChassisMasterID
+	, CreatedBy
+	, CreatedTime
+	, CustomerOwnerName
+	, CustomerOwnerPhoneNumber
+	, CustomerVisitName
+	, CustomerVisitPhoneNumber
+	, DamageCategory
+	, DealerCode
+	, DealerID
+	, InsuranceName
+	, KMService
+	, KodeChassis
+	, KodeMekanik
+	, MethodofPayment
+	, NoWorkOrder
+	, RemarksBM
+	, RemarksSpecial
+	, RemarksSystem
+	, RowStatus
+	, ServiceBooking
+	, ServiceTypeCode
+	, ServiceTypeID
+	, StatusAktif
+	, TglBukaTransaksi
+	, TglJanjiSelesai
+	, TglPengajuanEstimasi
+	, TglPersetujuanEstimasi
+	, TglTutupTransaksi
+	, TotalCat
+	, TotalLC
+	, TotalNonCat
+	, TotalPanel
+	, TotalSubOrder
+	, TrTraineMekanikID
+	, ValidateSystemStatus
+	, VehicleColorDesc
+	, VehicleModelDesc
+	, WaktuKeluar
+	, WaktuMasuk
+	, WorkOrderCategoryCode
+	, WorkOrderCategoryID
+	, WOStatus
+)
+VALUES
+(
+	@AssistUploadLogID
+	, @ChassisMasterID
+	, @CreatedBy
+	, @CreatedTime
+	, @CustomerOwnerName
+	, @CustomerOwnerPhoneNumber
+	, @CustomerVisitName
+	, @CustomerVisitPhoneNumber
+	, @DamageCategory
+	, @DealerCode
+	, @DealerID
+	, @InsuranceName
+	, @KMService
+	, @KodeChassis
+	, @KodeMekanik
+	, @MethodofPayment
+	, @NoWorkOrder
+	, @RemarksBM
+	, @RemarksSpecial
+	, @RemarksSystem
+	, @RowStatus
+	, @ServiceBooking
+	, @ServiceTypeCode
+	, @ServiceTypeID
+	, @StatusAktif
+	, @TglBukaTransaksi
+	, @TglJanjiSelesai
+	, @TglPengajuanEstimasi
+	, @TglPersetujuanEstimasi
+	, @TglTutupTransaksi
+	, @TotalCat
+	, @TotalLC
+	, @TotalNonCat
+	, @TotalPanel
+	, @TotalSubOrder
+	, @TrTraineMekanikID
+	, @ValidateSystemStatus
+	, @VehicleColorDesc
+	, @VehicleModelDesc
+	, @WaktuKeluar
+	, @WaktuMasuk
+	, @WorkOrderCategoryCode
+	, @WorkOrderCategoryID
+	, @WOStatus
+);
+
+SELECT SCOPE_IDENTITY();  
+
+

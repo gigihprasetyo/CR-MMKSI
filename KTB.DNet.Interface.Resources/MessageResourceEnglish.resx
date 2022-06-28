@@ -1,0 +1,458 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ChassisBeingRetur" xml:space="preserve">
+    <value>Chassis {0} is being retur</value>
+    <comment>Create PDI</comment>
+  </data>
+  <data name="ChassisNumber" xml:space="preserve">
+    <value>Chassis number </value>
+    <comment>Field</comment>
+  </data>
+  <data name="Dealer" xml:space="preserve">
+    <value>Dealer</value>
+    <comment>Entity</comment>
+  </data>
+  <data name="DealerBranch" xml:space="preserve">
+    <value>Dealer branch</value>
+  </data>
+  <data name="DealerCode" xml:space="preserve">
+    <value>Dealer code </value>
+    <comment>Field</comment>
+  </data>
+  <data name="Er_10001" xml:space="preserve">
+    <value>401</value>
+    <comment>When hit login Endpoint, but Username/ Password/ ClientSecret is wrong</comment>
+  </data>
+  <data name="Er_10002" xml:space="preserve">
+    <value>401</value>
+    <comment>When hit any endpoint, but Token is null or Token expire or Token is wrong.</comment>
+  </data>
+  <data name="Er_10003" xml:space="preserve">
+    <value>401</value>
+    <comment>When hit any endpoint, but don't have permission</comment>
+  </data>
+  <data name="Er_200010" xml:space="preserve">
+    <value>412</value>
+    <comment>When hit send data (Create/ Update), but option data is wrong.</comment>
+  </data>
+  <data name="Er_200011" xml:space="preserve">
+    <value>412</value>
+    <comment>When hit send data (Create/ Update/ Delete), but data format, data type is wrong.</comment>
+  </data>
+  <data name="Er_200012" xml:space="preserve">
+    <value>412</value>
+    <comment>When hit send data (Create/ Update/ Delete), but body content &amp; checksum are different.</comment>
+  </data>
+  <data name="Er_200013" xml:space="preserve">
+    <value>412</value>
+    <comment>When hit send data (Create/ Update), but reference data (related data) is not available.</comment>
+  </data>
+  <data name="Er_200014" xml:space="preserve">
+    <value>412</value>
+    <comment>When hit send data (Create/ Update), but reference data (related data) is not available.</comment>
+  </data>
+  <data name="Er_20004" xml:space="preserve">
+    <value>400</value>
+    <comment>When hit get data (Read) Endpoint, but data is not available/ empty</comment>
+  </data>
+  <data name="Er_20005" xml:space="preserve">
+    <value>400</value>
+    <comment>When hit send data (Create/ Update/ Delete), but format JSON is wrong</comment>
+  </data>
+  <data name="Er_20006" xml:space="preserve">
+    <value>400</value>
+    <comment>When hit send data (Update) Endpoint, but data to be updated is not available</comment>
+  </data>
+  <data name="Er_20007" xml:space="preserve">
+    <value>400</value>
+    <comment>When hit send data (Delete) Endpoint, but data to be deleted is not available.</comment>
+  </data>
+  <data name="Er_20008" xml:space="preserve">
+    <value>412</value>
+    <comment>When hit send data (Create/ Update), but required field is not filled.</comment>
+  </data>
+  <data name="Er_20009" xml:space="preserve">
+    <value>412</value>
+    <comment>When hit send data (Create/ Update), but reference data (related data) is not available.</comment>
+  </data>
+  <data name="Er_300013" xml:space="preserve">
+    <value>500</value>
+    <comment>When hit get data (Read) Endpoint, but there is error from Database.</comment>
+  </data>
+  <data name="Er_300014" xml:space="preserve">
+    <value>500</value>
+    <comment>When hit send data (Create/ Update/ Delete) Endpoint, but there is error from Database.</comment>
+  </data>
+  <data name="Er_400015" xml:space="preserve">
+    <value>500</value>
+    <comment>When hit any Endpoint, but there is error from code/ programming.</comment>
+  </data>
+  <data name="ErrorCodeAuthPrivilage" xml:space="preserve">
+    <value>10003</value>
+    <comment>Code error for ErrorMsgAuthPrivilage</comment>
+  </data>
+  <data name="ErrorCodeAuthSessionExp" xml:space="preserve">
+    <value>10002</value>
+    <comment>Code error for ErrorCodeAuthSessionExp</comment>
+  </data>
+  <data name="ErrorCodeAuthUserPass" xml:space="preserve">
+    <value>10001</value>
+    <comment>Code error for ErrorMsgAuthUserPass</comment>
+  </data>
+  <data name="ErrorCodeDataCorrupt" xml:space="preserve">
+    <value>200012</value>
+    <comment>Code error for ErrorMsgDataCorrupt</comment>
+  </data>
+  <data name="ErrorCodeDataCreateChassisIsAvailable" xml:space="preserve">
+    <value>200014</value>
+    <comment>Code Error for ErrorMsgDataCreateIsAvailable</comment>
+  </data>
+  <data name="ErrorCodeDataDeleteNotAvailable" xml:space="preserve">
+    <value>20007</value>
+    <comment>Code error for ErrorMsgDataDeleteNotAvailable</comment>
+  </data>
+  <data name="ErrorCodeDataFormat" xml:space="preserve">
+    <value>20005</value>
+    <comment>Code error for ErrorMsgDataFormat</comment>
+  </data>
+  <data name="ErrorCodeDataNotMatch" xml:space="preserve">
+    <value>200010</value>
+    <comment>Code error for ErrorMsgDataNotMatch</comment>
+  </data>
+  <data name="ErrorCodeDataReferrence" xml:space="preserve">
+    <value>20009</value>
+    <comment>Code error for ErrorMsgDataReferrence</comment>
+  </data>
+  <data name="ErrorCodeDataReferrence2" xml:space="preserve">
+    <value>200013</value>
+    <comment>Code error for ErrorMsgDataReferrence</comment>
+  </data>
+  <data name="ErrorCodeDataRequired" xml:space="preserve">
+    <value>20008</value>
+    <comment>Code error for ErrorMsgMandatoryField</comment>
+  </data>
+  <data name="ErrorCodeDataRetriveNotAvailable" xml:space="preserve">
+    <value>20004</value>
+    <comment>Code error for ErrorMsgDataRetriveNotAvailable</comment>
+  </data>
+  <data name="ErrorCodeDataType" xml:space="preserve">
+    <value>200011</value>
+    <comment>Code error for ErrorMsgDataType</comment>
+  </data>
+  <data name="ErrorCodeDataUpdateNotAvailable" xml:space="preserve">
+    <value>20006</value>
+    <comment>Code error for ErrorMsgDataUpdateNotAvailable</comment>
+  </data>
+  <data name="ErrorCodeDBRetrive" xml:space="preserve">
+    <value>300013</value>
+    <comment>Code error for ErrorMsgDBCorrupt</comment>
+  </data>
+  <data name="ErrorCodeDBSave" xml:space="preserve">
+    <value>300014</value>
+    <comment>Code error for ErrorMsgDBSave</comment>
+  </data>
+  <data name="ErrorCodePRGUnhandle" xml:space="preserve">
+    <value>400015</value>
+    <comment>Code error for ErrorCodeDBSave</comment>
+  </data>
+  <data name="ErrorMsgAuthPrivilage" xml:space="preserve">
+    <value>You don't have privilege to access the resources.</value>
+    <comment>When hit any endpoint, but don't have permission</comment>
+  </data>
+  <data name="ErrorMsgAuthSessionExp" xml:space="preserve">
+    <value>You are not logged in or your session has been expired.</value>
+    <comment>When hit any endpoint, but Token is null or Token expire or Token is wrong.</comment>
+  </data>
+  <data name="ErrorMsgAuthUserPass" xml:space="preserve">
+    <value>Username or Password are missmatch!</value>
+    <comment>When hit login Endpoint, but Username/ Password/ ClientSecret is wrong</comment>
+  </data>
+  <data name="ErrorMsgClearCityOrRegency" xml:space="preserve">
+    <value>Clear (City/ Regency)</value>
+  </data>
+  <data name="ErrorMsgDataCharsBetween" xml:space="preserve">
+    <value>{0} must between {2} - {1} characters.</value>
+    <comment>Code error for invalid count of chars</comment>
+  </data>
+  <data name="ErrorMsgDataCorrupt" xml:space="preserve">
+    <value>Data you are trying to send is corrupt. Sent {0} Received {1}</value>
+    <comment>When hit send data (Create/ Update/ Delete), but body content &amp; checksum are different.</comment>
+  </data>
+  <data name="ErrorMsgDataCreateChassisIsAvailable" xml:space="preserve">
+    <value>The chassis {0} {1} has delivered to customer. </value>
+    <comment>When hit send data (Create/ Update), but reference data (related data) is not available.</comment>
+  </data>
+  <data name="ErrorMsgDataDeleteNotAvailable" xml:space="preserve">
+    <value>Data you are trying to delete is not available on database.</value>
+    <comment>When hit send data (Delete) Endpoint, but data to be deleted is not available.</comment>
+  </data>
+  <data name="ErrorMsgDataFormat" xml:space="preserve">
+    <value>Data you are sent is in incorect format.</value>
+    <comment>When hit send data (Create/ Update/ Delete), but format JSON is wrong</comment>
+  </data>
+  <data name="ErrorMsgDataInvalid" xml:space="preserve">
+    <value>{0} is not valid.</value>
+    <comment>When data is not valid.</comment>
+  </data>
+  <data name="ErrorMsgDataIsNotActive" xml:space="preserve">
+    <value>{0} is not active.</value>
+    <comment>When data is not active</comment>
+  </data>
+  <data name="ErrorMsgDataMismatch" xml:space="preserve">
+    <value>{0] with {1} is not match.</value>
+  </data>
+  <data name="ErrorMsgDataMustBeGreaterThanZero" xml:space="preserve">
+    <value>Please enter {0} value greater than zero.</value>
+    <comment>When data isn't bigger than the range</comment>
+  </data>
+  <data name="ErrorMsgDataMustBeNumeric" xml:space="preserve">
+    <value>{0} must be numeric.</value>
+    <comment>Error code for numeric data</comment>
+  </data>
+  <data name="ErrorMsgDataNotFound" xml:space="preserve">
+    <value>{0} not found.</value>
+    <comment>When data is not found.</comment>
+  </data>
+  <data name="ErrorMsgDataNotMatch" xml:space="preserve">
+    <value>There some option data that not match; {0} should between: </value>
+    <comment>When hit send data (Create/ Update), but option data is wrong.</comment>
+  </data>
+  <data name="ErrorMsgDataReferrence" xml:space="preserve">
+    <value>There some referrence data that not match; {0} id {1} {2} is unavailable.</value>
+    <comment>When hit send data (Create/ Update), but reference data (related data) is not available.</comment>
+  </data>
+  <data name="ErrorMsgDataReferrence2" xml:space="preserve">
+    <value>There some referrence data that not match; {0} id {1} {2} is not match.</value>
+    <comment>When hit send data (Create/ Update), but reference data (related data) is not available.</comment>
+  </data>
+  <data name="ErrorMsgDataRequired" xml:space="preserve">
+    <value>There some required field that can't be blank; {0}</value>
+    <comment>When hit send data (Create/ Update), but required field is not filled.</comment>
+  </data>
+  <data name="ErrorMsgDataRetriveNotAvailable" xml:space="preserve">
+    <value>Data you are trying to retrieved is not available on database.</value>
+    <comment>When hit get data (Read) Endpoint, but data is not available/ empty</comment>
+  </data>
+  <data name="ErrorMsgDataType" xml:space="preserve">
+    <value>Data format/ Data type is wrong; {0}</value>
+    <comment>When hit send data (Create/ Update/ Delete), but data format, data type is wrong.</comment>
+  </data>
+  <data name="ErrorMsgDataUpdateNotAvailable" xml:space="preserve">
+    <value>Data you are trying to update is not available on database.</value>
+    <comment>When hit send data (Update) Endpoint, but data to be updated is not available</comment>
+  </data>
+  <data name="ErrorMsgDBRetrive" xml:space="preserve">
+    <value>Data could not be retrieved. {0}</value>
+    <comment>When hit get data (Read) Endpoint, but there is error from Database.</comment>
+  </data>
+  <data name="ErrorMsgDBSave" xml:space="preserve">
+    <value>Data could not be saved. {0}</value>
+    <comment>When hit send data (Create/ Update/ Delete) Endpoint, but there is error from Database.</comment>
+  </data>
+  <data name="ErrorMsgEnumNotFound" xml:space="preserve">
+    <value>Enum Data you are trying to retrieved in Category {0} is not available on database.</value>
+  </data>
+  <data name="ErrorMsgLengthCannotExceed" xml:space="preserve">
+    <value>{0} cannot exceed {1} character.</value>
+    <comment>When length exceed define character.</comment>
+  </data>
+  <data name="ErrorMsgMandatoryField" xml:space="preserve">
+    <value>{0} is required.</value>
+    <comment>When required field is empty.</comment>
+  </data>
+  <data name="ErrorMsgPDIDateExpired" xml:space="preserve">
+    <value>The PDI date {0} has been exceeded the current date.</value>
+    <comment>Create PDI</comment>
+  </data>
+  <data name="ErrorMsgPRGUnhandle" xml:space="preserve">
+    <value>There is unhandled exception. {0}</value>
+    <comment>When hit any Endpoint, but there is error from code/ programming.</comment>
+  </data>
+  <data name="ErrorMsgStringLength" xml:space="preserve">
+    <value>{0} length min {2} character and cannot exceed {1} character.</value>
+  </data>
+  <data name="ErrorMsgUseKabCityKodya" xml:space="preserve">
+    <value>Use KAB / CITY  / KODYA</value>
+  </data>
+  <data name="ErrorMsgUseKabOrClearCity" xml:space="preserve">
+    <value>Use KAB / CITY or empty (City / Regency)</value>
+  </data>
+  <data name="ErrorMsgUseKabOrClearCityRegency" xml:space="preserve">
+    <value>Use KAB or clear (City / Regency)</value>
+  </data>
+  <data name="IdentityFile" xml:space="preserve">
+    <value>Identity File</value>
+    <comment>Field</comment>
+  </data>
+  <data name="InvalidFileType" xml:space="preserve">
+    <value>{0} file type is not valid. the allowed type are {1}</value>
+  </data>
+  <data name="MaximumFileSize" xml:space="preserve">
+    <value>Maximum allowed file size for {0}  is {1} bytes</value>
+  </data>
+  <data name="OpenFakturDateEmpty" xml:space="preserve">
+    <value>Open Faktur Date is empty</value>
+    <comment>Create PDI</comment>
+  </data>
+  <data name="PDIDateInvalidFormat" xml:space="preserve">
+    <value>Your date {0} is in incorrect format. It should be in dd/mm/yyyy format.</value>
+    <comment>Create PDI</comment>
+  </data>
+  <data name="PDIDateLessThanOpenFakturDate" xml:space="preserve">
+    <value>PDI Date less than Open Faktur Date</value>
+    <comment>Create PDI</comment>
+  </data>
+  <data name="PhoneNumber" xml:space="preserve">
+    <value>Phone number</value>
+    <comment>Field</comment>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>Postal Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="RefCustomerCode" xml:space="preserve">
+    <value>Ref Customer Code</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SAPCustomer" xml:space="preserve">
+    <value>SAP Customer</value>
+    <comment>Field</comment>
+  </data>
+  <data name="SAPCustomerExist" xml:space="preserve">
+    <value>Customer already exists with phone number :  {0} but no SPK available.</value>
+    <comment>Error Message</comment>
+  </data>
+  <data name="SparePartMaster" xml:space="preserve">
+    <value>Spare Part Master</value>
+    <comment>Entity</comment>
+  </data>
+  <data name="StateCode" xml:space="preserve">
+    <value>State Code </value>
+    <comment>Field</comment>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status </value>
+    <comment>Field</comment>
+  </data>
+  <data name="StatusCode" xml:space="preserve">
+    <value>Status Code </value>
+    <comment>Field</comment>
+  </data>
+</root>

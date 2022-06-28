@@ -1,0 +1,58 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,xts_locking
+	,statecode
+	,xts_businessunitidname
+	,owneridname
+	,statecodename
+	,createdonbehalfby
+	,xts_customerclassid
+	,xts_pkcombinationkey
+	,xts_currencyidname
+	,importsequencenumber
+	,modifiedbyyominame
+	,versionnumber
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,ktb_isinterfaced
+	,xts_vehicleprice
+	,xts_customerclassidname
+	,owneridyominame
+	,xts_effectivestartdate
+	,modifiedon
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,createdonbehalfbyname
+	,xts_currencyid
+	,modifiedonbehalfbyname
+	,ktb_isinterfacedname
+	,xts_vehiclepriceid
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,RowStatus
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_vehicleprice a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+	WHERE xts_vehiclepriceid = @Id
+) VWI_CRM_xts_vehicleprice

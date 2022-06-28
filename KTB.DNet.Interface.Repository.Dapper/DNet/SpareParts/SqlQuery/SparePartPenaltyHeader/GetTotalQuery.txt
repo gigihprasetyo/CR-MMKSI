@@ -1,0 +1,19 @@
+SELECT COUNT(*)
+FROM 
+(
+SELECT
+	  TOPSPPenalty.ID,
+	  Dealer.DealerCode,
+	  TOPSPPenalty.DebitMemoDate,
+	  TOPSPPenalty.DebitMemoNumber,
+	  TOPSPPenalty.LastUpdateTime
+FROM
+	  TOPSPPenalty
+	  join Dealer ON Dealer.ID = TOPSPPenalty.DealerID
+GROUP BY
+	  TOPSPPenalty.ID,
+	  Dealer.DealerCode,
+	  TOPSPPenalty.DebitMemoDate,
+	  TOPSPPenalty.DebitMemoNumber,
+	  TOPSPPenalty.LastUpdateTime
+)SparePartPenaltyHeader {0}

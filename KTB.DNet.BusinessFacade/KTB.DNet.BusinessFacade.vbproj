@@ -1,0 +1,2229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{172FE48B-F8B2-419D-8F64-6D3470D2CDF2}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>KTB.DNet.BusinessFacade</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace />
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>none</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|x64'">
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|x86'">
+    <OutputPath>bin\x86\QAStaging\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|AnyCPU'">
+    <OutputPath>bin\SIT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|x64'">
+    <OutputPath>bin\x64\SIT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|x86'">
+    <OutputPath>bin\x86\SIT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|x64'">
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|x86'">
+    <OutputPath>bin\x86\DMS\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMSTest|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMSTest|x64'">
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMSTest|x86'">
+    <OutputPath>bin\x86\DMSTest\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA.DNET.36|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\QA.DNET.36\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA.DNET.36|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\QA.DNET.36\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA.DNET.36|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\QA.DNET.36\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod.DNET.36|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Prod.DNET.36\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod.DNET.36|x64'">
+    <OutputPath>bin\x64\Prod.DNET.36\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod.DNET.36|x86'">
+    <OutputPath>bin\x86\Prod.DNET.36\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\CR\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|x64'">
+    <OutputPath>bin\x64\CR\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|x86'">
+    <OutputPath>bin\x86\CR\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KTB.DNet.DataMapper.Framework\KTB.DNet.DataMapper.Framework.vbproj">
+      <Name>KTB.DNet.DataMapper.Framework</Name>
+      <Project>{CC23FF7E-BC14-4D66-9E96-6E0A51576A34}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.DataMapper\KTB.DNet.DataMapper.vbproj">
+      <Name>KTB.DNet.DataMapper</Name>
+      <Project>{E021FE28-84E0-4B1F-804A-180BE4F38F26}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain.Search\KTB.DNet.Domain.Search.vbproj">
+      <Name>KTB.DNet.Domain.Search</Name>
+      <Project>{06A29192-8B96-4DFB-9C6C-AA5B4DDF8D36}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain\KTB.DNet.Domain.vbproj">
+      <Name>KTB.DNet.Domain</Name>
+      <Project>{F4CC7463-4CBB-4336-AEAF-AC8FBC38DD9A}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Lib\KTB.DNet.Lib.csproj">
+      <Project>{e839abcc-d7ef-4d3a-a697-cbb1e0a21737}</Project>
+      <Name>KTB.DNet.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNET.SAP\KTB.DNET.SAP.vbproj">
+      <Project>{922a6be5-ed27-4066-bfe2-a0d4a7eacb93}</Project>
+      <Name>KTB.DNET.SAP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Security\KTB.DNet.Security.vbproj">
+      <Name>KTB.DNet.Security</Name>
+      <Project>{17F38C9B-D956-438D-8577-18837C5AE615}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design">
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AfterSales\AssistCutOffPeriodFacade.vb" />
+    <Compile Include="AfterSales\AssistExpenseServiceFacade.vb" />
+    <Compile Include="AfterSales\AssistExpenseSparePartsFacade.vb" />
+    <Compile Include="AfterSales\AssistKeyUploadFacade.vb" />
+    <Compile Include="AfterSales\AssistMasterModelFacade.vb" />
+    <Compile Include="AfterSales\AssistModuleFacade.vb" />
+    <Compile Include="AfterSales\AssistPartStockFacade.vb" />
+    <Compile Include="AfterSales\AssistPatSalesFacade.vb" />
+    <Compile Include="AfterSales\AssistSalesChannelFacade.vb" />
+    <Compile Include="AfterSales\AssistServiceIncomingBPFacade.vb" />
+    <Compile Include="AfterSales\AssistServiceIncomingFacade.vb" />
+    <Compile Include="AfterSales\AssistServicePlaceFacade.vb" />
+    <Compile Include="AfterSales\AssistServiceTypeFacade.vb" />
+    <Compile Include="AfterSales\AssistSparePartSalesmanFacade.vb" />
+    <Compile Include="AfterSales\AssistUploadLogFacade.vb" />
+    <Compile Include="AfterSales\AssistWorkOrderCategoryFacade.vb" />
+    <Compile Include="AfterSales\AssistWorkOrderTypeFacade.vb" />
+    <Compile Include="AfterSales\V_AssistEmailUserFacade.vb" />
+    <Compile Include="AfterSales\V_AssistPartStockFlagLastDataFacade.vb" />
+    <Compile Include="AfterSales\V_DataSiswaFacade.vb" />
+    <Compile Include="AlertManagement\AlertCategoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertManagement\AlertConfirmationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertManagement\AlertGroupFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertManagement\AlertMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertManagement\AlertModulFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertManagement\AlertSoundFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertManagement\UserAlertFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Babit\BabitApprovalDocumentFacade.vb" />
+    <Compile Include="Babit\BabitBudgetDetailFacade.vb" />
+    <Compile Include="Babit\BabitBudgetHeaderFacade.vb" />
+    <Compile Include="Babit\BabitDealerAllocationFacade.vb" />
+    <Compile Include="Babit\BabitEventProposalActivityFacade.vb" />
+    <Compile Include="Babit\BabitEventReportActivityFacade.vb" />
+    <Compile Include="Babit\BabitEventReportApprovalDocFacade.vb" />
+    <Compile Include="Babit\BabitEventReportDetailFacade.vb" />
+    <Compile Include="Babit\BabitEventReportDocumentFacade.vb" />
+    <Compile Include="Babit\BabitEventReportHeaderFacade.vb" />
+    <Compile Include="Babit\BabitMarketingBoxFacade.vb" />
+    <Compile Include="Babit\BabitEventReportJVFacade.vb" />
+    <Compile Include="Babit\BabitEventReportJVtoReceiptFacade.vb" />
+    <Compile Include="Babit\BabitEventReportReceiptFacade.vb" />
+    <Compile Include="Babit\BabitMasterAdditionalAllocationFacade.vb" />
+    <Compile Include="Babit\BabitMasterEventTypeFacade.vb" />
+    <Compile Include="Babit\BabitMasterLocationFacade.vb" />
+    <Compile Include="Babit\BabitDisplayCarFacade.vb" />
+    <Compile Include="Babit\BabitDocumentFacade.vb" />
+    <Compile Include="Babit\BabitEventDetailFacade.vb" />
+    <Compile Include="Babit\BabitEventProposalDetailFacade.vb" />
+    <Compile Include="Babit\BabitEventProposalDocumentFacade.vb" />
+    <Compile Include="Babit\BabitEventProposalHeaderFacade.vb" />
+    <Compile Include="Babit\BabitFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Babit\BabitIklanDetailFacade.vb" />
+    <Compile Include="Babit\BabitHeaderFacade.vb" />
+    <Compile Include="Babit\BabitMasterPriceFacade.vb" />
+    <Compile Include="Babit\BabitMasterRetailTargetFacade.vb" />
+    <Compile Include="Babit\BabitPameranDetailFacade.vb" />
+    <Compile Include="Babit\BabitPameranExpenseFacade.vb" />
+    <Compile Include="DealerReport\DealerVehiclePriceDetailFacade.vb" />
+    <Compile Include="DealerReport\DealerVehiclePriceFacade.vb" />
+    <Compile Include="EventNational\CityAreaRegionFacade.vb" />
+    <Compile Include="EventNational\NationalEventCityFacade.vb" />
+    <Compile Include="EventNational\NationalEventDetailDateFacade.vb" />
+    <Compile Include="EventNational\NationalEventDetailFacade.vb" />
+    <Compile Include="EventNational\NationalEventFacade.vb" />
+    <Compile Include="CaseManagement\CustomerCaseNotificationPICFacade.vb" />
+    <Compile Include="CaseManagement\DealerContactNotificationCaseFacade.vb" />
+    <Compile Include="General\PPNMasterFacade.vb" />
+    <Compile Include="SAP\SAPCustomerProfileFacade.vb" />
+    <Compile Include="MSP\MSPExMaxPMFacade.vb" />
+    <Compile Include="MSP\PrefixMSPRegistrationFacade.vb" />
+    <Compile Include="PPH\InterestPPHDetailFacade.vb" />
+    <Compile Include="PPH\InterestPPHHeaderFacade.vb" />
+    <Compile Include="PPH\SalesOrderInterestFacade.vb" />
+    <Compile Include="PPH\VW_SalesOrderInterestFacade.vb" />
+    <Compile Include="Service\AllocationRealTimeServiceFacade.vb" />
+    <Compile Include="Service\AllocationRealtimeServiceTemplateFacade.vb" />
+    <Compile Include="FinishUnit\SalesVechileModelFacade.vb" />
+    <Compile Include="Service\GRKindFacade.vb" />
+    <Compile Include="EventNational\NationalEventTypeFacade.vb" />
+    <Compile Include="EventNational\NationalEventVenueFacade.vb" />
+    <Compile Include="EventNational\SPKNationalEventFacade.vb" />
+    <Compile Include="Service\GSRStagingFacade.vb" />
+    <Compile Include="Service\ServiceMMSFacade.vb" />
+    <Compile Include="Service\ServiceTemplateGRLaborFacade.vb" />
+    <Compile Include="Service\ServiceTemplateGRPartDetailFacade.vb" />
+    <Compile Include="Service\TempServiceBookingActivityFacade.vb" />
+    <Compile Include="Service\VWI_AllocationRealTimeServiceFacade.vb" />
+    <Compile Include="Service\VWI_ServiceCostEstimationFacade.vb" />
+    <Compile Include="SF\SFDCampaignFacade.vb" />
+    <Compile Include="SF\SFDCustomerContactFacade.vb" />
+    <Compile Include="SF\SFDCustomerFacade.vb" />
+    <Compile Include="Service\ServiceDueDateNotificationFacade.vb" />
+    <Compile Include="SparePart\AttchPramClaimReasonFacade.vb" />
+    <Compile Include="SparePart\DocumentCancel.vb" />
+    <Compile Include="FinishUnit\SPKMasterCountryCodePhoneFacade.vb" />
+    <Compile Include="SF\SFServiceHistoryBookletFacade.vb" />
+    <Compile Include="SF\SFSparepartHistoryFacade.vb" />
+    <Compile Include="SparePart\SparePartEDocumentFacade.vb" />
+    <Compile Include="Service\FlatRateMasterFieldFixFacade.vb" />
+    <Compile Include="Service\FlatRateMasterFSFacade.vb" />
+    <Compile Include="Service\FlatRateMasterPMFacade.vb" />
+    <Compile Include="Service\ServiceBookingActivityFacade.vb" />
+    <Compile Include="Service\ServiceBookingFacade.vb" />
+    <Compile Include="Service\ServiceStandardTimeFacade.vb" />
+    <Compile Include="Service\ServiceTemplateFFLaborFacade.vb" />
+    <Compile Include="Service\ServiceTemplateFFPartDetailFacade.vb" />
+    <Compile Include="Service\ServiceTemplateFFPartHeaderFacade.vb" />
+    <Compile Include="Service\ServiceTemplateFSLaborFacade.vb" />
+    <Compile Include="Service\ServiceTemplateFSPartDetailFacade.vb" />
+    <Compile Include="Service\ServiceTemplateFSPartHeaderFacade.vb" />
+    <Compile Include="Service\ServiceTemplatePMLaborFacade.vb" />
+    <Compile Include="Service\ServiceTemplatePMPartDetailFacade.vb" />
+    <Compile Include="Service\ServiceTemplatePMPartHeaderFacade.vb" />
+    <Compile Include="Service\SSTTemplateFacade.vb" />
+    <Compile Include="Service\StallMasterFacade.vb" />
+    <Compile Include="Service\StallWorkingTimeFacade.vb" />
+    <Compile Include="Service\VW_FlatRateMasterFacade.vb" />
+    <Compile Include="Service\VW_ServiceTemplateDetailPartFacade.vb" />
+    <Compile Include="Service\VW_ServiceTemplateHeaderFacade.vb" />
+    <Compile Include="Service\VW_ServiceTemplateLaborFacade.vb" />
+    <Compile Include="SparePart\SparePartForecastDetailFacade.vb" />
+    <Compile Include="SparePart\SparePartForecastHeaderFacade.vb" />
+    <Compile Include="SparePart\SparePartForecastMasterFacade.vb" />
+    <Compile Include="SparePart\SparePartForeCastOrderFacade.vb" />
+    <Compile Include="SparePart\SparePartForecastStockFacade.vb" />
+    <Compile Include="SparePart\SparepartNotaReturFacade.vb" />
+    <Compile Include="SparePart\SpClaimDocumentFacade.vb" />
+    <Compile Include="SparePart\SPSupportClaimDocFacade.vb" />
+    <Compile Include="SparePart\TOPSPPenaltyDetailFacade.vb" />
+    <Compile Include="SparePart\TOPSPPenaltyFacade.vb" />
+    <Compile Include="Babit\BabitParameterDetailFacade.vb" />
+    <Compile Include="Babit\BabitParameterHeaderFacade.vb" />
+    <Compile Include="Babit\BabitPaymentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Babit\BabitProposalFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Babit\BabitReportDocumentFacade.vb" />
+    <Compile Include="Babit\BabitReportEventDetailFacade.vb" />
+    <Compile Include="Babit\BabitReportHeaderFacade.vb" />
+    <Compile Include="Babit\BabitReportJVFacade.vb" />
+    <Compile Include="Babit\BabitReportJVtoReceiptFacade.vb" />
+    <Compile Include="Babit\BabitReportReceiptFacade.vb" />
+    <Compile Include="Babit\BabitRetailTargetToAdditionalAllocationFacade.vb" />
+    <Compile Include="Babit\BabitSharePointFileAttributesFacade.vb" />
+    <Compile Include="Babit\BabitSpecialCityFacade.vb" />
+    <Compile Include="Babit\BabitSpecialProvinceFacade.vb" />
+    <Compile Include="Babit\CostCenterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Babit\DealerActivityPlanningFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Babit\EventCategoryDetailFacade.vb" />
+    <Compile Include="Babit\EventCategoryHeaderFacade.vb" />
+    <Compile Include="Babit\EventDealerDetailFacade.vb" />
+    <Compile Include="Babit\EventDealerDocumentFacade.vb" />
+    <Compile Include="Babit\EventDealerHeaderFacade.vb" />
+    <Compile Include="Babit\EventDealerRequiredDocumentFacade.vb" />
+    <Compile Include="Babit\GLAccountFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Babit\MasterAccruedFacade.vb" />
+    <Compile Include="Babit\MasterCostCenterFacade.vb" />
+    <Compile Include="Babit\MasterInternalOrderFacade.vb" />
+    <Compile Include="Babit\PengajuanDesignIklanFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Babit\SampleIklanFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Babit\V_BabitMasterRetailTargetFacade.vb" />
+    <Compile Include="Benefit\BenefitClaimDetailsFacade.vb" />
+    <Compile Include="Benefit\BenefitClaimHeaderFacade.vb" />
+    <Compile Include="Benefit\BenefitClaimJVFacade.vb" />
+    <Compile Include="Benefit\BenefitClaimReceiptFacade.vb" />
+    <Compile Include="Benefit\BenefitClaimRecommendationFacade.vb" />
+    <Compile Include="Benefit\BenefitEventDetailFacade.vb" />
+    <Compile Include="Benefit\BenefitEventHeaderFacade.vb" />
+    <Compile Include="Benefit\BenefitMasterDealerFacade.vb" />
+    <Compile Include="Benefit\BenefitMasterDetailFacade.vb" />
+    <Compile Include="Benefit\BenefitMasterHeaderFacade.vb" />
+    <Compile Include="Benefit\BenefitMasterLeasingFacade.vb" />
+    <Compile Include="Benefit\BenefitMasterVehicleTypeFacade.vb" />
+    <Compile Include="Benefit\BenefitParticipantFacade.vb" />
+    <Compile Include="Benefit\BenefitTypeFacade.vb" />
+    <Compile Include="Benefit\LeasingCompanyFacade.vb" />
+    <Compile Include="Benefit\MasterCostCentertoSubCategoryVehicleFacade.vb" />
+    <Compile Include="Benefit\sp_checkInputClaimFacade.vb" />
+    <Compile Include="Buletin\BuletinCategoryFacade.vb" />
+    <Compile Include="Buletin\BuletinDetailFacade.vb" />
+    <Compile Include="Buletin\BuletinFacade.vb" />
+    <Compile Include="Buletin\BuletinGroupMemberFacade.vb" />
+    <Compile Include="Buletin\BuletinHistoryFacade.vb" />
+    <Compile Include="Buletin\BuletinOrganizationFacade.vb" />
+    <Compile Include="Buletin\BulletinMemberFacade.vb" />
+    <Compile Include="BusinessSector\BusinessSectorHeaderFacade.vb" />
+    <Compile Include="BusinessSector\BusinessSectorDetailFacade.vb" />
+    <Compile Include="BusinessSector\VWI_BusinessSectorFacadeVB.vb" />
+    <Compile Include="CallCenter\CcAttributeFacade.vb" />
+    <Compile Include="CallCenter\CcComplainFollowupDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CcComplainFollowupFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CcComplaintFacade.vb" />
+    <Compile Include="CallCenter\CcContactFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CcCSPerformanceCalculationHistoryFacade.vb" />
+    <Compile Include="CallCenter\CcCSPerformanceClasificationFacade.vb" />
+    <Compile Include="CallCenter\CcCSPerformanceClusterDealerFacade.vb" />
+    <Compile Include="CallCenter\CcCSPerformanceClusterFacade.vb" />
+    <Compile Include="CallCenter\CcCSPerformanceMasterFacade.vb" />
+    <Compile Include="CallCenter\CcCSPerformanceParameterFacade.vb" />
+    <Compile Include="CallCenter\CcCSPerformanceResultHeaderFacade.vb" />
+    <Compile Include="CallCenter\CcCSPerformanceSubParameterAttributeFacade.vb" />
+    <Compile Include="CallCenter\CcCSPerformanceSubParameterFacade.vb" />
+    <Compile Include="CallCenter\CcCSPerformanceSubParameterScoreFacade.vb" />
+    <Compile Include="CallCenter\CcCustomerCategoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CcFactorFacade.vb" />
+    <Compile Include="CallCenter\CcPeriodFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CcReportDealerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CcReportDealerLogFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CcReportMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CcTemplateFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CcVehicleCategoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallCenter\CCVehicleOdometerFacade.vb" />
+    <Compile Include="CallCenter\DRMasterGeneralFacade.vb" />
+    <Compile Include="CallCenter\V_CcComplainFollowUpFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CallCenter\V_CcGridContactFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CaseManagement\CaseCategoryFacade.vb" />
+    <Compile Include="CaseManagement\CustomerCaseFacade.vb" />
+    <Compile Include="CaseManagement\CustomerCaseResponseEvidenceFacade.vb" />
+    <Compile Include="CaseManagement\CustomerCaseResponseFacade.vb" />
+    <Compile Include="CaseManagement\SAPCustomerResponseFacade.vb" />
+    <Compile Include="CBUReturn\ChassisMasterClaimDetailFacade.vb" />
+    <Compile Include="CBUReturn\ChassisMasterClaimDMSReminderFacade.vb" />
+    <Compile Include="CBUReturn\ChassisMasterClaimEmailQueueFacade.vb" />
+    <Compile Include="CBUReturn\ChassisMasterClaimHeaderFacade.vb" />
+    <Compile Include="CBUReturn\ChassisMasterESTOListFacade.vb" />
+    <Compile Include="CBUReturn\ChassisMasterLogisticCompanyFacade.vb" />
+    <Compile Include="CBUReturn\ContactDealerFacade.vb" />
+    <Compile Include="CBUReturn\DocumentUploadFacade.vb" />
+    <Compile Include="Claim\ClaimCCofLetterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Claim\ClaimDealerAdditionalFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Claim\ClaimDebitNoteFacade.vb" />
+    <Compile Include="Claim\ClaimDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Claim\ClaimEvidenceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Claim\ClaimGoodConditionFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Claim\ClaimHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Claim\ClaimProgressFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Claim\ClaimReasonFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Claim\ClaimSignofLetterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Claim\ClaimSPBillingReturDetailFacade.vb" />
+    <Compile Include="Claim\ClaimSPBillingReturFacade.vb" />
+    <Compile Include="Claim\ClaimStatusHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Claim\ClaimStatusKTBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerReport\CompetitorBrandFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerReport\CompetitorTypeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerReport\DealerStockReportDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerReport\DealerStockReportHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerReport\DeliveryCustomerDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerReport\DeliveryCustomerHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerReport\DRReportRangkingFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerReport\DRReportRankingStatusFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerReport\MarketPriceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerReport\StockMovementFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerReport\VehicleClassFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DiscountProposal\DiscountProposalPricetoParameterFacade.vb" />
+    <Compile Include="DiscountProposal\PKDetailtoDiscountFacade.vb" />
+    <Compile Include="DiscountProposal\SPLDetailtoSPLFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountMasterFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountProposalDetailApprovalFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountProposalDetailApprovaltoSPLFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountProposalDetailCustomerFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountProposalDetailDocumentFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountProposalDetailFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountProposalDetailOwnershipFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountProposalDetailPriceFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountProposalEmailUserFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountProposalHeaderFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountProposalParameterFacade.vb" />
+    <Compile Include="DiscountProposal\DiscountProposalProgramRegulerFacade.vb" />
+    <Compile Include="DiscountProposal\FleetCustomerDetailFacade.vb" />
+    <Compile Include="DiscountProposal\FleetCustomerDetailMappingFacade.vb" />
+    <Compile Include="DiscountProposal\FleetCustomerHeaderFacade.vb" />
+    <Compile Include="DiscountProposal\SPLDetailDocumentFacade.vb" />
+    <Compile Include="DiscountProposal\V_LogisticPriceAndNationalityFacade.vb" />
+    <Compile Include="ESRUT\ESRUTDownloadLogFacade.vb" />
+    <Compile Include="ESRUT\ESRUTHeaderFacade.vb" />
+    <Compile Include="ESRUT\ESRUTItemFacade.vb" />
+    <Compile Include="Event\EventDocumentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventEmailReceiverFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventInfoFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventLaporanPenjualanFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventParameterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventProposalExcelFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventProposalFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventProposalFileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventProposalHistoryAgreementFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventProposalHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventReportFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventSalesFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Event\EventTypeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\AnnualDepositAHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\ChassisMasterATAFacade.vb" />
+    <Compile Include="FinishUnit\BenefitClaimDeductedFacade.vb" />
+    <Compile Include="FinishUnit\BenefitClaimDeductedHistoryFacade.vb" />
+    <Compile Include="FinishUnit\DSFLeasingClaimDocumentFacade.vb" />
+    <Compile Include="FinishUnit\DSFLeasingClaimFacade.vb" />
+    <Compile Include="FinishUnit\IRAccDocNumberFacade.vb" />
+    <Compile Include="FinishUnit\RevisionSPKFakturFacade.vb" />
+    <Compile Include="FinishUnit\RevisionTransferActualFacade.vb" />
+    <Compile Include="FinishUnit\SPKDetailCustomerFacade.vb" />
+    <Compile Include="FinishUnit\SPKDetailCustomerProfileFacade.vb" />
+    <Compile Include="FinishUnit\SubCategoryVehicleFacade.vb" />
+    <Compile Include="FinishUnit\SubCategoryVehicleToModelFacade.vb" />
+    <Compile Include="FinishUnit\CategoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\ChassisMasterBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\ChassisMasterDocumentFacade.vb" />
+    <Compile Include="FinishUnit\ChassisMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\ChassisMasterLocationFacade.vb" />
+    <Compile Include="FinishUnit\CustomerBusinessFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\CustomerProfileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\CustomerStatusHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\DealerBankAccountFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\DebitNoteFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\DepartmentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\DepositADetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\DepositAFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\DepositAInterestDFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\DepositAInterestHFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\DepositAKuitansiPencairanFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\DepositAPencairanDFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\DepositAPencairanHFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\DepositAStatusHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\EndCustomerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\JaminanDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\JaminanFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\KindOfLetterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\LeasingFacade.vb" />
+    <Compile Include="FinishUnit\LetterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\LetterHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\LogisticFeeFacade.vb" />
+    <Compile Include="FinishUnit\LogisticFeeHistoryFacade.vb" />
+    <Compile Include="FinishUnit\LogisticFeeReturnHistoryFacade.vb" />
+    <Compile Include="FinishUnit\LogisticPPHDetailFacade.vb" />
+    <Compile Include="FinishUnit\LogisticPPHHeaderFacade.vb" />
+    <Compile Include="FinishUnit\MainOperationAreaFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\MainUsageFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\MCPDealerFacade.vb" />
+    <Compile Include="FinishUnit\MCPDetailFacade.vb" />
+    <Compile Include="FinishUnit\MCPHeaderFacade.vb" />
+    <Compile Include="FinishUnit\OCRIdentityFacade.vb" />
+    <Compile Include="FinishUnit\OwnerAgeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\ParkingFeeDealerInfoFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\ParkingFeeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\ParkingFeeHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\ParkingFeeReturnDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\ParkingFeeReturnHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\PaymentMethodFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\PaymentStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\PaymentTypeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\PenaltyParkirHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\PKTChangeHistoryFacade.vb" />
+    <Compile Include="FinishUnit\PKTDateFacade.vb" />
+    <Compile Include="FinishUnit\PriceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\ProductCategoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\RevisionFakturFacade.vb" />
+    <Compile Include="FinishUnit\RevisionPaymentDetailFacade.vb" />
+    <Compile Include="FinishUnit\RevisionPaymentHeaderFacade.vb" />
+    <Compile Include="FinishUnit\RevisionPriceFacade.vb" />
+    <Compile Include="FinishUnit\RevisionSAPDocFacade.vb" />
+    <Compile Include="FinishUnit\RevisionTypeFacade.vb" />
+    <Compile Include="FinishUnit\SPKChassisFacade.vb" />
+    <Compile Include="FinishUnit\SPKCustomerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\SPKCustomerProfileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\SPKDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\SPKFakturFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\SPKHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\SPKIndentLogFacade.vb" />
+    <Compile Include="FinishUnit\SPKProfileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\SPLDealerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\SPLDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\SPLFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\sp_GetSPKStatusFacade.vb" />
+    <Compile Include="FinishUnit\sp_PriceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\VDHFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\VechileColorIsActiveOnPKFacade.vb" />
+    <Compile Include="FinishUnit\VechileKindFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\VechileKindGroupFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\VechileModelFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\VechileTypeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\VechileTypeGeneralFacade.vb" />
+    <Compile Include="FinishUnit\VehicleBodyShapeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\VehicleColorFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\VehicleOwnershipFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\VehiclePurposeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\VWI_OpenFakturFacade.vb" />
+    <Compile Include="FinishUnit\VWI_InvoiceRevisionFacade.vb" />
+    <Compile Include="FinishUnit\VWI_SPKChassisMatchingFacade.vb" />
+    <Compile Include="FinishUnit\Vw_ChassisMasterFacade.vb" />
+    <Compile Include="FinishUnit\V_BenefitClaimDeductedFacade.vb" />
+    <Compile Include="FinishUnit\V_BenefitClaimDeductedHistoryFacade.vb" />
+    <Compile Include="FinishUnit\V_MCPByDealerFacade.vb" />
+    <Compile Include="FinishUnit\V_PriceFacade.vb" />
+    <Compile Include="FinishUnit\V_RekapDOHelperFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\v_RetrieveDummyFakturFacade.vb" />
+    <Compile Include="FinishUnit\V_SPKChassisFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\V_SPKDetailInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\V_SPKTersediaFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\V_SPK_SalesmanFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FinishUnit\V_SPK_Salesman_DownloadFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FleetManagement\CompetitorFacadeVB.vb" />
+    <Compile Include="FleetManagement\CustomerGroupFacadeVB.vb" />
+    <Compile Include="FleetManagement\FleetCustomerContactFacadeVB.vb" />
+    <Compile Include="FleetManagement\FleetCustomerFacadeVB.vb" />
+    <Compile Include="FleetManagement\FleetCustomerToCustomerFacadeVB.vb" />
+    <Compile Include="FleetManagement\FleetCustomerToDealerFacadeVB.vb" />
+    <Compile Include="FleetManagement\FleetHasilSurveyDetailFacadeVB.vb" />
+    <Compile Include="FleetManagement\FleetHasilSurveyHeaderFacadeVB.vb" />
+    <Compile Include="Forum\ForumBannedWordFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forum\ForumCategoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forum\ForumFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forum\ForumLastReadPostFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forum\ForumMemberFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forum\ForumPMFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forum\ForumPostFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forum\ForumTopicFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\FleetGradeDiscountFacade.vb" />
+    <Compile Include="General\FleetGradeRetentionFacade.vb" />
+    <Compile Include="General\ActivityTypeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\AnnouncementDocFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\AppConfigFacade.vb" />
+    <Compile Include="General\AppSettingFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\Area1Facade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\Area2Facade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\BCPDynamicQueryFacade.vb" />
+    <Compile Include="General\BapiLogFacade.vb" />
+    <Compile Include="General\BusinessAreaFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\CityFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\CityPartFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\DataHistoryDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\DataHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\DealerAdditionalFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\DealerBranchBusinessAreaFacade.vb" />
+    <Compile Include="General\DealerBranchFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\DealerCategoryFacade.vb" />
+    <Compile Include="General\DealerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\DealerFacilityFacade.vb" />
+    <Compile Include="General\DealerGroupFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\DealerMasterWITHOLDTaxFacade.vb" />
+    <Compile Include="General\DealerOperationAreaBussinessFacade.vb" />
+    <Compile Include="General\DealerPajakFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\DealerProfilePhotoFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\DealerSalesOrganizationFacade.vb" />
+    <Compile Include="General\DealerPaymentMethodFacade.vb" />
+    <Compile Include="General\DealerStallEquipmentFacade.vb" />
+    <Compile Include="General\DealerSytemsFacade.vb" />
+    <Compile Include="General\DealerTerritoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\EnumDetailFacade.vb" />
+    <Compile Include="General\EnumMasterFacade.vb" />
+    <Compile Include="General\EventActivityTypeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\GlobalUploadFacade.vb" />
+    <Compile Include="General\IsChangeFacade.vb" />
+    <Compile Include="General\JobPositionFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\JobPositionMenuFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\JobPositionToCategoryFacade.vb" />
+    <Compile Include="General\JobPositionToMenuFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\KaroseriFacade.vb" />
+    <Compile Include="General\LeasingFeeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\LogisticPriceFacade.vb" />
+    <Compile Include="General\MainAreaFacade.vb" />
+    <Compile Include="General\ManualDocFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\MenuControlFacade.vb" />
+    <Compile Include="General\MessageServiceDataFacade.vb" />
+    <Compile Include="General\MessageServiceDetailFacade.vb" />
+    <Compile Include="General\MessageServiceFacade.vb" />
+    <Compile Include="General\MessageServiceLogFacade.vb" />
+    <Compile Include="General\MessageTransactionFacade.vb" />
+    <Compile Include="General\NationalHolidayFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\PPhFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\ProvinceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\SFReferenceFacade.vb" />
+    <Compile Include="General\SPFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\StatusChangeHistorySendEmailFlagFacade.vb" />
+    <Compile Include="General\StatusChangeHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\SysLogFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\TermOfPaymentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\TransactionControlHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\WsJSONLogFacade.vb" />
+    <Compile Include="General\WsLogFacade.vb" />
+    <Compile Include="Helper\HelperFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helper\PerformanceLogFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Helper\ReferenceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartEquipment\EquipSPPOAlocationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartEquipment\EquipSPPOInfoFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartEquipment\EquipUserFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartEquipment\EstimationEquipDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartEquipment\EstimationEquipHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartEquipment\EstimationEquipPOFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartEquipment\v_EquipPOFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartEquipment\v_EquipPOSearch.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartEquipment\v_EquipSPPOIndentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPart\IndentPartDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPart\IndentPartHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPart\IndentPartPOHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPart\V_SpPO_IndentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LKPP\LKPPDealerFacade.vb" />
+    <Compile Include="LKPP\LKPPDetailFacade.vb" />
+    <Compile Include="LKPP\LKPPHeaderFacade.vb" />
+    <Compile Include="LKPP\V_LKPPByDealerFacade.vb" />
+    <Compile Include="MaterialPromotion\MaterialPromotionAllocationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotion\MaterialPromotionFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotion\MaterialPromotionGIGRFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotion\MaterialPromotionPeriodFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotion\MaterialPromotionPriceHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotion\MaterialPromotionRequestDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotion\MaterialPromotionRequestFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotion\MaterialPromotionStockAdjustmentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MDP\MDPDealerDailyStockFacade.vb" />
+    <Compile Include="MDP\MDPMasterDealerFacade.vb" />
+    <Compile Include="MDP\MDPMasterDealerHistoryFacade.vb" />
+    <Compile Include="MDP\MDPMasterVehicleFacade.vb" />
+    <Compile Include="MDP\MDPMasterVehicleHistoryFacade.vb" />
+    <Compile Include="MDP\PODraftDetailFacade.vb" />
+    <Compile Include="MDP\PODraftHeaderFacade.vb" />
+    <Compile Include="MSP\EFakturHeaderFacade.vb" />
+    <Compile Include="MSP\EFakturItemFacade.vb" />
+    <Compile Include="MSP\MSPClaimDocumentFacade.vb" />
+    <Compile Include="MSP\MSPClaimFacade.vb" />
+    <Compile Include="MSP\MSPCustomerFacade.vb" />
+    <Compile Include="MSP\MSPDCFacade.vb" />
+    <Compile Include="MSP\MSPDMFacade.vb" />
+    <Compile Include="MSP\MSPDurationPMKindFacade.vb" />
+    <Compile Include="MSP\MSPExDebitChargeFacade.vb" />
+    <Compile Include="MSP\MSPExDebitMemoFacade.vb" />
+    <Compile Include="MSP\MSPExFakturPajakFacade.vb" />
+    <Compile Include="MSP\MSPExMappingtoFSKindFacade.vb" />
+    <Compile Include="MSP\MSPExMasterFacade.vb" />
+    <Compile Include="MSP\MSPExPaymentDetailFacade.vb" />
+    <Compile Include="MSP\MSPExPaymentFacade.vb" />
+    <Compile Include="MSP\MSPExRegistrationFacade.vb" />
+    <Compile Include="MSP\MSPExTypeFacade.vb" />
+    <Compile Include="MSP\MSPExWarrantyMasterFacade.vb" />
+    <Compile Include="MSP\MSPMasterFacade.vb" />
+    <Compile Include="MSP\MSPRegistrationFacade.vb" />
+    <Compile Include="MSP\MSPRegistrationHistoryFacade.vb" />
+    <Compile Include="MSP\MSPTransferPaymentDetailFacade.vb" />
+    <Compile Include="MSP\MSPTransferPaymentFacade.vb" />
+    <Compile Include="MSP\MSPTransferPaymentHistoryFacade.vb" />
+    <Compile Include="MSP\MSPTypeFacade.vb" />
+    <Compile Include="Onlinepayment\PaymentAssignmentTypeReffFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Onlinepayment\PaymentObligationAssignmentTypeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Onlinepayment\PaymentObligationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Onlinepayment\PaymentObligationHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Onlinepayment\PaymentObligationTypeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Onlinepayment\PaymentRegDocFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pagehelper\OTPFacade.vb" />
+    <Compile Include="PK\ContractDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PK\ContractHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PK\DealerSalesTargetFacade.vb" />
+    <Compile Include="PK\PKDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PK\PKHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PK\PKProductionPlanFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PK\SalesPlanMeetingFacade.vb" />
+    <Compile Include="PK\sp_GetPKAllocationFacade.vb" />
+    <Compile Include="PK\StockActualFacade.vb" />
+    <Compile Include="PK\StockTargetFacade.vb" />
+    <Compile Include="PK\TransactionControlPKFacade.vb" />
+    <Compile Include="PK\TransactionControlPKHistoryFacade.vb" />
+    <Compile Include="PO\ATPHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\BankFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\CessieDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\CessieFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\CreditMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\CreditMasterSPFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\DailyPaymentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\DailyPaymentHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\DealerPOTargetFacade.vb" />
+    <Compile Include="PO\DeliveryOrderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\FactoringMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\FreePPhFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\InvoiceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\LogisticDCDetailFacade.vb" />
+    <Compile Include="PO\LogisticDCHeaderFacade.vb" />
+    <Compile Include="PO\LogisticDNFacade.vb" />
+    <Compile Include="PO\MaxTOPDayFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\PaymentNotifEmailFacade.vb" />
+    <Compile Include="PO\PaymentPurposeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\PODestinationFacade.vb" />
+    <Compile Include="PO\PODestinationRegionFacade.vb" />
+    <Compile Include="PO\PODetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\POHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\PPQtyDeleteHelperFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\PPQtyFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\RedemptionCeilingFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\RedemptionDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\RedemptionHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\RedemptionStatusFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\SalesOrderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\sp_AllocPOFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\sp_CeilingFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\sp_CeilingPOFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\sp_CreditMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\sp_MaxTOPDayFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\sp_PaymentTransferFacade.vb" />
+    <Compile Include="PO\sp_RedemptionCeilingFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\VAlurInvoiceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\VDetailInvoiceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\VInvoiceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\VSumDetailInvoiceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\V_CessieDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\v_CreditAccountFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\v_DealerOrderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\v_DealerStockFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\v_DealerStockIDFacade.vb" />
+    <Compile Include="PO\v_DraftPOTotalDetailFacade.vb" />
+    <Compile Include="PO\v_POEffectiveDateFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\v_POTotalDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\v_ProposedPOFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\v_RedemptionFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PO\V_RekapDraftPOFacade.vb" />
+    <Compile Include="PO\V_RekapPOFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\DMSWOWarrantyClaimFacade.vb" />
+    <Compile Include="PQR\DeskripsiKodePosisiFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRAdditionalInfoBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRAdditionalInfoFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRAttachmentBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRAttachmentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRChangesHistoryBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRChangesHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRDamageCodeBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRDamageCodeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRHeaderBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRPartsCodeBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRPartsCodeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRQRSBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRQRSFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQR\PQRSolutionReferencesFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation\PresentationFacade.vb" />
+    <Compile Include="Presentation\PresentationGroupFacade.vb" />
+    <Compile Include="Product\BasicProductFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Product\ProductDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Product\ProductFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Profile\ChassisMasterProfileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Profile\CustomerProfileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Profile\CustomerRequestProfileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Profile\DealerProfileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Profile\PQRProfileBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Profile\PQRProfileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Profile\RevisionChassisMasterProfileFacade.vb" />
+    <Compile Include="Profile\SalesmanProfileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\JobPositionCategoryAreaFacade.vb" />
+    <Compile Include="Salesman\JobPositionCategoryFacade.vb" />
+    <Compile Include="Salesman\JobPositionCategoryToAreaFacade.vb" />
+    <Compile Include="Salesman\PartShopFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanAccomplishFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanAdditionalInfoFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanAreaAssignFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanAreaFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanCategoryLevelFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanDealerHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanDSEAllocationFacade.vb" />
+    <Compile Include="Salesman\SalesmanDSEAssignmentFacade.vb" />
+    <Compile Include="Salesman\SalesmanExperienceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanGradeFacade.vb" />
+    <Compile Include="Salesman\SalesmanHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanHeaderToDealerFacade.vb" />
+    <Compile Include="Salesman\SalesmanLevelFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanMasterTrainingFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanPartHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanPartPerformanceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanPartPerformanceHistFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanPartShopFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanPartTargetFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanPartTargetHistFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanSalesTargetFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanDSEFacade.vb" />
+    <Compile Include="Salesman\SalesmanTrainingFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanTrainingParticipantFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanTrainingTypeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanTurnOverAnalisaFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanUnifDistributionFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanUnifGuideFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanUniformAssignedFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanUniformFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanUniformOrderDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\SalesmanUniformOrderHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Salesman\V_SalesmanPartTargetFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAP\SAPCustomerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAP\SAPCustomerMappingFacade.vb" />
+    <Compile Include="SAP\SAPGradeWeightFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAP\SAPPeriodFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAP\SAPRegisterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAP\SAPSalesParameterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAP\VSAPCustomerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\PDILogFacade.vb" />
+    <Compile Include="Service\PDISpecimenFacade.vb" />
+    <Compile Include="Service\PDITemplateFacade.vb" />
+    <Compile Include="Service\PKTSpecimenFacade.vb" />
+    <Compile Include="Service\PKTTemplateFacade.vb" />
+    <Compile Include="Service\ServiceReminderAnomalyFacade.vb" />
+    <Compile Include="Service\ServiceReminderFollowUpFacade.vb" />
+    <Compile Include="Service\BOMMaintenanceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\ChassisMasterPKTFacade.vb" />
+    <Compile Include="Service\CustomerDealerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\CustomerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\CustomerRequestFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\DepositBDebitNoteFacade.vb" />
+    <Compile Include="Service\DepositBDetailFacade.vb" />
+    <Compile Include="Service\DepositBHeaderFacade.vb" />
+    <Compile Include="Service\DepositBInterestDetailFacade.vb" />
+    <Compile Include="Service\DepositBInterestHeaderFacade.vb" />
+    <Compile Include="Service\DepositBKewajibanDetailFacade.vb" />
+    <Compile Include="Service\DepositBKewajibanHeaderFacade.vb" />
+    <Compile Include="Service\DepositBPencairanDetailFacade.vb" />
+    <Compile Include="Service\DepositBPencairanHeaderFacade.vb" />
+    <Compile Include="Service\DepositBPlafonFacade.vb" />
+    <Compile Include="Service\DepositBReceiptFacade.vb" />
+    <Compile Include="Service\DepositBStatusHistoryFacade.vb" />
+    <Compile Include="Service\DeskripsiPositionCodeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\DeskripsiWorkPositionFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\DetailBOMFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\EquipmentMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\EquipmentSalesDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\EquipmentSalesHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\EquipmentSalesPaymentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\FreeServiceBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\FreeServiceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\FreeServicePartDetailFacade.vb" />
+    <Compile Include="Service\FSCampaignDealerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\FSCampaignFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\FSCampaignKindFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\FSCampaignVehicleFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\FSChassisCampaignFacade.vb" />
+    <Compile Include="Service\FSKindFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\FSKindOnVechileTypeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\kodePostionWSCFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\LaborMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\MonthlyDocumentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\MonthlyDocumentToFakturEvidanceFacade.vb" />
+    <Compile Include="Service\PDIFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\PMHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\PMKindDurationFacade.vb" />
+    <Compile Include="Service\PMKindFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\PMKindReplacemetFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\PositionWSCFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\ProfileDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\ProfileGroupFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\ProfileHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\ProfileHeaderToGroupFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\ProfileValueFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\ProfileValueHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\ReasonFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\RecallCategoryDetailFacade.vb" />
+    <Compile Include="Service\RecallCategoryFacade.vb" />
+    <Compile Include="Service\RecallChassisMasterFacade.vb" />
+    <Compile Include="Service\RecallServiceFacade.vb" />
+    <Compile Include="Service\ReplecementPartMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\SalesmanFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\ServiceReminderFacade.vb" />
+    <Compile Include="Service\up_RetrieveFreeService_Service_ReminderFacade.vb" />
+    <Compile Include="Service\VwRecallCategoryFacade.vb" />
+    <Compile Include="Service\V_FreeServiceFacade.vb" />
+    <Compile Include="Service\V_MonthlyReportFacade.vb" />
+    <Compile Include="Service\WarrantyActivationFacade.vb" />
+    <Compile Include="Service\WSCDamageRequestPartBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\WSCDamageRequestPartFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\WSCDetailBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\WSCDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\WSCEvidenceBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\WSCEvidenceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\WSCFormFacade.vb" />
+    <Compile Include="Service\WSCHeaderBBFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\WSCHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\WSCParameterConditionFacade.vb" />
+    <Compile Include="Service\WSCParameterDetailFacade.vb" />
+    <Compile Include="Service\WSCParameterHeaderFacade.vb" />
+    <Compile Include="Service\WSCParameterVehicleFacade.vb" />
+    <Compile Include="SF\SFConfigFacade.vb" />
+    <Compile Include="SF\SFContactFacade.vb" />
+    <Compile Include="SF\SFErrorLogFacade.vb" />
+    <Compile Include="SF\SFExecuteTimeFacade.vb" />
+    <Compile Include="SF\SFLastSuccessFacade.vb" />
+    <Compile Include="SF\SFMasterObjectFacade.vb" />
+    <Compile Include="SF\SFPurchaseTransactionFacade.vb" />
+    <Compile Include="SF\SFServiceHistoryFacade.vb" />
+    <Compile Include="SF\SFSmartPackageFacade.vb" />
+    <Compile Include="SF\SFStagingLogFacade.vb" />
+    <Compile Include="SF\SFSynchronizeLogFacade.vb" />
+    <Compile Include="ShowroomAudit\AuditParameterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShowroomAudit\AuditParameterPhotoFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShowroomAudit\AuditScheduleAuditorFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShowroomAudit\AuditScheduleDealerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShowroomAudit\AuditScheduleDealerReportFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShowroomAudit\AuditScheduleDealerReportParamFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ShowroomAudit\AuditScheduleFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAF\ConditionMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAF\SPAFDocHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAF\SPAFDoc_UploadDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAF\SPAFDoc_UploadHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAF\SPAFFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAF\V_LeasingDaftarDokumenFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAF\V_LeasingDaftarKondisiFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\AccessoriesCategoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\AccessoriesSaleDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\AccessoriesSaleFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\AnnualDiscountAchievementFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\AnnualDiscountAchievementHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\AnnualDiscountFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\CODOutstandingFacade.vb" />
+    <Compile Include="SparePart\CODPaymentFacade.vb" />
+    <Compile Include="SparePart\DealerLeadTimeFacade.vb" />
+    <Compile Include="SparePart\DepositC2Facade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\DepositC2InterestDetailFacade.vb" />
+    <Compile Include="SparePart\DepositC2InterestHeaderFacade.vb" />
+    <Compile Include="SparePart\DepositC2LineFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\DepositFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\DepositLineFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\FileUploadAnnualDiscountFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\FleetFakturFacade.vb" />
+    <Compile Include="SparePart\FleetMasterDealerFacade.vb" />
+    <Compile Include="SparePart\FleetMasterFacade.vb" />
+    <Compile Include="SparePart\FleetRequestFacade.vb" />
+    <Compile Include="SparePart\OrderRestrictionFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\PartIncidentalDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\PartIncidentalHeaderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\PartIncidentalPOFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\PartIncidentalPriorityDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\PartIncidentalPriorityFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\PartIncidentalUserFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\PendingOrderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\PRPCategoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\PRPFileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\PRPSenderInfoFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\PRPUserEmailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\RegularOrderConfirmationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SettingBlockMaterialFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SparePartBillingDetailFacade.vb" />
+    <Compile Include="SparePart\SparePartBillingFacade.vb" />
+    <Compile Include="SparePart\SparePartDODetailFacade.vb" />
+    <Compile Include="SparePart\SparePartDOExpeditionFacade.vb" />
+    <Compile Include="SparePart\SparePartDOFacade.vb" />
+    <Compile Include="SparePart\SparePartConversionFacade.vb" />
+    <Compile Include="SparePart\SparePartMasterPriceFacade.vb" />
+    <Compile Include="SparePart\SparePartDueDateNotificationFacade.vb" />
+    <Compile Include="SparePart\SparePartPOTypeTOPFacade.vb" />
+    <Compile Include="SparePart\SparePartMasterTOPFacade.vb" />
+    <Compile Include="SparePart\SparePartMasterFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SparePartMaxOrderFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SparePartOrganization.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SparePartOutstandingOrderDetailFacade.vb" />
+    <Compile Include="SparePart\SparePartOutstandingOrderFacade.vb" />
+    <Compile Include="SparePart\SparePartPackingDetailFacade.vb" />
+    <Compile Include="SparePart\SparePartPackingFacade.vb" />
+    <Compile Include="SparePart\SparePartPendingOrderFacade.vb" />
+    <Compile Include="SparePart\SparePartPOBillingFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SparePartPODetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SparePartPOEstimateDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SparePartPOEstimateFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SparePartPOFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SparePartPOScheduleDealerFacade.vb" />
+    <Compile Include="SparePart\SparePartPOScheduleFacade.vb" />
+    <Compile Include="SparePart\SparePartPOScheduleTimeFacade.vb" />
+    <Compile Include="SparePart\SparePartPOStatusDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SparePartPOStatusFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\SpecialItemFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePart\TOPBlockStatusFacade.vb" />
+    <Compile Include="SparePart\TOPCreditAccountFacade.vb" />
+    <Compile Include="SparePart\TOPSPAccountingNoFacade.vb" />
+    <Compile Include="SparePart\TOPSPDepositFacade.vb" />
+    <Compile Include="SparePart\TOPSPDueDateFacade.vb" />
+    <Compile Include="SparePart\TOPSPTransferActualFacade.vb" />
+    <Compile Include="SparePart\TOPSPTransferCeilingDetailFacade.vb" />
+    <Compile Include="SparePart\TOPSPTransferCeilingFacade.vb" />
+    <Compile Include="SparePart\TOPSPTransferOutstandingFacade.vb" />
+    <Compile Include="SparePart\TOPSPTransferPaymentDetailFacade.vb" />
+    <Compile Include="SparePart\TOPSPTransferPaymentFacade.vb" />
+    <Compile Include="SparePart\TOPTransferControlFacade.vb" />
+    <Compile Include="SparePart\VWI_DealerSettingCreditAccountFacade.vb" />
+    <Compile Include="SparePart\V_ClaimDetailFacade.vb" />
+    <Compile Include="SparePart\V_SparePartFlowFacade.vb" />
+    <Compile Include="SparePart\V_SParepartLeadTimeFacade.vb" />
+    <Compile Include="SparePart\V_SparePartOrganizationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StandardCode\StandardCodeCharFacade.vb" />
+    <Compile Include="StandardCode\StandardCodeFacadeVB.vb" />
+    <Compile Include="Tools\BCPQueryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\BCPRolesFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\VwBCPColumnsFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrAdditionalClassFacade.vb" />
+    <Compile Include="Training\TrBookingClassFacade.vb" />
+    <Compile Include="Training\TrBookingCourseFacade.vb" />
+    <Compile Include="Training\TrCertificateConfigFacade.vb" />
+    <Compile Include="Training\TrCertificateLineFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrClassAllocationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrClassFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrClassNumEvaluationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrClassRegistrationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrCourseCategoryAllocationFacade.vb" />
+    <Compile Include="Training\TrCourseCategoryFacade.vb" />
+    <Compile Include="Training\TrCourseCategoryToJobPositionFacade.vb" />
+    <Compile Include="Training\TrCourseEvaluationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrCourseFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrFreePassFacade.vb" />
+    <Compile Include="Training\TrInhouseClassFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrInhouseDetailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrInhouseEvaluationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrInhouseFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrInhouseInformationFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrInhouseMemberFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrMRTCDealerFacade.vb" />
+    <Compile Include="Training\TrMRTCFacade.vb" />
+    <Compile Include="Training\TrMRTCPICFacade.vb" />
+    <Compile Include="Training\TrBillingDetailFacade.vb" />
+    <Compile Include="Training\TrBillingHeaderFacade.vb" />
+    <Compile Include="Training\TrPreRequireFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrReplacementDetailFacade.vb" />
+    <Compile Include="Training\TrReplacementHeaderFacade.vb" />
+    <Compile Include="Training\TrScheduleUploadFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrTraineeDataLogFacade.vb" />
+    <Compile Include="Training\TrTraineeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\TrTraineeLevelFacade.vb" />
+    <Compile Include="Training\TrTraineeLevelHeaderDetailFacade.vb" />
+    <Compile Include="Training\TrTraineeLevelHeaderFacade.vb" />
+    <Compile Include="Training\TrTraineePaymentHeaderFacade.vb" />
+    <Compile Include="Training\TrTraineeSalesmanHeaderFacade.vb" />
+    <Compile Include="Training\TrUserEmailFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\VWI_ServiceAdvisorFacade.vb" />
+    <Compile Include="Training\v_trClassFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Training\v_TrTraineeRegisteredFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Transfer\sp_SOListFacade.vb" />
+    <Compile Include="Transfer\TransferActualFacade.vb" />
+    <Compile Include="Transfer\TransferCeilingDetailFacade.vb" />
+    <Compile Include="Transfer\TransferCeilingFacade.vb" />
+    <Compile Include="Transfer\TransferControlFacade.vb" />
+    <Compile Include="Transfer\TransferPaymentDetailFacade.vb" />
+    <Compile Include="Transfer\TransferPaymentFacade.vb" />
+    <Compile Include="Transfer\vw_TransferPaymentFacade.vb" />
+    <Compile Include="Transfer\v_SOPaidStatusFacade.vb" />
+    <Compile Include="Transfer\v_SOPaymentDetailFacade.vb" />
+    <Compile Include="Transfer\v_SOPaymentFacade.vb" />
+    <Compile Include="TrTraineePaymentDetailFacade.vb" />
+    <Compile Include="UserManagement\BingoFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\BingoMatrixFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\LockUserFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\OrganizationPrivilageFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\PCPhisingGuardFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\PhisingGuardImageFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\PrivilegeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\QAUserFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\RoleFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\RoleOrganizationPrivilegeFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\SMSHistoryFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\UserGroupFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\UserGroupMemberFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\UserInfoFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\UserOrgAssignmentFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\UserProfileFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\UserRoleFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserManagement\v_GetTokenExpiredFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDH\VDHCustomerFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDH\VDHFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDH\VDHItemFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDH\VDHServiceFacade.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WarrantyPartAccessoriesFacade.vb" />
+    <EmbeddedResource Include="AjaxDataSupplier.aspx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="SparePart\mrgtmp0" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+</Project>

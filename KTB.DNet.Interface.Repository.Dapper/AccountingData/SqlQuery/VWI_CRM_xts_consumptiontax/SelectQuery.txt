@@ -1,0 +1,80 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/  
+	  VWI_CRM_xts_consumptiontax.xts_taxdimension8idname
+	, VWI_CRM_xts_consumptiontax.xts_taxaccountid
+	, VWI_CRM_xts_consumptiontax.versionnumber
+	, VWI_CRM_xts_consumptiontax.xts_consumptiontaxid
+	, VWI_CRM_xts_consumptiontax.createdon
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension6fromname
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension9idname
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension2from
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension9id
+	, VWI_CRM_xts_consumptiontax.statuscodename
+	, VWI_CRM_xts_consumptiontax.xts_roundingmethodname
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension3id
+	, VWI_CRM_xts_consumptiontax.xts_description
+	, VWI_CRM_xts_consumptiontax.modifiedbyyominame
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension10idname
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension1fromname
+	, VWI_CRM_xts_consumptiontax.createdonbehalfby
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension5fromname
+	, VWI_CRM_xts_consumptiontax.modifiedbyname
+	, VWI_CRM_xts_consumptiontax.overriddencreatedon
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension2id
+	, VWI_CRM_xts_consumptiontax.xts_taxtypename
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension3from
+	, VWI_CRM_xts_consumptiontax.modifiedonbehalfby
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension6idname
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension3idname
+	, VWI_CRM_xts_consumptiontax.statecode
+	, VWI_CRM_xts_consumptiontax.xts_taxtype
+	, VWI_CRM_xts_consumptiontax.timezoneruleversionnumber
+	, VWI_CRM_xts_consumptiontax.ktb_bucompanyname
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension1id
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension1idname
+	, VWI_CRM_xts_consumptiontax.xts_consumptiontax
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension6from
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension4fromname
+	, VWI_CRM_xts_consumptiontax.xts_locking
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension3fromname
+	, VWI_CRM_xts_consumptiontax.xts_description2
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension7id
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension2fromname
+	, VWI_CRM_xts_consumptiontax.createdonbehalfbyname
+	, VWI_CRM_xts_consumptiontax.createdbyyominame
+	, VWI_CRM_xts_consumptiontax.utcconversiontimezonecode
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension4idname
+	, VWI_CRM_xts_consumptiontax.modifiedon
+	, VWI_CRM_xts_consumptiontax.importsequencenumber
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension4from
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension6id
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension4id
+	, VWI_CRM_xts_consumptiontax.createdbyname
+	, VWI_CRM_xts_consumptiontax.xts_roundingmethod
+	, VWI_CRM_xts_consumptiontax.modifiedonbehalfbyname
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension5id
+	, VWI_CRM_xts_consumptiontax.createdby
+	, VWI_CRM_xts_consumptiontax.modifiedby
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension8id
+	, VWI_CRM_xts_consumptiontax.xts_basecalculation
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension5from
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension2idname
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension7idname
+	, VWI_CRM_xts_consumptiontax.createdonbehalfbyyominame
+	, VWI_CRM_xts_consumptiontax.xts_company
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension10id
+	, VWI_CRM_xts_consumptiontax.xts_basecalculationname
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension1from
+	, VWI_CRM_xts_consumptiontax.xts_taxdimension5idname
+	, VWI_CRM_xts_consumptiontax.statuscode
+	, VWI_CRM_xts_consumptiontax.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_consumptiontax.organizationid
+	, VWI_CRM_xts_consumptiontax.organizationidname
+	, VWI_CRM_xts_consumptiontax.ktb_bucompany
+	, VWI_CRM_xts_consumptiontax.xts_taxaccountidname
+	, VWI_CRM_xts_consumptiontax.statecodename
+	, VWI_CRM_xts_consumptiontax.RowStatus
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_consumptiontax as VWI_CRM_xts_consumptiontax WITH (NOLOCK) 
+{0}

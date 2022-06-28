@@ -1,0 +1,68 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_nvsonumberregistrationdetails.company
+	, VWI_CRM_xts_nvsonumberregistrationdetails.businessunitcode
+	, VWI_CRM_xts_nvsonumberregistrationdetails.createdonbehalfbyyominame
+	, VWI_CRM_xts_nvsonumberregistrationdetails.owninguser
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_locking
+	, VWI_CRM_xts_nvsonumberregistrationdetails.statecode
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_businessunitidname
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_nvsonumberregistrationname
+	, VWI_CRM_xts_nvsonumberregistrationdetails.owneridname
+	, VWI_CRM_xts_nvsonumberregistrationdetails.statecodename
+	, VWI_CRM_xts_nvsonumberregistrationdetails.createdonbehalfby
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_pkcombinationkey
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_nvsonumberregistrationdetails
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_nvsonumberregistrationdetailsid
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_lastnumber
+	, VWI_CRM_xts_nvsonumberregistrationdetails.importsequencenumber
+	, VWI_CRM_xts_nvsonumberregistrationdetails.modifiedbyyominame
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_statusname
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_nvsonumberregistration
+	, VWI_CRM_xts_nvsonumberregistrationdetails.utcconversiontimezonecode
+	, VWI_CRM_xts_nvsonumberregistrationdetails.createdbyyominame
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_nvsonumberregistrationid
+	, VWI_CRM_xts_nvsonumberregistrationdetails.owningbusinessunit
+	, VWI_CRM_xts_nvsonumberregistrationdetails.modifiedbyname
+	, VWI_CRM_xts_nvsonumberregistrationdetails.owningteam
+	, VWI_CRM_xts_nvsonumberregistrationdetails.modifiedby
+	, VWI_CRM_xts_nvsonumberregistrationdetails.createdby
+	, VWI_CRM_xts_nvsonumberregistrationdetails.timezoneruleversionnumber
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_nvsonumberregistrationidname
+	, VWI_CRM_xts_nvsonumberregistrationdetails.ktb_validspkidname
+	, VWI_CRM_xts_nvsonumberregistrationdetails.owneridtype
+	, VWI_CRM_xts_nvsonumberregistrationdetails.statuscodename
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_assigntosalesdate
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_salespersonid
+	, VWI_CRM_xts_nvsonumberregistrationdetails.owneridyominame
+	, VWI_CRM_xts_nvsonumberregistrationdetails.modifiedon
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_nvsoserial
+	, VWI_CRM_xts_nvsonumberregistrationdetails.ktb_validspkid
+	, VWI_CRM_xts_nvsonumberregistrationdetails.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_nvsonumberregistrationdetails.statuscode
+	, VWI_CRM_xts_nvsonumberregistrationdetails.createdbyname
+	, VWI_CRM_xts_nvsonumberregistrationdetails.createdon
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_businessunitid
+	, VWI_CRM_xts_nvsonumberregistrationdetails.createdonbehalfbyname
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_assigndate
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_status
+	, VWI_CRM_xts_nvsonumberregistrationdetails.modifiedonbehalfbyname
+	, VWI_CRM_xts_nvsonumberregistrationdetails.versionnumber
+	, VWI_CRM_xts_nvsonumberregistrationdetails.modifiedonbehalfby
+	, VWI_CRM_xts_nvsonumberregistrationdetails.ownerid
+	, VWI_CRM_xts_nvsonumberregistrationdetails.overriddencreatedon
+	, VWI_CRM_xts_nvsonumberregistrationdetails.xts_salespersonidname
+	, VWI_CRM_xts_nvsonumberregistrationdetails.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_nvsonumberregistrationdetails a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_nvsonumberregistrationdetails 

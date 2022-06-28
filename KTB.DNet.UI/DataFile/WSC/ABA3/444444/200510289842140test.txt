@@ -1,0 +1,7 @@
+<html>
+<body>
+<merque <blink>
+test</blink>
+</merque>
+</body>
+</html>

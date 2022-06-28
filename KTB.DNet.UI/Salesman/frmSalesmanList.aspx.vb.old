@@ -1,0 +1,805 @@
+#Region "Custom Namespace Import"
+Imports KTB.DNet.Domain
+Imports KTB.DNet.BusinessFacade
+Imports KTB.DNet.BusinessFacade.FinishUnit
+Imports KTB.DNet.BusinessFacade.Salesman
+Imports KTB.DNet.BusinessFacade.Profile
+
+Imports KTB.DNet.BusinessFacade.Helper
+Imports KTB.DNet.Utility
+Imports KTB.DNet.Domain.Search
+Imports Ktb.DNet.Security
+Imports KTB.DNet.BusinessFacade.General
+Imports KTB.DNet.UI.Helper
+Imports System.IO
+Imports System.Text
+#End Region
+
+Public Class frmSalesmanList
+    Inherits System.Web.UI.Page
+
+
+#Region " Web Form Designer Generated Code "
+
+    'This call is required by the Web Form Designer.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+
+    End Sub
+    Protected WithEvents btnCari As System.Web.UI.WebControls.Button
+    Protected WithEvents ddlUnit As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents txtID As System.Web.UI.WebControls.TextBox
+    Protected WithEvents txtNama As System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlPosisi As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents ddlStatus As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents lblPageTitle As System.Web.UI.WebControls.Label
+    Protected WithEvents txtDealerCode As System.Web.UI.WebControls.TextBox
+    Protected WithEvents lblSearchDealer As System.Web.UI.WebControls.Label
+    Protected WithEvents lblSalesmanID As System.Web.UI.WebControls.Label
+    Protected WithEvents lblSalesmanUnit As System.Web.UI.WebControls.Label
+    Protected WithEvents dgSalesmanHeader As System.Web.UI.WebControls.DataGrid
+    Protected WithEvents btnCancel As System.Web.UI.WebControls.Button
+    Protected WithEvents ddlSalesmanLevel As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents btnDownloadExcel As System.Web.UI.WebControls.Button
+
+    'NOTE: The following placeholder declaration is required by the Web Form Designer.
+    'Do not delete or move it.
+    Private designerPlaceholderDeclaration As System.Object
+
+    Private Sub Page_Init(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Init
+        'CODEGEN: This method call is required by the Web Form Designer
+        'Do not modify it using the code editor.
+        InitializeComponent()
+    End Sub
+
+#End Region
+
+#Region "PrivateVariables"
+    Private _SalesmanHeaderFacade As New SalesmanHeaderFacade(User)
+    Private _SalesmanTrainingParticipantFacade As New SalesmanTrainingParticipantFacade(User)
+    Private _SalesmanUniformAssignedFacade As New SalesmanUniformAssignedFacade(User)
+    Private sessHelper As New SessionHelper
+    Private objDealer As New Dealer
+    Private strDefDate As String = "1753/01/01"
+    'Dim criterias As CriteriaComposite
+    Dim strFileNm As String
+    Dim strFileNmHeader As String
+    Private _downloadPriv As Boolean = False
+#End Region
+
+#Region "Privilege"
+    Private Sub CheckPrivilege()
+        If Not SecurityProvider.Authorize(context.User, SR.TPViewList_Privilege) Then
+            Server.Transfer("../FrmAccessDenied.aspx?modulName=Tenaga Penjual - Daftar Tenaga Penjual")
+        End If
+    End Sub
+
+    Dim bCheckEditDetailPrivilege As Boolean = SecurityProvider.Authorize(context.User, SR.TPListEditDetail_Privilege)
+    Dim bCekDLPriv As Boolean = SecurityProvider.Authorize(context.User, SR.SalesmanListDownload_Privilege)
+    Dim bCekViewDetailsPriv As Boolean = SecurityProvider.Authorize(context.User, SR.TPListViewDetail_Privilege)
+#End Region
+
+#Region "Custom Method"
+    Private Sub SetSetting()
+        If Not IsNothing(Request.QueryString("Mode")) Then
+            Select Case Request.QueryString("Mode")
+                Case "unit"
+                    lblPageTitle.Text = "TENAGA PENJUAL - Daftar Tenaga Penjual "
+                    ddlUnit.SelectedValue = EnumSalesmanUnit.SalesmanUnit.Unit
+                    lblSalesmanID.Text = "Salesman ID"
+                    lblSalesmanUnit.Text = "Salesman Unit"
+                    sessHelper.SetSession("strFileNm", "SalesmanUnit")
+                    sessHelper.SetSession("strFileNmHeader", "Salesman Unit List")
+                Case "part"
+                    lblPageTitle.Text = "SALESMAN PART - Daftar Salesman Part "
+                    ddlUnit.SelectedValue = EnumSalesmanUnit.SalesmanUnit.Sparepart
+                    lblSalesmanID.Text = "Salesman Part ID"
+                    lblSalesmanUnit.Text = "Salesman Part Unit"
+                    sessHelper.SetSession("strFileNm", "SalesmanPartUnit")
+                    sessHelper.SetSession("strFileNmHeader", "Salesman Part List")
+                Case "servis"
+                    lblPageTitle.Text = "STAFF SERVICE - Daftar Staff Service"
+                    ddlUnit.SelectedValue = EnumSalesmanUnit.SalesmanUnit.Mekanik
+                    lblSalesmanID.Text = "Staff Servis ID"
+                    lblSalesmanUnit.Text = "Servis Unit"
+                    sessHelper.SetSession("strFileNm", "ServisUnit")
+                    sessHelper.SetSession("strFileNmHeader", "Servis Unit List")
+            End Select
+            ddlUnit.Enabled = False
+        Else
+            lblPageTitle.Text = "UMUM - Daftar Salesman ..."
+        End If
+    End Sub
+    ' untuk menampung kriteria yg sebelumnya
+    Private Sub SaveCriteria()
+        Dim crits As Hashtable = New Hashtable
+        crits.Add("DealerCode", txtDealerCode.Text)
+        crits.Add("UnitIndicator", ddlUnit.SelectedValue)
+        crits.Add("SalesmanCode", txtID.Text)
+        crits.Add("Name", txtNama.Text)
+        crits.Add("JobPositionID", ddlPosisi.SelectedValue)
+        crits.Add("Status", ddlStatus.SelectedValue)
+        sessHelper.SetSession("frmSalesmanList", crits)
+    End Sub
+    ' untuk menampilkan data kriteria sebelumnya
+    Private Sub ReadCriteria()
+        Dim crits As Hashtable
+        crits = CType(sessHelper.GetSession("frmSalesmanList"), Hashtable)
+        If Not IsNothing(crits) Then
+            txtDealerCode.Text = CStr(crits.Item("DealerCode"))
+            ddlUnit.SelectedValue = CStr(crits.Item("UnitIndicator"))
+            txtID.Text = CStr(crits.Item("SalesmanCode"))
+            txtNama.Text = CStr(crits.Item("Name"))
+            ddlPosisi.SelectedValue = CStr(crits.Item("JobPositionID"))
+            ddlStatus.SelectedValue = CStr(crits.Item("Status"))
+        End If
+    End Sub
+    Private Sub ClearData()
+        ' kalau dealer tdk bs dihapus
+        ' 23-11-2007    Deddy H     Fix bug 1611
+        objDealer = (CType(sessHelper.GetSession("Dealer"), Dealer))
+        If objDealer.Title = EnumDealerTittle.DealerTittle.KTB Then
+            txtDealerCode.Text = String.Empty
+        End If
+        txtID.Text = String.Empty
+        txtNama.Text = String.Empty
+        BindDropDown()
+        SetSetting()
+    End Sub
+    Private Sub CreateCriteria(ByVal criterias As CriteriaComposite)
+
+        'Must Include Criteria For V_SalesmanDownload
+        Dim CriteriaDownload As New CriteriaComposite(New Criteria(GetType(V_SalesmanDownload), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+
+        objDealer = (CType(sessHelper.GetSession("Dealer"), Dealer))
+
+        'Based on bug 1257 hanya muncul dealer ybs, bukan groupnya
+        'If objDealer.Title = EnumDealerTittle.DealerTittle.DEALER Then
+        '    criterias.opAnd(New Criteria(GetType(SalesmanHeader), "Dealer.DealerCode", MatchType.InSet, DealerFacade.GenerateDealerCodeSelection(objDealer, User)))
+        'End If
+
+        If (txtDealerCode.Text.Trim <> String.Empty) Then
+            criterias.opAnd(New Criteria(GetType(SalesmanHeader), "Dealer.DealerCode", MatchType.InSet, "('" + Replace(txtDealerCode.Text, ";", "','") + "')"))
+            CriteriaDownload.opAnd(New Criteria(GetType(V_SalesmanDownload), "DealerCode", MatchType.InSet, "('" + Replace(txtDealerCode.Text, ";", "','") + "')"))
+        End If
+
+        'Based on bug 1257 hanya muncul dealer ybs, bukan groupnya
+        'If objDealer.Title = EnumDealerTittle.DealerTittle.KTB Then
+        '    If (txtDealerCode.Text.Trim <> String.Empty) Then
+        '        criterias.opAnd(New Criteria(GetType(SalesmanHeader), "Dealer.DealerCode", MatchType.InSet, "('" + Replace(txtDealerCode.Text, ";", "','") + "')"))
+        '    End If
+        'Else
+        '    If (txtDealerCode.Text.Trim <> String.Empty) Then
+        '        If New DataOwner().IsdealerExistInGroup(txtDealerCode.Text.Trim, objDealer) Then
+        '            criterias.opAnd(New Criteria(GetType(SalesmanHeader), "Dealer.DealerCode", MatchType.InSet, "('" + Replace(txtDealerCode.Text, ";", "','") + "')"))
+        '        Else
+        '            mode = 0
+        '        End If
+        '    Else
+        '        Dim strCrit As String = New DataOwner().GenerateDealerCodeSelection(objDealer, User)
+        '        criterias.opAnd(New Criteria(GetType(SalesmanHeader), "Dealer.DealerCode", MatchType.InSet, strCrit))
+        '    End If
+        'End If
+
+        If ddlUnit.SelectedItem.Text <> "" Then
+            criterias.opAnd(New Criteria(GetType(SalesmanHeader), "SalesIndicator", MatchType.Exact, ddlUnit.SelectedValue))
+            CriteriaDownload.opAnd(New Criteria(GetType(V_SalesmanDownload), "SalesIndicator", MatchType.Exact, ddlUnit.SelectedValue))
+        End If
+
+        If txtID.Text.Trim <> "" Then
+            criterias.opAnd(New Criteria(GetType(SalesmanHeader), "SalesmanCode", MatchType.Partial, txtID.Text.Trim()))
+            CriteriaDownload.opAnd(New Criteria(GetType(V_SalesmanDownload), "SalesmanCode", MatchType.Partial, txtID.Text.Trim()))
+        End If
+
+        If txtNama.Text.Trim <> "" Then
+            criterias.opAnd(New Criteria(GetType(SalesmanHeader), "Name", MatchType.Partial, txtNama.Text.Trim()))
+            CriteriaDownload.opAnd(New Criteria(GetType(V_SalesmanDownload), "Name", MatchType.Partial, txtNama.Text.Trim()))
+        End If
+
+        If ddlPosisi.SelectedValue <> "" Then
+            criterias.opAnd(New Criteria(GetType(SalesmanHeader), "JobPosition.ID", MatchType.Exact, ddlPosisi.SelectedValue))
+            CriteriaDownload.opAnd(New Criteria(GetType(V_SalesmanDownload), "JobPositionId_Main", MatchType.Exact, ddlPosisi.SelectedValue))
+        End If
+
+        If ddlStatus.SelectedItem.Text <> "Silahkan Pilih" Then
+            criterias.opAnd(New Criteria(GetType(SalesmanHeader), "Status", MatchType.Exact, ddlStatus.SelectedValue))
+            CriteriaDownload.opAnd(New Criteria(GetType(V_SalesmanDownload), "Status", MatchType.Exact, ddlStatus.SelectedValue))
+        End If
+
+        If ddlSalesmanLevel.SelectedValue <> "" Then
+            criterias.opAnd(New Criteria(GetType(SalesmanHeader), "SalesmanLevel.ID", MatchType.Exact, ddlSalesmanLevel.SelectedValue))
+            CriteriaDownload.opAnd(New Criteria(GetType(V_SalesmanDownload), "SalesmanLevelID", MatchType.Exact, ddlSalesmanLevel.SelectedValue))
+        End If
+
+        sessHelper.SetSession("criterias", criterias)
+        sessHelper.SetSession("criteriadownload", CriteriaDownload)
+
+    End Sub
+    Private Sub BindDataGrid(ByVal idxPage As Integer)
+        Dim totalRow As Integer = 0
+        Dim arrList As New ArrayList
+        'Dim intMode As Integer
+        'intMode = CreateCriteria()
+        'If intMode <> 0 Then
+        arrList = New SalesmanHeaderFacade(User).RetrieveByCriteria(CType(sessHelper.GetSession("criterias"), CriteriaComposite), idxPage + 1, dgSalesmanHeader.PageSize, totalRow, _
+                CType(ViewState("CurrentSortColumn"), String), CType(ViewState("CurrentSortDirect"), Sort.SortDirection))
+
+        dgSalesmanHeader.CurrentPageIndex = idxPage
+        dgSalesmanHeader.DataSource = arrList
+        dgSalesmanHeader.VirtualItemCount = totalRow
+        'Else
+        '    dgSalesmanHeader.DataSource = Nothing
+        '    MessageBox.Show("Kode dealer tidak valid.")
+        'End If
+        dgSalesmanHeader.DataBind()
+        sessHelper.SetSession("idxPage", dgSalesmanHeader.CurrentPageIndex)
+
+    End Sub
+    Private Sub BindDropDown()
+        CommonFunction.BindFromEnum("SalesmanUnit", ddlUnit, Me.User, False, "NameStatus", "ValStatus")
+        CommonFunction.BindFromEnum("SalesmanStatus", ddlStatus, Me.User, True, "NameStatus", "ValStatus")
+        CommonFunction.BindSalesmanLevel(ddlSalesmanLevel, User, True)
+
+        If Not IsNothing(Request.QueryString("Menu")) Then
+            Dim iMenu As Integer = CType(Request.QueryString("Menu"), Integer)
+            If iMenu > 0 Then
+                CommonFunction.BindJobPositionByMenuAssigned(ddlPosisi, User, True, iMenu)
+            End If
+        Else
+            CommonFunction.BindJobPosition(ddlPosisi, User, True, False)
+        End If
+    End Sub
+    Private Sub Delete(ByVal nID As Integer)
+
+        Dim totalRow As Integer = 0
+        Dim arrListSalesmanTrainingParticipant As New ArrayList
+        Dim criteriasSalesmanTrainingParticipant As New CriteriaComposite(New Criteria(GetType(SalesmanTrainingParticipant), "SalesmanHeader.ID", MatchType.Exact, nID))
+        Dim strAddMsg As String = "status penghapusan Salesman tdk bisa dilakukan"
+
+        ' check if data SalesmanTrainingParticipant & SalesmanUniformAssigned exist or not
+        ' if exist cann't be delete
+        arrListSalesmanTrainingParticipant = _SalesmanTrainingParticipantFacade.RetrieveByCriteria(criteriasSalesmanTrainingParticipant, 1, dgSalesmanHeader.PageSize, totalRow)
+
+        If arrListSalesmanTrainingParticipant.Count > 0 Then
+            MessageBox.Show("Data Uniform Assigned sudah ada untuk salesman ini, " & strAddMsg)
+            Return
+        End If
+
+        Dim arrListSalesmanUniformAssigned As New ArrayList
+        Dim criteriaSalesmanUniformAssigned As New CriteriaComposite(New Criteria(GetType(SalesmanUniformAssigned), "SalesmanHeader.ID", MatchType.Exact, nID))
+
+        arrListSalesmanUniformAssigned = _SalesmanUniformAssignedFacade.RetrieveByCriteria(criteriaSalesmanUniformAssigned, 1, dgSalesmanHeader.PageSize, totalRow)
+
+        If arrListSalesmanUniformAssigned.Count > 0 Then
+            MessageBox.Show("Data Uniform Assigned sudah ada untuk salesman ini, " & strAddMsg)
+            Return
+        End If
+
+        ' --- if valid proc, then update ---
+        Dim iRecordCount As Integer = 0
+        Dim objSalesmanHeader As SalesmanHeader = New SalesmanHeaderFacade(User).Retrieve(nID)
+
+        ' update field RowStatus
+        If Not objSalesmanHeader Is Nothing Then
+            objSalesmanHeader.RowStatus = CType(DBRowStatus.Deleted, Short)
+        End If
+
+        Dim facade As SalesmanHeaderFacade = New SalesmanHeaderFacade(User)
+        Dim iReturn As Integer = -1
+
+        'iReturn = facade.DeleteTransaction(objSalesmanArea)
+        'iReturn = facade.DeleteFromDB(objSalesmanHeader)
+        iReturn = facade.Update(objSalesmanHeader)
+        If iReturn < 0 Then
+            MessageBox.Show(SR.DeleteFail)
+        Else
+            MessageBox.Show(SR.DeleteSucces)
+        End If
+
+        dgSalesmanHeader.CurrentPageIndex = 0
+        BindDataGrid(dgSalesmanHeader.CurrentPageIndex)
+    End Sub
+    Private Sub SetDownload()
+        Dim arrData As New ArrayList
+        Dim crits As CriteriaComposite
+        If dgSalesmanHeader.Items.Count < 1 Then
+            MessageBox.Show("Tidak ada data yang di download")
+            Return
+        End If
+
+        If Not IsNothing(sessHelper.GetSession("criteriadownload")) Then
+            crits = CType(sessHelper.GetSession("criteriadownload"), CriteriaComposite)
+        End If
+        ' mengambil data yang dibutuhkan
+        arrData = New SalesmanHeaderFacade(User).RetrieveV_SalesmanDownload(crits)
+        If arrData.Count > 0 Then
+            DoDownload(arrData)
+        End If
+
+    End Sub
+    Private Sub DoDownload(ByVal data As ArrayList)
+        Dim sFileName As String
+        If Not IsNothing(sessHelper.GetSession("strFileNm")) Then
+            strFileNm = CType(sessHelper.GetSession("strFileNm"), String)
+        End If
+        If Not IsNothing(sessHelper.GetSession("strFileNmHeader")) Then
+            strFileNmHeader = CType(sessHelper.GetSession("strFileNmHeader"), String)
+        End If
+
+        sFileName = strFileNm & Now.Year & Now.Month & Now.Day & Now.Hour & Now.Minute & Now.Second & Now.Millisecond
+        Dim ListData As String = Server.MapPath("") & "\..\DataTemp\" & sFileName & ".xls"
+
+        Dim _user As String
+        _user = ConfigurationSettings.AppSettings.Get("User")
+        Dim _password As String
+        _password = ConfigurationSettings.AppSettings.Get("Password")
+        Dim _webServer As String
+        _webServer = ConfigurationSettings.AppSettings.Get("WebServer")
+        Dim imp As SAPImpersonate = New SAPImpersonate(_user, _password, _webServer)
+
+        Try
+            If imp.Start() Then
+
+                Dim finfo As FileInfo = New FileInfo(ListData)
+                If finfo.Exists Then
+                    finfo.Delete()
+                End If
+
+                Dim fs As FileStream = New FileStream(ListData, FileMode.CreateNew)
+                Dim sw As StreamWriter = New StreamWriter(fs)
+
+
+
+                'If ListData Is Nothing Then
+                '    MessageBox.Show("listdata is nothing")
+                'Else
+                '    MessageBox.Show(ListData.ToString)
+                'End If
+
+
+
+                'If sw Is Nothing Then
+                '    MessageBox.Show("sw is nothing")
+                'End If
+
+                'If data Is Nothing Then
+                '    MessageBox.Show("data is nothing")
+                'End If
+                'sw.WriteLine("x")
+                WriteListData(sw, data)
+                sw.Close()
+                fs.Close()
+                imp.StopImpersonate()
+                imp = Nothing
+            End If
+
+            Response.Redirect("../downloadlocal.aspx?file=DataTemp\" & sFileName & ".xls")
+        Catch ex As Exception
+            Dim dummy As Integer = 0
+            MessageBox.Show("Download data gagal. " & ex.Message)
+        End Try
+    End Sub
+    ' Modified by Ikhsan, 7 AGustus 2008
+    ' Requested by Rina
+    ' As Part of CR, to add several Column, to improve formatted excel 
+    '------------------------------------------------------------------
+    Private Function SlmProfile(ByVal ID As Integer, ByVal Type As String) As ArrayList
+        Dim criterias As New CriteriaComposite(New Criteria(GetType(SalesmanProfile), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        criterias.opAnd(New Criteria(GetType(SalesmanProfile), "SalesmanHeader.ID", MatchType.Exact, ID))
+
+        If Type = "PENDIDIKAN" Then
+            criterias.opAnd(New Criteria(GetType(SalesmanProfile), "ProfileHeader.ID", MatchType.Exact, 31))
+        ElseIf Type = "EMAIL" Then
+            criterias.opAnd(New Criteria(GetType(SalesmanProfile), "ProfileHeader.ID", MatchType.Exact, 26))
+        ElseIf Type = "NO_HP" Then
+            criterias.opAnd(New Criteria(GetType(SalesmanProfile), "ProfileHeader.ID", MatchType.Exact, 33))
+        ElseIf Type = "NOKTP" Then
+            criterias.opAnd(New Criteria(GetType(SalesmanProfile), "ProfileHeader.ID", MatchType.Exact, 29))
+
+        End If
+
+        Dim ArrSlmProf As ArrayList = New SalesmanProfileFacade(User).Retrieve(criterias)
+
+        Return ArrSlmProf
+        '------------------------------------------------------------------
+    End Function
+
+
+    Private Sub WriteListData(ByVal sw As StreamWriter, ByVal data As ArrayList)
+        Dim tab As Char = Chr(9)
+        Dim LF As Char = Chr(10)
+        Dim CR As Char = Chr(13)
+
+        Dim itemLine As StringBuilder = New StringBuilder
+        Dim objSmanFacade As New SalesmanHeaderFacade(User)
+        Dim oDFac As New DealerFacade(User)
+        Dim oD As Dealer
+        Dim sDealerName As String
+
+        If Not IsNothing(data) Then
+            itemLine.Remove(0, itemLine.Length)
+            itemLine.Append(strFileNmHeader)
+            sw.WriteLine(itemLine)
+            itemLine.Remove(0, itemLine.Length)
+            itemLine.Append(" " & tab & tab)
+            sw.WriteLine(itemLine)
+            itemLine.Remove(0, itemLine.Length)
+            itemLine.Append("No" & tab)
+            itemLine.Append("Kode Dealer" & tab)
+            itemLine.Append("Nama Dealer" & tab)
+            itemLine.Append("Kota Dealer" & tab)
+            itemLine.Append("Alamat Dealer" & tab)
+            itemLine.Append("Group Dealer" & tab)
+            itemLine.Append("Area Dealer" & tab)
+            itemLine.Append("Cabang Dealer" & tab) 'added by anh 20130503
+            itemLine.Append("Kode " & tab)
+            itemLine.Append("Nama" & tab)
+
+            ' Modified by Ikhsan, 7 AGustus 2008
+            ' Requested by Rina
+            ' As Part of CR, to add several Column, to improve formatted excel 
+            ' Modify Start
+            '------------------------------------------------------------------
+            itemLine.Append("Tempat Lahir" & tab)
+            itemLine.Append("Tanggal Lahir" & tab)
+            itemLine.Append("Jenis Kelamin" & tab)
+            itemLine.Append("Status Perkawinan" & tab)
+            itemLine.Append("Alamat" & tab)
+            itemLine.Append("Propinsi" & tab)
+            itemLine.Append("Kota" & tab)
+            itemLine.Append("Pendidikan" & tab)
+            itemLine.Append("E-Mail" & tab)
+            itemLine.Append("No HP" & tab)
+            itemLine.Append("NO KTP" & tab)
+            itemLine.Append("Kategori Tim" & tab)
+            '------------------------------------------------------------------
+            itemLine.Append("Kategori" & tab)
+            itemLine.Append("Level" & tab)
+            itemLine.Append("Superior Code" & tab)
+            itemLine.Append("Superior Name" & tab)
+            itemLine.Append("Status" & tab)
+
+            ' Modify Start
+            '------------------------------------------------------------------
+            itemLine.Append("Tanggal Masuk" & tab)
+            itemLine.Append("Area" & tab)
+            '------------------------------------------------------------------
+            sw.WriteLine(itemLine.ToString())
+
+            Dim i As Integer = 1
+            For Each item As V_SalesmanDownload In data
+                itemLine.Remove(0, itemLine.Length)
+                itemLine.Append(i.ToString & tab)
+                itemLine.Append(item.DealerCode & tab)
+                oD = oDFac.Retrieve(item.DealerCode)
+                If Not IsNothing(oD) AndAlso oD.ID > 0 Then
+                    itemLine.Append(oD.DealerName & tab)
+                    itemLine.Append(oD.City.CityName & tab)  'Kota
+                    itemLine.Append(oD.Address & tab)  'Alamat
+                    itemLine.Append(oD.DealerGroup.GroupName & tab)  'Grup
+                    If Not IsNothing(oD.Area1) Then
+                        itemLine.Append(oD.Area1.Description & tab)     'Area
+                    Else
+                        itemLine.Append("" & tab)     'Area
+                    End If
+                Else
+                    itemLine.Append("" & tab)
+                    itemLine.Append("" & tab) 'Kota
+                    itemLine.Append("" & tab) 'Alamat
+                    itemLine.Append("" & tab) 'Grup
+                    itemLine.Append("" & tab) 'Area
+                End If
+                itemLine.Append(item.DealerBranchName & tab) 'added by anh 20130503
+                itemLine.Append(item.SalesmanCode & tab)
+                itemLine.Append(item.Name & tab)
+
+                'Modified Part
+                '------------------------------------------------------------------
+                itemLine.Append(item.PlaceOfBirth.ToString & tab)
+                itemLine.Append(Format(item.DateOfBirth, "dd/MM/yyyy").ToString & tab)
+                'If Format(item.DateOfBirth, "hh:mm:ss") = "00:00:00" Then
+                '    itemLine.Append(Format(item.DateOfBirth, "dd/MMM/yyyy") & tab)
+                'Else
+                '    itemLine.Append(item.DateOfBirth.ToString & tab)
+                'End If
+                itemLine.Append(IIf(item.Gender = EnumGender.Gender.Pria, "Pria", "Wanita") & tab)
+                Dim sMarriedStatus As String = ""
+                If item.MarriedStatus = EnumSalesmanMarriedStatus.MarriedStatus.Belum_Menikah Then
+                    sMarriedStatus = "Belum Menikah"
+                ElseIf item.MarriedStatus = EnumSalesmanMarriedStatus.MarriedStatus.Menikah Then
+                    sMarriedStatus = "Menikah"
+                ElseIf item.MarriedStatus = EnumSalesmanMarriedStatus.MarriedStatus.Janda Then
+                    sMarriedStatus = "Janda"
+                ElseIf item.MarriedStatus = EnumSalesmanMarriedStatus.MarriedStatus.Duda Then
+                    sMarriedStatus = "Duda"
+                End If
+                itemLine.Append(sMarriedStatus & tab)
+                If Not IsNothing(item.Address) Then
+                    Dim Address1 As String = item.Address.Replace(LF, "")
+                    Dim Address2 As String = Address1.Replace(CR, " ")
+
+                    'Address.Replace("*", " ")
+                    itemLine.Append(Address2.Trim & tab)
+                Else
+                    itemLine.Append("" & tab)
+                End If
+                itemLine.Append(item.ProvinceName & tab)
+                itemLine.Append(item.City & tab)
+
+                'Dim ObjSalesmanProfile As ArrayList = SlmProfile(item.ID, "PENDIDIKAN")
+
+                'If Not ObjSalesmanProfile Is Nothing Then
+                '    Dim SalesmanProfile As SalesmanProfile = ObjSalesmanProfile.Item(0)
+                '    itemLine.Append(SalesmanProfile.ProfileValue & tab)
+                'Else
+                '    itemLine.Append("" & tab)
+                'End If
+
+                itemLine.Append(item.PENDIDIKAN & tab)
+
+                'ObjSalesmanProfile = SlmProfile(item.ID, "EMAIL")
+
+                'If Not ObjSalesmanProfile Is Nothing Then
+                '    Dim SalesmanProfile As SalesmanProfile = ObjSalesmanProfile.Item(0)
+                '    itemLine.Append(SalesmanProfile.ProfileValue & tab)
+                'Else
+                '    itemLine.Append("" & tab)
+                'End If
+
+                itemLine.Append(item.EMAIL & tab)
+
+
+                'ObjSalesmanProfile = SlmProfile(item.ID, "NO_HP")
+
+                'If Not ObjSalesmanProfile Is Nothing Then
+                '    Dim SalesmanProfile As SalesmanProfile = ObjSalesmanProfile.Item(0)
+                '    itemLine.Append(SalesmanProfile.ProfileValue & tab)
+                'Else
+                '    itemLine.Append("" & tab)
+                'End If
+
+                itemLine.Append(item.NO_HP & tab)
+
+                'ObjSalesmanProfile = SlmProfile(item.ID, "NOKTP")
+
+                'If Not ObjSalesmanProfile Is Nothing Then
+                '    Dim SalesmanProfile As SalesmanProfile = ObjSalesmanProfile.Item(0)
+                '    itemLine.Append(SalesmanProfile.ProfileValue & tab)
+                'Else
+                '    itemLine.Append("" & tab)
+                'End If
+                itemLine.Append(item.NOKTP & tab)
+                itemLine.Append(item.KATEGORI_TIM & tab)
+                '------------------------------------------------------------------
+
+                itemLine.Append(item.JobDescription & tab)
+                'If Not IsNothing(item.SalesmanLevel) Then
+                '    If item.SalesmanLevel.Description <> "" Or Not IsNothing(item.SalesmanLevel.Description) Then
+                '        itemLine.Append(item.SalesmanLevel.Description & tab)
+                '    Else
+                '        itemLine.Append("" & tab)
+                '    End If
+                'Else
+                '    itemLine.Append("" & tab)
+                'End If
+                itemLine.Append(item.LevelDescription & tab)
+
+                'If item.LeaderId = 0 Then
+                '    itemLine.Append("" & tab)
+                'Else
+                '    itemLine.Append(objLeader.SalesmanCode & " " & objLeader.Name & tab)
+                'End If
+
+                itemLine.Append(item.LeaderCode & tab)
+                itemLine.Append(item.LeaderName & tab)
+
+                ' Start Modifying-------------------
+                itemLine.Append(CType(item.Status, EnumSalesmanStatus.SalesmanStatus).ToString.Replace("_", " ") & tab)
+                ' End Modifying---------------------
+                '---------------------------------------------------------------------
+                If Not IsNothing(item.HireDate) Then
+                    itemLine.Append(item.HireDate & tab)
+                Else
+                    itemLine.Append("" & tab)
+                End If
+
+                'If Not IsNothing(item.SalesmanArea) Then
+                '    itemLine.Append(item.SalesmanArea.AreaDesc & tab)
+                'Else
+                '    itemLine.Append("" & tab)
+                'End If
+
+                itemLine.Append(item.AreaDesc & tab)
+
+                ' Modify Start
+                '---------------------------------------------------------------------
+                sw.WriteLine(itemLine.ToString())
+                i = i + 1
+            Next
+        End If
+    End Sub
+
+#End Region
+
+#Region "event Handler"
+
+    Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        'Put user code to initialize the page here
+        'InitiateAuthorization()
+        CheckPrivilege()
+        objDealer = (CType(sessHelper.GetSession("Dealer"), Dealer))
+        If Not IsPostBack Then
+            If objDealer.Title = EnumDealerTittle.DealerTittle.DEALER Then
+                txtDealerCode.Text = objDealer.DealerCode
+                txtDealerCode.Enabled = False
+                lblSearchDealer.Visible = False
+            End If
+
+            BindDropDown()
+            lblSearchDealer.Attributes("onclick") = "ShowPPDealerSelection();"
+            ViewState("CurrentSortColumn") = "Dealer.DealerCode"
+            ViewState("CurrentSortDirect") = Sort.SortDirection.ASC
+            ReadCriteria()
+            SetSetting()
+            Dim criterias As New CriteriaComposite(New Criteria(GetType(SalesmanHeader), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+            CreateCriteria(criterias)
+            If Not IsNothing(sessHelper.GetSession("idxPage")) Then
+                BindDataGrid(sessHelper.GetSession("idxPage"))
+            Else
+                BindDataGrid(0)
+            End If
+        End If
+        btnDownloadExcel.Enabled = bCekDLPriv
+    End Sub
+    Private Sub btnCari_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCari.Click
+        SaveCriteria()
+        Dim criterias As New CriteriaComposite(New Criteria(GetType(SalesmanHeader), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        CreateCriteria(criterias)
+        dgSalesmanHeader.CurrentPageIndex = 0
+        BindDataGrid(0)
+    End Sub
+    Private Sub dgSalesmanHeader_ItemCommand(ByVal source As System.Object, ByVal e As System.Web.UI.WebControls.DataGridCommandEventArgs) Handles dgSalesmanHeader.ItemCommand
+        Dim strMode As String
+        If Not IsNothing(Request.QueryString("Mode")) Then
+            strMode = Request.QueryString("Mode")
+        Else
+            strMode = "unit"
+        End If
+
+        If (e.CommandName = "View") Then
+            Response.Redirect("FrmSalesmanHeader.aspx?ID=" + e.Item.Cells(0).Text + "&Mode=" + strMode)
+        ElseIf e.CommandName = "Edit" Then
+            Response.Redirect("FrmSalesmanHeader.aspx?ID=" + e.Item.Cells(0).Text + "&edit=true" + "&Mode=" + strMode)
+        ElseIf e.CommandName = "Delete" Then
+            Delete(e.Item.Cells(0).Text)
+        End If
+    End Sub
+    Private Sub dgSalesmanHeader_ItemDataBound(ByVal sender As System.Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs) Handles dgSalesmanHeader.ItemDataBound
+
+        If Not e.Item.DataItem Is Nothing Then
+            Dim objSalesmanHeader As SalesmanHeader = e.Item.DataItem
+            e.Item.Cells(1).Text = e.Item.ItemIndex + 1 + (dgSalesmanHeader.CurrentPageIndex * dgSalesmanHeader.PageSize)
+
+            Dim lblKodeDealerNew As Label = CType(e.Item.FindControl("lblKodeDealer"), Label)
+            lblKodeDealerNew.Text = objSalesmanHeader.Dealer.DealerCode
+
+            Dim lblJobPositionId_MainNew As Label = CType(e.Item.FindControl("lblJobPositionId_Main"), Label)
+            lblJobPositionId_MainNew.Text = objSalesmanHeader.JobPosition.Description
+
+            Dim lblStatusNew As Label = CType(e.Item.FindControl("lblStatus"), Label)
+            lblStatusNew.Text = CType(objSalesmanHeader.Status, EnumSalesmanStatus.SalesmanStatus).ToString.Replace("_", " ")
+
+            Dim lblCategoryTeam As Label = CType(e.Item.FindControl("lblCategoryTeam"), Label)
+
+            'Dim lblResignDateNew As Label = CType(e.Item.FindControl("lblResignDate"), Label)
+            ' Modified by Ikhsan, 8 Agustus 2008
+            ' Requested by Rina, as Part of CR
+            ' Change ResignDate to DateOfBirth
+            '---------------------------------------------------------------------------------
+            'lblResignDateNew.Text = ""
+            'If objSalesmanHeader.ResignDate > New Date(1900, 1, 1) Then
+            '    lblResignDateNew.Text = objSalesmanHeader.ResignDate.ToString("dd/MM/yyyy")
+            'End If
+            'lblResignDateNew.Text = objSalesmanHeader.DateOfBirth.ToString("dd/MM/yyyy")
+
+            ' Commented by Ikhsan, 8 AGustus 2008
+            ' yg aktif, dibuatkan disable labelnya - belum resign, related bug 695
+            'If objSalesmanHeader.ResignDate = Date.Parse(strDefDate) Then
+            '    lblResignDateNew.Enabled = False
+            'Else
+            '    lblResignDateNew.Enabled = True
+            'End If
+            '---------------------------------------------------------------------------------
+            'Remarks by anh 20111011 
+            'If Request.QueryString("Mode").ToString = "unit" And objDealer.Title = EnumDealerTittle.DealerTittle.KTB Then
+            If Request.QueryString("Mode").ToString = "unit" Then
+                e.Item.FindControl("lbtnEdit").Visible = False
+                e.Item.Cells(10).Visible = True
+                For Each _salesmanProfile As SalesmanProfile In objSalesmanHeader.SalesmanProfiles
+                    If _salesmanProfile.ProfileHeader.ID = 45 Then
+                        lblCategoryTeam.Text = _salesmanProfile.ProfileValue
+                    End If
+                Next
+            Else
+                e.Item.Cells(10).Visible = False
+            End If
+            ' end rmearks 
+
+            'lbtnEdit
+            '09-Nov-2007    Deddy H     Fix bug 1386    Dealer tdk bs delete data
+            If objDealer.Title = EnumDealerTittle.DealerTittle.DEALER Then
+                e.Item.FindControl("lbtnDelete").Visible = False
+            End If
+
+            ' case Dealer saja yang bisa mengedit, refer bug 1393
+            'remarks by anh 20111011 -> refer to statement above, ktb also has authority to edit 
+            If objSalesmanHeader.Status = CType(EnumSalesmanStatus.SalesmanStatus.Tidak_Aktif, String) Then
+                'If objDealer.Title = EnumDealerTittle.DealerTittle.DEALER Then
+                e.Item.FindControl("lbtnEdit").Visible = False
+                'End If
+            Else
+                'If objDealer.Title = EnumDealerTittle.DealerTittle.DEALER Then
+                e.Item.FindControl("lbtnEdit").Visible = bCheckEditDetailPrivilege
+                'End If
+            End If
+
+            'If objDealer.Title = EnumDealerTittle.DealerTittle.DEALER Then
+            If DateTime.op_LessThanOrEqual(objSalesmanHeader.ResignDate, New DateTime(1900, 1, 1)) Then
+                e.Item.FindControl("lbtnEdit").Visible = True
+            Else
+                e.Item.FindControl("lbtnEdit").Visible = False
+            End If
+            'End If
+            'end remarks by anh
+
+            e.Item.FindControl("lbtnView").Visible = bCekViewDetailsPriv
+        End If
+
+        If Not e.Item.FindControl("lbtnDelete") Is Nothing Then
+            CType(e.Item.FindControl("lbtnDelete"), LinkButton).Attributes.Add("OnClick", "return confirm('Yakin Data ini akan dihapus?');")
+        End If
+        Dim oD = (CType(sessHelper.GetSession("Dealer"), Dealer))
+        'If oD.Title = CType(EnumDealerTittle.DealerTittle.DEALER, Short) Then
+        '    Dim dtStart As DateTime = New DateTime(2013, 5, 1)
+        '    Dim dtEnd As DateTime = New DateTime(2013, 6, 1)
+        '    Dim dtNow As DateTime = Now
+        '    Dim lbtnDelete As LinkButton = CType(e.Item.FindControl("lbtnDelete"), LinkButton)
+        '    Dim lbtnEdit As LinkButton = CType(e.Item.FindControl("lbtnEdit"), LinkButton)
+
+        '    If dtNow >= dtStart AndAlso dtNow < dtEnd Then
+        '        If IsNothing(lbtnEdit) = False Then lbtnEdit.Visible = False
+        '        If IsNothing(lbtnDelete) = False Then lbtnDelete.Visible = False
+        '    End If
+        'End If
+    End Sub
+    Private Sub dgSalesmanHeader_PageIndexChanged(ByVal source As System.Object, ByVal e As System.Web.UI.WebControls.DataGridPageChangedEventArgs) Handles dgSalesmanHeader.PageIndexChanged
+        dgSalesmanHeader.CurrentPageIndex = e.NewPageIndex
+        BindDataGrid(dgSalesmanHeader.CurrentPageIndex)
+
+    End Sub
+    Private Sub dgSalesmanHeader_SortCommand(ByVal source As System.Object, ByVal e As System.Web.UI.WebControls.DataGridSortCommandEventArgs) Handles dgSalesmanHeader.SortCommand
+        If CType(ViewState("CurrentSortColumn"), String) = e.SortExpression Then
+            Select Case CType(ViewState("CurrentSortDirect"), Sort.SortDirection)
+
+                Case Sort.SortDirection.ASC
+                    ViewState("CurrentSortDirect") = Sort.SortDirection.DESC
+
+                Case Sort.SortDirection.DESC
+                    ViewState("CurrentSortDirect") = Sort.SortDirection.ASC
+            End Select
+        Else
+            ViewState("CurrentSortColumn") = e.SortExpression
+            ViewState("CurrentSortDirect") = Sort.SortDirection.ASC
+        End If
+        dgSalesmanHeader.SelectedIndex = -1
+        BindDataGrid(dgSalesmanHeader.CurrentPageIndex)
+    End Sub
+    Private Sub btnCancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancel.Click
+        ClearData()
+    End Sub
+    Private Sub btnDownloadExcel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDownloadExcel.Click
+        SetDownload()
+    End Sub
+
+#End Region
+
+End Class

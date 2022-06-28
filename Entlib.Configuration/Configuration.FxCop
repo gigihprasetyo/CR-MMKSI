@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FxCopProject Version="1.312" Name="My FxCop Project">
+ <ProjectOptions>
+  <SharedProject>True</SharedProject>
+  <Stylesheet Apply="False">c:\program files\microsoft fxcop 1.312\Xml\FxCopReport.Xsl</Stylesheet>
+  <SaveMessages>
+   <Project Status="Active, Excluded" NewOnly="False" />
+   <Report Status="Active" NewOnly="False" />
+  </SaveMessages>
+  <ProjectFile Compress="True" DefaultTargetCheck="True" DefaultRuleCheck="True" SaveByRuleGroup="" Deterministic="True" />
+  <PermitAnalysis>True</PermitAnalysis>
+  <EnableMultithreadedLoad>True</EnableMultithreadedLoad>
+  <EnableMultithreadedAnalysis>True</EnableMultithreadedAnalysis>
+  <SourceLookup>True</SourceLookup>
+  <AnalysisExceptionsThreshold>100</AnalysisExceptionsThreshold>
+  <RuleExceptionsThreshold>10</RuleExceptionsThreshold>
+  <Spelling Locale="en-us" />
+  <VersionAware>False</VersionAware>
+  <OverrideRuleVisibilities>False</OverrideRuleVisibilities>
+  <CustomDictionaries SearchFxCopDir="True" SearchUserProfile="True" SearchProjectDir="True" />
+ </ProjectOptions>
+ <Targets>
+  <AssemblyReferenceDirectories>
+   <Directory>$(ProjectDir)/bin/Release/</Directory>
+  </AssemblyReferenceDirectories>
+  <Target Name="$(ProjectDir)/bin/Debug/Microsoft.Practices.EnterpriseLibrary.Configuration.dll" Analyze="True" AnalyzeAllChildren="True" />
+ </Targets>
+ <Rules>
+  <RuleFiles>
+   <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\GlobalizationRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\InteroperabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\MobilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\NamingRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PerformanceRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\PortabilityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\SecurityRules.dll" Enabled="True" AllRulesEnabled="True" />
+   <RuleFile Name="$(FxCopDir)\Rules\UsageRules.dll" Enabled="True" AllRulesEnabled="True" />
+  </RuleFiles>
+  <Groups />
+  <Settings />
+ </Rules>
+ <FxCopReport Version="1.312">
+  <Namespaces>
+   <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Configuration.Storage">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2005-03-07 20:40:01Z">
+      <Issue>
+       <Item>Microsoft.Practices.EnterpriseLibrary.Configuration.Storage</Item>
+      </Issue>
+      <Notes>
+       <User Name="scottden">
+        <Note Id="9" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+   <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Configuration.Transformer">
+    <Messages>
+     <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Excluded" Created="2005-03-07 20:40:01Z">
+      <Issue>
+       <Item>Microsoft.Practices.EnterpriseLibrary.Configuration.Transformer</Item>
+      </Issue>
+      <Notes>
+       <User Name="scottden">
+        <Note Id="9" />
+       </User>
+      </Notes>
+     </Message>
+    </Messages>
+   </Namespace>
+  </Namespaces>
+  <Targets>
+   <Target Name="$(ProjectDir)/bin/Debug/Microsoft.Practices.EnterpriseLibrary.Configuration.dll">
+    <Modules>
+     <Module Name="microsoft.practices.enterpriselibrary.configuration.dll">
+      <Messages>
+       <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Excluded" Created="2005-03-07 20:40:01Z">
+        <Issue Name="NoStrongName">
+         <Item>Microsoft.Practices.EnterpriseLibrary.Configuration</Item>
+        </Issue>
+        <Notes>
+         <User Name="scottden">
+          <Note Id="0" />
+         </User>
+        </Notes>
+       </Message>
+      </Messages>
+      <Namespaces>
+       <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Configuration">
+        <Types>
+         <Type Name="ConfigurationDictionary">
+          <Messages>
+           <Message TypeName="ICollectionImplementationsHaveStronglyTypedMembers" Category="Microsoft.Design" CheckId="CA1035" Status="Excluded" Created="2005-03-07 20:40:01Z">
+            <Issue>
+             <Item>ConfigurationDictionary</Item>
+            </Issue>
+            <Notes>
+             <User Name="scottden">
+              <Note Id="2" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="ConfigurationManager">
+          <Members>
+           <Member Name="GetCurrentContext():Microsoft.Practices.EnterpriseLibrary.Configuration.ConfigurationContext">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue Certainty="50">
+               <Item>GetCurrentContext</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ConfigurationManagerSectionHandler">
+          <Members>
+           <Member Name="Create(System.Object,System.Object,System.Xml.XmlNode):System.Object">
+            <Messages>
+             <Message Id="System.Xml.XmlNode" TypeName="MembersShouldNotExposeCertainConcreteTypes" Category="Microsoft.Design" CheckId="CA1059" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue Name="System.Xml.XmlNode">
+               <Item>ConfigurationManagerSectionHandler.Create(Object, Object, XmlNode):Object</Item>
+               <Item>System.Xml.XmlNode</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="6" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ConfigurationProtector">
+          <Members>
+           <Member Name="Decrypt(System.Byte[]):System.Byte[]">
+            <Messages>
+             <Message Id="0#ciphertext" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue Name="Parameter">
+               <Item>ConfigurationProtector.Decrypt(Byte[]):Byte[]</Item>
+               <Item>ciphertext</Item>
+               <Item>ciphertext</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="DpapiSettingsData">
+          <Messages>
+           <Message Id="Dpapi" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-03-07 20:40:01Z">
+            <Issue Name="Type">
+             <Item>Dpapi</Item>
+             <Item>DpapiSettingsData</Item>
+            </Issue>
+            <Notes>
+             <User Name="scottden">
+              <Note Id="8" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+         </Type>
+         <Type Name="FileKeyAlgorithmPairStorageProviderData">
+          <Members>
+           <Member Name=".ctor(System.String,System.String,Microsoft.Practices.EnterpriseLibrary.Configuration.DpapiSettingsData)">
+            <Messages>
+             <Message Id="2#dpapi" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue Name="Parameter">
+               <Item>FileKeyAlgorithmPairStorageProviderData..ctor(String, String, DpapiSettingsData)</Item>
+               <Item>dpapi</Item>
+               <Item>dpapiSettings</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="DpapiSettings">
+            <Messages>
+             <Message Id="Dpapi" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue Name="Member">
+               <Item>Dpapi</Item>
+               <Item>DpapiSettings</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="8" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="ProviderFactory">
+          <Members>
+           <Member Name="GetDefaultInstanceName():System.String">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue Certainty="50">
+               <Item>GetDefaultInstanceName</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="RuntimeConfigurationView">
+          <Members>
+           <Member Name="GetConfigurationSettings():Microsoft.Practices.EnterpriseLibrary.Configuration.ConfigurationSettings">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue Certainty="50">
+               <Item>GetConfigurationSettings</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+           <Member Name="GetKeyAlgorithmPairStorageProviderData():Microsoft.Practices.EnterpriseLibrary.Configuration.KeyAlgorithmPairStorageProviderData">
+            <Messages>
+             <Message TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue Certainty="50">
+               <Item>GetKeyAlgorithmPairStorageProviderData</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="5" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+         <Type Name="SR+Keys">
+          <Messages>
+           <Message TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812" Status="Excluded" Created="2005-03-07 20:40:01Z">
+            <Issue>
+             <Item>Microsoft.Practices.EnterpriseLibrary.Configuration.SR+Keys</Item>
+            </Issue>
+            <Notes>
+             <User Name="scottden">
+              <Note Id="4" />
+             </User>
+            </Notes>
+           </Message>
+          </Messages>
+          <Members>
+           <Member Name="GetString(System.String,System.Object[]):System.String">
+            <Messages>
+             <Message Id="System.String.Format(System.String,System.Object[])" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue>
+               <Item>Keys.GetString(String, Object[]):String</Item>
+               <Item>System.String.Format(System.String,System.Object[])</Item>
+               <Item>System.String.Format(System.IFormatProvider,System.String,System.Object[])</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="1" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Configuration.Protection">
+        <Types>
+         <Type Name="KeyAlgorithmPair">
+          <Members>
+           <Member Name="Key">
+            <Messages>
+             <Message TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue>
+               <Item>Key</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="11" />
+               </User>
+              </Notes>
+             </Message>
+             <Message TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue>
+               <Item>KeyAlgorithmPair.Key:Byte[]</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="10" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+       <Namespace Name="Microsoft.Practices.EnterpriseLibrary.Configuration.Storage">
+        <Types>
+         <Type Name="ConfigurationChangeFileWatcher">
+          <Members>
+           <Member Name="OnConfigurationChanged():System.Void">
+            <Messages>
+             <Message TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031" Status="Excluded" Created="2005-03-07 20:40:01Z">
+              <Issue>
+               <Item>ConfigurationChangeFileWatcher.OnConfigurationChanged():Void</Item>
+               <Item>System.Exception</Item>
+              </Issue>
+              <Issue>
+               <Item>ConfigurationChangeFileWatcher.OnConfigurationChanged():Void</Item>
+               <Item>System.Object</Item>
+              </Issue>
+              <Notes>
+               <User Name="scottden">
+                <Note Id="3" />
+               </User>
+              </Notes>
+             </Message>
+            </Messages>
+           </Member>
+          </Members>
+         </Type>
+        </Types>
+       </Namespace>
+      </Namespaces>
+      <Resources>
+       <Resource Name="Microsoft.Practices.EnterpriseLibrary.Configuration.SR.resources">
+        <Messages>
+         <Message Id="Dpapi" TypeName="ResourceStringsShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1703" Status="Excluded" Created="2005-03-07 20:40:01Z">
+          <Issue>
+           <Item>Dpapi</Item>
+           <Item>ExceptionOutOfRangeDpapiStorageMode</Item>
+           <Item>The value provided was out of the excepted valid ranges for DpapiStorageMode.</Item>
+           <Item>Microsoft.Practices.EnterpriseLibrary.Configuration.SR.resources</Item>
+          </Issue>
+          <Notes>
+           <User Name="scottden">
+            <Note Id="7" />
+           </User>
+          </Notes>
+         </Message>
+        </Messages>
+       </Resource>
+      </Resources>
+     </Module>
+    </Modules>
+   </Target>
+  </Targets>
+  <Notes>
+   <User Name="scottden">
+    <Note Id="0" Modified="2005-03-07 20:40:42Z">We ship code, we don't need a strong name.</Note>
+    <Note Id="1" Modified="2005-03-07 20:40:59Z">This code is generated by the SR custom tool.</Note>
+    <Note Id="2" Modified="2005-03-07 20:41:24Z">The dictionary is not typed, so we don't need a strong type.</Note>
+    <Note Id="3" Modified="2005-03-07 20:45:56Z">We only want to log that an exception happened and continue.</Note>
+    <Note Id="4" Modified="2005-03-07 21:07:43Z">This file is generated by the SR custom tool.</Note>
+    <Note Id="5" Modified="2005-03-07 21:09:35Z">These operations could be expensive depending on what storage provider that you use.</Note>
+    <Note Id="6" Modified="2005-03-07 21:10:56Z">This is in the definition of IConfigurationSectionHandler.  We can't change this.</Note>
+    <Note Id="7" Modified="2005-03-07 21:11:07Z">Dpapi is correct.</Note>
+    <Note Id="8" Modified="2005-03-07 21:11:26Z">These are spelled correctly.</Note>
+    <Note Id="9" Modified="2005-03-07 21:14:45Z">We want to define a namespace that can be extended later on with more types in V2</Note>
+    <Note Id="10" Modified="2005-03-07 21:15:25Z">We use this with the key for the provider and want to serialize it as a set of bytes.  This is part of the lower level subsystem.  People will not be exposed to this.</Note>
+    <Note Id="11" Modified="2005-03-07 21:15:46Z">We use this with the key for the provider and want to serialize it as a set of bytes.  This is part of the lower level subsystem.  People will not be exposed to this.</Note>
+   </User>
+  </Notes>
+  <Rules>
+   <Rule TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210">
+    <Name>Assemblies should have valid strong names</Name>
+    <Description>Either the assembly has no strong name, an invalid one, or the strong name is valid only because of the computer configuration. The assembly should not be deployed in this state. The most common causes of this are: 1) The assembly's contents were modified after it was signed. 2) The signing process failed. 3) The assembly was delay-signed. 4) A registry key existed that allowed the check to pass (where it would not have otherwise).</Description>
+    <Resolution Name="NoStrongName">Sign '{0}' with a strong name key.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/AssembliesShouldHaveValidStrongNames.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020">
+    <Name>Avoid namespaces with few types</Name>
+    <Description>A namespace should generally have more than five types.</Description>
+    <Resolution Name="Default">Consider merging the types defined in  '{0}' with another namespace.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/AvoidNamespacesWithFewTypes.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="50">Warning</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="AvoidUninstantiatedInternalClasses" Category="Microsoft.Performance" CheckId="CA1812">
+    <Name>Avoid uninstantiated internal classes</Name>
+    <Description>An internal class was detected that is apparently never instantiated. This rule does not attempt to detect late-bound creation and will generate false positives if instances of a type are only created in this way (for example, by means of Activator.CreateInstance or by passing the type as an argument to a TypeConverter constructor).</Description>
+    <Resolution Name="Default">'{0}' is an internal class that is apparently never instantiated. If so, remove the code from the assembly. If this class is intended to contain only static methods, consider adding a private constructor to prevent the compiler from generating a default constructor.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/AvoidUninstantiatedInternalClasses.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="CollectionPropertiesShouldBeReadOnly" Category="Microsoft.Usage" CheckId="CA2227">
+    <Name>Collection properties should be read only</Name>
+    <Description>Properties that return collections should be read-only so that users cannot entirely replace the backing store. Users can still modify the contents of the collection by calling relevant methods on the collection. Note that the XmlSerializer class has special support for deserializing read-only collections. See the XmlSerializer overview for more information.</Description>
+    <Resolution Name="Default">Change '{0}' to be read-only by removing the property setter.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Usage/CollectionPropertiesShouldBeReadOnly.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Warning</MessageLevel>
+    <File Name="UsageRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="DoNotCatchGeneralExceptionTypes" Category="Microsoft.Design" CheckId="CA1031">
+    <Name>Do not catch Exceptions or SystemExceptions</Name>
+    <Description>You should not catch Exception or SystemException. Catching generic exception types can hide run-time problems from the library user, and can complicate debugging. You should catch only those exceptions that you can handle gracefully.</Description>
+    <Resolution Name="Default">Modify '{0}' to catch a more specific exception than '{1}' or rethrow the exception.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/DoNotCatchGeneralExceptionTypes.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">CriticalError</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="ICollectionImplementationsHaveStronglyTypedMembers" Category="Microsoft.Design" CheckId="CA1035">
+    <Name>ICollection implementations have strongly typed members</Name>
+    <Description>Types that implement ICollection should also provide a version of CopyTo with the first parameter set to a strong type, namely a type other than an array of objects or System.Array. Implement the interface member explicitly and make the strongly typed version public. It is safe to ignore violations of this rule when you are implementing a new object-based collection, such as a binary tree, where types based on your collection will determine what the strong type is. These types should expose strongly typed members.</Description>
+    <Resolution Name="Default">'{0}' should provide a strongly typed implementation of ICollection.CopyTo.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/ICollectionImplementationsHaveStronglyTypedMembers.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="90">Error</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704">
+    <Name>Identifiers should be spelled correctly</Name>
+    <Description>The individual words that make up an identifier should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+    <Resolution Name="Member">Correct the spelling of the unrecognized token '{0}' in member '{1}'.</Resolution>
+    <Resolution Name="Parameter">In {0}, correct the spelling of the unrecognized token '{1}' in parameter name '{2}' or strip it entirely if it represents any sort of hungarian notation.</Resolution>
+    <Resolution Name="Type">Correct the spelling of the unrecognized token '{0}' in type '{1}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Naming/IdentifiersShouldBeSpelledCorrectly.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">CriticalWarning</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="MembersShouldNotExposeCertainConcreteTypes" Category="Microsoft.Design" CheckId="CA1059">
+    <Name>Members should not expose certain concrete types</Name>
+    <Description>Members should not expose certain concrete types.</Description>
+    <Resolution Name="System.Xml.XmlNode">Modify member '{0}' so that it no longer exposes the concrete type {1}. Use IXPathNavigable to represent Xml data sources.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/MembersShouldNotExposeCertainConcreteTypes.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Error</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="PropertiesShouldNotReturnArrays" Category="Microsoft.Performance" CheckId="CA1819">
+    <Name>Properties should not return arrays</Name>
+    <Description>Properties that return arrays are prone to code inefficiencies. Consider using a collection or making this a method. See the design guidelines for more information.</Description>
+    <Resolution Name="Default">Change {0} to return a collection or make it a method.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Performance/PropertiesShouldNotReturnArrays.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="50">Warning</MessageLevel>
+    <File Name="PerformanceRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="ResourceStringsShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1703">
+    <Name>Resource strings should be spelled correctly</Name>
+    <Description>The individual words that make up a resource string should not be abbreviated and should be spelled correctly. If this rule generates a false positive on a term that should be recognized, add the word to the FxCop custom dictionary.</Description>
+    <Resolution Name="Default">Correct the spelling of '{0}' in '{1}' == '{2}' contained in resource stream '{3}'.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Naming/ResourceStringsShouldBeSpelledCorrectly.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="50">CriticalWarning</MessageLevel>
+    <File Name="NamingRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305">
+    <Name>Specify IFormatProvider</Name>
+    <Description>If an overload exists that takes an IFormatProvider argument, it should always be called in favor of an overload that does not. Some methods in the common language runtime convert a value to or from a string representation and take a string parameter that contains one or more characters, called format specifiers, which indicate how the value is to be converted. If the meaning of the format specifier varies by culture, a formatting object supplies the actual characters used in the string representation. In scenarios where sorting and comparison behavior should never change between cultures, specify CultureInfo.InvariantCulture.</Description>
+    <Resolution Name="Default">{0} makes a call to {1} that does not explicitly provide an IFormatProvider. This should be replaced with a call to {2}.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Globalization/SpecifyIFormatProvider.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="95">Error</MessageLevel>
+    <File Name="GlobalizationRules.dll" Version="1.312.0.0" />
+   </Rule>
+   <Rule TypeName="UsePropertiesWhereAppropriate" Category="Microsoft.Design" CheckId="CA1024">
+    <Name>Use properties where appropriate</Name>
+    <Description>Properties should be used instead of Get/Set methods in most situations. Methods are preferable to properties in the following situations: the operation is a conversion, is expensive or has an observable side-effect; the order of execution is important; calling the member twice in succession creates different results; a member is static but returns a mutable value; or the member returns an array.</Description>
+    <Resolution Name="Default">Change '{0}' to a property if appropriate.</Resolution>
+    <Owner />
+    <Url>http://www.gotdotnet.com/team/fxcop/docs/rules.aspx?version=1.312&amp;&amp;url=/Design/UsePropertiesWhereAppropriate.html</Url>
+    <Email>askfxcop@microsoft.com</Email>
+    <MessageLevel Certainty="75">Warning</MessageLevel>
+    <File Name="DesignRules.dll" Version="1.312.0.0" />
+   </Rule>
+  </Rules>
+ </FxCopReport>
+</FxCopProject>

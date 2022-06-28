@@ -1,0 +1,9 @@
+﻿SELECT 
+	DISTINCT p.Id 
+FROM APIClientRole cr
+	JOIN APIRolePermission rp ON 
+		rp.ClientRoleId = cr.Id AND 
+		cr.ClientId = @ClientId AND
+		cr.RoleId IN @ListOfRoleId
+	JOIN APIEndpointPermission p ON p.Id = rp.PermissionId
+	

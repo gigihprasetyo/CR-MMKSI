@@ -1,0 +1,1 @@
+﻿SELECT * FROM TransactionLog WITH(NOLOCK) WHERE Id = @Id

@@ -1,0 +1,17 @@
+SELECT COUNT(*)
+from (
+	select 
+		ROW_NUMBER() over (order by a.Id) as IDRow
+		, a.Id
+		, ChassisNumber
+		, ChassisMasterID
+		, DealerCode
+		, PKTDate
+		, a.LastUpdateTime
+		, b.RowStatus
+	from ChassisMasterPKT a with(nolock)
+	inner join ChassisMaster b with(nolock)
+	on a.ChassisMasterID = b.ID 
+	left join Dealer c with(nolock)
+	on b.SoldDealerID = c.ID
+) as VWI_ChassisMasterPKT {0}

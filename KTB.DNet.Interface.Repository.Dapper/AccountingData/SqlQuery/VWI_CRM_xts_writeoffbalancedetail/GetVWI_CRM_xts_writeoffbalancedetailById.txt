@@ -1,0 +1,84 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,versionnumber
+	,createdon
+	,xts_writeoffdimension5idname
+	,xts_referencenumber
+	,statuscodename
+	,xts_customerid
+	,xts_accountname
+	,modifiedbyyominame
+	,xts_writeoffbalancedetailid
+	,owneridtype
+	,createdonbehalfby
+	,xts_writeoffdimension1id
+	,modifiedbyname
+	,owneridname
+	,overriddencreatedon
+	,xts_type
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_referencearinvoiceidname
+	,xts_customeridyominame
+	,owningteam
+	,xts_balance
+	,statecode
+	,xts_referencearreceiptidname
+	,xts_writeoffdimension6id
+	,xts_sourcetype
+	,timezoneruleversionnumber
+	,xts_writeoffbalanceid
+	,xts_customernumber
+	,xts_writeoffdimension3id
+	,createdonbehalfbyname
+	,utcconversiontimezonecode
+	,xts_writeoffbalancedetailnumber
+	,xts_typename
+	,xts_writeoffdimension6idname
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_writeoffbalanceidname
+	,xts_customeridname
+	,xts_account
+	,createdbyname
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_writeoffdimension1idname
+	,xts_balance_base
+	,xts_writeoffdimension2id
+	,xts_writeoffdimension5id
+	,createdby
+	,xts_writeoffdimension4idname
+	,modifiedby
+	,xts_writeoffdimension4id
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_referencearinvoiceid
+	,owningbusinessunit
+	,transactioncurrencyid
+	,xts_referencedate
+	,xts_sourcetypename
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_writeoffdimension2idname
+	,xts_referencearreceiptid
+	,statecodename
+	,xts_businessunitidname
+	,xts_writeoffdimension3idname
+	,RowStatus
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_writeoffbalancedetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_writeoffbalancedetailid = @Id
+) VWI_CRM_xts_writeoffbalancedetail

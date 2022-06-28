@@ -1,0 +1,1 @@
+update DealerSystems set isOnlyUploadPhotoTenagaPenjual = 0

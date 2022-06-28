@@ -1,0 +1,105 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_accountpayablepaymentdetail.company
+	, VWI_CRM_xts_accountpayablepaymentdetail.businessunitcode
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderdate
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_parentbusinessunitid
+	, VWI_CRM_xts_accountpayablepaymentdetail.versionnumber
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_cashandbankid
+	, VWI_CRM_xts_accountpayablepaymentdetail.createdon
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_ordervendortransactionaxaptaidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_transactiondocumentid
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_externaldocumenttype
+	, VWI_CRM_xts_accountpayablepaymentdetail.statuscodename
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_description
+	, VWI_CRM_xts_accountpayablepaymentdetail.modifiedbyyominame
+	, VWI_CRM_xts_accountpayablepaymentdetail.owneridtype
+	, VWI_CRM_xts_accountpayablepaymentdetail.createdonbehalfby
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderuvsoreferralid
+	, VWI_CRM_xts_accountpayablepaymentdetail.modifiedbyname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderoutsourceworkorderid
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_outstandingbalance_base
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_ordernvsoreferralidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.owneridname
+	, VWI_CRM_xts_accountpayablepaymentdetail.overriddencreatedon
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderoutsourceworkorderidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_cashandbankidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_accountpayablepaymentid
+	, VWI_CRM_xts_accountpayablepaymentdetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_ordervendortransactionaxaptaid
+	, VWI_CRM_xts_accountpayablepaymentdetail.modifiedonbehalfby
+	, VWI_CRM_xts_accountpayablepaymentdetail.exchangerate
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderpurchaseorderidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_ordernvsalesorderidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.owningteam
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderlookuptype
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_paymenamount_base
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_transactiondocumentidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.statecode
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_externaldocumentnumber
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_sourcetype
+	, VWI_CRM_xts_accountpayablepaymentdetail.timezoneruleversionnumber
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_remainingbalance
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_accountpayablepaymentdetailnumber
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_ordernvsoreferralid
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_outstandingbalance
+	, VWI_CRM_xts_accountpayablepaymentdetail.createdonbehalfbyname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_paymenamount
+	, VWI_CRM_xts_accountpayablepaymentdetail.utcconversiontimezonecode
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderapvoucheridname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_cashandbankaccountid
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_receiptfromvendor
+	, VWI_CRM_xts_accountpayablepaymentdetail.ownerid
+	, VWI_CRM_xts_accountpayablepaymentdetail.modifiedon
+	, VWI_CRM_xts_accountpayablepaymentdetail.importsequencenumber
+	, VWI_CRM_xts_accountpayablepaymentdetail.owneridyominame
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_ordernvsalesorderid
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_differencevalue
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_accountpayablepaymentidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.createdbyname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_changeamount
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_businessunitid
+	, VWI_CRM_xts_accountpayablepaymentdetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderpurchaseorderid
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderuvsalesorderidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderlookupname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_paymentslipnumber
+	, VWI_CRM_xts_accountpayablepaymentdetail.transactioncurrencyid
+	, VWI_CRM_xts_accountpayablepaymentdetail.createdby
+	, VWI_CRM_xts_accountpayablepaymentdetail.modifiedby
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_parentbusinessunitidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.createdbyyominame
+	, VWI_CRM_xts_accountpayablepaymentdetail.owninguser
+	, VWI_CRM_xts_accountpayablepaymentdetail.transactioncurrencyidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_externaldocumenttypename
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_accountpayablepaymentdetailid
+	, VWI_CRM_xts_accountpayablepaymentdetail.owningbusinessunit
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_cashandbankaccountidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_vendorid
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderuvsalesorderid
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_remainingbalance_base
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_sourcetypename
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderapvoucherid
+	, VWI_CRM_xts_accountpayablepaymentdetail.statuscode
+	, VWI_CRM_xts_accountpayablepaymentdetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_changeamount_base
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_orderuvsoreferralidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_receiptfromvendorname
+	, VWI_CRM_xts_accountpayablepaymentdetail.statecodename
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_businessunitidname
+	, VWI_CRM_xts_accountpayablepaymentdetail.xts_vendoridname
+	, VWI_CRM_xts_accountpayablepaymentdetail.RowStatus
+	, VWI_CRM_xts_accountpayablepaymentdetail.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT  
+		b.ktb_bucompany company
+		, b.ktb_dealercode businessunitcode
+		, a.*
+		, b.msdyn_companycode
+	FROM CRM_xts_accountpayablepaymentdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	{0}
+) VWI_CRM_xts_accountpayablepaymentdetail

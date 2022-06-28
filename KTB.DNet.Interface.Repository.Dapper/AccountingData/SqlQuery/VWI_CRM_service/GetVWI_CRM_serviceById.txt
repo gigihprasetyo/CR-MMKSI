@@ -1,0 +1,49 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, granularity
+	, description
+	, createdonbehalfby
+	, name
+	, serviceid
+	, resourcespecid
+	, isvisible
+	, importsequencenumber
+	, organizationid
+	, modifiedbyyominame
+	, isschedulablename
+	, isschedulable
+	, showresourcesname
+	, duration
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, initialstatuscodename
+	, modifiedby
+	, createdby
+	, timezoneruleversionnumber
+	, organizationidname
+	, strategyid
+	, resourcespecidname
+	, isvisiblename
+	, calendarid
+	, modifiedon
+	, anchoroffset
+	, modifiedonbehalfbyyominame
+	, createdbyname
+	, createdon
+	, initialstatuscode
+	, createdonbehalfbyname
+	, modifiedonbehalfbyname
+	, showresources
+	, modifiedonbehalfby
+	, overriddencreatedon
+	--, ktb_isurs
+	--, msdyn_requirementgroupid
+	--, msdyn_requirementgroupidname
+	--, msdyn_SchedulingEngine
+	--, ktb_isursname
+	--, msdyn_schedulingenginename
+FROM [dbo].[CRM_service] as VWI_CRM_service with(nolock)
+WHERE serviceid = @Id

@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_xts_dimension10 as VWI_CRM_xts_dimension10 with (nolock)  
+{0}

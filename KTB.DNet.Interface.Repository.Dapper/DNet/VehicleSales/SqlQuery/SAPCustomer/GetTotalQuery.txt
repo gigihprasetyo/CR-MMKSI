@@ -1,0 +1,226 @@
+SELECT  
+	COUNT(1)
+FROM
+(
+    SELECT
+            c.ID AS DNetID,
+           c.InformationSource AS 'SumberData',
+		   c.CreatedBy AS 'CreatedBy',
+           CONVERT(VARCHAR(10), c.CreatedTime, 111) [CreateDate],
+           CONVERT(VARCHAR(10), c.CreatedTime, 112) [CreateDate_YYYYMMDD],
+           d.DealerCode,
+           d.DealerName,
+           c.Sequence,
+           CASE c.CustomerType
+               WHEN 0 THEN
+                   'Perorangan'
+               WHEN 1 THEN
+                   'Perusahaan'
+               WHEN 2 THEN
+                   'BUMN / Pemerintah'
+               WHEN 3 THEN
+                   'Lainnya'
+               ELSE
+                   '-'
+           END AS CustomerType,
+           c.CustomerType AS CustomerTypeID,
+           s.SalesmanCode,
+           s.Name,
+           c.CustomerCode,
+           c.CustomerName,
+           c.CustomerAddress,
+           case 
+                when dbo.fn_RemoveNonNumeric(c.Phone) like '628%'
+                    then left(replace(dbo.fn_RemoveNonNumeric(c.Phone), '628', '08'), 13) 
+		        when dbo.fn_RemoveNonNumeric(c.Phone) not like '08%' and dbo.fn_RemoveNonNumeric(c.Phone) not like '02%' 
+			        then left(stuff(dbo.fn_RemoveNonNumeric(c.Phone), 1, 1, '08'), 13) 
+		        else left(dbo.fn_RemoveNonNumeric(c.Phone), 13)  
+           end as [Phone], 
+           c.Email,
+           CASE c.Sex
+               WHEN 1 THEN
+                   'Pria'
+               WHEN 2 THEN
+                   'Wanita'
+               WHEN 99 THEN
+                   ''
+               ELSE
+                   '-'
+           END AS Sex,
+           c.Sex AS SexID,
+           CASE c.AgeSegment
+               WHEN 1 THEN
+                   's/d 29 tahun'
+               WHEN 2 THEN
+                   '30 - 39 tahun'
+               WHEN 3 THEN
+                   '40 - 49 tahun'
+               WHEN 4 THEN
+                   '50 tahun keatas'
+               WHEN 0 THEN
+                   ''
+               ELSE
+                   '-'
+           END AS AgeSegment,
+           c.AgeSegment AS AgeSegmentID,
+           CASE c.Status
+               WHEN 1 THEN
+                   'Hot SPK'
+               WHEN 2 THEN
+                   'Prospect'
+               WHEN 3 THEN
+                   'Suspect'
+               WHEN 4 THEN
+                   'Deal SPK'
+               WHEN 5 THEN
+                   'No Prospect'
+               WHEN 6 THEN
+                   'Cancelled'
+               WHEN 0 THEN
+                   'Suspect'
+               ELSE
+                   '-'
+           END AS CustomerStatus,
+           CASE
+               WHEN c.Status = 0 THEN
+                   3
+               ELSE
+                   c.Status
+           END AS CustomerStatusID,
+           CASE c.InformationType
+               WHEN 3 THEN
+                   'Surat Kabar'
+               WHEN 4 THEN
+                   'Televisi'
+               WHEN 5 THEN
+                   'Majalah'
+               WHEN 6 THEN
+                   'Radio'
+               WHEN 7 THEN
+                   'Papan Reklame'
+               WHEN 8 THEN
+                   'Internet'
+               WHEN 9 THEN
+                   'Mobile Apps'
+               WHEN 10 THEN
+                   'Social Media'
+               WHEN 11 THEN
+                   'Kebetulan Melintas'
+               WHEN 12 THEN
+                   'Database'
+               ELSE
+                   '-'
+           END AS InformationType,
+           CASE c.InformationSource
+               WHEN 5 THEN
+                   'Rekomendasi'
+               WHEN 6 THEN
+                   'Kunjungan Sales'
+               WHEN 7 THEN
+                   'Pameran/Event/Exhibition'
+               WHEN 11 THEN
+                   'Web Xpander'
+               WHEN 13 THEN
+                   'Social Media'
+               WHEN 14 THEN
+                   'Call Center'
+               WHEN 15 THEN
+                   'Database'
+               WHEN 16 THEN
+                   'Walk In'
+               WHEN 17 THEN
+                   'Web Campaign'
+               WHEN 18 THEN
+                   'Web Corporate'
+               WHEN 19 THEN
+                   'Web Dealer'
+               ELSE
+                   '-'
+           END AS InformationSource,
+           CASE c.CustomerPurpose
+               WHEN 1 THEN
+                   'Tanya Kendaraan'
+               WHEN 2 THEN
+                   'Test Drive'
+               WHEN 3 THEN
+                   'Memesan Kendaraan'
+               WHEN 4 THEN
+                   'Tanya Promosi'
+               WHEN 5 THEN
+                   'Tanya Fasilitas Dealer'
+               WHEN 6 THEN
+                   'Komplain'
+               WHEN 7 THEN
+                   'Mengantar saudara \ teman'
+               WHEN 8 THEN
+                   'Lain lain'
+               WHEN 0 THEN
+                   'Lain lain'
+               ELSE
+                   '-'
+           END AS CustomerPurpose,
+           CASE
+               WHEN c.CustomerPurpose = 0 THEN
+                   8
+               ELSE
+                   c.CustomerPurpose
+           END AS CustomerPurposeID,
+           CONVERT(VARCHAR(10), c.ProspectDate, 111) [ProspectDate],
+           CONVERT(VARCHAR(10), c.ProspectDate, 112) [ProspectDate_YYYYMMDD],
+           --, v.VechileTypeCode 
+           '9999' VechileTypeCode, --
+           --, v.Description
+           CASE
+               WHEN c.VehicleModel IS NULL
+                    AND c.Variant IS NULL THEN
+                   v.Description
+               ELSE
+                   CONCAT(c.VehicleModel, ' - ', c.Variant)
+           END Description,
+           c.CurrVehicleBrand,
+           c.CurrVehicleType,
+           CONCAT(COALESCE(vm.IndDescription, ''), COALESCE(c.Note, '')) Note,
+           COALESCE(c.VehicleModel, ' ') AS IndModel,
+           ISNULL(r.Description, '') Keterangan,
+           CASE r.Status
+               WHEN 1 THEN
+                   'Dealer Visit'
+               WHEN 2 THEN
+                   'Test Drive'
+               WHEN 3 THEN
+                   'Negotiation'
+               WHEN 4 THEN
+                   'SPK'
+               WHEN 5 THEN
+                   'Sudah Teralokasi'
+               WHEN 6 THEN
+                   'Sudah PKT'
+               ELSE
+                   '-'
+           END AS StatusResponse,
+           r.Status AS StatusResponseID,
+           c.WebID AS WebID,
+           c.LastUpdateTime
+    FROM SAPCustomer c WITH (NOLOCK)
+        JOIN SAPCustomerMapping cm WITH (NOLOCK)
+            ON c.ID = cm.SAPCustomerID
+        LEFT JOIN Dealer d with(nolock) 
+            ON c.DealerID = d.ID
+        LEFT JOIN SalesmanHeader s WITH (NOLOCK)
+            ON s.ID = c.SalesmanHeaderID
+        LEFT JOIN VechileType v WITH (NOLOCK) 
+            ON v.ID = c.VechileTypeID
+        LEFT JOIN VechileModel vm WITH (NOLOCK)
+            ON vm.ID = v.ModelID
+        LEFT JOIN V_LeadCustomerResponse r WITH (NOLOCK)
+            ON r.SAPCustomerID = c.ID
+               AND r.DealerID = c.DealerID
+    WHERE --c.SalesforceID <> '' --and c.SalesmanHeaderID is null 
+          --AND 
+          c.StatusCode = 0
+          AND (
+		      (c.createdby='SalesForce' AND c.LastUpdateBy='')  
+		      OR (c.createdby='SYS-CDP' AND REPLACE(c.lastupdateby,'"','''')=REPLACE(c.WebID,'"',''''))
+		  )
+--and c.LeadStatus = 3
+) VWI_LeadCustomerSalesForce {0}

@@ -1,0 +1,73 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_writeoffbalance.company
+	, VWI_CRM_xts_writeoffbalance.businessunitcode
+	, VWI_CRM_xts_writeoffbalance.createdonbehalfbyyominame
+	, VWI_CRM_xts_writeoffbalance.owninguser
+	, VWI_CRM_xts_writeoffbalance.transactioncurrencyidname
+	, VWI_CRM_xts_writeoffbalance.statecode
+	, VWI_CRM_xts_writeoffbalance.xts_businessunitidname
+	, VWI_CRM_xts_writeoffbalance.owneridname
+	, VWI_CRM_xts_writeoffbalance.statecodename
+	, VWI_CRM_xts_writeoffbalance.xts_codetrigger
+	, VWI_CRM_xts_writeoffbalance.createdonbehalfby
+	, VWI_CRM_xts_writeoffbalance.transactioncurrencyid
+	, VWI_CRM_xts_writeoffbalance.xts_handlingname
+	, VWI_CRM_xts_writeoffbalance.xts_handling
+	, VWI_CRM_xts_writeoffbalance.xts_writeoffbalanceid
+	, VWI_CRM_xts_writeoffbalance.xts_writeofflimit
+	, VWI_CRM_xts_writeoffbalance.xts_customeridname
+	, VWI_CRM_xts_writeoffbalance.xts_parentbusinessunitid
+	, VWI_CRM_xts_writeoffbalance.importsequencenumber
+	, VWI_CRM_xts_writeoffbalance.modifiedbyyominame
+	, VWI_CRM_xts_writeoffbalance.xts_parrentbusinessunitid
+	, VWI_CRM_xts_writeoffbalance.xts_statusname
+	, VWI_CRM_xts_writeoffbalance.xts_transactiondate
+	, VWI_CRM_xts_writeoffbalance.xts_customeridyominame
+	, VWI_CRM_xts_writeoffbalance.utcconversiontimezonecode
+	, VWI_CRM_xts_writeoffbalance.createdbyyominame
+	, VWI_CRM_xts_writeoffbalance.owningbusinessunit
+	, VWI_CRM_xts_writeoffbalance.modifiedbyname
+	, VWI_CRM_xts_writeoffbalance.owningteam
+	, VWI_CRM_xts_writeoffbalance.modifiedby
+	, VWI_CRM_xts_writeoffbalance.createdby
+	, VWI_CRM_xts_writeoffbalance.timezoneruleversionnumber
+	, VWI_CRM_xts_writeoffbalance.owneridtype
+	, VWI_CRM_xts_writeoffbalance.statuscodename
+	, VWI_CRM_xts_writeoffbalance.xts_writeofflimit_base
+	, VWI_CRM_xts_writeoffbalance.owneridyominame
+	, VWI_CRM_xts_writeoffbalance.modifiedon
+	, VWI_CRM_xts_writeoffbalance.exchangerate
+	, VWI_CRM_xts_writeoffbalance.xts_customerid
+	, VWI_CRM_xts_writeoffbalance.xts_customernumber
+	, VWI_CRM_xts_writeoffbalance.xts_writeofftype
+	, VWI_CRM_xts_writeoffbalance.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_writeoffbalance.statuscode
+	, VWI_CRM_xts_writeoffbalance.createdbyname
+	, VWI_CRM_xts_writeoffbalance.createdon
+	, VWI_CRM_xts_writeoffbalance.xts_businessunitid
+	, VWI_CRM_xts_writeoffbalance.xts_writeofftypename
+	, VWI_CRM_xts_writeoffbalance.createdonbehalfbyname
+	, VWI_CRM_xts_writeoffbalance.xts_status
+	, VWI_CRM_xts_writeoffbalance.modifiedonbehalfbyname
+	, VWI_CRM_xts_writeoffbalance.xts_writeoffbalancenumber
+	, VWI_CRM_xts_writeoffbalance.xts_parrentbusinessunitidname
+	, VWI_CRM_xts_writeoffbalance.versionnumber
+	, VWI_CRM_xts_writeoffbalance.modifiedonbehalfby
+	, VWI_CRM_xts_writeoffbalance.ownerid
+	, VWI_CRM_xts_writeoffbalance.overriddencreatedon
+	, VWI_CRM_xts_writeoffbalance.xts_parentbusinessunitidname
+	, VWI_CRM_xts_writeoffbalance.RowStatus
+/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_writeoffbalance a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_writeoffbalance 

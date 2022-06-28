@@ -1,0 +1,7 @@
+﻿SELECT 
+	/**PagingIndexQuery**/  
+	*  
+	/**EndPagingIndexQuery**/ 
+FROM 
+	VWI_POEstimateHaveBilling
+{0}

@@ -1,0 +1,75 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,statecode
+	,ktb_dnetstatusnewname
+	,ktb_dnetponumber
+	,owneridname
+	,ktb_dnetpodate
+	,statecodename
+	,ktb_purchaserequisitionidname
+	,ktb_estimationdeliverydate
+	,createdonbehalfby
+	,ktb_sotype
+	,ktb_expeditionname
+	,ktb_readyfordeliverydate
+	,ktb_packingdate
+	,ktb_purchaserequisitionhistoryid
+	,ktb_dnetstatus
+	,importsequencenumber
+	,ktb_businessunitidname
+	,modifiedbyyominame
+	,ktb_name
+	,ktb_eta
+	,ktb_atd
+	,ktb_dnetstatusnew
+	,ktb_paymentdate
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,ktb_dnetdonumber
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,ktb_totalamount
+	,owneridtype
+	,statuscodename
+	,ktb_dnetdodate
+	,ktb_dnetsodate
+	,ktb_dnetsonumber
+	,ktb_businessunitid
+	,ktb_sotypename
+	,owneridyominame
+	,modifiedon
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,ktb_pickingdate
+	,createdonbehalfbyname
+	,ktb_goodsissuedate
+	,modifiedonbehalfbyname
+	,ktb_purchaserequisitionid
+	,ktb_discount
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,ktb_expeditionno
+	,RowStatus
+	,msdyn_companycode
+from (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_ktb_purchaserequisitionhistory a
+    LEFT JOIN CRM_businessunit b ON B.businessunitid = a.ktb_businessunitid
+    Where ktb_purchaserequisitionhistoryId = @Id
+) VWI_CRM_ktb_purchaserequisitionhistory

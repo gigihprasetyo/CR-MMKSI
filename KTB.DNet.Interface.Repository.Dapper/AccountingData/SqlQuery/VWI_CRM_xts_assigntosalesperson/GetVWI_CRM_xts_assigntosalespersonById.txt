@@ -1,0 +1,77 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,xts_tono
+	,statecode
+	,xts_businessunitidname
+	,xts_pkcombinationkey
+	,owneridname
+	,statecodename
+	,createdonbehalfby
+	,xts_fromsalespersonname
+	,xts_tonoidname
+	,xts_assigntypename
+	,xts_fromnoidname
+	,xts_fromsalespersonidname
+	,xts_tosalespersonidname
+	,ktb_bypasslimitname
+	,xts_tononame
+	,xts_assigntype
+	,importsequencenumber
+	,modifiedbyyominame
+	,xts_fromno
+	,ktb_parentbusinessunitidname
+	,xts_transactiondate
+	,xts_fromsalespersonid
+	,xts_fromnoid
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,xts_fromsalesperson
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,ktb_bypasslimit
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,xts_tonoid
+	,owneridtype
+	,statuscodename
+	,xts_tosalespersonname
+	,xts_tosalespersonid
+	,owneridyominame
+	,modifiedon
+	,xts_tosalesperson
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,createdonbehalfbyname
+	,xts_fromnoname
+	,xts_assigntosalespersonid
+	,ktb_parentbusinessunitid
+	,modifiedonbehalfbyname
+	,versionnumber
+	,modifiedonbehalfby
+	,xts_assigntosalesperson
+	,ownerid
+	,overriddencreatedon
+	,RowStatus
+	,xts_parentbusinessunitid
+	,xts_parentbusinessunitidname
+	,msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_assigntosalesperson a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_assigntosalespersonid = @Id
+) as VWI_CRM_xts_assigntosalesperson 

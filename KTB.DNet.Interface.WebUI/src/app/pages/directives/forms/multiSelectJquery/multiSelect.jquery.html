@@ -1,0 +1,37 @@
+<div class="form-group" ng-class="{ 'has-error': form.{{name}}.$invalid && form.{{name}}.$touched }">
+    <style>
+        .ms-container {
+            background: transparent url('src/assets/img/switch.png') no-repeat 50% 50%;
+        }
+        .btn-all {
+            margin-top: 26px;
+            position: fixed;
+            background: #37a89c;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 5px;
+            color: white;
+        }
+        .btn-all:hover{
+            opacity: 0.8;
+            color:white;
+        }
+        .btn-select-all {
+            left: calc(50% - 86px);
+        }
+        .btn-deselect-all {
+            left: calc(100% - 121px);
+        }
+    </style>
+    <label for="{{name}}">{{label}}
+        <span class='required' ng-if="required">*</span>
+    </label>
+    <a ng-if="::allButton" href="" class = "btn-all btn-select-all " ng-click="selectAll()">Select All</a>
+    <a ng-if="::allButton" href="" class = "btn-all btn-deselect-all "  ng-click="deselectAll()">Deselect All</a>
+    <!-- <input type="button" ng-click="selectAll()" class="btn btn-default m-t-15 waves-effect" value="Select All" /> -->
+    <select name={{name}} multiple data-ng-options="option[value || 'Value'] as option[text || 'Text'] for option in options"
+        data-ng-model="ngModel" data-multi-select="options" data-ms-options="msOptions2" ng-required="required" ng-disabled="::ngDisabled"></select>
+    <span ng-show="!options.length && hasPendingRequest" style="position: absolute;z-index: 1;right: 37.6px;top: 26.5px;">
+        <img src="src/assets/img/spin.gif" alt="Loading.."> </span>
+    <span ng-show="form.{{name}}.$invalid && form.{{name}}.$touched" class="help-block">{{label}} is required</span>
+</div>

@@ -1,0 +1,50 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_service.createdonbehalfbyyominame
+	, VWI_CRM_service.granularity
+	, VWI_CRM_service.description
+	, VWI_CRM_service.createdonbehalfby
+	, VWI_CRM_service.name
+	, VWI_CRM_service.serviceid
+	, VWI_CRM_service.resourcespecid
+	, VWI_CRM_service.isvisible
+	, VWI_CRM_service.importsequencenumber
+	, VWI_CRM_service.organizationid
+	, VWI_CRM_service.modifiedbyyominame
+	, VWI_CRM_service.isschedulablename
+	, VWI_CRM_service.isschedulable
+	, VWI_CRM_service.showresourcesname
+	, VWI_CRM_service.duration
+	, VWI_CRM_service.utcconversiontimezonecode
+	, VWI_CRM_service.createdbyyominame
+	, VWI_CRM_service.modifiedbyname
+	, VWI_CRM_service.versionnumber
+	, VWI_CRM_service.initialstatuscodename
+	, VWI_CRM_service.modifiedby
+	, VWI_CRM_service.createdby
+	, VWI_CRM_service.timezoneruleversionnumber
+	, VWI_CRM_service.organizationidname
+	, VWI_CRM_service.strategyid
+	, VWI_CRM_service.resourcespecidname
+	, VWI_CRM_service.isvisiblename
+	, VWI_CRM_service.calendarid
+	, VWI_CRM_service.modifiedon
+	, VWI_CRM_service.anchoroffset
+	, VWI_CRM_service.modifiedonbehalfbyyominame
+	, VWI_CRM_service.createdbyname
+	, VWI_CRM_service.createdon
+	, VWI_CRM_service.initialstatuscode
+	, VWI_CRM_service.createdonbehalfbyname
+	, VWI_CRM_service.modifiedonbehalfbyname
+	, VWI_CRM_service.showresources
+	, VWI_CRM_service.modifiedonbehalfby
+	, VWI_CRM_service.overriddencreatedon
+	--, VWI_CRM_service.ktb_isurs
+	--, VWI_CRM_service.msdyn_requirementgroupid
+	--, VWI_CRM_service.msdyn_requirementgroupidname
+	--, VWI_CRM_service.msdyn_SchedulingEngine
+	--, VWI_CRM_service.ktb_isursname
+	--, VWI_CRM_service.msdyn_schedulingenginename
+FROM [dbo].[CRM_service] as VWI_CRM_service with(nolock) 
+{0}

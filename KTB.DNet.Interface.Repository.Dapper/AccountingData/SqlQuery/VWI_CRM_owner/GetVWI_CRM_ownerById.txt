@@ -1,0 +1,9 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, versionnumber
+	, name
+	, ownerid
+	, owneridtype
+	, yominame
+FROM CRM_owner as VWI_CRM_owner with(nolock)
+WHERE ownerid = @Id 

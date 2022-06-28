@@ -1,0 +1,67 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_userareaassignment.businessunitcode
+	, VWI_CRM_ktb_userareaassignment.createdonbehalfbyyominame
+	, VWI_CRM_ktb_userareaassignment.owninguser
+	, VWI_CRM_ktb_userareaassignment.statecode
+	, VWI_CRM_ktb_userareaassignment.owneridname
+	, VWI_CRM_ktb_userareaassignment.ktb_accessservicename
+	, VWI_CRM_ktb_userareaassignment.statecodename
+	, VWI_CRM_ktb_userareaassignment.ktb_defaulttrans
+	, VWI_CRM_ktb_userareaassignment.createdonbehalfby
+	, VWI_CRM_ktb_userareaassignment.ktb_defaulttransname
+	, VWI_CRM_ktb_userareaassignment.ktb_accesspart
+	, VWI_CRM_ktb_userareaassignment.ktb_accessvhcpurc
+	, VWI_CRM_ktb_userareaassignment.ktb_useridyominame
+	, VWI_CRM_ktb_userareaassignment.importsequencenumber
+	, VWI_CRM_ktb_userareaassignment.ktb_useridname
+	, VWI_CRM_ktb_userareaassignment.modifiedbyyominame
+	, VWI_CRM_ktb_userareaassignment.ktb_teamidname
+	, VWI_CRM_ktb_userareaassignment.ktb_accesspartname
+	, VWI_CRM_ktb_userareaassignment.ktb_accessvhcslsname
+	, VWI_CRM_ktb_userareaassignment.ktb_userareaassignment
+	, VWI_CRM_ktb_userareaassignment.utcconversiontimezonecode
+	, VWI_CRM_ktb_userareaassignment.createdbyyominame
+	, VWI_CRM_ktb_userareaassignment.owningbusinessunit
+	, VWI_CRM_ktb_userareaassignment.modifiedbyname
+	, VWI_CRM_ktb_userareaassignment.owningteam
+	, VWI_CRM_ktb_userareaassignment.ktb_teamidyominame
+	, VWI_CRM_ktb_userareaassignment.modifiedby
+	, VWI_CRM_ktb_userareaassignment.createdby
+	, VWI_CRM_ktb_userareaassignment.timezoneruleversionnumber
+	, VWI_CRM_ktb_userareaassignment.ktb_teamid
+	, VWI_CRM_ktb_userareaassignment.owneridtype
+	, VWI_CRM_ktb_userareaassignment.statuscodename
+	, VWI_CRM_ktb_userareaassignment.ktb_userid
+	, VWI_CRM_ktb_userareaassignment.ktb_accessvhcsls
+	, VWI_CRM_ktb_userareaassignment.ktb_accessvhcpurcname
+	, VWI_CRM_ktb_userareaassignment.ktb_businessunitid
+	, VWI_CRM_ktb_userareaassignment.owneridyominame
+	, VWI_CRM_ktb_userareaassignment.modifiedon
+	, VWI_CRM_ktb_userareaassignment.ktb_accessservice
+	, VWI_CRM_ktb_userareaassignment.ktb_userareaassignmentid
+	, VWI_CRM_ktb_userareaassignment.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_userareaassignment.statuscode
+	, VWI_CRM_ktb_userareaassignment.createdbyname
+	, VWI_CRM_ktb_userareaassignment.createdon
+	, VWI_CRM_ktb_userareaassignment.createdonbehalfbyname
+	, VWI_CRM_ktb_userareaassignment.modifiedonbehalfbyname
+	, VWI_CRM_ktb_userareaassignment.ktb_businessunitidname
+	, VWI_CRM_ktb_userareaassignment.versionnumber
+	, VWI_CRM_ktb_userareaassignment.modifiedonbehalfby
+	, VWI_CRM_ktb_userareaassignment.ownerid
+	, VWI_CRM_ktb_userareaassignment.overriddencreatedon
+	, VWI_CRM_ktb_userareaassignment.RowStatus
+	/**EndPagingIndexQuery**/
+from (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_ktb_userareaassignment a with(nolock)
+	LEFT JOIN CRM_businessunit b  with(nolock)
+    ON b.businessunitid = a.ktb_businessunitid
+    {0}
+) VWI_CRM_ktb_userareaassignment

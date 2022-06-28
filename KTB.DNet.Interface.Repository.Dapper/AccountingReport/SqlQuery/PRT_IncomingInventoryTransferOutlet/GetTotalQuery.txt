@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM VWI_CRM_PRT_IncomingInventoryTransferOutlet WITH (NOLOCK) {0}

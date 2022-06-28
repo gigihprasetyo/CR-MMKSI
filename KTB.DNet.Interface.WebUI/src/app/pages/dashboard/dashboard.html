@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-12">
+        <dashboard-main-info></dashboard-main-info>
+    </div>
+    <div ng-show="isDMSAdmin" class="col-md-6">
+        <failed-transaction-summary />
+    </div>
+    <div class="{{isDMSAdmin ? 'col-md-6' : 'col-md-12'}}">
+        <transaction-summary />
+    </div>
+    <div class="col-md-12" ng-show="isDMSAdmin">
+        <transaction-summary-per-dealer />
+    </div>
+    <div class="col-md-6">
+        <dashboard-error-list></dashboard-error-list>
+    </div>
+    <div class="col-md-6">
+        <dashboard-top-ranked-api></dashboard-top-ranked-api>
+    </div>
+    <div class="col-md-12">
+        <dashboard-transaction-list></dashboard-transaction-list>
+    </div>
+</div>
+
+

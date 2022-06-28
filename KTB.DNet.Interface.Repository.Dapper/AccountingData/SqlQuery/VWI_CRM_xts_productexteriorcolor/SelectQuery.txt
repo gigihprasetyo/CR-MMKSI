@@ -1,0 +1,43 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_productexteriorcolor.xts_description
+	, VWI_CRM_xts_productexteriorcolor.overriddencreatedon
+	, VWI_CRM_xts_productexteriorcolor.modifiedonbehalfbyname
+	, VWI_CRM_xts_productexteriorcolor.xts_exteriorcoloridname
+	, VWI_CRM_xts_productexteriorcolor.createdonbehalfbyname
+	, VWI_CRM_xts_productexteriorcolor.organizationid
+	, VWI_CRM_xts_productexteriorcolor.createdon
+	, VWI_CRM_xts_productexteriorcolor.createdbyname
+	, VWI_CRM_xts_productexteriorcolor.statuscode
+	, VWI_CRM_xts_productexteriorcolor.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_productexteriorcolor.xts_entitytag
+	, VWI_CRM_xts_productexteriorcolor.xts_eventdata
+	, VWI_CRM_xts_productexteriorcolor.xts_productexteriorcolorid
+	, VWI_CRM_xts_productexteriorcolor.modifiedon
+	, VWI_CRM_xts_productexteriorcolor.xts_sharedproductidname
+	, VWI_CRM_xts_productexteriorcolor.xts_sharedproductid
+	, VWI_CRM_xts_productexteriorcolor.xts_productexteriorcolor
+	, VWI_CRM_xts_productexteriorcolor.xts_exteriorcolorid
+	, VWI_CRM_xts_productexteriorcolor.statuscodename
+	, VWI_CRM_xts_productexteriorcolor.timezoneruleversionnumber
+	, VWI_CRM_xts_productexteriorcolor.createdby
+	, VWI_CRM_xts_productexteriorcolor.modifiedby
+	, VWI_CRM_xts_productexteriorcolor.versionnumber
+	, VWI_CRM_xts_productexteriorcolor.modifiedbyname
+	, VWI_CRM_xts_productexteriorcolor.createdbyyominame
+	, VWI_CRM_xts_productexteriorcolor.utcconversiontimezonecode
+	, VWI_CRM_xts_productexteriorcolor.modifiedbyyominame
+	, VWI_CRM_xts_productexteriorcolor.organizationidname
+	, VWI_CRM_xts_productexteriorcolor.importsequencenumber
+	, VWI_CRM_xts_productexteriorcolor.xts_pkcombinationkey
+	, VWI_CRM_xts_productexteriorcolor.createdonbehalfby
+	, VWI_CRM_xts_productexteriorcolor.statecodename
+	, VWI_CRM_xts_productexteriorcolor.ktb_specialflagname
+	, VWI_CRM_xts_productexteriorcolor.statecode
+	, VWI_CRM_xts_productexteriorcolor.ktb_specialflag
+	, VWI_CRM_xts_productexteriorcolor.modifiedonbehalfby
+	, VWI_CRM_xts_productexteriorcolor.createdonbehalfbyyominame
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_productexteriorcolor as VWI_CRM_xts_productexteriorcolor with (nolock) 
+{0}

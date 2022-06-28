@@ -1,0 +1,129 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_outsourceworkorder.company
+	, VWI_CRM_xts_outsourceworkorder.businessunitcode
+	, VWI_CRM_xts_outsourceworkorder.xjp_requeststampfeeadvancedpaymentname
+	, VWI_CRM_xts_outsourceworkorder.xts_totaltaxamount_base
+	, VWI_CRM_xts_outsourceworkorder.xts_parentbusinessunitid
+	, VWI_CRM_xts_outsourceworkorder.versionnumber
+	, VWI_CRM_xts_outsourceworkorder.xjp_compulsoryautomobileliabilityinsurancename
+	, VWI_CRM_xts_outsourceworkorder.createdon
+	, VWI_CRM_xts_outsourceworkorder.statuscodename
+	, VWI_CRM_xts_outsourceworkorder.xts_scheduledarrivaldateandtime
+	, VWI_CRM_xts_outsourceworkorder.xts_totaltaxamount
+	, VWI_CRM_xts_outsourceworkorder.xjp_requestcaliadvancedpayment
+	, VWI_CRM_xts_outsourceworkorder.xjp_requestweighttaxadvancedpayment
+	, VWI_CRM_xts_outsourceworkorder.xts_finishpatternname
+	, VWI_CRM_xts_outsourceworkorder.xts_status
+	, VWI_CRM_xts_outsourceworkorder.xts_customerid
+	, VWI_CRM_xts_outsourceworkorder.modifiedbyyominame
+	, VWI_CRM_xts_outsourceworkorder.xjp_requestweighttaxadvancedpaymentname
+	, VWI_CRM_xts_outsourceworkorder.xts_scheduledfinishdateandtime
+	, VWI_CRM_xts_outsourceworkorder.owneridtype
+	, VWI_CRM_xts_outsourceworkorder.xts_schledoutsourceservicefinishdateandtime
+	, VWI_CRM_xts_outsourceworkorder.processid
+	, VWI_CRM_xts_outsourceworkorder.createdonbehalfby
+	, VWI_CRM_xts_outsourceworkorder.xjp_requestcaliadvancedpaymentname
+	, VWI_CRM_xts_outsourceworkorder.modifiedbyname
+	, VWI_CRM_xts_outsourceworkorder.xts_platenumber
+	, VWI_CRM_xts_outsourceworkorder.xts_outsourcereservationidname
+	, VWI_CRM_xts_outsourceworkorder.xjp_taxpaymentdocumentname
+	, VWI_CRM_xts_outsourceworkorder.xts_outsourceworkorderid
+	, VWI_CRM_xts_outsourceworkorder.xjp_ocrname
+	, VWI_CRM_xts_outsourceworkorder.owneridname
+	, VWI_CRM_xts_outsourceworkorder.xts_totalbillingamountbeforetax_base
+	, VWI_CRM_xts_outsourceworkorder.xts_totalbillingamountbeforetax
+	, VWI_CRM_xts_outsourceworkorder.overriddencreatedon
+	, VWI_CRM_xts_outsourceworkorder.xts_deliverymemo
+	, VWI_CRM_xts_outsourceworkorder.xts_outsourcereservationid
+	, VWI_CRM_xts_outsourceworkorder.xts_downpaymentamount
+	, VWI_CRM_xts_outsourceworkorder.createdonbehalfbyyominame
+	, VWI_CRM_xts_outsourceworkorder.modifiedonbehalfby
+	, VWI_CRM_xts_outsourceworkorder.exchangerate
+	, VWI_CRM_xts_outsourceworkorder.xts_workorderidname
+	, VWI_CRM_xts_outsourceworkorder.xts_scheduledoustourcefinishdateandtime
+	, VWI_CRM_xts_outsourceworkorder.xts_downpaymentamount_base
+	, VWI_CRM_xts_outsourceworkorder.xjp_requeststampfeeadvancedpayment
+	, VWI_CRM_xts_outsourceworkorder.owningteam
+	, VWI_CRM_xts_outsourceworkorder.xts_arrivalmemo
+	, VWI_CRM_xts_outsourceworkorder.xts_tempotherids
+	, VWI_CRM_xts_outsourceworkorder.xts_arrivalpatternname
+	, VWI_CRM_xts_outsourceworkorder.xts_downpaymentispaidname
+	, VWI_CRM_xts_outsourceworkorder.statecode
+	, VWI_CRM_xts_outsourceworkorder.timezoneruleversionnumber
+	, VWI_CRM_xts_outsourceworkorder.xts_downpaymentamountreceived_base
+	, VWI_CRM_xts_outsourceworkorder.xts_prpotypeidname
+	, VWI_CRM_xts_outsourceworkorder.xts_locking
+	, VWI_CRM_xts_outsourceworkorder.xts_handling
+	, VWI_CRM_xts_outsourceworkorder.xts_customernumber
+	, VWI_CRM_xts_outsourceworkorder.xjp_taxpaymentdocument
+	, VWI_CRM_xts_outsourceworkorder.traversedpath
+	, VWI_CRM_xts_outsourceworkorder.createdonbehalfbyname
+	, VWI_CRM_xts_outsourceworkorder.xts_prpotypeid
+	, VWI_CRM_xts_outsourceworkorder.utcconversiontimezonecode
+	, VWI_CRM_xts_outsourceworkorder.xts_vehicleidentificationid
+	, VWI_CRM_xts_outsourceworkorder.xjp_weighttax
+	, VWI_CRM_xts_outsourceworkorder.xts_statusname
+	, VWI_CRM_xts_outsourceworkorder.xts_outsourceworkshopidname
+	, VWI_CRM_xts_outsourceworkorder.xts_customeridyominame
+	, VWI_CRM_xts_outsourceworkorder.ownerid
+	, VWI_CRM_xts_outsourceworkorder.modifiedon
+	, VWI_CRM_xts_outsourceworkorder.importsequencenumber
+	, VWI_CRM_xts_outsourceworkorder.owneridyominame
+	, VWI_CRM_xts_outsourceworkorder.xjp_weighttaxname
+	, VWI_CRM_xts_outsourceworkorder.xts_category
+	, VWI_CRM_xts_outsourceworkorder.xts_servicecategoryid
+	, VWI_CRM_xts_outsourceworkorder.xts_transactiondate
+	, VWI_CRM_xts_outsourceworkorder.xts_outsourceworkshopid
+	, VWI_CRM_xts_outsourceworkorder.xts_downpaymentispaid
+	, VWI_CRM_xts_outsourceworkorder.xts_workorderid
+	, VWI_CRM_xts_outsourceworkorder.createdbyname
+	, VWI_CRM_xts_outsourceworkorder.xts_businessunitid
+	, VWI_CRM_xts_outsourceworkorder.xts_outsourceworkorderpersoninchargeid
+	, VWI_CRM_xts_outsourceworkorder.modifiedonbehalfbyname
+	, VWI_CRM_xts_outsourceworkorder.xts_schledarrivalinoriginworkshopdateandtime
+	, VWI_CRM_xts_outsourceworkorder.xts_vehicleidentificationidname
+	, VWI_CRM_xts_outsourceworkorder.stageid
+	, VWI_CRM_xts_outsourceworkorder.xts_outsourceworkorderpersoninchargeidname
+	, VWI_CRM_xts_outsourceworkorder.xts_categoryname
+	, VWI_CRM_xts_outsourceworkorder.xts_handlingname
+	, VWI_CRM_xts_outsourceworkorder.transactioncurrencyid
+	, VWI_CRM_xts_outsourceworkorder.xjp_compulsoryautomobileliabilityinsurance
+	, VWI_CRM_xts_outsourceworkorder.xts_businessunitidname
+	, VWI_CRM_xts_outsourceworkorder.createdby
+	, VWI_CRM_xts_outsourceworkorder.xts_outsourceworkorder
+	, VWI_CRM_xts_outsourceworkorder.modifiedby
+	, VWI_CRM_xts_outsourceworkorder.xts_vehiclemodelname
+	, VWI_CRM_xts_outsourceworkorder.xts_totalbillingamountaftertax
+	, VWI_CRM_xts_outsourceworkorder.createdbyyominame
+	, VWI_CRM_xts_outsourceworkorder.owninguser
+	, VWI_CRM_xts_outsourceworkorder.transactioncurrencyidname
+	, VWI_CRM_xts_outsourceworkorder.xts_customeridname
+	, VWI_CRM_xts_outsourceworkorder.owningbusinessunit
+	, VWI_CRM_xts_outsourceworkorder.xts_downpaymentamountreceived
+	, VWI_CRM_xts_outsourceworkorder.xjp_ocr
+	, VWI_CRM_xts_outsourceworkorder.xts_parentbusinessunitidname
+	, VWI_CRM_xts_outsourceworkorder.xts_finishpattern
+	, VWI_CRM_xts_outsourceworkorder.statuscode
+	, VWI_CRM_xts_outsourceworkorder.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_outsourceworkorder.xts_scheduledoutsourcearrivaldateandtime
+	, VWI_CRM_xts_outsourceworkorder.xts_arrivalpattern
+	, VWI_CRM_xts_outsourceworkorder.xts_outsourceworkordermemo
+	, VWI_CRM_xts_outsourceworkorder.xts_servicecategoryidname
+	, VWI_CRM_xts_outsourceworkorder.statecodename
+	, VWI_CRM_xts_outsourceworkorder.xts_totalbillingamountaftertax_base
+	, VWI_CRM_xts_outsourceworkorder.RowStatus
+	, VWI_CRM_xts_outsourceworkorder.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xts_outsourceworkorder a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	{0}
+) VWI_CRM_xts_outsourceworkorder

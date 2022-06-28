@@ -1,0 +1,26 @@
+SELECT 
+	IDRow
+	,company
+	,businessunitcode
+	,TransactionDate
+	,Customer
+	,CustomerDescription
+	,CustomerType
+	,SalesPerson
+	,SOorWoNo
+	,InvoiceNo
+	,ProductCode
+	,ProductDescription
+	,Model
+	,Quantity
+	,CapitalPrice
+	,RetailPrice
+	,DiscountAmount
+	,Total
+	,Tax
+	,TotalAmount
+	,TotalCOGS
+	,Laba
+	,msdyn_companycode
+FROM VWI_CRM_PRT_SparepartSales WITH (NOLOCK)
+WHERE ID = @Id

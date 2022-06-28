@@ -1,0 +1,56 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , owningteam
+    , xts_businessunitid
+    , statecode
+    , modifiedonbehalfbyyominame
+    , statuscodename
+    , owninguser
+    , modifiedby
+    , versionnumber
+    , xts_servicetemplateactivityid
+    , xts_servicetemplateidname
+    , owneridname
+    , statecodename
+    , createdbyyominame
+    , overriddencreatedon
+    , createdby
+    , statuscode
+    , xts_servicetemplateactivity
+    , xts_servicename
+    , modifiedbyname
+    , xts_businessunitidname
+    , xts_duration
+    , modifiedon
+    , createdonbehalfbyname
+    , utcconversiontimezonecode
+    , modifiedbyyominame
+    , owningbusinessunit
+    , createdonbehalfbyyominame
+    , createdon
+    , timezoneruleversionnumber
+    , owneridtype
+    , importsequencenumber
+    , ownerid
+    , createdbyname
+    , xts_service
+    , xts_servicetemplateid
+    , modifiedonbehalfbyname
+    , modifiedonbehalfby
+    , owneridyominame
+    , createdonbehalfby
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicetemplateactivity a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_servicetemplateactivityid = @Id
+) as VWI_CRM_xts_servicetemplateactivity  
+

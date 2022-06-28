@@ -1,0 +1,35 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, xts_locking
+	, statecode
+	, xts_description
+	, statecodename
+	, createdonbehalfby
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, xts_company
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, createdby
+	, timezoneruleversionnumber
+	, statuscodename
+	, modifiedon
+	, xts_aliasname
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, modifiedonbehalfbyname
+	, xts_bankid
+	, overriddencreatedon
+	, xts_bank
+FROM CRM_xts_bank as VWI_CRM_xts_bank with (nolock)  
+WHERE xts_bankid = @Id

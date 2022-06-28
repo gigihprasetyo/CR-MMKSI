@@ -1,0 +1,20 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SLS_SalesUnit.company
+	,VWI_CRM_SLS_SalesUnit.businessunitcode
+	,VWI_CRM_SLS_SalesUnit.xts_newvehicledeliveryordernumber
+	,VWI_CRM_SLS_SalesUnit.ktb_vehiclecolorname
+	,VWI_CRM_SLS_SalesUnit.ktb_tanggalpkt
+	,VWI_CRM_SLS_SalesUnit.sitename
+	,VWI_CRM_SLS_SalesUnit.xts_productdescription
+	,VWI_CRM_SLS_SalesUnit.personinchargename
+	,VWI_CRM_SLS_SalesUnit.xts_driver
+	,VWI_CRM_SLS_SalesUnit.xts_deliverydate
+	,VWI_CRM_SLS_SalesUnit.customername
+	,VWI_CRM_SLS_SalesUnit.xts_productexteriorcolor
+	,VWI_CRM_SLS_SalesUnit.xts_warehouse
+	,VWI_CRM_SLS_SalesUnit.productcategorycode
+	,VWI_CRM_SLS_SalesUnit.productcategorydescription
+	,VWI_CRM_SLS_SalesUnit.msdyn_companycode
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SLS_SalesUnit WITH (NOLOCK) {0}

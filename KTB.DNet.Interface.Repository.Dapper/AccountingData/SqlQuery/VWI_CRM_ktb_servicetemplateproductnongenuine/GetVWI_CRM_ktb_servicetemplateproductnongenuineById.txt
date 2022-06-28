@@ -1,0 +1,63 @@
+SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+    , company
+    , businessunitcode
+    , ktb_nongenuinecategory
+    , modifiedbyyominame
+    , createdbyname
+    , modifiedon
+    , ktb_productdescription
+    , ktb_productidname
+    , ownerid
+    , modifiedbyname
+    , modifiedonbehalfby
+    , ktb_servicetemplateid
+    , createdonbehalfbyyominame
+    , ktb_productid
+    , owneridname
+    , importsequencenumber
+    , createdonbehalfby
+    , owninguser
+    , ktb_businessunitid
+    , statecode
+    , versionnumber
+    , createdon
+    , createdby
+    , owneridtype
+    , modifiedonbehalfbyyominame
+    , ktb_parentbusinessunitname
+    , ktb_name
+    , statuscodename
+    , modifiedby
+    , overriddencreatedon
+    , ktb_businessunitidname
+    , createdonbehalfbyname
+    , ktb_nongenuinecategoryname
+    , ktb_nongenuinecategorydescription
+    , ktb_servicetemplateproductnongenuineid
+    , ktb_buproduct
+    , owningbusinessunit
+    , timezoneruleversionnumber
+    , statecodename
+    , owningteam
+    , ktb_servicetemplateidname
+    , modifiedonbehalfbyname
+    , statuscode
+    , owneridyominame
+    , ktb_parentbusinessunit
+    , createdbyyominame
+    , utcconversiontimezonecode
+    , msdyn_companycode
+FROM (
+	SELECT 
+    b.ktb_bucompany company,
+    b.ktb_dealercode businessunitcode
+    , a.* 
+    , b.msdyn_companycode
+    FROM CRM_ktb_servicetemplateproductnongenuine a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.ktb_businessunitid
+    WHERE ktb_servicetemplateproductnongenuineid = @Id
+) as VWI_CRM_ktb_servicetemplateproductnongenuine  
+
+

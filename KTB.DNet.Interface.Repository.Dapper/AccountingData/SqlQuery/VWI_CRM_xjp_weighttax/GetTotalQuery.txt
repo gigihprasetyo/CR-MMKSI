@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xjp_weighttax as VWI_CRM_xjp_weighttax with (nolock)
+{0}

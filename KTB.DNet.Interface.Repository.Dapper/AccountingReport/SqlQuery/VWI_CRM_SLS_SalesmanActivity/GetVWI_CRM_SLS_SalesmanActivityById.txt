@@ -1,0 +1,23 @@
+SELECT 
+	IDRow
+	,company
+	,businessunitcode
+	,Atasan
+	,Sales
+	,PostDate
+	,Nama
+	,Alamat
+	,Telepon
+	,ModelKendaraan
+	,DeskripsiKendaraan
+	,Harga
+	,MacamCall
+	,SumberInfo
+	,Hasil
+	,Keterangan
+	,SPK
+	,DO
+	,Comment
+	,msdyn_companycode
+FROM VWI_CRM_SLS_SalesmanActivity WITH (NOLOCK)
+WHERE ID = @Id

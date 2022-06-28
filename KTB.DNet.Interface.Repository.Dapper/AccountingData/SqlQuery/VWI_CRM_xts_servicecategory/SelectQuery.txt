@@ -1,0 +1,85 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_servicecategory.company
+	, VWI_CRM_xts_servicecategory.businessunitcode
+	, VWI_CRM_xts_servicecategory.xts_servicecategoryid
+	, VWI_CRM_xts_servicecategory.versionnumber
+	, VWI_CRM_xts_servicecategory.createdon
+	, VWI_CRM_xts_servicecategory.ktb_showinservicetemplate
+	, VWI_CRM_xts_servicecategory.statuscodename
+	, VWI_CRM_xts_servicecategory.modifiedbyyominame
+	, VWI_CRM_xts_servicecategory.xts_freeofchargereason
+	, VWI_CRM_xts_servicecategory.owneridtype
+	, VWI_CRM_xts_servicecategory.xts_servicecategorytypename
+	, VWI_CRM_xts_servicecategory.createdonbehalfby
+	, VWI_CRM_xts_servicecategory.modifiedbyname
+	, VWI_CRM_xts_servicecategory.owneridname
+	, VWI_CRM_xts_servicecategory.overriddencreatedon
+	, VWI_CRM_xts_servicecategory.xts_discountcategoryname
+	, VWI_CRM_xts_servicecategory.createdonbehalfbyyominame
+	, VWI_CRM_xts_servicecategory.modifiedonbehalfby
+	, VWI_CRM_xts_servicecategory.exchangerate
+	, VWI_CRM_xts_servicecategory.xts_servicecategorygroupid
+	, VWI_CRM_xts_servicecategory.xts_labourrate
+	, VWI_CRM_xts_servicecategory.owningteam
+	, VWI_CRM_xts_servicecategory.xts_servicecategory
+	, VWI_CRM_xts_servicecategory.ktb_showinservicetemplatename
+	, VWI_CRM_xts_servicecategory.xts_exchangeratedate
+	, VWI_CRM_xts_servicecategory.statecode
+	, VWI_CRM_xts_servicecategory.timezoneruleversionnumber
+	, VWI_CRM_xts_servicecategory.xts_exchangerateamount
+	, VWI_CRM_xts_servicecategory.xts_locking
+	, VWI_CRM_xts_servicecategory.xts_discountcategory
+	, VWI_CRM_xts_servicecategory.xts_servicecategorydescription
+	, VWI_CRM_xts_servicecategory.createdonbehalfbyname
+	, VWI_CRM_xts_servicecategory.ktb_serviceincdnetidname
+	, VWI_CRM_xts_servicecategory.xts_exchangeratetypeidname
+	, VWI_CRM_xts_servicecategory.utcconversiontimezonecode
+	, VWI_CRM_xts_servicecategory.ownerid
+	, VWI_CRM_xts_servicecategory.modifiedon
+	, VWI_CRM_xts_servicecategory.importsequencenumber
+	, VWI_CRM_xts_servicecategory.owneridyominame
+	, VWI_CRM_xts_servicecategory.ktb_svcincdnetcode
+	, VWI_CRM_xts_servicecategory.xts_freeofchargename
+	, VWI_CRM_xts_servicecategory.ktb_svcincdnetcodename
+	, VWI_CRM_xts_servicecategory.createdbyname
+	, VWI_CRM_xts_servicecategory.xts_businessunitid
+	, VWI_CRM_xts_servicecategory.xts_exchangerateamount_base
+	, VWI_CRM_xts_servicecategory.xts_exchangeratetypeid
+	, VWI_CRM_xts_servicecategory.xts_pkcombinationkey
+	, VWI_CRM_xts_servicecategory.ktb_isreaddatafrompbuname
+	, VWI_CRM_xts_servicecategory.ktb_kindcode
+	, VWI_CRM_xts_servicecategory.transactioncurrencyid
+	, VWI_CRM_xts_servicecategory.createdby
+	, VWI_CRM_xts_servicecategory.modifiedby
+	, VWI_CRM_xts_servicecategory.xts_servicecategorytype
+	, VWI_CRM_xts_servicecategory.createdbyyominame
+	, VWI_CRM_xts_servicecategory.owninguser
+	, VWI_CRM_xts_servicecategory.transactioncurrencyidname
+	, VWI_CRM_xts_servicecategory.xts_regularservice
+	, VWI_CRM_xts_servicecategory.xts_freeofcharge
+	, VWI_CRM_xts_servicecategory.xts_servicecategorygroupidname
+	, VWI_CRM_xts_servicecategory.modifiedonbehalfbyname
+	, VWI_CRM_xts_servicecategory.statuscode
+	, VWI_CRM_xts_servicecategory.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_servicecategory.ktb_isreaddatafrompbu
+	, VWI_CRM_xts_servicecategory.xts_labourrate_base
+	, VWI_CRM_xts_servicecategory.ktb_serviceincdnetid
+	, VWI_CRM_xts_servicecategory.statecodename
+	, VWI_CRM_xts_servicecategory.xts_businessunitidname
+	, VWI_CRM_xts_servicecategory.owningbusinessunit
+	, VWI_CRM_xts_servicecategory.RowStatus
+	, VWI_CRM_xts_servicecategory.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicecategory a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_servicecategory

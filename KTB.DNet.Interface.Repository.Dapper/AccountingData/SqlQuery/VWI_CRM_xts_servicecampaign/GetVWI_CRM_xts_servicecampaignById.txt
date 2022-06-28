@@ -1,0 +1,74 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,xts_locking
+	,statecode
+	,xts_businessunitidname
+	,bsi_pbuoriginalname
+	,owneridname
+	,statecodename
+	,ktb_iscampaign
+	,createdonbehalfby
+	,xts_startdate
+	,xts_parentbusinessunitid
+	,importsequencenumber
+	,bsi_owneridoriginallogicalname
+	,modifiedbyyominame
+	,bsi_buoriginal
+	,bsi_buoriginalname
+	,ktb_buletindescription
+	,xts_enddate
+	,ktb_iscampaignname
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,bsi_pbuoriginal
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,ktb_servicecategoryidname
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,ktb_isfieldfix
+	,owneridtype
+	,statuscodename
+	,bsi_owneridoriginalname
+	,ktb_isinterfaced
+	,xts_servicecampaignid
+	,bsi_owneridoriginalguid
+	,owneridyominame
+	,ktb_isinterfacedname
+	,modifiedon
+	,xts_type
+	,bsi_owneridoriginal_text
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,xts_servicecampaignnumber
+	,createdonbehalfbyname
+	,ktb_isfieldfixname
+	,xts_typename
+	,modifiedonbehalfbyname
+	,ktb_servicecategoryid
+	,xts_parentbusinessunitidname
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,xts_description
+	,RowStatus
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicecampaign a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_servicecampaignid = @Id
+) VWI_CRM_xts_servicecampaign

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Data">
+</Property><Property Name="Solution File" Value="D:\KTB.DNET.New\EntlibSource\SrcNew\Data\Data.sln">
+</Property><Property Name="Date" Value="Friday, February 14, 2014">
+</Property><Property Name="Time" Value="09:10">
+</Property></Properties><Event ErrorLevel="1" Project="Data" Source="Data.csproj" Description="MSB2013: The project-to-project reference with GUID {A09297C8-2C40-470B-8856-D856676DDFFA} could not be converted because a valid .SLN file containing all projects could not be found.">
+</Event><Event ErrorLevel="1" Project="Data" Source="Data.csproj" Description="MSB2013: The project-to-project reference with GUID {D1BB1AB9-453A-4923-B77C-FA6F1D2802F9} could not be converted because a valid .SLN file containing all projects could not be found.">
+</Event><Event ErrorLevel="1" Project="Data" Source="Data.csproj" Description="Your project is targeting .NET Framework 2.0 or 3.0. If your project uses assemblies requiring a newer .NET Framework, your project will fail to build. You can change the .NET Framework version by clicking Properties on the project menu and then selecting a new version in the '.NET Framework' dropdown box. (In Visual Basic, this is located on the Compile tab by clicking the 'Advanced Compiler Options...' button.)">
+</Event><Event ErrorLevel="0" Project="Data" Source="Data.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Data" Source="Data.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Data" Source="Data.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

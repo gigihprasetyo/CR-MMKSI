@@ -1,0 +1,4 @@
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.ResourceManager\bin\KTB.DNet.ResourceManager.dll
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.ResourceManager\bin\KTB.DNet.ResourceManager.pdb
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.ResourceManager\obj\Debug\KTB.DNet.ResourceManager.dll
+D:\BSI\Project\MMKSI2.0-Develop-CR-Rollout\KTB.DNet.ResourceManager\obj\Debug\KTB.DNet.ResourceManager.pdb

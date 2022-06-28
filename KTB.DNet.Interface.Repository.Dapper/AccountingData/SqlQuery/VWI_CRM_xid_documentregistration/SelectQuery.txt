@@ -1,0 +1,118 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xid_documentregistration.company
+	, VWI_CRM_xid_documentregistration.businessunitcode
+	, VWI_CRM_xid_documentregistration.xid_registrationcolorid
+	, VWI_CRM_xid_documentregistration.xid_handling
+	, VWI_CRM_xid_documentregistration.versionnumber
+	, VWI_CRM_xid_documentregistration.createdon
+	, VWI_CRM_xid_documentregistration.xid_financingcompanyidname
+	, VWI_CRM_xid_documentregistration.xid_documentregistrationnumber
+	, VWI_CRM_xid_documentregistration.xid_chasissno
+	, VWI_CRM_xid_documentregistration.xid_firststagename
+	, VWI_CRM_xid_documentregistration.xid_stocknumberid
+	, VWI_CRM_xid_documentregistration.statuscodename
+	, VWI_CRM_xid_documentregistration.xid_nvexteriorcoloridname
+	, VWI_CRM_xid_documentregistration.modifiedbyyominame
+	, VWI_CRM_xid_documentregistration.ktb_notes
+	, VWI_CRM_xid_documentregistration.owneridtype
+	, VWI_CRM_xid_documentregistration.xid_platenumber
+	, VWI_CRM_xid_documentregistration.createdonbehalfby
+	, VWI_CRM_xid_documentregistration.ktb_validnextdocumentregistrationid
+	, VWI_CRM_xid_documentregistration.modifiedbyname
+	, VWI_CRM_xid_documentregistration.xid_financingcompanyid
+	, VWI_CRM_xid_documentregistration.xid_productid
+	, VWI_CRM_xid_documentregistration.ktb_spknameid
+	, VWI_CRM_xid_documentregistration.owneridname
+	, VWI_CRM_xid_documentregistration.xid_customeridyominame
+	, VWI_CRM_xid_documentregistration.overriddencreatedon
+	, VWI_CRM_xid_documentregistration.xid_transactiondate
+	, VWI_CRM_xid_documentregistration.xid_territoryid
+	, VWI_CRM_xid_documentregistration.xid_productidname
+	, VWI_CRM_xid_documentregistration.createdonbehalfbyyominame
+	, VWI_CRM_xid_documentregistration.modifiedonbehalfby
+	, VWI_CRM_xid_documentregistration.xid_vehicleregistrationinvoiceduedate
+	, VWI_CRM_xid_documentregistration.xid_nvexteriorcolorid
+	, VWI_CRM_xid_documentregistration.xid_financingponumber
+	, VWI_CRM_xid_documentregistration.owningteam
+	, VWI_CRM_xid_documentregistration.xid_handlingname
+	, VWI_CRM_xid_documentregistration.statecode
+	, VWI_CRM_xid_documentregistration.ktb_bpkbnameid
+	, VWI_CRM_xid_documentregistration.xid_businessunitidname
+	, VWI_CRM_xid_documentregistration.timezoneruleversionnumber
+	, VWI_CRM_xid_documentregistration.xid_customeridname
+	, VWI_CRM_xid_documentregistration.xid_cancellationnotes
+	, VWI_CRM_xid_documentregistration.xid_contactperson
+	, VWI_CRM_xid_documentregistration.ktb_spknameidyominame
+	, VWI_CRM_xid_documentregistration.xid_stocknumberidname
+	, VWI_CRM_xid_documentregistration.xid_contactpersonphone
+	, VWI_CRM_xid_documentregistration.ktb_validnextdocumentregistrationidname
+	, VWI_CRM_xid_documentregistration.xid_transactiontypename
+	, VWI_CRM_xid_documentregistration.xid_documentregistrationid
+	, VWI_CRM_xid_documentregistration.ktb_bpkbnameidname
+	, VWI_CRM_xid_documentregistration.createdonbehalfbyname
+	, VWI_CRM_xid_documentregistration.xid_progressstageidname
+	, VWI_CRM_xid_documentregistration.xid_registrationagencyid
+	, VWI_CRM_xid_documentregistration.utcconversiontimezonecode
+	, VWI_CRM_xid_documentregistration.xid_vehicleregistrationvaliddate
+	, VWI_CRM_xid_documentregistration.xid_personinchargeidname
+	, VWI_CRM_xid_documentregistration.ktb_spkdetaildummyname
+	, VWI_CRM_xid_documentregistration.xid_businessunitid
+	, VWI_CRM_xid_documentregistration.ownerid
+	, VWI_CRM_xid_documentregistration.modifiedon
+	, VWI_CRM_xid_documentregistration.xid_chassismodel
+	, VWI_CRM_xid_documentregistration.owneridyominame
+	, VWI_CRM_xid_documentregistration.xid_engineno
+	, VWI_CRM_xid_documentregistration.ktb_spknameidname
+	, VWI_CRM_xid_documentregistration.xid_stageordernumber
+	, VWI_CRM_xid_documentregistration.xid_customerid
+	, VWI_CRM_xid_documentregistration.xid_previousdocregistrationid
+	, VWI_CRM_xid_documentregistration.createdbyname
+	, VWI_CRM_xid_documentregistration.xid_vehicleregistrationnumber
+	, VWI_CRM_xid_documentregistration.xid_invoicenumber
+	, VWI_CRM_xid_documentregistration.modifiedonbehalfbyname
+	, VWI_CRM_xid_documentregistration.xid_progressstageid
+	, VWI_CRM_xid_documentregistration.xid_previousdocregistrationidname
+	, VWI_CRM_xid_documentregistration.ktb_bpkbnameidyominame
+	, VWI_CRM_xid_documentregistration.xid_transactiontype
+	, VWI_CRM_xid_documentregistration.xid_statusname
+	, VWI_CRM_xid_documentregistration.xid_financingcompanyidyominame
+	, VWI_CRM_xid_documentregistration.createdby
+	, VWI_CRM_xid_documentregistration.modifiedby
+	, VWI_CRM_xid_documentregistration.xid_parentbusinessunitid
+	, VWI_CRM_xid_documentregistration.xid_vehicleregistrationaddress
+	, VWI_CRM_xid_documentregistration.createdbyyominame
+	, VWI_CRM_xid_documentregistration.owninguser
+	, VWI_CRM_xid_documentregistration.xid_vehicleregistrationname
+	, VWI_CRM_xid_documentregistration.xid_registrationcoloridname
+	, VWI_CRM_xid_documentregistration.ktb_spkdetaildummy
+	, VWI_CRM_xid_documentregistration.owningbusinessunit
+	, VWI_CRM_xid_documentregistration.xid_businessunit
+	, VWI_CRM_xid_documentregistration.xid_status
+	, VWI_CRM_xid_documentregistration.xid_parentbusinessunitidname
+	, VWI_CRM_xid_documentregistration.xid_territoryidname
+	, VWI_CRM_xid_documentregistration.xid_vehicleownershipcerificatenumber
+	, VWI_CRM_xid_documentregistration.xid_firststage
+	, VWI_CRM_xid_documentregistration.statuscode
+	, VWI_CRM_xid_documentregistration.modifiedonbehalfbyyominame
+	, VWI_CRM_xid_documentregistration.xid_personinchargeid
+	, VWI_CRM_xid_documentregistration.xid_newvehiclesalesorderid
+	, VWI_CRM_xid_documentregistration.xid_registrationagencyidname
+	, VWI_CRM_xid_documentregistration.xid_productdescription
+	, VWI_CRM_xid_documentregistration.xid_newvehiclesalesorderidname
+	, VWI_CRM_xid_documentregistration.importsequencenumber
+	, VWI_CRM_xid_documentregistration.statecodename
+	, VWI_CRM_xid_documentregistration.RowStatus
+	/**EndPagingIndexQuery**/
+from (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xid_documentregistration a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xid_businessunitid
+    {0}
+) VWI_CRM_xid_documentregistration 

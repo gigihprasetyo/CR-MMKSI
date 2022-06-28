@@ -1,0 +1,3 @@
+KodeDealer,No.RangkaKendaraan,NomorMesin,JenisFreeService,TanggalFreeService\tanggalpkt,TanggalPenjualan,JarakTempuh,VisitType,KodeCabang,WONumber
+100XXX,MMBJNXL30JH0XXXX,4DXXX50XX,1,01032018,01012018,1000,WI,300XXX,WO-00001
+100XXX,MMBJNXL30JXXXX,4D5XUASXXX,1,01032018,01012018,1000,WI,,

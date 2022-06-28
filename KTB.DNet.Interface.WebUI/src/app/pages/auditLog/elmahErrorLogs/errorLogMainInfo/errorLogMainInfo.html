@@ -1,0 +1,15 @@
+﻿<div class="row pie-charts">
+    <div class="pie-chart-item-container" ng-repeat="chart in charts" role="button" ng-click="logList(chart)">
+        <div ba-panel>
+            <div class="pie-chart-item">
+                <div class="chart" data-percent="{{ ::chart.percent }}"> <span class="percent">{{ ::chart.percent }}</span> </div>
+                <div class="description">
+                    <div style="font-size: 15px;">
+                        <span>{{ ::chart.description }}</span>
+                    </div>
+                    <div class="description-stats">{{ ::chart.stats }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

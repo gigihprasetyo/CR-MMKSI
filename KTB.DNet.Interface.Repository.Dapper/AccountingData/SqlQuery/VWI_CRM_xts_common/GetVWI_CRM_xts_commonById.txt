@@ -1,0 +1,47 @@
+SELECT
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,ktb_isshow
+	,xts_locking
+	,statecode
+	,xts_pkcombinationkey
+	,statecodename
+	,ktb_isinstallment
+	,ktb_isshowname
+	,createdonbehalfby
+	,ktb_numberofinstallment
+	,xts_commonid
+	,ktb_isdefault
+	,ktb_isdefaultname
+	,xts_sortorder
+	,xts_categoryname
+	,importsequencenumber
+	,organizationidname
+	,modifiedbyyominame
+	,ktb_isinstallmentname
+	,xts_value
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,modifiedbyname
+	,versionnumber
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,statuscodename
+	,xts_category
+	,ktb_isdisplayinwoname
+	,modifiedon
+	,xts_common
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,organizationid
+	,createdonbehalfbyname
+	,ktb_isdisplayinwo
+	,modifiedonbehalfbyname
+	,overriddencreatedon
+	,xts_description
+FROM CRM_xts_common as VWI_CRM_xts_common WITH (NOLOCK) 
+WHERE xts_commonid = @Id

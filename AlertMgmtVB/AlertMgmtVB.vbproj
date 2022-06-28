@@ -1,0 +1,422 @@
+<VisualStudioProject>
+    <VisualBasic
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{B763A5CD-DDB5-4111-9B2A-A55FEDE96274}"
+        SccProjectName = "SAK"
+        SccLocalPath = "SAK"
+        SccAuxPath = "SAK"
+        SccProvider = "SAK"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "AlertMgmtVB"
+                AssemblyOriginatorKeyFile = ""
+                AssemblyOriginatorKeyMode = "None"
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Exe"
+                OptionCompare = "Binary"
+                OptionExplicit = "On"
+                OptionStrict = "Off"
+                RootNamespace = "AlertMgmtVB"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = "app.config"
+                    DefineConstants = ""
+                    DefineDebug = "true"
+                    DefineTrace = "true"
+                    DebugSymbols = "true"
+                    IncrementalBuild = "true"
+                    Optimize = "false"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+                <Config
+                    Name = "Release"
+                    BaseAddress = "285212672"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = ""
+                    DefineDebug = "false"
+                    DefineTrace = "true"
+                    DebugSymbols = "false"
+                    IncrementalBuild = "false"
+                    Optimize = "true"
+                    OutputPath = "bin\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "1"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                />
+                <Reference
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Logging"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Logging"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Logging.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Data"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Data"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Data.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Configuration"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Configuration"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Configuration.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Common"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Common"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Common.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Caching"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Caching"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Caching.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.Cryptography"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.Cryptography"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.Permissions"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.Permissions"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.Permissions.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.Database"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.Database"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.Database.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.Database.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.Database.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.Database.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.Database.Authentication"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.Database.Authentication"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.Database.Authentication.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.Database.Authentication.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.Database.Authentication.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.Database.Authentication.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.Cache.CachingStore.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.AzMan"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.AzMan"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.AzMan.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.AzMan.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.AzMan.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.AzMan.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory.Authentication"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory.Authentication"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory.Authentication.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory.Authentication.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory.Authentication.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Security.ActiveDirectory.Authentication.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Logging.Sinks.Database"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Logging.Sinks.Database"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Logging.Sinks.Database.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Logging.Sinks.Database.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Logging.Sinks.Database.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Logging.Sinks.Database.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Logging.RollingFlatFileSink"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Logging.RollingFlatFileSink"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Logging.RollingFlatFileSink.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Logging.RollingFlatFile.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Logging.RollingFlatFile.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Logging.RollingFlatFile.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Logging.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Caching.Database"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Caching.Database"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Caching.Database.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Caching.Database.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.Configuration.Design"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.Configuration.Design"
+                    HintPath = "..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Caching.Cryptography.Configuration.Design.dll"
+                />
+                <Reference
+                    Name = "KTB.DNet.BusinessFacade"
+                    Project = "{172FE48B-F8B2-419D-8F64-6D3470D2CDF2}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "KTB.DNet.DataMapper"
+                    Project = "{E021FE28-84E0-4B1F-804A-180BE4F38F26}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "KTB.DNet.Domain"
+                    Project = "{F4CC7463-4CBB-4336-AEAF-AC8FBC38DD9A}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "KTB.DNet.Lib"
+                    Project = "{E839ABCC-D7EF-4D3A-A697-CBB1E0A21737}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "KTB.DNet.Utility"
+                    Project = "{B6DE3F6D-8A0E-4693-8204-4EA972DCBF2A}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "KTB.DNet.Domain.Search"
+                    Project = "{06A29192-8B96-4DFB-9C6C-AA5B4DDF8D36}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "KTB.DNet.DataMapper.Framework"
+                    Project = "{CC23FF7E-BC14-4D66-9E96-6E0A51576A34}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "System.Web"
+                    AssemblyName = "System.Web"
+                    HintPath = "C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Web.dll"
+                />
+                <Reference
+                    Name = "KTB.DNet.Security"
+                    Project = "{17F38C9B-D956-438D-8577-18837C5AE615}"
+                    Package = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}"
+                />
+                <Reference
+                    Name = "MySql.Data"
+                    AssemblyName = "MySql.Data"
+                    HintPath = "..\RefferenceLib\MySql\MySql.Data.dll"
+                />
+                <Reference
+                    Name = "Microsoft.Practices.EnterpriseLibrary.Data.MySql1"
+                    AssemblyName = "Microsoft.Practices.EnterpriseLibrary.Data.MySql1"
+                    HintPath = "..\RefferenceLib\MySql\Microsoft.Practices.EnterpriseLibrary.Data.MySql1.dll"
+                />
+                <Reference
+                    Name = "log4net"
+                    AssemblyName = "log4net"
+                    HintPath = "..\Binarry Reference\log4net.dll"
+                />
+            </References>
+            <Imports>
+                <Import Namespace = "Microsoft.VisualBasic" />
+                <Import Namespace = "System" />
+                <Import Namespace = "System.Collections" />
+                <Import Namespace = "System.Data" />
+                <Import Namespace = "System.Drawing" />
+                <Import Namespace = "System.Diagnostics" />
+                <Import Namespace = "System.Windows.Forms" />
+            </Imports>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "app.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "AssemblyInfo.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "cachingconfiguration.config"
+                    SubType = "Code"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "dataconfiguration.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "DomainDataMap.xml"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "exceptionhandlingconfiguration.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "loggingconfiguration.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "loggingdistributorconfiguration.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "MailSender.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "MainModule.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "ModuleTester.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "securityconfiguration.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "securitycryptographyconfiguration.config"
+                    BuildAction = "Content"
+                />
+                <File
+                    RelPath = "SimpleApp.exe.log4net"
+                    BuildAction = "None"
+                />
+                <File
+                    RelPath = "AlertManagement\AlertDataRetriever.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "Tester\CalculateNextRunTester.vb"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+            </Include>
+        </Files>
+    </VisualBasic>
+</VisualStudioProject>
+

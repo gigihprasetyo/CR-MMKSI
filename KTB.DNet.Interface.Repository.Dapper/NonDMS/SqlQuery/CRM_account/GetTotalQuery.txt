@@ -1,0 +1,2 @@
+SELECT COUNT(1)
+FROM CRM_account WITH (NOLOCK) {0}

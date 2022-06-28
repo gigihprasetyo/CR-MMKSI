@@ -1,0 +1,29 @@
+﻿<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="Client Details" ba-panel-class="with-scroll">
+                <form name="form" ng-submit="Submit()">
+                    <div class="col-md-6">
+                        <input-text label="Name" name="Name" ng-model="client.Name" required></input-text>
+                    </div>
+                    <div class="col-md-6">
+                        <standard-select label="Application" name="AppId" ng-model="client.AppId" options="listOfApplication" value="AppId" text="Name"
+                            on-select-callback="onSelectCallback()" required/>
+                    </div>
+                    <div ng-show="client.AppId" class="col-md-12">
+                        <multiple-select label="Roles" name="ListOfSelectedRoleId" ng-model="client.ListOfSelectedRoleId" options="listOfRole" value="Id"
+                            text="Name" required/>
+                    </div>
+                    <div ng-show="client.AppId" class="col-md-12">
+                        <multi-select-jquery label="Permissions" all-button="true" name="ListOfSelectedPermissionId" ng-model="client.ListOfSelectedPermissionId" options="listOfPermission"
+                            value="Id" text="Name" required/>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <a ui-sref="accessControl.client.list" class="btn btn-default m-t-15 waves-effect">Cancel</a>
+                        <input ng-disabled="form.$invalid" type="submit" value="Save" class="btn btn-primary m-t-15 waves-effect">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

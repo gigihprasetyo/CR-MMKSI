@@ -1,0 +1,72 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_incomingpdiandserviceinstruction.company
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.businessunitcode
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.createdonbehalfbyyominame
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.owninguser
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_servicecategorydescription
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_locking
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.statecode
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_servicecategoryid
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.owneridname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.statecodename
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_incomingpdiandserviceinstructionid
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.createdonbehalfby
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_pkcombinationkey
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_parentbusinessunitid
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xjp_pdidetailreferenceidname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_producttypename
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.importsequencenumber
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.modifiedbyyominame
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_productdescription
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_serviceinstructiondetailreferenceidname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_producttype
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_productidname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.utcconversiontimezonecode
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.createdbyyominame
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.owningbusinessunit
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.modifiedbyname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.owningteam
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.modifiedby
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.createdby
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.timezoneruleversionnumber
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_serviceinstructiondetailreferenceid
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.owneridtype
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.statuscodename
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_businessunitidname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_kitid
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_incomingoutsourceworkorderidname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_servicecategoryidname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.owneridyominame
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.modifiedon
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_incomingoutsourceworkorderid
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.statuscode
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.createdbyname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.createdon
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_businessunitid
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.createdonbehalfbyname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.modifiedonbehalfbyname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xjp_pdidetailreferenceid
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_parentbusinessunitidname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.versionnumber
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.modifiedonbehalfby
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_productid
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_kitidname
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.ownerid
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.overriddencreatedon
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.xts_quantity
+	, VWI_CRM_xts_incomingpdiandserviceinstruction.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_incomingpdiandserviceinstruction a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_incomingpdiandserviceinstruction

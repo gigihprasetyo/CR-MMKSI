@@ -1,0 +1,7 @@
+SELECT 
+	COUNT(*)
+FROM SFDCustomerContact a WITH (NOLOCK)
+LEFT JOIN Dealer b WITH (NOLOCK) ON a.DealerId =b.ID AND b.RowStatus=0
+LEFT JOIN SPKMasterCountryCodePhone c WITH (NOLOCK) ON a.SPKMasterCountryCodePhoneID = c.ID AND c.RowStatus=0
+LEFT JOIN City d WITH (NOLOCK) ON a.CityID = d.ID AND d.RowStatus=0
+{0}

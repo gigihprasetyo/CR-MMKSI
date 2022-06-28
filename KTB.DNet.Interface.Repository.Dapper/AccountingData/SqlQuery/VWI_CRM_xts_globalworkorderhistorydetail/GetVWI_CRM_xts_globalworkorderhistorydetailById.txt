@@ -1,0 +1,64 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,xts_globalworkorderhistorydetail
+	,xts_locking
+	,statecode
+	,xts_businessunitidname
+	,owneridname
+	,statecodename
+	,createdonbehalfby
+	,xts_globalworkorderhistoryidname
+	,xts_pkcombinationkey
+	,xts_parentbusinessunitid
+	,xts_quantitymanhouractual
+	,importsequencenumber
+	,modifiedbyyominame
+	,xts_productdescription
+	,xts_globalworkorderhistorydetailid
+	,xts_producttype
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,xts_servicecategorydescription
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,xts_globalworkorderhistoryid
+	,owneridyominame
+	,modifiedon
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,xts_parentbusinessunitidname
+	,versionnumber
+	,modifiedonbehalfby
+	,xts_unit
+	,ownerid
+	,overriddencreatedon
+	,xts_product
+	,RowStatus
+	,msdyn_companycode
+FROM (
+    SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_globalworkorderhistorydetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    WHERE xts_globalworkorderhistorydetailid = @Id
+) VWI_CRM_xts_globalworkorderhistorydetail
+

@@ -1,0 +1,44 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_chartofaccount.createdonbehalfbyyominame
+	, VWI_CRM_xts_chartofaccount.modifiedonbehalfby
+	, VWI_CRM_xts_chartofaccount.xts_locking
+	, VWI_CRM_xts_chartofaccount.statecode
+	, VWI_CRM_xts_chartofaccount.xts_accounttypename
+	, VWI_CRM_xts_chartofaccount.statecodename
+	, VWI_CRM_xts_chartofaccount.createdonbehalfby
+	, VWI_CRM_xts_chartofaccount.xts_pkcombinationkey
+	, VWI_CRM_xts_chartofaccount.xts_allowmanualentry
+	, VWI_CRM_xts_chartofaccount.xts_chartofaccountid
+	, VWI_CRM_xts_chartofaccount.importsequencenumber
+	, VWI_CRM_xts_chartofaccount.organizationidname
+	, VWI_CRM_xts_chartofaccount.modifiedbyyominame
+	, VWI_CRM_xts_chartofaccount.xts_accounttype
+	, VWI_CRM_xts_chartofaccount.utcconversiontimezonecode
+	, VWI_CRM_xts_chartofaccount.createdbyyominame
+	, VWI_CRM_xts_chartofaccount.modifiedbyname
+	, VWI_CRM_xts_chartofaccount.versionnumber
+	, VWI_CRM_xts_chartofaccount.xts_chartofaccount
+	, VWI_CRM_xts_chartofaccount.modifiedby
+	, VWI_CRM_xts_chartofaccount.createdby
+	, VWI_CRM_xts_chartofaccount.timezoneruleversionnumber
+	, VWI_CRM_xts_chartofaccount.xts_ledgerchartofaccountidname
+	, VWI_CRM_xts_chartofaccount.statuscodename
+	, VWI_CRM_xts_chartofaccount.xts_category
+	, VWI_CRM_xts_chartofaccount.modifiedon
+	, VWI_CRM_xts_chartofaccount.xts_allowmanualentryname
+	, VWI_CRM_xts_chartofaccount.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_chartofaccount.statuscode
+	, VWI_CRM_xts_chartofaccount.createdbyname
+	, VWI_CRM_xts_chartofaccount.createdon
+	, VWI_CRM_xts_chartofaccount.organizationid
+	, VWI_CRM_xts_chartofaccount.xts_ledgerchartofaccountid
+	, VWI_CRM_xts_chartofaccount.createdonbehalfbyname
+	, VWI_CRM_xts_chartofaccount.modifiedonbehalfbyname
+	, VWI_CRM_xts_chartofaccount.overriddencreatedon
+	, VWI_CRM_xts_chartofaccount.xts_description
+	, VWI_CRM_xts_chartofaccount.RowStatus
+	/**EndPagingIndexQuery**/
+from CRM_xts_chartofaccount as VWI_CRM_xts_chartofaccount with(nolock) 
+{0}

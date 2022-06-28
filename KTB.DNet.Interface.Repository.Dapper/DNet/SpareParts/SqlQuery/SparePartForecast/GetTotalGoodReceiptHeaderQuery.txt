@@ -1,0 +1,40 @@
+﻿Select 
+	Count(1)
+from 
+(
+	select
+		b.SendDate as DODate --dateOnly
+		, DONumber
+		, b.SendDate as BillingDate--dateOnly
+		, BillingNumber
+		, '' as ExpeditionNumber
+		, 0 as TermOfPaymentValue
+		, 'Z000' as TermOfPaymentCode
+		, 'COD' as TermOfPaymentDesc
+		, 0 as AmountC2
+		, SONumber
+		, 0 as Discount
+		, d.PartNumber
+		, d.PartName
+		, b.ApprovedQty
+		, 0 as Tax
+		, 0 as RetailPrice
+		, e.DealerCode
+		, a.Rowstatus
+		, a.LastUpdatedtime
+	from SparePartForecastHeader a with(nolock)
+	left join SparePartForecastDetail b with(nolock)
+		on b.SparePartForecastHeaderID = a.ID
+	left join SparePartForecastMaster c with(nolock)
+		on c.ID = b. SparePartForecastMasterID
+	left join SparepartMaster d with(nolock)
+		on d.ID = c.SparepartMasterID
+	left join Dealer e with(nolock)
+		on a.DealerID = e.ID
+	where 
+		b.Rowstatus = 0
+		and c.Rowstatus = 0
+		and d.RowStatus = 0
+		and isnull(BillingNumber, '') != ''
+) as GoodReceipt
+{0}

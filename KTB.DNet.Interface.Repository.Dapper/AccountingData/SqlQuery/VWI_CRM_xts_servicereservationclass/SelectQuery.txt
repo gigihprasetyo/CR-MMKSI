@@ -1,0 +1,63 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_servicereservationclass.company
+	, VWI_CRM_xts_servicereservationclass.businessunitcode
+	, VWI_CRM_xts_servicereservationclass.createdonbehalfbyyominame
+	, VWI_CRM_xts_servicereservationclass.owninguser
+	, VWI_CRM_xts_servicereservationclass.xts_locking
+	, VWI_CRM_xts_servicereservationclass.statecode
+	, VWI_CRM_xts_servicereservationclass.xts_businessunitidname
+	, VWI_CRM_xts_servicereservationclass.owneridname
+	, VWI_CRM_xts_servicereservationclass.statecodename
+	, VWI_CRM_xts_servicereservationclass.createdonbehalfby
+	, VWI_CRM_xts_servicereservationclass.xts_pkcombinationkey
+	, VWI_CRM_xts_servicereservationclass.xts_parentbusinessunitid
+	, VWI_CRM_xts_servicereservationclass.xts_reservationmanhour
+	, VWI_CRM_xts_servicereservationclass.importsequencenumber
+	, VWI_CRM_xts_servicereservationclass.modifiedbyyominame
+	, VWI_CRM_xts_servicereservationclass.xts_servicecategoryid
+	, VWI_CRM_xts_servicereservationclass.utcconversiontimezonecode
+	, VWI_CRM_xts_servicereservationclass.createdbyyominame
+	, VWI_CRM_xts_servicereservationclass.owningbusinessunit
+	, VWI_CRM_xts_servicereservationclass.modifiedbyname
+	, VWI_CRM_xts_servicereservationclass.owningteam
+	, VWI_CRM_xts_servicereservationclass.modifiedby
+	, VWI_CRM_xts_servicereservationclass.createdby
+	, VWI_CRM_xts_servicereservationclass.timezoneruleversionnumber
+	, VWI_CRM_xts_servicereservationclass.xts_reservationclass
+	, VWI_CRM_xts_servicereservationclass.owneridtype
+	, VWI_CRM_xts_servicereservationclass.statuscodename
+	, VWI_CRM_xts_servicereservationclass.xts_servicecategoryidname
+	, VWI_CRM_xts_servicereservationclass.owneridyominame
+	, VWI_CRM_xts_servicereservationclass.modifiedon
+	, VWI_CRM_xts_servicereservationclass.xts_ordertypeid
+	, VWI_CRM_xts_servicereservationclass.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_servicereservationclass.statuscode
+	, VWI_CRM_xts_servicereservationclass.createdbyname
+	, VWI_CRM_xts_servicereservationclass.createdon
+	, VWI_CRM_xts_servicereservationclass.xts_businessunitid
+	, VWI_CRM_xts_servicereservationclass.createdonbehalfbyname
+	, VWI_CRM_xts_servicereservationclass.modifiedonbehalfbyname
+	, VWI_CRM_xts_servicereservationclass.xts_parentbusinessunitidname
+	, VWI_CRM_xts_servicereservationclass.versionnumber
+	, VWI_CRM_xts_servicereservationclass.modifiedonbehalfby
+	, VWI_CRM_xts_servicereservationclass.xts_ordertypeidname
+	, VWI_CRM_xts_servicereservationclass.xts_servicereservationclassid
+	, VWI_CRM_xts_servicereservationclass.ownerid
+	, VWI_CRM_xts_servicereservationclass.overriddencreatedon
+	, VWI_CRM_xts_servicereservationclass.xts_description
+	, VWI_CRM_xts_servicereservationclass.RowStatus
+	, VWI_CRM_xts_servicereservationclass.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicereservationclass a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_servicereservationclass

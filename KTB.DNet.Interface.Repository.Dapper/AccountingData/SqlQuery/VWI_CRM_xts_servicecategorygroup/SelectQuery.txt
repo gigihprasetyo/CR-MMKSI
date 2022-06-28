@@ -1,0 +1,59 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_servicecategorygroup.company
+	, VWI_CRM_xts_servicecategorygroup.businessunitcode
+	, VWI_CRM_xts_servicecategorygroup.createdonbehalfbyyominame
+	, VWI_CRM_xts_servicecategorygroup.owninguser
+	, VWI_CRM_xts_servicecategorygroup.xts_locking
+	, VWI_CRM_xts_servicecategorygroup.statecode
+	, VWI_CRM_xts_servicecategorygroup.xts_businessunitidname
+	, VWI_CRM_xts_servicecategorygroup.owneridname
+	, VWI_CRM_xts_servicecategorygroup.statecodename
+	, VWI_CRM_xts_servicecategorygroup.xts_freeofcharge
+	, VWI_CRM_xts_servicecategorygroup.xts_freeofchargename
+	, VWI_CRM_xts_servicecategorygroup.createdonbehalfby
+	, VWI_CRM_xts_servicecategorygroup.xts_freeofchargereason
+	, VWI_CRM_xts_servicecategorygroup.xts_pkcombinationkey
+	, VWI_CRM_xts_servicecategorygroup.importsequencenumber
+	, VWI_CRM_xts_servicecategorygroup.modifiedbyyominame
+	, VWI_CRM_xts_servicecategorygroup.xts_servicecategorygroup
+	, VWI_CRM_xts_servicecategorygroup.utcconversiontimezonecode
+	, VWI_CRM_xts_servicecategorygroup.createdbyyominame
+	, VWI_CRM_xts_servicecategorygroup.owningbusinessunit
+	, VWI_CRM_xts_servicecategorygroup.modifiedbyname
+	, VWI_CRM_xts_servicecategorygroup.owningteam
+	, VWI_CRM_xts_servicecategorygroup.modifiedby
+	, VWI_CRM_xts_servicecategorygroup.createdby
+	, VWI_CRM_xts_servicecategorygroup.timezoneruleversionnumber
+	, VWI_CRM_xts_servicecategorygroup.xts_servicecategorygroupid
+	, VWI_CRM_xts_servicecategorygroup.owneridtype
+	, VWI_CRM_xts_servicecategorygroup.statuscodename
+	, VWI_CRM_xts_servicecategorygroup.owneridyominame
+	, VWI_CRM_xts_servicecategorygroup.modifiedon
+	, VWI_CRM_xts_servicecategorygroup.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_servicecategorygroup.statuscode
+	, VWI_CRM_xts_servicecategorygroup.createdbyname
+	, VWI_CRM_xts_servicecategorygroup.createdon
+	, VWI_CRM_xts_servicecategorygroup.xts_businessunitid
+	, VWI_CRM_xts_servicecategorygroup.createdonbehalfbyname
+	, VWI_CRM_xts_servicecategorygroup.modifiedonbehalfbyname
+	, VWI_CRM_xts_servicecategorygroup.versionnumber
+	, VWI_CRM_xts_servicecategorygroup.modifiedonbehalfby
+	, VWI_CRM_xts_servicecategorygroup.ownerid
+	, VWI_CRM_xts_servicecategorygroup.overriddencreatedon
+	, VWI_CRM_xts_servicecategorygroup.xts_description
+	, VWI_CRM_xts_servicecategorygroup.RowStatus
+	, VWI_CRM_xts_servicecategorygroup.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicecategorygroup a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_servicecategorygroup 

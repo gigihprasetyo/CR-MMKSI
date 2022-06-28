@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xts_customerpublic as VWI_CRM_xts_customerpublic WITH (NOLOCK) 
+{0}

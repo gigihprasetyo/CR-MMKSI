@@ -1,0 +1,40 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_vehiclemodel.createdonbehalfbyyominame
+	, VWI_CRM_xts_vehiclemodel.modifiedonbehalfby
+	, VWI_CRM_xts_vehiclemodel.xts_locking
+	, VWI_CRM_xts_vehiclemodel.statecode
+	, VWI_CRM_xts_vehiclemodel.xjp_model
+	, VWI_CRM_xts_vehiclemodel.statecodename
+	, VWI_CRM_xts_vehiclemodel.createdonbehalfby
+	, VWI_CRM_xts_vehiclemodel.xts_manufactureridname
+	, VWI_CRM_xts_vehiclemodel.xts_manufacturerid
+	, VWI_CRM_xts_vehiclemodel.importsequencenumber
+	, VWI_CRM_xts_vehiclemodel.organizationidname
+	, VWI_CRM_xts_vehiclemodel.modifiedbyyominame
+	, VWI_CRM_xts_vehiclemodel.xts_vehiclemodel
+	, VWI_CRM_xts_vehiclemodel.utcconversiontimezonecode
+	, VWI_CRM_xts_vehiclemodel.createdbyyominame
+	, VWI_CRM_xts_vehiclemodel.modifiedbyname
+	, VWI_CRM_xts_vehiclemodel.versionnumber
+	, VWI_CRM_xts_vehiclemodel.modifiedby
+	, VWI_CRM_xts_vehiclemodel.createdby
+	, VWI_CRM_xts_vehiclemodel.timezoneruleversionnumber
+	, VWI_CRM_xts_vehiclemodel.statuscodename
+	, VWI_CRM_xts_vehiclemodel.xjp_naming
+	, VWI_CRM_xts_vehiclemodel.modifiedon
+	, VWI_CRM_xts_vehiclemodel.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_vehiclemodel.statuscode
+	, VWI_CRM_xts_vehiclemodel.createdbyname
+	, VWI_CRM_xts_vehiclemodel.createdon
+	, VWI_CRM_xts_vehiclemodel.organizationid
+	, VWI_CRM_xts_vehiclemodel.createdonbehalfbyname
+	, VWI_CRM_xts_vehiclemodel.modifiedonbehalfbyname
+	, VWI_CRM_xts_vehiclemodel.xts_vehiclemodelid
+	, VWI_CRM_xts_vehiclemodel.overriddencreatedon
+	, VWI_CRM_xts_vehiclemodel.xts_description
+	, VWI_CRM_xts_vehiclemodel.RowStatus
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_vehiclemodel as VWI_CRM_xts_vehiclemodel WITH (NOLOCK) 
+{0}

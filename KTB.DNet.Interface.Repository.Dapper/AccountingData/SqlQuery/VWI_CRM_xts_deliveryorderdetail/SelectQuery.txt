@@ -1,0 +1,142 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_deliveryorderdetail.company
+	, VWI_CRM_xts_deliveryorderdetail.businessunitcode
+	, VWI_CRM_xts_deliveryorderdetail.xts_stockidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_parentbusinessunitid
+	, VWI_CRM_xts_deliveryorderdetail.versionnumber
+	, VWI_CRM_xts_deliveryorderdetail.createdon
+	, VWI_CRM_xts_deliveryorderdetail.xts_amountbeforediscount_base
+	, VWI_CRM_xts_deliveryorderdetail.xts_withholdingtaxid
+	, VWI_CRM_xts_deliveryorderdetail.xts_interiorcolorid
+	, VWI_CRM_xts_deliveryorderdetail.xts_consumptiontax1id
+	, VWI_CRM_xts_deliveryorderdetail.statuscodename
+	, VWI_CRM_xts_deliveryorderdetail.xts_baseamount_base
+	, VWI_CRM_xts_deliveryorderdetail.xts_unitprice
+	, VWI_CRM_xts_deliveryorderdetail.xts_discountbaseamount_base
+	, VWI_CRM_xts_deliveryorderdetail.modifiedbyyominame
+	, VWI_CRM_xts_deliveryorderdetail.xts_quantityorder
+	, VWI_CRM_xts_deliveryorderdetail.xts_productcrossreferenceid
+	, VWI_CRM_xts_deliveryorderdetail.owneridtype
+	, VWI_CRM_xts_deliveryorderdetail.createdonbehalfby
+	, VWI_CRM_xts_deliveryorderdetail.xts_exteriorcoloridname
+	, VWI_CRM_xts_deliveryorderdetail.modifiedbyname
+	, VWI_CRM_xts_deliveryorderdetail.xts_discountpercentage
+	, VWI_CRM_xts_deliveryorderdetail.xts_promisedate
+	, VWI_CRM_xts_deliveryorderdetail.xts_deliveryorderdetail
+	, VWI_CRM_xts_deliveryorderdetail.xts_inventoryunitid
+	, VWI_CRM_xts_deliveryorderdetail.owneridname
+	, VWI_CRM_xts_deliveryorderdetail.overriddencreatedon
+	, VWI_CRM_xts_deliveryorderdetail.xts_deliveryorderid
+	, VWI_CRM_xts_deliveryorderdetail.xts_salesunitidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_interiorcoloridname
+	, VWI_CRM_xts_deliveryorderdetail.xts_quantityreturned
+	, VWI_CRM_xts_deliveryorderdetail.ktb_cogs_base
+	, VWI_CRM_xts_deliveryorderdetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_deliveryorderdetail.modifiedonbehalfby
+	, VWI_CRM_xts_deliveryorderdetail.exchangerate
+	, VWI_CRM_xts_deliveryorderdetail.xts_totalconsumptiontaxamount_base
+	, VWI_CRM_xts_deliveryorderdetail.xts_transactionamount_base
+	, VWI_CRM_xts_deliveryorderdetail.xts_consumptiontax2id
+	, VWI_CRM_xts_deliveryorderdetail.owningteam
+	, VWI_CRM_xts_deliveryorderdetail.xts_stockid
+	, VWI_CRM_xts_deliveryorderdetail.xts_serialidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_productidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_styleid
+	, VWI_CRM_xts_deliveryorderdetail.statecode
+	, VWI_CRM_xts_deliveryorderdetail.xts_serialid
+	, VWI_CRM_xts_deliveryorderdetail.xts_amountbeforediscount
+	, VWI_CRM_xts_deliveryorderdetail.xts_consumptiontax1amount_base
+	, VWI_CRM_xts_deliveryorderdetail.timezoneruleversionnumber
+	, VWI_CRM_xts_deliveryorderdetail.xts_basequantitydelivered
+	, VWI_CRM_xts_deliveryorderdetail.xts_requestdate
+	, VWI_CRM_xts_deliveryorderdetail.xts_basequantityreturned
+	, VWI_CRM_xts_deliveryorderdetail.ktb_chassisnumber
+	, VWI_CRM_xts_deliveryorderdetail.xts_warehouseidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_totalconsumptiontaxamount
+	, VWI_CRM_xts_deliveryorderdetail.xts_locking
+	, VWI_CRM_xts_deliveryorderdetail.xts_salesorderdetailid
+	, VWI_CRM_xts_deliveryorderdetail.xts_siteidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_withholdingtaxidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_totalamount_base
+	, VWI_CRM_xts_deliveryorderdetail.createdonbehalfbyname
+	, VWI_CRM_xts_deliveryorderdetail.xts_consumptiontax2idname
+	, VWI_CRM_xts_deliveryorderdetail.xts_productid
+	, VWI_CRM_xts_deliveryorderdetail.xts_discountbaseamount
+	, VWI_CRM_xts_deliveryorderdetail.utcconversiontimezonecode
+	, VWI_CRM_xts_deliveryorderdetail.xts_configurationid
+	, VWI_CRM_xts_deliveryorderdetail.xts_discountamount
+	, VWI_CRM_xts_deliveryorderdetail.ownerid
+	, VWI_CRM_xts_deliveryorderdetail.modifiedon
+	, VWI_CRM_xts_deliveryorderdetail.importsequencenumber
+	, VWI_CRM_xts_deliveryorderdetail.owneridyominame
+	, VWI_CRM_xts_deliveryorderdetail.ktb_cogs
+	, VWI_CRM_xts_deliveryorderdetail.ktb_cogstrx
+	, VWI_CRM_xts_deliveryorderdetail.xts_exteriorcolorid
+	, VWI_CRM_xts_deliveryorderdetail.xts_styleidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_siteid
+	, VWI_CRM_xts_deliveryorderdetail.createdbyname
+	, VWI_CRM_xts_deliveryorderdetail.xts_deliveryorderdetailreferenceidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_businessunitid
+	, VWI_CRM_xts_deliveryorderdetail.xts_inventoryunitidname
+	, VWI_CRM_xts_deliveryorderdetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_deliveryorderdetail.xts_salesorderdetailidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_batchidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_withholdingtaxamount
+	, VWI_CRM_xts_deliveryorderdetail.xts_discountamount_base
+	, VWI_CRM_xts_deliveryorderdetail.xts_baseamount
+	, VWI_CRM_xts_deliveryorderdetail.xts_consumptiontax2amount
+	, VWI_CRM_xts_deliveryorderdetail.transactioncurrencyid
+	, VWI_CRM_xts_deliveryorderdetail.xts_businessunitidname
+	, VWI_CRM_xts_deliveryorderdetail.createdby
+	, VWI_CRM_xts_deliveryorderdetail.xts_deliveryorderidname
+	, VWI_CRM_xts_deliveryorderdetail.modifiedby
+	, VWI_CRM_xts_deliveryorderdetail.xts_unitprice_base
+	, VWI_CRM_xts_deliveryorderdetail.xts_parentbusinessunitidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_totalamount
+	, VWI_CRM_xts_deliveryorderdetail.xts_productcrossreferenceidname
+	, VWI_CRM_xts_deliveryorderdetail.createdbyyominame
+	, VWI_CRM_xts_deliveryorderdetail.owninguser
+	, VWI_CRM_xts_deliveryorderdetail.transactioncurrencyidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_consumptiontax1idname
+	, VWI_CRM_xts_deliveryorderdetail.xts_basequantityorder
+	, VWI_CRM_xts_deliveryorderdetail.owningbusinessunit
+	, VWI_CRM_xts_deliveryorderdetail.xts_locationid
+	, VWI_CRM_xts_deliveryorderdetail.ktb_modelcode
+	, VWI_CRM_xts_deliveryorderdetail.xts_consumptiontax1amount
+	, VWI_CRM_xts_deliveryorderdetail.xts_consumptiontax2amount_base
+	, VWI_CRM_xts_deliveryorderdetail.xts_transactionamount
+	, VWI_CRM_xts_deliveryorderdetail.xts_quantitydelivered
+	, VWI_CRM_xts_deliveryorderdetail.xts_deliveryorderdetailreferenceid
+	, VWI_CRM_xts_deliveryorderdetail.statuscode
+	, VWI_CRM_xts_deliveryorderdetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_deliveryorderdetail.xts_configurationidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_warehouseid
+	, VWI_CRM_xts_deliveryorderdetail.ktb_cogstrx_base
+	, VWI_CRM_xts_deliveryorderdetail.xts_withholdingtaxamount_base
+	, VWI_CRM_xts_deliveryorderdetail.xts_locationidname
+	, VWI_CRM_xts_deliveryorderdetail.xts_runningnumber
+	, VWI_CRM_xts_deliveryorderdetail.xts_productdescription
+	, VWI_CRM_xts_deliveryorderdetail.xts_deliveryorderdetailid
+	, VWI_CRM_xts_deliveryorderdetail.statecodename
+	, VWI_CRM_xts_deliveryorderdetail.xts_salesunitid
+	, VWI_CRM_xts_deliveryorderdetail.xts_batchid
+	, VWI_CRM_xts_deliveryorderdetail.RowStatus
+	, VWI_CRM_xts_deliveryorderdetail.xts_withholdingtax2amount_base
+	, VWI_CRM_xts_deliveryorderdetail.xts_withholdingtax2id
+	, VWI_CRM_xts_deliveryorderdetail.xts_withholdingtax2idname
+	, VWI_CRM_xts_deliveryorderdetail.xts_withholdingtax2amount
+	, VWI_CRM_xts_deliveryorderdetail.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_xts_deliveryorderdetail a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.xts_businessunitid 
+	{0}
+) VWI_CRM_xts_deliveryorderdetail

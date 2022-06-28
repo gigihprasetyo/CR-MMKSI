@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_xts_productstyle as VWI_CRM_xts_productstyle with (nolock)  
+{0}

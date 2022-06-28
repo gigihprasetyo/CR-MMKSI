@@ -1,0 +1,92 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,xts_parentbusinessunitid
+	,versionnumber
+	,createdon
+	,xts_referraltaxamount
+	,xts_methodofpaymentidname
+	,xts_referralvendoridname
+	,xts_bankaccountnumber
+	,xts_reasonidname
+	,statuscodename
+	,xts_baseamount_base
+	,modifiedbyyominame
+	,xts_nvsqreferralidname
+	,owneridtype
+	,xts_referralamount_base
+	,xts_reasonid
+	,createdonbehalfby
+	,modifiedbyname
+	,xts_referraltaxid
+	,xts_relationshipcategory
+	,xts_bank
+	,overriddencreatedon
+	,xts_relationshipcategoryname
+	,createdonbehalfbyyominame
+	,transactioncurrencyidname
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_newvehiclesalesorderid
+	,xts_balance
+	,statecode
+	,owneridname
+	,xts_referralamount
+	,timezoneruleversionnumber
+	,xts_totalpaymentamount_base
+	,xts_referraltaxamount_base
+	,xts_locking
+	,xts_bankaccounttypename
+	,xts_totalamount_base
+	,xts_apvouchername
+	,createdonbehalfbyname
+	,xts_pluginflag
+	,xts_newvehiclesalesorderidname
+	,utcconversiontimezonecode
+	,xts_businessunitid
+	,xts_totalpaymentamount
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_nvsqreferralid
+	,xts_bankaccounttype
+	,xts_apvoucher
+	,xts_nvsoreferralid
+	,createdbyname
+	,xts_methodofpaymentid
+	,modifiedonbehalfbyname
+	,xts_balance_base
+	,xts_referraltaxidname
+	,xts_baseamount
+	,transactioncurrencyid
+	,owningteam
+	,createdby
+	,modifiedby
+	,xts_referralvendorid
+	,createdbyyominame
+	,owninguser
+	,xts_nvsoreferralnumber
+	,owningbusinessunit
+	,xts_parentbusinessunitidname
+	,xts_eventdata
+	,xts_totalamount
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_referraldescription
+	,statecodename
+	,xts_businessunitidname
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xts_nvsoreferral a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+	WHERE xts_nvsoreferralid = @Id
+) VWI_CRM_xts_nvsoreferral

@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AppNavigationSchema xmlns="http://tempuri.org/AppNavigationSchema.xsd">
+  
+  <!--<Start Tree Menu CS Perfomance>-->
+  <AppMenu>
+    <AppMenuId>11300</AppMenuId>
+    <MenuName>CS Performance</MenuName>
+    <ScreenId>11300</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>14</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11300</AppScreenId>
+    <ScreenName>CS Performance</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>11100515</AppMenuId>
+    <MenuName>Setting Formula</MenuName>
+    <ScreenId>11100515</ScreenId>
+    <ParentMenuId>11300</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11100515</AppScreenId>
+    <ScreenName>Setting Formula</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>11100516</AppMenuId>
+    <MenuName>Upload Score SubParameter</MenuName>
+    <ScreenId>11100516</ScreenId>
+    <ParentMenuId>11300</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11100516</AppScreenId>
+    <ScreenName>Upload Score SubParameter</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>11100517</AppMenuId>
+    <MenuName>Daftar Score SubParameter</MenuName>
+    <ScreenId>11100517</ScreenId>
+    <ParentMenuId>11300</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11100517</AppScreenId>
+    <ScreenName>Daftar Score SubParameter</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>11100599</AppMenuId>
+    <MenuName>CS Performance Report</MenuName>
+    <ScreenId>11100599</ScreenId>
+    <ParentMenuId>11300</ParentMenuId>
+    <SortOrder>99</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11100599</AppScreenId>
+    <ScreenName>CS Performance Report</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <!--global service-->
+  <AppMenu>
+    <AppMenuId>11301</AppMenuId>
+    <MenuName>Global Service Reminder</MenuName>
+    <ScreenId>11301</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>14</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11301</AppScreenId>
+    <ScreenName>Global Service Reminder</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppScreen>
+    <AppScreenId>11100601</AppScreenId>
+    <ScreenName>Dashboard</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>11100601</AppMenuId>
+    <MenuName>Dashboard</MenuName>
+    <ScreenId>11100601</ScreenId>
+    <ParentMenuId>11301</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppMenu>
+    <AppMenuId>11100600</AppMenuId>
+    <MenuName>Daftar Reminder</MenuName>
+    <ScreenId>11100600</ScreenId>
+    <ParentMenuId>11301</ParentMenuId>
+    <SortOrder>2</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11100600</AppScreenId>
+    <ScreenName>Daftar Reminder</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  
+  <!--<AppMenu>
+    <AppMenuId>11400</AppMenuId>
+    <MenuName>CS Report</MenuName>
+    <ScreenId>11400</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>14</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11400</AppScreenId>
+    <ScreenName>CS Report</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>-->
+
+ 
+
+ 
+  <!--<AppMenu>
+    <AppMenuId>11500</AppMenuId>
+    <MenuName>CS Report</MenuName>
+    <ScreenId>11400</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>15</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11500</AppScreenId>
+    <ScreenName>CS Report</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  --><!--EOF HEADER--><!--
+
+  <AppMenu>
+    <AppMenuId>11100599</AppMenuId>
+    <MenuName>CS Performance Report</MenuName>
+    <ScreenId>11100599</ScreenId>
+    <ParentMenuId>11500</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11100599</AppScreenId>
+    <ScreenName>CS Performance Report</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>11100518</AppMenuId>
+    <MenuName>Report Complaint</MenuName>
+    <ScreenId>11100518</ScreenId>
+    <ParentMenuId>11500</ParentMenuId>
+    <SortOrder>7</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>11100518</AppScreenId>
+    <ScreenName>Report Complaint</ScreenName>
+    <NavigateUrl>default_cc.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>-->
+  <!--<End of Tree Menu Call Center Report>-->
+</AppNavigationSchema>

@@ -1,0 +1,107 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_transferorderrequesting.company
+    , VWI_CRM_xts_transferorderrequesting.businessunitcode
+    , VWI_CRM_xts_transferorderrequesting.xts_stockidname
+    , VWI_CRM_xts_transferorderrequesting.versionnumber
+    , VWI_CRM_xts_transferorderrequesting.createdon
+    , VWI_CRM_xts_transferorderrequesting.xts_amount
+    , VWI_CRM_xts_transferorderrequesting.statuscodename
+    , VWI_CRM_xts_transferorderrequesting.xts_requesteddeliverydate
+    , VWI_CRM_xts_transferorderrequesting.xts_productconfigurationid
+    , VWI_CRM_xts_transferorderrequesting.xjp_idempotentmessage
+    , VWI_CRM_xts_transferorderrequesting.xts_salesorderbusinessunitid
+    , VWI_CRM_xts_transferorderrequesting.xts_locationidname
+    , VWI_CRM_xts_transferorderrequesting.xts_productinteriorcolorid
+    , VWI_CRM_xts_transferorderrequesting.xts_status
+    , VWI_CRM_xts_transferorderrequesting.xts_requestsentdate
+    , VWI_CRM_xts_transferorderrequesting.modifiedbyyominame
+    , VWI_CRM_xts_transferorderrequesting.owneridtype
+    , VWI_CRM_xts_transferorderrequesting.xts_personinchargeid
+    , VWI_CRM_xts_transferorderrequesting.modifiedbyname
+    , VWI_CRM_xts_transferorderrequesting.xts_transferstep
+    , VWI_CRM_xts_transferorderrequesting.xts_newvehiclesalesorderid
+    , VWI_CRM_xts_transferorderrequesting.xts_productstyleidname
+    , VWI_CRM_xts_transferorderrequesting.xts_newvehiclesalesorderidname
+    , VWI_CRM_xts_transferorderrequesting.overriddencreatedon
+    , VWI_CRM_xts_transferorderrequesting.xts_transfercategory
+    , VWI_CRM_xts_transferorderrequesting.xts_eventdata
+    , VWI_CRM_xts_transferorderrequesting.modifiedonbehalfby
+    , VWI_CRM_xts_transferorderrequesting.exchangerate
+    , VWI_CRM_xts_transferorderrequesting.xts_productidname
+    , VWI_CRM_xts_transferorderrequesting.owningteam
+    , VWI_CRM_xts_transferorderrequesting.xts_uomidname
+    , VWI_CRM_xts_transferorderrequesting.xts_requestedbusinessunitid
+    , VWI_CRM_xts_transferorderrequesting.statecode
+    , VWI_CRM_xts_transferorderrequesting.owneridname
+    , VWI_CRM_xts_transferorderrequesting.xts_parentbusinessunitsalesorderidname
+    , VWI_CRM_xts_transferorderrequesting.xts_warehouseidname
+    , VWI_CRM_xts_transferorderrequesting.xts_productstyleid
+    , VWI_CRM_xts_transferorderrequesting.xts_locking
+    , VWI_CRM_xts_transferorderrequesting.xts_handling
+    , VWI_CRM_xts_transferorderrequesting.xts_quantity
+    , VWI_CRM_xts_transferorderrequesting.xts_amount_base
+    , VWI_CRM_xts_transferorderrequesting.xts_parentbusinessunitsalesorderid
+    , VWI_CRM_xts_transferorderrequesting.createdonbehalfbyname
+    , VWI_CRM_xts_transferorderrequesting.xts_productexteriorcolorid
+    , VWI_CRM_xts_transferorderrequesting.xts_referencenumber
+    , VWI_CRM_xts_transferorderrequesting.xts_requestedbusinessunitidname
+    , VWI_CRM_xts_transferorderrequesting.utcconversiontimezonecode
+    , VWI_CRM_xts_transferorderrequesting.timezoneruleversionnumber
+    , VWI_CRM_xts_transferorderrequesting.xts_statusname
+    , VWI_CRM_xts_transferorderrequesting.ownerid
+    , VWI_CRM_xts_transferorderrequesting.modifiedon
+    , VWI_CRM_xts_transferorderrequesting.importsequencenumber
+    , VWI_CRM_xts_transferorderrequesting.owneridyominame
+    , VWI_CRM_xts_transferorderrequesting.modifiedby
+    , VWI_CRM_xts_transferorderrequesting.xts_transferorderrequestingid
+    , VWI_CRM_xts_transferorderrequesting.xts_personinchargeidname
+    , VWI_CRM_xts_transferorderrequesting.xts_transferstepname
+    , VWI_CRM_xts_transferorderrequesting.xts_transactiondate
+    , VWI_CRM_xts_transferorderrequesting.statuscode
+    , VWI_CRM_xts_transferorderrequesting.xts_siteid
+    , VWI_CRM_xts_transferorderrequesting.createdbyname
+    , VWI_CRM_xts_transferorderrequesting.xts_businessunitid
+    , VWI_CRM_xts_transferorderrequesting.modifiedonbehalfbyname
+    , VWI_CRM_xts_transferorderrequesting.xts_productexteriorcoloridname
+    , VWI_CRM_xts_transferorderrequesting.xts_productconfigurationidname
+    , VWI_CRM_xts_transferorderrequesting.xts_lasttransferorderrequestednumber
+    , VWI_CRM_xts_transferorderrequesting.xts_handlingname
+    , VWI_CRM_xts_transferorderrequesting.xts_productid
+    , VWI_CRM_xts_transferorderrequesting.transactioncurrencyid
+    , VWI_CRM_xts_transferorderrequesting.xts_salesorderbusinessunitidname
+    , VWI_CRM_xts_transferorderrequesting.createdonbehalfby
+    , VWI_CRM_xts_transferorderrequesting.xts_requestorcomment
+    , VWI_CRM_xts_transferorderrequesting.createdby
+    , VWI_CRM_xts_transferorderrequesting.createdbyyominame
+    , VWI_CRM_xts_transferorderrequesting.owninguser
+    , VWI_CRM_xts_transferorderrequesting.transactioncurrencyidname
+    , VWI_CRM_xts_transferorderrequesting.createdonbehalfbyyominame
+    , VWI_CRM_xts_transferorderrequesting.owningbusinessunit
+    , VWI_CRM_xts_transferorderrequesting.xts_locationid
+    , VWI_CRM_xts_transferorderrequesting.xts_productinteriorcoloridname
+    , VWI_CRM_xts_transferorderrequesting.xts_transfercategoryname
+    , VWI_CRM_xts_transferorderrequesting.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_transferorderrequesting.xts_siteidname
+    , VWI_CRM_xts_transferorderrequesting.xts_warehouseid
+    , VWI_CRM_xts_transferorderrequesting.xts_requestedcomment
+    , VWI_CRM_xts_transferorderrequesting.xts_transferorderrequestingnumber
+    , VWI_CRM_xts_transferorderrequesting.xts_uomid
+    , VWI_CRM_xts_transferorderrequesting.xts_productdescription
+    , VWI_CRM_xts_transferorderrequesting.statecodename
+    , VWI_CRM_xts_transferorderrequesting.xts_businessunitidname
+    , VWI_CRM_xts_transferorderrequesting.xts_stockid
+    , VWI_CRM_xts_transferorderrequesting.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_transferorderrequesting a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_transferorderrequesting  

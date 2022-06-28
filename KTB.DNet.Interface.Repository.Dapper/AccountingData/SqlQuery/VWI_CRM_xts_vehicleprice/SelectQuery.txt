@@ -1,0 +1,60 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_vehicleprice.businessunitcode
+	, VWI_CRM_xts_vehicleprice.createdonbehalfbyyominame
+	, VWI_CRM_xts_vehicleprice.owninguser
+	, VWI_CRM_xts_vehicleprice.xts_locking
+	, VWI_CRM_xts_vehicleprice.statecode
+	, VWI_CRM_xts_vehicleprice.xts_businessunitidname
+	, VWI_CRM_xts_vehicleprice.owneridname
+	, VWI_CRM_xts_vehicleprice.statecodename
+	, VWI_CRM_xts_vehicleprice.createdonbehalfby
+	, VWI_CRM_xts_vehicleprice.xts_customerclassid
+	, VWI_CRM_xts_vehicleprice.xts_pkcombinationkey
+	, VWI_CRM_xts_vehicleprice.xts_currencyidname
+	, VWI_CRM_xts_vehicleprice.importsequencenumber
+	, VWI_CRM_xts_vehicleprice.modifiedbyyominame
+	, VWI_CRM_xts_vehicleprice.versionnumber
+	, VWI_CRM_xts_vehicleprice.utcconversiontimezonecode
+	, VWI_CRM_xts_vehicleprice.createdbyyominame
+	, VWI_CRM_xts_vehicleprice.owningbusinessunit
+	, VWI_CRM_xts_vehicleprice.modifiedbyname
+	, VWI_CRM_xts_vehicleprice.owningteam
+	, VWI_CRM_xts_vehicleprice.modifiedby
+	, VWI_CRM_xts_vehicleprice.createdby
+	, VWI_CRM_xts_vehicleprice.timezoneruleversionnumber
+	, VWI_CRM_xts_vehicleprice.owneridtype
+	, VWI_CRM_xts_vehicleprice.statuscodename
+	, VWI_CRM_xts_vehicleprice.ktb_isinterfaced
+	, VWI_CRM_xts_vehicleprice.xts_vehicleprice
+	, VWI_CRM_xts_vehicleprice.xts_customerclassidname
+	, VWI_CRM_xts_vehicleprice.owneridyominame
+	, VWI_CRM_xts_vehicleprice.xts_effectivestartdate
+	, VWI_CRM_xts_vehicleprice.modifiedon
+	, VWI_CRM_xts_vehicleprice.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_vehicleprice.statuscode
+	, VWI_CRM_xts_vehicleprice.createdbyname
+	, VWI_CRM_xts_vehicleprice.createdon
+	, VWI_CRM_xts_vehicleprice.xts_businessunitid
+	, VWI_CRM_xts_vehicleprice.createdonbehalfbyname
+	, VWI_CRM_xts_vehicleprice.xts_currencyid
+	, VWI_CRM_xts_vehicleprice.modifiedonbehalfbyname
+	, VWI_CRM_xts_vehicleprice.ktb_isinterfacedname
+	, VWI_CRM_xts_vehicleprice.xts_vehiclepriceid
+	, VWI_CRM_xts_vehicleprice.modifiedonbehalfby
+	, VWI_CRM_xts_vehicleprice.ownerid
+	, VWI_CRM_xts_vehicleprice.overriddencreatedon
+	, VWI_CRM_xts_vehicleprice.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_vehicleprice a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_vehicleprice

@@ -1,0 +1,64 @@
+﻿SELECT 
+	/**PagingIndexQuery**/
+	VWI_PODOHaveBilling.ID,
+	VWI_PODOHaveBilling.SparePartDOID,
+	VWI_PODOHaveBilling.DONumber ,
+	VWI_PODOHaveBilling.DealerID ,
+	VWI_PODOHaveBilling.DealerCode ,
+	VWI_PODOHaveBilling.DoDate ,
+	VWI_PODOHaveBilling.BillingDate ,
+	VWI_PODOHaveBilling.BillingNumber ,
+	VWI_PODOHaveBilling.ExpeditionNo ,
+	VWI_PODOHaveBilling.TermOfPaymentCode ,
+	VWI_PODOHaveBilling.TermOfPaymentValue ,
+	VWI_PODOHaveBilling.TermOfPaymentDesc ,
+	VWI_PODOHaveBilling.DueDate ,
+	VWI_PODOHaveBilling.AmountC2,
+	VWI_PODOHaveBilling.LastUpdateTime
+	/**EndPagingIndexQuery**/
+FROM		(
+		SELECT DISTINCT
+				SparePartDOID = SparePartDO.ID ,
+				SparePartDO.DONumber ,
+				SparePartBilling.DealerID ,
+				Dealer.DealerCode ,
+				SparePartDO.DoDate ,
+				SparePartBilling.ID AS ID ,
+				SparePartBilling.BillingDate ,
+				SparePartBilling.BillingNumber ,
+				VWI_PODOExpedition.ExpeditionNo ,
+				TermOfPayment.TermOfPaymentCode ,
+				TermOfPayment.TermOfPaymentValue ,
+				TermOfPaymentDesc = TermOfPayment.Description ,
+				TOPSPDueDate.DueDate ,
+				AmountC2=coalesce(TOPSPDeposit.AmountC2,0),
+				SparePartBilling.LastUpdateTime
+		FROM		SparePartBilling WITH ( NOLOCK )
+		JOIN		SparePartBillingDetail WITH ( NOLOCK ) ON 
+								SparePartBilling.RowStatus = 0
+								AND YEAR(SparePartBilling.BillingDate) >= YEAR(GETDATE()) - 1
+								AND SparePartBilling.ID = SparePartBillingDetail.SparePartBillingID
+								AND SparePartBillingDetail.RowStatus = 0
+		JOIN		SparePartDODetail WITH ( NOLOCK ) ON 
+								SparePartBillingDetail.SparePartDODetailID = SparePartDODetail.ID
+								AND SparePartDODetail.RowStatus = 0
+		JOIN		SparePartDO WITH ( NOLOCK ) ON SparePartDODetail.SparePartDOID = SparePartDO.ID
+													AND SparePartDO.RowStatus = 0
+													AND SparePartBilling.DealerID = SparePartDO.DealerID
+		JOIN		Dealer WITH ( NOLOCK ) ON SparePartBilling.DealerID = Dealer.ID
+											AND Dealer.RowStatus = 0
+--left join VWI_POEstimateHaveBilling i WITH (NOLOCK) on SparePartDODetail.SparePartPOEstimateID = i.SparePartPOEstimateID-- and i.RowStatus = 0
+		LEFT JOIN TOPSPDueDate WITH ( NOLOCK ) ON SparePartBilling.ID = TOPSPDueDate.SparePartBillingID
+													AND TOPSPDueDate.RowStatus = 0
+        LEFT JOIN TOPSPDeposit WITH ( NOLOCK ) ON SparePartBilling.ID = TOPSPDeposit.SparePartBillingID
+													AND TOPSPDeposit.RowStatus = 0
+		LEFT JOIN SparePartPOEstimate WITH ( NOLOCK ) ON SparePartDODetail.SparePartPOEstimateID = SparePartPOEstimate.ID
+															AND SparePartPOEstimate.RowStatus = 0
+		LEFT JOIN SparePartPO WITH ( NOLOCK ) ON SparePartPOEstimate.SparePartPOID = SparePartPO.ID
+													AND SparePartPO.RowStatus = 0
+		LEFT JOIN TermOfPayment WITH ( NOLOCK ) ON SparePartBilling.TermOfPaymentID = TermOfPayment.ID
+													AND TermOfPayment.RowStatus = 0
+		LEFT JOIN VWI_PODOExpedition WITH ( NOLOCK ) ON SparePartDO.DONumber = VWI_PODOExpedition.DONumber
+		{0}
+	) VWI_PODOHaveBilling {1}
+

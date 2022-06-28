@@ -1,0 +1,82 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,xts_parentbusinessunitid
+	,versionnumber
+	,createdon
+	,ktb_servicetype
+	,xts_scheduledarrivaldateandtime
+	,statuscodename
+	,xts_productsegment14
+	,xts_servicepersoninchargedescription
+	,modifiedbyname
+	,xts_platenumber
+	,xts_vehiclemodelname
+	,xts_vehiclepubliclinkidname
+	,overriddencreatedon
+	,ktb_serviceincdnetcode
+	,xts_address2
+	,xts_lastmileage
+	,createdonbehalfbyyominame
+	,xts_vehiclepubliclinkid
+	,ktb_servicelayanan
+	,ktb_hasilinterfacename
+	,xts_address4
+	,xts_ordertype
+	,statecode
+	,timezoneruleversionnumber
+	,xts_locking
+	,xts_customernumber
+	,ktb_createdonworkorder
+	,xts_manufacturer
+	,createdonbehalfbyname
+	,xts_serviceadvisor
+	,createdonbehalfby
+	,utcconversiontimezonecode
+	,modifiedon
+	,importsequencenumber
+	,xts_actualfinishdateandtime
+	,xts_transactiondate
+	,xts_servicecategory
+	,xts_businessunit
+	,createdbyname
+	,modifiedonbehalfbyname
+	,xts_address3
+	,xts_technicaladvisor
+	,ktb_kindcode
+	,ktb_hasilinterface
+	,createdby
+	,modifiedby
+	,xts_address1
+	,ktb_actualservicefinishdateandtime
+	,xts_vehicleidentificationnumber
+	,xts_actualarrivaldateandtime
+	,createdbyyominame
+	,xts_customer
+	,modifiedonbehalfby
+	,modifiedbyyominame
+	,xts_customerpubliclinkidname
+	,xts_parentbusinessunitidname
+	,organizationidname
+	,xts_workorder
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_globalworkorderhistoryid
+	,organizationid
+	,xts_customerpubliclinkid
+	,statecodename
+	,xts_globalworkorderhistory
+	,RowStatus
+	,msdyn_companycode
+FROM (
+    SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_globalworkorderhistory a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON TRIM(B.ktb_dealercode) = TRIM(A.xts_businessunit)
+    WHERE CRM_xts_globalworkorderhistoryid = @Id
+) VWI_CRM_xts_globalworkorderhistory

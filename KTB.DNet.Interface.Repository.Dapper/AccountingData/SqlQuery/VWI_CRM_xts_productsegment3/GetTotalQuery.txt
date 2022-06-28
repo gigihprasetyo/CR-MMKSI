@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xts_productsegment3 as VWI_CRM_xts_productsegment3 WITH (NOLOCK) 
+{0}

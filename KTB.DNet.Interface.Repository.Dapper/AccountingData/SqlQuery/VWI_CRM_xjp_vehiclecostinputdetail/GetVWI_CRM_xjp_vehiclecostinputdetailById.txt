@@ -1,0 +1,69 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	  ,[xjp_parentbusinessunitidname]
+      ,[modifiedbyyominame]
+      ,[createdbyname]
+      ,[xjp_amount_base]
+      ,[modifiedon]
+      ,[ownerid]
+      ,[modifiedbyname]
+      ,[xjp_vehiclecostinputidname]
+      ,[modifiedonbehalfby]
+      ,[owningbusinessunitname]
+      ,[statuscode]
+      ,[createdonbehalfbyyominame]
+      ,[xjp_landedcostdescription]
+      ,[importsequencenumber]
+      ,[modifiedby]
+      ,[transactioncurrencyid]
+      ,[statecodename]
+      ,[xjp_businessunitid]
+      ,[createdby]
+      ,[modifiedonbehalfbyname]
+      ,[statecode]
+      ,[versionnumber]
+      ,[createdon]
+      ,[xjp_locking]
+      ,[owneridtype]
+      ,[modifiedonbehalfbyyominame]
+      ,[xjp_stockidname]
+      ,[xjp_vehiclecostinputid]
+      ,[xjp_stockid]
+      ,[xjp_landedcostid]
+      ,[overriddencreatedon]
+      ,[createdonbehalfbyname]
+      ,[owneridname]
+      ,[exchangerate]
+      ,[owninguser]
+      ,[statuscodename]
+      ,[owningbusinessunit]
+      ,[timezoneruleversionnumber]
+      ,[xjp_vehiclecostinputdetailid]
+      ,[xjp_parentbusinessunitid]
+      ,[owningteam]
+      ,[transactioncurrencyidname]
+      ,[xjp_businessunitidname]
+      ,[xjp_amount]
+      ,[createdonbehalfby]
+      ,[xjp_vehiclecostinputdetail]
+      ,[xjp_landedcostidname]
+      ,[owneridyominame]
+      ,[createdbyyominame]
+      ,[utcconversiontimezonecode]
+      ,[DealerCode]
+      ,[SourceType]
+      ,[RowStatus]
+      ,[LastSyncDate]
+	, msdyn_companycode
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_xjp_vehiclecostinputdetail a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.xjp_businessunitid   
+	Where a.RowStatus = 0
+) as VWI_CRM_xjp_vehiclecostinputdetail
+WHERE accountid = @Id

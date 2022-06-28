@@ -1,0 +1,55 @@
+SELECT  
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_warehouse.createdonbehalfbyyominame
+	, VWI_CRM_xts_warehouse.modifiedonbehalfby
+	, VWI_CRM_xts_warehouse.statecode
+	, VWI_CRM_xts_warehouse.xts_description
+	, VWI_CRM_xts_warehouse.statecodename
+	, VWI_CRM_xts_warehouse.xts_defaultreceiptlocationid
+	, VWI_CRM_xts_warehouse.createdonbehalfby
+	, VWI_CRM_xts_warehouse.ktb_claim
+	, VWI_CRM_xts_warehouse.xts_warehouseid
+	, VWI_CRM_xts_warehouse.importsequencenumber
+	, VWI_CRM_xts_warehouse.organizationidname
+	, VWI_CRM_xts_warehouse.modifiedbyyominame
+	, VWI_CRM_xts_warehouse.xts_company
+	, VWI_CRM_xts_warehouse.ktb_identificationtypename
+	, VWI_CRM_xts_warehouse.xts_quarantinewarehouseidname
+	, VWI_CRM_xts_warehouse.utcconversiontimezonecode
+	, VWI_CRM_xts_warehouse.createdbyyominame
+	, VWI_CRM_xts_warehouse.xts_transitwarehouseid
+	, VWI_CRM_xts_warehouse.modifiedbyname
+	, VWI_CRM_xts_warehouse.versionnumber
+	, VWI_CRM_xts_warehouse.modifiedby
+	, VWI_CRM_xts_warehouse.createdby
+	, VWI_CRM_xts_warehouse.timezoneruleversionnumber
+	, VWI_CRM_xts_warehouse.xts_defaultissuelocationid
+	, VWI_CRM_xts_warehouse.xts_transitwarehouseidname
+	, VWI_CRM_xts_warehouse.statuscodename
+	, VWI_CRM_xts_warehouse.xts_defaultissuelocationidname
+	, VWI_CRM_xts_warehouse.xts_siteid
+	, VWI_CRM_xts_warehouse.modifiedon
+	, VWI_CRM_xts_warehouse.xts_type
+	, VWI_CRM_xts_warehouse.xts_entitytag
+	, VWI_CRM_xts_warehouse.ktb_claimname
+	, VWI_CRM_xts_warehouse.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_warehouse.statuscode
+	, VWI_CRM_xts_warehouse.createdbyname
+	, VWI_CRM_xts_warehouse.createdon
+	, VWI_CRM_xts_warehouse.organizationid
+	, VWI_CRM_xts_warehouse.ktb_identificationtype
+	, VWI_CRM_xts_warehouse.createdonbehalfbyname
+	, VWI_CRM_xts_warehouse.xts_typename
+	, VWI_CRM_xts_warehouse.modifiedonbehalfbyname
+	, VWI_CRM_xts_warehouse.xts_quarantinewarehouseid
+	, VWI_CRM_xts_warehouse.xts_siteidname
+	, VWI_CRM_xts_warehouse.xts_defaultreceiptlocationidname
+	, VWI_CRM_xts_warehouse.overriddencreatedon
+	, VWI_CRM_xts_warehouse.xts_warehouse
+	, VWI_CRM_xts_warehouse.RowStatus
+	, VWI_CRM_xts_warehouse.ktb_carpool
+	, VWI_CRM_xts_warehouse.ktb_carpoolname
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_warehouse as VWI_CRM_xts_warehouse WITH (NOLOCK) 
+{0}

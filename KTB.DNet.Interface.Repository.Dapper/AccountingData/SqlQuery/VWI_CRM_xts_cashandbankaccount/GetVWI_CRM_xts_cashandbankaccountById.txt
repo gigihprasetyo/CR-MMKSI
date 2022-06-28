@@ -1,0 +1,86 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,xts_accountidname
+	,versionnumber
+	,createdon
+	,owninguser
+	,xts_dimension8id
+	,statuscodename
+	,xts_accountname
+	,modifiedbyyominame
+	,xts_dimension5id
+	,createdonbehalfby
+	,modifiedbyname
+	,xts_dimension2id
+	,owneridname
+	,overriddencreatedon
+	,xts_virtualaccountstartnumber
+	,xts_dimension6idname
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,owningteam
+	,xts_balance
+	,xts_dimension4id
+	,statecode
+	,xts_dimension9idname
+	,xts_currencyidname
+	,timezoneruleversionnumber
+	,xjp_accounttype
+	,xts_dimension10idname
+	,xts_locking
+	,xts_dimension10id
+	,createdonbehalfbyname
+	,xts_dimension7idname
+	,xts_dimension1id
+	,utcconversiontimezonecode
+	,xts_cashandbankaccountnumber
+	,xts_dimension5idname
+	,xts_cashandbankaccountid
+	,xts_dimension3idname
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,xts_dimension6id
+	,xts_dimension7id
+	,xts_dimension2idname
+	,xts_dimension8idname
+	,createdbyname
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_balance_base
+	,transactioncurrencyid
+	,createdby
+	,modifiedby
+	,xts_dimension1idname
+	,xjp_accounttypename
+	,xts_virtualaccountendnumber
+	,createdbyyominame
+	,xts_dimension4idname
+	,transactioncurrencyidname
+	,owningbusinessunit
+	,xts_currencyid
+	,xts_dimension9id
+	,xts_bankid
+	,owneridtype
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_accountid
+	,owneridyominame
+	,statecodename
+	,xts_bankidname
+	,xts_dimension3id
+	,xts_businessunitidname
+	,RowStatus
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_cashandbankaccount a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_cashandbankaccountid = @Id
+) VWI_CRM_xts_cashandbankaccount

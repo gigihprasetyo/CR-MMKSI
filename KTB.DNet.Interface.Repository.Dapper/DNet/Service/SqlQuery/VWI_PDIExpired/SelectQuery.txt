@@ -1,0 +1,12 @@
+SELECT 
+/**PagingIndexQuery**/ 
+    VWI_PDIExpired.[ID]
+	, VWI_PDIExpired.[PDIID]
+	, VWI_PDIExpired.[DealerCode]
+	, VWI_PDIExpired.[ChassisNumber]
+	, VWI_PDIExpired.[WorkOrderNumber]
+	, VWI_PDIExpired.[ExpiredPDIDate]
+	, VWI_PDIExpired.[CreatedTime]
+	, VWI_PDIExpired.[LastUpdatedTime]
+/**EndPagingIndexQuery**/
+FROM VWI_PDIExpired WITH (NOLOCK) {0}

@@ -1,0 +1,7 @@
+SELECT 
+	COUNT(*)
+FROM BabitMasterRetailTarget a WITH (NOLOCK)
+LEFT JOIN DealerBranch b WITH (NOLOCK) ON a.DealerBranchID=b.ID and b.RowStatus=0
+LEFT JOIN SubCategoryVehicle c WITH (NOLOCK) ON a.SubCategoryVehicleID=c.ID and c.RowStatus=0
+LEFT JOIN Dealer d WITH (NOLOCK) ON a.DealerID=d.ID AND d.RowStatus=0
+{0}

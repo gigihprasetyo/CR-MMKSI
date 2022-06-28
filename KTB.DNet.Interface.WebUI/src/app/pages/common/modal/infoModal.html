@@ -1,0 +1,9 @@
+<div class="modal-content">
+    <div class="modal-header bg-info">
+      <h3><i class="ion-information-circled modal-icon"></i><span>{{message.title ? message.title : 'Info' }}</span></h3>
+    </div>
+    <div class="modal-body text-center"><h5>{{message.title ? message.content : message}}</h5></div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-info" ng-click="$close()">OK</button>
+    </div>
+  </div>

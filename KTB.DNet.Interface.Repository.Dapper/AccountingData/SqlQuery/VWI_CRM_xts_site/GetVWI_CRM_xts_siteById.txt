@@ -1,0 +1,39 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,statecode
+	,statecodename
+	,createdonbehalfby
+	,xts_timezone
+	,xts_defaultwarehouseid
+	,importsequencenumber
+	,organizationidname
+	,modifiedbyyominame
+	,xts_siteid
+	,xts_defaultwarehouseidname
+	,xts_name
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,modifiedbyname
+	,versionnumber
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,xts_timezonename
+	,statuscodename
+	,xts_company
+	,modifiedon
+	,xts_entitytag
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,organizationid
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,overriddencreatedon
+	,xts_description
+	,RowStatus
+FROM CRM_xts_site as VWI_CRM_xts_site WITH (NOLOCK) 
+WHERE xts_siteid = @Id

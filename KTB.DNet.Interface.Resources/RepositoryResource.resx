@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="SqlSelectVehicleInformation" xml:space="preserve">
+    <value>SELECT COUNT(*) FROM VWI_VehicleInformation {0}; SELECT * FROM VWI_VehicleInformation {1}</value>
+  </data>
+  <data name="ViewPurchaseReceipt" xml:space="preserve">
+    <value>select ROW_NUMBER() OVER (ORDER BY a.SparePartDOID) AS ID, a.SparePartDOID, a.DONumber, a.DealerID, a.DealerCode, a.DoDate, a.BillingDate, a.BillingNumber, a.ExpeditionNo, a.TermOfPaymentCode, a.TermOfPaymentValue, a.TermOfPaymentDesc, a.DueDate, a.LastUpdateTime from ( select distinct SparePartDOID = d.ID, d.DONumber, a.DealerID, h.DealerCode, d.DoDate, a.BillingDate, a.BillingNumber, n.ExpeditionNo, m.TermOfPaymentCode, m.TermOfPaymentValue, TermOfPaymentDesc = m.Description, j.DueDate, a.LastUpdateTime from SparePartBilling a WITH (NOLOCK) join SparePartBillingDetail b WITH (NOLOCK) on a.ID = b.SparePartBillingID and b.RowStatus = 0 join SparePartDODetail c WITH (NOLOCK) on b.SparePartDODetailID = c.ID and c.RowStatus = 0 join SparePartDO d WITH (NOLOCK) on c.SparePartDOID = d.ID and d.RowStatus = 0 and a.DealerID = d.DealerID join Dealer h with (nolock) on a.DealerID = h.ID and h.RowStatus = 0 left join TOPSPDueDate j WITH (NOLOCK) on a.ID = j.SparePartBillingID and j.RowStatus = 0 left join SparePartPOEstimate k WITH (NOLOCK) on c.SparePartPOEstimateID = k.ID and k.RowStatus = 0 left join SparePartPO l WITH (NOLOCK) on k.SparePartPOID = l.ID and l.RowStatus = 0 left join TermOfPayment m WITH (NOLOCK) on l.TermOfPaymentID = m.ID and m.RowStatus = 0 left join VWI_PODOExpedition n WITH (NOLOCK) on d.DONumber = n.DONumber where a.RowStatus = 0 and year(a.BillingDate) &gt;= year(GETDATE())-1 {0}) a</value>
+  </data>
+  <data name="ViewPODO" xml:space="preserve">
+    <value>SELECT * FROM VWI_PODOHaveBilling {0}</value>
+  </data>
+  <data name="ViewVehicleInformation" xml:space="preserve">
+    <value>select count(*)    
+from     
+(    
+     select ID, EndCustomerId, ChassisNumber, isBB, CategoryID, VechileColorID, VehicleKindID, SoldDealerID, EngineNumber, SerialNumber, ProductionYear, LastUpdateTime    
+	 from    
+	 (    
+		 select ID, EndCustomerId, ChassisNumber, isBB=0, CategoryID, VechileColorID, VehicleKindID, SoldDealerID, EngineNumber, SerialNumber, ProductionYear, LastUpdateTime from ChassisMaster WITH (NOLOCK)  where RowStatus = 0  and FakturStatus = 4  
+			union    
+		 select ID, EndCustomerId, ChassisNumber, isBB=1, CategoryID, VechileColorID, VehicleKindID, SoldDealerID, EngineNumber, SerialNumber, ProductionYear, LastUpdateTime from ChassisMasterBB  WITH (NOLOCK)  where RowStatus = 0    
+	 ) x {0}        
+) a      
+left join VechileColor b WITH (NOLOCK) on a.VechileColorID = b.ID and b.RowStatus = 0      
+left join VechileType c WITH (NOLOCK) on c.ID = b.VechileTypeID and c.RowStatus = 0      
+left join VehicleKind d WITH (NOLOCK) on a.VehicleKindID = d.ID and d.RowStatus = 0      
+left join Dealer e WITH (NOLOCK) on a.SoldDealerID = e.ID and e.RowStatus = 0      
+left join Category f WITH (NOLOCK) on a.CategoryID = f.ID and f.RowStatus = 0    
+left join EndCustomer g WITH (NOLOCK) on a.EndCustomerID = g.ID and g.RowStatus = 0    
+left join FleetCustomerToCustomer h WITH (NOLOCK) on g.CustomerID = h.CustomerID and h.RowStatus = 0    
+left join FleetCustomer i WITH (NOLOCK) on h.FleetCustomerID = i.ID and i.RowStatus = 0     
+left join VechileModel j WITH (NOLOCK) on c.ModelID = j.ID and j.RowStatus = 0    
+left join ChassisMasterPKT k WITH (NOLOCK) on a.ID = k.ChassisMasterID and k.RowStatus = 0
+;   
+select ROW_NUMBER() Over(Order By (select 1)) as ID, a.ChassisNumber, a.isBB as IsBB,    
+    isnull(f.CategoryCode,'') as CategoryCode, CategoryDesc=isnull(f.Description, ''),     
+    isnull(b.ColorCode, '') as ColorCode, isnull(b.ColorIndName, '') as ColorIndName, isnull(b.ColorEngName, '') as ColorEngName,    
+    isnull(b.MaterialDescription, '') as MaterialDescription,      
+    VehicleTypeCode=isnull(c.VechileTypeCode, ''), VehicleTypeDesc=isnull(c.Description, ''),     
+    ModelSearchTerm1 = isnull(j.VechileModelIndCode, ''),     
+    ModelSearchTerm2 = isnull(j.IndDescription, ''),    
+    isnull(c.SegmentType, '') as SegmentType, isnull(c.FuelType, '') as FuelType,    
+    isnull(c.TransmitType, '') as TransmitType, isnull(c.DriveSystemType,'') as DriveSystemType, 
+	isnull(c.VariantType, '') as VariantType, VehicleBrand = 'Mitsubishi', isnull(c.SpeedType, '') as SpeedType,    
+    a.VehicleKindID, isnull(d.Code,'') as Code, VehicleKindDesc=isnull(c.Description, ''),      
+    a.SoldDealerID, e.DealerCode, e.DealerName,      
+    isnull(a.EngineNumber,'') as EngineNumber, isnull(a.SerialNumber,'') as SerialNumber, isnull(a.ProductionYear,'') as ProductionYear, FleetCode=isnull(i.Code,''),     
+    isnull(g.OpenFakturDate, dbo.DateTimeMinValue()) as OpenFakturDate, 
+	isnull(g.FakturDate, dbo.DateTimeMinValue()) as FakturDate, 
+	FSExtended='', isnull(k.PKTDate, dbo.DateTimeMinValue()) as PKTDate,    
+    a.LastUpdateTime     
+from     
+(    
+     select ID, EndCustomerId, ChassisNumber, isBB, CategoryID, VechileColorID, VehicleKindID, SoldDealerID, EngineNumber, SerialNumber, ProductionYear, LastUpdateTime    
+	 from    
+	 (    
+		 select ID, EndCustomerId, ChassisNumber, isBB=0, CategoryID, VechileColorID, VehicleKindID, SoldDealerID, EngineNumber, SerialNumber, ProductionYear, LastUpdateTime from ChassisMaster WITH (NOLOCK)  where RowStatus = 0  and FakturStatus = 4  
+			union    
+		 select ID, EndCustomerId, ChassisNumber, isBB=1, CategoryID, VechileColorID, VehicleKindID, SoldDealerID, EngineNumber, SerialNumber, ProductionYear, LastUpdateTime from ChassisMasterBB  WITH (NOLOCK)  where RowStatus = 0    
+	 ) x {0}
+) a      
+left join VechileColor b WITH (NOLOCK) on a.VechileColorID = b.ID and b.RowStatus = 0      
+left join VechileType c WITH (NOLOCK) on c.ID = b.VechileTypeID and c.RowStatus = 0      
+left join VehicleKind d WITH (NOLOCK) on a.VehicleKindID = d.ID and d.RowStatus = 0      
+left join Dealer e WITH (NOLOCK) on a.SoldDealerID = e.ID and e.RowStatus = 0      
+left join Category f WITH (NOLOCK) on a.CategoryID = f.ID and f.RowStatus = 0    
+left join EndCustomer g WITH (NOLOCK) on a.EndCustomerID = g.ID and g.RowStatus = 0    
+left join FleetCustomerToCustomer h WITH (NOLOCK) on g.CustomerID = h.CustomerID and h.RowStatus = 0    
+left join FleetCustomer i WITH (NOLOCK) on h.FleetCustomerID = i.ID and i.RowStatus = 0     
+left join VechileModel j WITH (NOLOCK) on c.ModelID = j.ID and j.RowStatus = 0    
+left join ChassisMasterPKT k WITH (NOLOCK) on a.ID = k.ChassisMasterID and k.RowStatus = 0</value>
+  </data>
+</root>

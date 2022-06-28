@@ -1,0 +1,60 @@
+﻿SELECT 
+/**PagingIndexQuery**/ 
+	ID, SalesmanCode, Name, PlaceOfBirth, DateOfBirth, Gender, MarriedStatus, Address, City,	
+	HireDate, ResignDate, ResignReason, DealerId, DealerCode, 
+	DealerBranchID , DealerBranchCode, Status, 
+	SalesmanCategoryLevelId,
+    PositionCode,
+    PositionName,
+    ParentSalesmanCategoryLevelId,
+    ParentPositionCode,
+    ParentPositionName,
+	NoKTP, Email, NoHP, Kategori, Pendidikan, LastUpdateTime, StatusDNET
+/**EndPagingIndexQuery**/
+FROM
+	(SELECT SalesmanHeader.ID, SalesmanHeader.SalesmanCode, SalesmanHeader.Name, SalesmanHeader.PlaceOfBirth, SalesmanHeader.DateOfBirth, 
+		SalesmanHeader.Gender, SalesmanHeader.MarriedStatus, SalesmanHeader.Address, SalesmanHeader.City, SalesmanHeader.HireDate, 
+		SalesmanHeader.ResignDate, SalesmanHeader.ResignReason, SalesmanHeader.DealerId, Dealer.DealerCode,	SalesmanHeader.DealerBranchID, 
+		DealerBranch.DealerBranchCode,                
+		Status = CASE WHEN SalesmanHeader.RowStatus = -1 THEN SalesmanHeader.RowStatus
+			ELSE CASE 
+				WHEN SalesmanHeader.Status = 2 THEN 0
+				ELSE -1
+				END
+			END,
+		VWI_JobPositionParts.ID AS SalesmanCategoryLevelId,
+        VWI_JobPositionParts.Code AS PositionCode,
+        VWI_JobPositionParts.PositionName AS PositionName,
+        VWI_JobPositionParts.ParentID AS ParentSalesmanCategoryLevelId,
+        VWI_JobPositionParts.ParentCode AS ParentPositionCode,
+        VWI_JobPositionParts.ParentPositionName AS ParentPositionName,
+		KTPProfile.ProfileValue AS NoKTP,
+		EmailProfile.ProfileValue AS Email,
+		NoHPProfile.ProfileValue AS NoHP,
+		KategoriProfile.ProfileValue AS Kategori,
+		PendidikanProfile.ProfileValue AS Pendidikan,
+		SalesmanHeader.LastUpdateTime,
+		SalesmanHeader.Status as SalesmanStatusDNET,
+		StatusDNET = CASE WHEN SalesmanHeader.RowStatus = -1 THEN 'SALES SUDAH TIDAK BISA DIGUNAKAN OLEH ADMINISTRATOR'
+		                  ELSE CASE WHEN SalesmanHeader.Status = 2 THEN 'AKTIF'
+						       ELSE CASE WHEN SalesmanHeader.Status = 3 THEN 'RESIGN'
+							        ELSE CASE WHEN SalesmanHeader.Status = 4 THEN 'KONFIRMASI AKTIF KEMBALI DARI APM'
+									     ELSE CASE WHEN SalesmanHeader.IsRequestID = 1 THEN 'STATUS BARU SUDAH REQUEST SALESMAN CODE'
+										      ELSE 'STATUS BARU BELUM REQUEST SALESMAN CODE'
+											  END
+									     END
+									END
+							   END
+						  END
+	FROM  SalesmanHeader WITH (NOLOCK)
+		LEFT JOIN Dealer WITH ( NOLOCK ) ON SalesmanHeader.DealerId = Dealer.ID AND Dealer.RowStatus = 0
+		LEFT JOIN DealerBranch WITH ( NOLOCK ) ON SalesmanHeader.DealerId = DealerBranch.DealerID AND SalesmanHeader.DealerBranchID = DealerBranch.ID AND DealerBranch.RowStatus = 0
+		LEFT JOIN SalesmanAdditionalInfo WITH (NOLOCK) ON SalesmanAdditionalInfo.SalesmanHeaderID = SalesmanHeader.ID AND SalesmanAdditionalInfo.RowStatus = 0
+		LEFT JOIN VWI_JobPositionParts WITH (NOLOCK) ON VWI_JobPositionParts.ID = SalesmanAdditionalInfo.SalesmanCategoryLevelID
+		LEFT JOIN SalesmanProfile KTPProfile WITH (NOLOCK) ON KTPProfile.SalesmanHeaderID = SalesmanHeader.ID AND KTPProfile.ProfileHeaderId = 29 AND KTPProfile.RowStatus = 0
+		LEFT JOIN SalesmanProfile EmailProfile WITH (NOLOCK) ON EmailProfile.SalesmanHeaderID = SalesmanHeader.ID AND EmailProfile.ProfileHeaderId = 26 AND EmailProfile.RowStatus = 0
+		LEFT JOIN SalesmanProfile NoHPProfile WITH (NOLOCK) ON NoHPProfile.SalesmanHeaderID = SalesmanHeader.ID AND NoHPProfile.ProfileHeaderId = 33 AND NoHPProfile.RowStatus = 0
+		LEFT JOIN SalesmanProfile KategoriProfile WITH (NOLOCK) ON KategoriProfile.SalesmanHeaderID = SalesmanHeader.ID AND KategoriProfile.ProfileHeaderId = 45 AND KategoriProfile.RowStatus = 0
+		LEFT JOIN SalesmanProfile PendidikanProfile WITH (NOLOCK) ON PendidikanProfile.SalesmanHeaderID = SalesmanHeader.ID AND PendidikanProfile.ProfileHeaderId = 31 AND PendidikanProfile.RowStatus = 0
+	WHERE SalesmanHeader.SalesIndicator = 0) VWI_EmployeeParts 
+{0}

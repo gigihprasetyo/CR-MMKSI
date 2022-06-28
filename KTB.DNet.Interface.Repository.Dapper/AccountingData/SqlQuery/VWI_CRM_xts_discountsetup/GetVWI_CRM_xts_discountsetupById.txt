@@ -1,0 +1,66 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , xts_discountsetupid
+    , modifiedbyyominame
+    , createdbyname
+    , xts_discountsetup
+    , modifiedon
+    , xts_discountcategory
+    , createdbyyominame
+    , modifiedbyname
+    , xts_discounttypename
+    , modifiedby
+    , modifiedonbehalfby
+    , ownerid
+    , xts_locking
+    , xts_currencyid
+    , owneridname
+    , createdby
+    , importsequencenumber
+    , xts_effectiveto
+    , xts_offertype
+    , xts_businessunitidname
+    , xts_parentbusinessunitid
+    , xts_discountcategoryname
+    , versionnumber
+    , createdon
+    , xts_description
+    , owneridtype
+    , modifiedonbehalfbyyominame
+    , xts_offertypename
+    , xts_pkcombinationkey
+    , createdonbehalfby
+    , overriddencreatedon
+    , createdonbehalfbyname
+    , owninguser
+    , statuscodename
+    , createdonbehalfbyyominame
+    , owningbusinessunit
+    , timezoneruleversionnumber
+    , xts_currencyidname
+    , statecodename
+    , owningteam
+    , modifiedonbehalfbyname
+    , statuscode
+    , xts_discounttype
+    , statecode
+    , xts_businessunitid
+    , owneridyominame
+    , xts_parentbusinessunitidname
+    , ktb_keyclonediscountsetup
+    , xts_effectivefrom
+    , utcconversiontimezonecode
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_discountsetup a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_discountsetupid = @Id
+) as VWI_CRM_xts_discountsetup  

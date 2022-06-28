@@ -1,0 +1,34 @@
+select
+	count(1)
+from (
+	select distinct
+		PQRHeader.PQRNo
+		, PQRHeader.DealerID
+		, Dealer.DealerCode
+		, StandardCode.ValueCode as PQRType --PQRHeader.PQRType
+		, PQRHeader.DocumentDate
+		, ChassisMaster.ChassisNumber --PQRHeader.ChassisMasterID
+		, PQRHeader.[Subject]
+		--, SparePartMaster.PartNumber--PQRPartsCode.SparePartMasterID
+		, PQRHeader.LastUpdateTime
+	from PQRHeader with(nolock)
+	join PQRPartsCode with(nolock) 
+		ON PQRPartsCode.PQRHeaderID = PQRHeader.ID
+	inner join Dealer with(nolock) 
+		ON PQRHeader.DealerID = Dealer.ID 
+	inner join StandardCode with(nolock) 
+		ON StandardCode.ValueId = PQRHeader.PQRType 
+		and StandardCode.Category = 'PQRType'
+	inner join ChassisMaster with(nolock) 
+		ON ChassisMaster.ID = PQRHeader.ChassisMasterID 
+		and ChassisMaster.RowStatus = 0
+	--inner join SparePartMaster with(nolock)
+	--	ON SparePartMaster.ID = PQRPartsCode.SparePartMasterID 
+	--	and SparePartMaster.RowStatus = 0
+	where 
+		(PQRHeader.RowStatus in (1,2,3,4) -- 1=Validasi,2=Proses,3=Rilis,4=Selesai
+		and PQRHeader.PQRType in (0,2,3,4))--0=PQR_WSC,1=PQR_Only,2=PQR_Spare_Part,3=PQR_Accessories,4=PQR_ESP
+) as VWI_PQR
+{0}
+
+

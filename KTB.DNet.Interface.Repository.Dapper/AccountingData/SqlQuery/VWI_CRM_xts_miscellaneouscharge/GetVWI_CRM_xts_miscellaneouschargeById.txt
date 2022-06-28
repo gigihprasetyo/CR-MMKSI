@@ -1,0 +1,107 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,xts_miscchargedimension3idname
+	,versionnumber
+	,xts_tax
+	,createdon
+	,xts_amount
+	,xts_miscchargedimension10idname
+	,xts_consumptiontax1id
+	,statuscodename
+	,xts_miscellaneouscharge
+	,xts_miscchargedimension1from
+	,ktb_chargetypename
+	,owneridtype
+	,createdonbehalfby
+	,modifiedbyname
+	,xts_miscchargedimension3fromname
+	,xts_miscchargedimension2fromname
+	,owneridname
+	,overriddencreatedon
+	,xts_type
+	,xts_miscchargedimension8id
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_miscchargedimension6fromname
+	,xts_miscchargedimension1idname
+	,xts_miscellaneouschargeid
+	,xts_consumptiontax2id
+	,xts_miscellaneouschargeaccountidname
+	,owningteam
+	,xts_miscchargedimension6from
+	,statecode
+	,xjp_estimatecost_base
+	,xts_miscchargedimension3from
+	,timezoneruleversionnumber
+	,xts_miscchargedimension7idname
+	,xts_miscchargedimension2id
+	,xts_miscchargedimension1id
+	,xts_miscchargedimension5idname
+	,xts_taxname
+	,xts_miscchargedimension4from
+	,xts_locking
+	,xts_miscchargedimension6idname
+	,xts_amount_base
+	,xts_consumptiontax1idname
+	,createdonbehalfbyname
+	,xts_consumptiontax2idname
+	,xjp_estimatecost
+	,xts_miscchargedimension4id
+	,xts_miscchargedimension2from
+	,utcconversiontimezonecode
+	,xts_miscchargedimension9id
+	,xts_miscchargedimension4fromname
+	,xts_typename
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_miscellaneouschargeaccountid
+	,xts_miscchargedimension3id
+	,xts_miscchargedescription
+	,xts_miscchargedimension8idname
+	,ktb_chargetype
+	,createdbyname
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_salesflagname
+	,xts_pkcombinationkey
+	,xts_miscchargedimension9idname
+	,xts_miscchargedimension10id
+	,xts_miscchargedimension4idname
+	,transactioncurrencyid
+	,xts_miscchargedimension1fromname
+	,createdby
+	,modifiedby
+	,xts_miscchargedimension5id
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,createdonbehalfbyyominame
+	,owningbusinessunit
+	,modifiedbyyominame
+	,xts_miscchargedimension5fromname
+	,xts_miscchargedimension5from
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,statecodename
+	,xts_miscchargedimension2idname
+	,xts_salesflag
+	,xts_miscchargedimension7id
+	,xts_businessunitidname
+	,xts_miscchargedimension6id
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.*
+        , b.msdyn_companycode
+    FROM CRM_xts_miscellaneouscharge a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK)
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_miscellaneouschargeid = @Id
+) VWI_CRM_xts_miscellaneouscharge

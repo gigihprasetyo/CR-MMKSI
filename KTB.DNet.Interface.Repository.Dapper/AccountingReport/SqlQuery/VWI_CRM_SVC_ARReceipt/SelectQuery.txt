@@ -1,0 +1,19 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SVC_ARReceipt.businessunitcode
+	,VWI_CRM_SVC_ARReceipt.xts_accountreceivableinvoice
+	,VWI_CRM_SVC_ARReceipt.xts_type
+	,VWI_CRM_SVC_ARReceipt.xts_transactiondate
+	,VWI_CRM_SVC_ARReceipt.xts_status
+	,VWI_CRM_SVC_ARReceipt.xts_reversing
+	,VWI_CRM_SVC_ARReceipt.xts_ordernumber
+	,VWI_CRM_SVC_ARReceipt.xts_invoiceamount
+	,VWI_CRM_SVC_ARReceipt.xts_customernumber
+	,VWI_CRM_SVC_ARReceipt.xts_balance
+	,VWI_CRM_SVC_ARReceipt.address1_line1
+	,VWI_CRM_SVC_ARReceipt.xts_totalworkamount
+	,VWI_CRM_SVC_ARReceipt.xts_totalpartsamount
+	,VWI_CRM_SVC_ARReceipt.xts_totalmiscchargeamount
+	,VWI_CRM_SVC_ARReceipt.xts_platenumber
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SVC_ARReceipt WITH (NOLOCK) {0}

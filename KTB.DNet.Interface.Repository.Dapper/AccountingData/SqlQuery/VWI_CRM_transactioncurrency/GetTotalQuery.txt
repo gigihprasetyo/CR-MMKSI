@@ -1,0 +1,4 @@
+﻿SELECT
+	COUNT(1)
+FROM CRM_transactioncurrency as VWI_CRM_transactioncurrency with (nolock)  
+{0}

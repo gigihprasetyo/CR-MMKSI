@@ -1,0 +1,10 @@
+SELECT 
+	businessunitcode
+	,IDRow
+	,personincharge
+	,salesperson
+	,xts_newvehicledeliveryordernumber
+	,xts_newvehiclesalesordernumber
+	,xts_productsegment2id
+FROM VWI_CRM_SLS_DailyActivityMonitoring_VDO WITH (NOLOCK)
+WHERE ID = @Id

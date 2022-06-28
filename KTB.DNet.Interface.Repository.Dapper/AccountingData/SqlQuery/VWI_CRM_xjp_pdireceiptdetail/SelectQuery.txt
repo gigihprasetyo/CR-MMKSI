@@ -1,0 +1,88 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xjp_pdireceiptdetail.company
+	, VWI_CRM_xjp_pdireceiptdetail.businessunitcode
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_totalconsumptiontaxamount_base
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_consumptiontax1rate
+	, VWI_CRM_xjp_pdireceiptdetail.versionnumber
+	, VWI_CRM_xjp_pdireceiptdetail.createdon
+	, VWI_CRM_xjp_pdireceiptdetail.statuscodename
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_parentbusinessunitidname
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_consumptiontax1amount
+	, VWI_CRM_xjp_pdireceiptdetail.owneridtype
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_accessoriesdescription
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_consumptiontax2amount
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_consumptiontax1amount_base
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_pdireceiptdetailid
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_parentbusinessunitid
+	, VWI_CRM_xjp_pdireceiptdetail.owneridname
+	, VWI_CRM_xjp_pdireceiptdetail.overriddencreatedon
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_totalfee
+	, VWI_CRM_xjp_pdireceiptdetail.createdonbehalfbyyominame
+	, VWI_CRM_xjp_pdireceiptdetail.modifiedonbehalfby
+	, VWI_CRM_xjp_pdireceiptdetail.exchangerate
+	, VWI_CRM_xjp_pdireceiptdetail.owningteam
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_servicefee
+	, VWI_CRM_xjp_pdireceiptdetail.statecode
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_consumptiontax2id
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_pdidetailid
+	, VWI_CRM_xjp_pdireceiptdetail.timezoneruleversionnumber
+	, VWI_CRM_xjp_pdireceiptdetail.modifiedbyname
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_kitid
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_pdidetailidname
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_businessunitid
+	, VWI_CRM_xjp_pdireceiptdetail.createdonbehalfbyname
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_consumptiontax1id
+	, VWI_CRM_xjp_pdireceiptdetail.createdonbehalfby
+	, VWI_CRM_xjp_pdireceiptdetail.utcconversiontimezonecode
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_partfee
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_totalfee_base
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_accessoriesid
+	, VWI_CRM_xjp_pdireceiptdetail.ownerid
+	, VWI_CRM_xjp_pdireceiptdetail.modifiedon
+	, VWI_CRM_xjp_pdireceiptdetail.importsequencenumber
+	, VWI_CRM_xjp_pdireceiptdetail.owneridyominame
+	, VWI_CRM_xjp_pdireceiptdetail.modifiedby
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_pdireceiptidname
+	, VWI_CRM_xjp_pdireceiptdetail.createdbyname
+	, VWI_CRM_xjp_pdireceiptdetail.modifiedonbehalfbyname
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_accessoriesidname
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_subcontractfee
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_pdireceiptdetailsnumber
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_receivequantity
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_consumptiontax2amount_base
+	, VWI_CRM_xjp_pdireceiptdetail.createdby
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_kitidname
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_subcontractfee_base
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_totalconsumptiontaxamount
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_consumptiontax2rate
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_servicefee_base
+	, VWI_CRM_xjp_pdireceiptdetail.createdbyyominame
+	, VWI_CRM_xjp_pdireceiptdetail.owninguser
+	, VWI_CRM_xjp_pdireceiptdetail.transactioncurrencyidname
+	, VWI_CRM_xjp_pdireceiptdetail.owningbusinessunit
+	, VWI_CRM_xjp_pdireceiptdetail.transactioncurrencyid
+	, VWI_CRM_xjp_pdireceiptdetail.modifiedbyyominame
+	, VWI_CRM_xjp_pdireceiptdetail.statuscode
+	, VWI_CRM_xjp_pdireceiptdetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_businessunitidname
+	, VWI_CRM_xjp_pdireceiptdetail.statecodename
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_partfee_base
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_consumptiontax2idname
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_pdireceiptid
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_consumptiontax1idname
+	, VWI_CRM_xjp_pdireceiptdetail.xjp_locking
+	, VWI_CRM_xjp_pdireceiptdetail.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+		  b.ktb_bucompany company,
+		  b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_xjp_pdireceiptdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK)
+    ON b.businessunitid = a.xjp_businessunitid
+    {0}
+) VWI_CRM_xjp_pdireceiptdetail

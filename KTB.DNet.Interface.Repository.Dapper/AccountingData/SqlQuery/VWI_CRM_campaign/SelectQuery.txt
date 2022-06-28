@@ -1,0 +1,148 @@
+SELECT 
+	/**PagingIndexQuery**/
+	/**RowNumber**/ 
+	  VWI_CRM_campaign.company
+	, VWI_CRM_campaign.businessunitcode
+	, VWI_CRM_campaign.ktb_luaspameran
+	, VWI_CRM_campaign.xts_parentbusinessunitid
+	, VWI_CRM_campaign.versionnumber
+	, VWI_CRM_campaign.entityimage_timestamp
+	, VWI_CRM_campaign.createdon
+	, VWI_CRM_campaign.objective
+	, VWI_CRM_campaign.modifiedonbehalfbyyominame
+	, VWI_CRM_campaign.tmpregardingobjectid
+	, VWI_CRM_campaign.xts_totalwonopportunities
+	, VWI_CRM_campaign.xts_totalwonopportunities_state
+	, VWI_CRM_campaign.entityimage_url
+	, VWI_CRM_campaign.statuscodename
+	, VWI_CRM_campaign.modifiedbyyominame
+	, VWI_CRM_campaign.xts_salesobjective
+	, VWI_CRM_campaign.owneridtype
+	, VWI_CRM_campaign.ktb_approvalsewatempat_base
+	, VWI_CRM_campaign.createdonbehalfby
+	, VWI_CRM_campaign.promotioncodename
+	, VWI_CRM_campaign.ktb_statuscampaign
+	, VWI_CRM_campaign.message
+	, VWI_CRM_campaign.ktb_kategoriprodukname
+	, VWI_CRM_campaign.totalactualcost_base
+	, VWI_CRM_campaign.owneridname
+	, VWI_CRM_campaign.ktb_approvalbabit_base
+	, VWI_CRM_campaign.xts_totalwonopportunities_date
+	, VWI_CRM_campaign.overriddencreatedon
+	, VWI_CRM_campaign.xts_totalwonopportunities_base
+	, VWI_CRM_campaign.xts_totalcampaignactivities_state
+	, VWI_CRM_campaign.xts_totalvalueopportunities_base
+	, VWI_CRM_campaign.xts_totalcampaignactivities
+	, VWI_CRM_campaign.createdonbehalfbyyominame
+	, VWI_CRM_campaign.ktb_biayaoperasional_base
+	, VWI_CRM_campaign.modifiedonbehalfby
+	, VWI_CRM_campaign.exchangerate
+	, VWI_CRM_campaign.ktb_biayasewa_base
+	, VWI_CRM_campaign.expectedrevenue_base
+	, VWI_CRM_campaign.xts_totalcampaignresponse_date
+	, VWI_CRM_campaign.budgetedcost_base
+	, VWI_CRM_campaign.owningteam
+	, VWI_CRM_campaign.ktb_biayasewa
+	, VWI_CRM_campaign.xts_totalopportunities_state
+	, VWI_CRM_campaign.xts_convertedleads_date
+	, VWI_CRM_campaign.statecode
+	, VWI_CRM_campaign.ktb_approvalnonbabit_base
+	, VWI_CRM_campaign.expectedrevenue
+	, VWI_CRM_campaign.xts_totalcampaignresponse_state
+	, VWI_CRM_campaign.timezoneruleversionnumber
+	, VWI_CRM_campaign.xts_totalmembers
+	, VWI_CRM_campaign.pricelistname
+	, VWI_CRM_campaign.xts_totalcampaignactivities_date
+	, VWI_CRM_campaign.xts_totalvalueopportunities_date
+	, VWI_CRM_campaign.ktb_approvalbabit
+	, VWI_CRM_campaign.xts_locking
+	, VWI_CRM_campaign.othercost
+	, VWI_CRM_campaign.emailaddress
+	, VWI_CRM_campaign.typecodename
+	, VWI_CRM_campaign.expectedresponse
+	, VWI_CRM_campaign.ktb_approvalsewatempat
+	, VWI_CRM_campaign.traversedpath
+	, VWI_CRM_campaign.createdonbehalfbyname
+	, VWI_CRM_campaign.createdbyyominame
+	, VWI_CRM_campaign.actualstart
+	, VWI_CRM_campaign.ktb_proposalclaimdealer
+	, VWI_CRM_campaign.xts_convertedleads
+	, VWI_CRM_campaign.createdby
+	, VWI_CRM_campaign.utcconversiontimezonecode
+	, VWI_CRM_campaign.xts_convertedleads_state
+	, VWI_CRM_campaign.xts_totalmembers_date
+	, VWI_CRM_campaign.ktb_statusreason
+	, VWI_CRM_campaign.istemplatename
+	, VWI_CRM_campaign.ownerid
+	, VWI_CRM_campaign.modifiedon
+	, VWI_CRM_campaign.importsequencenumber
+	, VWI_CRM_campaign.owneridyominame
+	, VWI_CRM_campaign.ktb_statuscampaignname
+	, VWI_CRM_campaign.xts_totalvalueopportunities_state
+	, VWI_CRM_campaign.processid
+	, VWI_CRM_campaign.description
+	, VWI_CRM_campaign.ktb_targetspk
+	, VWI_CRM_campaign.proposedstart
+	, VWI_CRM_campaign.createdbyname
+	, VWI_CRM_campaign.xts_totalcampaignresponse
+	, VWI_CRM_campaign.xts_businessunitid
+	, VWI_CRM_campaign.xts_salesobjectivename
+	, VWI_CRM_campaign.modifiedonbehalfbyname
+	, VWI_CRM_campaign.pricelistid
+	, VWI_CRM_campaign.entityimage
+	, VWI_CRM_campaign.xts_purposeid
+	, VWI_CRM_campaign.stageid
+	, VWI_CRM_campaign.xts_totalvalueopportunities
+	, VWI_CRM_campaign.codename
+	, VWI_CRM_campaign.proposedend
+	, VWI_CRM_campaign.ktb_transactiondate
+	, VWI_CRM_campaign.transactioncurrencyid
+	, VWI_CRM_campaign.totalcampaignactivityactualcost
+	, VWI_CRM_campaign.campaignid
+	, VWI_CRM_campaign.modifiedby
+	, VWI_CRM_campaign.xts_totalopportunities
+	, VWI_CRM_campaign.xts_website
+	, VWI_CRM_campaign.totalactualcost
+	, VWI_CRM_campaign.owninguser
+	, VWI_CRM_campaign.transactioncurrencyidname
+	, VWI_CRM_campaign.xts_totalopportunities_date
+	, VWI_CRM_campaign.actualend
+	, VWI_CRM_campaign.istemplate
+	, VWI_CRM_campaign.xts_purposeidname
+	, VWI_CRM_campaign.ktb_statusreasonname
+	, VWI_CRM_campaign.ktb_approvalnonbabit
+	, VWI_CRM_campaign.xts_totalmembers_state
+	, VWI_CRM_campaign.ktb_kategoriproduk
+	, VWI_CRM_campaign.xts_parentbusinessunitidname
+	, VWI_CRM_campaign.ktb_venuepameran
+	, VWI_CRM_campaign.name
+	, VWI_CRM_campaign.totalcampaignactivityactualcost_base
+	, VWI_CRM_campaign.ktb_biayaoperasional
+	, VWI_CRM_campaign.statuscode
+	, VWI_CRM_campaign.modifiedbyname
+	, VWI_CRM_campaign.budgetedcost
+	, VWI_CRM_campaign.othercost_base
+	, VWI_CRM_campaign.ktb_proposalclaimdealer_base
+	, VWI_CRM_campaign.entityimageid
+	, VWI_CRM_campaign.xts_categoryid
+	, VWI_CRM_campaign.typecode
+	, VWI_CRM_campaign.ktb_targetprospek
+	, VWI_CRM_campaign.statecodename
+	, VWI_CRM_campaign.xts_businessunitidname
+	, VWI_CRM_campaign.owningbusinessunit
+	, VWI_CRM_campaign.xts_categoryidname
+	, VWI_CRM_campaign.RowStatus
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_campaign a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.xts_businessunitid   
+	{0}
+) as VWI_CRM_campaign
+
+

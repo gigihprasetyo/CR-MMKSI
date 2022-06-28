@@ -1,0 +1,67 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	 [ktb_endingbalance_base]
+	,[modifiedbyyominame]
+	,[createdbyname]
+	,[transactioncurrencyid]
+	,[modifiedon]
+	,[ktb_totaldebit_base]
+	,[modifiedbyname]
+	,[ktb_transactiondate]
+	,[owningbusinessunitname]
+	,[createdonbehalfbyyominame]
+	,[ktb_businessunitid]
+	,[ktb_endingbalance]
+	,[importsequencenumber]
+	,[createdonbehalfby]
+	,[ktb_beginningbalance]
+	,[ktb_beginningbalance_base]
+	,[owninguser]
+	,[createdby]
+	,[ktb_dealerid]
+	,[modifiedonbehalfbyname]
+	,[statecode]
+	,[versionnumber]
+	,[createdon]
+	,[ktb_totaldebit]
+	,[owneridtype]
+	,[modifiedonbehalfbyyominame]
+	,[ktb_totalcredit]
+	,[modifiedby]
+	,[overriddencreatedon]
+	,[ktb_businessunitidname]
+	,[createdonbehalfbyname]
+	,[exchangerate]
+	,[ktb_idheader]
+	,[statuscodename]
+	,[ktb_totalcredit_base]
+	,[owningbusinessunit]
+	,[timezoneruleversionnumber]
+	,[statecodename]
+	,[owningteam]
+	,[transactioncurrencyidname]
+	,[ktb_daftardepositbid]
+	,[createdbyyominame]
+	,[statuscode]
+	,[modifiedonbehalfby]
+	,[ktb_productcategoryid]
+	,[owneridyominame]
+	,[ktb_daftardepositb]
+	,[owneridname]
+	,[ownerid]
+	,[utcconversiontimezonecode]
+	,[DealerCode]
+	,[SourceType]
+	,[RowStatus]
+	,[LastSyncDate]
+	, msdyn_companycode
+from (
+	SELECT      
+		a.*  
+		, b.msdyn_companycode    
+	FROM [CRM_ktb_daftardepositb] a WITH (NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.ktb_businessunitid   
+	Where a.RowStatus = 0
+) as VWI_CRM_ktb_daftardepositb
+WHERE ktb_daftardepositbid = @Id

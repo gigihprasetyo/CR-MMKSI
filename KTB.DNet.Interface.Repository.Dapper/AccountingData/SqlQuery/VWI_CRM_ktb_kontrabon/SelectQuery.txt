@@ -1,0 +1,65 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_ktb_kontrabon.company
+	, VWI_CRM_ktb_kontrabon.businessunitcode
+	, VWI_CRM_ktb_kontrabon.createdonbehalfbyyominame
+	, VWI_CRM_ktb_kontrabon.owninguser
+	, VWI_CRM_ktb_kontrabon.transactioncurrencyidname
+	, VWI_CRM_ktb_kontrabon.statecode
+	, VWI_CRM_ktb_kontrabon.owneridname
+	, VWI_CRM_ktb_kontrabon.statecodename
+	, VWI_CRM_ktb_kontrabon.ktb_vendorid
+	, VWI_CRM_ktb_kontrabon.createdonbehalfby
+	, VWI_CRM_ktb_kontrabon.ktb_tanggalkontrabon
+	, VWI_CRM_ktb_kontrabon.ktb_status
+	, VWI_CRM_ktb_kontrabon.importsequencenumber
+	, VWI_CRM_ktb_kontrabon.modifiedbyyominame
+	, VWI_CRM_ktb_kontrabon.ktb_statusname
+	, VWI_CRM_ktb_kontrabon.ktb_total_base
+	, VWI_CRM_ktb_kontrabon.utcconversiontimezonecode
+	, VWI_CRM_ktb_kontrabon.createdbyyominame
+	, VWI_CRM_ktb_kontrabon.owningbusinessunit
+	, VWI_CRM_ktb_kontrabon.modifiedbyname
+	, VWI_CRM_ktb_kontrabon.owningteam
+	, VWI_CRM_ktb_kontrabon.modifiedby
+	, VWI_CRM_ktb_kontrabon.createdby
+	, VWI_CRM_ktb_kontrabon.timezoneruleversionnumber
+	, VWI_CRM_ktb_kontrabon.owneridtype
+	, VWI_CRM_ktb_kontrabon.statuscodename
+	, VWI_CRM_ktb_kontrabon.ktb_vendoridname
+	, VWI_CRM_ktb_kontrabon.ktb_businessunitid
+	, VWI_CRM_ktb_kontrabon.ktb_say
+	, VWI_CRM_ktb_kontrabon.owneridyominame
+	, VWI_CRM_ktb_kontrabon.ktb_kontrabonno
+	, VWI_CRM_ktb_kontrabon.modifiedon
+	, VWI_CRM_ktb_kontrabon.exchangerate
+	, VWI_CRM_ktb_kontrabon.ktb_handling
+	, VWI_CRM_ktb_kontrabon.ktb_total
+	, VWI_CRM_ktb_kontrabon.transactioncurrencyid
+	, VWI_CRM_ktb_kontrabon.modifiedonbehalfbyyominame
+	, VWI_CRM_ktb_kontrabon.statuscode
+	, VWI_CRM_ktb_kontrabon.createdbyname
+	, VWI_CRM_ktb_kontrabon.createdon
+	, VWI_CRM_ktb_kontrabon.createdonbehalfbyname
+	, VWI_CRM_ktb_kontrabon.modifiedonbehalfbyname
+	, VWI_CRM_ktb_kontrabon.ktb_kontrabonid
+	, VWI_CRM_ktb_kontrabon.ktb_businessunitidname
+	, VWI_CRM_ktb_kontrabon.versionnumber
+	, VWI_CRM_ktb_kontrabon.modifiedonbehalfby
+	, VWI_CRM_ktb_kontrabon.ktb_handlingname
+	, VWI_CRM_ktb_kontrabon.ownerid
+	, VWI_CRM_ktb_kontrabon.overriddencreatedon
+	, VWI_CRM_ktb_kontrabon.RowStatus
+	/**EndPagingIndexQuery**/
+from (
+	select 
+		 b.ktb_bucompany as company
+		, b.ktb_dealercode as businessunitcode  
+		, a.*  
+		, b.msdyn_companycode  
+	from CRM_ktb_kontrabon a with(nolock)  
+	left join CRM_businessunit b with(nolock)
+	on a.ktb_businessunitid = b.businessunitid
+	{0}
+) VWI_CRM_ktb_kontrabon

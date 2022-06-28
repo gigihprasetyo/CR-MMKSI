@@ -1,0 +1,46 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, xts_landedcost
+	, xts_locking
+	, statecode
+	, statecodename
+	, xts_recognitioncategoryname
+	, createdonbehalfby
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, xts_company
+	, xts_consumptiontaxidname
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, xts_taxablename
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, createdby
+	, timezoneruleversionnumber
+	, xts_landedcostid
+	, statuscodename
+	, xts_reasonid
+	, modifiedon
+	, xts_reasonidname
+	, xts_taxable
+	, xts_calculationmethodname
+	, xts_consumptiontaxid
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, xts_type
+	, xts_typename
+	, modifiedonbehalfbyname
+	, xts_calculationmethod
+	, xts_recognitioncategory
+	, overriddencreatedon
+	, xts_description
+FROM [dbo].[CRM_xts_landedcost] as VWI_CRM_xts_landedcost with(nolock)
+WHERE xts_landedcostid = @Id

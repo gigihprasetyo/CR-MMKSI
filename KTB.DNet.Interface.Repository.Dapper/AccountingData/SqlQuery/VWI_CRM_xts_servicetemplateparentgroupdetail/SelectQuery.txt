@@ -1,0 +1,68 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_servicetemplateparentgroupdetail.company
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.businessunitcode
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_productsegment2id
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.modifiedbyyominame
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.createdbyname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_servicetemplatesubgroupid
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.modifiedon
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_productsegment1idname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_servicetemplatesubgroupidname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_businessunitid
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.modifiedbyname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_productsegment3id
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.modifiedonbehalfby
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.createdonbehalfbyyominame
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.importsequencenumber
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.createdonbehalfby
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.statecodename
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_productsegment3idname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_businessunitidname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_servicetemplateparentgroupdetailid
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.modifiedonbehalfbyname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_servicetemplategroupidname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.versionnumber
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.createdon
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.createdby
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.owneridtype
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_locking
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_servicetemplateparentgroupidname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_pkcombinationkey
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_productsegment1id
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.modifiedby
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.overriddencreatedon
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.createdonbehalfbyname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.owneridname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.owninguser
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.statuscodename
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_productsegment4idname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.owningbusinessunit
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.timezoneruleversionnumber
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_servicetemplategroupid
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.owningteam
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_servicetemplateparentgroupid
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_productsegment4id
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.createdbyyominame
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.statuscode
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.statecode
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_productsegment2idname
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.owneridyominame
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.xts_servicetemplategroupdetail
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.ownerid
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.utcconversiontimezonecode
+    , VWI_CRM_xts_servicetemplateparentgroupdetail.msdyn_companycode
+/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicetemplateparentgroupdetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_servicetemplateparentgroupdetail  

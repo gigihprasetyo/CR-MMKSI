@@ -1,0 +1,39 @@
+SELECT 
+	  ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+      ,xts_interiorcoloridname
+      ,createdonbehalfbyyominame
+      ,modifiedonbehalfby
+      ,statecode
+      ,statecodename
+      ,createdonbehalfby
+      ,xts_pkcombinationkey
+      ,xts_interiorcolorid
+      ,importsequencenumber
+      ,organizationidname
+      ,modifiedbyyominame
+      ,utcconversiontimezonecode
+      ,createdbyyominame
+      ,modifiedbyname
+      ,versionnumber
+      ,modifiedby
+      ,createdby
+      ,timezoneruleversionnumber
+      ,xts_productinteriorcolor
+      ,statuscodename
+      ,xts_sharedproductidname
+      ,xts_sharedproductid
+      ,modifiedon
+      ,xts_eventdata
+      ,xts_entitytag
+      ,modifiedonbehalfbyyominame
+      ,statuscode
+      ,createdbyname
+      ,createdon
+      ,organizationid
+      ,createdonbehalfbyname
+      ,modifiedonbehalfbyname
+      ,xts_productinteriorcolorid
+      ,overriddencreatedon
+      ,xts_description
+FROM CRM_xts_productinteriorcolor as VWI_CRM_xts_productinteriorcolor WITH (NOLOCK) 
+WHERE xts_productinteriorcolorid = @Id

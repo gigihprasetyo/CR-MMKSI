@@ -1,0 +1,121 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <title>Payment Transfer</title>
+    <meta name="vs_defaultClientScript" content="JavaScript">
+    <meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+    <meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+    <meta name="ProgId" content="VisualStudio.HTML">
+    <meta name="Originator" content="Microsoft Visual Studio .NET 7.1">
+</head>
+<body ms_positioning="GridLayout">
+    <table border="0" cellspacing="2" cellpadding="0" width="800">
+        <tr>
+            <td>
+                <table id="TblHeader" border="0" cellspacing="0" cellpadding="0" width="400">
+                    <tr>
+                        <td width="100">Kode Dealer</td>
+                        <td width="1">:&nbsp;</td>
+                        <td>{CreditAccount}</td>
+                    </tr>
+                    <tr>
+                        <td>Nama Dealer</td>
+                        <td>:&nbsp;</td>
+                        <td>{CreditName}</td>
+                    </tr>
+                    <tr>
+                        <td>Kota</td>
+                        <td>:&nbsp;</td>
+                        <td>{CreditCity}</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="COLOR: blue"></td>
+        </tr>
+        <tr>
+            <td style="COLOR: blue"></td>
+        </tr>
+        <tr>
+            <td>
+                Dengan hormat,<br>
+                Berikut Nomor Spare Part Billing yang akan atau telah Jatuh Tempo :<br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table id="TblData" border="1" cellspacing="0" cellpadding="1">
+                    <tr>
+                        <td width="40" align="center"><b>No</b></td>
+                        <td width="150" align="center"><b>Kode Dealer</b></td>
+                        <td width="150" align="center"><b>No. Billing</b></td>
+                        <td width="150" align="center"><b>Nomor Reg</b></td>
+                        <td width="150" align="center"><b>Tanggal Billing</b></td>
+                        <td width="150" align="center"><b>Tanggal Jatuh Tempo Billing</b></td>
+                        <td width="100" align="center"><b>Nilai</b></td>
+                    </tr>
+                    {DealerRow}
+
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td style="COLOR: blue"></td>
+        </tr>
+        <tr>
+            <td style="COLOR: blue">
+                <b>
+                    Silahkan lakukan pembayaran atas Spare Part Billing Tersebut*.
+
+                </b>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="COLOR: black">
+                <i>
+                    *)Silahkan abaikan Email ini jika sudah melakukan Pembayaran
+
+                </i>
+            </td>
+        </tr>
+        <tr>
+            <td style="COLOR: blue"></td>
+        </tr>
+        <tr>
+            <td>
+                Terima kasih atas perhatian dan kerja samanya.
+            </td>
+        </tr>
+        <tr>
+            <td style="COLOR: blue"></td>
+        </tr>
+        <tr>
+            <td style="COLOR: blue"></td>
+        </tr>
+        <tr>
+            <td align="right">
+                <table id="TblFooter" border="0" cellspacing="0" cellpadding="0" width="400">
+                    <tr>
+                        <td align="RIGHT">Jakarta, {Tanggal}</td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                    </tr>
+                    <tr>
+                        <td align="center"><u><u></u></u></td>
+                    </tr>
+                    <tr>
+                        <td align="center"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+    </table>
+</body>
+</html>

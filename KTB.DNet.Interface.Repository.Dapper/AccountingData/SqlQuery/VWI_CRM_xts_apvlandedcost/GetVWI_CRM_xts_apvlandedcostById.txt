@@ -1,0 +1,78 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_locking
+	,statecode
+	,xts_taxrate
+	,owneridname
+	,xts_amount_base
+	,statecodename
+	,xts_amount
+	,createdonbehalfby
+	,transactioncurrencyid
+	,xts_taxamount
+	,xts_totalamount_base
+	,xts_parentbusinessunitid
+	,xts_apvlandedcost
+	,xts_purchasereceiptlandedcostidname
+	,xts_accountid
+	,xts_accountpayablevoucheridname
+	,importsequencenumber
+	,modifiedbyyominame
+	,xts_consumptiontaxidname
+	,xts_accountpayablevoucherid
+	,xts_purchasereceiptid
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,xts_apvlandedcostid
+	,createdby
+	,timezoneruleversionnumber
+	,xts_landedcostid
+	,owneridtype
+	,statuscodename
+	,xts_businessunitidname
+	,xts_accountidname
+	,xts_purchasereceiptidname
+	,owneridyominame
+	,modifiedon
+	,xts_totalbaseamount_base
+	,exchangerate
+	,xts_taxamount_base
+	,xts_consumptiontaxid
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,createdonbehalfbyname
+	,xts_landedcostidname
+	,xts_totalamount
+	,modifiedonbehalfbyname
+	,xts_purchasereceiptlandedcostid
+	,xts_totalbaseamount
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,xts_parentbusinessunitidname
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_apvlandedcost a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_apvlandedcostid = @Id
+) VWI_CRM_xts_apvlandedcost 

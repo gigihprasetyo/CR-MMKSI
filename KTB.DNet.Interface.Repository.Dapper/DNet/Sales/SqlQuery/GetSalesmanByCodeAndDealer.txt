@@ -1,0 +1,2 @@
+﻿SELECT * FROM SalesmanHeader WITH (NOLOCK) WHERE
+RowStatus = 0 AND DealerID = @DealerID AND SalesmanCode IN @SalesmanCode

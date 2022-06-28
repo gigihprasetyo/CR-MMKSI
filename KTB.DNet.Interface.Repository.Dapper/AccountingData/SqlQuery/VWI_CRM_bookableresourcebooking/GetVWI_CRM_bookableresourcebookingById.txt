@@ -1,0 +1,105 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	, company
+	, businessunitcode
+	, bookableresourcebookingid
+	, bookingstatus
+	, bookingstatusname
+	, bookingtype
+	, bookingtypename
+	, createdby
+	, createdbyname
+	, createdbyyominame
+	, createdon
+	, createdonbehalfby
+	, createdonbehalfbyname
+	, createdonbehalfbyyominame
+	, DealerCode
+	, duration
+	, endtime
+	, exchangerate
+	, header
+	, headername
+	, importsequencenumber
+	, ktb_urswohandler
+	, ktb_urswohandlername
+	, LastSyncDate
+	, modifiedby
+	, modifiedbyname
+	, modifiedbyyominame
+	, modifiedon
+	, modifiedonbehalfby
+	, modifiedonbehalfbyname
+	, modifiedonbehalfbyyominame
+	, msdyn_acceptcascadecrewchanges
+	, msdyn_acceptcascadecrewchangesname
+	, msdyn_actualarrivaltime
+	, msdyn_actualtravelduration
+	, msdyn_allowoverlapping
+	, msdyn_allowoverlappingname
+	, msdyn_appointmentbookingid
+	, msdyn_appointmentbookingidname
+	, msdyn_bookingmethod
+	, msdyn_bookingmethodname
+	, msdyn_bookingsetupmetadataid
+	, msdyn_bookingsetupmetadataidname
+	, msdyn_cascadecrewchanges
+	, msdyn_cascadecrewchangesname
+	, msdyn_effort
+	, msdyn_estimatedarrivaltime
+	, msdyn_estimatedtravelduration
+	, msdyn_latitude
+	, msdyn_longitude
+	, msdyn_milestraveled
+	, msdyn_requirementgroupid
+	, msdyn_requirementgroupidname
+	, msdyn_resourcegroup
+	, msdyn_resourcegroupname
+	, msdyn_resourcerequirement
+	, msdyn_resourcerequirementname
+	, msdyn_serviceappointment
+	, msdyn_serviceappointmentname
+	, msdyn_timegroupdetailselected
+	, msdyn_timegroupdetailselectedname
+	, msdyn_ursinternalflags
+	, msdyn_worklocation
+	, msdyn_worklocationname
+	, name
+	, overriddencreatedon
+	, ownerid
+	, owneridname
+	, owneridtype
+	, owneridyominame
+	, owningbusinessunit
+	, owningbusinessunitname
+	, owningteam
+	, owninguser
+	, processid
+	, resource
+	, resourcename
+	, RowStatus
+	, SourceType
+	, stageid
+	, starttime
+	, statecode
+	, statecodename
+	, statuscode
+	, statuscodename
+	, timezoneruleversionnumber
+	, transactioncurrencyid
+	, transactioncurrencyidname
+	, traversedpath
+	, utcconversiontimezonecode
+	, versionnumber
+	, msdyn_companycode
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_bookableresourcebooking a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.owningbusinessunit   
+	WHERE bookableresourcebookingid = @Id
+) as VWI_CRM_bookableresourcebooking

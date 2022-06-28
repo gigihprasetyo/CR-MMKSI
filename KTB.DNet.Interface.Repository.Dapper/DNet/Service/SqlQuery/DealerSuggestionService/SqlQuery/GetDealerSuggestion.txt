@@ -1,0 +1,13 @@
+﻿EXEC [sp_DealerSuggestion] 
+	@LastServiceDealer, 
+	@FavDealer, 
+	@SelectedDealer, 
+	@CustomerLatitude, 
+	@CustomerLongitude, 
+	@RequestedDate,
+	@PickupType,
+	@ServiceStandardTime,
+	@CheckinTime,
+	@CheckoutTime,
+	@RequestTime,
+	@ServiceBookingCode

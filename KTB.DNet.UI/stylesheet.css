@@ -1,0 +1,138 @@
+a {color:#585E80;}
+a:hover {color:#ff0000; text-decoration: none;}
+
+a.white {
+	font-family:Sans-Serif, Arial; font-size:11px; color:#FFFFFF; font-weight: normal;}
+
+a.red {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FF0000; margin:0px; font-weight: normal;}
+
+a.menuLeft {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; text-decoration:none;}
+
+a.menuLeft2 {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; font-weight: bold; text-decoration:none;}
+
+body {
+	background-color:#ffffff;}
+
+body, form, table {
+	margin:0px; padding:0px;}
+
+td, input, select, textarea, caption {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px;}
+
+input.textRight {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; text-align:right;}
+
+td.welcomeLogin {
+	font-family: Sans-Serif, Trebuchet MS, Geneva, Arial; font-size:12px; color:#000000; margin:0px;}
+
+input.welcomeLogin {
+	font-family: Sans-Serif, Trebuchet MS, Geneva, Arial; font-size:12px; color:#000000; margin:0px;}
+
+td.selamatDatang {
+	font-family: Sans-Serif, Trebuchet MS, Geneva, Arial; font-size:12pt; color:#000000; margin:0px; font-weight:bold;}
+
+td.welcomeAddress {
+	font-family: Sans-Serif, Trebuchet MS, Geneva, Arial; font-size:11px; color:#000000; margin:0px;}
+
+
+.partsTable {
+	background-color:#F1F6FB;}
+
+.generalTable {
+	background-color:#FDF1F2;}
+
+.serviceTable {
+	background-color:#F1F6FB;}
+
+.salesTable {
+	background-color:#F5F1EE;}
+
+.darkSoft {
+	background-color:#F6F6F6;}
+
+.serviceTable {
+	background-color:#F6F6F6;}
+
+.dark {
+	background-color:#cdcdcd;}
+
+.white {
+	background-color:#ffffff;}
+
+.black {
+	background-color:#000000;}
+
+.menuHor {
+	font-family: Sans-Serif, Trebuchet MS, Geneva, Arial; font-size:15px; color:#000000; margin:0px; text-decoration:none;}
+
+.menuHor2 {
+	font-family: Sans-Serif, Trebuchet MS, Geneva, Arial; font-size:15px; color:#ff0000; margin:0px; text-decoration:underline;}
+
+.titleTableParts {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #2E5D8B; text-align:center;}
+
+.titleTableSales {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; font-weight: bold; background: #F28625; text-align:center;}
+
+.titleTableGeneral {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #CC3333; text-align:center;}
+
+.titleTableService {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#FFFFFF; margin:0px; font-weight: bold; background: #666666; text-align:center;}
+
+.titleField {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; font-weight: bold; text-align: left;}
+
+.titleField2 {
+	font-family: Sans-Serif, Arial; font-size:11px; color:#000000; margin:0px; font-weight: normal; text-align: left;}
+
+.titlePage {
+	font-family: Sans-Serif, Arial; font-size:11pt; color:#000000; margin:0px; font-weight: bold;}
+
+p.segitiga {margin-top:5px;}
+p.navipage {margin-top:2px;}
+p.data {margin-left:2px; margin-right:2px;}
+p.data2 {margin-left:4px; margin-right:4px;}
+
+
+
+td.red {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#ff0000; margin:0px; font-weight: bold;}
+
+td.blue {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:10px; color:#000099; margin:0px; font-weight: bold;}
+
+font.blue {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:10px; color:#000099; margin:0px; font-weight: normal;}
+
+font.blue2 {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#000099; margin:0px; font-weight: normal;}
+
+font.red {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#ff0000; margin:0px; font-weight: bold;}
+
+font.white {
+	font-family:Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#ffffff; margin:0px; font-weight: bold;}
+
+td.date {
+	font-family:arial, Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#ffffff; margin:0px; font-weight: bold; }
+
+td.error {
+	font-family:arial, Sans-serif, Trebuchet MS, Geneva,; font-size:11px; color:#CF1F54; margin:0px; font-weight: normal; }
+
+.qform {
+	BORDER-RIGHT: #6699cc 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #6699cc 1px solid; PADDING-LEFT: 1px; MARGIN-BOTTOM: 1px; PADDING-BOTTOM: 0px; BORDER-LEFT: #6699cc 1px solid; PADDING-TOP: 0px; BORDER-BOTTOM: #6699cc 1px solid; FONT-FAMILY: Arial, Helvetica, sans-serif}
+
+.scroll_grey
+{
+	scrollbar-3d-light-color:#cccccc;
+	scrollbar-arrow-color:#FF9900;
+	scrollbar-base-color:#000000;
+	scrollbar-dark-shadow-color:#cccccc;
+	scrollbar-face-color:#cccccc;
+	scrollbar-highlight-color:#ffffff;
+	scrollbar-shadow-color:#cccccc;
+}

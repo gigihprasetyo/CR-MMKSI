@@ -1,0 +1,21 @@
+﻿<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="{{activePageTitle}}" ba-panel-class="with-scroll">
+                <form name="form" ng-submit="Submit()">
+                    <div class="col-md-6 col-xs-12">
+                            <standard-select label="Select Endpoint " name="selectedEndpoint" ng-model="selectedEndpoint.Id" options="endpointOptions"
+                            value="Id" text="Name" />
+                        <input-text type="number" label="Request Limit" name="RequestLimit" ng-model="throttle.RequestLimit" required></input-text>
+                        <input-text type="number" label="Time (seconds)" name="TimeInSeconds" ng-model="throttle.TimeInSeconds" required></input-text>
+                        <switcher label="Active" name="Enable" switcher-style="info" text-on="YES" text-off="NO" ng-model="throttle.Enable"></switcher>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <a ui-sref="throttler.list" class="btn btn-default m-t-15 waves-effect">Back</a>
+                        <input ng-disabled="form.$invalid" type="submit" value="Save" class="btn btn-primary m-t-15 waves-effect">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

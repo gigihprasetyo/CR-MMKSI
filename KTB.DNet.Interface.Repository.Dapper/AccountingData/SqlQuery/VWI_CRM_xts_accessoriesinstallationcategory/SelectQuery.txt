@@ -1,0 +1,56 @@
+﻿SELECT 
+    /**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_xts_accessoriesinstallationcategory.company
+    , VWI_CRM_xts_accessoriesinstallationcategory.businessunitcode
+    , VWI_CRM_xts_accessoriesinstallationcategory.xts_salespricecategoryname
+    , VWI_CRM_xts_accessoriesinstallationcategory.createdonbehalfbyyominame
+    , VWI_CRM_xts_accessoriesinstallationcategory.modifiedonbehalfby
+    , VWI_CRM_xts_accessoriesinstallationcategory.owningteam
+    , VWI_CRM_xts_accessoriesinstallationcategory.xts_locking
+    , VWI_CRM_xts_accessoriesinstallationcategory.statecode
+    , VWI_CRM_xts_accessoriesinstallationcategory.xts_businessunitidname
+    , VWI_CRM_xts_accessoriesinstallationcategory.owneridname
+    , VWI_CRM_xts_accessoriesinstallationcategory.statecodename
+    , VWI_CRM_xts_accessoriesinstallationcategory.owninguser
+    , VWI_CRM_xts_accessoriesinstallationcategory.createdonbehalfby
+    , VWI_CRM_xts_accessoriesinstallationcategory.importsequencenumber
+    , VWI_CRM_xts_accessoriesinstallationcategory.utcconversiontimezonecode
+    , VWI_CRM_xts_accessoriesinstallationcategory.xts_accessoriesinstallationcategory
+    , VWI_CRM_xts_accessoriesinstallationcategory.owningbusinessunit
+    , VWI_CRM_xts_accessoriesinstallationcategory.modifiedbyname
+    , VWI_CRM_xts_accessoriesinstallationcategory.versionnumber
+    , VWI_CRM_xts_accessoriesinstallationcategory.modifiedby
+    , VWI_CRM_xts_accessoriesinstallationcategory.modifiedbyyominame
+    , VWI_CRM_xts_accessoriesinstallationcategory.createdby
+    , VWI_CRM_xts_accessoriesinstallationcategory.timezoneruleversionnumber
+    , VWI_CRM_xts_accessoriesinstallationcategory.createdbyyominame
+    , VWI_CRM_xts_accessoriesinstallationcategory.owneridtype
+    , VWI_CRM_xts_accessoriesinstallationcategory.statuscodename
+    , VWI_CRM_xts_accessoriesinstallationcategory.xts_accessoriesinstallationcategoryid
+    , VWI_CRM_xts_accessoriesinstallationcategory.owneridyominame
+    , VWI_CRM_xts_accessoriesinstallationcategory.modifiedon
+    , VWI_CRM_xts_accessoriesinstallationcategory.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_accessoriesinstallationcategory.statuscode
+    , VWI_CRM_xts_accessoriesinstallationcategory.createdbyname
+    , VWI_CRM_xts_accessoriesinstallationcategory.createdon
+    , VWI_CRM_xts_accessoriesinstallationcategory.xts_businessunitid
+    , VWI_CRM_xts_accessoriesinstallationcategory.createdonbehalfbyname
+    , VWI_CRM_xts_accessoriesinstallationcategory.xts_installationname
+    , VWI_CRM_xts_accessoriesinstallationcategory.modifiedonbehalfbyname
+    , VWI_CRM_xts_accessoriesinstallationcategory.xts_salespricecategory
+    , VWI_CRM_xts_accessoriesinstallationcategory.ownerid
+    , VWI_CRM_xts_accessoriesinstallationcategory.overriddencreatedon
+    , VWI_CRM_xts_accessoriesinstallationcategory.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM [CRM_xts_accessoriesinstallationcategory] a
+	INNER JOIN CRM_businessunit b 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_accessoriesinstallationcategory

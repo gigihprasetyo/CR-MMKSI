@@ -1,0 +1,67 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xid_registrationmonitoring.company
+	, VWI_CRM_xid_registrationmonitoring.businessunitcode
+	, VWI_CRM_xid_registrationmonitoring.createdonbehalfbyyominame
+	, VWI_CRM_xid_registrationmonitoring.owninguser
+	, VWI_CRM_xid_registrationmonitoring.xid_parentbusinessunitidname
+	, VWI_CRM_xid_registrationmonitoring.xid_leadtime
+	, VWI_CRM_xid_registrationmonitoring.statecode
+	, VWI_CRM_xid_registrationmonitoring.owneridname
+	, VWI_CRM_xid_registrationmonitoring.statecodename
+	, VWI_CRM_xid_registrationmonitoring.xid_newvehiclesalesorderidname
+	, VWI_CRM_xid_registrationmonitoring.createdonbehalfby
+	, VWI_CRM_xid_registrationmonitoring.xid_stageordernumber
+	, VWI_CRM_xid_registrationmonitoring.xid_actualdate
+	, VWI_CRM_xid_registrationmonitoring.xid_remarks
+	, VWI_CRM_xid_registrationmonitoring.xid_newvehiclesalesorderid
+	, VWI_CRM_xid_registrationmonitoring.xid_parentbusinessunitid
+	, VWI_CRM_xid_registrationmonitoring.importsequencenumber
+	, VWI_CRM_xid_registrationmonitoring.modifiedbyyominame
+	, VWI_CRM_xid_registrationmonitoring.xid_followup
+	, VWI_CRM_xid_registrationmonitoring.xid_progressstageidname
+	, VWI_CRM_xid_registrationmonitoring.xid_idealdate
+	, VWI_CRM_xid_registrationmonitoring.utcconversiontimezonecode
+	, VWI_CRM_xid_registrationmonitoring.createdbyyominame
+	, VWI_CRM_xid_registrationmonitoring.owningbusinessunit
+	, VWI_CRM_xid_registrationmonitoring.modifiedbyname
+	, VWI_CRM_xid_registrationmonitoring.owningteam
+	, VWI_CRM_xid_registrationmonitoring.modifiedby
+	, VWI_CRM_xid_registrationmonitoring.createdby
+	, VWI_CRM_xid_registrationmonitoring.timezoneruleversionnumber
+	, VWI_CRM_xid_registrationmonitoring.xid_progressstageid
+	, VWI_CRM_xid_registrationmonitoring.xid_transactiontype
+	, VWI_CRM_xid_registrationmonitoring.owneridtype
+	, VWI_CRM_xid_registrationmonitoring.statuscodename
+	, VWI_CRM_xid_registrationmonitoring.xid_gap
+	, VWI_CRM_xid_registrationmonitoring.owneridyominame
+	, VWI_CRM_xid_registrationmonitoring.modifiedon
+	, VWI_CRM_xid_registrationmonitoring.xid_transactiontypename
+	, VWI_CRM_xid_registrationmonitoring.xid_registrationmonitoringid
+	, VWI_CRM_xid_registrationmonitoring.modifiedonbehalfbyyominame
+	, VWI_CRM_xid_registrationmonitoring.statuscode
+	, VWI_CRM_xid_registrationmonitoring.createdbyname
+	, VWI_CRM_xid_registrationmonitoring.createdon
+	, VWI_CRM_xid_registrationmonitoring.createdonbehalfbyname
+	, VWI_CRM_xid_registrationmonitoring.xid_businessunitid
+	, VWI_CRM_xid_registrationmonitoring.modifiedonbehalfbyname
+	, VWI_CRM_xid_registrationmonitoring.xid_registrationmonitoringnumber
+	, VWI_CRM_xid_registrationmonitoring.versionnumber
+	, VWI_CRM_xid_registrationmonitoring.modifiedonbehalfby
+	, VWI_CRM_xid_registrationmonitoring.ownerid
+	, VWI_CRM_xid_registrationmonitoring.overriddencreatedon
+	, VWI_CRM_xid_registrationmonitoring.xid_businessunitidname
+	, VWI_CRM_xid_registrationmonitoring.RowStatus
+	/**EndPagingIndexQuery**/
+from (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xid_registrationmonitoring a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xid_businessunitid
+    {0}
+) VWI_CRM_xid_registrationmonitoring 

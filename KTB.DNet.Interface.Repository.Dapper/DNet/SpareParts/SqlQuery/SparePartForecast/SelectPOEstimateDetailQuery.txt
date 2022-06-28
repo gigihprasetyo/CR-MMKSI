@@ -1,0 +1,38 @@
+﻿select
+	/**PagingIndexQuery**/
+	ID
+	, PartNumber
+	, AllocQty
+	, OrderQty
+	, RetailPrice
+	, Discount
+	, Tax
+	, Rowstatus
+	, LastUpdatedby
+	, LastUpdateTime
+	/**EndPagingIndexQuery**/
+from 
+(
+	select  
+		a.ID
+		, c.PartNumber
+		, a.ApprovedQty as AllocQty
+		, a.RequestQty as OrderQty
+		, 0 as RetailPrice
+		, 0 as Discount
+		, 0 as Tax
+		, a.Rowstatus
+		, case when a.LastUpdatedby is null then a.Createdby else a.LastUpdatedby end as LastUpdatedby
+		, case when a.LastUpdatedtime is null then a.CreatedTime else a.LastUpdatedtime end as LastUpdateTime
+		, a.SparePartForecastHeaderID
+		, a.SONumber
+	from SparePartForecastDetail a with(nolock)
+	left join sparepartforecastmaster b with(nolock) 
+	on b.ID = a.sparepartforecastmasterID
+	left join SparePartMaster c with(nolock) 
+	on c.ID = b.SparePartMasterID
+	where b.RowStatus = 0
+		and c.RowStatus = 0
+		and b.Status <> 5
+) POEstimateDetail
+{0}

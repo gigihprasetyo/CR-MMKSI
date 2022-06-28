@@ -1,0 +1,48 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	,owningteam
+	,statuscodename
+	,statecode
+	,modifiedonbehalfbyyominame
+	,statecodename
+	,owninguser
+	,modifiedby
+	,versionnumber
+	,ownerid
+	,ktb_openfactureid
+	,modifiedonbehalfbyname
+	,ktb_name
+	,owneridname
+	,ktb_nomorchassis
+	,overriddencreatedon
+	,statuscode
+	,ktb_nomorfaktur
+	,createdonbehalfbyname
+	,modifiedbyname
+	,ktb_tanggalfaktur
+	,modifiedon
+	,createdbyname
+	,utcconversiontimezonecode
+	,modifiedbyyominame
+	,owningbusinessunit
+	,createdonbehalfbyyominame
+	,createdon
+	,timezoneruleversionnumber
+	,owneridtype
+	,importsequencenumber
+	,createdby
+	,createdbyyominame
+	,modifiedonbehalfby
+	,owneridyominame
+	,createdonbehalfby
+	,RowStatus
+FROM (
+	select    
+		 b.ktb_bucompany company  
+		 ,b.ktb_dealercode businessunitcode  
+		 ,a.*
+		 ,b.msdyn_companycode 
+	from CRM_ktb_openfacture a WITH(NOLOCK)
+	JOIN CRM_businessunit b WITH(NOLOCK) ON b.businessunitid = a.owningbusinessunit
+	where ktb_openfactureid = @Id
+) VWI_CRM_ktb_openfacture 

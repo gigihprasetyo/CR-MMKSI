@@ -1,0 +1,6 @@
+﻿DELETE APIUserPermission WHERE 
+ClientUserId = @ClientUserId AND 
+IsCustomPermission != 1 AND
+IsDismantledPermission != 1 AND
+PermissionId NOT IN @ListOfUnremovedPermissionId
+

@@ -1,0 +1,86 @@
+SELECT 
+	IDRow
+	,businessunitcode
+	,xts_titleregistrationfee
+	,versionnumber
+	,createdon
+	,xts_vehiclepriceidname
+	,xts_ontheroadprice
+	,xts_productconfigurationid
+	,xts_offtheroadprice_base
+	,xts_consumptiontax1amount
+	,statuscodename
+	,xts_productinteriorcolorid
+	,modifiedbyyominame
+	,owneridtype
+	,createdonbehalfby
+	,modifiedbyname
+	,owneridname
+	,xts_consumptiontax2amount
+	,overriddencreatedon
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,ktb_dnetid
+	,xts_consumptiontax2id
+	,owningteam
+	,xts_productidname
+	,statecode
+	,xts_consumptiontax1amount_base
+	,timezoneruleversionnumber
+	,xts_bookingfeeamount_base
+	,xts_productstyleid
+	,xts_locking
+	,xts_consumptiontax1idname
+	,createdonbehalfbyname
+	,xts_consumptiontax2idname
+	,xts_productexteriorcolorid
+	,createdby
+	,utcconversiontimezonecode
+	,xts_offtheroadprice
+	,xts_specialcolorprice
+	,xts_titleregistrationfee_base
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,modifiedby
+	,createdbyname
+	,xts_vehiclepricedetailid
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_productexteriorcoloridname
+	,xts_productconfigurationidname
+	,xts_specialcolorprice_base
+	,xts_productid
+	,transactioncurrencyid
+	,xts_baseprice_base
+	,xts_baseprice
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_consumptiontax1id
+	,owningbusinessunit
+	,xts_ontheroadprice_base
+	,xts_consumptiontax2amount_base
+	,xts_productinteriorcoloridname
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_bookingfeeamount
+	,xts_vehiclepriceid
+	,xts_vehiclepricedetail
+	,statecodename
+	,xts_businessunitidname
+	,xts_productstyleidname
+	,RowStatus
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM VWI_CRM_xts_vehiclepricedetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+	WHERE xts_vehiclepricedetailid = @Id
+) VWI_CRM_xts_vehiclepricedetail 

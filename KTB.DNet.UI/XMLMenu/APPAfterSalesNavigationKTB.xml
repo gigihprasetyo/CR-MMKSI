@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AppNavigationSchema xmlns="http://tempuri.org/AppNavigationSchema.xsd">
+
+  <AppScreen>
+    <AppScreenId>2900</AppScreenId>
+    <ScreenName>Master</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>2900</AppMenuId>
+    <MenuName>Master</MenuName>
+    <ScreenId>2900</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppMenu>
+    <AppMenuId>2901</AppMenuId>
+    <MenuName>Sales Channel</MenuName>
+    <ScreenId>2901</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2901</AppScreenId>
+    <ScreenName>Sales Channel</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>2902</AppMenuId>
+    <MenuName>SparePart Salesman</MenuName>
+    <ScreenId>2902</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2902</AppScreenId>
+    <ScreenName>SparePart Salesman</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>2903</AppMenuId>
+    <MenuName>Tipe Work Order</MenuName>
+    <ScreenId>2903</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2903</AppScreenId>
+    <ScreenName>Tipe Work Order</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>2904</AppMenuId>
+    <MenuName>Kategori Work Order</MenuName>
+    <ScreenId>2904</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2904</AppScreenId>
+    <ScreenName>Kategori Work Order</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>2905</AppMenuId>
+    <MenuName>Tempat Pengerjaan</MenuName>
+    <ScreenId>2905</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2905</AppScreenId>
+    <ScreenName>Tempat Pengerjaan</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>2906</AppMenuId>
+    <MenuName>Layanan</MenuName>
+    <ScreenId>2906</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2906</AppScreenId>
+    <ScreenName>Layanan</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <!--<AppMenu>
+    <AppMenuId>2907</AppMenuId>
+    <MenuName>Master Expense Group</MenuName>
+    <ScreenId>2907</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2907</AppScreenId>
+    <ScreenName>Master Expense Group</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>2908</AppMenuId>
+    <MenuName>Master Expense</MenuName>
+    <ScreenId>2908</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2908</AppScreenId>
+    <ScreenName>Master Expense</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>-->
+  <AppMenu>
+    <AppMenuId>2909</AppMenuId>
+    <MenuName>Email User</MenuName>
+    <ScreenId>2909</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2909</AppScreenId>
+    <ScreenName>Email User</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>2910</AppMenuId>
+    <MenuName>Daftar Pegawai After Sales</MenuName>
+    <ScreenId>2910</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2910</AppScreenId>
+    <ScreenName>Daftar Pegawai After Sales</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>2911</AppMenuId>
+    <MenuName>Module</MenuName>
+    <ScreenId>2911</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2911</AppScreenId>
+    <ScreenName>Module</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>2912</AppMenuId>
+    <MenuName>Cut Off Report</MenuName>
+    <ScreenId>2912</ScreenId>
+    <ParentMenuId>2900</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2912</AppScreenId>
+    <ScreenName>Cut Off Report</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppScreen>
+    <AppScreenId>2915</AppScreenId>
+    <ScreenName>Data Upload</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>2915</AppMenuId>
+    <MenuName>Data Upload</MenuName>
+    <ScreenId>2915</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+
+  <AppMenu>
+    <AppMenuId>2916</AppMenuId>
+    <MenuName>Daftar Upload</MenuName>
+    <ScreenId>2916</ScreenId>
+    <ParentMenuId>2915</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2916</AppScreenId>
+    <ScreenName>Daftar Upload</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>2917</AppMenuId>
+    <MenuName>SVC Incoming</MenuName>
+    <ScreenId>2917</ScreenId>
+    <ParentMenuId>2915</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2917</AppScreenId>
+    <ScreenName>SVC Incoming</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>2922</AppMenuId>
+    <MenuName>B&#38;P Incoming Report</MenuName>
+    <ScreenId>2922</ScreenId>
+    <ParentMenuId>2915</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2922</AppScreenId>
+    <ScreenName>B&#38;P Incoming Report</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>2918</AppMenuId>
+    <MenuName>S-Part Sales</MenuName>
+    <ScreenId>2918</ScreenId>
+    <ParentMenuId>2915</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2918</AppScreenId>
+    <ScreenName>S-Part Sales</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>2919</AppMenuId>
+    <MenuName>S-Part Stock</MenuName>
+    <ScreenId>2919</ScreenId>
+    <ParentMenuId>2915</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2919</AppScreenId>
+    <ScreenName>S-Part Stock</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+
+  <AppMenu>
+    <AppMenuId>2920</AppMenuId>
+    <MenuName>Dealer Expense Service</MenuName>
+    <ScreenId>2920</ScreenId>
+    <ParentMenuId>2915</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2920</AppScreenId>
+    <ScreenName>Dealer Expense Service</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+    <AppMenu>
+    <AppMenuId>2921</AppMenuId>
+    <MenuName>Dealer Expense SpareParts</MenuName>
+    <ScreenId>2921</ScreenId>
+    <ParentMenuId>2915</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>2921</AppScreenId>
+    <ScreenName>Dealer Expense SpareParts</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString>
+    </QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  
+  <!-- EFAKTUR -->
+  <AppScreen>
+    <AppScreenId>170400</AppScreenId>
+    <ScreenName>EFaktur</ScreenName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>170400</AppMenuId>
+    <MenuName>EFaktur</MenuName>
+    <ScreenId>170400</ScreenId>
+    <ParentMenuId>0</ParentMenuId>
+    <SortOrder>170400</SortOrder>
+  </AppMenu>
+
+  <AppMenu>
+    <AppMenuId>170407</AppMenuId>
+    <MenuName>Dokumen EFaktur</MenuName>
+    <ScreenId>170407</ScreenId>
+    <ParentMenuId>170400</ParentMenuId>
+    <SortOrder>1</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>170407</AppScreenId>
+    <MenuName>Dokumen EFaktur</MenuName>
+    <NavigateUrl>default_aftersales.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <!-- END EFAKTUR-->
+</AppNavigationSchema>

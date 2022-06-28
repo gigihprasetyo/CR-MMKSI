@@ -1,0 +1,91 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_uvsoreferralinformation.company
+    , VWI_CRM_xts_uvsoreferralinformation.businessunitcode
+    , VWI_CRM_xts_uvsoreferralinformation.xts_uvsoreferralinformation
+    , VWI_CRM_xts_uvsoreferralinformation.versionnumber
+    , VWI_CRM_xts_uvsoreferralinformation.xts_consumptiontaxid
+    , VWI_CRM_xts_uvsoreferralinformation.createdon
+    , VWI_CRM_xts_uvsoreferralinformation.statuscodename
+    , VWI_CRM_xts_uvsoreferralinformation.xts_methodofpaymentidname
+    , VWI_CRM_xts_uvsoreferralinformation.xjp_accounttypename
+    , VWI_CRM_xts_uvsoreferralinformation.xts_reasonid
+    , VWI_CRM_xts_uvsoreferralinformation.xts_uvsqreferralinformationlineidname
+    , VWI_CRM_xts_uvsoreferralinformation.xts_consumptiontaxidname
+    , VWI_CRM_xts_uvsoreferralinformation.xts_totalpaymentamount
+    , VWI_CRM_xts_uvsoreferralinformation.xts_commission
+    , VWI_CRM_xts_uvsoreferralinformation.owneridtype
+    , VWI_CRM_xts_uvsoreferralinformation.xts_referralidname
+    , VWI_CRM_xts_uvsoreferralinformation.modifiedbyname
+    , VWI_CRM_xts_uvsoreferralinformation.xts_salesorderid
+    , VWI_CRM_xts_uvsoreferralinformation.xts_salesorderidname
+    , VWI_CRM_xts_uvsoreferralinformation.owneridname
+    , VWI_CRM_xts_uvsoreferralinformation.overriddencreatedon
+    , VWI_CRM_xts_uvsoreferralinformation.xts_referralid
+    , VWI_CRM_xts_uvsoreferralinformation.xts_referraldescription
+    , VWI_CRM_xts_uvsoreferralinformation.createdonbehalfbyyominame
+    , VWI_CRM_xts_uvsoreferralinformation.modifiedonbehalfby
+    , VWI_CRM_xts_uvsoreferralinformation.exchangerate
+    , VWI_CRM_xts_uvsoreferralinformation.xts_apvoucheridname
+    , VWI_CRM_xts_uvsoreferralinformation.owningteam
+    , VWI_CRM_xts_uvsoreferralinformation.xts_balance
+    , VWI_CRM_xts_uvsoreferralinformation.statecode
+    , VWI_CRM_xts_uvsoreferralinformation.timezoneruleversionnumber
+    , VWI_CRM_xts_uvsoreferralinformation.xts_uvsqreferralinformationlineid
+    , VWI_CRM_xts_uvsoreferralinformation.xts_totalpaymentamount_base
+    , VWI_CRM_xts_uvsoreferralinformation.xts_parentbusinessunitid
+    , VWI_CRM_xts_uvsoreferralinformation.xts_commission_base
+    , VWI_CRM_xts_uvsoreferralinformation.xts_consumptiontaxamount
+    , VWI_CRM_xts_uvsoreferralinformation.xts_totalamount_base
+    , VWI_CRM_xts_uvsoreferralinformation.createdonbehalfbyname
+    , VWI_CRM_xts_uvsoreferralinformation.xts_referralidyominame
+    , VWI_CRM_xts_uvsoreferralinformation.xts_locking
+    , VWI_CRM_xts_uvsoreferralinformation.createdby
+    , VWI_CRM_xts_uvsoreferralinformation.utcconversiontimezonecode
+    , VWI_CRM_xts_uvsoreferralinformation.xts_businessunitid
+    , VWI_CRM_xts_uvsoreferralinformation.ownerid
+    , VWI_CRM_xts_uvsoreferralinformation.modifiedon
+    , VWI_CRM_xts_uvsoreferralinformation.importsequencenumber
+    , VWI_CRM_xts_uvsoreferralinformation.xts_consumptiontaxamount_base
+    , VWI_CRM_xts_uvsoreferralinformation.statuscode
+    , VWI_CRM_xts_uvsoreferralinformation.createdbyname
+    , VWI_CRM_xts_uvsoreferralinformation.owninguser
+    , VWI_CRM_xts_uvsoreferralinformation.xts_methodofpaymentid
+    , VWI_CRM_xts_uvsoreferralinformation.modifiedonbehalfbyname
+    , VWI_CRM_xts_uvsoreferralinformation.xts_balance_base
+    , VWI_CRM_xts_uvsoreferralinformation.transactioncurrencyid
+    , VWI_CRM_xts_uvsoreferralinformation.createdonbehalfby
+    , VWI_CRM_xts_uvsoreferralinformation.modifiedby
+    , VWI_CRM_xts_uvsoreferralinformation.xts_referralvendorid
+    , VWI_CRM_xts_uvsoreferralinformation.createdbyyominame
+    , VWI_CRM_xts_uvsoreferralinformation.xts_reasonidname
+    , VWI_CRM_xts_uvsoreferralinformation.transactioncurrencyidname
+    , VWI_CRM_xts_uvsoreferralinformation.xts_accountnumber
+    , VWI_CRM_xts_uvsoreferralinformation.owningbusinessunit
+    , VWI_CRM_xts_uvsoreferralinformation.modifiedbyyominame
+    , VWI_CRM_xts_uvsoreferralinformation.xts_parentbusinessunitidname
+    , VWI_CRM_xts_uvsoreferralinformation.xts_totalamount
+    , VWI_CRM_xts_uvsoreferralinformation.xts_bankid
+    , VWI_CRM_xts_uvsoreferralinformation.xjp_accounttype
+    , VWI_CRM_xts_uvsoreferralinformation.xts_referralvendoridname
+    , VWI_CRM_xts_uvsoreferralinformation.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_uvsoreferralinformation.owneridyominame
+    , VWI_CRM_xts_uvsoreferralinformation.xts_apvoucherid
+    , VWI_CRM_xts_uvsoreferralinformation.xts_uvsoreferralinformationid
+    , VWI_CRM_xts_uvsoreferralinformation.xts_bankidname
+    , VWI_CRM_xts_uvsoreferralinformation.statecodename
+    , VWI_CRM_xts_uvsoreferralinformation.xts_businessunitidname
+    , VWI_CRM_xts_uvsoreferralinformation.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_uvsoreferralinformation a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) as VWI_CRM_xts_uvsoreferralinformation  

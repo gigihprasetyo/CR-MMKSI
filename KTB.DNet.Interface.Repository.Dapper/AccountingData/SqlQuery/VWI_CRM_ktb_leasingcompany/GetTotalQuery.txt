@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_ktb_leasingcompany as VWI_CRM_ktb_leasingcompany WITH (NOLOCK) 
+{0}

@@ -1,0 +1,12 @@
+SELECT 
+	COUNT(1)
+from (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_ktb_purchaserequisitionhistory a
+    LEFT JOIN CRM_businessunit b ON B.businessunitid = a.ktb_businessunitid
+    {0}
+) VWI_CRM_ktb_purchaserequisitionhistory

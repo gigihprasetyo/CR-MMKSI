@@ -1,0 +1,17 @@
+select
+/**PagingIndexQuery**/ 
+	VWI_DepositADetail.ID
+	, VWI_DepositADetail.DepositAID
+	, VWI_DepositADetail.Tipe
+	, VWI_DepositADetail.StatusDebet
+	, VWI_DepositADetail.Amount
+	, VWI_DepositADetail.Description
+	, VWI_DepositADetail.Reff
+	, VWI_DepositADetail.DocumentNumber
+	, VWI_DepositADetail.TransactionDate
+	, VWI_DepositADetail.LastUpdateTime
+/**EndPagingIndexQuery**/
+from DepositADetail as VWI_DepositADetail with(nolock)
+{0}
+
+

@@ -1,0 +1,56 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_vehiclerecognizedmodel.company
+    , VWI_CRM_xts_vehiclerecognizedmodel.businessunitcode
+    , VWI_CRM_xts_vehiclerecognizedmodel.createdonbehalfbyyominame
+    , VWI_CRM_xts_vehiclerecognizedmodel.modifiedonbehalfby
+    , VWI_CRM_xts_vehiclerecognizedmodel.owningteam
+    , VWI_CRM_xts_vehiclerecognizedmodel.xts_locking
+    , VWI_CRM_xts_vehiclerecognizedmodel.statecode
+    , VWI_CRM_xts_vehiclerecognizedmodel.owneridname
+    , VWI_CRM_xts_vehiclerecognizedmodel.statuscode
+    , VWI_CRM_xts_vehiclerecognizedmodel.xts_manufacturerid
+    , VWI_CRM_xts_vehiclerecognizedmodel.owninguser
+    , VWI_CRM_xts_vehiclerecognizedmodel.createdonbehalfby
+    , VWI_CRM_xts_vehiclerecognizedmodel.xts_manufactureridname
+    , VWI_CRM_xts_vehiclerecognizedmodel.importsequencenumber
+    , VWI_CRM_xts_vehiclerecognizedmodel.modifiedbyyominame
+    , VWI_CRM_xts_vehiclerecognizedmodel.utcconversiontimezonecode
+    , VWI_CRM_xts_vehiclerecognizedmodel.createdbyyominame
+    , VWI_CRM_xts_vehiclerecognizedmodel.modifiedby
+    , VWI_CRM_xts_vehiclerecognizedmodel.owningbusinessunit
+    , VWI_CRM_xts_vehiclerecognizedmodel.modifiedbyname
+    , VWI_CRM_xts_vehiclerecognizedmodel.versionnumber
+    , VWI_CRM_xts_vehiclerecognizedmodel.xts_vehiclerecognizedmodel
+    , VWI_CRM_xts_vehiclerecognizedmodel.xts_vehiclemodelidname
+    , VWI_CRM_xts_vehiclerecognizedmodel.createdby
+    , VWI_CRM_xts_vehiclerecognizedmodel.timezoneruleversionnumber
+    , VWI_CRM_xts_vehiclerecognizedmodel.owneridtype
+    , VWI_CRM_xts_vehiclerecognizedmodel.statuscodename
+    , VWI_CRM_xts_vehiclerecognizedmodel.owneridyominame
+    , VWI_CRM_xts_vehiclerecognizedmodel.modifiedon
+    , VWI_CRM_xts_vehiclerecognizedmodel.modifiedonbehalfbyname
+    , VWI_CRM_xts_vehiclerecognizedmodel.modifiedonbehalfbyyominame
+    , VWI_CRM_xts_vehiclerecognizedmodel.statecodename
+    , VWI_CRM_xts_vehiclerecognizedmodel.createdbyname
+    , VWI_CRM_xts_vehiclerecognizedmodel.createdon
+    , VWI_CRM_xts_vehiclerecognizedmodel.createdonbehalfbyname
+    , VWI_CRM_xts_vehiclerecognizedmodel.xts_description
+    , VWI_CRM_xts_vehiclerecognizedmodel.xts_vehiclemodelid
+    , VWI_CRM_xts_vehiclerecognizedmodel.xts_vehiclerecognizedmodelid
+    , VWI_CRM_xts_vehiclerecognizedmodel.ownerid
+    , VWI_CRM_xts_vehiclerecognizedmodel.overriddencreatedon
+    , VWI_CRM_xts_vehiclerecognizedmodel.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_vehiclerecognizedmodel a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    {0}
+) as VWI_CRM_xts_vehiclerecognizedmodel  

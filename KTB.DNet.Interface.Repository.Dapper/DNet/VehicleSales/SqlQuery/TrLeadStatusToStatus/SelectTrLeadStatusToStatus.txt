@@ -1,0 +1,12 @@
+﻿SELECT DISTINCT 
+		[ID]
+      ,[LeadStatusID]
+      ,[SAPCustomerStatusID]
+      ,[NextLeadStatusID]
+      ,[FinalStatus]
+  FROM [dbo].[TrLeadStatusToStatus]
+  WHERE (LeadStatusID = @LeadStatusID OR @LeadStatusID IS NULL)
+	AND (SAPCustomerStatusID = @SAPCustomerStatusID OR @SAPCustomerStatusID IS NULL)
+	AND (NextLeadStatusID = @NextLeadStatusID OR @NextLeadStatusID IS NULL)
+	AND RowStatus = 0
+	Order by FinalStatus DESC

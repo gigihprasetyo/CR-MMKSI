@@ -1,0 +1,65 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	 [modifiedonbehalfby]
+      ,[modifiedbyyominame]
+      ,[createdbyname]
+      ,[transactioncurrencyid]
+      ,[modifiedon]
+      ,[ktb_depositaid]
+      ,[modifiedbyname]
+      ,[ktb_description]
+      ,[ktb_transactiondate]
+      ,[owningbusinessunitname]
+      ,[createdonbehalfbyyominame]
+      ,[ktb_documentno]
+      ,[owneridname]
+      ,[ktb_daftardepositaid]
+      ,[importsequencenumber]
+      ,[createdonbehalfby]
+      ,[ktb_daftardepositadetailid]
+      ,[modifiedonbehalfbyname]
+      ,[owningteam]
+      ,[versionnumber]
+      ,[createdon]
+      ,[createdby]
+      ,[owneridtype]
+      ,[modifiedonbehalfbyyominame]
+      ,[ktb_iddetail]
+      ,[ktb_amount_base]
+      ,[modifiedby]
+      ,[overriddencreatedon]
+      ,[ktb_daftardepositaidname]
+      ,[createdonbehalfbyname]
+      ,[exchangerate]
+      ,[owninguser]
+      ,[statuscodename]
+      ,[owningbusinessunit]
+      ,[timezoneruleversionnumber]
+      ,[ktb_refferenceno]
+      ,[statecodename]
+      ,[ktb_amount]
+      ,[ktb_statusdebet]
+      ,[transactioncurrencyidname]
+      ,[createdbyyominame]
+      ,[statuscode]
+      ,[ktb_daftardepositadetail]
+      ,[ktb_tipe]
+      ,[statecode]
+      ,[owneridyominame]
+      ,[ownerid]
+      ,[utcconversiontimezonecode]
+      ,[DealerCode]
+      ,[SourceType]
+      ,[RowStatus]
+      ,[LastSyncDate]
+	, msdyn_companycode
+from (
+	SELECT      
+		a.*  
+		, b.msdyn_companycode    
+	FROM [CRM_ktb_daftardepositadetail] a WITH (NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.ktb_businessunitid   
+	Where a.RowStatus = 0
+) as VWI_CRM_ktb_daftardepositadetail
+WHERE ktb_daftardepositadetailid = @Id

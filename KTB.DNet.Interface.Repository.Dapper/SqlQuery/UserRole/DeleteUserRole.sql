@@ -1,0 +1,1 @@
+﻿DELETE APIUserRole WHERE UserId = @UserId AND RoleId = @RoleId

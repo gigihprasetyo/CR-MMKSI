@@ -1,0 +1,22 @@
+SELECT 
+	IDRow
+	,businessunitcode
+	,xts_deliveryordernumber
+	,xts_product
+	,xts_productdescription
+	,xts_unitprice
+	,xts_discountamount
+	,xts_baseamount
+	,xts_totalconsumptiontaxamount
+	,xts_totalamount
+	,xts_uom
+	,ktb_cogstrx
+	,xts_discountpercentage
+	,xts_quantityreturned
+	,xts_customernumber
+	,customername
+	,xts_customerid
+	,xts_transactiondate
+	,xts_referencenumbersalesorderid
+FROM VWI_CRM_PRT_SparepartSalesReturn WITH (NOLOCK)
+WHERE ID = @Id

@@ -1,0 +1,93 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , xts_parentbusinessunitid
+    , versionnumber
+    , createdon
+    , statuscodename
+    , xts_scheduledarrivaldateandtime
+    , xts_finishpatternname
+    , xts_scheduledoustourcefinishdateandtime
+    , xts_status
+    , xts_customerid
+    , modifiedon
+    , xts_scheduledfinishdateandtime
+    , owneridtype
+    , modifiedbyname
+    , xts_platenumber
+    , xts_vehiclemodelname
+    , xts_vehiclemodelidname
+    , owneridname
+    , overriddencreatedon
+    , xts_vehiclemodelid
+    , xts_deliverymemo
+    , xts_outsourcereservationid
+    , xts_scheduledoutsourceservicestartdate
+    , createdonbehalfbyyominame
+    , modifiedonbehalfby
+    , xts_category
+    , xts_outsourcereservationnumber
+    , xts_customeridyominame
+    , owningteam
+    , xts_originalreservationid
+    , xts_arrivalmemo
+    , xts_loadinggroupid
+    , statecode
+    , timezoneruleversionnumber
+    , xts_reservationmanhour
+    , xts_handling
+    , xts_customernumber
+    , createdonbehalfbyname
+    , xts_outsourcereservationmemo
+    , xts_locking
+    , createdby
+    , utcconversiontimezonecode
+    , xts_vehicleidentificationid
+    , xts_categoryname
+    , xts_statusname
+    , xts_vendoridname
+    , xts_outsourceworkshopidname
+    , ownerid
+    , xts_loadinggroupidname
+    , importsequencenumber
+    , owneridyominame
+    , xts_customeridname
+    , xts_transactiondate
+    , xts_outsourceworkshopid
+    , xts_arrivalpatternname
+    , createdbyname
+    , xts_businessunitid
+    , modifiedonbehalfbyname
+    , xts_vehicleidentificationidname
+    , xts_reservationclassid
+    , xts_handlingname
+    , createdonbehalfby
+    , modifiedby
+    , createdbyyominame
+    , owninguser
+    , xts_originalreservationidname
+    , owningbusinessunit
+    , modifiedbyyominame
+    , xts_parentbusinessunitidname
+    , xts_vendorid
+    , xts_finishpattern
+    , statuscode
+    , modifiedonbehalfbyyominame
+    , xts_scheduledoutsourcearrivaldateandtime
+    , xts_arrivalpattern
+    , statecodename
+    , xts_businessunitidname
+    , xts_reservationclassidname
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_outsourcereservation a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_outsourcereservationid = @Id
+) as VWI_CRM_xts_outsourcereservation

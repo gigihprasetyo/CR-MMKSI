@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM AX_TSTransStockMutations {0}

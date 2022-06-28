@@ -1,0 +1,131 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_apvdetail.company
+	, VWI_CRM_xts_apvdetail.businessunitcode
+	, VWI_CRM_xts_apvdetail.xts_billamount
+	, VWI_CRM_xts_apvdetail.xts_parentbusinessunitid
+	, VWI_CRM_xts_apvdetail.versionnumber
+	, VWI_CRM_xts_apvdetail.xts_servicereceiptidname
+	, VWI_CRM_xts_apvdetail.createdon
+	, VWI_CRM_xts_apvdetail.xts_usedvehiclesalesreferralidname
+	, VWI_CRM_xts_apvdetail.xts_billbaseamount
+	, VWI_CRM_xts_apvdetail.xts_withholdingtaxid
+	, VWI_CRM_xts_apvdetail.xts_newvehiclesalesreferralid
+	, VWI_CRM_xts_apvdetail.xts_consumptiontax1id
+	, VWI_CRM_xts_apvdetail.xts_reasonidname
+	, VWI_CRM_xts_apvdetail.statuscodename
+	, VWI_CRM_xts_apvdetail.xts_titleregistrationbillfeeamount
+	, VWI_CRM_xts_apvdetail.xts_description
+	, VWI_CRM_xts_apvdetail.modifiedbyyominame
+	, VWI_CRM_xts_apvdetail.xts_outsourceworkorderreceiptid
+	, VWI_CRM_xts_apvdetail.xts_outsourceworkorderreceiptidname
+	, VWI_CRM_xts_apvdetail.xts_dimension5id
+	, VWI_CRM_xts_apvdetail.xts_usedvehiclegoodsreceiptid
+	, VWI_CRM_xts_apvdetail.xts_reasonid
+	, VWI_CRM_xts_apvdetail.xts_varianceamount_base
+	, VWI_CRM_xts_apvdetail.createdonbehalfby
+	, VWI_CRM_xts_apvdetail.xts_purchasereceiptidname
+	, VWI_CRM_xts_apvdetail.xts_billamount_base
+	, VWI_CRM_xts_apvdetail.modifiedbyname
+	, VWI_CRM_xts_apvdetail.xts_outsourceworkorderid
+	, VWI_CRM_xts_apvdetail.xts_dimension2id
+	, VWI_CRM_xts_apvdetail.owneridname
+	, VWI_CRM_xts_apvdetail.xts_purchaseorderidname
+	, VWI_CRM_xts_apvdetail.overriddencreatedon
+	, VWI_CRM_xts_apvdetail.xts_dimension1id
+	, VWI_CRM_xts_apvdetail.xts_dimension5idname
+	, VWI_CRM_xts_apvdetail.xts_varianceamount
+	, VWI_CRM_xts_apvdetail.xts_dimension6idname
+	, VWI_CRM_xts_apvdetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_apvdetail.modifiedonbehalfby
+	, VWI_CRM_xts_apvdetail.exchangerate
+	, VWI_CRM_xts_apvdetail.xts_totalconsumptiontaxamount_base
+	, VWI_CRM_xts_apvdetail.xts_billbaseamount_base
+	, VWI_CRM_xts_apvdetail.xts_consumptiontax2id
+	, VWI_CRM_xts_apvdetail.owningteam
+	, VWI_CRM_xts_apvdetail.xts_dimension4id
+	, VWI_CRM_xts_apvdetail.xts_withholdingtaxamount
+	, VWI_CRM_xts_apvdetail.xts_titleregistrationfee
+	, VWI_CRM_xts_apvdetail.statecode
+	, VWI_CRM_xts_apvdetail.xts_accountidname
+	, VWI_CRM_xts_apvdetail.xts_consumptiontax1amount_base
+	, VWI_CRM_xts_apvdetail.timezoneruleversionnumber
+	, VWI_CRM_xts_apvdetail.xts_accountpayablevoucherid
+	, VWI_CRM_xts_apvdetail.xjp_pdireceiptid
+	, VWI_CRM_xts_apvdetail.xts_prpotypeidname
+	, VWI_CRM_xts_apvdetail.xts_totalconsumptiontaxamount
+	, VWI_CRM_xts_apvdetail.xts_locking
+	, VWI_CRM_xts_apvdetail.xts_prpotypeid
+	, VWI_CRM_xts_apvdetail.xts_dimension2idname
+	, VWI_CRM_xts_apvdetail.xts_consumptiontax1idname
+	, VWI_CRM_xts_apvdetail.xts_purchasepricevarianceaccountid
+	, VWI_CRM_xts_apvdetail.createdonbehalfbyname
+	, VWI_CRM_xts_apvdetail.xts_consumptiontax2idname
+	, VWI_CRM_xts_apvdetail.xts_apvdetailnumber
+	, VWI_CRM_xts_apvdetail.xts_titleregistrationfeereferenceid
+	, VWI_CRM_xts_apvdetail.xts_purchasepricevarianceaccountidname
+	, VWI_CRM_xts_apvdetail.utcconversiontimezonecode
+	, VWI_CRM_xts_apvdetail.xts_newvehiclesalesreferralidname
+	, VWI_CRM_xts_apvdetail.xts_usedvehiclegoodsreceiptidname
+	, VWI_CRM_xts_apvdetail.xts_titleregistrationfee_base
+	, VWI_CRM_xts_apvdetail.xts_assessmentidname
+	, VWI_CRM_xts_apvdetail.ownerid
+	, VWI_CRM_xts_apvdetail.modifiedon
+	, VWI_CRM_xts_apvdetail.importsequencenumber
+	, VWI_CRM_xts_apvdetail.xts_dimension6id
+	, VWI_CRM_xts_apvdetail.xts_receiptamount_base
+	, VWI_CRM_xts_apvdetail.xts_assessmentid
+	, VWI_CRM_xts_apvdetail.xjp_pdireceiptidname
+	, VWI_CRM_xts_apvdetail.xts_dimension3idname
+	, VWI_CRM_xts_apvdetail.createdbyname
+	, VWI_CRM_xts_apvdetail.xts_businessunitid
+	, VWI_CRM_xts_apvdetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_apvdetail.xts_outsourceworkorderidname
+	, VWI_CRM_xts_apvdetail.xts_purchasereceiptid
+	, VWI_CRM_xts_apvdetail.xts_usedvehiclesalesreferralid
+	, VWI_CRM_xts_apvdetail.xts_titleregistrationfeereferenceidname
+	, VWI_CRM_xts_apvdetail.xts_consumptiontax2amount
+	, VWI_CRM_xts_apvdetail.transactioncurrencyid
+	, VWI_CRM_xts_apvdetail.xts_apvdetailid
+	, VWI_CRM_xts_apvdetail.createdby
+	, VWI_CRM_xts_apvdetail.modifiedby
+	, VWI_CRM_xts_apvdetail.xts_parentbusinessunitidname
+	, VWI_CRM_xts_apvdetail.xts_withholdingtaxamount_base
+	, VWI_CRM_xts_apvdetail.createdbyyominame
+	, VWI_CRM_xts_apvdetail.owninguser
+	, VWI_CRM_xts_apvdetail.transactioncurrencyidname
+	, VWI_CRM_xts_apvdetail.xts_dimension4idname
+	, VWI_CRM_xts_apvdetail.xts_servicereceiptid
+	, VWI_CRM_xts_apvdetail.owningbusinessunit
+	, VWI_CRM_xts_apvdetail.xts_dimension1idname
+	, VWI_CRM_xts_apvdetail.xts_purchaseorderid
+	, VWI_CRM_xts_apvdetail.xts_consumptiontax1amount
+	, VWI_CRM_xts_apvdetail.xts_consumptiontax2amount_base
+	, VWI_CRM_xts_apvdetail.xts_eventdata
+	, VWI_CRM_xts_apvdetail.xts_titleregistrationbillfeeamount_base
+	, VWI_CRM_xts_apvdetail.xts_accountpayablevoucheridname
+	, VWI_CRM_xts_apvdetail.owneridtype
+	, VWI_CRM_xts_apvdetail.statuscode
+	, VWI_CRM_xts_apvdetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_apvdetail.xts_accountid
+	, VWI_CRM_xts_apvdetail.xts_withholdingtaxidname
+	, VWI_CRM_xts_apvdetail.owneridyominame
+	, VWI_CRM_xts_apvdetail.statecodename
+	, VWI_CRM_xts_apvdetail.xts_receiptamount
+	, VWI_CRM_xts_apvdetail.xts_dimension3id
+	, VWI_CRM_xts_apvdetail.xts_businessunitidname
+	, VWI_CRM_xts_apvdetail.RowStatus
+	, VWI_CRM_xts_apvdetail.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_apvdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_apvdetail 

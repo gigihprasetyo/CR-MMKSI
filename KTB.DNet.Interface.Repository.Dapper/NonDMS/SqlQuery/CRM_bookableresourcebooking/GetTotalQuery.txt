@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_bookableresourcebooking WITH (NOLOCK) 
+{0}

@@ -1,0 +1,28 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_PRT_SparepartSalesToPartshop.company
+	,VWI_CRM_PRT_SparepartSalesToPartshop.businessunitcode
+	,VWI_CRM_PRT_SparepartSalesToPartshop.Site
+	,VWI_CRM_PRT_SparepartSalesToPartshop.SalesOrderNo
+	,VWI_CRM_PRT_SparepartSalesToPartshop.DeliveryOrderNo
+	,VWI_CRM_PRT_SparepartSalesToPartshop.TransactionDate
+	,VWI_CRM_PRT_SparepartSalesToPartshop.CustomerNo
+	,VWI_CRM_PRT_SparepartSalesToPartshop.Customer
+	,VWI_CRM_PRT_SparepartSalesToPartshop.Product
+	,VWI_CRM_PRT_SparepartSalesToPartshop.ProductDescription
+	,VWI_CRM_PRT_SparepartSalesToPartshop.SalesUnit
+	,VWI_CRM_PRT_SparepartSalesToPartshop.TermOfPayment
+	,VWI_CRM_PRT_SparepartSalesToPartshop.QuantityDelivered
+	,VWI_CRM_PRT_SparepartSalesToPartshop.QuantityReturned
+	,VWI_CRM_PRT_SparepartSalesToPartshop.UnitPrice
+	,VWI_CRM_PRT_SparepartSalesToPartshop.DiscountPercentage
+	,VWI_CRM_PRT_SparepartSalesToPartshop.DiscountAmount
+	,VWI_CRM_PRT_SparepartSalesToPartshop.TotalConsumptionTaxAmount
+	,VWI_CRM_PRT_SparepartSalesToPartshop.ConsumptionTax1
+	,VWI_CRM_PRT_SparepartSalesToPartshop.ConsumptionTax1Amount
+	,VWI_CRM_PRT_SparepartSalesToPartshop.TotalAmount
+	,VWI_CRM_PRT_SparepartSalesToPartshop.COGSTrx
+	,VWI_CRM_PRT_SparepartSalesToPartshop.msdyn_companycode
+	,VWI_CRM_PRT_SparepartSalesToPartshop.xts_deliveryorderdetailid
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_PRT_SparepartSalesToPartshop WITH (NOLOCK) {0}

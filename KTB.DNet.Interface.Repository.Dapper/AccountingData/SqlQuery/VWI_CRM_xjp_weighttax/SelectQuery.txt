@@ -1,0 +1,49 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xjp_weighttax.xjp_weighttaxdimension4id
+	, VWI_CRM_xjp_weighttax.createdonbehalfbyyominame
+	, VWI_CRM_xjp_weighttax.modifiedonbehalfby
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxdimension1id
+	, VWI_CRM_xjp_weighttax.xjp_weighttax
+	, VWI_CRM_xjp_weighttax.statecodename
+	, VWI_CRM_xjp_weighttax.createdonbehalfby
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxdimension2id
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxdimension5id
+	, VWI_CRM_xjp_weighttax.importsequencenumber
+	, VWI_CRM_xjp_weighttax.organizationidname
+	, VWI_CRM_xjp_weighttax.modifiedbyyominame
+	, VWI_CRM_xjp_weighttax.statecode
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxdimension3idname
+	, VWI_CRM_xjp_weighttax.utcconversiontimezonecode
+	, VWI_CRM_xjp_weighttax.createdbyyominame
+	, VWI_CRM_xjp_weighttax.modifiedbyname
+	, VWI_CRM_xjp_weighttax.versionnumber
+	, VWI_CRM_xjp_weighttax.modifiedby
+	, VWI_CRM_xjp_weighttax.xjp_locking
+	, VWI_CRM_xjp_weighttax.createdby
+	, VWI_CRM_xjp_weighttax.timezoneruleversionnumber
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxid
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxdimension6idname
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxdimension1idname
+	, VWI_CRM_xjp_weighttax.xjp_description
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxdimension6id
+	, VWI_CRM_xjp_weighttax.modifiedon
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxdimension2idname
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxdimension4idname
+	, VWI_CRM_xjp_weighttax.modifiedonbehalfbyyominame
+	, VWI_CRM_xjp_weighttax.statuscode
+	, VWI_CRM_xjp_weighttax.createdbyname
+	, VWI_CRM_xjp_weighttax.createdon
+	, VWI_CRM_xjp_weighttax.organizationid
+	, VWI_CRM_xjp_weighttax.createdonbehalfbyname
+	, VWI_CRM_xjp_weighttax.statuscodename
+	, VWI_CRM_xjp_weighttax.modifiedonbehalfbyname
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxdimension3id
+	, VWI_CRM_xjp_weighttax.xjp_accountid
+	, VWI_CRM_xjp_weighttax.xjp_weighttaxdimension5idname
+	, VWI_CRM_xjp_weighttax.overriddencreatedon
+	, VWI_CRM_xjp_weighttax.xjp_accountidname
+	/**EndPagingIndexQuery**/
+FROM CRM_xjp_weighttax as VWI_CRM_xjp_weighttax with (nolock)
+{0}

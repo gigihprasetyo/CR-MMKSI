@@ -1,0 +1,12 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SLS_DailyActivityMonitoring_Lead.businessunitcode
+	,VWI_CRM_SLS_DailyActivityMonitoring_Lead.fullname
+	,VWI_CRM_SLS_DailyActivityMonitoring_Lead.ktb_superiors
+	,VWI_CRM_SLS_DailyActivityMonitoring_Lead.statuscode
+	,VWI_CRM_SLS_DailyActivityMonitoring_Lead.subject
+	,VWI_CRM_SLS_DailyActivityMonitoring_Lead.xts_employee
+	,VWI_CRM_SLS_DailyActivityMonitoring_Lead.xts_leaddate
+	,VWI_CRM_SLS_DailyActivityMonitoring_Lead.xts_productsegment2
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SLS_DailyActivityMonitoring_Lead WITH (NOLOCK) {0}

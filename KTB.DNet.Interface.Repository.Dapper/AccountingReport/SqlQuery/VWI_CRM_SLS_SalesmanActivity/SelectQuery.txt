@@ -1,0 +1,23 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SLS_SalesmanActivity.company
+	,VWI_CRM_SLS_SalesmanActivity.businessunitcode
+	,VWI_CRM_SLS_SalesmanActivity.Atasan
+	,VWI_CRM_SLS_SalesmanActivity.Sales
+	,VWI_CRM_SLS_SalesmanActivity.PostDate
+	,VWI_CRM_SLS_SalesmanActivity.Nama
+	,VWI_CRM_SLS_SalesmanActivity.Alamat
+	,VWI_CRM_SLS_SalesmanActivity.Telepon
+	,VWI_CRM_SLS_SalesmanActivity.ModelKendaraan
+	,VWI_CRM_SLS_SalesmanActivity.DeskripsiKendaraan
+	,VWI_CRM_SLS_SalesmanActivity.Harga
+	,VWI_CRM_SLS_SalesmanActivity.MacamCall
+	,VWI_CRM_SLS_SalesmanActivity.SumberInfo
+	,VWI_CRM_SLS_SalesmanActivity.Hasil
+	,VWI_CRM_SLS_SalesmanActivity.Keterangan
+	,VWI_CRM_SLS_SalesmanActivity.SPK
+	,VWI_CRM_SLS_SalesmanActivity.DO
+	,VWI_CRM_SLS_SalesmanActivity.Comment
+	,VWI_CRM_SLS_SalesmanActivity.msdyn_companycode
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SLS_SalesmanActivity WITH (NOLOCK) {0}

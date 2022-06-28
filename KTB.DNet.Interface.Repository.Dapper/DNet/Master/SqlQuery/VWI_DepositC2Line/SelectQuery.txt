@@ -1,0 +1,14 @@
+select
+/**PagingIndexQuery**/ 
+	VWI_DepositC2Line.ID
+	, VWI_DepositC2Line.DepositC2ID
+	, VWI_DepositC2Line.DocumentNo
+	, VWI_DepositC2Line.BillingNumber
+	, VWI_DepositC2Line.DocumentDate
+	, VWI_DepositC2Line.DepositC2Amnt
+	, VWI_DepositC2Line.LastUpdateTime
+/**EndPagingIndexQuery**/
+from DepositC2Line as VWI_DepositC2Line 
+{0}
+
+

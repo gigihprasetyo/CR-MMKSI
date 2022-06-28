@@ -1,0 +1,11 @@
+select
+	count(1)
+from (
+	select a.*, b.DealerCode
+	from DepositBHeader a with(nolock)
+	left join Dealer b with(nolock)
+	on a.DealerID = b.ID
+) as VWI_DepositBHeader 
+{0}
+
+

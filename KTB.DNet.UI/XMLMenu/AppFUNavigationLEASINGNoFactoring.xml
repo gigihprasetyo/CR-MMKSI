@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AppNavigationSchema xmlns="http://tempuri.org/AppNavigationSchema.xsd">
+    <AppScreen>
+        <AppScreenId>1100</AppScreenId>
+        <ScreenName>Leasing</ScreenName>
+        <NavigateUrl>default.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>1100</AppMenuId>
+        <MenuName>Leasing</MenuName>
+        <ScreenId>1100</ScreenId>
+        <ParentMenuId>0</ParentMenuId>
+        <SortOrder>1</SortOrder>
+    </AppMenu>
+    <AppScreen>
+        <AppScreenId>45104</AppScreenId>
+        <ScreenName>Daftar Dokumen</ScreenName>
+        <NavigateUrl>default.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>45101</AppMenuId>
+        <MenuName>Daftar Kondisi</MenuName>
+        <ScreenId>45101</ScreenId>
+        <ParentMenuId>1100</ParentMenuId>
+        <SortOrder>1</SortOrder>
+    </AppMenu>
+    <AppScreen>
+        <AppScreenId>45101</AppScreenId>
+        <ScreenName>Daftar Kondisi</ScreenName>
+        <NavigateUrl>default.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>45104</AppMenuId>
+        <MenuName>Daftar Dokumen</MenuName>
+        <ScreenId>45104</ScreenId>
+        <ParentMenuId>1100</ParentMenuId>
+        <SortOrder>4</SortOrder>
+    </AppMenu>
+    <AppScreen>
+        <AppScreenId>45102</AppScreenId>
+        <ScreenName>Upload SPAF</ScreenName>
+        <NavigateUrl>default.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppScreen>
+        <AppScreenId>45103</AppScreenId>
+        <ScreenName>Upload Subsidy</ScreenName>
+        <NavigateUrl>default.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>45102</AppMenuId>
+        <MenuName>Upload SPAF</MenuName>
+        <ScreenId>45102</ScreenId>
+        <ParentMenuId>1100</ParentMenuId>
+        <SortOrder>2</SortOrder>
+    </AppMenu>
+    <AppMenu>
+        <AppMenuId>45103</AppMenuId>
+        <MenuName>Upload Subsidi</MenuName>
+        <ScreenId>45103</ScreenId>
+        <ParentMenuId>1100</ParentMenuId>
+        <SortOrder>3</SortOrder>
+    </AppMenu>
+    
+    <AppScreen>
+        <AppScreenId>20091103</AppScreenId>
+        <ScreenName>Informasi Kendaraan</ScreenName>
+        <NavigateUrl>default.aspx</NavigateUrl>
+        <QueryString>
+        </QueryString>
+        <GroupId>0</GroupId>
+    </AppScreen>
+    <AppMenu>
+        <AppMenuId>20091103</AppMenuId>
+        <MenuName>Informasi Kendaraan</MenuName>
+        <ScreenId>20091103</ScreenId>
+        <ParentMenuId>1100</ParentMenuId>
+        <SortOrder>5</SortOrder>
+    </AppMenu>
+    
+    <!--
+	<AppScreen>
+		<AppScreenId>25000</AppScreenId>
+		<ScreenName>Factoring</ScreenName>
+		<NavigateUrl>default.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>25000</AppMenuId>
+		<MenuName>Factoring</MenuName>
+		<ScreenId>25000</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	-->
+	<AppMenu>
+		<AppMenuId>25010</AppMenuId>
+		<MenuName>Input Ceiling Master</MenuName>
+		<ScreenId>25010</ScreenId>
+		<ParentMenuId>25000</ParentMenuId>
+		<SortOrder>1</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>25010</AppScreenId>
+		<ScreenName>Input Ceiling Master</ScreenName>
+		<NavigateUrl>default.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>	
+	<AppMenu>
+		<AppMenuId>25020</AppMenuId>
+		<MenuName>Daftar Cessie</MenuName>
+		<ScreenId>25020</ScreenId>
+		<ParentMenuId>25000</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>25020</AppScreenId>
+		<ScreenName>Daftar Cessie</ScreenName>
+		<NavigateUrl>default.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>1451</AppMenuId>	
+		<MenuName>Daftar Invoice</MenuName>
+		<ScreenId>1451</ScreenId>
+		<ParentMenuId>25000</ParentMenuId>
+		<SortOrder>4</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>1451</AppScreenId>
+		<ScreenName>Daftar Invoice</ScreenName>
+		<NavigateUrl>default.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>1470</AppMenuId>
+		<MenuName>Daftar SO</MenuName>
+		<ScreenId>1470</ScreenId>
+		<ParentMenuId>25000</ParentMenuId>
+		<SortOrder>5</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>1470</AppScreenId>
+		<ScreenName>Datar SO</ScreenName>
+		<NavigateUrl>default.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>25060</AppMenuId>
+		<MenuName>Datar Pembayaran</MenuName>
+		<ScreenId>25060</ScreenId>
+		<ParentMenuId>25000</ParentMenuId>
+		<SortOrder>6</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>25060</AppScreenId>
+		<ScreenName>Datar Pembayaran</ScreenName>
+		<NavigateUrl>default.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	
+</AppNavigationSchema>

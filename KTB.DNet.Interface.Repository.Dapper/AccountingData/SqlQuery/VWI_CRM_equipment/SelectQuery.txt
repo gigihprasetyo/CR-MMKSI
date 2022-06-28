@@ -1,0 +1,85 @@
+SELECT 
+    /**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_equipment.company
+	, VWI_CRM_equipment.businessunitcode
+	, VWI_CRM_equipment.versionnumber
+	, VWI_CRM_equipment.createdon
+	, VWI_CRM_equipment.modifiedbyyominame
+	, VWI_CRM_equipment.bsi_employeeidentificationtype
+	, VWI_CRM_equipment.createdonbehalfby
+	, VWI_CRM_equipment.modifiedbyname
+	, VWI_CRM_equipment.xts_vehiclemodelname
+	, VWI_CRM_equipment.xts_vehiclemodelidname
+	, VWI_CRM_equipment.equipmentid
+	, VWI_CRM_equipment.xts_addlaborrateperhour_base
+	, VWI_CRM_equipment.overriddencreatedon
+	, VWI_CRM_equipment.xts_vehiclemodelid
+	, VWI_CRM_equipment.xts_default
+	, VWI_CRM_equipment.xts_type
+	, VWI_CRM_equipment.createdonbehalfbyyominame
+	, VWI_CRM_equipment.bsi_employeeidentificationtypename
+	, VWI_CRM_equipment.modifiedonbehalfby
+	, VWI_CRM_equipment.exchangerate
+	, VWI_CRM_equipment.xts_productidname
+	, VWI_CRM_equipment.skills
+	, VWI_CRM_equipment.xts_vehiclebrandid
+	, VWI_CRM_equipment.xts_addlaborrateperhour
+	, VWI_CRM_equipment.timezoneruleversionnumber
+	, VWI_CRM_equipment.siteid
+	, VWI_CRM_equipment.displayinserviceviewsname
+	, VWI_CRM_equipment.xts_locking
+	, VWI_CRM_equipment.xts_equipmentnumber
+	, VWI_CRM_equipment.timezonecode
+	, VWI_CRM_equipment.xts_manufactureridname
+	, VWI_CRM_equipment.xts_employeeid
+	, VWI_CRM_equipment.createdonbehalfbyname
+	, VWI_CRM_equipment.utcconversiontimezonecode
+	, VWI_CRM_equipment.xts_typename
+	, VWI_CRM_equipment.siteidname
+	, VWI_CRM_equipment.modifiedon
+	, VWI_CRM_equipment.importsequencenumber
+	, VWI_CRM_equipment.description
+	, VWI_CRM_equipment.xts_defaultname
+	, VWI_CRM_equipment.xts_objective
+	, VWI_CRM_equipment.createdbyname
+	, VWI_CRM_equipment.xts_objectivename
+	, VWI_CRM_equipment.isdisabled
+	, VWI_CRM_equipment.modifiedonbehalfbyname
+	, VWI_CRM_equipment.xts_pkcombinationkey
+	, VWI_CRM_equipment.isdisabledname
+	, VWI_CRM_equipment.xts_employeeidname
+	, VWI_CRM_equipment.businessunitidname
+	, VWI_CRM_equipment.calendarid
+	, VWI_CRM_equipment.xts_productid
+	, VWI_CRM_equipment.transactioncurrencyid
+	, VWI_CRM_equipment.createdby
+	, VWI_CRM_equipment.modifiedby
+	, VWI_CRM_equipment.displayinserviceviews
+	, VWI_CRM_equipment.xts_vehicleidentificationnumber
+	, VWI_CRM_equipment.createdbyyominame
+	, VWI_CRM_equipment.transactioncurrencyidname
+	, VWI_CRM_equipment.emailaddress
+	, VWI_CRM_equipment.xts_vehiclebrandidname
+	, VWI_CRM_equipment.xts_orderdisplay
+	, VWI_CRM_equipment.xts_manufacturerid
+	, VWI_CRM_equipment.name
+	, VWI_CRM_equipment.modifiedonbehalfbyyominame
+	, VWI_CRM_equipment.organizationid
+	, VWI_CRM_equipment.organizationidname
+	, VWI_CRM_equipment.businessunitid
+	--, VWI_CRM_equipment.msdyn_organizationalunitid
+	--, VWI_CRM_equipment.msdyn_organizationalunitidname
+	, VWI_CRM_equipment.msdyn_companycode
+    /**EndPagingIndexQuery**/
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_equipment a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.businessunitid   
+	{0}
+) as VWI_CRM_equipment 

@@ -1,0 +1,13 @@
+UPDATE SparePartOutstandingOrder
+	SET 
+	CreatedBy = ISNULL(@CreatedBy, CreatedBy),
+	CreatedTime = ISNULL(@CreatedTime, CreatedTime),
+	DocumentType = ISNULL(@DocumentType, DocumentType),
+	LastUpdateBy = ISNULL(@LastUpdateBy, LastUpdateBy),
+	LastUpdateTime = ISNULL(@LastUpdateTime, LastUpdateTime),
+	OrderType = ISNULL(@OrderType, OrderType),
+	PODate = ISNULL(@PODate, PODate),
+	RowStatus = ISNULL(@RowStatus, RowStatus),
+	SparePartPOID = ISNULL(@SparePartPOID, SparePartPOID),
+	ValidTo = ISNULL(@ValidTo, ValidTo)
+WHERE ID = @ID

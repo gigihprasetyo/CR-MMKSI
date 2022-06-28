@@ -1,0 +1,65 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	 [ktb_depositc2id]
+	,[statuscode]
+	,[modifiedbyyominame]
+	,[createdbyname]
+	,[transactioncurrencyid]
+	,[modifiedon]
+	,[ktb_dealerid]
+	,[modifiedbyname]
+	,[modifiedonbehalfby]
+	,[owningbusinessunitname]
+	,[ownerid]
+	,[createdonbehalfbyyominame]
+	,[ktb_documentno]
+	,[owneridname]
+	,[importsequencenumber]
+	,[modifiedby]
+	,[owninguser]
+	,[ktb_businessunitid]
+	,[ktb_depositc2]
+	,[modifiedonbehalfbyname]
+	,[statecode]
+	,[versionnumber]
+	,[createdon]
+	,[createdby]
+	,[owneridtype]
+	,[modifiedonbehalfbyyominame]
+	,[ktb_iddetail]
+	,[ktb_period]
+	,[ktb_businessunitidname]
+	,[ktb_depositc2amount]
+	,[overriddencreatedon]
+	,[ktb_depositc2amount_base]
+	,[createdonbehalfbyname]
+	,[exchangerate]
+	,[ktb_idheader]
+	,[statuscodename]
+	,[owningbusinessunit]
+	,[timezoneruleversionnumber]
+	,[statecodename]
+	,[owningteam]
+	,[transactioncurrencyidname]
+	,[createdbyyominame]
+	,[createdonbehalfby]
+	,[ktb_depositc2no]
+	,[ktb_documentdate]
+	,[owneridyominame]
+	,[ktb_billingnumber]
+	,[utcconversiontimezonecode]
+	,[DealerCode]
+	,[SourceType]
+	,[RowStatus]
+	,[LastSyncDate]
+	, msdyn_companycode
+from (
+	SELECT      
+		a.*  
+		, b.msdyn_companycode    
+	FROM [CRM_ktb_depositc2] a WITH (NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.ktb_businessunitid   
+	Where a.RowStatus = 0
+) as VWI_CRM_ktb_depositc2
+WHERE ktb_depositc2id = @Id

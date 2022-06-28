@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_xts_location as VWI_CRM_xts_location with (nolock)  
+{0}

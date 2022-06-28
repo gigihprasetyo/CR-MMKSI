@@ -1,0 +1,39 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xjp_standardplate.createdonbehalfbyyominame
+	, VWI_CRM_xjp_standardplate.modifiedonbehalfby
+	, VWI_CRM_xjp_standardplate.statecode
+	, VWI_CRM_xjp_standardplate.statecodename
+	, VWI_CRM_xjp_standardplate.createdonbehalfby
+	, VWI_CRM_xjp_standardplate.xjp_registrationofficeid
+	, VWI_CRM_xjp_standardplate.importsequencenumber
+	, VWI_CRM_xjp_standardplate.organizationidname
+	, VWI_CRM_xjp_standardplate.modifiedbyyominame
+	, VWI_CRM_xjp_standardplate.xjp_locking
+	, VWI_CRM_xjp_standardplate.utcconversiontimezonecode
+	, VWI_CRM_xjp_standardplate.createdbyyominame
+	, VWI_CRM_xjp_standardplate.modifiedbyname
+	, VWI_CRM_xjp_standardplate.versionnumber
+	, VWI_CRM_xjp_standardplate.modifiedby
+	, VWI_CRM_xjp_standardplate.createdby
+	, VWI_CRM_xjp_standardplate.timezoneruleversionnumber
+	, VWI_CRM_xjp_standardplate.statuscodename
+	, VWI_CRM_xjp_standardplate.xjp_stampauthorityname
+	, VWI_CRM_xjp_standardplate.xjp_description
+	, VWI_CRM_xjp_standardplate.xjp_standardplateid
+	, VWI_CRM_xjp_standardplate.modifiedon
+	, VWI_CRM_xjp_standardplate.xjp_registrationofficeidname
+	, VWI_CRM_xjp_standardplate.xjp_aliasname
+	, VWI_CRM_xjp_standardplate.modifiedonbehalfbyyominame
+	, VWI_CRM_xjp_standardplate.statuscode
+	, VWI_CRM_xjp_standardplate.createdbyname
+	, VWI_CRM_xjp_standardplate.createdon
+	, VWI_CRM_xjp_standardplate.organizationid
+	, VWI_CRM_xjp_standardplate.createdonbehalfbyname
+	, VWI_CRM_xjp_standardplate.modifiedonbehalfbyname
+	, VWI_CRM_xjp_standardplate.xjp_standardplate
+	, VWI_CRM_xjp_standardplate.overriddencreatedon
+	/**EndPagingIndexQuery**/
+FROM CRM_xjp_standardplate as VWI_CRM_xjp_standardplate with (nolock) 
+{0}

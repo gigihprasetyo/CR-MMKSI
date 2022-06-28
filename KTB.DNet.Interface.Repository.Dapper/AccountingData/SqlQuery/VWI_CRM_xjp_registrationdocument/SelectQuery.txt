@@ -1,0 +1,102 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xjp_registrationdocument.company
+    , VWI_CRM_xjp_registrationdocument.businessunitcode
+    , VWI_CRM_xjp_registrationdocument.xjp_parkingspaceownershipdocument
+    , VWI_CRM_xjp_registrationdocument.createdon
+    , VWI_CRM_xjp_registrationdocument.xjp_calipartyinchargename
+    , VWI_CRM_xjp_registrationdocument.xjp_livingsamecertificate
+    , VWI_CRM_xjp_registrationdocument.statuscodename
+    , VWI_CRM_xjp_registrationdocument.xjp_parentbusinessunitidname
+    , VWI_CRM_xjp_registrationdocument.modifiedon
+    , VWI_CRM_xjp_registrationdocument.owneridtype
+    , VWI_CRM_xjp_registrationdocument.xjp_caliterminatedocument
+    , VWI_CRM_xjp_registrationdocument.xjp_garageapplicationpartyinchargename
+    , VWI_CRM_xjp_registrationdocument.xjp_tradeinrecyclingticket
+    , VWI_CRM_xjp_registrationdocument.createdonbehalfby
+    , VWI_CRM_xjp_registrationdocument.xjp_calisenddatetohq
+    , VWI_CRM_xjp_registrationdocument.modifiedonbehalfbyyominame
+    , VWI_CRM_xjp_registrationdocument.xjp_garageapplicationresultdate
+    , VWI_CRM_xjp_registrationdocument.xjp_tradeinproxystamping
+    , VWI_CRM_xjp_registrationdocument.xjp_parentbusinessunitid
+    , VWI_CRM_xjp_registrationdocument.owneridname
+    , VWI_CRM_xjp_registrationdocument.overriddencreatedon
+    , VWI_CRM_xjp_registrationdocument.xjp_parkingspaceownershipacceptancecert
+    , VWI_CRM_xjp_registrationdocument.xjp_tradeinlightmotorvhcinspeccertform1
+    , VWI_CRM_xjp_registrationdocument.modifiedonbehalfby
+    , VWI_CRM_xjp_registrationdocument.xjp_driverslicensecopy
+    , VWI_CRM_xjp_registrationdocument.xjp_tradeinsealcertificate
+    , VWI_CRM_xjp_registrationdocument.owningteam
+    , VWI_CRM_xjp_registrationdocument.xjp_garageapplicationschedulecollectiondate
+    , VWI_CRM_xjp_registrationdocument.xjp_insurancecompanyidname
+    , VWI_CRM_xjp_registrationdocument.statecode
+    , VWI_CRM_xjp_registrationdocument.timezoneruleversionnumber
+    , VWI_CRM_xjp_registrationdocument.xjp_sealregistrationcertificate
+    , VWI_CRM_xjp_registrationdocument.xjp_certificateofresident
+    , VWI_CRM_xjp_registrationdocument.xjp_proxy
+    , VWI_CRM_xjp_registrationdocument.xjp_tradeincollectiondate
+    , VWI_CRM_xjp_registrationdocument.versionnumber
+    , VWI_CRM_xjp_registrationdocument.xjp_policestation
+    , VWI_CRM_xjp_registrationdocument.xjp_requestedplatenoreceivedate
+    , VWI_CRM_xjp_registrationdocument.xjp_tradeinlightmotorvhcinspeccertform2
+    , VWI_CRM_xjp_registrationdocument.createdonbehalfbyname
+    , VWI_CRM_xjp_registrationdocument.xjp_autmblacquisitionandautomobiletaxreport
+    , VWI_CRM_xjp_registrationdocument.xjp_reservedplatenumberpartyincharge
+    , VWI_CRM_xjp_registrationdocument.xjp_vehiclespecificnumber
+    , VWI_CRM_xjp_registrationdocument.utcconversiontimezonecode
+    , VWI_CRM_xjp_registrationdocument.xjp_registrationdocumentsentdate
+    , VWI_CRM_xjp_registrationdocument.xjp_registrationdocumentcollectiondate
+    , VWI_CRM_xjp_registrationdocument.xjp_garageapplicationcollectiondate
+    , VWI_CRM_xjp_registrationdocument.ownerid
+    , VWI_CRM_xjp_registrationdocument.xjp_garageapplicationsenddate
+    , VWI_CRM_xjp_registrationdocument.importsequencenumber
+    , VWI_CRM_xjp_registrationdocument.owneridyominame
+    , VWI_CRM_xjp_registrationdocument.xjp_reservedplatenumberpartyinchargename
+    , VWI_CRM_xjp_registrationdocument.xjp_reservedplatenosenddatetohq
+    , VWI_CRM_xjp_registrationdocument.xjp_electronicproxyrequestdate
+    , VWI_CRM_xjp_registrationdocument.xjp_insurancecompanyid
+    , VWI_CRM_xjp_registrationdocument.xjp_registrationdocumentnumber
+    , VWI_CRM_xjp_registrationdocument.xjp_tradeincertificateofresident
+    , VWI_CRM_xjp_registrationdocument.xjp_calipartyincharge
+    , VWI_CRM_xjp_registrationdocument.createdbyname
+    , VWI_CRM_xjp_registrationdocument.xjp_registrationdocumentid
+    , VWI_CRM_xjp_registrationdocument.modifiedonbehalfbyname
+    , VWI_CRM_xjp_registrationdocument.xjp_companycertificate
+    , VWI_CRM_xjp_registrationdocument.xjp_parkingspacecertificate
+    , VWI_CRM_xjp_registrationdocument.xjp_calinumber
+    , VWI_CRM_xjp_registrationdocument.xjp_applicationrequestlightvehicle
+    , VWI_CRM_xjp_registrationdocument.xjp_businessunitid
+    , VWI_CRM_xjp_registrationdocument.createdby
+    , VWI_CRM_xjp_registrationdocument.modifiedby
+    , VWI_CRM_xjp_registrationdocument.xjp_businessunitidname
+    , VWI_CRM_xjp_registrationdocument.createdbyyominame
+    , VWI_CRM_xjp_registrationdocument.owninguser
+    , VWI_CRM_xjp_registrationdocument.createdonbehalfbyyominame
+    , VWI_CRM_xjp_registrationdocument.owningbusinessunit
+    , VWI_CRM_xjp_registrationdocument.xjp_garageapplicationpartyincharge
+    , VWI_CRM_xjp_registrationdocument.modifiedbyyominame
+    , VWI_CRM_xjp_registrationdocument.xjp_handicappedhandbook
+    , VWI_CRM_xjp_registrationdocument.xjp_regdocumentschedulecollectiondate
+    , VWI_CRM_xjp_registrationdocument.xjp_tradeinautombltaxcertpaymentdocument
+    , VWI_CRM_xjp_registrationdocument.statuscode
+    , VWI_CRM_xjp_registrationdocument.modifiedbyname
+    , VWI_CRM_xjp_registrationdocument.xjp_garageapplicationexpectedresultdate
+    , VWI_CRM_xjp_registrationdocument.xjp_vehicleidentificationnumber
+    , VWI_CRM_xjp_registrationdocument.xjp_tradeinschedulecollectiondate
+    , VWI_CRM_xjp_registrationdocument.statecodename
+    , VWI_CRM_xjp_registrationdocument.xjp_locking
+    , VWI_CRM_xjp_registrationdocument.xjp_tradeintransfercertificate
+    , VWI_CRM_xjp_registrationdocument.msdyn_companycode
+    /**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xjp_registrationdocument a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xjp_businessunitid
+    {0}
+) as VWI_CRM_xjp_registrationdocument  

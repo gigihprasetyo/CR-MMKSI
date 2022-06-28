@@ -1,0 +1,84 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_nvsqmiscellaneouscharge.company
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.businessunitcode
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_parentbusinessunitid
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.versionnumber
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_consumptiontaxid
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.createdon
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_amount
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_nvsqmiscellaneouscharge
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.statuscodename
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_baseamount_base
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_consumptiontaxidname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_miscellaneouschargetemplatereferenceidname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.owneridtype
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_nvsqmiscellaneouschargeid
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.createdonbehalfby
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.modifiedbyname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.owneridname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.ktb_caroseriesname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.overriddencreatedon
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.ktb_caroseries
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.createdonbehalfbyyominame
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.modifiedonbehalfby
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.exchangerate
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_miscellaneouschargeid
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.owningteam
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_estimatedmiscellaneouschargecost_base
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_newvehiclesalesquoteid
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.statecode
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.timezoneruleversionnumber
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_taxablename
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.ktb_karoseriname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_locking
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_miscellaneouschargeidname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_amount_base
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_totalamount_base
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.createdonbehalfbyname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_pluginflag
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_consumptiontaxamount
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.utcconversiontimezonecode
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_estimatedmiscellaneouschargecost
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_newvehiclesalesquoteidname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.ownerid
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.modifiedon
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.importsequencenumber
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_consumptiontaxamount_base
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.createdbyname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.ktb_miscchargedescription
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_businessunitid
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.modifiedonbehalfbyname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_baseamount
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.transactioncurrencyid
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.createdby
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.modifiedby
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.createdbyyominame
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.owninguser
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.transactioncurrencyidname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.owningbusinessunit
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.modifiedbyyominame
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_parentbusinessunitidname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_totalamount
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.statuscode
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_miscellaneouschargetemplatereferenceid
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.owneridyominame
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_taxable
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.statecodename
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.xts_businessunitidname
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.RowStatus
+	, VWI_CRM_xts_nvsqmiscellaneouscharge.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_nvsqmiscellaneouscharge a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_nvsqmiscellaneouscharge

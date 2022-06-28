@@ -1,0 +1,86 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,xts_parentbusinessunitid
+	,versionnumber
+	,xts_consumptiontaxid
+	,createdon
+	,xts_amount
+	,xts_invoicedflag
+	,xts_apvouchernumberidname
+	,xts_apvouchernumberid
+	,statuscodename
+	,xts_consumptiontaxidname
+	,modifiedbyyominame
+	,xts_taxamount
+	,owneridtype
+	,createdonbehalfby
+	,xts_invoicedflagname
+	,modifiedbyname
+	,owneridname
+	,overriddencreatedon
+	,xts_documentdate
+	,createdonbehalfbyyominame
+	,transactioncurrencyidname
+	,modifiedonbehalfby
+	,exchangerate
+	,owningteam
+	,xts_calculationmethod
+	,xts_totalbaseamount
+	,statecode
+	,timezoneruleversionnumber
+	,xts_purchasereceiptdetaillandedcostid
+	,xts_purchasereceiptdetailidname
+	,xts_locking
+	,xts_amount_base
+	,xts_totalamount_base
+	,createdonbehalfbyname
+	,xts_invoicenumber
+	,xts_recognitioncategoryname
+	,utcconversiontimezonecode
+	,xts_landedcostid
+	,xts_vendoridname
+	,ownerid
+	,modifiedon
+	,xts_calculationmethodname
+	,owneridyominame
+	,createdbyname
+	,xts_taxamount_base
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_purchasereceiptidname
+	,xts_purchasereceiptid
+	,xts_purchasereceiptdetailid
+	,xts_totalbaseamount_base
+	,createdby
+	,modifiedby
+	,xts_landedcostidname
+	,createdbyyominame
+	,owninguser
+	,xts_recognitioncategory
+	,xts_landedcostnumber
+	,owningbusinessunit
+	,transactioncurrencyid
+	,xts_parentbusinessunitidname
+	,xts_vendorid
+	,xts_totalamount
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_taxrate
+	,importsequencenumber
+	,statecodename
+	,xts_businessunitidname
+	,RowStatus
+	,msdyn_companycode
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.*
+        , b.msdyn_companycode
+    FROM CRM_xts_purchasereceiptdetaillandedcost a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_purchasereceiptdetaillandedcostid = @Id
+) VWI_CRM_xts_purchasereceiptdetaillandedcost 

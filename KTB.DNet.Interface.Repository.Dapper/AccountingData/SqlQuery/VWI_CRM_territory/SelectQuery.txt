@@ -1,0 +1,42 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_territory.createdonbehalfbyyominame
+	, VWI_CRM_territory.modifiedonbehalfby
+	, VWI_CRM_territory.transactioncurrencyidname
+	, VWI_CRM_territory.manageridname
+	, VWI_CRM_territory.description
+	, VWI_CRM_territory.managerid
+	, VWI_CRM_territory.createdonbehalfby
+	, VWI_CRM_territory.transactioncurrencyid
+	, VWI_CRM_territory.entityimage_timestamp
+	, VWI_CRM_territory.name
+	, VWI_CRM_territory.entityimageid
+	, VWI_CRM_territory.importsequencenumber
+	, VWI_CRM_territory.organizationidname
+	, VWI_CRM_territory.utcconversiontimezonecode
+	, VWI_CRM_territory.createdbyyominame
+	, VWI_CRM_territory.territoryid
+	, VWI_CRM_territory.modifiedbyname
+	, VWI_CRM_territory.versionnumber
+	, VWI_CRM_territory.modifiedby
+	, VWI_CRM_territory.modifiedbyyominame
+	, VWI_CRM_territory.createdby
+	, VWI_CRM_territory.timezoneruleversionnumber
+	, VWI_CRM_territory.modifiedon
+	, VWI_CRM_territory.exchangerate
+	, VWI_CRM_territory.manageridyominame
+	, VWI_CRM_territory.modifiedonbehalfbyyominame
+	, VWI_CRM_territory.createdbyname
+	, VWI_CRM_territory.createdon
+	, VWI_CRM_territory.organizationid
+	, VWI_CRM_territory.createdonbehalfbyname
+	, VWI_CRM_territory.modifiedonbehalfbyname
+	, VWI_CRM_territory.parentterritoryid
+	, VWI_CRM_territory.entityimage
+	, VWI_CRM_territory.parentterritoryidname
+	, VWI_CRM_territory.overriddencreatedon
+	, VWI_CRM_territory.entityimage_url
+	/**EndPagingIndexQuery**/
+FROM [dbo].[CRM_territory] as VWI_CRM_territory with(nolock) 
+{0}

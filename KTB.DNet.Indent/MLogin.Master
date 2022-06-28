@@ -1,0 +1,150 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="MLogin.master.vb" Inherits="KTB.DNet.Indent.MLogin" %>
+
+<%@ Import Namespace="KTB.DNet.Indent" %>
+<%@ Import Namespace="Microsoft.AspNet.Identity" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%: Page.Title %> -  Indent Info</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <style>
+        .fb {
+            /*position: fixed;*/
+            position: fixed;
+            z-index: -1000;
+            padding-top: 220px;
+            bottom: 0;
+            width: 100%;
+            max-height: 220px;
+            min-height: 30%;
+            -webkit-background-image: url("../Content/picture1.jpg") no-repeat;
+            -moz-background-image: url("../Content/picture1.jpg");
+            background-image: url("../Content/picture1.jpg");
+            display: table-row;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: bottom;
+            background-repeat: repeat;
+            /*background: url("../Content/picture1.jpg") no-repeat fixed;*/
+            /*background:no-repeat center center fixed;*/
+        }
+
+        a:hover, a:link, a:active {
+            color: black;
+        }
+
+        .fullbackground {
+              z-index: -1000;
+            position: fixed;
+             bottom: 0;
+            width: 100%;
+            max-height: 220px;
+            min-height: 30%;
+            right:0;
+            left:0;
+        }
+
+        .fbIMG {
+            z-index: -1000;
+            width: 100%; /* alternative: right:0; */
+            height: 100%; /* alternative: bottom:0; */
+             min-height: 217px;
+             bottom:0;
+        }
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 8]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: white">
+            <div class="container">
+                <div class="navbar-header" style="" >
+                     <button type="button" class="navbar-toggle" runat="server" id="divLog" visible="false" data-toggle="collapse" data-target=".navbar-collapse" style="background-color:gray;">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <div style=""  >
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="../Content/mmc.png" alt="MMKSI" style="float: left" /></td>
+                                <td><span style="word-wrap: break-word; font-weight: bold; text-align: center; text-anchor: middle;">MITSUBISHI MOTORS KRAMA YUDHA SALES INDONESIA</span></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                  
+
+                </div>
+                <div class="navbar-collapse collapse">
+                      <div style="" runat="server"  ID="loginbar" visible="false">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><label id="lbluser" runat="server" ></label> </li>
+                                <li>
+                                    <asp:LinkButton runat="server" ID="linkLog" Style="color:black;"  >Log Out</asp:LinkButton>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content" style="padding-top: 5px">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+
+        </div>
+
+
+
+        <footer style="display: block; padding: 0; margin: 0;">
+            <div class="fullbackground">
+                <img src="../Content/picture1.jpg" class="fbIMG" />
+            </div>
+        </footer>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+SELECT 
+/**PagingIndexQuery**/ 
+	ID
+	, ChassisMasterID
+	, ChassisNumber
+	, DealerCode
+	, PKTDate
+	, LastUpdateTime
+	, RowStatus
+/**EndPagingIndexQuery**/
+from (
+	select 
+		a.Id as ID
+		, ChassisNumber
+		, ChassisMasterID
+		, DealerCode
+		, PKTDate
+		, a.LastUpdateTime
+		, b.RowStatus
+	from ChassisMasterPKT a with(nolock)
+	inner join ChassisMaster b with(nolock)
+	on a.ChassisMasterID = b.ID 
+	left join Dealer c with(nolock)
+	on b.SoldDealerID = c.ID
+) as VWI_ChassisMasterPKT {0}

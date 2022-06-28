@@ -1,0 +1,55 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_miscellaneouschargetemplate.company
+	, VWI_CRM_xts_miscellaneouschargetemplate.businessunitcode
+	, VWI_CRM_xts_miscellaneouschargetemplate.xts_lightcar
+	, VWI_CRM_xts_miscellaneouschargetemplate.createdonbehalfbyyominame
+	, VWI_CRM_xts_miscellaneouschargetemplate.owninguser
+	, VWI_CRM_xts_miscellaneouschargetemplate.xts_locking
+	, VWI_CRM_xts_miscellaneouschargetemplate.statecode
+	, VWI_CRM_xts_miscellaneouschargetemplate.xts_businessunitidname
+	, VWI_CRM_xts_miscellaneouschargetemplate.owneridname
+	, VWI_CRM_xts_miscellaneouschargetemplate.statecodename
+	, VWI_CRM_xts_miscellaneouschargetemplate.createdonbehalfby
+	, VWI_CRM_xts_miscellaneouschargetemplate.xts_miscellaneouschargetemplate
+	, VWI_CRM_xts_miscellaneouschargetemplate.importsequencenumber
+	, VWI_CRM_xts_miscellaneouschargetemplate.xts_miscellaneouschargetemplateid
+	, VWI_CRM_xts_miscellaneouschargetemplate.modifiedbyyominame
+	, VWI_CRM_xts_miscellaneouschargetemplate.utcconversiontimezonecode
+	, VWI_CRM_xts_miscellaneouschargetemplate.createdbyyominame
+	, VWI_CRM_xts_miscellaneouschargetemplate.owningbusinessunit
+	, VWI_CRM_xts_miscellaneouschargetemplate.modifiedbyname
+	, VWI_CRM_xts_miscellaneouschargetemplate.owningteam
+	, VWI_CRM_xts_miscellaneouschargetemplate.modifiedby
+	, VWI_CRM_xts_miscellaneouschargetemplate.createdby
+	, VWI_CRM_xts_miscellaneouschargetemplate.timezoneruleversionnumber
+	, VWI_CRM_xts_miscellaneouschargetemplate.owneridtype
+	, VWI_CRM_xts_miscellaneouschargetemplate.statuscodename
+	, VWI_CRM_xts_miscellaneouschargetemplate.owneridyominame
+	, VWI_CRM_xts_miscellaneouschargetemplate.modifiedon
+	, VWI_CRM_xts_miscellaneouschargetemplate.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_miscellaneouschargetemplate.statuscode
+	, VWI_CRM_xts_miscellaneouschargetemplate.createdbyname
+	, VWI_CRM_xts_miscellaneouschargetemplate.createdon
+	, VWI_CRM_xts_miscellaneouschargetemplate.xts_businessunitid
+	, VWI_CRM_xts_miscellaneouschargetemplate.createdonbehalfbyname
+	, VWI_CRM_xts_miscellaneouschargetemplate.modifiedonbehalfbyname
+	, VWI_CRM_xts_miscellaneouschargetemplate.xts_lightcarname
+	, VWI_CRM_xts_miscellaneouschargetemplate.versionnumber
+	, VWI_CRM_xts_miscellaneouschargetemplate.modifiedonbehalfby
+	, VWI_CRM_xts_miscellaneouschargetemplate.ownerid
+	, VWI_CRM_xts_miscellaneouschargetemplate.overriddencreatedon
+	, VWI_CRM_xts_miscellaneouschargetemplate.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_miscellaneouschargetemplate a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_miscellaneouschargetemplate  

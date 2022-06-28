@@ -1,0 +1,86 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,xts_parentbusinessunitid
+	,versionnumber
+	,createdon
+	,xts_warehousetypename
+	,xts_producttypeaccessoriesname
+	,statuscodename
+	,xts_warehouseid
+	,xts_status
+	,modifiedbyyominame
+	,owneridtype
+	,xts_generatemethod
+	,xts_log
+	,createdonbehalfby
+	,modifiedbyname
+	,xts_producttypepartname
+	,xts_producttypenewvehicle
+	,owneridname
+	,overriddencreatedon
+	,xts_producttypepart
+	,modifiedonbehalfby
+	,xts_producttypevehiclebodyname
+	,xts_producttypeoil
+	,owningteam
+	,xts_processcode
+	,xts_producttypevehiclebody
+	,statecode
+	,xts_siteidname
+	,timezoneruleversionnumber
+	,xts_warehouseidname
+	,xts_locking
+	,xts_handling
+	,xts_producttypeusedvehicle
+	,xts_generateinventorylistid
+	,xts_producttypeusedvehiclename
+	,createdonbehalfbyname
+	,utcconversiontimezonecode
+	,xts_scheduledreleasedate
+	,xts_statusname
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_producttypematerial
+	,xts_siteid
+	,createdbyname
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_handlingname
+	,xts_warehousetype
+	,xts_generateinventorylistnumber
+	,createdby
+	,modifiedby
+	,xts_producttypeoilname
+	,createdbyyominame
+	,owninguser
+	,createdonbehalfbyyominame
+	,owningbusinessunit
+	,xts_locationid
+	,xts_producttypenewvehiclename
+	,xts_parentbusinessunitidname
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_generatemethodname
+	,xts_producttypematerialname
+	,xts_locationidname
+	,statecodename
+	,xts_businessunitidname
+	,xts_producttypeaccessories
+	,RowStatus
+	,msdyn_companycode
+FROM (
+    SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_generateinventorylist a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_generateinventorylistid = @Id
+) VWI_CRM_xts_generateinventorylist
+

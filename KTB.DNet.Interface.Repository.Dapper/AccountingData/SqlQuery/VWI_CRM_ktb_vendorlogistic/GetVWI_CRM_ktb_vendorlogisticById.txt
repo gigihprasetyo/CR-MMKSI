@@ -1,0 +1,42 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, organizationid
+	, ktb_vendorname
+	, ktb_vehicletypeidname
+	, ktb_vehiclemodelid
+	, statecode
+	, modifiedonbehalfbyyominame
+	, statecodename
+	, modifiedby
+	, versionnumber
+	, ktb_currency
+	, modifiedonbehalfbyname
+	, ktb_vendor
+	, createdonbehalfby
+	, organizationidname
+	, ktb_vendorlogisticid
+	, ktb_effectivestartdate
+	, createdby
+	, statuscode
+	, ktb_company
+	, createdonbehalfbyname
+	, ktb_vendorlogistic
+	, modifiedbyname
+	, ktb_vehicletypeid
+	, ktb_vehiclemodelidname
+	, modifiedon
+	, ktb_lastnumber
+	, createdbyname
+	, utcconversiontimezonecode
+	, modifiedbyyominame
+	, ktb_currencyname
+	, createdonbehalfbyyominame
+	, createdon
+	, timezoneruleversionnumber
+	, importsequencenumber
+	, overriddencreatedon
+	, createdbyyominame
+	, modifiedonbehalfby
+	, statuscodename
+FROM CRM_ktb_vendorlogistic as VWI_CRM_ktb_vendorlogistic with (nolock)  
+WHERE ktb_vendorlogisticid = @Id

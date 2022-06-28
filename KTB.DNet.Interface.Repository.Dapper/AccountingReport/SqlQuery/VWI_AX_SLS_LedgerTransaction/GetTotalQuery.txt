@@ -1,0 +1,33 @@
+SELECT 
+	count(1) 
+from (
+	SELECT 
+		RecordId
+		, [COMPANY] Company  
+		, MAINACCOUNTID AccountNo  
+		, LEDGERACCOUNTNAME AccountName  
+		, TRANSACTIONDATE TransactionDate  
+		, [JOURNALNUMBER] JournalNumber  
+		, DocumentNo
+		, [VOUCHER] Voucher  
+		, TRANSACTIONTYPE PostingType  
+		, [DESCRIPTION] LedgerAccount     
+		, MAINACCOUNTID [Description]     
+		, DIMENSION1 Dimension1  
+		, DIMENSION2 Dimension2  
+		, Dimension3 Dimension3  
+		, DIMENSION4 Dimension4  
+		, DIMENSION5 Dimension5  
+		, DIMENSION6 Dimension6  
+		, [CURRENCY] Currency  
+		, CASE WHEN BASEAMOUNT > 0 THEN BASEAMOUNT ELSE 0 END AmountInTransactionDebit  
+		, CASE WHEN BASEAMOUNT < 0 THEN ABS(BASEAMOUNT) ELSE 0 END AmountInTransactionCredit  
+		, CASE WHEN BASEAMOUNT > 0 THEN BASEAMOUNT ELSE 0 END AmountInAccountingDebit  
+		, CASE WHEN BASEAMOUNT < 0 THEN ABS(BASEAMOUNT) ELSE 0 END AmountInAccountingCredit  
+		, CASE WHEN BASEAMOUNT > 0 THEN BASEAMOUNT ELSE 0 END AmountInReportingDebit  
+		, CASE WHEN BASEAMOUNT < 0 THEN ABS(BASEAMOUNT) ELSE 0 END AmountInReportingCredit  
+		, ModifiedDate
+	FROM [dbo].[AX_LEDGERTRANSACTION] with(Nolock)
+	{0}
+) as VWI_AX_SLS_LedgerTransaction 
+{1}

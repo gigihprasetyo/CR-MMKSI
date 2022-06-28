@@ -1,0 +1,54 @@
+﻿SELECT 
+	  ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+      ,company
+      ,businessunitcode
+      ,xts_salespricecategoryname
+      ,createdonbehalfbyyominame
+      ,modifiedonbehalfby
+      ,owningteam
+      ,xts_locking
+      ,statecode
+      ,xts_businessunitidname
+      ,owneridname
+      ,statecodename
+      ,owninguser
+      ,createdonbehalfby
+      ,importsequencenumber
+      ,utcconversiontimezonecode
+      ,xts_accessoriesinstallationcategory
+      ,owningbusinessunit
+      ,modifiedbyname
+      ,versionnumber
+      ,modifiedby
+      ,modifiedbyyominame
+      ,createdby
+      ,timezoneruleversionnumber
+      ,createdbyyominame
+      ,owneridtype
+      ,statuscodename
+      ,xts_accessoriesinstallationcategoryid
+      ,owneridyominame
+      ,modifiedon
+      ,modifiedonbehalfbyyominame
+      ,statuscode
+      ,createdbyname
+      ,createdon
+      ,xts_businessunitid
+      ,createdonbehalfbyname
+      ,xts_installationname
+      ,modifiedonbehalfbyname
+      ,xts_salespricecategory
+      ,ownerid
+      ,overriddencreatedon
+      ,msdyn_companycode
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM [CRM_xts_accessoriesinstallationcategory] a
+	INNER JOIN CRM_businessunit b 
+    ON b.businessunitid = a.xts_businessunitid
+    where xts_accessoriesinstallationcategoryid = @Id
+) VWI_CRM_xts_accessoriesinstallationcategory

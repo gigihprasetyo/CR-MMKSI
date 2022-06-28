@@ -1,0 +1,3 @@
+﻿DELETE APIUserPermission WHERE 
+ClientUserId = @ClientUserId AND 
+PermissionId NOT IN @ListOfSelectedPermissionId

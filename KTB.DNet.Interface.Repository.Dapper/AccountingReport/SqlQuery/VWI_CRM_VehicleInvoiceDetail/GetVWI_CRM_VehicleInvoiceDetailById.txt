@@ -1,0 +1,19 @@
+SELECT 
+	IDRow
+	,TRANSACTION_ITEM_NUMBER
+	,OF
+	,KODE_OBJEK
+	,NAMA_OBJEK
+	,HARGA_SATUAN
+	,JUMLAH_BARANG
+	,HARGA_TOTAL
+	,DISKON
+	,DPP
+	,PPN
+	,TARIF_PPNBM
+	,PPNBM
+	,Tax1
+	,Tax2
+	,xts_newvehiclesalesorderid
+FROM VWI_CRM_VehicleInvoiceDetail WITH (NOLOCK)
+WHERE ID = @Id

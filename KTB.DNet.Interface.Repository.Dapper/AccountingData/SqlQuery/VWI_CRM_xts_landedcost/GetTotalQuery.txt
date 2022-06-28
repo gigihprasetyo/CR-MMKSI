@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_xts_landedcost as VWI_CRM_xts_landedcost with (nolock)  
+{0}

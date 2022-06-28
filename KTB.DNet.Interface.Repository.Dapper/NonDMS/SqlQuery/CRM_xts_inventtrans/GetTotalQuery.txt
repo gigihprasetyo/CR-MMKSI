@@ -1,0 +1,2 @@
+SELECT COUNT(1)
+FROM CRM_xts_inventtrans WITH (NOLOCK) {0}

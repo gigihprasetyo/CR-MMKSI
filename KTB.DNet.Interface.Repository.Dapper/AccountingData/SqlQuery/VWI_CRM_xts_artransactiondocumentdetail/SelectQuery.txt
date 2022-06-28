@@ -1,0 +1,65 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_artransactiondocumentdetail.company
+	, VWI_CRM_xts_artransactiondocumentdetail.businessunitcode
+	, VWI_CRM_xts_artransactiondocumentdetail.createdonbehalfbyyominame
+	, VWI_CRM_xts_artransactiondocumentdetail.owninguser
+	, VWI_CRM_xts_artransactiondocumentdetail.transactioncurrencyidname
+	, VWI_CRM_xts_artransactiondocumentdetail.statecode
+	, VWI_CRM_xts_artransactiondocumentdetail.owneridname
+	, VWI_CRM_xts_artransactiondocumentdetail.statecodename
+	, VWI_CRM_xts_artransactiondocumentdetail.createdonbehalfby
+	, VWI_CRM_xts_artransactiondocumentdetail.transactioncurrencyid
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_transactiontype
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_customertransactionnumber
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_gljournaldetailreference
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_transactiontypename
+	, VWI_CRM_xts_artransactiondocumentdetail.importsequencenumber
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_creditamount
+	, VWI_CRM_xts_artransactiondocumentdetail.modifiedbyyominame
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_artransactiondocumentidname
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_gljournalnumber
+	, VWI_CRM_xts_artransactiondocumentdetail.utcconversiontimezonecode
+	, VWI_CRM_xts_artransactiondocumentdetail.createdbyyominame
+	, VWI_CRM_xts_artransactiondocumentdetail.owningbusinessunit
+	, VWI_CRM_xts_artransactiondocumentdetail.modifiedbyname
+	, VWI_CRM_xts_artransactiondocumentdetail.owningteam
+	, VWI_CRM_xts_artransactiondocumentdetail.modifiedby
+	, VWI_CRM_xts_artransactiondocumentdetail.createdby
+	, VWI_CRM_xts_artransactiondocumentdetail.timezoneruleversionnumber
+	, VWI_CRM_xts_artransactiondocumentdetail.owneridtype
+	, VWI_CRM_xts_artransactiondocumentdetail.statuscodename
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_creditamount_base
+	, VWI_CRM_xts_artransactiondocumentdetail.owneridyominame
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_debitamount
+	, VWI_CRM_xts_artransactiondocumentdetail.modifiedon
+	, VWI_CRM_xts_artransactiondocumentdetail.exchangerate
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_artransactiondocumentdetailid
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_debitamount_base
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_artransactiondocumentid
+	, VWI_CRM_xts_artransactiondocumentdetail.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_artransactiondocumentdetail.statuscode
+	, VWI_CRM_xts_artransactiondocumentdetail.createdbyname
+	, VWI_CRM_xts_artransactiondocumentdetail.createdon
+	, VWI_CRM_xts_artransactiondocumentdetail.createdonbehalfbyname
+	, VWI_CRM_xts_artransactiondocumentdetail.modifiedonbehalfbyname
+	, VWI_CRM_xts_artransactiondocumentdetail.xts_artransactiondocumentdetailnumber
+	, VWI_CRM_xts_artransactiondocumentdetail.versionnumber
+	, VWI_CRM_xts_artransactiondocumentdetail.modifiedonbehalfby
+	, VWI_CRM_xts_artransactiondocumentdetail.ownerid
+	, VWI_CRM_xts_artransactiondocumentdetail.overriddencreatedon
+	, VWI_CRM_xts_artransactiondocumentdetail.RowStatus
+	, VWI_CRM_xts_artransactiondocumentdetail.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+     FROM CRM_xts_artransactiondocumentdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.owningbusinessunit
+    {0}
+) VWI_CRM_xts_artransactiondocumentdetail

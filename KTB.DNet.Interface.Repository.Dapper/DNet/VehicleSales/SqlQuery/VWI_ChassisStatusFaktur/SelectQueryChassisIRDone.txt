@@ -1,0 +1,4 @@
+﻿SELECT top 1 ISNULL(RevisionStatus, 0) --ChassisMasterID, RevisionStatus
+FROM RevisionFaktur WITH (NOLOCK)
+WHERE RowStatus = 0 AND ChassisMasterID = @ChassisMasterID
+ORDER BY EndCustomerID DESC

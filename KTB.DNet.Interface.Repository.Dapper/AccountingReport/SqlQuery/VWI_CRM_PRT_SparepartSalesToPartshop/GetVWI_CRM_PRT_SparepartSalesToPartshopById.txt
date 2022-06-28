@@ -1,0 +1,28 @@
+SELECT 
+	IDRow
+	,company
+	,businessunitcode
+	,Site
+	,SalesOrderNo
+	,DeliveryOrderNo
+	,TransactionDate
+	,CustomerNo
+	,Customer
+	,Product
+	,ProductDescription
+	,SalesUnit
+	,TermOfPayment
+	,QuantityDelivered
+	,QuantityReturned
+	,UnitPrice
+	,DiscountPercentage
+	,DiscountAmount
+	,TotalConsumptionTaxAmount
+	,ConsumptionTax1
+	,ConsumptionTax1Amount
+	,TotalAmount
+	,COGSTrx
+	,msdyn_companycode
+	,xts_deliveryorderdetailid
+FROM VWI_CRM_PRT_SparepartSalesToPartshop WITH (NOLOCK)
+WHERE ID = @Id

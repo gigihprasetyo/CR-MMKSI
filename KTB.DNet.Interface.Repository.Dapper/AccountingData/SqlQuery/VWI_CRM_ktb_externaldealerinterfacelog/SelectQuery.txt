@@ -1,0 +1,75 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	VWI_CRM_ktb_externaldealerinterfacelog.company,  
+	VWI_CRM_ktb_externaldealerinterfacelog.businessunitcode,  
+	VWI_CRM_ktb_externaldealerinterfacelog.createdby,
+	VWI_CRM_ktb_externaldealerinterfacelog.createdbyname,
+	VWI_CRM_ktb_externaldealerinterfacelog.createdbyyominame,
+	VWI_CRM_ktb_externaldealerinterfacelog.createdon,
+	VWI_CRM_ktb_externaldealerinterfacelog.createdonbehalfby,
+	VWI_CRM_ktb_externaldealerinterfacelog.createdonbehalfbyname,
+	VWI_CRM_ktb_externaldealerinterfacelog.createdonbehalfbyyominame,
+	VWI_CRM_ktb_externaldealerinterfacelog.DealerCode,
+	VWI_CRM_ktb_externaldealerinterfacelog.importsequencenumber,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_appaymentid,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_appaymentidname,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_apvoucherid,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_apvoucheridname,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_arinvoiceid,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_arinvoiceidname,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_arreceiptid,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_arreceiptidname,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_businessunitid,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_businessunitidname,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_context,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_dealeridentifier,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_employeeid,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_employeeidname,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_exceptionmessage,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_externalcode,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_externaldealerinterfacelogid,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_log,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_operation,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_operationname,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_pf,
+	'' as ktb_receivedmessage, --size column is so big (include base64 from KTP), already confirm Pak Chandra Srikandi this column not used by dealer
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_spkid,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_spkidname,
+	VWI_CRM_ktb_externaldealerinterfacelog.ktb_transactionnumber,
+	VWI_CRM_ktb_externaldealerinterfacelog.modifiedby,
+	VWI_CRM_ktb_externaldealerinterfacelog.modifiedbyname,
+	VWI_CRM_ktb_externaldealerinterfacelog.modifiedbyyominame,
+	VWI_CRM_ktb_externaldealerinterfacelog.modifiedon,
+	VWI_CRM_ktb_externaldealerinterfacelog.modifiedonbehalfby,
+	VWI_CRM_ktb_externaldealerinterfacelog.modifiedonbehalfbyname,
+	VWI_CRM_ktb_externaldealerinterfacelog.modifiedonbehalfbyyominame,
+	VWI_CRM_ktb_externaldealerinterfacelog.overriddencreatedon,
+	VWI_CRM_ktb_externaldealerinterfacelog.ownerid,
+	VWI_CRM_ktb_externaldealerinterfacelog.owneridname,
+	VWI_CRM_ktb_externaldealerinterfacelog.owneridtype,
+	VWI_CRM_ktb_externaldealerinterfacelog.owneridyominame,
+	VWI_CRM_ktb_externaldealerinterfacelog.owningbusinessunit,
+	VWI_CRM_ktb_externaldealerinterfacelog.owningteam,
+	VWI_CRM_ktb_externaldealerinterfacelog.owninguser,
+	VWI_CRM_ktb_externaldealerinterfacelog.RowStatus,
+	VWI_CRM_ktb_externaldealerinterfacelog.SourceType,
+	VWI_CRM_ktb_externaldealerinterfacelog.statecode,
+	VWI_CRM_ktb_externaldealerinterfacelog.statecodename,
+	VWI_CRM_ktb_externaldealerinterfacelog.statuscode,
+	VWI_CRM_ktb_externaldealerinterfacelog.statuscodename,
+	VWI_CRM_ktb_externaldealerinterfacelog.timezoneruleversionnumber,
+	VWI_CRM_ktb_externaldealerinterfacelog.utcconversiontimezonecode,
+	VWI_CRM_ktb_externaldealerinterfacelog.versionnumber
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+		B.ktb_bucompany company,
+		B.ktb_dealercode businessunitcode
+		,A.* 
+		,B.msdyn_companycode
+    FROM CRM_ktb_externaldealerinterfacelog A WITH(NOLOCK)
+    LEFT JOIN {0}dbo.CRM_businessunit B WITH(NOLOCK) 
+        ON B.businessunitid = A.owningbusinessunit
+) as VWI_CRM_ktb_externaldealerinterfacelog
+{1}

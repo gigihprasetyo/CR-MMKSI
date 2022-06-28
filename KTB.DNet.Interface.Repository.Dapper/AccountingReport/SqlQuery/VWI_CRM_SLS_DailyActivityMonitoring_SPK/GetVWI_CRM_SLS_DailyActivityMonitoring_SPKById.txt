@@ -1,0 +1,10 @@
+SELECT 
+	businessunitcode
+	,IDRow
+	,statecode
+	,xts_newvehiclesalesordernumber
+	,xts_productsegment1
+	,xts_productsegment2
+	,xts_status
+FROM VWI_CRM_SLS_DailyActivityMonitoring_SPK WITH (NOLOCK)
+WHERE ID = @Id

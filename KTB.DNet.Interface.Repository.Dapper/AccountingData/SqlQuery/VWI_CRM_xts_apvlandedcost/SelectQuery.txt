@@ -1,0 +1,80 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_apvlandedcost.company
+	, VWI_CRM_xts_apvlandedcost.businessunitcode
+	, VWI_CRM_xts_apvlandedcost.createdonbehalfbyyominame
+	, VWI_CRM_xts_apvlandedcost.owninguser
+	, VWI_CRM_xts_apvlandedcost.transactioncurrencyidname
+	, VWI_CRM_xts_apvlandedcost.xts_locking
+	, VWI_CRM_xts_apvlandedcost.statecode
+	, VWI_CRM_xts_apvlandedcost.xts_taxrate
+	, VWI_CRM_xts_apvlandedcost.owneridname
+	, VWI_CRM_xts_apvlandedcost.xts_amount_base
+	, VWI_CRM_xts_apvlandedcost.statecodename
+	, VWI_CRM_xts_apvlandedcost.xts_amount
+	, VWI_CRM_xts_apvlandedcost.createdonbehalfby
+	, VWI_CRM_xts_apvlandedcost.transactioncurrencyid
+	, VWI_CRM_xts_apvlandedcost.xts_taxamount
+	, VWI_CRM_xts_apvlandedcost.xts_totalamount_base
+	, VWI_CRM_xts_apvlandedcost.xts_parentbusinessunitid
+	, VWI_CRM_xts_apvlandedcost.xts_apvlandedcost
+	, VWI_CRM_xts_apvlandedcost.xts_purchasereceiptlandedcostidname
+	, VWI_CRM_xts_apvlandedcost.xts_accountid
+	, VWI_CRM_xts_apvlandedcost.xts_accountpayablevoucheridname
+	, VWI_CRM_xts_apvlandedcost.importsequencenumber
+	, VWI_CRM_xts_apvlandedcost.modifiedbyyominame
+	, VWI_CRM_xts_apvlandedcost.xts_consumptiontaxidname
+	, VWI_CRM_xts_apvlandedcost.xts_accountpayablevoucherid
+	, VWI_CRM_xts_apvlandedcost.xts_purchasereceiptid
+	, VWI_CRM_xts_apvlandedcost.utcconversiontimezonecode
+	, VWI_CRM_xts_apvlandedcost.createdbyyominame
+	, VWI_CRM_xts_apvlandedcost.owningbusinessunit
+	, VWI_CRM_xts_apvlandedcost.modifiedbyname
+	, VWI_CRM_xts_apvlandedcost.owningteam
+	, VWI_CRM_xts_apvlandedcost.modifiedby
+	, VWI_CRM_xts_apvlandedcost.xts_apvlandedcostid
+	, VWI_CRM_xts_apvlandedcost.createdby
+	, VWI_CRM_xts_apvlandedcost.timezoneruleversionnumber
+	, VWI_CRM_xts_apvlandedcost.xts_landedcostid
+	, VWI_CRM_xts_apvlandedcost.owneridtype
+	, VWI_CRM_xts_apvlandedcost.statuscodename
+	, VWI_CRM_xts_apvlandedcost.xts_businessunitidname
+	, VWI_CRM_xts_apvlandedcost.xts_accountidname
+	, VWI_CRM_xts_apvlandedcost.xts_purchasereceiptidname
+	, VWI_CRM_xts_apvlandedcost.owneridyominame
+	, VWI_CRM_xts_apvlandedcost.modifiedon
+	, VWI_CRM_xts_apvlandedcost.xts_totalbaseamount_base
+	, VWI_CRM_xts_apvlandedcost.exchangerate
+	, VWI_CRM_xts_apvlandedcost.xts_taxamount_base
+	, VWI_CRM_xts_apvlandedcost.xts_consumptiontaxid
+	, VWI_CRM_xts_apvlandedcost.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_apvlandedcost.statuscode
+	, VWI_CRM_xts_apvlandedcost.createdbyname
+	, VWI_CRM_xts_apvlandedcost.createdon
+	, VWI_CRM_xts_apvlandedcost.xts_businessunitid
+	, VWI_CRM_xts_apvlandedcost.createdonbehalfbyname
+	, VWI_CRM_xts_apvlandedcost.xts_landedcostidname
+	, VWI_CRM_xts_apvlandedcost.xts_totalamount
+	, VWI_CRM_xts_apvlandedcost.modifiedonbehalfbyname
+	, VWI_CRM_xts_apvlandedcost.xts_purchasereceiptlandedcostid
+	, VWI_CRM_xts_apvlandedcost.xts_totalbaseamount
+	, VWI_CRM_xts_apvlandedcost.versionnumber
+	, VWI_CRM_xts_apvlandedcost.modifiedonbehalfby
+	, VWI_CRM_xts_apvlandedcost.ownerid
+	, VWI_CRM_xts_apvlandedcost.overriddencreatedon
+	, VWI_CRM_xts_apvlandedcost.xts_parentbusinessunitidname
+	, VWI_CRM_xts_apvlandedcost.RowStatus
+	, VWI_CRM_xts_apvlandedcost.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_apvlandedcost a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_apvlandedcost 

@@ -1,0 +1,9 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SLS_StockMutation.businessunitcode
+	,VWI_CRM_SLS_StockMutation.xts_transferhistorynumber
+	,VWI_CRM_SLS_StockMutation.transfersourcesitename
+	,VWI_CRM_SLS_StockMutation.transferdestinationsitename
+	,VWI_CRM_SLS_StockMutation.xts_transferdate
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SLS_StockMutation WITH (NOLOCK) {0}

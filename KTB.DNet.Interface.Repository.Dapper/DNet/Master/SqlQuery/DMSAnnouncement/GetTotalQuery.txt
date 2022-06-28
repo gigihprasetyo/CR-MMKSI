@@ -1,0 +1,6 @@
+SELECT 
+	COUNT(*)
+FROM (
+	SELECT * FROM DMSAnnouncement with (nolock) where StatusAnnounce='publish' and enddate>=getdate()
+) DMSAnnouncement
+{0}

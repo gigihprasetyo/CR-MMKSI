@@ -1,0 +1,46 @@
+﻿<div class="widgets">
+    <div class="row">
+        <div class="col-md-12"
+             ba-panel
+             ba-panel-title="Latest System Error"
+             ba-panel-class="with-scroll">
+                <div class="mail-messages-control row">                      
+                    <div class="btn-group col-xs-1" uib-dropdown>
+                        <button type="button" class="btn more-button" uib-dropdown-toggle style="width:auto;">
+                            {{ddlSevSalected}} <span class="caret"></span>
+                        </button>
+                        <ul uib-dropdown-menu>
+                            <li ng-repeat="item in listOfseverity"><a href="" ng-click="ddlSevChange(item)">{{item.label}}</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group col-xs-2" uib-dropdown>
+                        <button type="button" class="btn more-button" uib-dropdown-toggle style="width:auto;">
+                            {{ddlAppSalected}} <span class="caret"></span>
+                        </button>
+                        <ul uib-dropdown-menu>
+                            <li ng-repeat="item in listOfApplicationNames"><a href="" ng-click="ddlAppChange(item)">{{item.label}}</a></li>
+                        </ul>
+                    </div>
+                 </div>
+                 <div class="messages">
+                     <div id="errorMsg"></div>
+                        <table>
+                            <tr ng-repeat="logItem in LatestErrors">
+                                <td>
+                                    <div ng-if="logItem.StatusCode == 0" class="alert bg-success">
+                                        <strong>{{logItem.Message}}</strong><a href="" ng-click="view(logItem.ErrorId, logItem.Application)" class="alert-link"> {{logItem.TimeUtc | fromNow}}</a>.
+                                    </div>
+                                    <div ng-if="logItem.StatusCode == 404" class="alert bg-warning">
+                                        <strong>{{logItem.Message}}</strong><a href="" ng-click="view(logItem.ErrorId, logItem.Application)" class="alert-link"> {{logItem.TimeUtc | fromNow}}</a>.
+                                    </div>
+                                    <div ng-if="logItem.StatusCode >= 500" class="alert bg-danger">
+                                        <strong>{{logItem.Message}}</strong><a href="" ng-click="view(logItem.ErrorId, logItem.Application)" class="alert-link"> {{logItem.TimeUtc | fromNow}}</a>.
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                 </div>
+        </div>
+    </div>
+</div>
+

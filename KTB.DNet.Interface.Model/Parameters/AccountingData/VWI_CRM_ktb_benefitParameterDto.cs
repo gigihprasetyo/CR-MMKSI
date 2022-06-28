@@ -1,0 +1,121 @@
+﻿#region Summary
+// ===========================================================================
+// AUTHOR        : BSI Code Generator
+// PURPOSE       : VWI_CRM_ktb_benefitParameterDto  class
+// SPECIAL NOTES : DNet WebApi Project
+// ---------------------
+// Copyright  (c) 2018 
+// ---------------------
+// $History      : $
+// Created on 24/02/2020 18:15:44
+//
+// ===========================================================================	
+#endregion
+
+#region Namespace Imports
+using System;
+using Embarr.WebAPI.AntiXss;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+#endregion
+
+namespace KTB.DNet.Interface.Model
+{
+    public class VWI_CRM_ktb_benefitParameterDto : ParameterDtoBase, IValidatableObject
+    {
+        [AntiXss]
+        public string createdonbehalfbyyominame { get; set; }
+        [AntiXss]
+        public Guid modifiedonbehalfby { get; set; }
+        [AntiXss]
+        public Int32 ktb_id { get; set; }
+        [AntiXss]
+        public Int32 statecode { get; set; }
+        [AntiXss]
+        public DateTime ktb_fakturopenend { get; set; }
+        [AntiXss]
+        public string statecodename { get; set; }
+        [AntiXss]
+        public DateTime ktb_fakturvalidationstart { get; set; }
+        [AntiXss]
+        public DateTime ktb_fakturvalidationend { get; set; }
+        [AntiXss]
+        public string ktb_nomorsurat { get; set; }
+        [AntiXss]
+        public Guid createdonbehalfby { get; set; }
+        [AntiXss]
+        public string ktb_fakturopenstart { get; set; }
+        [AntiXss]
+        public Int32 ktb_dealerid { get; set; }
+        [AntiXss]
+        public Int32 ktb_vehicletypeid { get; set; }
+        [AntiXss]
+        public Int32 importsequencenumber { get; set; }
+        [AntiXss]
+        public string organizationidname { get; set; }
+        [AntiXss]
+        public string modifiedbyyominame { get; set; }
+        [AntiXss]
+        public Guid ktb_benefitid { get; set; }
+        [AntiXss]
+        public string ktb_statusname { get; set; }
+        [AntiXss]
+        public string ktb_vehicletypecode { get; set; }
+        [AntiXss]
+        public Int32 utcconversiontimezonecode { get; set; }
+        [AntiXss]
+        public string createdbyyominame { get; set; }
+        [AntiXss]
+        public string ktb_dealercode { get; set; }
+        [AntiXss]
+        public string ktb_benefitregno { get; set; }
+        [AntiXss]
+        public string modifiedbyname { get; set; }
+        [AntiXss]
+        public Int64 versionnumber { get; set; }
+        [AntiXss]
+        public Guid modifiedby { get; set; }
+        [AntiXss]
+        public Guid createdby { get; set; }
+        [AntiXss]
+        public Int32 timezoneruleversionnumber { get; set; }
+        [AntiXss]
+        public string statuscodename { get; set; }
+        [AntiXss]
+        public string ktb_rowstatus { get; set; }
+        [AntiXss]
+        public string ktb_detailrowstatusname { get; set; }
+        [AntiXss]
+        public DateTime modifiedon { get; set; }
+        [AntiXss]
+        public string ktb_status { get; set; }
+        [AntiXss]
+        public string ktb_detailrowstatus { get; set; }
+        [AntiXss]
+        public string modifiedonbehalfbyyominame { get; set; }
+        [AntiXss]
+        public Int32 statuscode { get; set; }
+        [AntiXss]
+        public string createdbyname { get; set; }
+        [AntiXss]
+        public DateTime createdon { get; set; }
+        [AntiXss]
+        public Guid organizationid { get; set; }
+        [AntiXss]
+        public string createdonbehalfbyname { get; set; }
+        [AntiXss]
+        public string ktb_remarks { get; set; }
+        [AntiXss]
+        public string modifiedonbehalfbyname { get; set; }
+        [AntiXss]
+        public string ktb_vehicletypedesc { get; set; }
+        [AntiXss]
+        public DateTime overriddencreatedon { get; set; }
+
+        public System.Collections.Generic.IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var results = new List<ValidationResult>();
+            return results;
+        }
+    }
+}

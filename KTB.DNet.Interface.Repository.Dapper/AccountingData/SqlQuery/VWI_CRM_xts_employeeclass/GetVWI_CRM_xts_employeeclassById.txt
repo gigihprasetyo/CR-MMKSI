@@ -1,0 +1,35 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, xts_locking
+	, statecode
+	, statecodename
+	, createdonbehalfby
+	, xts_employeeclasstype
+	, xts_employeeclass
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, xts_employeeclasstypename
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, createdby
+	, timezoneruleversionnumber
+	, statuscodename
+	, xts_employeeclassid
+	, modifiedon
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, modifiedonbehalfbyname
+	, overriddencreatedon
+	, xts_description
+FROM CRM_xts_employeeclass as VWI_CRM_xts_employeeclass with (nolock) 
+WHERE xts_employeeclassid = @Id

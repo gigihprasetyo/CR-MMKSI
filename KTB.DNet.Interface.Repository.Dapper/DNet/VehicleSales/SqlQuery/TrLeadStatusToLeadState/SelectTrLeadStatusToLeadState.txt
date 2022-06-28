@@ -1,0 +1,10 @@
+﻿SELECT [ID]
+      ,[StatusID]
+      ,[LeadStatusCodeID]
+      ,[LeadStateCodeID]
+      ,[FinalStatus]
+  FROM [dbo].[TrStatusToLeadStatusCodeToLeadStateCode]
+  WHERE (StatusID = @StatusID OR @StatusID IS NULL)
+	AND (LeadStatusCodeID = @LeadStatusCodeID OR @LeadStatusCodeID IS NULL)
+	AND (LeadStateCodeID = @LeadStateCodeID OR @LeadStateCodeID IS NULL)
+	AND RowStatus = 0

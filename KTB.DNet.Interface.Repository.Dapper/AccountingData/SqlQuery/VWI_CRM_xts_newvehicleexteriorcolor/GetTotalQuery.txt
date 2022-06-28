@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xts_newvehicleexteriorcolor as VWI_CRM_xts_newvehicleexteriorcolor WITH (NOLOCK) 
+{0}

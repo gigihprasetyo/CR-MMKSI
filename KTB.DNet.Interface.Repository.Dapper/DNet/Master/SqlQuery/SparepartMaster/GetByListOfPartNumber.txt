@@ -1,0 +1,2 @@
+﻿SELECT * FROM SparePartMaster WITH (NOLOCK) 
+WHERE PartNumber IN @ListOfPartNumber

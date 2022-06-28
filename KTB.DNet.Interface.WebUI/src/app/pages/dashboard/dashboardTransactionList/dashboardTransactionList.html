@@ -1,0 +1,14 @@
+<section>
+    <div class="widgets">
+        <div class="row">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title={{tableTransactionDefinition.name}} ba-panel-class="with-scroll">
+                    <div general-table http-service="httpService" table-definition="tableTransactionDefinition" fn-name="GetLatestTransactionList"></div>
+                    <div>
+                        <button class="btn btn-sm btn-primary align-right m-t-15 waves-effect" ng-click="viewDetail()">View Detail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

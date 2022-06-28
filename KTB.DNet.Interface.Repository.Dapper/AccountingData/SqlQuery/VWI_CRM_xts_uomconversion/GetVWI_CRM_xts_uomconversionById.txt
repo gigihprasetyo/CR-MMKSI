@@ -1,0 +1,66 @@
+SELECT 
+    ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , modifiedbyyominame
+    , createdbyname
+    , createdonbehalfbyname
+    , modifiedon
+    , xts_factor
+    , ktb_isinterfaced
+    , createdbyyominame
+    , modifiedbyname
+    , modifiedonbehalfby
+    , xts_tounitofmeasureid
+    , createdonbehalfbyyominame
+    , xts_numerator
+    , importsequencenumber
+    , modifiedby
+    , xts_roundingname
+    , statuscodename
+    , xts_businessunitidname
+    , xts_fromunitofmeasureid
+    , xts_rounding
+    , versionnumber
+    , createdon
+    , createdby
+    , owneridtype
+    , modifiedonbehalfbyyominame
+    , ktb_isinterfacedname
+    , xts_pkcombinationkey
+    , statecode
+    , xts_uomconversionid
+    , ktb_typecode
+    , overriddencreatedon
+    , xts_fromunitofmeasureidname
+    , owneridname
+    , statuscode
+    , owninguser
+    , xts_productid
+    , owningbusinessunit
+    , timezoneruleversionnumber
+    , xts_denominator
+    , statecodename
+    , ownerid
+    , owningteam
+    , xts_unitofmeasureconversion
+    , modifiedonbehalfbyname
+    , createdonbehalfby
+    , ktb_dnetid
+    , xts_businessunitid
+    , owneridyominame
+    , xts_tounitofmeasureidname
+    , xts_productidname
+    , utcconversiontimezonecode
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_uomconversion a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_uomconversionid = @Id
+) as VWI_CRM_xts_uomconversion  

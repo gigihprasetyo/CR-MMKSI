@@ -1,0 +1,101 @@
+SELECT 
+	  ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	, CRM_ktb_servicereminder.ktb_bucompany as company    
+	, CRM_ktb_servicereminder.businessunitcode as businessunitcode
+	, CRM_ktb_servicereminder.versionnumber
+	, CRM_ktb_servicereminder.createdon
+	, CRM_ktb_servicereminder.ktb_servicereminderid
+	, CRM_ktb_servicereminder.owningbusinessunitname
+	, CRM_ktb_servicereminder.statuscodename
+	, CRM_ktb_servicereminder.ktb_maximaltanggalfollowup
+	, CRM_ktb_servicereminder.ktb_plateno
+	, CRM_ktb_servicereminder.ktb_vehiclepublicid
+	, CRM_ktb_servicereminder.modifiedbyyominame
+	, CRM_ktb_servicereminder.ktb_vehiclepublicidname
+	, CRM_ktb_servicereminder.ktb_transactiontype
+	, CRM_ktb_servicereminder.owneridtype
+	, CRM_ktb_servicereminder.ktb_businessunitid
+	, CRM_ktb_servicereminder.modifiedbyname
+	, CRM_ktb_servicereminder.owneridname
+	, CRM_ktb_servicereminder.overriddencreatedon
+	, CRM_ktb_servicereminder.ktb_tanggalbooking
+	, CRM_ktb_servicereminder.ktb_serviceincdnetcode
+	, CRM_ktb_servicereminder.ktb_notemms
+	, CRM_ktb_servicereminder.ktb_servicereminderiddnet
+	, CRM_ktb_servicereminder.createdonbehalfbyyominame
+	, CRM_ktb_servicereminder.modifiedonbehalfby
+	, CRM_ktb_servicereminder.ktb_responname
+	, CRM_ktb_servicereminder.owningteam
+	, CRM_ktb_servicereminder.ktb_respon
+	, CRM_ktb_servicereminder.ktb_nommsrefidname
+	, CRM_ktb_servicereminder.ktb_lastkm
+	, CRM_ktb_servicereminder.statecode
+	, CRM_ktb_servicereminder.ktb_noworefmmsid
+	, CRM_ktb_servicereminder.ktb_noworefmmsidname
+	, CRM_ktb_servicereminder.timezoneruleversionnumber
+	, CRM_ktb_servicereminder.ktb_isinterface
+	, CRM_ktb_servicereminder.ktb_parentbusinessunitid
+	, CRM_ktb_servicereminder.modifiedby
+	, CRM_ktb_servicereminder.ktb_followupdate
+	, CRM_ktb_servicereminder.ktb_businessunitidname
+	, CRM_ktb_servicereminder.ktb_vehicleidentificationnoid
+	, CRM_ktb_servicereminder.ktb_noworefidname
+	, CRM_ktb_servicereminder.ktb_customername
+	, CRM_ktb_servicereminder.ktb_servicereminderdms
+	, CRM_ktb_servicereminder.ktb_statusname
+	, CRM_ktb_servicereminder.createdonbehalfbyname
+	, CRM_ktb_servicereminder.ktb_chassisnumber
+	, CRM_ktb_servicereminder.createdby
+	, CRM_ktb_servicereminder.utcconversiontimezonecode
+	, CRM_ktb_servicereminder.ktb_sourcedata
+	, CRM_ktb_servicereminder.ktb_engineno
+	, CRM_ktb_servicereminder.ownerid
+	, CRM_ktb_servicereminder.modifiedon
+	, CRM_ktb_servicereminder.importsequencenumber
+	, CRM_ktb_servicereminder.owneridyominame
+	, CRM_ktb_servicereminder.ktb_tipekendaraan
+	, CRM_ktb_servicereminder.ktb_noworefid
+	, CRM_ktb_servicereminder.ktb_sourcedataname
+	, CRM_ktb_servicereminder.ktb_isinterfacename
+	, CRM_ktb_servicereminder.ktb_description
+	, CRM_ktb_servicereminder.ktb_reinterface
+	, CRM_ktb_servicereminder.createdbyname
+	, CRM_ktb_servicereminder.modifiedonbehalfbyname
+	, CRM_ktb_servicereminder.ktb_handling
+	, CRM_ktb_servicereminder.createdonbehalfby
+	, CRM_ktb_servicereminder.ktb_customerphonenumber
+	, CRM_ktb_servicereminder.ktb_interfaceresult
+	, CRM_ktb_servicereminder.createdbyyominame
+	, CRM_ktb_servicereminder.owninguser
+	, CRM_ktb_servicereminder.ktb_reinterfacename
+	, CRM_ktb_servicereminder.ktb_reminderservicedate
+	, CRM_ktb_servicereminder.owningbusinessunit
+	, CRM_ktb_servicereminder.ktb_handlingname
+	, CRM_ktb_servicereminder.ktb_contactphonenumber
+	, CRM_ktb_servicereminder.ktb_dateupdatefrominterface
+	, CRM_ktb_servicereminder.statuscode
+	, CRM_ktb_servicereminder.modifiedonbehalfbyyominame
+	, CRM_ktb_servicereminder.ktb_parentbusinessunitidname
+	, CRM_ktb_servicereminder.ktb_nommsrefid
+	, CRM_ktb_servicereminder.statecodename
+	, CRM_ktb_servicereminder.ktb_contactname
+	, CRM_ktb_servicereminder.ktb_vehicleidentificationnoidname
+	, CRM_ktb_servicereminder.ktb_status
+	, CRM_ktb_servicereminder.ktb_casenumber
+	, CRM_ktb_servicereminder.DealerCode
+	, CRM_ktb_servicereminder.SourceType
+	, CRM_ktb_servicereminder.RowStatus
+	, CRM_ktb_servicereminder.LastSyncDate  
+	, CRM_ktb_servicereminder.msdyn_companycode 
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		b.ktb_bucompany     
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_ktb_servicereminder a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.ktb_businessunitid 
+	{0}
+) CRM_ktb_servicereminder

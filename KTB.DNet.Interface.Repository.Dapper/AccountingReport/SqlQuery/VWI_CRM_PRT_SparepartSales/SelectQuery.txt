@@ -1,0 +1,27 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_PRT_SparepartSales.company
+	,VWI_CRM_PRT_SparepartSales.businessunitcode
+	,VWI_CRM_PRT_SparepartSales.TransactionDate
+	,VWI_CRM_PRT_SparepartSales.Customer
+	,VWI_CRM_PRT_SparepartSales.CustomerDescription
+	,VWI_CRM_PRT_SparepartSales.CustomerType
+	,VWI_CRM_PRT_SparepartSales.SalesPerson
+	,VWI_CRM_PRT_SparepartSales.SOorWoNo
+	,VWI_CRM_PRT_SparepartSales.InvoiceNo
+	,VWI_CRM_PRT_SparepartSales.ProductCode
+	,VWI_CRM_PRT_SparepartSales.ProductDescription
+	,VWI_CRM_PRT_SparepartSales.Model
+	,VWI_CRM_PRT_SparepartSales.Warehouse
+	,VWI_CRM_PRT_SparepartSales.Quantity
+	,VWI_CRM_PRT_SparepartSales.CapitalPrice
+	,VWI_CRM_PRT_SparepartSales.RetailPrice
+	,VWI_CRM_PRT_SparepartSales.DiscountAmount
+	,VWI_CRM_PRT_SparepartSales.Total
+	,VWI_CRM_PRT_SparepartSales.Tax
+	,VWI_CRM_PRT_SparepartSales.TotalAmount
+	,VWI_CRM_PRT_SparepartSales.TotalCOGS
+	,VWI_CRM_PRT_SparepartSales.Laba
+	,VWI_CRM_PRT_SparepartSales.msdyn_companycode
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_PRT_SparepartSales WITH (NOLOCK) {0}

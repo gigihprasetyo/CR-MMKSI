@@ -1,0 +1,17 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_WOInvoiceDetail.TRANSACTION_ITEM_NUMBER
+	,VWI_CRM_WOInvoiceDetail.[OF]
+	,VWI_CRM_WOInvoiceDetail.KODE_OBJEK
+	,VWI_CRM_WOInvoiceDetail.NAMA_OBJEK
+	,VWI_CRM_WOInvoiceDetail.HARGA_SATUAN
+	,VWI_CRM_WOInvoiceDetail.JUMLAH_BARANG
+	,VWI_CRM_WOInvoiceDetail.HARGA_TOTAL
+	,VWI_CRM_WOInvoiceDetail.DISKON
+	,VWI_CRM_WOInvoiceDetail.DPP
+	,VWI_CRM_WOInvoiceDetail.PPN
+	,VWI_CRM_WOInvoiceDetail.TARIF_PPNBM
+	,VWI_CRM_WOInvoiceDetail.PPNBM
+	,VWI_CRM_WOInvoiceDetail.xts_rate
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_WOInvoiceDetail WITH (NOLOCK) {0}

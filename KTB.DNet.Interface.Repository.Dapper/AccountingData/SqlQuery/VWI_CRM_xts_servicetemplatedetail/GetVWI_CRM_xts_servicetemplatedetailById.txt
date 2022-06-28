@@ -1,0 +1,74 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+    , company
+    , businessunitcode
+    , xts_servicetemplateidname
+    , owninguser
+    , owningteam
+    , xts_locking
+    , transactioncurrencyidname
+    , xts_businessunitidname
+    , xts_productidname
+    , statecodename
+    , xts_partcodedescription
+    , createdonbehalfby
+    , transactioncurrencyid
+    , xts_partidname
+    , xts_pkcombinationkey
+    , xts_totalpricerate_base
+    , xts_servicetemplatedetailid
+    , xts_parentbusinessunitid
+    , xts_quantitymanhour
+    , xts_producttypename
+    , importsequencenumber
+    , xts_productdescription
+    , xts_orderofdisplay
+    , xts_unitpricerate
+    , xts_producttype
+    , utcconversiontimezonecode
+    , createdbyyominame
+    , modifiedby
+    , modifiedbyname
+    , versionnumber
+    , xts_unitpricerate_base
+    , modifiedbyyominame
+    , xts_servicetemplateid
+    , timezoneruleversionnumber
+    , xts_servicetemplatedetail
+    , owneridtype
+    , statuscodename
+    , xts_totalpricerate
+    , createdonbehalfbyyominame
+    , owneridyominame
+    , modifiedon
+    , exchangerate
+    , statecode
+    , owningbusinessunit
+    , modifiedonbehalfbyyominame
+    , statuscode
+    , createdbyname
+    , createdon
+    , xts_businessunitid
+    , createdby
+    , createdonbehalfbyname
+    , modifiedonbehalfby
+    , modifiedonbehalfbyname
+    , owneridname
+    , xts_partid
+    , xts_productid
+    , ownerid
+    , overriddencreatedon
+    , xts_parentbusinessunitidname
+    , msdyn_companycode
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_servicetemplatedetail a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_servicetemplatedetailid = @Id
+) as VWI_CRM_xts_servicetemplatedetail  
+

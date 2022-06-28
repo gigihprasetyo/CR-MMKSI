@@ -1,0 +1,570 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<AppNavigationSchema xmlns="http://tempuri.org/AppNavigationSchema.xsd">
+	<AppScreen>
+		<AppScreenId>9990</AppScreenId>
+		<ScreenName>Tenaga Penjual</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>9990</AppMenuId>
+		<MenuName>Tenaga Penjual</MenuName>
+		<ScreenId>9990</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	<AppToolbar>
+		<AppToolbarId>1</AppToolbarId>
+		<Name>Home</Name>
+		<ScreenId>100</ScreenId>
+		<SortOrder>1</SortOrder>
+	</AppToolbar>
+	<AppScreen>
+		<AppScreenId>99901</AppScreenId>
+		<ScreenName>Level Tenaga Penjual</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99901</AppMenuId>
+		<MenuName>Level Tenaga Penjual</MenuName>
+		<ScreenId>99901</ScreenId>
+		<ParentMenuId>9990</ParentMenuId>
+		<SortOrder>1</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>99902</AppMenuId>
+		<MenuName>Area Tenaga Penjual</MenuName>
+		<ScreenId>99902</ScreenId>
+		<ParentMenuId>9990</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99902</AppScreenId>
+		<ScreenName>Area Tenaga Penjual</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99906</AppMenuId>
+		<MenuName>Buat ID Tenaga Penjual</MenuName>
+		<ScreenId>99906</ScreenId>
+		<ParentMenuId>9990</ParentMenuId>
+		<SortOrder>6</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99906</AppScreenId>
+		<ScreenName>Buat ID Tenaga Penjual</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>99907</AppScreenId>
+		<ScreenName>Rekap Tenaga Penjual Per Area </ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>99908</AppScreenId>
+		<ScreenName>Rekap Tenaga Penjual Per Group Dealer</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>99909</AppScreenId>
+		<ScreenName>Rekap Pengunduran Diri Tenaga Penjual</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99907</AppMenuId>
+		<MenuName>Rekap Tenaga Penjual Per Area </MenuName>
+		<ScreenId>99907</ScreenId>
+		<ParentMenuId>9990</ParentMenuId>
+		<SortOrder>7</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>99908</AppMenuId>
+		<MenuName>Rekap Tenaga Penjual Per Group Dealer</MenuName>
+		<ScreenId>99908</ScreenId>
+		<ParentMenuId>9990</ParentMenuId>
+		<SortOrder>8</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>99909</AppMenuId>
+		<MenuName>Rekap Pengunduran Diri Tenaga Penjual</MenuName>
+		<ScreenId>99909</ScreenId>
+		<ParentMenuId>9990</ParentMenuId>
+		<SortOrder>9</SortOrder>
+	</AppMenu>
+  <AppMenu>
+    <AppMenuId>99989</AppMenuId>
+    <MenuName>Grade Salesman</MenuName>
+    <ScreenId>99989</ScreenId>
+    <ParentMenuId>9990</ParentMenuId>
+    <SortOrder>10</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99989</AppScreenId>
+    <ScreenName>Grade Salesman</ScreenName>
+    <NavigateUrl>default_rsd.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>99988</AppMenuId>
+    <MenuName>Daftar Grade Salesman</MenuName>
+    <ScreenId>99988</ScreenId>
+    <ParentMenuId>9990</ParentMenuId>
+    <SortOrder>10</SortOrder>
+  </AppMenu>
+  <AppScreen>
+    <AppScreenId>99988</AppScreenId>
+    <ScreenName>Daftar Grade Salesman</ScreenName>
+    <NavigateUrl>default_rsd.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppScreen>
+    <AppScreenId>999012</AppScreenId>
+    <ScreenName>Daftar Salesman DSE</ScreenName>
+    <NavigateUrl>default_rsd.aspx</NavigateUrl>
+    <QueryString></QueryString>
+    <GroupId>0</GroupId>
+  </AppScreen>
+  <AppMenu>
+    <AppMenuId>999012</AppMenuId>
+    <MenuName>Daftar Salesman DSE</MenuName>
+    <ScreenId>999012</ScreenId>
+    <ParentMenuId>9990</ParentMenuId>
+    <SortOrder>11</SortOrder>
+  </AppMenu>
+  <!--
+	<AppMenu>
+		<AppMenuId>9992</AppMenuId>
+		<MenuName>Pelatihan Tenaga Penjual</MenuName>
+		<ScreenId>9992</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>3</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>9992</AppScreenId>
+		<ScreenName>Pelatihan Tenaga Penjual</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>99921</AppScreenId>
+		<ScreenName>Buat Kode Pelatihan </ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>99922</AppScreenId>
+		<ScreenName>Pilih Peserta Pelatihan</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99921</AppMenuId>
+		<MenuName>Buat Kode Pelatihan</MenuName>
+		<ScreenId>99921</ScreenId>
+		<ParentMenuId>9992</ParentMenuId>
+		<SortOrder>1</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>99922</AppMenuId>
+		<MenuName>Pilih Peserta Pelatihan</MenuName>
+		<ScreenId>99922</ScreenId>
+		<ParentMenuId>9992</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99923</AppScreenId>
+		<ScreenName>Buat Pengumuman</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>99925</AppScreenId>
+		<ScreenName>Daftar Pelatihan</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99923</AppMenuId>
+		<MenuName>Buat Pengumuman</MenuName>
+		<ScreenId>99923</ScreenId>
+		<ParentMenuId>9992</ParentMenuId>
+		<SortOrder>3</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>99925</AppMenuId>
+		<MenuName>Daftar Pelatihan</MenuName>
+		<ScreenId>99925</ScreenId>
+		<ParentMenuId>9992</ParentMenuId>
+		<SortOrder>5</SortOrder>
+	</AppMenu>
+  
+	<AppScreen>
+		<AppScreenId>9994</AppScreenId>
+		<ScreenName>Seragam Tenaga Penjual</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>9994</AppMenuId>
+		<MenuName>Seragam Tenaga Penjual </MenuName>
+		<ScreenId>9994</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>4</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99941</AppScreenId>
+		<ScreenName>Pengaturan Kode Seragam </ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>99942</AppScreenId>
+		<ScreenName>Pengaturan Harga Seragam</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>99943</AppScreenId>
+		<ScreenName>Panduan Ukuran Seragam</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>99944</AppScreenId>
+		<ScreenName>Pilih Tenaga Penjual Penerima Seragam </ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99941</AppMenuId>
+		<MenuName>Pengaturan Kode Seragam</MenuName>
+		<ScreenId>99941</ScreenId>
+		<ParentMenuId>9994</ParentMenuId>
+		<SortOrder>1</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>99942</AppMenuId>
+		<MenuName>Pengaturan Harga Seragam</MenuName>
+		<ScreenId>99942</ScreenId>
+		<ParentMenuId>9994</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>99943</AppMenuId>
+		<MenuName>Panduan Ukuran Seragam </MenuName>
+		<ScreenId>99943</ScreenId>
+		<ParentMenuId>9994</ParentMenuId>
+		<SortOrder>3</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>99944</AppMenuId>
+		<MenuName>Pilih Tenaga Penjual Penerima Seragam </MenuName>
+		<ScreenId>99944</ScreenId>
+		<ParentMenuId>9994</ParentMenuId>
+		<SortOrder>4</SortOrder>
+	</AppMenu>
+  -->
+  <!--
+	
+  <AppScreen>
+		<AppScreenId>9997</AppScreenId>
+		<ScreenName>Dealer</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>9997</AppMenuId>
+		<MenuName>Dealer</MenuName>
+		<ScreenId>9997</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>1</SortOrder>
+	</AppMenu>
+  <AppMenu>
+		<AppMenuId>99971</AppMenuId>
+		<MenuName>Daftar Profile</MenuName>
+		<ScreenId>99971</ScreenId>
+		<ParentMenuId>9997</ParentMenuId>
+		<SortOrder>1</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99971</AppScreenId>
+		<ScreenName>Daftar Profile</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+  
+	<AppScreen>
+		<AppScreenId>99948</AppScreenId>
+		<ScreenName>Pengesahan Seragam</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99948</AppMenuId>
+		<MenuName>Pengesahan Seragam</MenuName>
+		<ScreenId>99948</ScreenId>
+		<ParentMenuId>9994</ParentMenuId>
+		<SortOrder>6</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>9998</AppScreenId>
+		<ScreenName>Showroom Audit</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99981</AppMenuId>
+		<MenuName>Input Petunjuk Pelaksanaan </MenuName>
+		<ScreenId>99981</ScreenId>
+		<ParentMenuId>9998</ParentMenuId>
+		<SortOrder>1</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99981</AppScreenId>
+		<ScreenName>Input Petunjuk Pelaksanaan </ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>9998</AppMenuId>
+		<MenuName>Showroom Audit</MenuName>
+		<ScreenId>9998</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>7</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99983</AppScreenId>
+		<ScreenName>Input Jadwal </ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99983</AppMenuId>
+		<MenuName>Input Jadwal </MenuName>
+		<ScreenId>99983</ScreenId>
+		<ParentMenuId>9998</ParentMenuId>
+		<SortOrder>3</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99982</AppScreenId>
+		<ScreenName> Daftar Petunjuk Pelaksanaan</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99982</AppMenuId>
+		<MenuName>Daftar Petunjuk Pelaksanaan</MenuName>
+		<ScreenId>99982</ScreenId>
+		<ParentMenuId>9998</ParentMenuId>
+		<SortOrder>2</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99984</AppScreenId>
+		<ScreenName>Daftar Jadwal</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99984</AppMenuId>
+		<MenuName>Daftar Jadwal</MenuName>
+		<ScreenId>99984</ScreenId>
+		<ParentMenuId>9998</ParentMenuId>
+		<SortOrder>4</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99985</AppScreenId>
+		<ScreenName>Lihat Hasil Audit</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99985</AppMenuId>
+		<MenuName>Lihat Hasil Audit</MenuName>
+		<ScreenId>99985</ScreenId>
+		<ParentMenuId>9998</ParentMenuId>
+		<SortOrder>5</SortOrder>
+	</AppMenu>
+  -->
+	<AppScreen>
+		<AppScreenId>99904</AppScreenId>
+		<ScreenName>Daftar Tenaga Penjual</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99904</AppMenuId>
+		<MenuName>Daftar Tenaga Penjual</MenuName>
+		<ScreenId>99904</ScreenId>
+		<ParentMenuId>9990</ParentMenuId>
+		<SortOrder>6</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>9993</AppScreenId>
+		<ScreenName>SAP</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>9993</AppMenuId>
+		<MenuName>SAP</MenuName>
+		<ScreenId>9993</ScreenId>
+		<ParentMenuId>0</ParentMenuId>
+		<SortOrder>5</SortOrder>
+	</AppMenu>
+	<AppMenu>
+		<AppMenuId>99931</AppMenuId>
+		<MenuName>SAP Period</MenuName>
+		<ScreenId>99931</ScreenId>
+		<ParentMenuId>9993</ParentMenuId>
+		<SortOrder>1</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99931</AppScreenId>
+		<ScreenName>SAP Period</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+  <!--
+	<AppMenu>
+		<AppMenuId>99935</AppMenuId>
+		<MenuName>Daftar Participant</MenuName>
+		<ScreenId>99935</ScreenId>
+		<ParentMenuId>9993</ParentMenuId>
+		<SortOrder>5</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99935</AppScreenId>
+		<ScreenName>Daftar Participant</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	 -->
+  <!--
+	<AppScreen>
+		<AppScreenId>99938</AppScreenId>
+		<ScreenName>Entry Writing Test Result</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99938</AppMenuId>
+		<MenuName>Entry Writing Test Result</MenuName>
+		<ScreenId>99938</ScreenId>
+		<ParentMenuId>9993</ParentMenuId>
+		<SortOrder>6</SortOrder>
+	</AppMenu>
+  -->
+	<!--
+	<AppScreen>
+		<AppScreenId>99939</AppScreenId>
+		<ScreenName>Daftar Konsumen Prospek</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99939</AppMenuId>
+		<MenuName>Daftar Konsumen Prospek</MenuName>
+		<ScreenId>99939</ScreenId>
+		<ParentMenuId>9993</ParentMenuId>
+		<SortOrder>1</SortOrder>
+	</AppMenu>
+	-->
+  <!--
+	<AppScreen>
+		<AppScreenId>99962</AppScreenId>
+		<ScreenName>SAP Input Data Result</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99962</AppMenuId>
+		<MenuName>SAP Input Data Result</MenuName>
+		<ScreenId>99962</ScreenId>
+		<ParentMenuId>9993</ParentMenuId>
+		<SortOrder>7</SortOrder>
+	</AppMenu>
+  -->
+	<AppMenu>
+		<AppMenuId>99963</AppMenuId>
+		<MenuName>SAP Rekap Data</MenuName>
+		<ScreenId>99963</ScreenId>
+		<ParentMenuId>9993</ParentMenuId>
+		<SortOrder>8</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99963</AppScreenId>
+		<ScreenName>SAP Rekap Data</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppScreen>
+		<AppScreenId>99949</AppScreenId>
+		<ScreenName>Rekap Pesanan</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99949</AppMenuId>
+		<MenuName>Rekap Pesanan</MenuName>
+		<ScreenId>99949</ScreenId>
+		<ParentMenuId>9994</ParentMenuId>
+		<SortOrder>6</SortOrder>
+	</AppMenu>
+	<AppScreen>
+		<AppScreenId>99910</AppScreenId>
+		<ScreenName>Evaluasi Tenaga Penjual</ScreenName>
+		<NavigateUrl>default_rsd.aspx</NavigateUrl>
+		<QueryString></QueryString>
+		<GroupId>0</GroupId>
+	</AppScreen>
+	<AppMenu>
+		<AppMenuId>99910</AppMenuId>
+		<MenuName>Evaluasi Tenaga Penjual</MenuName>
+		<ScreenId>99910</ScreenId>
+		<ParentMenuId>9990</ParentMenuId>
+		<SortOrder>7</SortOrder>
+	</AppMenu>
+</AppNavigationSchema>

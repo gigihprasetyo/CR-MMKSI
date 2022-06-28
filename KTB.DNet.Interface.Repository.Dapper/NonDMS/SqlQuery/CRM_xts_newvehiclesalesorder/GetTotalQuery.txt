@@ -1,0 +1,2 @@
+SELECT COUNT(1)
+FROM CRM_xts_newvehiclesalesorder WITH (NOLOCK) {0}

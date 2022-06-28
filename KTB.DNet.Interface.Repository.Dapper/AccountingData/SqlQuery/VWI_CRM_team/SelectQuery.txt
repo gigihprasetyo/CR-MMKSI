@@ -1,0 +1,71 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_team.company
+	, VWI_CRM_team.businessunitcode
+	, VWI_CRM_team.createdonbehalfbyyominame
+	, VWI_CRM_team.modifiedonbehalfby
+	, VWI_CRM_team.transactioncurrencyidname
+	, VWI_CRM_team.queueid
+	, VWI_CRM_team.administratorid
+	, VWI_CRM_team.description
+	, VWI_CRM_team.queueidname
+	, VWI_CRM_team.regardingobjecttypecode
+	, VWI_CRM_team.createdonbehalfby
+	, VWI_CRM_team.transactioncurrencyid
+	, VWI_CRM_team.regardingobjectid
+	, VWI_CRM_team.teamid
+	, VWI_CRM_team.name
+	, VWI_CRM_team.azureactivedirectoryobjectid
+	, VWI_CRM_team.teamtypename
+	, VWI_CRM_team.stageid
+	, VWI_CRM_team.administratoridname
+	, VWI_CRM_team.organizationid
+	, VWI_CRM_team.importsequencenumber
+	, VWI_CRM_team.organizationidname
+	, VWI_CRM_team.xts_isdomainname
+	, VWI_CRM_team.ktb_teamtype
+	, VWI_CRM_team.businessunitid
+	, VWI_CRM_team.xts_isdomain
+	, VWI_CRM_team.emailaddress
+	, VWI_CRM_team.systemmanaged
+	, VWI_CRM_team.createdbyyominame
+	, VWI_CRM_team.modifiedbyname
+	, VWI_CRM_team.versionnumber
+	, VWI_CRM_team.modifiedby
+	, VWI_CRM_team.modifiedbyyominame
+	, VWI_CRM_team.createdby
+	, VWI_CRM_team.traversedpath
+	, VWI_CRM_team.administratoridyominame
+	, VWI_CRM_team.teamtype
+	, VWI_CRM_team.exchangerate
+	, VWI_CRM_team.isdefaultname
+	, VWI_CRM_team.processid
+	, VWI_CRM_team.yominame
+	, VWI_CRM_team.teamtemplateid
+	, VWI_CRM_team.modifiedon
+	, VWI_CRM_team.businessunitidname
+	, VWI_CRM_team.modifiedonbehalfbyyominame
+	, VWI_CRM_team.ktb_teamtypename
+	, VWI_CRM_team.createdbyname
+	, VWI_CRM_team.createdon
+	, VWI_CRM_team.new_isdomain
+	, VWI_CRM_team.createdonbehalfbyname
+	, VWI_CRM_team.modifiedonbehalfbyname
+	, VWI_CRM_team.systemmanagedname
+	, VWI_CRM_team.new_isdomainname
+	, VWI_CRM_team.overriddencreatedon
+	, VWI_CRM_team.isdefault
+	, VWI_CRM_team.RowStatus
+	/**EndPagingIndexQuery**/
+from(
+	SELECT  
+		b.ktb_bucompany company,
+		b.ktb_dealercode businessunitcode
+		, a.* 
+		, b.msdyn_companycode
+	FROM CRM_team a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.businessunitid
+	{0}
+) VWI_CRM_team

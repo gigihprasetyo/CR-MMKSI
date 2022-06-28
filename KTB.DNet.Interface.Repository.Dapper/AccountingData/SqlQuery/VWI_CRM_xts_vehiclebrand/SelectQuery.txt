@@ -1,0 +1,47 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	--VWI_CRM_xts_vehiclebrand.xts_manufacturer
+	--, VWI_CRM_xts_vehiclebrand.xts_pkcombinationkey
+	--, VWI_CRM_xts_vehiclebrand.xts_manufacturername
+	 VWI_CRM_xts_vehiclebrand.overriddencreatedon
+	, VWI_CRM_xts_vehiclebrand.xts_vehiclecategory
+	, VWI_CRM_xts_vehiclebrand.xts_branddescription
+	, VWI_CRM_xts_vehiclebrand.modifiedonbehalfbyname
+	, VWI_CRM_xts_vehiclebrand.createdonbehalfbyname
+	, VWI_CRM_xts_vehiclebrand.xts_vehiclebrandid
+	, VWI_CRM_xts_vehiclebrand.createdon
+	, VWI_CRM_xts_vehiclebrand.createdbyname
+	, VWI_CRM_xts_vehiclebrand.statuscode
+	, VWI_CRM_xts_vehiclebrand.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_vehiclebrand.xts_vehiclebrand
+	, VWI_CRM_xts_vehiclebrand.xts_vehiclecategoryname
+	, VWI_CRM_xts_vehiclebrand.modifiedon
+	, VWI_CRM_xts_vehiclebrand.xts_vehiclecategoryidname
+	, VWI_CRM_xts_vehiclebrand.xts_releasedate
+	, VWI_CRM_xts_vehiclebrand.statuscodename
+	, VWI_CRM_xts_vehiclebrand.timezoneruleversionnumber
+	, VWI_CRM_xts_vehiclebrand.createdby
+	, VWI_CRM_xts_vehiclebrand.modifiedby
+	, VWI_CRM_xts_vehiclebrand.versionnumber
+	, VWI_CRM_xts_vehiclebrand.modifiedbyname
+	, VWI_CRM_xts_vehiclebrand.xts_vehiclecategoryid
+	, VWI_CRM_xts_vehiclebrand.createdbyyominame
+	, VWI_CRM_xts_vehiclebrand.utcconversiontimezonecode
+	, VWI_CRM_xts_vehiclebrand.xts_brand
+	, VWI_CRM_xts_vehiclebrand.xts_announcementdate
+	, VWI_CRM_xts_vehiclebrand.xts_brandgeneration
+	, VWI_CRM_xts_vehiclebrand.modifiedbyyominame
+	, VWI_CRM_xts_vehiclebrand.organizationidname
+	, VWI_CRM_xts_vehiclebrand.importsequencenumber
+	, VWI_CRM_xts_vehiclebrand.organizationid
+	, VWI_CRM_xts_vehiclebrand.createdonbehalfby
+	, VWI_CRM_xts_vehiclebrand.xts_createddate
+	, VWI_CRM_xts_vehiclebrand.statecodename
+	, VWI_CRM_xts_vehiclebrand.statecode
+	, VWI_CRM_xts_vehiclebrand.xts_locking
+	, VWI_CRM_xts_vehiclebrand.modifiedonbehalfby
+	, VWI_CRM_xts_vehiclebrand.createdonbehalfbyyominame
+    /**EndPagingIndexQuery**/
+FROM CRM_xts_vehiclebrand as VWI_CRM_xts_vehiclebrand with (nolock)  
+{0}

@@ -1,0 +1,8 @@
+﻿
+<div ng-if="dnetuic !== undefined && !isLogin" ng-include="'src/home.html'">
+</div>
+<div ng-if="dnetuic === undefined || isLogin" ng-include="'src/auth.html'" style=" height: 100%; ">
+</div>
+<div id="preloader" ng-class="{'preloader-progress' : progressBarModalOpened && $pageFinishedLoading}" ng-show="!$pageFinishedLoading || progressBarModalOpened">
+    <div></div>
+</div>

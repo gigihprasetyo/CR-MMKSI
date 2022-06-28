@@ -1,0 +1,107 @@
+SELECT 
+	/**PagingIndexQuery**/
+	/**RowNumber**/ 
+	  VWI_CRM_bookableresourcebooking.company
+	, VWI_CRM_bookableresourcebooking.businessunitcode
+	, VWI_CRM_bookableresourcebooking.bookableresourcebookingid
+	, VWI_CRM_bookableresourcebooking.bookingstatus
+	, VWI_CRM_bookableresourcebooking.bookingstatusname
+	, VWI_CRM_bookableresourcebooking.bookingtype
+	, VWI_CRM_bookableresourcebooking.bookingtypename
+	, VWI_CRM_bookableresourcebooking.createdby
+	, VWI_CRM_bookableresourcebooking.createdbyname
+	, VWI_CRM_bookableresourcebooking.createdbyyominame
+	, VWI_CRM_bookableresourcebooking.createdon
+	, VWI_CRM_bookableresourcebooking.createdonbehalfby
+	, VWI_CRM_bookableresourcebooking.createdonbehalfbyname
+	, VWI_CRM_bookableresourcebooking.createdonbehalfbyyominame
+	, VWI_CRM_bookableresourcebooking.DealerCode
+	, VWI_CRM_bookableresourcebooking.duration
+	, VWI_CRM_bookableresourcebooking.endtime
+	, VWI_CRM_bookableresourcebooking.exchangerate
+	, VWI_CRM_bookableresourcebooking.header
+	, VWI_CRM_bookableresourcebooking.headername
+	, VWI_CRM_bookableresourcebooking.importsequencenumber
+	, VWI_CRM_bookableresourcebooking.ktb_urswohandler
+	, VWI_CRM_bookableresourcebooking.ktb_urswohandlername
+	, VWI_CRM_bookableresourcebooking.LastSyncDate
+	, VWI_CRM_bookableresourcebooking.modifiedby
+	, VWI_CRM_bookableresourcebooking.modifiedbyname
+	, VWI_CRM_bookableresourcebooking.modifiedbyyominame
+	, VWI_CRM_bookableresourcebooking.modifiedon
+	, VWI_CRM_bookableresourcebooking.modifiedonbehalfby
+	, VWI_CRM_bookableresourcebooking.modifiedonbehalfbyname
+	, VWI_CRM_bookableresourcebooking.modifiedonbehalfbyyominame
+	, VWI_CRM_bookableresourcebooking.msdyn_acceptcascadecrewchanges
+	, VWI_CRM_bookableresourcebooking.msdyn_acceptcascadecrewchangesname
+	, VWI_CRM_bookableresourcebooking.msdyn_actualarrivaltime
+	, VWI_CRM_bookableresourcebooking.msdyn_actualtravelduration
+	, VWI_CRM_bookableresourcebooking.msdyn_allowoverlapping
+	, VWI_CRM_bookableresourcebooking.msdyn_allowoverlappingname
+	, VWI_CRM_bookableresourcebooking.msdyn_appointmentbookingid
+	, VWI_CRM_bookableresourcebooking.msdyn_appointmentbookingidname
+	, VWI_CRM_bookableresourcebooking.msdyn_bookingmethod
+	, VWI_CRM_bookableresourcebooking.msdyn_bookingmethodname
+	, VWI_CRM_bookableresourcebooking.msdyn_bookingsetupmetadataid
+	, VWI_CRM_bookableresourcebooking.msdyn_bookingsetupmetadataidname
+	, VWI_CRM_bookableresourcebooking.msdyn_cascadecrewchanges
+	, VWI_CRM_bookableresourcebooking.msdyn_cascadecrewchangesname
+	, VWI_CRM_bookableresourcebooking.msdyn_effort
+	, VWI_CRM_bookableresourcebooking.msdyn_estimatedarrivaltime
+	, VWI_CRM_bookableresourcebooking.msdyn_estimatedtravelduration
+	, VWI_CRM_bookableresourcebooking.msdyn_latitude
+	, VWI_CRM_bookableresourcebooking.msdyn_longitude
+	, VWI_CRM_bookableresourcebooking.msdyn_milestraveled
+	, VWI_CRM_bookableresourcebooking.msdyn_requirementgroupid
+	, VWI_CRM_bookableresourcebooking.msdyn_requirementgroupidname
+	, VWI_CRM_bookableresourcebooking.msdyn_resourcegroup
+	, VWI_CRM_bookableresourcebooking.msdyn_resourcegroupname
+	, VWI_CRM_bookableresourcebooking.msdyn_resourcerequirement
+	, VWI_CRM_bookableresourcebooking.msdyn_resourcerequirementname
+	, VWI_CRM_bookableresourcebooking.msdyn_serviceappointment
+	, VWI_CRM_bookableresourcebooking.msdyn_serviceappointmentname
+	, VWI_CRM_bookableresourcebooking.msdyn_timegroupdetailselected
+	, VWI_CRM_bookableresourcebooking.msdyn_timegroupdetailselectedname
+	, VWI_CRM_bookableresourcebooking.msdyn_ursinternalflags
+	, VWI_CRM_bookableresourcebooking.msdyn_worklocation
+	, VWI_CRM_bookableresourcebooking.msdyn_worklocationname
+	, VWI_CRM_bookableresourcebooking.name
+	, VWI_CRM_bookableresourcebooking.overriddencreatedon
+	, VWI_CRM_bookableresourcebooking.ownerid
+	, VWI_CRM_bookableresourcebooking.owneridname
+	, VWI_CRM_bookableresourcebooking.owneridtype
+	, VWI_CRM_bookableresourcebooking.owneridyominame
+	, VWI_CRM_bookableresourcebooking.owningbusinessunit
+	, VWI_CRM_bookableresourcebooking.owningbusinessunitname
+	, VWI_CRM_bookableresourcebooking.owningteam
+	, VWI_CRM_bookableresourcebooking.owninguser
+	, VWI_CRM_bookableresourcebooking.processid
+	, VWI_CRM_bookableresourcebooking.resource
+	, VWI_CRM_bookableresourcebooking.resourcename
+	, VWI_CRM_bookableresourcebooking.RowStatus
+	, VWI_CRM_bookableresourcebooking.SourceType
+	, VWI_CRM_bookableresourcebooking.stageid
+	, VWI_CRM_bookableresourcebooking.starttime
+	, VWI_CRM_bookableresourcebooking.statecode
+	, VWI_CRM_bookableresourcebooking.statecodename
+	, VWI_CRM_bookableresourcebooking.statuscode
+	, VWI_CRM_bookableresourcebooking.statuscodename
+	, VWI_CRM_bookableresourcebooking.timezoneruleversionnumber
+	, VWI_CRM_bookableresourcebooking.transactioncurrencyid
+	, VWI_CRM_bookableresourcebooking.transactioncurrencyidname
+	, VWI_CRM_bookableresourcebooking.traversedpath
+	, VWI_CRM_bookableresourcebooking.utcconversiontimezonecode
+	, VWI_CRM_bookableresourcebooking.versionnumber
+	, VWI_CRM_bookableresourcebooking.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		b.ktb_bucompany company    
+		, b.ktb_dealercode businessunitcode    
+		, a.*  
+		, b.msdyn_companycode    
+	FROM CRM_bookableresourcebooking a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.owningbusinessunit   
+	{0}
+) as VWI_CRM_bookableresourcebooking

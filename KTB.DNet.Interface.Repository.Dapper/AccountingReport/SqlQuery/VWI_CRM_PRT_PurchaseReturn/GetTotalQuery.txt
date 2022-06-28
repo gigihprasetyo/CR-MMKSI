@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM VWI_CRM_PRT_PurchaseReturn WITH (NOLOCK) {0}

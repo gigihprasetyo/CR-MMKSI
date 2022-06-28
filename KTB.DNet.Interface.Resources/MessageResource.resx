@@ -1,0 +1,967 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ErrorMessageCouldNotInclude" xml:space="preserve">
+    <value>{0} tidak boleh {1}</value>
+  </data>
+  <data name="ErrorMessageDataNotFound" xml:space="preserve">
+    <value>Data {0} dengan ID {1} tidak ditemukan</value>
+  </data>
+  <data name="ErrorMsgAllowedFileType" xml:space="preserve">
+    <value>Tipe file yang diperbolehkan hanya ({0})</value>
+  </data>
+  <data name="ErrorMsgAuthPrivilege" xml:space="preserve">
+    <value>Anda tidak memiliki otorisasi untuk mengakses interface ini atau token telah expired</value>
+    <comment>When hit any endpoint, but don't have permission</comment>
+  </data>
+  <data name="ErrorMsgAuthSessionExp" xml:space="preserve">
+    <value>Anda belum login atau sesi anda telah berakhir.</value>
+    <comment>When hit any endpoint, but Token is null or Token expire or Token is wrong.</comment>
+  </data>
+  <data name="ErrorMsgAuthUserPass" xml:space="preserve">
+    <value>Username dan password Anda tidak cocok.</value>
+    <comment>When hit login Endpoint, but Username/ Password/ ClientSecret is wrong</comment>
+  </data>
+  <data name="ErrorMsgCannotUpdateStatusChanged" xml:space="preserve">
+    <value>Data tidak bisa diupdate karena Status PO sudah diubah ( {0} )</value>
+  </data>
+  <data name="ErrorMsgChassisNumberAndPMDateHasAlreadyExist" xml:space="preserve">
+    <value>Nomor Rangka dan Tanggal PM sudah ada</value>
+  </data>
+  <data name="ErrorMsgChassisNumberHasAlreadyExistOnThatDate" xml:space="preserve">
+    <value>Nomor Rangka {0} dengan tanggal service {1} sudah ada di dalam sistem</value>
+  </data>
+  <data name="ErrorMsgChassisNumberNotRegisteredInCM" xml:space="preserve">
+    <value>No Rangka {0} tidak terdaftar di Campaign Chassis Master</value>
+    <comment>RecallService</comment>
+  </data>
+  <data name="ErrorMsgCheckingLastTransaction" xml:space="preserve">
+    <value>Error pada pengecekan transaksi terakhir</value>
+  </data>
+  <data name="ErrorMsgClearCityOrRegency" xml:space="preserve">
+    <value>Kosongkan Kota/Kabupaten</value>
+  </data>
+  <data name="ErrorMsgClosedDateMandatory" xml:space="preserve">
+    <value>Tanggal Tutup Transaksi jika status completed atau canceled</value>
+    <comment>ServiceIncoming</comment>
+  </data>
+  <data name="ErrorMsgColorCodeIsNotAvailableOnModel" xml:space="preserve">
+    <value>Warna kendaraan {0} tidak terdapat untuk model {1} atau kategori</value>
+  </data>
+  <data name="ErrorMsgCouldNotIncludXPanderWithAnotherType" xml:space="preserve">
+    <value>SPK untuk tipe Xpander tidak boleh digabung dengan tipe lain</value>
+  </data>
+  <data name="ErrorMsgCouldNotUpdateSPKWithCancelOrFinishStatus" xml:space="preserve">
+    <value>Data SPK dengan status selesai/batal tidak dapat diperbaharui</value>
+  </data>
+  <data name="ErrorMsgCreateID" xml:space="preserve">
+    <value>Untuk Input data ID {0} tidak valid, ID harus 0.</value>
+    <comment>Field ID if not 0</comment>
+  </data>
+  <data name="ErrorMsgDataCharsBetween" xml:space="preserve">
+    <value>{0} harus diantara  {2} - {1} karakter.</value>
+    <comment>Code error for invalid count of chars</comment>
+  </data>
+  <data name="ErrorMsgDataCorrupt" xml:space="preserve">
+    <value>Data yang coba Anda kirim korup. Dikirim {0} Diterima {0}.</value>
+    <comment>When hit send data (Create/ Update/ Delete), but body content &amp; checksum are different.</comment>
+  </data>
+  <data name="ErrorMsgDataDeleteNotAvailable" xml:space="preserve">
+    <value>Data yang akan coba dihapus tidak ada di database.</value>
+    <comment>When hit send data (Delete) Endpoint, but data to be deleted is not available.</comment>
+  </data>
+  <data name="ErrorMsgDataFormat" xml:space="preserve">
+    <value>Format data yang dikirim tidak benar.</value>
+    <comment>When hit send data (Create/ Update/ Delete), but format JSON is wrong</comment>
+  </data>
+  <data name="ErrorMsgDataFormatField" xml:space="preserve">
+    <value>Format {0} tidak valid.</value>
+    <comment>When hit send data (Create/ Update/ Delete), but format JSON is wrong</comment>
+  </data>
+  <data name="ErrorMsgDataInteger" xml:space="preserve">
+    <value>{0} harus dalam format bilangan bulat</value>
+    <comment>Validate for integer value</comment>
+  </data>
+  <data name="ErrorMsgDataInvalid" xml:space="preserve">
+    <value>{0} tidak valid.</value>
+    <comment>When data is not valid.</comment>
+  </data>
+  <data name="ErrorMsgDataIsExist" xml:space="preserve">
+    <value>Data {0} sudah ada.</value>
+    <comment>When hit send data (Create/ Update/ Delete), but format JSON is wrong</comment>
+  </data>
+  <data name="ErrorMsgDataIsNotActive" xml:space="preserve">
+    <value>{0} {1} tidak aktif.</value>
+    <comment>When data is not active</comment>
+  </data>
+  <data name="ErrorMsgDataMismatch" xml:space="preserve">
+    <value>{0] dengan {1} tidak cocok.</value>
+    <comment>Jika data tidak sesuai</comment>
+  </data>
+  <data name="ErrorMsgDataMustBeGreaterThanZero" xml:space="preserve">
+    <value>Nilai {0} harus lebih besar dari nol.</value>
+    <comment>When data isn't bigger than the range</comment>
+  </data>
+  <data name="ErrorMsgDataMustBeNumeric" xml:space="preserve">
+    <value>{0} harus dalam bentuk numerik.</value>
+    <comment>Error code for numeric data</comment>
+  </data>
+  <data name="ErrorMsgDataMustBePositiveInteger" xml:space="preserve">
+    <value>{0} harus dalam format bilangan bulat positif</value>
+    <comment>Validation</comment>
+  </data>
+  <data name="ErrorMsgDataMustBeZeroOrOne" xml:space="preserve">
+    <value>Data harus antara 0 atau 1</value>
+    <comment>Validation Attribute</comment>
+  </data>
+  <data name="ErrorMsgDataNotFound" xml:space="preserve">
+    <value>{0} tidak tersedia.</value>
+    <comment>When data is not found.</comment>
+  </data>
+  <data name="ErrorMsgDataNotMatch" xml:space="preserve">
+    <value>Ada beberapa opsi data tidak cocok. {0} harus diantara:</value>
+    <comment>When hit send data (Create/ Update), but option data is wrong.</comment>
+  </data>
+  <data name="ErrorMsgDataPositifInteger" xml:space="preserve">
+    <value>{0} harus dalam format bilangan positif</value>
+    <comment>Field</comment>
+  </data>
+  <data name="ErrorMsgDataRecallServiceExist" xml:space="preserve">
+    <value>Data recall service dengan chassis no {0} dan recallRegNo {1} sudah ada</value>
+    <comment>RecallService</comment>
+  </data>
+  <data name="ErrorMsgDataReferrence" xml:space="preserve">
+    <value>{0} id {1} {2} tidak tersedia.</value>
+    <comment>When hit send data (Create/ Update), but reference data (related data) is not available.</comment>
+  </data>
+  <data name="ErrorMsgDataReferrence2" xml:space="preserve">
+    <value>{0} id {1} {2} tidak cocok.</value>
+    <comment>When hit send data (Create/ Update), but reference data (related data) is not available.</comment>
+  </data>
+  <data name="ErrorMsgDataRequired" xml:space="preserve">
+    <value>Wajib mengisikan {0}.</value>
+    <comment>When hit send data (Create/ Update), but required field is not filled.</comment>
+  </data>
+  <data name="ErrorMsgDataRetriveNotAvailable" xml:space="preserve">
+    <value>Data yang dicari tidak tersedia di dalam database. </value>
+    <comment>When hit get data (Read) Endpoint, but data is not available/ empty</comment>
+  </data>
+  <data name="ErrorMsgDataType" xml:space="preserve">
+    <value>Format atau tipe data salah; {0}</value>
+    <comment>When hit send data (Create/ Update/ Delete), but data format, data type is wrong.</comment>
+  </data>
+  <data name="ErrorMsgDataUpdateNotAvailable" xml:space="preserve">
+    <value>Data yang diupdate tidak ditemukan di dalam database.</value>
+    <comment>When hit send data (Update) Endpoint, but data to be updated is not available</comment>
+  </data>
+  <data name="ErrorMsgDateCompareError" xml:space="preserve">
+    <value>Tanggal {0} tidak boleh {1} dari {2}</value>
+    <comment>when two date comparison error</comment>
+  </data>
+  <data name="ErrorMsgDateGreatherThanToday" xml:space="preserve">
+    <value>Tanggal {0} melebihi hari ini</value>
+  </data>
+  <data name="ErrorMsgDBRetrive" xml:space="preserve">
+    <value>Data tidak ditemukan. {0}</value>
+    <comment>When hit get data (Read) Endpoint, but there is error from Database.</comment>
+  </data>
+  <data name="ErrorMsgDBSave" xml:space="preserve">
+    <value>Data tidak bisa di simpan. {0}</value>
+    <comment>When hit send data (Create/ Update/ Delete) Endpoint, but there is error from Database.</comment>
+  </data>
+  <data name="ErrorMsgDealerCodeNotFound" xml:space="preserve">
+    <value>Gagal mendapatkan Dealer Code yang terhubung dengan akun {0}</value>
+    <comment>Controller</comment>
+  </data>
+  <data name="ErrorMsgDetailEmpty" xml:space="preserve">
+    <value>Belum ada pesanan kendaraan</value>
+  </data>
+  <data name="ErrorMsgDuplicateVehicle" xml:space="preserve">
+    <value>Duplikasi Kode Tipe {0} dan Kode Warna {1}</value>
+  </data>
+  <data name="ErrorMsgEmptyList" xml:space="preserve">
+    <value>Data {0} tidak boleh kosong</value>
+  </data>
+  <data name="ErrorMsgEnumNotFound" xml:space="preserve">
+    <value>Enum Data yang dicari di Kategori  {0} tidak ditemukan di dalam database.</value>
+  </data>
+  <data name="ErrorMsgFailedToAccessFile" xml:space="preserve">
+    <value>Gagal saat mengakses file. Silahkan hubungi administrator</value>
+  </data>
+  <data name="ErrorMsgFileNotFound" xml:space="preserve">
+    <value>File tidak ditemukan</value>
+  </data>
+  <data name="ErrorMsgFlagCampaign" xml:space="preserve">
+    <value>No Campaign &amp; Deskripsi Campaign hanya dapat diisi untuk Flag Campaign true.</value>
+  </data>
+  <data name="ErrorMsgHasUnupdatedXPanderSPK" xml:space="preserve">
+    <value>Anda memiliki status SPK tipe Xpander yang belum terupdate yang terdiri dari : {0}</value>
+  </data>
+  <data name="ErrorMsgInvalidAmount" xml:space="preserve">
+    <value>Harga yang dimasukan salah</value>
+  </data>
+  <data name="ErrorMsgInvalidAmountPrice" xml:space="preserve">
+    <value>Harga yang dimasukan salah</value>
+  </data>
+  <data name="ErrorMsgInvalidDetailQty" xml:space="preserve">
+    <value>Minimum Qty = {1}</value>
+  </data>
+  <data name="ErrorMsgInvalidFakturDate" xml:space="preserve">
+    <value>Tanggal faktur tidak boleh lebih kecil dari tanggal pengiriman</value>
+  </data>
+  <data name="ErrorMsgInvalidMinimumDate" xml:space="preserve">
+    <value>The minimum valid date for a SqlDateTime structure is January 1, 1753</value>
+    <comment>ServiceIncoming</comment>
+  </data>
+  <data name="ErrorMsgInvalidProfileHeaderValue" xml:space="preserve">
+    <value>Kode {0} dengan nilai {1} tidak valid</value>
+  </data>
+  <data name="ErrorMsgInvalidQuantityBasedOnFactur" xml:space="preserve">
+    <value>Jumlah quantity [{0}-{1}] tidak boleh &lt; dari jumlah yang sudah dibuat permohonan faktur. SPK untuk tipe ini sudah dibuat faktur sejumlah {2}</value>
+  </data>
+  <data name="ErrorMsgInvalidSPKDealerCode" xml:space="preserve">
+    <value>Anda tidak memiliki akses untuk membuat/ memperbaharui spk pada dealer {0}</value>
+  </data>
+  <data name="ErrorMsgInvalidUpdateSPKDetailStatus" xml:space="preserve">
+    <value>Ubah status detail SPK tidak valid</value>
+  </data>
+  <data name="ErrorMsgLengthCannotExceed" xml:space="preserve">
+    <value>{0}  tidak boleh melebihi {1} karakter.</value>
+    <comment>When length exceed define character.</comment>
+  </data>
+  <data name="ErrorMsgMatchingNumberNotFound" xml:space="preserve">
+    <value>Matching number harus diisi saat matchingType 1</value>
+    <comment>SPKChassis</comment>
+  </data>
+  <data name="ErrorMsgMaximumAllowedFileSize" xml:space="preserve">
+    <value>Maximum allowed file size is {0} bytes</value>
+  </data>
+  <data name="ErrorMsgMaxQuantityXPander" xml:space="preserve">
+    <value>Maksimal quantity tipe Xpander = {0}</value>
+  </data>
+  <data name="ErrorMsgMecanicCodeMandatory" xml:space="preserve">
+    <value>Kode mekanik jika status completed</value>
+    <comment>ServiceIncoming</comment>
+  </data>
+  <data name="ErrorMsgMonthRange" xml:space="preserve">
+    <value>Data bulan harus antara 1 - 12</value>
+  </data>
+  <data name="ErrorMsgMonthYearExist" xml:space="preserve">
+    <value>Data bulan {0} tahun {1} sudah ada</value>
+  </data>
+  <data name="ErrorMsgNotList" xml:space="preserve">
+    <value>{0} {1} tidak terdaftar.</value>
+  </data>
+  <data name="ErrorMsgNotMatch" xml:space="preserve">
+    <value>Data {0} dan {1} tidak sesuai</value>
+    <comment>error message for unmatch data</comment>
+  </data>
+  <data name="ErrorMsgNotUsual" xml:space="preserve">
+    <value>{0} tidak sesuai</value>
+  </data>
+  <data name="ErrorMsgOnDeleteFile" xml:space="preserve">
+    <value>Error on delete spk evidence file</value>
+  </data>
+  <data name="ErrorMsgOnSaveFile" xml:space="preserve">
+    <value>Error saat menyimpan file. Harap hubungi administrator</value>
+  </data>
+  <data name="ErrorMsgOnSavingPleaseContactAdmin" xml:space="preserve">
+    <value>Error saat menyimpan data, silahkan hubungi administrator</value>
+  </data>
+  <data name="ErrorMsgPaymentMethodMandatory" xml:space="preserve">
+    <value>Metode pembayaran jika status completed</value>
+    <comment>ServiceIncoming</comment>
+  </data>
+  <data name="ErrorMsgPDIDateExpired" xml:space="preserve">
+    <value>Tanggal PDI {0} melewati tanggal hari ini.</value>
+    <comment>Create PDI</comment>
+  </data>
+  <data name="ErrorMsgPRGUnhandle" xml:space="preserve">
+    <value>Terjadi permasalahan. {0}</value>
+  </data>
+  <data name="ErrorMsgQuantity" xml:space="preserve">
+    <value>Input {0} harus &gt; 0.</value>
+  </data>
+  <data name="ErrorMsgRefNumberNotFound" xml:space="preserve">
+    <value>Dokumen reference dengan nomor {0} tidak ditemukan.</value>
+    <comment>SPKChassis</comment>
+  </data>
+  <data name="ErrorMsgReleaseTimeMandatory" xml:space="preserve">
+    <value>Waktu keluar jika status completed atau canceled</value>
+    <comment>ServiceIncoming</comment>
+  </data>
+  <data name="ErrorMsgSalesmanNotFound" xml:space="preserve">
+    <value>Kode salesman tidak terdaftar</value>
+  </data>
+  <data name="ErrorMsgSAPCustomerOnlyForOneSPK" xml:space="preserve">
+    <value>1 SAPCustomer hanya untuk 1 SPK</value>
+  </data>
+  <data name="ErrorMsgServiceIncomingAlreadyCompleted" xml:space="preserve">
+    <value>Service Incoming dengan No Rangka  {0}, No WorkOrder {1}, Kode Service {2} dan Kode Dealer {3} statusnya sudah 'completed'</value>
+    <comment>ServiceIncoming</comment>
+  </data>
+  <data name="ErrorMsgServiceIncomingExist" xml:space="preserve">
+    <value>Service Incoming dengan No Rangka {0}, NoWorkOder {1}, dan Kode Kategori {2} sudah ada di sistem</value>
+    <comment>AssistServiceIncoming</comment>
+  </data>
+  <data name="ErrorMsgServiceIncomingNotExist" xml:space="preserve">
+    <value>Service Incoming dengan No Rangka {0}, NoWorkOder {1}, dan Kode Kategori {2} belum ada di sistem</value>
+    <comment>ServiceIncoming</comment>
+  </data>
+  <data name="ErrorMsgShouldEmpty" xml:space="preserve">
+    <value>{0} harus kosong</value>
+  </data>
+  <data name="ErrorMsgSpkDetailNotFound" xml:space="preserve">
+    <value>SPKDetail dengan SPKNumber {0} , VehicleColorCode {1} dan VehicleTypeCode {2} tidak ditemukan</value>
+    <comment>SPKChassis</comment>
+  </data>
+  <data name="ErrorMsgSPKEvidenceIsRequired" xml:space="preserve">
+    <value>Lampiran Bukti SPK harus diisi</value>
+  </data>
+  <data name="ErrorMsgSPKNoFile" xml:space="preserve">
+    <value>Data SPK tidak memiliki {0}</value>
+  </data>
+  <data name="ErrorMsgStatusCannotCancel" xml:space="preserve">
+    <value> Tidak Dapat Diubah statusnya menjadi batal</value>
+  </data>
+  <data name="ErrorMsgStatusChangeToSend" xml:space="preserve">
+    <value> Tidak Dapat Diubah statusnya menjadi Kirim</value>
+  </data>
+  <data name="ErrorMsgStringLength" xml:space="preserve">
+    <value>{0} panjang minimum {2} karakter dan tidak boleh melebihi {1} karakter.</value>
+  </data>
+  <data name="ErrorMsgTotalLCMandatory" xml:space="preserve">
+    <value>Total LC jika status completed</value>
+    <comment>Service Incoming</comment>
+  </data>
+  <data name="ErrorMsgUseKabCityKodya" xml:space="preserve">
+    <value>Gunakan Kabupaten / Kota/ Kodya</value>
+  </data>
+  <data name="ErrorMsgUseKabOrClearCity" xml:space="preserve">
+    <value>Gunakan Kabupaten/ Kota atau kosongkan (Kota / Kabupaten).</value>
+  </data>
+  <data name="ErrorMsgUseKabOrClearCityRegency" xml:space="preserve">
+    <value>Gunakan Kabupaten atau kosongkan (Kota/Kabupaten).</value>
+  </data>
+  <data name="ErrorMsgUserDealerRelation" xml:space="preserve">
+    <value>Dealer code yang diinput {0} tidak beruhubungan dengan user Dealer code {1}. </value>
+    <comment>When hit send data (Create/ Update), but reference data (related data) is not available.</comment>
+  </data>
+  <data name="ErrorMsgVehicleTypeIsNotMatchWithPreviousData" xml:space="preserve">
+    <value>Kode tipe kendaraan tidak sama dengan model sebelumnya</value>
+  </data>
+  <data name="ErrorMsgVehicleValidation" xml:space="preserve">
+    <value>Error validasi tipe kendaraan</value>
+  </data>
+  <data name="ErrorMsgDealerCode" xml:space="preserve">
+    <value>{0} tidak sesuai dengan user dealer authentikasi</value>
+  </data>
+  <data name="ErrorMsgInvalidDataType" xml:space="preserve">
+    <value>Tipe nilai pada {0} tidak sesuai dengan tipe parameter</value>
+    <comment>HttpCodeMessage</comment>
+  </data>
+  <data name="ErrorMsgDealerBranchCodeNotMatch" xml:space="preserve">
+    <value>Dealer branch code {0} tidak sesuai dengan Dealer code {1}</value>
+    <comment>PDI</comment>
+  </data>
+  <data name="ErrorMsgBookingNoIsMandatoryForNonWI" xml:space="preserve">
+    <value>Booking No wajib diisi untuk {0} selain WI</value>
+    <comment>Service</comment>
+  </data>
+  <data name="ErrorMsgDealerCodeNotMatch" xml:space="preserve">
+    <value>Dealer code yang dikirim {0} tidak sesuai dengan login Dealer code {1} </value>
+    <comment>Service</comment>
+  </data>
+  <data name="ErrorMsgPMStatusNotFound" xml:space="preserve">
+    <value>PM status {0} tidak ditemukan di sistem</value>
+  </data>
+  <data name="ErrorMsgPMStatusShouldNew" xml:space="preserve">
+    <value>PM status yang dikirimkan harus nilai enum dari 'Baru'</value>
+  </data>
+  <data name="ErrorMsgParseFailed" xml:space="preserve">
+    <value>Proses parsing file {0} gagal</value>
+  </data>
+  <data name="ErrorMsgDuplicateData" xml:space="preserve">
+    <value>Data tidak boleh duplikat</value>
+  </data>
+  <data name="ErrorMsgChassisNumberWithPMKindCodeExist" xml:space="preserve">
+    <value>Nomor rangka {0} dengan PMKind Code {1} sudah terdaftar di dalam sistem</value>
+    <comment>PM Header</comment>
+  </data>
+  <data name="ErrorMsgInvalidDataTypeFormat" xml:space="preserve">
+    <value>Format data property {0} tidak valid. Format data yang harus dikirim adalah {1}</value>
+  </data>
+  <data name="ErrorMsgWOStatusInvalid" xml:space="preserve">
+    <value>Nilai WOStatus {0} tidak terdaftar di dalam sistem</value>
+    <comment>Validation Attribute</comment>
+  </data>
+  <data name="ErrorMsgMandatorySalesCodeExceptW" xml:space="preserve">
+    <value>Selain Sales Channel Code 'W', wajib mengisikan Kode Salesman</value>
+  </data>
+  <data name="ErrorMsgNumberPartShopExceed" xml:space="preserve">
+    <value>Jumlah partshop pada kota {0} sudah mencapai kuota. Hubungi MMKSI</value>
+    <comment>PartShop</comment>
+  </data>
+  <data name="ErrorMsgComparisonGreaterThanToday" xml:space="preserve">
+    <value>{0} tidak boleh lebih besar dari {1}</value>
+    <comment>validation compare</comment>
+  </data>
+  <data name="ErrorMsgComparisonLessOrEqual" xml:space="preserve">
+    <value>{0} tidak boleh sama atau kurang dari {1}</value>
+    <comment>validation compare</comment>
+  </data>
+  <data name="ErrorMsgHireDateLessThanBirthOfDate" xml:space="preserve">
+    <value>Tanggal Lahir tidak boleh sama atau kurang dari Tanggal Masuk</value>
+  </data>
+  <data name="ErrorMsgCorruptImage" xml:space="preserve">
+    <value>File image yang dikirim korup</value>
+  </data>
+  <data name="ErrorMsgNoBarangNotMatch" xml:space="preserve">
+    <value>No Barang {0} tidak cocok dengan tipe barang yang dipilih</value>
+  </data>
+  <data name="ErrorMsgEndCustomerNotFound" xml:space="preserve">
+    <value>EndCustomer dengan ID {0} untuk No Rangka {1} tidak ditemukan</value>
+  </data>
+  <data name="ErrorMsgAuthCancellationTokenFailed" xml:space="preserve">
+    <value>Failed to execute the cancellation token. Please contact your Administrator.</value>
+  </data>
+  <data name="ErrorMsgAuthCancellationTokenFailedFromFailureResult" xml:space="preserve">
+    <value>Failed to execute the cancellation token in AuthenticationFailureResult. Please contact your Administrator.</value>
+  </data>
+  <data name="ErrorMsgAuthFailedCreateToken" xml:space="preserve">
+    <value>Failed to create a token. Please contact your Administrator.</value>
+  </data>
+  <data name="ErrorMsgAuthFailedToFindUserByName" xml:space="preserve">
+    <value>Failed to find the specific user by name. Please contact your Administrator.</value>
+  </data>
+  <data name="ErrorMsgAuthOnRequestHeaderNotFound" xml:space="preserve">
+    <value>Authorization on request header is not found.</value>
+  </data>
+  <data name="ErrorMsgAuthRequestHeaderAuthorizationSchemeNotBearer" xml:space="preserve">
+    <value>The request header authorization scheme is not Bearer.</value>
+  </data>
+  <data name="ErrorMsgAuthTicketNull" xml:space="preserve">
+    <value>The authentication ticket is null. Please contact your Administrator.</value>
+  </data>
+  <data name="ErrorMsgAuthFailedGetIdentity" xml:space="preserve">
+    <value>Failed to get identity from principle. Please contact your Administrator.</value>
+  </data>
+  <data name="ErrorMsgAuthFailedGetUsernameFromJwtToken" xml:space="preserve">
+    <value>Failed to get the username from jwtToken. Please contact your Administrator.</value>
+  </data>
+  <data name="ErrorMsgAuthFailedGeUsernameFromIdentityClaim" xml:space="preserve">
+    <value>Failed to get username from identity claims. Please contact your Administrator.</value>
+  </data>
+  <data name="ErrorMsgTooManyRequest" xml:space="preserve">
+    <value>Interface hanya bisa diakses {0} kali per {1} detik.</value>
+  </data>
+  <data name="ErrorMsgFailedExecuteThrottle" xml:space="preserve">
+    <value>Error saat pengecekan akses limit API, silahkan hubungi administrator.</value>
+  </data>
+  <data name="ErrorMsgAuthPermission" xml:space="preserve">
+    <value>User anda tidak memilik permission terhadap Interface ini</value>
+    <comment>AddChallengeOnUnauthorizedResult</comment>
+  </data>
+  <data name="ErrorMsgCustomerNotFound" xml:space="preserve">
+    <value>Konsumen dengan ID {0} tidak ditemukan</value>
+  </data>
+  <data name="ErrorMsgMissingJwtToken" xml:space="preserve">
+    <value>JWT Token tidak ditemukan pada authorization header</value>
+  </data>
+  <data name="ErrorMsgHandPhoneNumberInvalid" xml:space="preserve">
+    <value>{0} harus berupa kombinasi angka yang diawali dengan 08</value>
+  </data>
+  <data name="ErrorMsgOfficePhoneNumberInvalid" xml:space="preserve">
+    <value>{0} harus berupa angka dengan panjang minimal 10 karakter ( tanda - diperbolehkan )</value>
+  </data>
+  <data name="ErrorMsgCityInvalid" xml:space="preserve">
+    <value>Kode kota {0} tidak ditemukan pada sistem.</value>
+  </data>
+  <data name="ErrorMsgJobPositionInvalid" xml:space="preserve">
+    <value>Job Position yang dicari tidak ditemukan pada system.</value>
+  </data>
+  <data name="ErrorMsgJobPositionToMenuInvalid" xml:space="preserve">
+    <value>Job Position ini tidak cocok digunakan pada menu ini.</value>
+  </data>
+  <data name="ErrorMsgDealerCodeInvalid" xml:space="preserve">
+    <value>Dealer Code yang dimasukkan tidak ditemukan pada system.</value>
+  </data>
+  <data name="ErrorMsgGenderInvalid" xml:space="preserve">
+    <value>System hanya menerima gender yang masih valid yaitu Pria (1) dan Wanita (2)</value>
+  </data>
+  <data name="ErrorMsgMarriedStatusInvalid" xml:space="preserve">
+    <value>System hanya menerima status married yaitu : Menikah (1), Belum Menikah (2), Janda (3), dan Duda (4).</value>
+  </data>
+  <data name="ErrorMsgSalesmanStatusInvalid" xml:space="preserve">
+    <value>Salesman Status yang dimiliki hanyalah sebagai berikut : Baru (1), Aktif (2), Tidak Aktif (3), Konfirmasi (4).</value>
+  </data>
+  <data name="ErrorMsgPropinsiCityInvalid" xml:space="preserve">
+    <value>Kode kota {0} tidak terdaftar pada propinsi {1}.</value>
+  </data>
+  <data name="ErrorMsgPropinsiInvalid" xml:space="preserve">
+    <value>Kode Propinsi {0} tidak ditemukan pada sistem.</value>
+  </data>
+  <data name="ErrorMsgSalesmanAreaInvalid" xml:space="preserve">
+    <value>Salesman Area yang dicari tidak ditemukan pada sistem. Hubungi bagian terkait.</value>
+  </data>
+  <data name="ErrorMsgSalesmanLevelInvalid" xml:space="preserve">
+    <value>Salesman Level yang dicari tidak ditemukan pada sistem. Hubungi bagian terkait.</value>
+  </data>
+  <data name="ErrorMsgStandKMPMInvalid" xml:space="preserve">
+    <value>StandKM yang diinput tidak dapat ditemukan pada data PM. Hubungi bagian terkait.</value>
+  </data>
+  <data name="ErrorMsgLeaderCodeInvalid" xml:space="preserve">
+    <value>Data atasan dengan kode {0} tidak ada</value>
+  </data>
+  <data name="ErrorMsgSavePostedFileFailed" xml:space="preserve">
+    <value>Gagal menyimpan file gambar yang dikirim di lokal server</value>
+  </data>
+  <data name="ErrorMsgUploadIDInvalid" xml:space="preserve">
+    <value>Upload ID {0} tidak ditemukan pada sistem</value>
+  </data>
+  <data name="ErrorMsgChassisNotSubmittedYet" xml:space="preserve">
+    <value>Nomor rangka belum memiliki faktur dengan status selesai ( 4 )</value>
+  </data>
+  <data name="ErrorMessageDataNotFoundWithColumn" xml:space="preserve">
+    <value>Data {0} dengan {1}  tidak ditemukan.</value>
+  </data>
+  <data name="ErrorMsgKTPAlreadyExist" xml:space="preserve">
+    <value>Nomor KTP {0} sudah ada pada sistem dengan nama {1} status aktif</value>
+  </data>
+  <data name="ErrorMsgLeaderCodeInactive" xml:space="preserve">
+    <value>Data atasan dengan kode {0} tidak aktif</value>
+  </data>
+  <data name="ErrorMsgLeaderLevel" xml:space="preserve">
+    <value>Posisi atasan maksimal 2 tingkat diatas salesman ybs.</value>
+  </data>
+  <data name="ErrorMsgNamaTTLExist" xml:space="preserve">
+    <value>Data Nama atau Tanggal lahir sudah ada di database atas nama {0} dengan kode {1}</value>
+  </data>
+  <data name="ErrorMsgKTPLengthInvalid" xml:space="preserve">
+    <value>Format NO KTP harus dalam 16 digit</value>
+  </data>
+  <data name="ErrorMsgAuthCouldNotGetTheCredentialsFromToken" xml:space="preserve">
+    <value>Token is not valid. Could not get the credentials from the token.</value>
+  </data>
+  <data name="ErrorMsgAuthTokenHasAlreadyExpired" xml:space="preserve">
+    <value>Token has already expired</value>
+  </data>
+  <data name="ErrorMsgAuthTokenIsNotValid" xml:space="preserve">
+    <value>Token is not valid</value>
+  </data>
+  <data name="ErrorMsgOcrIdentityNotFound" xml:space="preserve">
+    <value>Data OCR dengan ImageID {0} tidak ditemukan di database</value>
+  </data>
+  <data name="ErrorMsgAgeInvalid" xml:space="preserve">
+    <value>Umur tidak valid karena dibawah 17 tahun atau kelahiran dibawah tahun 1930</value>
+  </data>
+  <data name="ErrorMsgTraineeHasActiveClass" xml:space="preserve">
+    <value>Data siswa - Status tidak bisa dirubah, karena siswa sudah terdaftar di kelas  : {0}</value>
+  </data>
+  <data name="ErrorMsgKodeChassisKeywordRequired" xml:space="preserve">
+    <value>Wajib mendefinisikan KodeChassis untuk PropertyName pada argumen pencarian ( find )</value>
+  </data>
+  <data name="ErrorMsgMustBeUnique" xml:space="preserve">
+    <value>{0} harus bersifat unik.</value>
+  </data>
+  <data name="ErrorMsgKodePosLength" xml:space="preserve">
+    <value>Kode pos {0} tidak valid. Kode pos harus terdiri dari lima karakter</value>
+  </data>
+  <data name="ErrorMsgDataMustBeXOrY" xml:space="preserve">
+    <value>{0} harus antara {1} atau {2}</value>
+    <comment>Validation Attribute</comment>
+  </data>
+  <data name="ErrorMsgDataReferrenceSingle" xml:space="preserve">
+    <value>{0} {1} tidak tersedia pada sistem</value>
+    <comment>When hit send data (Create/ Update), but reference data (related data) is not available.</comment>
+  </data>
+  <data name="ErrorMsgMatchingTypeMustBeBetweenXandY" xml:space="preserve">
+    <value>Matching Type harus bernilai antara 1 sampai 3</value>
+    <comment>SPKChassis</comment>
+  </data>
+  <data name="ErrorMsgRematchButRefNumberNotFound" xml:space="preserve">
+    <value>Matching Type 3 ( rematch ) harus mengisikan reference number</value>
+    <comment>SPKChassis</comment>
+  </data>
+  <data name="ErrorMsgSpkChassisExistDiffSPK" xml:space="preserve">
+    <value>Nomor rangka {0} sudah digunakan oleh SPK lain dengan nomor {1}</value>
+    <comment>Spk Chassis</comment>
+  </data>
+  <data name="ErrorMsgSpkChassisAlreadyUsed" xml:space="preserve">
+    <value>Nomor rangka {0} sudah ada di dalam sistem dengan SPK yang berbeda</value>
+  </data>
+  <data name="ErrorMsgInvalidLeasingWithPaidTunai" xml:space="preserve">
+    <value>CBU_LEASING tidak boleh diisi jika jenis pembayaran adalah TUNAI</value>
+  </data>
+  <data name="ErrorMsgOcrIdentityNotFoundBySPKCustomerID" xml:space="preserve">
+    <value>Data OCR dengan SPK Customer ID {0} tidak ditemukan di database</value>
+  </data>
+  <data name="ErrorMsgDataOCRImagePatchNotMatch" xml:space="preserve">
+    <value>Data OCR dengan Image Path {0} tidak cocok dengan Image ID {1}</value>
+  </data>
+  <data name="ErrorMsgSAPCustomerExist" xml:space="preserve">
+    <value>Kombinasi Nomor HP {0} dan Type {1} sudah direcord oleh {2} dan belum SPK.</value>
+    <comment>SAPCustomer</comment>
+  </data>
+  <data name="ErrorMsgSAPCustomerExistV2" xml:space="preserve">
+    <value>Konsumen dengan Nomor HP {0} sudah direcord oleh {1} dan belum SPK.</value>
+    <comment>SAPCustomer</comment>
+  </data>
+  <data name="ErrorMsgCustomerReqOCRNotFound" xml:space="preserve">
+    <value>CustomerRequestOCR dengan CustomerRequestID {0}</value>
+  </data>
+  <data name="ErrorMsgCustomerCaseNotFound" xml:space="preserve">
+    <value>Data Customer Case dengan case number {0} dan dealer code {1} tidak ditemukan</value>
+  </data>
+  <data name="ErrorMsgChassisNotFound" xml:space="preserve">
+    <value>Nomor rangka {0} tidak ditemukan</value>
+  </data>
+  <data name="ErrorMsgCustomerCaseStatusNotValid" xml:space="preserve">
+    <value>Status Customer Case Re_Open hanya berlaku pada data yang sudah Closed</value>
+  </data>
+  <data name="ErrorMsgSparePartMasterTOPNotExist" xml:space="preserve">
+    <value>TOP atas Spare Part dengan Part Number {0} belum dimaintain. Mohon menghubungi APM.</value>
+  </data>
+  <data name="ErrorMsgSparePartTOPMix" xml:space="preserve">
+    <value>{0} Detail hanya boleh semua TOP atau semua Non TOP</value>
+  </data>
+  <data name="ErrorMsgDataNotFoundComplete" xml:space="preserve">
+    <value>{0} dengan {1} dengan ID atau CODE {2} tidak ditemukan pada sistem.</value>
+    <comment>When data is not found.</comment>
+  </data>
+  <data name="ErrorMsgVehicleTypeStatusInvalid" xml:space="preserve">
+    <value>Tipe kendaraan {0} memiliki Status '{1}' bukan 'A'</value>
+  </data>
+  <data name="ErrorMsgChassisAndSPKNotMatch" xml:space="preserve">
+    <value>Nomor ranka {0} tidak sesuai dengan SPK {1}</value>
+  </data>
+  <data name="ErrorMsgSPKNumberInInvoiceRevisionNull" xml:space="preserve">
+    <value>SPK Number pada invoice terbaru untuk rangka {0} </value>
+  </data>
+  <data name="ErrorMsgDataCodeNotFound" xml:space="preserve">
+    <value>{0} dengan kode {1} tidak ditemukan pada sistem DNet.</value>
+    <comment>When data is not found.</comment>
+  </data>
+  <data name="ErrorMsgHpNoFormat" xml:space="preserve">
+    <value>format input No. Handphone  : 08XXXXXXXXX</value>
+  </data>
+  <data name="ErrorMsgHpNoMinimum" xml:space="preserve">
+    <value>No Handphone minimal 10 digit</value>
+  </data>
+  <data name="ErrorMsgRefSalesmanCodeRequired" xml:space="preserve">
+    <value>Wajib mengisikan RefSalesmanCode jika melakukan register ulang karyawan yang sudah resign</value>
+  </data>
+  <data name="ErrorMsgVehicleColorNotFound" xml:space="preserve">
+    <value>Kode Warna Kendaraan {0} pada detail SPK tidak ditemukan pada sistem</value>
+  </data>
+  <data name="ErrorMsgVehicleTypeCategoryInvalid" xml:space="preserve">
+    <value>Kategori ID {0} pada kode tipe kendaraan {1} tidak valid</value>
+  </data>
+  <data name="ErrorMsgVehicleTypeCodeCategoryInvalid" xml:space="preserve">
+    <value>Kode kategori {0} tidak cocok dengan kode kategori {1} pada kode tipe kendaraan {2} </value>
+  </data>
+  <data name="ErrorMsgSPKNumberExistInOtherDealer" xml:space="preserve">
+    <value>Data SPK Number {0} dimiliki oleh dealer {1}</value>
+  </data>
+  <data name="ErrorMsgNOKTPSIMInvalid" xml:space="preserve">
+    <value>Format NO KTP / NO SIM harus dalam 12-16 digit</value>
+  </data>
+  <data name="ErrorMsgSparepartDONoDetailOrExpedition" xml:space="preserve">
+    <value>PurchaseReceipt dengan DONumber {0} belum memiliki {1}</value>
+  </data>
+  <data name="ErrorMsgChassisNumberKMEquals" xml:space="preserve">
+    <value>Nomor rangka {0} dengan PMKind {1} kurang dari atau sama dengan data yang pernah disimpan</value>
+  </data>
+  <data name="ErrorMsgFSNoKupon" xml:space="preserve">
+    <value>Simpan gagal, Chassis  {0} tidak mendapatkan kupon Free Service</value>
+  </data>
+  <data name="ErrorMsgPMIsNotMSP" xml:space="preserve">
+    <value>PM dengan ID {0} tidak terdaftar sebagai MSP</value>
+  </data>
+  <data name="ErrorMsgMSPChassisNoPayment" xml:space="preserve">
+    <value>No Rangka {0} belum melakukan pembayaran MSP.</value>
+  </data>
+  <data name="ErrorMsgMSPServiceDateLessThanMSPRegistration" xml:space="preserve">
+    <value>Tanggal Service harus lebih dari tanggal pendaftaran MSP ( {0} )</value>
+  </data>
+  <data name="ErrorMsgMSPUpgradeNotCompleted" xml:space="preserve">
+    <value>Status Upgrade belum selesai pada registrasi MSP dengan No Rangka {0}</value>
+  </data>
+  <data name="ErrorMsgFileCorrupt" xml:space="preserve">
+    <value>File yang dikirimkan ke OCR corrupt</value>
+  </data>
+  <data name="ErrorMsgNoPostedFile" xml:space="preserve">
+    <value>Tidak ditemukan postedFile ( file image ) pada Request</value>
+  </data>
+  <data name="ErrorMsgSparepartNotFound" xml:space="preserve">
+    <value>Sparepart dengan part number {0} tidak ditemukan pada sistem</value>
+  </data>
+  <data name="ErrorCodeAuthUserPass" xml:space="preserve">
+    <value>10001</value>
+    <comment>Code error for ErrorMsgAuthUserPass</comment>
+  </data>
+  <data name="ErrorMsgSparepartQuantity" xml:space="preserve">
+    <value>Input {0} pada Sparepart {1} harus &gt; 0.</value>
+  </data>
+  <data name="ErrorMsgSPKBatalRequiredReasonID" xml:space="preserve">
+    <value>Untuk pembatalan SPK harus mengisikan ID alasan pembatalan</value>
+  </data>
+  <data name="ErrorMsgSPKEditSucceed" xml:space="preserve">
+    <value>Edit SPK Detail berhasil</value>
+  </data>
+  <data name="ErrorMsgSPKHasFaktur" xml:space="preserve">
+    <value>SPK yang sudah dibuatkan faktur tidak bisa dibatalkan</value>
+  </data>
+  <data name="ErrorMsgSPKNoChanges" xml:space="preserve">
+    <value>Data SPK yang dikirimkan sudah sama dengan data di sistem</value>
+  </data>
+  <data name="ErrorMsgSPKNoProfiles" xml:space="preserve">
+    <value>Nomor SPK berikut : {0} belum ada profile.</value>
+  </data>
+  <data name="ErrorMsgSPKStatusNotListedInPreStatusList" xml:space="preserve">
+    <value>Status SPK {0} tidak terdapat pada daftar preStatus ({1}) untuk Status SPK {2}</value>
+  </data>
+  <data name="ErrorMsgSPKStatusSucceed" xml:space="preserve">
+    <value>Update SPK Status berhasil</value>
+  </data>
+  <data name="ErrorMsgSPKStatusUpdateFailed" xml:space="preserve">
+    <value>Update SPK Status ke {0} gagal karena sudah pernah diset ke {1}</value>
+  </data>
+  <data name="ErrorMsgSPKStatusUpdateFailedSyarat" xml:space="preserve">
+    <value>Syarat SPK {0} sudah pernah di set status {1}</value>
+  </data>
+  <data name="ErrorMsgSPKStatusUpdateInSameMonth" xml:space="preserve">
+    <value>Perubahan status SPK dari 'Tunggu Unit' - 'Tunggu Unit (VII)' tidak boleh pada bulan yang sama.</value>
+  </data>
+  <data name="ErrorMsgAuthInvalidUsernameOrPassword" xml:space="preserve">
+    <value>Username or Password is not valid.</value>
+  </data>
+  <data name="ErrorMsgAuthUserNotRegisteredOnSpecifiedClient" xml:space="preserve">
+    <value>User has not been registered on the specified client</value>
+  </data>
+  <data name="ErrorMsgPartShopDealerNotMatch" xml:space="preserve">
+    <value>PartShop {0} dimiliki oleh dealer {1} </value>
+  </data>
+  <data name="ErrorMsgCanceledSPKCouldNotBeMatched" xml:space="preserve">
+    <value>Matching tidak dapat dilakukan untuk SPK dengan status Batal</value>
+  </data>
+  <data name="ErrorMsgSpkDetailHasAlreadyBeenMatched" xml:space="preserve">
+    <value>Semua SPK Detail dengan tipe ({0}) dan warna ({1}) telah memiliki Chassis</value>
+  </data>
+  <data name="ErrorMsgInvalidTotalLength" xml:space="preserve">
+    <value>Total panjang karakter {0} tidak boleh lebih dari {1} karakter</value>
+  </data>
+  <data name="ErrorMsgSalesmanCodeDifferentWithExistingSalesman" xml:space="preserve">
+    <value>RefSalesmanCode tidak sesuai. No KTP telah terdaftar pada Salesman dengan SalemanCode yang berbeda</value>
+  </data>
+  <data name="ErrorMsgNotOnSchedule" xml:space="preserve">
+    <value>Akses untuk interface ini terbatas. Interface ini hanya bisa diakses pada waktu tertentu ({0} - {1}).</value>
+  </data>
+  <data name="ErrorMsgAuthUserWithSpecifiedClientNotFound" xml:space="preserve">
+    <value>User with userid ({0}) and clientid ({1}) is not found.</value>
+  </data>
+  <data name="ErrorMsgRefSalesmanActive" xml:space="preserve">
+    <value>Tidak bisa menggunakan RefSalesmanCode dengan status selain tidak aktif</value>
+    <comment>when update reactivate salesman, and existing salesman status is not 'tidak aktif'</comment>
+  </data>
+  <data name="ErrorMsgSalesmanNameandDateofBirthNotSame" xml:space="preserve">
+    <value>Nama {0} dan tanggal lahir {1} tidak sama dengan {2} dan {3}</value>
+    <comment>when update salesman, name and date of birth not same</comment>
+  </data>
+  <data name="ErrorMsgSalesmanNotActive" xml:space="preserve">
+    <value>No KTP {0} sudah ada pada sistem dengan nama {1} status tidak aktif</value>
+    <comment>when salesmen status 'Tidak_aktif'</comment>
+  </data>
+  <data name="ErrorMsgSalesmanPlaceofBirthNotSame" xml:space="preserve">
+    <value>Tempat lahir {0} tidak sama dengan {1}</value>
+    <comment>when update salesman and place of birth not same</comment>
+  </data>
+  <data name="ErrorMsgSparepartNotActive" xml:space="preserve">
+    <value>Spare Part dengan Part Number {0} tidak aktif. Mohon menghubungi APM.</value>
+    <comment>Validation Active SparePart</comment>
+  </data>
+  <data name="ErrorMsgSparepartNotAllowedByTypeCode" xml:space="preserve">
+    <value>Sparepart dengan Type Code {0} tidak diijinkan disini, part {1} memiliki type code {2}.</value>
+    <comment>Validation TypeCode</comment>
+  </data>
+  <data name="ErrorMsgSparepartOnlyAllowedByTypeCode" xml:space="preserve">
+    <value>Sparepart dengan Type Code {0} yang diijinkan disini, part {1} memiliki TypeCode {2}.</value>
+    <comment>Only Allowed Validation</comment>
+  </data>
+  <data name="ErrorMsgSpkDetailByTypeNotFound" xml:space="preserve">
+    <value>SPKDetail dengan SPKNumber {0}  dan VehicleTypeCode {1} tidak ditemukan</value>
+  </data>
+  <data name="ErrorMsgDataValueInvalid" xml:space="preserve">
+    <value>{0} {1} tidak valid.</value>
+  </data>
+  <data name="ErrorMsgDataPositifIntegerSparePart" xml:space="preserve">
+    <value>{0} untuk material {1} harus dalam format bilangan positif</value>
+  </data>
+  <data name="ErrorMsgDealerAuth" xml:space="preserve">
+    <value>Anda tidak dapat mengakses API ini karena Dealer Anda tidak memiliki otorisasi untuk {0}</value>
+  </data>
+  <data name="ErrorPDIStatusInvalid" xml:space="preserve">
+    <value>PDIStatus harus dikirimkan dengan status 0 (Baru)</value>
+  </data>
+  <data name="ErrorPKTExist" xml:space="preserve">
+    <value>PKT Date untuk ChassisNumber {0} sudah ada.</value>
+  </data>
+  <data name="ErrorMsgDataDBExist" xml:space="preserve">
+    <value>Data sudah ada di database</value>
+  </data>
+  <data name="ErrorMsgTypeDataInObject" xml:space="preserve">
+    <value>Pastikan tipe data sesuai dengan atribut kolom di parameter</value>
+  </data>
+  <data name="ErrorMsgServiceIncomingBPExists" xml:space="preserve">
+    <value>Service Incoming Body Paint dengan No Rangka {0}, NoWorkOder {1}, dan Kode Kategori {2} sudah ada di sistem</value>
+  </data>
+  <data name="ErrorMsgServiceIncomingBPNotExists" xml:space="preserve">
+    <value>Service Incoming Body Paint dengan No Rangka {0}, NoWorkOder {1}, dan Kode Kategori {2} belum ada di sistem</value>
+  </data>
+  <data name="ErrorMsgServiceIncomingBPNotExists2" xml:space="preserve">
+    <value>Service Incoming Body Paint dengan NoWorkOder {0} belum ada di sistem</value>
+  </data>
+  <data name="ErrorMsgChassisPDINotSubmittedYet" xml:space="preserve">
+    <value>Nomor rangka {0} belum memiliki PDI dengan status proses ( 2 ) atau selesai ( 3 )</value>
+  </data>
+  <data name="ErrorMsgChassisNotMatch" xml:space="preserve">
+    <value>Chassis Number : {0} belum di matching.</value>
+  </data>
+  <data name="ErrorMsgNotDealerPilotting" xml:space="preserve">
+    <value>SPK Dealer : {0} tidak terdaftar sebagai dealer piloting.</value>
+  </data>
+  <data name="ErrorMsgInvalidPhoneWithZero" xml:space="preserve">
+    <value>Format {0} untuk {1}  harus berupa kombinasi angka :  8XXXXXXXX</value>
+  </data>
+  <data name="ErrorMsgHpNoFormatSPK" xml:space="preserve">
+    <value>Format input No. Handphone : 8XXXXXXXXXX</value>
+  </data>
+  <data name="ErrorMsgOcrFamilyCardNotFoundBySPKHeaderID" xml:space="preserve">
+    <value>Data OCR KK dengan SPKHeaderID {0} tidak ditemukan</value>
+  </data>
+  <data name="ErrorMsgDataPhoneLength" xml:space="preserve">
+    <value>{0} tidak boleh lebih dari 13 digit</value>
+  </data>
+  <data name="ErrorMsgTglLahirNotMatchKTP" xml:space="preserve">
+    <value>NoKTP {0} tidak valid dengan Tanggal Lahir {1}</value>
+  </data>
+  <data name="ErrorMsgServiceBookingEstCost" xml:space="preserve">
+    <value>Nomor Chassis atau Kode Kendaraan harus diisi</value>
+  </data>
+</root>

@@ -1,0 +1,40 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+		SparePartOutstandingOrder.DealerCode,
+		SparePartOutstandingOrder.CreatedBy,
+		SparePartOutstandingOrder.CreatedTime,
+		SparePartOutstandingOrder.DocumentType,
+		SparePartOutstandingOrder.LastUpdateBy,
+		SparePartOutstandingOrder.LastUpdateTime,
+		SparePartOutstandingOrder.OrderType,
+		SparePartOutstandingOrder.PODate,
+		SparePartOutstandingOrder.SparePartPOID,
+		SparePartOutstandingOrder.ValidTo,
+		SparePartOutstandingOrder.DMSPRNo,
+		SparePartOutstandingOrder.PONumber,
+		SparePartOutstandingOrder.IsTransfer
+	/**EndPagingIndexQuery**/
+FROM 
+(
+	SELECT 
+		Dealer.DealerCode,
+		BODetail.IsTransfer,
+		A.CreatedBy,
+		A.CreatedTime,
+		A.DocumentType,
+		A.ID,
+		A.LastUpdateBy,
+		A.LastUpdateTime,
+		A.OrderType,
+		A.PODate,
+		A.SparePartPOID,
+		A.ValidTo,
+		SparePartPO.DMSPRNo,
+		SparePartPO.PONumber
+	FROM SparePartOutstandingOrder A
+	JOIN SparePartPO ON SparePartPO.ID = A.SparePartPOID AND A.RowStatus = 0
+	JOIN Dealer ON Dealer.ID = SparePartPO.DealerID
+	OUTER APPLY(
+		SELECT TOP 1 IsTransfer FROM SparePartOutstandingOrderDetail WHERE SparePartOutstandingOrderID = A.ID
+	)BODetail
+)SparePartOutstandingOrder {0}

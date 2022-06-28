@@ -1,0 +1,1057 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{26C07E3B-8A44-4739-A96A-1C92DAB73A3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KTB.DNet.Interface.BusinessLogic</RootNamespace>
+    <AssemblyName>KTB.DNet.Interface.BusinessLogic</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|x64'">
+    <OutputPath>bin\x64\SIT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|x64'">
+    <OutputPath>bin\</OutputPath>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|x64' ">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|x64'">
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Services.AppAuthentication, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Services.AppAuthentication.1.0.3\lib\net452\Microsoft.Azure.Services.AppAuthentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.5.2.9\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.14.2.11, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.14.2\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.7.1\lib\net45\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.7.1\lib\net45\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.7.1\lib\net45\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KTB.DNet.Interface.WebApi\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\KTB.DNet.Interface.WebApi\bin\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.20\lib\net452\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ServiceBus, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WindowsAzure.ServiceBus.4.1.5\lib\net45\Microsoft.ServiceBus.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.7.1\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountingData\AX_TSTransStockMutationsBL.cs" />
+    <Compile Include="AccountingData\CRM_ktb_openfactureBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_accountBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_appointmentBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_bookableresourcebookingBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_bookingstatusBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_BusinessUnitBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_campaignactivityBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_equipmentBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_campaignBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_campaignresponseBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_contactBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_invalidcustomerBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_lkppdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_lkppBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_benefitBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_daerahlogisticBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_daftardepositaBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_daftardepositadetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_daftardepositbBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_daftardepositbdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_daftardepositcBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_daftardepositcdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_depositc2BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_externaldealerinterfacelogBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_jobpositionBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_karoseriBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_productsapconversionBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_saleschannelBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_salesquotationBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_servicereminderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_servicetemplateproductnongenuineBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_vendorlogisticBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_serviceappointmentBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_systemuserBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_territoryBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xid_registrationprogressstageBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_automobiletaxBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_registrationcolorBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_registrationdocumentBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_registrationrequestBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_standardplateBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_vehiclecostinputBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_vehiclecostinputdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_weighttaxBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_accessoriesinstallationcategoryBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_accessorieskitgroupBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_assessmentBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_bankBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_businessunitinquiryBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_cityBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_customworkorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_kontrabonBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_leasingcompanyBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_mastervehiclemodelBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_perlengkapanstandardBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_purchaserequisitionhistoryBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_ktb_userareaassignmentBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_leadBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_opportunityBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_pricelevelBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_teamBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xid_documentregistrationBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xid_registrationmonitoringBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_pdidetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_pdireceiptBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_pdireceiptdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_predeliveryinspectionBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xjp_vehicletransferBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_accountpayablepaymentBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_accountpayablepaymentdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_accountpayablevoucherBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_accountreceivableinvoiceBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_accountreceivableinvoicedetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_accountreceivablereceiptBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_accountreceivablereceiptdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_accountreceivablereceiptotherexpenseBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_aptransactiondocumentBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_aptransactiondocumentdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_apvdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_apvlandedcostBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_apvmiscellaneouschargeBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_artransactiondocumentBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_artransactiondocumentdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_assigntosalespersonBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_cashandbankaccountBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_cashandbankBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_cashtransactionBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_cashtransactiondetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_chartofaccountBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_commonBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_commonbusinessunitBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_consumptiontaxBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_customerclassBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_customerpublicBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_damageorlossBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_deliveryorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_deliveryorderdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_deliveryordermiscellaneouschargeBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_departmentBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_dimension10BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_dimension1BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_dimension2BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_dimension3BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_dimension4BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_dimension5BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_dimension6BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_dimension7BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_dimension8BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_dimension9BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_discountsetupBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_discountsetupdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_employeeBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_employeeclassBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_generateinventorylistBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_gljournalBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_gljournaldetailsBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_globalworkorderhistoryBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_globalworkorderhistorydetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_goodsreceiptBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_gradeBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_incomingoutsourceworkorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_incomingoutsourceworkorderdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_incomingpdiandserviceinstructionBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_inventbatchBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_inventorynewvehicleBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_inventorytransactionBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_inventorytransactiondetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_inventorytransferBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_inventorytransferdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_inventserialBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_inventtransBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_kitBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_landedcostBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_locationBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_manufacturerBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_matchunmatchBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_miscellaneouschargeBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_miscellaneouschargetemplateBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_moreaddressBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_newvehicledeliveryorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_newvehicleexteriorcolorBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_newvehicleinteriorcolorBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_newvehiclesalesorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_newvehiclesalesquoteBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_newvehiclewholesaleorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_nonsalesdeliveryBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_nvsoaccessoriesBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_nvsomiscellaneouschargeBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_nvsonumberregistrationdetailsBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_nvsoreferralBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_nvsqaccessoriesBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_nvsqmiscellaneouschargeBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_ordertypeBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_outsourcereservationBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_outsourceworkorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_outsourceworkorderdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_outsourceworkorderreceiptBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_outsourceworkorderreceiptdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_outsourceworkshopconfigurationBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_partsforecastBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_physicalinventorylistBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_physicalinventorylistdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_pricelistBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_pricelistdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productclassBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productcrossreferenceBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productexteriorcolorBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productinteriorcolorBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productsegment1BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productsegment2BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productsegment3BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productsegment4BL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productstyleBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productsubstituteBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_productvariantBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_provinceBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_purchaseorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_purchaseorderdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_purchasereceiptBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_purchasereceiptdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_purchasereceiptdetaillandedcostBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_purchaserequisitionBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_purchaserequisitiondetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_purchaserequisitionpurchaseordertypeBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_ratetypeBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_reasonBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_recommendedproductBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_reservationtransactionBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_salesorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_salesorderdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicecampaignBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicecategoryBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicecategorygroupBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_serviceinstructionBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicemiscellaneouschargeBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicemmsBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_serviceproportionalinvoiceBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicereceiptBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicereservationclassBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicetemplateactivityBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicetemplateBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicetemplatedetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicetemplateparentgroupBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_servicetemplateparentgroupdetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_serviceworkshopsettingBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_sharedproductBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_siteBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_siteinquiryBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_styleBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_subsidyanddiscountBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_termofpaymentBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_transferorderrequestingBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_uomBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_uomconversionBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_usedvehicledeliveryorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_usedvehiclesalesorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_uvsoreferralinformationBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vehiclebrandBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vehicleinformationBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vehiclemodelBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vehiclepriceBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vehiclepricedetailBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vehiclepublicBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vehiclerecognizedmodelBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vehiclespecificationBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vehicletransactionhistoryBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vehicletransferhistoryBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vendorBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_vendorclassBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_villageandstreetBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_warehouseBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_warehouseinquiryBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_workorderBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_workorderpartmaterialandserviceBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_workorderservicetemplateBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_workordertimeregisterBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_writeoffbalanceBL.cs" />
+    <Compile Include="AccountingData\VWI_CRM_xts_writeoffbalancedetailBL.cs" />
+    <Compile Include="AccountingData\VWI_Zombie_CampaignBL.cs" />
+    <Compile Include="AccountingData\VWI_Zombie_ReservationBL.cs" />
+    <Compile Include="AccountingData\VWI_Zombie_SuspectBL.cs" />
+    <Compile Include="AccountingData\VWI_Zombie_WOTimeRegisterBL.cs" />
+    <Compile Include="AccountingReport\VWI_AX_PRT_FlowReportPartBL.cs" />
+    <Compile Include="AccountingReport\VWI_AX_PRT_StockMovementBL.cs" />
+    <Compile Include="AccountingReport\VWI_AX_SLS_BankTransactionBL.cs" />
+    <Compile Include="AccountingReport\VWI_AX_SLS_FlowReportVehicleBL.cs" />
+    <Compile Include="AccountingReport\VWI_AX_SLS_LedgerTransactionBL.cs" />
+    <Compile Include="AccountingReport\VWI_AX_SLS_StockMutationBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferOutletBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_IncomingInventoryTransferWarehouseBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_IncomingTransactionBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferOutletBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_OutgoingInventoryTransferWarehouseBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_OutgoingTransactionBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_PurchaseBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_PurchaseReturnBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_SparepartPurchaseBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_SparepartSalesBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_SparepartSalesReturnBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_PRT_SparepartSalesToPartshopBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SLS_APBalanceBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SLS_ARBalanceBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_LeadBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_SPKBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SLS_DailyActivityMonitoring_VDOBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SLS_SalesmanActivityBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SLS_SalesUnitBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SLS_StockMutationBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SLS_StockSummaryBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SLS_VehicleStockBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SOInvoiceBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SVC_ARReceiptBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SVC_ARReceiptDetailBasedOnWOBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SVC_DailyReportBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_SVC_FreeServiceToBeInvoicedBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_VehicleInvoiceBL.cs" />
+    <Compile Include="AccountingReport\VWI_CRM_WOInvoiceBL.cs" />
+    <Compile Include="FinishUnit\DSFCeilingBL.cs" />
+    <Compile Include="FinishUnit\DSFCeilingUpdateBL.cs" />
+    <Compile Include="FinishUnit\DSFPaymentUpdateBL.cs" />
+    <Compile Include="FinishUnit\DSFPaymentBL.cs" />
+    <Compile Include="FinishUnit\DSFLeasingClaimBL.cs" />
+    <Compile Include="Helper\FileUtility.cs" />
+    <Compile Include="Helper\MailUtility.cs" />
+    <Compile Include="Helper\ErrorMsgHelper.cs" />
+    <Compile Include="Helper\RandomGenerator.cs" />
+    <Compile Include="Helper\UserImpersonater.cs" />
+    <Compile Include="Helper\ValidationHelper.cs" />
+    <Compile Include="Mapper\Profiles\Masters\CustomerVehicleProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\EmployeePartProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\EmployeeSalesProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\LKPPDealer.cs" />
+    <Compile Include="Mapper\Profiles\Masters\LKPPDetail.cs" />
+    <Compile Include="Mapper\Profiles\Masters\LKPPHeader.cs" />
+    <Compile Include="Mapper\Profiles\Masters\PODestinationProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\TrTraineeProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\VWI_ServiceAdvisorProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\VWI_VehicleExteriorColorProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\DealerSuggestionServiceProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\DMSWOWarrantyProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\GetServiceTypeProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\MobileServiceReminderProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\ServiceBookingActivityProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\ServiceBookingProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\ServiceRecommendationProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\ServiceReminderFollowUpProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\ServiceReminderProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\MSPClaimProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\StallMasterProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\StallWorkingTimeProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\VWI_ServiceCostEstimationProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\WarrantyActivationProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartForecastProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\ChassisMasterATAProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\ChassisMasterClaimDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\ChassisMasterClaimDocumentUploadProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\ChassisMasterClaimHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\ChassisMasterLogisticCompanyProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\VWI_POReceiptDealerProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\SPKDetailCustomerProfileProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\SPKDetailCustomerProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\VWI_ChassisStatusFakturProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\VWI_SPKTrackingProfile.cs" />
+    <Compile Include="Masters\AssistWorkOrderCategoryBL.cs" />
+    <Compile Include="Masters\AssistWorkOrderTypeBL.cs" />
+    <Compile Include="Masters\DMSAnnouncementBL.cs" />
+    <Compile Include="Masters\LKPPBL.cs" />
+    <Compile Include="Masters\PMKindBL.cs" />
+    <Compile Include="Masters\PODestinationBL.cs" />
+    <Compile Include="Masters\SalesmanAreaBL.cs" />
+    <Compile Include="Masters\Area1BL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Masters\Area2BL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Masters\BankBL.cs" />
+    <Compile Include="Masters\BenefitMasterDealerBL.cs" />
+    <Compile Include="Masters\BenefitMasterDetailBL.cs" />
+    <Compile Include="Masters\BenefitMasterHeaderBL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Masters\BenefitTypeBL.cs" />
+    <Compile Include="Masters\BusinessSectorDetailBL.cs" />
+    <Compile Include="Masters\BusinessSectorHeaderBL.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Masters\CategoryBL.cs" />
+    <Compile Include="Masters\CityBL.cs" />
+    <Compile Include="Masters\CustomerVehicleBL.cs" />
+    <Compile Include="Masters\DealerBL.cs" />
+    <Compile Include="Masters\DealerBranchBL.cs" />
+    <Compile Include="Masters\DealerGroupBL.cs" />
+    <Compile Include="Masters\EndCustomerBL.cs" />
+    <Compile Include="Masters\FleetBL.cs" />
+    <Compile Include="Masters\FSKindBL.cs" />
+    <Compile Include="Masters\LaborMasterBL.cs" />
+    <Compile Include="Masters\PartShopBL.cs" />
+    <Compile Include="Masters\PaymentMethodBL.cs" />
+    <Compile Include="Masters\PaymentPurposeBL.cs" />
+    <Compile Include="Masters\PositionWSCBL.cs" />
+    <Compile Include="Masters\PriceBL.cs" />
+    <Compile Include="Masters\ProfileGroupBL.cs" />
+    <Compile Include="Masters\ProfileHeaderToGroupBL.cs" />
+    <Compile Include="Masters\ProvinceBL.cs" />
+    <Compile Include="Masters\SalesmanHeaderBL.cs" />
+    <Compile Include="Masters\SalesmanLevelBL.cs" />
+    <Compile Include="Masters\SendASBSFIDBL.cs" />
+    <Compile Include="Masters\SFDContactBL.cs" />
+    <Compile Include="Masters\SparePartMasterBL.cs" />
+    <Compile Include="Masters\TermOfPaymentBL.cs" />
+    <Compile Include="Masters\TrTraineeBL.cs" />
+    <Compile Include="Masters\VehicleClassBL.cs" />
+    <Compile Include="Masters\VehicleColorBL.cs" />
+    <Compile Include="Masters\VehicleKindBL.cs" />
+    <Compile Include="Masters\VehicleKindGroupBL.cs" />
+    <Compile Include="Masters\VehicleModelBL.cs" />
+    <Compile Include="Masters\VehicleTypeBL.cs" />
+    <Compile Include="Masters\VWI_BabitMasterRetailTargetBL.cs" />
+    <Compile Include="Masters\VWI_BusinessSectorBL.cs" />
+    <Compile Include="Masters\VWI_CampaignBL.cs" />
+    <Compile Include="Masters\VWI_CustomerBL.cs" />
+    <Compile Include="Masters\VWI_CustomerVehicleBL.cs" />
+    <Compile Include="Masters\VWI_DepositABL.cs" />
+    <Compile Include="Masters\VWI_DepositBBL.cs" />
+    <Compile Include="Masters\VWI_DepositBL.cs" />
+    <Compile Include="Masters\VWI_DepositC2BL.cs" />
+    <Compile Include="Masters\VWI_EmployeePartsBL.cs" />
+    <Compile Include="Masters\VWI_EmployeeSalesBL.cs" />
+    <Compile Include="Masters\VWI_EmployeeServiceBL.cs" />
+    <Compile Include="Masters\VWI_FleetBL.cs" />
+    <Compile Include="Masters\VWI_IPAddressRestrictionBL.cs" />
+    <Compile Include="Masters\VWI_JobPositionPartsBL.cs" />
+    <Compile Include="Masters\VWI_JobPositionSalesBL.cs" />
+    <Compile Include="Masters\VWI_JobPositionServicesBL.cs" />
+    <Compile Include="Masters\VWI_ProfileDetailFromHeaderCodeBL.cs" />
+    <Compile Include="Masters\VWI_ProvinceBL.cs" />
+    <Compile Include="Masters\VWI_QuickProductAllBL.cs" />
+    <Compile Include="Masters\VWI_QuickProductBL.cs" />
+    <Compile Include="Masters\VWI_ServiceAdvisorBL.cs" />
+    <Compile Include="Masters\VWI_ServiceTemplateBL.cs" />
+    <Compile Include="Masters\VWI_SFDMobileSalesmanBL.cs" />
+    <Compile Include="Masters\VWI_VehicleExteriorColorBL.cs" />
+    <Compile Include="Masters\VWI_VehicleInformationBL.cs" />
+    <Compile Include="Masters\VWI_VehicleSpecificationBL.cs" />
+    <Compile Include="Masters\VWI_VehicleTypeBL.cs" />
+    <Compile Include="Masters\VWI_WholeSalesPriceBL.cs" />
+    <Compile Include="NonDMS\CRM_accountBL.cs" />
+    <Compile Include="NonDMS\CRM_appointmentBL.cs" />
+    <Compile Include="NonDMS\CRM_bookableresourcebookingBL.cs" />
+    <Compile Include="NonDMS\CRM_campaignBL.cs" />
+    <Compile Include="NonDMS\CRM_campaignresponseBL.cs" />
+    <Compile Include="NonDMS\CRM_contactBL.cs" />
+    <Compile Include="NonDMS\CRM_equipmentBL.cs" />
+    <Compile Include="NonDMS\CRM_ktb_kontrabonBL.cs" />
+    <Compile Include="NonDMS\CRM_ktb_kontrabondetailBL.cs" />
+    <Compile Include="NonDMS\CRM_leadBL.cs" />
+    <Compile Include="NonDMS\CRM_opportunityBL.cs" />
+    <Compile Include="NonDMS\CRM_serviceappointmentBL.cs" />
+    <Compile Include="NonDMS\CRM_teamBL.cs" />
+    <Compile Include="NonDMS\CRM_xid_documentregistrationBL.cs" />
+    <Compile Include="NonDMS\CRM_xid_registrationmonitoringBL.cs" />
+    <Compile Include="NonDMS\CRM_xjp_pdidetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xjp_pdireceiptBL.cs" />
+    <Compile Include="NonDMS\CRM_xjp_predeliveryinspectionBL.cs" />
+    <Compile Include="NonDMS\CRM_xjp_vehiclecostinputBL.cs" />
+    <Compile Include="NonDMS\CRM_xjp_vehicletransferBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_accessoriesinstallationcategoryBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_accountpayablepaymentBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_accountpayablepaymentdetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_accountpayablevoucherBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_accountreceivableinvoiceBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_accountreceivableinvoicedetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_accountreceivablereceiptBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_accountreceivablereceiptdetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_apvdetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_assessmentBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_assigntosalespersonBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_businessunitinquiryBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_customerpublicBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_damageorlossBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_deliveryorderBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_deliveryorderdetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_employeeBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_incomingoutsourceworkorderdetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_inventorynewvehicleBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_inventorytransactionBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_inventorytransactiondetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_inventorytransferBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_inventorytransferdetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_inventserialBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_inventtransBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_landedcostBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_matchunmatchBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_moreaddressBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_newvehicleaccessoriesBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_newvehicledeliveryorderBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_newvehicleexteriorcolorBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_newvehiclesalesorderBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_newvehiclesalesquoteBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_newvehiclewholesaleorderBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_nonsalesdeliveryBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_nvsonumberregistrationdetailsBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_outsourcereservationBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_outsourceworkorderBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_outsourceworkorderdetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_outsourceworkorderreceiptBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_outsourceworkorderreceiptdetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_outsourceworkshopconfigurationBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_productBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_productlistBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_purchaseorderBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_purchaseorderdetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_purchasereceiptBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_purchasereceiptdetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_purchasereceiptdetaillandedcostBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_purchaserequisitionBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_purchaserequisitiondetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_reservationtransactionBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_salesorderBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_salesorderdetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_servicecampaignBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_servicemmsBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_serviceproportionalinvoiceBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_servicequeueBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_siteBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_siteinquiryBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_vehicleinformationBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_vehiclepriceBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_vehiclepricedetailBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_vehiclepublicBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_vendorBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_warehouseBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_warehouseinquiryBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_workorderBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_workorderpartmaterialandserviceBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_workordertimeregisterBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_writeoffbalanceBL.cs" />
+    <Compile Include="NonDMS\CRM_xts_writeoffbalancedetailBL.cs" />
+    <Compile Include="OCR\OCRIdentityBL.cs" />
+    <Compile Include="Services\AssistServiceIncomingBPBL.cs" />
+    <Compile Include="Services\DMSWOWarrantyBL.cs" />
+    <Compile Include="Services\ServiceBookingBL.cs" />
+    <Compile Include="Services\ServiceMMSBL.cs" />
+    <Compile Include="Services\ServiceStandardTimeBL.cs" />
+    <Compile Include="Services\ServiceTemplateStallBL.cs" />
+    <Compile Include="Services\StallMasterBL.cs" />
+    <Compile Include="Services\StallWorkingTimeBL.cs" />
+    <Compile Include="Services\VWI_MSPExMembershipBL.cs" />
+    <Compile Include="Services\VWI_PDIExpiredBL.cs" />
+    <Compile Include="Services\VWI_ServiceReminderBL.cs" />
+    <Compile Include="Services\MSPClaimBL.cs" />
+    <Compile Include="Services\ServiceValidatorBL.cs" />
+    <Compile Include="Services\VWI_DMSWorkOrderWSCStatusBL.cs" />
+    <Compile Include="Services\VWI_FieldFixServicedBL.cs" />
+    <Compile Include="Masters\VWI_ServicePlaceBL.cs" />
+    <Compile Include="Masters\VWI_ServiceTypeBL.cs" />
+    <Compile Include="Services\VWI_MobileServiceReminderBL.cs" />
+    <Compile Include="SpareParts\SparePartClaimBL.cs" />
+    <Compile Include="SpareParts\SparePartOutstandingOrderBL.cs" />
+    <Compile Include="SpareParts\SparePartOutstandingOrderDetailBL.cs" />
+    <Compile Include="SpareParts\SparePartPenaltyBL.cs" />
+    <Compile Include="Services\VWI_ServiceTemplateActivityBL.cs" />
+    <Compile Include="Services\WarrantyActivationBL.cs" />
+    <Compile Include="SpareParts\SparePartForecastBL.cs" />
+    <Compile Include="SpareParts\VWI_PQRBL.cs" />
+    <Compile Include="SpareParts\VWI_PurchaseReturnBL.cs" />
+    <Compile Include="SpareParts\VWI_PRHistoryPOStatusCancelBL.cs" />
+    <Compile Include="SpareParts\VWI_SparePartPaymentBL.cs" />
+    <Compile Include="VehiclePurchases\ChassisMasterATABL.cs" />
+    <Compile Include="VehiclePurchases\ChassisMasterClaimHeaderBL.cs" />
+    <Compile Include="VehiclePurchases\VWI_POReceiptDealerBL.cs" />
+    <Compile Include="VehicleSales\SPKDetailCustomerProfileBL.cs" />
+    <Compile Include="VehicleSales\SPKDetailCustomerBL.cs" />
+    <Compile Include="VehicleSales\VWI_ChassisMasterPKTBL.cs" />
+    <Compile Include="VehicleSales\VWI_KaroseriBL.cs" />
+    <Compile Include="VehicleSales\VWI_LeasingBL.cs" />
+    <Compile Include="Services\VWI_ServiceHistoryBL.cs" />
+    <Compile Include="SpareParts\APPaymentBL.cs" />
+    <Compile Include="Config\AppConfigBL.cs" />
+    <Compile Include="SpareParts\ARReceiptBL.cs" />
+    <Compile Include="SpareParts\AssistPartSalesBL.cs" />
+    <Compile Include="SpareParts\AssistPartStockBL.cs" />
+    <Compile Include="SpareParts\AssistSalesChannelBL.cs" />
+    <Compile Include="Services\AssistServiceIncomingBL.cs" />
+    <Compile Include="SpareParts\VWI_PRHistoryBL.cs" />
+    <Compile Include="SpareParts\VWI_SparePartPriceListBL.cs" />
+    <Compile Include="SpareParts\VWI_PRHistoryIndentStatusCancelBL.cs" />
+    <Compile Include="VehicleSales\VWI_CampaignReportBL.cs" />
+    <Compile Include="VehiclePurchases\CarrosserieDetailBL.cs" />
+    <Compile Include="VehiclePurchases\CarrosserieBL.cs" />
+    <Compile Include="VehiclePurchases\CarrosserieHeaderBL.cs" />
+    <Compile Include="Services\CustomerCaseBL.cs" />
+    <Compile Include="SpareParts\DepositLineBL.cs" />
+    <Compile Include="SpareParts\EstimationEquipDetailBL.cs" />
+    <Compile Include="SpareParts\EstimationEquipHeaderBL.cs" />
+    <Compile Include="SpareParts\EstimationEquipPOBL.cs" />
+    <Compile Include="Services\FreeServiceBL.cs" />
+    <Compile Include="SpareParts\IndentPartDetailBL.cs" />
+    <Compile Include="SpareParts\IndentPartHeaderBL.cs" />
+    <Compile Include="SpareParts\IndentPartPOBL.cs" />
+    <Compile Include="VehiclePurchases\ChassisMasterBL.cs" />
+    <Compile Include="VehicleSales\CustomerBL.cs" />
+    <Compile Include="Helper\Helper.cs" />
+    <Compile Include="SpareParts\InventoryTransactionBL.cs" />
+    <Compile Include="SpareParts\InventoryTransferBL.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\APPaymentDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\APPaymentProfile.cs" />
+    <Compile Include="Mapper\Profiles\Config\AppConfigProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\ARReceiptDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\ARReceiptProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\AssistSalesChannelProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\AssistServiceIncomingProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\AssistPartSalesProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\DepositLineProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\AssistPartStockProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\EstimationEquipPOProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\FieldFixListProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\FreeServiceProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\IndentPartPOProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\InventoryTransactionDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\InventoryTransactionProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\InventoryTransferDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\InventoryTransferProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\PartShopProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\PMHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\POOtherVendorDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\POOtherVendorProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\RecallServiceProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartDeliveryOrderDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartDeliveryOrderProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartDODetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartDOProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartBillingProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartPODetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartPOProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\EstimationEquipDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\EstimationEquipHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\IndentPartDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\IndentPartHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\VWI_PODealerProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartMasterProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartPOEstimateDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartPOEstimateProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartPRDetailFromVendorProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartPRFromVendorProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\VWI_SparePartPriceListProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartSalesOrderDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartSalesOrderProfile.cs" />
+    <Compile Include="Mapper\Profiles\SpareParts\SparePartUoMProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\VehiclePurchaseHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\VehiclePurchaseDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\CarrosserieHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\CarrosserieDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\BusinessSectorHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\BusinessSectorDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\FleetProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\BenefitEventHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\BenefitMasterDealerProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\BenefitMasterDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\BenefitMasterHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\BenefitTypeProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\CategoryProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehiclePurchases\ChassisMasterProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\CustomerProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\EndCustomerProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\FSKindProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\LaborMasterProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\PaymentMethodProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\PaymentPurposeProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\Area2Profile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\Area1Profile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\DealerBranchProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\DealerGroupProfile.cs" />
+    <Compile Include="Mapper\Profiles\Services\PDIProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\ChassisMasterPKTProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\PositionWSCProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\PriceProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\ProfileGroupProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\ProfileHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\ProfileHeaderToGroupProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\ProvinceProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\SPKChassisProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\SPKCustomerProfileProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\SPKHeaderStatusProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\SPKProfileProfile.cs" />
+    <Compile Include="Mapper\Profiles\StandardCodes\StandardCodeCharProfile.cs" />
+    <Compile Include="Mapper\Profiles\StandardCodes\StandardCodeProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\TermOfPaymentProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\VehicleKindProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\VehicleKindGroupProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\VehicleModelProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\VehicleClassProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\VehicleColorProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\VehicleTypeProfile.cs" />
+    <Compile Include="Services\VWI_MSPMembershipBL.cs" />
+    <Compile Include="Services\PDIBL.cs" />
+    <Compile Include="VehicleSales\SAPCustomerBL.cs" />
+    <Compile Include="VehicleSales\SPKChassisBL.cs" />
+    <Compile Include="VehicleSales\SPKCustomerProfileBL.cs" />
+    <Compile Include="VehicleSales\SPKDetailBL.cs" />
+    <Compile Include="VehicleSales\SPKFakturBL.cs" />
+    <Compile Include="VehicleSales\SPKHeaderBL.cs" />
+    <Compile Include="VehicleSales\StatusChangeHistoryBL.cs" />
+    <Compile Include="VehicleSales\VWI_ChassisStatusFakturBL.cs" />
+    <Compile Include="VehicleSales\VWI_OpenFakturForPDIBL.cs" />
+    <Compile Include="VehicleSales\VWI_SPKMasterCountryCodePhoneBL.cs" />
+    <Compile Include="VehicleSales\VWI_UnmatchSPKChassisBL.cs" />
+    <Compile Include="VehicleSales\VWI_OpenFakturBL.cs" />
+    <Compile Include="VehicleSales\ChassisMasterPKTBL.cs" />
+    <Compile Include="Services\PMHeaderBL.cs" />
+    <Compile Include="VehiclePurchases\VWI_PODealerBL.cs" />
+    <Compile Include="SpareParts\POOtherVendorBL.cs" />
+    <Compile Include="Mapper\AutoMapperConfig.cs" />
+    <Compile Include="Mapper\Profiles\Masters\CityProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\SPKCustomerProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\DealerProfile.cs" />
+    <Compile Include="Mapper\Profiles\Masters\SalesmanHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\SAPCustomerProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\SPKDetailProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\SPKHeaderProfile.cs" />
+    <Compile Include="Mapper\Profiles\VehicleSales\SPKFakturProfile.cs" />
+    <Compile Include="Services\RecallServiceBL.cs" />
+    <Compile Include="SpareParts\VWI_SparePartConversionBL.cs" />
+    <Compile Include="SpareParts\SparePartDeliveryOrderBL.cs" />
+    <Compile Include="SpareParts\SparePartDOBL.cs" />
+    <Compile Include="SpareParts\SparePartBillingBL.cs" />
+    <Compile Include="SpareParts\SparePartDOExpeditionBL.cs" />
+    <Compile Include="SpareParts\SparePartPOBL.cs" />
+    <Compile Include="SpareParts\VWI_SparePartPOEstimateBL.cs" />
+    <Compile Include="SpareParts\SparePartPRFromVendorBL.cs" />
+    <Compile Include="SpareParts\SparePartSalesOrderBL.cs" />
+    <Compile Include="SpareParts\VWI_SparePartUoMBL.cs" />
+    <Compile Include="VehicleSales\SPKBL.cs" />
+    <Compile Include="VehicleSales\SPKCustomerBL.cs" />
+    <Compile Include="StandardCodes\StandardCodeBL.cs" />
+    <Compile Include="StandardCodes\StandardCodeCharBL.cs" />
+    <Compile Include="VehiclePurchases\VehiclePurchaseBL.cs" />
+    <Compile Include="VehiclePurchases\VehiclePurchaseHeaderBL.cs" />
+    <Compile Include="VehiclePurchases\VehiclePurchaseDetailBL.cs" />
+    <Compile Include="Base\AbstractBusinessLogic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KTB.DNet.BusinessValidation\KTB.DNet.BusinessValidation.csproj">
+      <Project>{a938dd7b-5da3-4fa4-9998-015bb5dfe44e}</Project>
+      <Name>KTB.DNet.BusinessValidation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.DataMapper.Framework\KTB.DNet.DataMapper.Framework.vbproj">
+      <Project>{cc23ff7e-bc14-4d66-9e96-6e0a51576a34}</Project>
+      <Name>KTB.DNet.DataMapper.Framework</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.DataMapper\KTB.DNet.DataMapper.vbproj">
+      <Project>{e021fe28-84e0-4b1f-804a-180be4f38f26}</Project>
+      <Name>KTB.DNet.DataMapper</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain.Search\KTB.DNet.Domain.Search.vbproj">
+      <Project>{06a29192-8b96-4dfb-9c6c-aa5b4ddf8d36}</Project>
+      <Name>KTB.DNet.Domain.Search</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain\KTB.DNet.Domain.vbproj">
+      <Project>{f4cc7463-4cbb-4336-aeaf-ac8fbc38dd9a}</Project>
+      <Name>KTB.DNet.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.BusinessLogic.Interface\KTB.DNet.Interface.BusinessLogic.Interface.csproj">
+      <Project>{3f64f8d0-a02e-4a08-8664-3abff617028f}</Project>
+      <Name>KTB.DNet.Interface.BusinessLogic.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Domain\KTB.DNet.Interface.Domain.csproj">
+      <Project>{26475885-56e1-4f74-a2c1-2da985ce3999}</Project>
+      <Name>KTB.DNet.Interface.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Framework\KTB.DNet.Interface.Framework.csproj">
+      <Project>{35cd5278-bb7f-44d7-ab5b-ff5e551a916b}</Project>
+      <Name>KTB.DNet.Interface.Framework</Name>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Model\KTB.DNet.Interface.Model.csproj">
+      <Project>{88bf0ed7-1491-4582-993f-80494ef9de0e}</Project>
+      <Name>KTB.DNet.Interface.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Repository.Dapper\KTB.DNet.Interface.Repository.Dapper.csproj">
+      <Project>{D558BC8F-0540-4838-B8E1-3B2BD0253A48}</Project>
+      <Name>KTB.DNet.Interface.Repository.Dapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Repository.Interface\KTB.DNet.Interface.Repository.Interface.csproj">
+      <Project>{bda6354b-fd81-4566-a335-55af3bbea64a}</Project>
+      <Name>KTB.DNet.Interface.Repository.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Interface.Resources\KTB.DNet.Interface.Resources.csproj">
+      <Project>{2a4ee316-2430-45c8-b2ca-7952d52e3180}</Project>
+      <Name>KTB.DNet.Interface.Resources</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Azure.Services.AppAuthentication.1.0.3\build\Microsoft.Azure.Services.AppAuthentication.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Azure.Services.AppAuthentication.1.0.3\build\Microsoft.Azure.Services.AppAuthentication.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Azure.Services.AppAuthentication.1.0.3\build\Microsoft.Azure.Services.AppAuthentication.targets" Condition="Exists('..\packages\Microsoft.Azure.Services.AppAuthentication.1.0.3\build\Microsoft.Azure.Services.AppAuthentication.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

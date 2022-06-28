@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM VWI_CRM_PRT_SparepartSales WITH (NOLOCK) {0}

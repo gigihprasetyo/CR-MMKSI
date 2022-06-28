@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM VWI_CRM_SLS_VehicleStock WITH (NOLOCK) {0}

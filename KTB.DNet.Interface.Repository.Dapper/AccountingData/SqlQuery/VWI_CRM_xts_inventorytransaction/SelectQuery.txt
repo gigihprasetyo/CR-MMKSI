@@ -1,0 +1,84 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_inventorytransaction.company
+	, VWI_CRM_xts_inventorytransaction.businessunitcode
+	, VWI_CRM_xts_inventorytransaction.xts_transactiontypename
+	, VWI_CRM_xts_inventorytransaction.xts_parentbusinessunitid
+	, VWI_CRM_xts_inventorytransaction.versionnumber
+	, VWI_CRM_xts_inventorytransaction.createdon
+	, VWI_CRM_xts_inventorytransaction.ktb_itemtypefortransactionname
+	, VWI_CRM_xts_inventorytransaction.statuscodename
+	, VWI_CRM_xts_inventorytransaction.xts_inventorytransactionreferenceid
+	, VWI_CRM_xts_inventorytransaction.xts_status
+	, VWI_CRM_xts_inventorytransaction.modifiedbyyominame
+	, VWI_CRM_xts_inventorytransaction.xts_inventorytransferid
+	, VWI_CRM_xts_inventorytransaction.xts_inventorytransactionnumber
+	, VWI_CRM_xts_inventorytransaction.xts_log
+	, VWI_CRM_xts_inventorytransaction.xts_personinchargeid
+	, VWI_CRM_xts_inventorytransaction.createdonbehalfby
+	, VWI_CRM_xts_inventorytransaction.xts_loaddataname
+	, VWI_CRM_xts_inventorytransaction.modifiedbyname
+	, VWI_CRM_xts_inventorytransaction.owneridname
+	, VWI_CRM_xts_inventorytransaction.overriddencreatedon
+	, VWI_CRM_xts_inventorytransaction.xts_itemtypefortransactionname
+	, VWI_CRM_xts_inventorytransaction.createdonbehalfbyyominame
+	, VWI_CRM_xts_inventorytransaction.modifiedonbehalfby
+	, VWI_CRM_xts_inventorytransaction.xts_workorderidname
+	, VWI_CRM_xts_inventorytransaction.owningteam
+	, VWI_CRM_xts_inventorytransaction.xts_processcode
+	, VWI_CRM_xts_inventorytransaction.statecode
+	, VWI_CRM_xts_inventorytransaction.xts_transactiontype
+	, VWI_CRM_xts_inventorytransaction.timezoneruleversionnumber
+	, VWI_CRM_xts_inventorytransaction.ktb_actualreceiptdate
+	, VWI_CRM_xts_inventorytransaction.xts_handling
+	, VWI_CRM_xts_inventorytransaction.ktb_updatetosparepartstock
+	, VWI_CRM_xts_inventorytransaction.createdonbehalfbyname
+	, VWI_CRM_xts_inventorytransaction.xts_inventorytransactionreferenceidname
+	, VWI_CRM_xts_inventorytransaction.xts_inventorytransferidname
+	, VWI_CRM_xts_inventorytransaction.utcconversiontimezonecode
+	, VWI_CRM_xts_inventorytransaction.xts_statusname
+	, VWI_CRM_xts_inventorytransaction.ownerid
+	, VWI_CRM_xts_inventorytransaction.modifiedon
+	, VWI_CRM_xts_inventorytransaction.importsequencenumber
+	, VWI_CRM_xts_inventorytransaction.owneridyominame
+	, VWI_CRM_xts_inventorytransaction.xts_locking
+	, VWI_CRM_xts_inventorytransaction.xts_personinchargeidname
+	, VWI_CRM_xts_inventorytransaction.xts_transactiondate
+	, VWI_CRM_xts_inventorytransaction.xts_inventorytransactionid
+	, VWI_CRM_xts_inventorytransaction.xts_workorderid
+	, VWI_CRM_xts_inventorytransaction.createdbyname
+	, VWI_CRM_xts_inventorytransaction.xts_businessunitid
+	, VWI_CRM_xts_inventorytransaction.modifiedonbehalfbyname
+	, VWI_CRM_xts_inventorytransaction.ktb_ribbondataproductwarehouse
+	, VWI_CRM_xts_inventorytransaction.xts_handlingname
+	, VWI_CRM_xts_inventorytransaction.xts_sourcedata
+	, VWI_CRM_xts_inventorytransaction.xts_loaddata
+	, VWI_CRM_xts_inventorytransaction.createdby
+	, VWI_CRM_xts_inventorytransaction.modifiedby
+	, VWI_CRM_xts_inventorytransaction.ktb_updatetosparepartstockname
+	, VWI_CRM_xts_inventorytransaction.xts_itemtypefortransaction
+	, VWI_CRM_xts_inventorytransaction.createdbyyominame
+	, VWI_CRM_xts_inventorytransaction.owninguser
+	, VWI_CRM_xts_inventorytransaction.owningbusinessunit
+	, VWI_CRM_xts_inventorytransaction.xts_parentbusinessunitidname
+	, VWI_CRM_xts_inventorytransaction.owneridtype
+	, VWI_CRM_xts_inventorytransaction.statuscode
+	, VWI_CRM_xts_inventorytransaction.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_inventorytransaction.ktb_itemtypefortransaction
+	, VWI_CRM_xts_inventorytransaction.statecodename
+	, VWI_CRM_xts_inventorytransaction.xts_businessunitidname
+	, VWI_CRM_xts_inventorytransaction.RowStatus
+	, VWI_CRM_xts_inventorytransaction.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+          b.ktb_bucompany company
+        , b.ktb_dealercode businessunitcode
+        , a.*  
+        , b.msdyn_companycode
+    FROM CRM_xts_inventorytransaction a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_inventorytransaction 

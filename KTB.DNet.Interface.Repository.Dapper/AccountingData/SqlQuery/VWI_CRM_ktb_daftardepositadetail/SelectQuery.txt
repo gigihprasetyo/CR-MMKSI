@@ -1,0 +1,66 @@
+SELECT 
+	/**PagingIndexQuery**/
+	/**RowNumber**/
+		VWI_CRM_ktb_daftardepositadetail.[modifiedonbehalfby]
+		,VWI_CRM_ktb_daftardepositadetail.[modifiedbyyominame]
+		,VWI_CRM_ktb_daftardepositadetail.[createdbyname]
+		,VWI_CRM_ktb_daftardepositadetail.[transactioncurrencyid]
+		,VWI_CRM_ktb_daftardepositadetail.[modifiedon]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_depositaid]
+		,VWI_CRM_ktb_daftardepositadetail.[modifiedbyname]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_description]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_transactiondate]
+		,VWI_CRM_ktb_daftardepositadetail.[owningbusinessunitname]
+		,VWI_CRM_ktb_daftardepositadetail.[createdonbehalfbyyominame]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_documentno]
+		,VWI_CRM_ktb_daftardepositadetail.[owneridname]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_daftardepositaid]
+		,VWI_CRM_ktb_daftardepositadetail.[importsequencenumber]
+		,VWI_CRM_ktb_daftardepositadetail.[createdonbehalfby]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_daftardepositadetailid]
+		,VWI_CRM_ktb_daftardepositadetail.[modifiedonbehalfbyname]
+		,VWI_CRM_ktb_daftardepositadetail.[owningteam]
+		,VWI_CRM_ktb_daftardepositadetail.[versionnumber]
+		,VWI_CRM_ktb_daftardepositadetail.[createdon]
+		,VWI_CRM_ktb_daftardepositadetail.[createdby]
+		,VWI_CRM_ktb_daftardepositadetail.[owneridtype]
+		,VWI_CRM_ktb_daftardepositadetail.[modifiedonbehalfbyyominame]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_iddetail]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_amount_base]
+		,VWI_CRM_ktb_daftardepositadetail.[modifiedby]
+		,VWI_CRM_ktb_daftardepositadetail.[overriddencreatedon]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_daftardepositaidname]
+		,VWI_CRM_ktb_daftardepositadetail.[createdonbehalfbyname]
+		,VWI_CRM_ktb_daftardepositadetail.[exchangerate]
+		,VWI_CRM_ktb_daftardepositadetail.[owninguser]
+		,VWI_CRM_ktb_daftardepositadetail.[statuscodename]
+		,VWI_CRM_ktb_daftardepositadetail.[owningbusinessunit]
+		,VWI_CRM_ktb_daftardepositadetail.[timezoneruleversionnumber]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_refferenceno]
+		,VWI_CRM_ktb_daftardepositadetail.[statecodename]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_amount]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_statusdebet]
+		,VWI_CRM_ktb_daftardepositadetail.[transactioncurrencyidname]
+		,VWI_CRM_ktb_daftardepositadetail.[createdbyyominame]
+		,VWI_CRM_ktb_daftardepositadetail.[statuscode]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_daftardepositadetail]
+		,VWI_CRM_ktb_daftardepositadetail.[ktb_tipe]
+		,VWI_CRM_ktb_daftardepositadetail.[statecode]
+		,VWI_CRM_ktb_daftardepositadetail.[owneridyominame]
+		,VWI_CRM_ktb_daftardepositadetail.[ownerid]
+		,VWI_CRM_ktb_daftardepositadetail.[utcconversiontimezonecode]
+		,VWI_CRM_ktb_daftardepositadetail.[DealerCode]
+		,VWI_CRM_ktb_daftardepositadetail.[SourceType]
+		,VWI_CRM_ktb_daftardepositadetail.[RowStatus]
+		,VWI_CRM_ktb_daftardepositadetail.[LastSyncDate]
+		, VWI_CRM_ktb_daftardepositadetail.msdyn_companycode
+	/**EndPagingIndexQuery**/
+from (
+	SELECT      
+		a.*  
+		, b.msdyn_companycode    
+	FROM [CRM_ktb_daftardepositadetail] a  WITH(NOLOCK)   
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON B.businessunitid = a.owningbusinessunit   
+	{0}
+) as VWI_CRM_ktb_daftardepositadetail

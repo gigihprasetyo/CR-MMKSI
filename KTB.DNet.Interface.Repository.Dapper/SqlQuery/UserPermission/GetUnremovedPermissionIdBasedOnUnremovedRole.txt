@@ -1,0 +1,5 @@
+﻿SELECT  DISTINCT rp.PermissionId AS PermissionId
+		FROM APIClientUser cu
+		JOIN APIUserRole ur ON cu.Id = @ClientUserId AND ur.UserId = cu.UserId
+		JOIN APIClientRole cr ON cu.Id = @ClientUserId AND cr.ClientId = cu.ClientId AND cr.RoleId IN @ListOfUnremovedRoleId AND ur.RoleId = cr.RoleId
+		JOIN APIRolePermission rp ON rp.ClientRoleId = cr.Id

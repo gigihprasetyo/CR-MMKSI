@@ -1,0 +1,14 @@
+SELECT 
+	IDRow
+	,businessunitcode
+	,xts_workorder
+	,xts_workorderstatus
+	,xts_servicecategory
+	,xts_product
+	,xts_platenumber
+	,xts_ordertype
+	,customername
+	,billtocustomername
+	,ktb_wodate
+FROM VWI_CRM_SVC_FreeServiceToBeInvoiced WITH (NOLOCK)
+WHERE ID = @Id

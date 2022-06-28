@@ -1,0 +1,5 @@
+﻿DELETE userPermission FROM APIUserPermission userPermission
+JOIN APIClientUser clientUser ON clientUser.ClientId = @ClientId AND clientUser.Id = userPermission.ClientUserId  WHERE 
+userPermission.PermissionId IN @ListOfRemovedPermissionId AND
+IsCustomPermission != 1 AND
+IsDismantledPermission != 1 

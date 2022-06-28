@@ -1,0 +1,112 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_accountpayablevoucher.company
+	, VWI_CRM_xts_accountpayablevoucher.businessunitcode
+	, VWI_CRM_xts_accountpayablevoucher.xts_transactiontypename
+	, VWI_CRM_xts_accountpayablevoucher.xts_accountpayablevouchernumber
+	, VWI_CRM_xts_accountpayablevoucher.xts_parentbusinessunitid
+	, VWI_CRM_xts_accountpayablevoucher.versionnumber
+	, VWI_CRM_xts_accountpayablevoucher.createdon
+	, VWI_CRM_xts_accountpayablevoucher.xts_totallandedcost_base
+	, VWI_CRM_xts_accountpayablevoucher.statuscodename
+	, VWI_CRM_xts_accountpayablevoucher.xts_status
+	, VWI_CRM_xts_accountpayablevoucher.xts_paymentamount_base
+	, VWI_CRM_xts_accountpayablevoucher.modifiedbyyominame
+	, VWI_CRM_xts_accountpayablevoucher.ktb_taxinvoiceno
+	, VWI_CRM_xts_accountpayablevoucher.owneridtype
+	, VWI_CRM_xts_accountpayablevoucher.xts_vendorinvoicenumber
+	, VWI_CRM_xts_accountpayablevoucher.xts_totalvariance_base
+	, VWI_CRM_xts_accountpayablevoucher.ktb_invoicedate
+	, VWI_CRM_xts_accountpayablevoucher.createdonbehalfby
+	, VWI_CRM_xts_accountpayablevoucher.modifiedbyname
+	, VWI_CRM_xts_accountpayablevoucher.xts_totalmisccharges
+	, VWI_CRM_xts_accountpayablevoucher.owneridname
+	, VWI_CRM_xts_accountpayablevoucher.overriddencreatedon
+	, VWI_CRM_xts_accountpayablevoucher.xts_documentdate
+	, VWI_CRM_xts_accountpayablevoucher.ktb_kontrabonid
+	, VWI_CRM_xts_accountpayablevoucher.xts_type
+	, VWI_CRM_xts_accountpayablevoucher.createdonbehalfbyyominame
+	, VWI_CRM_xts_accountpayablevoucher.modifiedonbehalfby
+	, VWI_CRM_xts_accountpayablevoucher.exchangerate
+	, VWI_CRM_xts_accountpayablevoucher.ktb_description
+	, VWI_CRM_xts_accountpayablevoucher.xts_apvoucherreferencenumberid
+	, VWI_CRM_xts_accountpayablevoucher.xts_paymentamount
+	, VWI_CRM_xts_accountpayablevoucher.xts_balance
+	, VWI_CRM_xts_accountpayablevoucher.statecode
+	, VWI_CRM_xts_accountpayablevoucher.xts_transactiontype
+	, VWI_CRM_xts_accountpayablevoucher.xts_consumptiontax1amount_base
+	, VWI_CRM_xts_accountpayablevoucher.timezoneruleversionnumber
+	, VWI_CRM_xts_accountpayablevoucher.xts_accountpayablevoucherid
+	, VWI_CRM_xts_accountpayablevoucher.xts_apvoucherreferencenumberidname
+	, VWI_CRM_xts_accountpayablevoucher.xts_locking
+	, VWI_CRM_xts_accountpayablevoucher.xts_handling
+	, VWI_CRM_xts_accountpayablevoucher.ktb_say
+	, VWI_CRM_xts_accountpayablevoucher.xts_totalmisccharges_base
+	, VWI_CRM_xts_accountpayablevoucher.xts_totalconsumptiontax_base
+	, VWI_CRM_xts_accountpayablevoucher.xts_totalamount_base
+	, VWI_CRM_xts_accountpayablevoucher.createdonbehalfbyname
+	, VWI_CRM_xts_accountpayablevoucher.ktb_kontrabonidname
+	, VWI_CRM_xts_accountpayablevoucher.utcconversiontimezonecode
+	, VWI_CRM_xts_accountpayablevoucher.xts_totalwitholdingtaxamount
+	, VWI_CRM_xts_accountpayablevoucher.xts_statusname
+	, VWI_CRM_xts_accountpayablevoucher.xts_typename
+	, VWI_CRM_xts_accountpayablevoucher.xts_hasreturnname
+	, VWI_CRM_xts_accountpayablevoucher.ownerid
+	, VWI_CRM_xts_accountpayablevoucher.modifiedon
+	, VWI_CRM_xts_accountpayablevoucher.importsequencenumber
+	, VWI_CRM_xts_accountpayablevoucher.owneridyominame
+	, VWI_CRM_xts_accountpayablevoucher.xts_hasreturn
+	, VWI_CRM_xts_accountpayablevoucher.xts_transactiondate
+	, VWI_CRM_xts_accountpayablevoucher.createdbyname
+	, VWI_CRM_xts_accountpayablevoucher.xts_totallandedcost
+	, VWI_CRM_xts_accountpayablevoucher.xts_businessunitid
+	, VWI_CRM_xts_accountpayablevoucher.modifiedonbehalfbyname
+	, VWI_CRM_xts_accountpayablevoucher.xts_duedate
+	, VWI_CRM_xts_accountpayablevoucher.xts_paymenttermsid
+	, VWI_CRM_xts_accountpayablevoucher.xts_balance_base
+	, VWI_CRM_xts_accountpayablevoucher.xts_totalvariance
+	, VWI_CRM_xts_accountpayablevoucher.xts_handlingname
+	, VWI_CRM_xts_accountpayablevoucher.xts_grandtotal
+	, VWI_CRM_xts_accountpayablevoucher.xts_grandtotal_base
+	, VWI_CRM_xts_accountpayablevoucher.xts_consumptiontax2amount
+	, VWI_CRM_xts_accountpayablevoucher.transactioncurrencyid
+	, VWI_CRM_xts_accountpayablevoucher.owningteam
+	, VWI_CRM_xts_accountpayablevoucher.createdby
+	, VWI_CRM_xts_accountpayablevoucher.modifiedby
+	, VWI_CRM_xts_accountpayablevoucher.xts_parentbusinessunitidname
+	, VWI_CRM_xts_accountpayablevoucher.createdbyyominame
+	, VWI_CRM_xts_accountpayablevoucher.owninguser
+	, VWI_CRM_xts_accountpayablevoucher.transactioncurrencyidname
+	, VWI_CRM_xts_accountpayablevoucher.xts_paymenttermsidname
+	, VWI_CRM_xts_accountpayablevoucher.ktb_prpotypeid
+	, VWI_CRM_xts_accountpayablevoucher.owningbusinessunit
+	, VWI_CRM_xts_accountpayablevoucher.xts_consumptiontax1amount
+	, VWI_CRM_xts_accountpayablevoucher.xts_consumptiontax2amount_base
+	, VWI_CRM_xts_accountpayablevoucher.xts_vendorid
+	, VWI_CRM_xts_accountpayablevoucher.xts_totalamount
+	, VWI_CRM_xts_accountpayablevoucher.statuscode
+	, VWI_CRM_xts_accountpayablevoucher.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_accountpayablevoucher.xts_totalconsumptiontax
+	, VWI_CRM_xts_accountpayablevoucher.xts_vendordescription
+	, VWI_CRM_xts_accountpayablevoucher.xts_totalwitholdingtaxamount_base
+	, VWI_CRM_xts_accountpayablevoucher.ktb_prpotypeidname
+	, VWI_CRM_xts_accountpayablevoucher.statecodename
+	, VWI_CRM_xts_accountpayablevoucher.xts_businessunitidname
+	, VWI_CRM_xts_accountpayablevoucher.xts_vendoridname
+	, VWI_CRM_xts_accountpayablevoucher.RowStatus
+	, VWI_CRM_xts_accountpayablevoucher.ktb_isallowcancel
+	, VWI_CRM_xts_accountpayablevoucher.ktb_externalcode
+	, VWI_CRM_xts_accountpayablevoucher.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_accountpayablevoucher a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_accountpayablevoucher 

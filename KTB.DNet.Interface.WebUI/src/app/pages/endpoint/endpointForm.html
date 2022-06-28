@@ -1,0 +1,32 @@
+﻿<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="Endpoint Permission Details" ba-panel-class="with-scroll">
+                <form name="form" ng-submit="Submit()">
+                    <div class="col-md-6">
+                        <standard-select label="Permission Code" name="PermissionCode" ng-model="endpointPermission.PermissionCode" options="permissionCodeOptions"
+                                         ng-disabled="isEditMode" required />
+                        <input-text label="Name" name="Name" ng-model="endpointPermission.Name" required></input-text>
+                        <input-text label="URI" name="URI" ng-model="endpointPermission.URI" required></input-text>
+                        <standard-select label="Endpoint Group" name="EndpointGroup" ng-model="endpointPermission.EndpointGroup" options="endpointGroupOptions"
+                            required />
+                        <standard-select label="Endpoint Type" name="EndpointType" ng-model="endpointPermission.EndpointType" options="transactionTypeOptions"
+                            required />
+                        <switcher label="Is Log Enabled" name="IsLogEnabled" switcher-style="info" text-on="YES" text-off="NO" ng-model="endpointPermission.IsLogEnabled"></switcher>
+                        <switcher label="Is Runtime Log Enabled" name="IsRuntimeLogEnabled" switcher-style="info" text-on="YES" text-off="NO" ng-model="endpointPermission.IsRuntimeLogEnabled"></switcher>
+                    </div>
+                    <div class="col-md-6">
+                        <standard-select label="Operation Type" name="OperationType" ng-model="endpointPermission.OperationType" options="operationTypeOptions"
+                            required/>
+                        <text-area label="Description" name="Description" ng-model="endpointPermission.Description" required></text-area>
+                        <switcher label="Is Scheduled" name="IsScheduled" switcher-style="info" text-on="YES" text-off="NO"  ng-model="endpointPermission.IsScheduled"></switcher>
+                    </div>
+                    <div class="col-md-12 text-right">
+                        <a ui-sref="endpoint.list" class="btn btn-default m-t-15 waves-effect">Back</a>
+                        <input ng-disabled="form.$invalid" type="submit" value="Save" class="btn btn-primary m-t-15 waves-effect">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,5 @@
+﻿DELETE rolePermission FROM APIRolePermission rolePermission
+JOIN APIClientRole clientRole ON clientRole.ClientId = @ClientId AND clientRole.Id = rolePermission.ClientRoleId  WHERE 
+rolePermission.PermissionId IN @ListOfRemovedPermissionId
+
+

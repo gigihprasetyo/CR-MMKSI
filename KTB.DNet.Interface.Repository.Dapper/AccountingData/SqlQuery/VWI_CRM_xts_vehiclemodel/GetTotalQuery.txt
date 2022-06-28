@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xts_vehiclemodel as VWI_CRM_xts_vehiclemodel WITH (NOLOCK) 
+{0}

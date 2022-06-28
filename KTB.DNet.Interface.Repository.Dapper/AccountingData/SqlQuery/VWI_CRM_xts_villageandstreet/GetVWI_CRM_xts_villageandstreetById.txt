@@ -1,0 +1,41 @@
+﻿SELECT 
+	ROW_NUMBER() OVER (Order by 0) AS IDRow
+	, createdonbehalfbyyominame
+	, modifiedonbehalfby
+	, xts_villageandstreet
+	, xts_villageandstreetid
+	, statecode
+	, statecodename
+	, xts_locking
+	, createdonbehalfby
+	, xts_provinceid
+	, importsequencenumber
+	, organizationidname
+	, modifiedbyyominame
+	, xts_countryid
+	, utcconversiontimezonecode
+	, createdbyyominame
+	, modifiedbyname
+	, versionnumber
+	, modifiedby
+	, createdby
+	, timezoneruleversionnumber
+	, xts_address1
+	, statuscodename
+	, modifiedon
+	, xts_postalcode
+	, xts_countryidname
+	, xts_cityidname
+	, xts_provinceidname
+	, modifiedonbehalfbyyominame
+	, statuscode
+	, createdbyname
+	, createdon
+	, organizationid
+	, createdonbehalfbyname
+	, modifiedonbehalfbyname
+	, xts_cityid
+	, overriddencreatedon
+	, xts_description
+FROM [dbo].[CRM_xts_villageandstreet] as VWI_CRM_xts_villageandstreet with(nolock)
+WHERE xts_villageandstreetid = @Id

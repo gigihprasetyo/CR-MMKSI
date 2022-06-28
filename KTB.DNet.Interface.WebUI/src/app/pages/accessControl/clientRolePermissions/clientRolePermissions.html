@@ -1,0 +1,31 @@
+﻿<section>
+    <div class="widgets">
+        <div class="row">
+            <div class="col-md-12">
+                <div ba-panel ba-panel-title="{{activePageTitle}}" ba-panel-class="with-scroll">
+                    <form name="form" ng-submit="Submit()">
+                        <div class="col-md-6">
+                            <standard-select label="Client" name="ClientId" ng-model="entity.ClientId" search-enabled="false" options="listOfClients"
+                                value="ClientId" text="Name" on-select-callback="onSelectClientCallback()" required/>
+                        </div>
+                        <div class="col-md-6">
+                            <standard-select label="Client Role" name="ClientRoleId" search-enabled="false" ng-model="entity.ClientRoleId" options="listOfClientRoles"
+                                on-select-callback="onSelectClientRoleCallback()" required />
+                        </div>
+
+                        <div ng-show="entity.ClientRoleId" class="col-md-12">
+                            <multi-select-jquery label="Permissions" all-button="true" name="PermissionIds" ng-model="entity.PermissionIds" options="listOfPermissions"
+                                value="Id" text="Name" required/>
+                        </div>
+
+                        <div class="col-md-12 text-right">
+                            <!-- <a ui-sref="accessControl.entity.list" class="btn btn-default m-t-15 waves-effect">Cancel</a> -->
+                            <input type="button" ng-click="clearForm()" class="btn btn-default m-t-15 waves-effect" value="Cancel" />
+                            <input ng-disabled="form.$invalid" type="submit" value="Save" class="btn btn-primary m-t-15 waves-effect">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,316 @@
+﻿
+IF OBJECT_ID('tempdb..#temp_ChassisMaster_VI') IS NOT NULL drop table #temp_ChassisMaster_VI
+IF OBJECT_ID('tempdb..#temp_ChassisMasterID_VI') IS NOT NULL drop table #temp_ChassisMasterID_VI
+
+/*Get Chassis Master ID by LastUpdatedTime*/
+create table #temp_ChassisMasterID_VI
+(
+	ChassisMasterID int
+)
+insert into #temp_ChassisMasterID_VI
+select {4}
+	ChassisMasterID
+from (
+	select ID as ChassisMasterID from ChassisMaster with(nolock)
+	where 1=1 {2}
+	union all
+	select ID as ChassisMasterID from ChassisMasterBB with(nolock)
+	where 1=1 {2}
+	union all
+	select ChassisMasterID from ChassisMasterPKT with(nolock)
+	where 1=1 {2}
+	union all
+	select ChassisMasterID from MSPRegistration with(nolock)
+	where 1=1 {2}
+	union all
+	select ChassisMasterID from PDI with(nolock)
+	where 1=1 {2}
+	union all
+	select ChassisMasterID from WarrantyActivation with(nolock)
+	where 1=1 {3}
+) x
+
+create table #temp_ChassisMaster_VI
+(
+	ID					int
+	, EndCustomerId		int
+	, ChassisNumber		nvarchar(300)
+	, isBB				int
+	, CategoryID		int
+	, VechileColorID	int
+	, VehicleKindID		int
+	, SoldDealerID		int
+	, EngineNumber		nvarchar(300)
+	, SerialNumber		nvarchar(300)
+	, ProductionYear	int
+	, FSProgram			nvarchar(300)
+	, LastUpdateTime	datetime
+)
+insert into #temp_ChassisMaster_VI
+SELECT 
+	ID,
+	EndCustomerId,
+	ChassisNumber,
+	isBB,
+	CategoryID,
+	VechileColorID,
+	VehicleKindID,
+	SoldDealerID,
+	EngineNumber,
+	SerialNumber,
+	ProductionYear,
+	isnull(FSProgram, '') as FSProgram,
+	LastUpdateTime
+FROM
+(
+	SELECT 
+		ID,
+		EndCustomerId,
+		ChassisNumber,
+		isBB=0,
+		CategoryID,
+		VechileColorID,
+		VehicleKindID,
+		SoldDealerID,
+		EngineNumber,
+		SerialNumber,
+		ProductionYear,
+		'' as FSProgram, --= (dbo.FNI_FSTypeFromChassisMaster_1(ChassisNumber)),
+		LastUpdateTime
+	FROM ChassisMaster WITH (NOLOCK)
+	WHERE RowStatus = 0 AND CategoryID IN (1, 2) --and FakturStatus = 4
+
+	UNION 
+	
+	SELECT 
+		ID,
+		EndCustomerId,
+		ChassisNumber,
+		isBB=1,
+		CategoryID,
+		VechileColorID,
+		VehicleKindID,
+		SoldDealerID,
+		EngineNumber,
+		SerialNumber,
+		ProductionYear,
+		'' as FSProgram, --= (dbo.FNI_FSTypeFromChassisMaster_1(ChassisNumber)),
+		LastUpdateTime
+	FROM ChassisMasterBB WITH (NOLOCK)
+	WHERE RowStatus = 0 AND CategoryID IN (1, 2)
+) ChassisMaster 
+{0}
+--ORDER BY ID OFFSET 20 * (1-1) ROWS FETCH NEXT 20 ROWS ONLY
+
+/*Set FSProgram*/
+update #temp_ChassisMaster_VI
+set FSProgram = isnull((dbo.FNI_FSTypeFromChassisMaster_1(ChassisNumber)), '')
+
+
+SELECT
+/**PagingIndexQuery**/ 
+	VWI_VehicleInformation.ChassisNumber	
+	,VWI_VehicleInformation.IsBB	
+	,VWI_VehicleInformation.CategoryCode	
+	,VWI_VehicleInformation.CategoryDesc	
+	,VWI_VehicleInformation.ColorCode	
+	,VWI_VehicleInformation.ColorIndName	
+	,VWI_VehicleInformation.ColorEngName	
+	,VWI_VehicleInformation.MaterialDescription	
+	,VWI_VehicleInformation.VehicleTypeCode	
+	,VWI_VehicleInformation.VehicleTypeDesc	
+	,VWI_VehicleInformation.ModelSearchTerm1
+	,VWI_VehicleInformation.ModelSearchTerm2	
+	,VWI_VehicleInformation.SegmentType	
+	,VWI_VehicleInformation.FuelType	
+	,VWI_VehicleInformation.TransmitType	
+	,VWI_VehicleInformation.DriveSystemType	
+	,VWI_VehicleInformation.VariantType	
+	,VWI_VehicleInformation.VehicleBrand	
+	,VWI_VehicleInformation.SpeedType	
+	,VWI_VehicleInformation.VehicleKindID	
+	,VWI_VehicleInformation.Code	
+	,VWI_VehicleInformation.VehicleKindDesc	
+	,VWI_VehicleInformation.SoldDealerID	
+	,VWI_VehicleInformation.DealerCode	
+	,VWI_VehicleInformation.DealerName	
+	--,VWI_VehicleInformation.EngineNumber	
+	,VWI_VehicleInformation.SerialNumber	
+	,VWI_VehicleInformation.ProductionYear	
+	,VWI_VehicleInformation.FleetCode	
+	,VWI_VehicleInformation.OpenFakturDate	
+	,VWI_VehicleInformation.FakturDate	
+	,VWI_VehicleInformation.FSExtended	
+	,VWI_VehicleInformation.PKTDate
+	,VWI_VehicleInformation.FSProgram	
+	,VWI_VehicleInformation.LastUpdateTime
+	,VWI_VehicleInformation.WSCDuration
+	,VWI_VehicleInformation.WSCStart
+	,VWI_VehicleInformation.WSCEnd
+	,VWI_VehicleInformation.WebModel
+	,VWI_VehicleInformation.WebVariant
+	,VWI_VehicleInformation.ColorWeb
+	,VWI_VehicleInformation.PDIExpiredStatus
+	,VWI_VehicleInformation.PDIExpiredDate
+	,VWI_VehicleInformation.WarrantyActivationStatus
+	,VWI_VehicleInformation.WarrantyActivationDate
+/**EndPagingIndexQuery**/
+FROM
+(
+	SELECT distinct
+		ChassisMaster.ID,
+		ChassisMaster.ChassisNumber,
+		ChassisMaster.isBB AS IsBB,
+		isnull(f.CategoryCode, '') AS CategoryCode,
+		CategoryDesc=isnull(f.Description, ''),
+		isnull(b.ColorCode, '') AS ColorCode,
+		isnull(b.ColorIndName, '') AS ColorIndName,
+		isnull(b.ColorEngName, '') AS ColorEngName,
+		isnull(b.MaterialDescription, '') AS MaterialDescription,
+		VehicleTypeCode=isnull(c.VechileTypeCode, ''),
+		VehicleTypeDesc=isnull(c.Description, ''),
+		ModelSearchTerm1 = isnull(j.VechileModelIndCode, ''),
+		ModelSearchTerm2 = isnull(j.IndDescription, ''),
+		isnull(c.SegmentType, '') AS SegmentType,
+		isnull(c.FuelType, '') AS FuelType,
+		isnull(c.TransmitType, '') AS TransmitType,
+		isnull(c.DriveSystemType, '') AS DriveSystemType,
+		isnull(c.VariantType, '') AS VariantType,
+		VehicleBrand = 'Mitsubishi',
+		isnull(c.SpeedType, '') AS SpeedType,
+		ChassisMaster.VehicleKindID,
+		isnull(d.Code, '') AS Code,
+		VehicleKindDesc=isnull(c.Description, ''),
+		ChassisMaster.SoldDealerID,
+		e.DealerCode,
+		e.DealerName,
+		isnull(ChassisMaster.EngineNumber, '') AS EngineNumber,
+		isnull(ChassisMaster.SerialNumber, '') AS SerialNumber,
+		isnull(ChassisMaster.ProductionYear, '') AS ProductionYear,
+		FleetCode='',
+		isnull(g.OpenFakturDate, '1753.01.01') AS OpenFakturDate,
+		isnull(g.FakturDate, '1753.01.01') AS FakturDate,
+		ChassisMaster.FSProgram,
+		FSExtended='',
+		isnull(convert(varchar, k.PKTDate, 126), '') AS PKTDate, --a.LastUpdateTime,
+	    WSCDuration	= ISNULL(WSC.WSCDuration, 0),  
+		WSCStart = CASE  
+					WHEN ISNULL(k.PKTDate, '19000101') > '19000101' AND ISNULL(WSC.WSCDuration, 0) > 0 
+					THEN k.PKTDate ELSE '1753.01.01' END,  
+		WSCEnd = CASE  
+					WHEN ISNULL(k.PKTDate, '19000101') > '19000101' AND ISNULL(WSC.WSCDuration, 0) > 0 
+					THEN DATEADD(DAY, WSC.WSCDuration, k.PKTDate)ELSE '1753.01.01' END,
+		WebModel = VW.VehicleModel_S1, 
+		WebVariant = VW.VehicleDesc,
+		ColorWeb = [dbo].[fn_GetWebColor]( b.ColorEngName), 
+		PDIExpiredStatus = case 
+								when m.Id is null then ''
+								when m.RowStatus = 0 then 'Active'
+								when m.RowStatus = -1 then 'Expired'
+							end,
+		PDIExpiredDate = case 
+							when m.RowStatus = 0 then '' 
+							else isnull(convert(varchar, n.ExpiredPDIDate, 126), '') 
+						 end,
+		WarrantyActivationStatus = isnull(convert(varchar, o.[Status]), ''),
+		WarrantyActivationDate = isnull(convert(varchar, o.WADate, 126), ''),
+		(SELECT MAX(LastUpdateDate)
+			FROM (VALUES (ChassisMaster.LastUpdateTime),(k.LastUpdateTime),(l.LastUpdateTime),(m.LastUpdateTime),(o.LastUpdateTime)) AS UpdateDate(LastUpdateDate)) 
+		AS LastUpdateTime
+	FROM #temp_ChassisMaster_VI ChassisMaster with(nolock)
+	LEFT JOIN VechileColor b WITH (NOLOCK) 
+		ON ChassisMaster.VechileColorID = b.ID
+		AND b.RowStatus = 0
+	LEFT JOIN VechileType c WITH (NOLOCK) 
+		ON c.ID = b.VechileTypeID
+		AND c.RowStatus = 0
+	LEFT JOIN VehicleKind d WITH (NOLOCK) 
+		ON ChassisMaster.VehicleKindID = d.ID
+		AND d.RowStatus = 0
+	LEFT JOIN Dealer e WITH (NOLOCK) 
+		ON ChassisMaster.SoldDealerID = e.ID
+		AND e.RowStatus = 0
+	LEFT JOIN Category f WITH (NOLOCK) 
+		ON ChassisMaster.CategoryID = f.ID
+		AND f.RowStatus = 0
+	LEFT JOIN EndCustomer g WITH (NOLOCK) 
+		ON ChassisMaster.EndCustomerID = g.ID
+		AND g.RowStatus = 0 
+	LEFT JOIN VechileModel j WITH (NOLOCK) 
+		ON c.ModelID = j.ID
+		AND j.RowStatus = 0
+	LEFT JOIN MSPRegistration l WITH (NOLOCK) 
+		ON l.ChassisMasterID = ChassisMaster.ID
+		AND l.RowStatus = 0
+	/* new logic */
+	OUTER APPLY
+	(
+		SELECT  TOP 1 
+			x.Id,
+			x.ChassisMasterID,
+			x.PKTDate,
+			x.LastUpdateTime
+		FROM    ChassisMasterPKT x with(nolock)
+		WHERE   ChassisMaster.ID = x.ChassisMasterID
+			and RowStatus = 0
+		ORDER BY x.Id desc
+	) k
+	OUTER APPLY
+	(
+		SELECT  TOP 1 
+			x.ID,
+			x.LastUpdateTime,
+			x.RowStatus
+		FROM    PDI x with(nolock)
+		WHERE   ChassisMaster.ID = x.ChassisMasterID
+		ORDER BY x.LastUpdateTime desc
+	) m
+	OUTER APPLY
+	(
+		SELECT  TOP 1 
+			x.Id,
+			x.PDIID,
+			x.ExpiredPDIDate,
+			x.LastUpdatedTime
+		FROM    PDILog x with(nolock)
+		WHERE   m.ID = x.PDIID
+		ORDER BY x.ExpiredPDIDate desc
+	) n
+	left join WarrantyActivation o with(nolock)
+		on ChassisMaster.ID = o.ChassisMasterID
+		and m.ID = o.PDIID
+		or k.Id = o.ChassisMasterPKTID
+	/* end new logic */
+	OUTER APPLY  
+	(  
+		SELECT  TOP 1  
+		ISNULL(CONVERT(INT,w3.Value), 0) WSCDuration  
+		FROM  dbo.WSCParameterHeader w1  WITH (NOLOCK) 
+		INNER JOIN dbo.WSCParameterVehicle w2 WITH (NOLOCK) 
+			ON w2.WSCParameterHeaderID = w1.ID  
+		INNER JOIN dbo.WSCParameterDetail w3 WITH (NOLOCK) 
+			ON w3.WSCParameterHeaderID = w1.ID  
+		--INNER JOIN dbo.VechileType   w4 WITH (NOLOCK) ON w4.ID = w2.VechileTypeID  
+		WHERE  1 = 1  
+		   AND w1.RowStatus = 0  
+		   AND w2.RowStatus = 0  
+		   AND w3.RowStatus = 0  
+		   AND w1.ClaimType = 'Z2'  
+		   AND w1.ID IN (4, 5)  
+		   AND w3.Kind = 20  
+		   AND w2.VechileTypeID = b.VechileTypeID  
+		   AND w3.Value <> ''  
+		ORDER BY w1.ID DESC  
+	) WSC 
+	OUTER APPLY
+	(
+		SELECT	TOP 1
+				vw.VehicleDesc, vw.VehicleModel_S1
+		FROM	dbo.VehicleTypeWebsite vw WITH (NOLOCK) 
+		WHERE	c.VechileTypeCode = vw.VehicleType
+				OR	LEFT(c.VechileTypeCode, 2) = LEFT(vw.VehicleType, 2)
+		ORDER BY(CASE WHEN c.VechileTypeCode = vw.VehicleType THEN 1 ELSE 0 END) DESC
+	) VW
+) VWI_VehicleInformation
+{1}
+

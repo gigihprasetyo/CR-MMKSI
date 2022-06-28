@@ -1,0 +1,3014 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F4CC7463-4CBB-4336-AEAF-AC8FBC38DD9A}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>KTB.DNet.Domain</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace />
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>none</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|x64'">
+    <OutputPath>bin\</OutputPath>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|AnyCPU'">
+    <OutputPath>bin\SIT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|x64'">
+    <OutputPath>bin\x64\SIT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|x64'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|AnyCPU' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|x64' ">
+    <OutputPath>bin\</OutputPath>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA.DNET.36|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\QA.DNET.36\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA.DNET.36|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\QA.DNET.36\</OutputPath>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod.DNET.36|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Prod.DNET.36\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod.DNET.36|x64'">
+    <OutputPath>bin\x64\Prod.DNET.36\</OutputPath>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x64'">
+    <OutputPath>bin\</OutputPath>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|x64'">
+    <OutputPath>bin\</OutputPath>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|x64'">
+    <OutputPath>bin\</OutputPath>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|x64'">
+    <OutputPath>bin\</OutputPath>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>1</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|x64'">
+    <OutputPath>bin\</OutputPath>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KTB.DNet.DataMapper.Framework\KTB.DNet.DataMapper.Framework.vbproj">
+      <Name>KTB.DNet.DataMapper.Framework</Name>
+      <Project>{CC23FF7E-BC14-4D66-9E96-6E0A51576A34}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain.Search\KTB.DNet.Domain.Search.vbproj">
+      <Name>KTB.DNet.Domain.Search</Name>
+      <Project>{06A29192-8B96-4DFB-9C6C-AA5B4DDF8D36}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Caching.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.Design, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessoriesCategory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AllocationRealTimeService.vb" />
+    <Compile Include="AllocationRealtimeServiceTemplate.vb" />
+    <Compile Include="AssistServiceIncomingBP.vb" />
+    <Compile Include="AttchPramClaimReason.vb" />
+    <Compile Include="CityAreaRegion.vb" />
+    <Compile Include="EnumAPOutstanding.vb" />
+    <Compile Include="PPNMaster.vb" />
+    <Compile Include="CustomerCaseNotificationPIC.vb" />
+    <Compile Include="DealerContactNotificationCase.vb" />
+    <Compile Include="DealerVehiclePrice.vb" />
+    <Compile Include="DealerVehiclePriceDetail.vb" />
+    <Compile Include="DiscountProposalPricetoParameter.vb" />
+    <Compile Include="EnumDocTypeDepositC2InterestHeader.vb" />
+    <Compile Include="EnumFieldFixPartOrderStatus.vb" />
+    <Compile Include="EnumGlobalServiceReminder.vb" />
+    <Compile Include="EnumMasterDealer.vb" />
+    <Compile Include="EnumMSPProgram.vb" />
+    <Compile Include="EnumSparepartEdoc.vb" />
+    <Compile Include="EnumStallMaster.vb" />
+    <Compile Include="FlatRateMasterFieldFix.vb" />
+    <Compile Include="FlatRateMasterFS.vb" />
+    <Compile Include="FlatRateMasterPM.vb" />
+    <Compile Include="FleetGradeDiscount.vb" />
+    <Compile Include="FleetGradeRetention.vb" />
+    <Compile Include="ChassisMasterClaimDMSReminder.vb" />
+    <Compile Include="ChassisMasterClaimEmailQueue.vb" />
+    <Compile Include="CBUReturnSendSAP.vb" />
+    <Compile Include="GRKind.vb" />
+    <Compile Include="InterestPPHDetail.vb" />
+    <Compile Include="InterestPPHHeader.vb" />
+    <Compile Include="GSRStaging.vb" />
+    <Compile Include="MessageNotification.vb" />
+    <Compile Include="MessageTemplate.vb" />
+    <Compile Include="MSPExFakturPajak.vb" />
+    <Compile Include="MSPExWarrantyMaster.vb" />
+    <Compile Include="MSPExMaxPM.vb" />
+    <Compile Include="PrefixMSPRegistration.vb" />
+    <Compile Include="NationalEvent.vb" />
+    <Compile Include="NationalEventCity.vb" />
+    <Compile Include="NationalEventDetail.vb" />
+    <Compile Include="NationalEventDetailDate.vb" />
+    <Compile Include="NationalEventType.vb" />
+    <Compile Include="NationalEventVenue.vb" />
+    <Compile Include="SalesVechileModel.vb" />
+    <Compile Include="ServiceMMS.vb" />
+    <Compile Include="ServiceTemplateGRLabor.vb" />
+    <Compile Include="ServiceTemplateGRPartDetail.vb" />
+    <Compile Include="SAPCustomerProfile.vb" />
+    <Compile Include="SFDCampaign.vb" />
+    <Compile Include="SFDCustomer.vb" />
+    <Compile Include="SFDCustomerContact.vb" />
+    <Compile Include="SalesOrderInterest.vb" />
+    <Compile Include="ServiceDueDateNotification.vb" />
+    <Compile Include="SFServiceHistoryBooklet.vb" />
+    <Compile Include="SFSparepartHistory.vb" />
+    <Compile Include="DocumentCancel.vb" />
+    <Compile Include="OCRFamilyCard.vb" />
+    <Compile Include="SparePartEDocument.vb" />
+    <Compile Include="ServiceBooking.vb" />
+    <Compile Include="ServiceBookingActivity.vb" />
+    <Compile Include="ServiceStandardTime.vb" />
+    <Compile Include="ServiceTemplateFFLabor.vb" />
+    <Compile Include="ServiceTemplateFFPartDetail.vb" />
+    <Compile Include="ServiceTemplateFFPartHeader.vb" />
+    <Compile Include="ServiceTemplateFSLabor.vb" />
+    <Compile Include="ServiceTemplateFSPartDetail.vb" />
+    <Compile Include="ServiceTemplateFSPartHeader.vb" />
+    <Compile Include="ServiceTemplatePMLabor.vb" />
+    <Compile Include="ServiceTemplatePMPartDetail.vb" />
+    <Compile Include="ServiceTemplatePMPartHeader.vb" />
+    <Compile Include="SparepartNotaRetur.vb" />
+    <Compile Include="SpClaimDocument.vb" />
+    <Compile Include="SPKMasterCountryCodePhone.vb" />
+    <Compile Include="SparePartForecastDetail.vb" />
+    <Compile Include="SparePartForecastHeader.vb" />
+    <Compile Include="SparePartForecastMaster.vb" />
+    <Compile Include="SparePartForeCastOrder.vb" />
+    <Compile Include="SparePartForecastStock.vb" />
+    <Compile Include="SPSupportClaimDoc.vb" />
+    <Compile Include="SstTemplate.vb" />
+    <Compile Include="StallMaster.vb" />
+    <Compile Include="StallWorkingTime.vb" />
+    <Compile Include="SPKNationalEventReport.vb" />
+    <Compile Include="SPKNationalEvent.vb" />
+    <Compile Include="TempServiceBookingActivity.vb" />
+    <Compile Include="TOPSPPenalty.vb" />
+    <Compile Include="CcAttribute.vb" />
+    <Compile Include="CcComplaint.vb" />
+    <Compile Include="CcCSPerformanceCalculationHistory.vb" />
+    <Compile Include="CcCSPerformanceClasification.vb" />
+    <Compile Include="CcCSPerformanceCluster.vb" />
+    <Compile Include="CcCSPerformanceClusterDealer.vb" />
+    <Compile Include="CcCSPerformanceMaster.vb" />
+    <Compile Include="CcCSPerformanceParameter.vb" />
+    <Compile Include="CcCSPerformanceResultDetail.vb" />
+    <Compile Include="CcCSPerformanceResultHeader.vb" />
+    <Compile Include="CcCSPerformanceSubParameter.vb" />
+    <Compile Include="CcCSPerformanceSubParameterAttribute.vb" />
+    <Compile Include="CcCSPerformanceSubParameterScore.vb" />
+    <Compile Include="CcFactor.vb" />
+    <Compile Include="CcPerformanceReport.vb" />
+    <Compile Include="ChassisMasterATA.vb" />
+    <Compile Include="ClaimDebitNote.vb" />
+    <Compile Include="ClaimSPBillingRetur.vb" />
+    <Compile Include="ClaimSPBillingReturDetail.vb" />
+    <Compile Include="DealerFacility.vb" />
+    <Compile Include="DealerMasterCashManagement.vb" />
+    <Compile Include="DealerMasterLegalStatus.vb" />
+    <Compile Include="DealerMasterReconAccount.vb" />
+    <Compile Include="DealerMasterSortKey.vb" />
+    <Compile Include="DealerMasterWITHOLDTax.vb" />
+    <Compile Include="DealerOperationAreaBussiness.vb" />
+    <Compile Include="DealerSalesOrganization.vb" />
+    <Compile Include="DealerPaymentMethod.vb" />
+    <Compile Include="DealerStallEquipment.vb" />
+    <Compile Include="DiscountMaster.vb" />
+    <Compile Include="DiscountProposalDetail.vb" />
+    <Compile Include="DiscountProposalDetailApproval.vb" />
+    <Compile Include="DiscountProposalDetailApprovaltoSPL.vb" />
+    <Compile Include="DiscountProposalDetailCustomer.vb" />
+    <Compile Include="DiscountProposalDetailDocument.vb" />
+    <Compile Include="DiscountProposalDetailOwnership.vb" />
+    <Compile Include="DiscountProposalDetailPrice.vb" />
+    <Compile Include="DiscountProposalEmailUser.vb" />
+    <Compile Include="DiscountProposalHeader.vb" />
+    <Compile Include="DiscountProposalParameter.vb" />
+    <Compile Include="DiscountProposalProgramReguler.vb" />
+    <Compile Include="ChassisMasterClaimDetail.vb" />
+    <Compile Include="ChassisMasterClaimHeader.vb" />
+    <Compile Include="ChassisMasterESTOList.vb" />
+    <Compile Include="ChassisMasterLogisticCompany.vb" />
+    <Compile Include="ContactDealer.vb" />
+    <Compile Include="EnumCBUReturn.vb" />
+    <Compile Include="DocumentUpload.vb" />
+    <Compile Include="DRMasterGeneral.vb" />
+    <Compile Include="CODOutstanding.vb" />
+    <Compile Include="CODPayment.vb" />
+    <Compile Include="DealerCompany.vb" />
+    <Compile Include="DealerCompanyToDealer.vb" />
+    <Compile Include="DepositC2InterestDetail.vb" />
+    <Compile Include="DepositC2InterestHeader.vb" />
+    <Compile Include="EnumDocumentUpload.vb" />
+    <Compile Include="EFakturHeader.vb" />
+    <Compile Include="EFakturItem.vb" />
+    <Compile Include="EnumEFaktur.vb" />
+    <Compile Include="EnumESRUT.vb" />
+    <Compile Include="EnumMSPEx.vb" />
+    <Compile Include="EnumStatusDSFLeasingClaim.vb" />
+    <Compile Include="EnumOrganizationBranchType.vb" />
+    <Compile Include="EnumWarrantyActivation.vb" />
+    <Compile Include="ESRUTDownloadLog.vb" />
+    <Compile Include="ESRUTHeader.vb" />
+    <Compile Include="ESRUTItem.vb" />
+    <Compile Include="BenefitClaimDeducted.vb" />
+    <Compile Include="BenefitClaimDeductedHistory.vb" />
+    <Compile Include="DSFLeasingClaim.vb" />
+    <Compile Include="DSFLeasingClaimDocument.vb" />
+    <Compile Include="FleetCustomerDetail.vb" />
+    <Compile Include="FleetCustomerDetailMapping.vb" />
+    <Compile Include="FleetCustomerHeader.vb" />
+    <Compile Include="IRAccDocNumber.vb" />
+    <Compile Include="MSPExDebitCharge.vb" />
+    <Compile Include="MSPExDebitMemo.vb" />
+    <Compile Include="MSPExMappingtoFSKind.vb" />
+    <Compile Include="MSPExMaster.vb" />
+    <Compile Include="MSPExPayment.vb" />
+    <Compile Include="MSPExPaymentDetail.vb" />
+    <Compile Include="MSPExRegistration.vb" />
+    <Compile Include="MSPExType.vb" />
+    <Compile Include="PDILog.vb" />
+    <Compile Include="PDITemplate.vb" />
+    <Compile Include="PDISpecimen.vb" />
+    <Compile Include="PKTSpecimen.vb" />
+    <Compile Include="PKTTemplate.vb" />
+    <Compile Include="PMKindDuration.vb" />
+    <Compile Include="MessageService.vb" />
+    <Compile Include="MessageServiceData.vb" />
+    <Compile Include="MessageServiceDetail.vb" />
+    <Compile Include="MessageServiceLog.vb" />
+    <Compile Include="MessageTransaction.vb" />
+    <Compile Include="SPLDetailDocument.vb" />
+    <Compile Include="PKDetailtoDiscount.vb" />
+    <Compile Include="SPLDetailtoSPL.vb" />
+    <Compile Include="StatusChangeHistorySendEmailFlag.vb" />
+    <Compile Include="TOPSPTransferOutstanding.vb" />
+    <Compile Include="VechileTypeGeneral.vb" />
+    <Compile Include="VWI_AllocationRealTimeService.vb" />
+    <Compile Include="VWI_ServiceAdvisor.vb" />
+    <Compile Include="VWI_ServiceBooking.vb" />
+    <Compile Include="VWI_ServiceCostEstimation.vb" />
+    <Compile Include="VW_SalesOrderInterest.vb" />
+    <Compile Include="VWI_FinishUnitCeiling.vb" />
+    <Compile Include="VWI_FinishUnitPayment.vb" />
+    <Compile Include="VW_ServiceTemplateActivity.vb" />
+    <Compile Include="VW_FlatRateMaster.vb" />
+    <Compile Include="VW_ServiceTemplateDetailPart.vb" />
+    <Compile Include="VW_ServiceTemplateHeader.vb" />
+    <Compile Include="VW_ServiceTemplateLabor.vb" />
+    <Compile Include="V_LogisticPriceAndNationality.vb" />
+    <Compile Include="RevisionTransferActual.vb" />
+    <Compile Include="MasterCostCentertoSubCategoryVehicle.vb" />
+    <Compile Include="SparePartMasterPrice.vb" />
+    <Compile Include="ServiceReminderAnomaly.vb" />
+    <Compile Include="TOPSPPenaltyDetail.vb" />
+    <Compile Include="V_TOPSPTransferPaymentDetail.vb" />
+    <Compile Include="VWI_MobileServiceReminder.vb" />
+    <Compile Include="VWI_MSPExMembership.vb" />
+    <Compile Include="VWI_ServiceReminder.vb" />
+    <Compile Include="ServiceReminder.vb" />
+    <Compile Include="ServiceReminderFollowUp.vb" />
+    <Compile Include="SparePartDueDateNotification.vb" />
+    <Compile Include="TOPSPAccountingNo.vb" />
+    <Compile Include="TOPTransferControl.vb" />
+    <Compile Include="SalesmanDSE.vb" />
+    <Compile Include="SalesmanDSEAllocation.vb" />
+    <Compile Include="SalesmanDSEAssignment.vb" />
+    <Compile Include="SAPCustomerMapping.vb" />
+    <Compile Include="SPKDetailCustomer.vb" />
+    <Compile Include="SPKDetailCustomerProfile.vb" />
+    <Compile Include="TrainingCenterEmail.vb" />
+    <Compile Include="TrStatusToLeadStatusCodeToLeadStateCode.vb" />
+    <Compile Include="TrLeadStatusToStatus.vb" />
+    <Compile Include="BabitApprovalDocument.vb" />
+    <Compile Include="BabitBudgetDetail.vb" />
+    <Compile Include="BabitBudgetHeader.vb" />
+    <Compile Include="BabitDealerAllocation.vb" />
+    <Compile Include="BabitDisplayCar.vb" />
+    <Compile Include="BabitEventProposalActivity.vb" />
+    <Compile Include="BabitEventProposalDetail.vb" />
+    <Compile Include="BabitEventProposalDocument.vb" />
+    <Compile Include="BabitEventProposalHeader.vb" />
+    <Compile Include="BabitEventReportActivity.vb" />
+    <Compile Include="BabitEventReportApprovalDoc.vb" />
+    <Compile Include="BabitEventReportDetail.vb" />
+    <Compile Include="BabitEventReportDocument.vb" />
+    <Compile Include="BabitEventReportHeader.vb" />
+    <Compile Include="BabitEventReportJV.vb" />
+    <Compile Include="BabitEventReportJVtoReceipt.vb" />
+    <Compile Include="BabitEventReportReceipt.vb" />
+    <Compile Include="BabitIklanDetail.vb" />
+    <Compile Include="BabitDocument.vb" />
+    <Compile Include="BabitEventDetail.vb" />
+    <Compile Include="BabitHeader.vb" />
+    <Compile Include="BabitMarBox.vb" />
+    <Compile Include="BabitMarketingBox.vb" />
+    <Compile Include="BabitMasterAdditionalAllocation.vb" />
+    <Compile Include="BabitMasterEventType.vb" />
+    <Compile Include="BabitMasterLocation.vb" />
+    <Compile Include="BabitMasterRetailTarget.vb" />
+    <Compile Include="BabitMasterPrice.vb" />
+    <Compile Include="BabitPameranDetail.vb" />
+    <Compile Include="BabitPameranExpense.vb" />
+    <Compile Include="BabitParameterDetail.vb" />
+    <Compile Include="BabitParameterHeader.vb" />
+    <Compile Include="BabitReportDocument.vb" />
+    <Compile Include="BabitReportEventDetail.vb" />
+    <Compile Include="BabitReportHeader.vb" />
+    <Compile Include="BabitReportJV.vb" />
+    <Compile Include="BabitReportJVtoReceipt.vb" />
+    <Compile Include="BabitReportReceipt.vb" />
+    <Compile Include="BabitRetailTargetToAdditionalAllocation.vb" />
+    <Compile Include="BabitSharePointFileAttributes.vb" />
+    <Compile Include="BabitSpecialCity.vb" />
+    <Compile Include="BabitSpecialProvince.vb" />
+    <Compile Include="BCPDynamicQuery.vb" />
+    <Compile Include="EnumBabitGroupware.vb" />
+    <Compile Include="EventCategoryDetail.vb" />
+    <Compile Include="EventCategoryHeader.vb" />
+    <Compile Include="EventDealerDetail.vb" />
+    <Compile Include="EventDealerDocument.vb" />
+    <Compile Include="EventDealerHeader.vb" />
+    <Compile Include="EventDealerRequiredDocument.vb" />
+    <Compile Include="MasterAccrued.vb" />
+    <Compile Include="MasterCostCenter.vb" />
+    <Compile Include="MasterInternalOrder.vb" />
+    <Compile Include="FreeServicePartDetail.vb" />
+    <Compile Include="DealerPOTarget.vb" />
+    <Compile Include="DataTrainingWajib.vb" />
+    <Compile Include="DetailClass.vb" />
+    <Compile Include="EnumTrAdditionalClass.vb" />
+    <Compile Include="EnumTrCourse.vb" />
+    <Compile Include="EnumTrMRTC.vb" />
+    <Compile Include="EnumTagihanTraining.vb" />
+    <Compile Include="GlobalUpload.vb" />
+    <Compile Include="JobPositionCategory.vb" />
+    <Compile Include="JobPositionCategoryArea.vb" />
+    <Compile Include="JobPositionCategoryToArea.vb" />
+    <Compile Include="JobPositionToCategory.vb" />
+    <Compile Include="MDPDealerDailyStock.vb" />
+    <Compile Include="MDPDealerMonthlyStock.vb" />
+    <Compile Include="MDPMasterDealer.vb" />
+    <Compile Include="MDPMasterDealerHistory.vb" />
+    <Compile Include="MDPMasterVehicle.vb" />
+    <Compile Include="MDPMasterVehicleHistory.vb" />
+    <Compile Include="MonthlyDocumentToFakturEvidance.vb" />
+    <Compile Include="up_RetrieveFreeService_Service_Reminder.vb" />
+    <Compile Include="ValidResult.vb" />
+    <Compile Include="VechileColorIsActiveOnPK.vb" />
+    <Compile Include="VWI_ChassisStatusFaktur.vb" />
+    <Compile Include="VWI_Campaign.vb" />
+    <Compile Include="SaldoDepositB.vb" />
+    <Compile Include="SalesmanGrade.vb" />
+    <Compile Include="SalesmanHeaderToDealer.vb" />
+    <Compile Include="TrAdditionalClass.vb" />
+    <Compile Include="TrBookingClass.vb" />
+    <Compile Include="TrBookingCourse.vb" />
+    <Compile Include="TrCertificateConfig.vb" />
+    <Compile Include="TrCourseCategory.vb" />
+    <Compile Include="TrCourseCategoryAllocation.vb" />
+    <Compile Include="TrCourseCategoryToJobPosition.vb" />
+    <Compile Include="TrFreePass.vb" />
+    <Compile Include="TrMRTC.vb" />
+    <Compile Include="TrMRTCDealer.vb" />
+    <Compile Include="TrMRTCPIC.vb" />
+    <Compile Include="TrBillingDetail.vb" />
+    <Compile Include="TrBillingHeader.vb" />
+    <Compile Include="TrReplacementDetail.vb" />
+    <Compile Include="TrReplacementHeader.vb" />
+    <Compile Include="TrTraineeDataLog.vb" />
+    <Compile Include="TrTraineeLevel.vb" />
+    <Compile Include="TrTraineeLevelDetail.vb" />
+    <Compile Include="TrTraineeLevelHeader.vb" />
+    <Compile Include="TrTraineePaymentDetail.vb" />
+    <Compile Include="TrTraineePaymentHeader.vb" />
+    <Compile Include="TrTraineeSalesmanHeader.vb" />
+    <Compile Include="VWI_Dealer.vb" />
+    <Compile Include="VWI_EmployeeResign.vb" />
+    <Compile Include="VWI_POEstimateHaveBillingDetail.vb" />
+    <Compile Include="VWI_POEstimateHaveBillingOne.vb" />
+    <Compile Include="VWI_POReceiptDealer.vb" />
+    <Compile Include="VWI_QuickProductAll.vb" />
+    <Compile Include="VWI_SFDMobileSalesman.vb" />
+    <Compile Include="VWI_PurchaseReturn.vb" />
+    <Compile Include="VWI_SparePartPODOHaveBillingOne.vb" />
+    <Compile Include="DealerSalesTarget.vb" />
+    <Compile Include="BapiLog.vb" />
+    <Compile Include="DealerSystems.vb" />
+    <Compile Include="EnumDepositLine.vb" />
+    <Compile Include="Karoseri.vb" />
+    <Compile Include="Leasing.vb" />
+    <Compile Include="MenuControl.vb" />
+    <Compile Include="SFReference.vb" />
+    <Compile Include="OTP.vb" />
+    <Compile Include="SparePartMasterTOP.vb" />
+    <Compile Include="SparePartPOTypeTOP.vb" />
+    <Compile Include="AccessoriesSale.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccessoriesSaleDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ActivityParameter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ActivityType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertCategory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertConfirmation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertGroup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertMasterMedia.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertMedia.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertModul.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertSound.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlokasiStok_view.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnnouncementDoc.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnnualDepositAHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnnualDiscount.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnnualDiscountAchievement.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnnualDiscountAchievementHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="APPayment.vb" />
+    <Compile Include="APPaymentDetail.vb" />
+    <Compile Include="ARReceipt.vb" />
+    <Compile Include="ARReceiptDetail.vb" />
+    <Compile Include="AppConfig.vb" />
+    <Compile Include="ApplicationException.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AppSetting.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Area1.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Area2.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssistCutOffPeriod.vb" />
+    <Compile Include="AssistExpenseService.vb" />
+    <Compile Include="AssistExpenseSpareParts.vb" />
+    <Compile Include="AssistKeyUpload.vb" />
+    <Compile Include="AssistMasterModel.vb" />
+    <Compile Include="AssistModule.vb" />
+    <Compile Include="AssistPartSales.vb" />
+    <Compile Include="AssistPartStock.vb" />
+    <Compile Include="AssistSalesChannel.vb" />
+    <Compile Include="AssistSalesPartSalesman.vb" />
+    <Compile Include="AssistServiceIncoming.vb" />
+    <Compile Include="AssistServicePlace.vb" />
+    <Compile Include="AssistServiceType.vb" />
+    <Compile Include="AssistSparePartSalesmant.vb" />
+    <Compile Include="AssistUploadLog.vb" />
+    <Compile Include="AssistWorkOrderType.vb" />
+    <!-- <Compile Include="AssistWorkOrderCategory.vb" />     -->
+    <Compile Include="BusinessSectorHeader.vb" />
+    <Compile Include="BusinessSectorDetail.vb" />
+    <Compile Include="CarrosserieDetail.vb" />
+    <Compile Include="CarrosserieHeader.vb" />
+    <!-- <Compile Include="ChassisMasterDocument.vb" /> -->
+    <Compile Include="Competitor.vb" />
+    <Compile Include="CustomerGroup.vb" />
+    <!-- <Compile Include="EnumAssistExpense.vb" /> -->
+    <!-- <Compile Include="EnumAssistModule.vb" /> -->
+    <!-- <Compile Include="EnumAssistStatusUpload.vb" /> -->
+    <!-- <Compile Include="EnumMSPMasterStatus.vb" /> -->
+    <!-- <Compile Include="EnumStatusMSP.vb" /> -->
+    <Compile Include="CustomerRequestOCR.vb" />
+    <Compile Include="DMSWOWarrantyClaim.vb" />
+    <Compile Include="Fleet.vb" />
+    <Compile Include="ATPHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditParameter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditParameterPhoto.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditSchedule.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditScheduleAuditor.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditScheduleDealer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditScheduleDealerDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditScheduleDealerReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditScheduleDealerReportForm.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Babit.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BabitAllocation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BabitPayment.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BabitProposal.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BabitProposalHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bank.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasicProduct.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BCPQuery.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BCPRoles.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BenefitClaimDetails.vb" />
+    <Compile Include="BenefitClaimHeader.vb" />
+    <Compile Include="BenefitClaimHeaderEnumStatus.vb" />
+    <Compile Include="BenefitClaimJV.vb" />
+    <Compile Include="BenefitClaimReceipt.vb" />
+    <Compile Include="BenefitClaimRecommendation.vb" />
+    <Compile Include="BenefitEventDetail.vb" />
+    <Compile Include="BenefitEventEnumStatus.vb" />
+    <Compile Include="BenefitEventHeader.vb" />
+    <Compile Include="BenefitMasterDealer.vb" />
+    <Compile Include="BenefitMasterDetail.vb" />
+    <Compile Include="BenefitMasterHeader.vb" />
+    <Compile Include="BenefitMasterLeasing.vb" />
+    <Compile Include="BenefitMasterVehicleType.vb" />
+    <Compile Include="BenefitParticipant.vb" />
+    <Compile Include="BenefitType.vb" />
+    <Compile Include="Bingo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BingoMatrix.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BPEvent.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BPIklan.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BPPameran.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Buletin.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuletinCategory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuletinDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuletinGroupMember.vb" />
+    <Compile Include="BuletinHistory.vb" />
+    <Compile Include="BuletinMember.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuletinOrganization.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BulletinCategoryUserGroupDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BulletinUserGroupDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessArea.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Calculation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CaseCategory.vb" />
+    <Compile Include="Category.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcComplainFollowup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcComplainFollowupDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcContact.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcCustomerCategory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcPeriod.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcReportDealer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcReportDealerLog.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcReportMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcTemplate.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcVehicleCategory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CCVehicleOdometer.vb" />
+    <Compile Include="Cessie.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CessieDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChassisMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChassisMasterBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChassisMasterDocument.vb" />
+    <Compile Include="ChassisMasterLocation.vb" />
+    <Compile Include="ChassisMasterPKT.vb" />
+    <Compile Include="ChassisMasterProfile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChassisMasterProfileHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="City.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CityPart.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimCCofLetter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimDealerETA.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimEvidence.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimGoodCondition.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimProgress.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimReason.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimSignofLetter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimStatusHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimStatusKTB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CompetitorBrand.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CompetitorType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConditionMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContractDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContractHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CostCenter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreditMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreditMasterSP.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Customer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerBusiness.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerCase.vb" />
+    <Compile Include="CustomerCaseResponse.vb" />
+    <Compile Include="CustomerCaseResponseEvidence.vb" />
+    <Compile Include="CustomerDealer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerProfile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerProfileHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerRequest.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerRequestProfile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerRequestProfileHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerStatusHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DailyPayment.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DailyPaymentHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataHistoryDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DBRowStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dealer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerActivityPlanning.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerAdditional.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerBankAccount.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerBranch.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerBranchBusinessArea.vb" />
+    <Compile Include="DealerCategory.vb" />
+    <Compile Include="DealerGroup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerLeadTime.vb" />
+    <Compile Include="DealerPajak.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerProfile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerProfileHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerProfilePhoto.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerStockReportDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerStockReportHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerTerritory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DebitNote.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeliveryCustomerDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeliveryCustomerHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeliveryOrder.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Department.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Deposit.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositA.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositADetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAInterestD.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAInterestH.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAKuitansiPencairan.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAPencairan.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAPencairanD.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAPencairanH.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAStatusHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositBDebitNote.vb" />
+    <Compile Include="DepositBDetail.vb" />
+    <Compile Include="DepositBEnum.vb" />
+    <Compile Include="DepositBHeader.vb" />
+    <Compile Include="DepositBInterestDetail.vb" />
+    <Compile Include="DepositBInterestHeader.vb" />
+    <Compile Include="DepositBKewajibanDetail.vb" />
+    <Compile Include="DepositBKewajibanHeader.vb" />
+    <Compile Include="DepositBPencairanDetail.vb" />
+    <Compile Include="DepositBPencairanHeader.vb" />
+    <Compile Include="DepositBPlafon.vb" />
+    <Compile Include="DepositBReceipt.vb" />
+    <Compile Include="DepositBStatusHistory.vb" />
+    <Compile Include="DepositC2.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositC2Line.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositLine.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeskripsiKodeKerja.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeskripsiKodePosisi.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DetailBOM.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DomainObject.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DrReportRanking.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DRReportRankingStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EndCustomer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumAccessoriesType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumActivityType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumAgeSegment.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumAlertManagement.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumAssistModule.vb" />
+    <Compile Include="EnumAssistStatusUpload.vb" />
+    <Compile Include="EnumAssistExpense.vb" />
+    <Compile Include="EnumBabit.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumCategoryPositon.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumCategoryStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumCcReportStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumCeilingType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumChangesDataType.vb" />
+    <Compile Include="EnumChassisMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumClaimProgress.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumClaimReasonLevel.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumClaimStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumClaimStatusDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumClaimType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumCodePosition.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumControlType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumCourseRequireType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumCustomerCaseResponse.vb" />
+    <Compile Include="EnumCustomerPurpose.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumCustomerRequest.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumDataType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumDealerBranchType.vb" />
+    <Compile Include="EnumDealerStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumDealerTittle.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumDealerTransKind.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumDealerTransType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumDealerType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumDepositA.vb" />
+    <Compile Include="EnumDetail.vb" />
+    <Compile Include="EnumDNET.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumDocumentType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumDRReportStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumEmailNotification.vb" />
+    <Compile Include="EnumEmailValidation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumEndCustomer.vb" />
+    <Compile Include="EnumEstimationEquipStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumEventActivityType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumEventInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumEventParameter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumEventProposalStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumFactoringStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumFleetRequest.vb" />
+    <Compile Include="EnumForumCategory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumFreePPhStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumFS.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumFSKind.vb" />
+    <Compile Include="EnumFSReject.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumFSStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumGender.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumGIStatusMatPromotion.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumGyroEntryType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumGyroType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumIndentDesc.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumIndentPartEquipStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumIndentPartStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumInformationSource.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumInformationType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumInvoice.vb" />
+    <Compile Include="EnumItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumLeadTimeType.vb" />
+    <Compile Include="EnumLKPPClassification.vb" />
+    <Compile Include="EnumLKPPStatus.vb" />
+    <Compile Include="EnumLogisticFeeStatus.vb" />
+    <Compile Include="EnumMandatory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumMarketCategory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumMarriedStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumMaster.vb" />
+    <Compile Include="EnumMaterialPromotionStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumMaterialType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumMCPClassification.vb" />
+    <Compile Include="EnumMSPMasterStatus.vb" />
+    <Compile Include="EnumMCPStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumMode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumMonth.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumMsgNotification.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumObligationType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumOnlinePayment.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumOperator.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumOrderType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumParkingFeePeriod.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumParkingFeeStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPartShopStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPaymentObligation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPaymentRemarkStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPaymentStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPaymentType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumPaymentTypeRevision.vb" />
+    <Compile Include="EnumPDIKind.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPendingOrderStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPengembalianLogisticPPHStatus.vb" />
+    <Compile Include="EnumPengembalianPPhStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPMStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPOBlockedStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPORemarkStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPositionCategoryWSC.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPQR.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumPQRType.vb" />
+    <Compile Include="EnumProfileType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumRejectedReason.vb" />
+    <Compile Include="EnumReligion.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSalesDeliveryVechile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSalesmanIsRequest.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSalesmanPartLevel.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSalesmanRegisterStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSalesmanStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSalesmanUniformAssigned.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSalesmanUnit.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSAPCustomerResponse.vb" />
+    <Compile Include="EnumSAPCustomerStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSAPFileType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSAPGradeWeight.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSaveMode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSE.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSelectionMode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSellingType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumSMS.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSPAFSubsidy.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSPAFUpload.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSparePartActiveStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSparePartPO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSparePartPOSchedule.vb" />
+    <Compile Include="EnumSparePartStatus.vb" />
+    <Compile Include="EnumSPKAdditional.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumSPKCustomer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumSPPackingStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumStatusBuletin.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumStatusGI.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumStatusKonsumen.vb" />
+    <Compile Include="EnumStatusLKPP.vb" />
+    <Compile Include="EnumStatusMatPromotion.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumStatusMCP.vb" />
+    <Compile Include="EnumStatusMSP.vb" />
+    <Compile Include="enumStatusPK.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumStatusPO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumStatusProfile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumStatusRevisionPayment.vb" />
+    <Compile Include="enumStatusSalesmanUnifDistribution.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumStatusSPK.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumStatusSPL.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumStatusTOPSPTransferPayment.vb" />
+    <Compile Include="enumStatusWSC.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumStockDealerStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumStopMark.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumTransactionControlPKKind.vb" />
+    <Compile Include="EnumTrClass.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumTrClassRegistration.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumTrClassSubmitStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumTrDataStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumTrEvaluationType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumTrTrainee.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumUniformSize.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumUserStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumVehicleSubCategory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumVehicleTypeStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumWSCEvidenceType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EnumWSCParamParameter.vb" />
+    <Compile Include="EnumWSCParamStatus.vb" />
+    <Compile Include="EnumWSCParamVehicleType.vb" />
+    <Compile Include="EquipmentKind.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentMasterStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentSalesDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentSalesHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentSalesPayment.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipSPPOAlocation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipSPPOInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipUser.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EstimationEquipDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EstimationEquipHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EstimationEquipPO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventActivity.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventActivityType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventDocument.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventEmailReceiver.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventLaporanPenjualan.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventParameter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventProposal.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventProposalDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventProposalFile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventProposalHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventProposalHistoryAgreement.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventReport.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventSales.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FactoringMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileUploadAnnualDiscount.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FleetCustomer.vb" />
+    <Compile Include="FleetCustomerContact.vb" />
+    <Compile Include="FleetCustomerToCustomer.vb" />
+    <Compile Include="FleetCustomerToDealer.vb" />
+    <Compile Include="FleetFaktur.vb" />
+    <Compile Include="FleetHasilSurveyDetail.vb" />
+    <Compile Include="FleetHasilSurveyHeader.vb" />
+    <Compile Include="FleetMaster.vb" />
+    <Compile Include="FleetMasterDealer.vb" />
+    <Compile Include="FleetRequest.vb" />
+    <Compile Include="Forum.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumBannedWord .vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumCategory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumLastReadPost.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumMember.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumPM.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumPost.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumTopic.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FreePPh.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FreeService.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FreeServiceBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSCampaign.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSCampaignDealer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSCampaignKind.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSCampaignVehicle.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSChassisCampaign.vb" />
+    <Compile Include="FSKind.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSKindOnVechileType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GLAccount.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HeaderBOM.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartAllocationDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartAllocationHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartPO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartPODetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartPOHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InventoryTransaction.vb" />
+    <Compile Include="InventoryTransactionDetail.vb" />
+    <Compile Include="InventoryTransfer.vb" />
+    <Compile Include="InventoryTransferDetail.vb" />
+    <Compile Include="Invoice.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvoiceDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvoiceHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Jaminan.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JaminanDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JobPosition.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JobPositionMenu.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JobPositionToMenu.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_GetPKAllocation.vb" />
+    <Compile Include="SubCategoryVehicle.vb" />
+    <Compile Include="SubCategoryVehicleToModel.vb" />
+    <Compile Include="VWI_DealerSettingCreditAccount.vb" />
+    <Compile Include="VWI_FieldFixServiced.vb" />
+    <Compile Include="VWI_InvoiceRevision.vb" />
+    <Compile Include="VWI_JobPositionParts.vb" />
+    <Compile Include="VWI_JobPositionSales.vb" />
+    <Compile Include="VWI_JobPositionServices.vb" />
+    <Compile Include="VWI_OpenFakturForPDI.vb" />
+    <Compile Include="VWI_ProfileDetailFromHeaderCode.vb" />
+    <Compile Include="VWI_ServicePlace.vb" />
+    <Compile Include="VWI_ServiceType.vb" />
+    <Compile Include="VWI_SparePartPayment.vb" />
+    <Compile Include="VWI_SparePartPODOHaveBillingDetail.vb" />
+    <Compile Include="VWI_SparePartPODOHaveBillingHeaderDetail.vb" />
+    <Compile Include="VWI_SPKCustomerHaveRequest.vb" />
+    <Compile Include="VWI_SPKTracking.vb" />
+    <Compile Include="VWI_VehicleSpecification.vb" />
+    <Compile Include="VWI_Karoseri.vb" />
+    <Compile Include="KindOfLetter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KodePostionWSC.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LaborMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LeasingCompany.vb" />
+    <Compile Include="LeasingFee.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Letter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LetterHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LKPPDealer.vb" />
+    <Compile Include="LKPPDetail.vb" />
+    <Compile Include="LKPPHeader.vb" />
+    <Compile Include="LockUser.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogisticDCDetail.vb" />
+    <Compile Include="LogisticDCHeader.vb" />
+    <Compile Include="LogisticDN.vb" />
+    <Compile Include="LogisticFee.vb" />
+    <Compile Include="LogisticFeeHistory.vb" />
+    <Compile Include="LogisticFeeReturnHistory.vb" />
+    <Compile Include="LogisticPPHDetail.vb" />
+    <Compile Include="LogisticPPHHeader.vb" />
+    <Compile Include="LogisticPrice.vb" />
+    <Compile Include="LookUp.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainArea.vb" />
+    <Compile Include="MainOperationArea.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainUsage.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ManualDoc.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MarketPrice.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotion.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionAllocation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionGIDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionGIGR.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionGIHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionGRDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionGRHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionPeriod.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionPriceHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionRequest.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionRequestDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionStockAdjustment.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionUploadAlloc.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaxTOPDay.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MCPDealer.vb" />
+    <Compile Include="MCPDetail.vb" />
+    <Compile Include="MCPHeader.vb" />
+    <Compile Include="MonthlyDocument.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MonthlyDocumentType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MSPClaim.vb" />
+    <Compile Include="MSPClaimDocument.vb" />
+    <Compile Include="MSPCustomer.vb" />
+    <Compile Include="MSPDC.vb" />
+    <Compile Include="MSPDM.vb" />
+    <Compile Include="MSPDurationPMKind.vb" />
+    <Compile Include="MSPMaster.vb" />
+    <Compile Include="MSPRegistration.vb" />
+    <Compile Include="MSPRegistrationHistory.vb" />
+    <Compile Include="MSPTransferPayment.vb" />
+    <Compile Include="MSPTransferPaymentDetail.vb" />
+    <Compile Include="MSPTransferPaymentHistory.vb" />
+    <Compile Include="MSPType.vb" />
+    <!-- <Compile Include="PKTDate.vb" /> -->
+    <!-- <Compile Include="SFConfig.vb" /> -->
+    <!-- <Compile Include="SFContact.vb" /> -->
+    <!-- <Compile Include="SFErrorLog.vb" /> -->
+    <!-- <Compile Include="SFExecuteTime.vb" /> -->
+    <!-- <Compile Include="SFLastSuccess.vb" /> -->
+    <!-- <Compile Include="SFMasterObject.vb" /> -->
+    <!-- <Compile Include="SFPurchaseTransaction.vb" /> -->
+    <!-- <Compile Include="SFServiceHistory.vb" /> -->
+    <!-- <Compile Include="SFSmartPackage.vb" /> -->
+    <!-- <Compile Include="SFStagingLog.vb" /> -->
+    <!-- <Compile Include="SFSynchronizeLog.vb" /> -->
+    <Compile Include="VWI_Customer.vb" />
+    <Compile Include="VWI_DMSWorkOrderWSCStatus.vb" />
+    <Compile Include="VWI_Leasing.vb" />
+    <Compile Include="VWI_ServiceHistory.vb" />
+    <Compile Include="SparePartDeliveryOrder.vb" />
+    <Compile Include="SparePartDeliveryOrderDetail.vb" />
+    <Compile Include="VWI_SparePartPODOHaveBilling.vb" />
+    <Compile Include="VWI_SparePartPriceList.vb" />
+    <Compile Include="SparePartSalesOrder.vb" />
+    <Compile Include="SparePartSalesOrderDetail.vb" />
+    <Compile Include="VWI_SparePartUoM.vb" />
+    <!-- <Compile Include="TransferActual.vb" /> -->
+    <Compile Include="VWI_BusinessSector.vb" />
+    <Compile Include="VWI_City.vb" />
+    <Compile Include="VWI_EmployeeService.vb" />
+    <Compile Include="VWI_EmployeeParts.vb" />
+    <Compile Include="VWI_CustomerVehicle.vb" />
+    <Compile Include="VWI_EmployeeSales.vb" />
+    <Compile Include="VWI_Fleet.vb" />
+    <Compile Include="VWI_LeadCustomerSalesForce.vb" />
+    <Compile Include="VWI_MSPMembership.vb" />
+    <Compile Include="NationalHoliday.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OCRIdentity.vb" />
+    <Compile Include="OrderRestriction.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OrganizationPrivilege.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OwnerAge.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PameranDisplay.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParkingFee.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParkingFeeDealerInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParkingFeeHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParkingFeeReturnDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParkingFeeReturnHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalPO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalPriority.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalPriorityDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalUser.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartShop.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentAssignmentType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentAssignmentTypeReff.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethod.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentNotifEmail.vb" />
+    <Compile Include="PaymentObligation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentObligationHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentObligationType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentPurpose.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentRegDoc.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PCPhisingGuard.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PDI.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PenaltyParkirHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PendingOrder.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PengajuanDesignIklan.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PerformanceLog.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PhisingGuardImage.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PKDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PKHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PKProductionPlan.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PKTChangeHistory.vb" />
+    <Compile Include="PKTDate.vb" />
+    <Compile Include="PMDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PMHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PMKind.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PMKindReplacementPartMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POOtherVendor.vb" />
+    <Compile Include="POOtherVendorDetail.vb" />
+    <Compile Include="SparePartPRFromVendor.vb" />
+    <Compile Include="SparePartPRDetailFromVendor.vb" />
+    <Compile Include="VWI_CampaignReport.vb" />
+    <Compile Include="VWI_FieldFixList.vb" />
+    <Compile Include="VWI_PartShop.vb" />
+    <Compile Include="VWI_POEstimateHaveBilling.vb" />
+    <Compile Include="VWI_PRHistoryDO.vb" />
+    <Compile Include="VWI_PRHistoryIndentStatusCancel.vb" />
+    <Compile Include="VWI_PRHistorySO.vb" />
+    <Compile Include="VWI_PODealer.vb" />
+    <Compile Include="PODestination.vb" />
+    <Compile Include="PODestinationRegion.vb" />
+    <Compile Include="PODetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PODraftDetail.vb" />
+    <Compile Include="PODraftHeader.vb" />
+    <Compile Include="POHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PositionWSC.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PPh.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PPQty.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PPQtyDeleteHelper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRAdditionalInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRAdditionalInfoBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRAttachment.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRAttachmentBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRChangesHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRChangesHistoryBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRDamageCode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRDamageCodeBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRDetailBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRHeaderBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRPartsCode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRPartsCodeBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRProfile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRProfileBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRProfileHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRProfileHistoryBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRQRS.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRQRSBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRSolutionReferences.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Presentation.vb" />
+    <Compile Include="PresentationGroup.vb" />
+    <Compile Include="Price.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Privilege.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Product.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProductCategory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProductDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileGroup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileHeaderToGroup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileValue.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileValueHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Province.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PRPCategory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PRPFile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PRPReceiverInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PRPSenderInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PRPUserEmail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QAUser.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Reason.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RecallCategory.vb" />
+    <Compile Include="RecallCategoryDetail.vb" />
+    <Compile Include="RecallChassisMaster.vb" />
+    <Compile Include="RecallService.vb" />
+    <Compile Include="RedemptionCeiling.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RedemptionDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RedemptionHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RedemptionStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Reference.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegularOrderConfirmation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RejectStatusPayment.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReplecementPartMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RevisionChassisMasterProfile.vb" />
+    <Compile Include="RevisionFaktur.vb" />
+    <Compile Include="RevisionPaymentDetail.vb" />
+    <Compile Include="RevisionPaymentHeader.vb" />
+    <Compile Include="RevisionPrice.vb" />
+    <Compile Include="RevisionSAPDoc.vb" />
+    <Compile Include="RevisionSPKFaktur.vb" />
+    <Compile Include="RevisionType.vb" />
+    <Compile Include="Role.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RoleOrganizationPrivilege.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanAccomplish.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanAdditionalInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanArea.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanAreaAssign.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanCategoryLevel.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanDealerHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanExperience.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanLevel.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanMasterTraining.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartCodeHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartPerformance.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartPerformanceHist.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartShop.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartTarget.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartTargetHist.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanProfile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanProfileHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanSalesTarget.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanTraining.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanTrainingParticipant.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanTrainingType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanTurnOverAnalisa.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUnifDistribution.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUnifGuide.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUniform.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUniformAssigned.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUniformOrderDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUniformOrderHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesOrder.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesPlanMeeting.vb" />
+    <Compile Include="Sample.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SampleIklan.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAPCreditCeiling.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAPCustomer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAPCustomerResponse.vb" />
+    <Compile Include="SAPGradeWeight.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAPPeriod.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAPRegister.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAPSalesParameter.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SettingMaterialBlock.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SFConfig.vb" />
+    <Compile Include="SFContact.vb" />
+    <Compile Include="SFErrorLog.vb" />
+    <Compile Include="SFExecuteTime.vb" />
+    <Compile Include="SFLastSuccess.vb" />
+    <Compile Include="SFMasterObject.vb" />
+    <Compile Include="SFPurchaseTransaction.vb" />
+    <Compile Include="SFServiceHistory.vb" />
+    <Compile Include="SFSmartPackage.vb" />
+    <Compile Include="SFStagingLog.vb" />
+    <Compile Include="SFSynchronizeLog.vb" />
+    <Compile Include="SMSHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SP.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAFDoc.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAFDocHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAFDoc_UploadDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAFDoc_UploadHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartBilling.vb" />
+    <Compile Include="SparePartBillingDetail.vb" />
+    <Compile Include="SparePartDO.vb" />
+    <Compile Include="SparePartDODetail.vb" />
+    <Compile Include="SparePartDOExpedition.vb" />
+    <Compile Include="SparePartConversion.vb" />
+    <Compile Include="SparePartMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparepartMaxOrder.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartOrganization.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartOutstandingOrder.vb" />
+    <Compile Include="SparePartOutstandingOrderDetail.vb" />
+    <Compile Include="SparePartPacking.vb" />
+    <Compile Include="SparePartPackingDetail.vb" />
+    <Compile Include="SparePartPendingOrder.vb" />
+    <Compile Include="SparePartPO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPOBillingRecap.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPODetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPOEstimate.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPOEstimateDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPOSchedule.vb" />
+    <Compile Include="SparePartPOScheduleDealer.vb" />
+    <Compile Include="SparePartPOScheduleTime.vb" />
+    <Compile Include="SparePartPOStatus.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPOStatusDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SpecialItemDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SpecialItemHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SpecialItemPackage.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKChassis.vb" />
+    <Compile Include="SPKCustomer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKCustomerProfile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKFaktur.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKIndentLog.vb" />
+    <Compile Include="SPKProfile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKStatusHistory.vb" />
+    <Compile Include="SPL.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPLDealer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPLDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPLEnum.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_AllocPO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_Ceiling.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_CeilingPO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_checkInputClaim.vb" />
+    <Compile Include="sp_CreditMaster.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_GetSPKStatus.vb" />
+    <Compile Include="sp_MaxTOPDay.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_PaymentTransfer.vb" />
+    <Compile Include="sp_Price.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_RedemptionCeiling.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_SOList.vb" />
+    <Compile Include="StandardCodeChar.vb" />
+    <Compile Include="StandardCode.vb" />
+    <Compile Include="StatusChangeHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StockActual.vb" />
+    <Compile Include="StockMovement.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StockTarget.vb" />
+    <Compile Include="Syslog.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermOfPayment.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TOPBlockStatus.vb" />
+    <Compile Include="TOPCreditAccount.vb" />
+    <Compile Include="TOPSPTransferCeiling.vb" />
+    <Compile Include="TOPSPTransferCeilingDetail.vb" />
+    <Compile Include="TOPSPDeposit.vb" />
+    <Compile Include="TOPSPDueDate.vb" />
+    <Compile Include="TOPSPTransferActual.vb" />
+    <Compile Include="TOPSPTransferPayment.vb" />
+    <Compile Include="TOPSPTransferPaymentDetail.vb" />
+    <Compile Include="TrainingAnnoucement.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrainingCode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrainingConfirmation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrainingHistorical.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrainingSales.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransactionControl.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransactionControlHistory.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransactionControlPK.vb" />
+    <Compile Include="TransactionControlPKHistory.vb" />
+    <Compile Include="TransferActual.vb" />
+    <Compile Include="TransferCeiling.vb" />
+    <Compile Include="TransferCeilingDetail.vb" />
+    <Compile Include="TransferControl.vb" />
+    <Compile Include="TransferPayment.vb" />
+    <Compile Include="TransferPaymentDetail.vb" />
+    <Compile Include="TrCertificateLine.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrClass.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrClassAllocation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrClassNumEvaluation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrClassRegistration.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrCourse.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrCourseEvaluation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouse.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouseClass.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouseDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouseEvaluation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouseInformation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouseMember.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrPreRequire.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrScheduleUpload.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrTrainee.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrUserEmail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformDistribution.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformGuide.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformOrder.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformSalesman.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformValidation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserAlert.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserGroup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserGroupMember.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserOrgAssignment.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserProfile.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserRole.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VAlurInvoice.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDetailInvoice.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDH.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDHCustomer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDHItem.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDHService.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VechileColor.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VechileModel.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VechileType.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleBodyShape.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleClass.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleKind.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleKindGroup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleOwnership.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehiclePurchaseDetail.vb" />
+    <Compile Include="VehiclePurchaseHeader.vb" />
+    <Compile Include="VehiclePurpose.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view_DealerWSC.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view_DealerWSCBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view_DealerWSCProccessed.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view_DealerWSCProccessedBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VIEW_ExtMaterialGroup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VIEW_PartNumberByExtMaterialGroup.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view_PKList.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VInvoice.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VSAPCustomer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VSumDetailInvoice.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VwBCPColumns.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VWI_OpenFaktur.vb" />
+    <Compile Include="VWI_Province.vb" />
+    <Compile Include="VWI_QuickProduct.vb" />
+    <Compile Include="VWI_ServiceTemplate.vb" />
+    <Compile Include="VWI_SparePartConversion.vb" />
+    <Compile Include="VWI_SPKChassisMatching.vb" />
+    <Compile Include="VWI_UnmatchSPKChassis.vb" />
+    <Compile Include="VWI_VehicleExteriorColor.vb" />
+    <Compile Include="VWI_VehicleInformation.vb" />
+    <Compile Include="VWI_PRHistoryPOStatusCancel.vb" />
+    <Compile Include="VWI_VehicleType.vb" />
+    <Compile Include="VWI_WholeSalesPrice.vb" />
+    <Compile Include="VwRecallCategory.vb" />
+    <Compile Include="vw_TransferPayment.vb" />
+    <Compile Include="Vw_ChassisMaster.vb" />
+    <Compile Include="V_AssistEmailUser.vb" />
+    <Compile Include="V_AssistPartStockFlagLastData.vb" />
+    <Compile Include="V_BabitMasterRetailTarget.vb" />
+    <Compile Include="V_BenefitClaimDeductedHistory.vb" />
+    <Compile Include="V_BenefitClaimDeducted.vb" />
+    <Compile Include="V_CcComplainFollowUp.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_CcGridContact.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_CessieDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_ClaimDetail.vb" />
+    <Compile Include="V_CMHelper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_CreditAccount.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_DataSiswa.vb" />
+    <Compile Include="v_DealerOrder.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_DealerStock.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_DealerStockID.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_DraftPOTotalDetail.vb" />
+    <Compile Include="v_EquipPO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_EquipSPPOIndent.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_EventLaporanPenjualanGroupDealer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_EventProposalAgreement.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_EventProposalDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_EventProposalExcel.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_FreeService.vb" />
+    <Compile Include="v_GetTokenExpired.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_LeasingDaftarDokumen.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_LeasingDaftarKondisi.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_LKPPbyDealer.vb" />
+    <Compile Include="V_MCPbyDealer.vb" />
+    <Compile Include="V_MDPMasterVehicle.vb" />
+    <Compile Include="V_MonthlyReport.vb" />
+    <Compile Include="v_POEffectiveDate.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_POTotalDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_Price.vb" />
+    <Compile Include="v_ProposedPO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_Redemption.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_RekapDOHelper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_RekapDraftPO.vb" />
+    <Compile Include="V_RekapPO.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_RetrieveDummyFaktur.vb" />
+    <Compile Include="V_SalesmanCSTeam.vb" />
+    <Compile Include="V_SalesmanDownload.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SalesmanPart.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SalesmanPartTarget.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_SOPaidStatus.vb" />
+    <Compile Include="v_SOPayment.vb" />
+    <Compile Include="v_SOPaymentDetail.vb" />
+    <Compile Include="V_SparePartFlow.vb" />
+    <Compile Include="V_SParepartLeadTime.vb" />
+    <Compile Include="V_SparePartOrganization.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SparePartPOSummary.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SPKChassis.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SPKDetailInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SPKTersedia.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SPK_Salesman.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SPK_Salesman_Download.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SpPO_Indent.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_trClass.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_trTraineeRegistered.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssistWorkOrderCategory.vb" />
+    <Compile Include="V_WarrantyActivation.vb" />
+    <Compile Include="WarrantyActivation.vb" />
+    <Compile Include="WarrantyPartAccessories.vb" />
+    <Compile Include="WSCDamageRequestPart.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCDamageRequestPartBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCDetail.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCDetailBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCEvidence.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCEvidenceBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCForm.vb" />
+    <Compile Include="WSCHeader.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCHeaderBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCParameterCondition.vb" />
+    <Compile Include="WSCParameterDetail.vb" />
+    <Compile Include="WSCParameterHeader.vb" />
+    <Compile Include="WSCParameterVehicle.vb" />
+    <Compile Include="WsJSONLog.vb" />
+    <Compile Include="WsLog.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+</Project>

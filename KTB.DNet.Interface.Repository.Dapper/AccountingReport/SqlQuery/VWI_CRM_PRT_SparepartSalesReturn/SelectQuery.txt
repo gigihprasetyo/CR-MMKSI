@@ -1,0 +1,22 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_PRT_SparepartSalesReturn.businessunitcode
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_deliveryordernumber
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_product
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_productdescription
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_unitprice
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_discountamount
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_baseamount
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_totalconsumptiontaxamount
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_totalamount
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_uom
+	,VWI_CRM_PRT_SparepartSalesReturn.ktb_cogstrx
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_discountpercentage
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_quantityreturned
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_customernumber
+	,VWI_CRM_PRT_SparepartSalesReturn.customername
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_customerid
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_transactiondate
+	,VWI_CRM_PRT_SparepartSalesReturn.xts_referencenumbersalesorderid
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_PRT_SparepartSalesReturn WITH (NOLOCK) {0}

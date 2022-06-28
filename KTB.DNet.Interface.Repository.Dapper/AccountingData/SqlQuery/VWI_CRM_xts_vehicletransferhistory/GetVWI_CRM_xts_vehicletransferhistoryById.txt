@@ -1,0 +1,65 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,businessunitcode
+	,createdonbehalfbyyominame
+	,owninguser
+	,xts_transfersourcesiteidname
+	,xts_locking
+	,statecode
+	,xts_businessunitidname
+	,xts_stocknumberinventorynewvehiclename
+	,owneridname
+	,statecodename
+	,xts_vehicleindentificationnumber
+	,createdonbehalfby
+	,xts_transferdestinationsiteid
+	,xts_inventorytransferdetailid
+	,xts_inventorytransferid
+	,importsequencenumber
+	,xts_inventorytransferidname
+	,modifiedbyyominame
+	,xts_transferhistorynumber
+	,timezoneruleversionnumber
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,xts_transfernumber
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,xts_inventorytransferdetailidname
+	,modifiedby
+	,createdby
+	,xts_vehicletransferhistoryid
+	,xts_transfersourcesiteid
+	,owneridtype
+	,statuscodename
+	,xts_transferdate
+	,xts_stockid
+	,owneridyominame
+	,modifiedon
+	,xts_stockidname
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,xts_businessunitid
+	,createdonbehalfbyname
+	,xts_stocknumberinventorynewvehicle
+	,modifiedonbehalfbyname
+	,xts_transferdestinationsiteidname
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,RowStatus
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_vehicletransferhistory a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    WHERE xts_vehicletransferhistoryid = @Id
+) VWI_CRM_xts_vehicletransferhistory 

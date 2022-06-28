@@ -1,0 +1,71 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_grade.versionnumber
+	, VWI_CRM_xts_grade.createdon
+	, VWI_CRM_xts_grade.xts_defaultconfigidname
+	, VWI_CRM_xts_grade.statuscodename
+	, VWI_CRM_xts_grade.xts_defaultconfigurationidname
+	, VWI_CRM_xts_grade.xts_description
+	, VWI_CRM_xts_grade.modifiedbyyominame
+	, VWI_CRM_xts_grade.xts_defaultproductsegment1id
+	, VWI_CRM_xts_grade.xts_registrationmodel
+	, VWI_CRM_xts_grade.xts_gradenumber
+	, VWI_CRM_xts_grade.modifiedbyname
+	, VWI_CRM_xts_grade.xts_fuelcategoryname
+	, VWI_CRM_xts_grade.xts_vehicletransmission
+	, VWI_CRM_xts_grade.xts_defaultproductsegment3id
+	, VWI_CRM_xts_grade.xts_defaultbrand
+	, VWI_CRM_xts_grade.overriddencreatedon
+	, VWI_CRM_xts_grade.xts_vehiclebody
+	, VWI_CRM_xts_grade.xts_defaultexterioridname
+	, VWI_CRM_xts_grade.xts_gradeid
+	, VWI_CRM_xts_grade.createdonbehalfbyyominame
+	, VWI_CRM_xts_grade.xts_defaultstylesidname
+	, VWI_CRM_xts_grade.xts_defaultconfigurationid
+	, VWI_CRM_xts_grade.statecode
+	, VWI_CRM_xts_grade.xts_defaultstylesid
+	, VWI_CRM_xts_grade.xts_defaultproductsegment3idname
+	, VWI_CRM_xts_grade.xts_defaultstyleid
+	, VWI_CRM_xts_grade.timezoneruleversionnumber
+	, VWI_CRM_xts_grade.xts_defaultproductsegment2id
+	, VWI_CRM_xts_grade.xts_locking
+	, VWI_CRM_xts_grade.xts_defaultinterioridname
+	, VWI_CRM_xts_grade.xts_defaultvehiclebrandidname
+	, VWI_CRM_xts_grade.xts_defaultexteriorid
+	, VWI_CRM_xts_grade.xjp_purposecategory
+	, VWI_CRM_xts_grade.xts_defaultvehiclebrandid
+	, VWI_CRM_xts_grade.xts_defaultproductsegment4idname
+	, VWI_CRM_xts_grade.xts_grade
+	, VWI_CRM_xts_grade.utcconversiontimezonecode
+	, VWI_CRM_xts_grade.modifiedon
+	, VWI_CRM_xts_grade.importsequencenumber
+	, VWI_CRM_xts_grade.xts_defaultproductsegment4id
+	, VWI_CRM_xts_grade.xts_defaultstyleidname
+	, VWI_CRM_xts_grade.xts_defaultproductsegment2idname
+	, VWI_CRM_xts_grade.createdbyname
+	, VWI_CRM_xts_grade.createdonbehalfbyname
+	, VWI_CRM_xts_grade.modifiedonbehalfbyname
+	, VWI_CRM_xts_grade.xjp_purposecategoryname
+	, VWI_CRM_xts_grade.xts_enginedisplacement
+	, VWI_CRM_xts_grade.xts_vehicleengine
+	, VWI_CRM_xts_grade.createdby
+	, VWI_CRM_xts_grade.modifiedby
+	, VWI_CRM_xts_grade.createdbyyominame
+	, VWI_CRM_xts_grade.xts_fuelcategory
+	, VWI_CRM_xts_grade.modifiedonbehalfby
+	, VWI_CRM_xts_grade.xts_defaultconfigid
+	, VWI_CRM_xts_grade.createdonbehalfby
+	, VWI_CRM_xts_grade.statuscode
+	, VWI_CRM_xts_grade.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_grade.organizationid
+	, VWI_CRM_xts_grade.xts_drivingname
+	, VWI_CRM_xts_grade.statecodename
+	, VWI_CRM_xts_grade.organizationidname
+	, VWI_CRM_xts_grade.xts_defaultbrandgeneration
+	, VWI_CRM_xts_grade.xts_fuelconsumptionrate
+	, VWI_CRM_xts_grade.xts_defaultinteriorid
+	, VWI_CRM_xts_grade.xts_defaultproductsegment1idname
+	/**EndPagingIndexQuery**/
+FROM CRM_xts_grade as VWI_CRM_xts_grade with (nolock) 
+{0}

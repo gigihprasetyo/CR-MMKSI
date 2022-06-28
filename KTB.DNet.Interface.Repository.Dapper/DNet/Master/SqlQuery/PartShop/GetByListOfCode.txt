@@ -1,0 +1,2 @@
+﻿SELECT * FROM PartShop WITH (NOLOCK) 
+WHERE RowStatus = 0 AND PartShopCode IN @ListOfCode

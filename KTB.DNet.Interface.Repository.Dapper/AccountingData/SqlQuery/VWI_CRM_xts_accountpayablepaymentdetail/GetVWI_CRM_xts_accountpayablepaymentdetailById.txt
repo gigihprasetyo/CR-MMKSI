@@ -1,0 +1,103 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (Select 0) ) AS IDRow
+	,company
+	,businessunitcode
+	,xts_orderdate
+	,xts_parentbusinessunitid
+	,versionnumber
+	,xts_cashandbankid
+	,createdon
+	,xts_ordervendortransactionaxaptaidname
+	,xts_transactiondocumentid
+	,xts_externaldocumenttype
+	,statuscodename
+	,xts_description
+	,modifiedbyyominame
+	,owneridtype
+	,createdonbehalfby
+	,xts_orderuvsoreferralid
+	,modifiedbyname
+	,xts_orderoutsourceworkorderid
+	,xts_outstandingbalance_base
+	,xts_ordernvsoreferralidname
+	,owneridname
+	,overriddencreatedon
+	,xts_orderoutsourceworkorderidname
+	,xts_cashandbankidname
+	,xts_accountpayablepaymentid
+	,createdonbehalfbyyominame
+	,xts_ordervendortransactionaxaptaid
+	,modifiedonbehalfby
+	,exchangerate
+	,xts_orderpurchaseorderidname
+	,xts_ordernvsalesorderidname
+	,owningteam
+	,xts_orderlookuptype
+	,xts_paymenamount_base
+	,xts_transactiondocumentidname
+	,statecode
+	,xts_externaldocumentnumber
+	,xts_sourcetype
+	,timezoneruleversionnumber
+	,xts_remainingbalance
+	,xts_accountpayablepaymentdetailnumber
+	,xts_ordernvsoreferralid
+	,xts_outstandingbalance
+	,createdonbehalfbyname
+	,xts_paymenamount
+	,utcconversiontimezonecode
+	,xts_orderapvoucheridname
+	,xts_cashandbankaccountid
+	,xts_receiptfromvendor
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_ordernvsalesorderid
+	,xts_differencevalue
+	,xts_accountpayablepaymentidname
+	,createdbyname
+	,xts_changeamount
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_orderpurchaseorderid
+	,xts_orderuvsalesorderidname
+	,xts_orderlookupname
+	,xts_paymentslipnumber
+	,transactioncurrencyid
+	,createdby
+	,modifiedby
+	,xts_parentbusinessunitidname
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_externaldocumenttypename
+	,xts_accountpayablepaymentdetailid
+	,owningbusinessunit
+	,xts_cashandbankaccountidname
+	,xts_vendorid
+	,xts_orderuvsalesorderid
+	,xts_remainingbalance_base
+	,xts_sourcetypename
+	,xts_orderapvoucherid
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_changeamount_base
+	,xts_orderuvsoreferralidname
+	,xts_receiptfromvendorname
+	,statecodename
+	,xts_businessunitidname
+	,xts_vendoridname
+	,RowStatus
+	,msdyn_companycode
+from (
+	SELECT  
+		b.ktb_bucompany company
+		, b.ktb_dealercode businessunitcode
+		, a.*
+		, b.msdyn_companycode
+	FROM CRM_xts_accountpayablepaymentdetail a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+	ON b.businessunitid = a.xts_businessunitid
+) VWI_CRM_xts_accountpayablepaymentdetail
+WHERE xts_accountpayablepaymentdetailid = @Id

@@ -1,0 +1,25 @@
+SELECT 
+/**PagingIndexQuery**/ 
+ VWI_CRM_SLS_VehicleStock.company
+	,VWI_CRM_SLS_VehicleStock.businessunitcode
+	,VWI_CRM_SLS_VehicleStock.xts_stocknumber
+	,VWI_CRM_SLS_VehicleStock.xts_warehouse
+	,VWI_CRM_SLS_VehicleStock.xts_productexteriorcolor
+	,VWI_CRM_SLS_VehicleStock.xts_totalvalue
+	,VWI_CRM_SLS_VehicleStock.xts_product
+	,VWI_CRM_SLS_VehicleStock.xts_productdescription
+	,VWI_CRM_SLS_VehicleStock.ktb_applicationno
+	,VWI_CRM_SLS_VehicleStock.xts_keynumber
+	,VWI_CRM_SLS_VehicleStock.xts_chassisnumber
+	,VWI_CRM_SLS_VehicleStock.ktb_vendorid
+	,VWI_CRM_SLS_VehicleStock.xts_vendor
+	,VWI_CRM_SLS_VehicleStock.iskaroseri
+	,VWI_CRM_SLS_VehicleStock.xts_purchaseprice
+	,VWI_CRM_SLS_VehicleStock.ktb_caroseriesamount
+	,VWI_CRM_SLS_VehicleStock.description
+	,VWI_CRM_SLS_VehicleStock.ktb_bucompany
+	,VWI_CRM_SLS_VehicleStock.stockstatus
+	,VWI_CRM_SLS_VehicleStock.availabilitystatus
+	,VWI_CRM_SLS_VehicleStock.msdyn_companycode
+/**EndPagingIndexQuery**/
+FROM VWI_CRM_SLS_VehicleStock WITH (NOLOCK) {0}

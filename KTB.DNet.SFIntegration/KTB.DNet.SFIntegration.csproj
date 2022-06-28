@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE9B162B-4EA1-4B7D-B277-6AFB96995058}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KTB.DNet.SFIntegration</RootNamespace>
+    <AssemblyName>KTB.DNet.SFIntegration</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA.DNET.36|AnyCPU'">
+    <OutputPath>bin\QA.DNET.36\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA.DNET.36|x64'">
+    <OutputPath>bin\x64\QA.DNET.36\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.3.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Client.Policy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.Office.Client.Policy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Client.TranslationServices, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.Office.Client.TranslationServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.SharePoint.Tools, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.Office.SharePoint.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Online.SharePoint.Client.Tenant, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.Online.SharePoint.Client.Tenant.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ProjectServer.Client, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.ProjectServer.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.SharePoint.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.DocumentManagement, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.SharePoint.Client.DocumentManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Publishing, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.SharePoint.Client.Publishing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.SharePoint.Client.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Runtime.Windows, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.SharePoint.Client.Runtime.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.SharePoint.Client.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Search.Applications, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.SharePoint.Client.Search.Applications.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.Taxonomy, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.SharePoint.Client.Taxonomy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.UserProfiles, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.SharePoint.Client.UserProfiles.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint.Client.WorkflowServices, Version=16.1.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ReffLibs\Microsoft.SharePoint.Client.WorkflowServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Salesforce.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f7864e53fb79388, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\SalesForce\Salesforce.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Salesforce.Force, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9f7864e53fb79388, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\SalesForce\Salesforce.Force.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KTB.DNet.BusinessFacade\KTB.DNet.BusinessFacade.vbproj">
+      <Project>{172fe48b-f8b2-419d-8f64-6d3470d2cdf2}</Project>
+      <Name>KTB.DNet.BusinessFacade</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.BusinessValidation\KTB.DNet.BusinessValidation.csproj">
+      <Project>{a938dd7b-5da3-4fa4-9998-015bb5dfe44e}</Project>
+      <Name>KTB.DNet.BusinessValidation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.DataMapper.Framework\KTB.DNet.DataMapper.Framework.vbproj">
+      <Project>{cc23ff7e-bc14-4d66-9e96-6e0a51576a34}</Project>
+      <Name>KTB.DNet.DataMapper.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.DataMapper\KTB.DNet.DataMapper.vbproj">
+      <Project>{e021fe28-84e0-4b1f-804a-180be4f38f26}</Project>
+      <Name>KTB.DNet.DataMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain.Search\KTB.DNet.Domain.Search.vbproj">
+      <Project>{06a29192-8b96-4dfb-9c6c-aa5b4ddf8d36}</Project>
+      <Name>KTB.DNet.Domain.Search</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain\KTB.DNet.Domain.vbproj">
+      <Project>{f4cc7463-4cbb-4336-aeaf-ac8fbc38dd9a}</Project>
+      <Name>KTB.DNet.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.EventLogConsole\KTB.DNet.EventLogConsole.vbproj">
+      <Project>{0b3e3874-7609-443d-a7df-92bb77350041}</Project>
+      <Name>KTB.DNet.EventLogConsole</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Lib\KTB.DNet.Lib.csproj">
+      <Project>{e839abcc-d7ef-4d3a-a697-cbb1e0a21737}</Project>
+      <Name>KTB.DNet.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.ResourceManager\KTB.DNet.ResourceManager.vbproj">
+      <Project>{16d5b9b2-720c-441a-9ce3-f4bdede67df4}</Project>
+      <Name>KTB.DNet.ResourceManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNET.SalesForce.Scheduler\KTB.DNet.Salesforce.Scheduler.csproj">
+      <Project>{b77fb701-deaa-47d4-aae3-7af8fbf054a1}</Project>
+      <Name>KTB.DNet.Salesforce.Scheduler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Salesforce\KTB.DNet.Salesforce.csproj">
+      <Project>{62815179-c84d-4f04-8fac-8736dddf1e10}</Project>
+      <Name>KTB.DNet.Salesforce</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Security.Database.Authorization\KTB.DNet.Security.Database.Authorization.csproj">
+      <Project>{6ab8e6b0-9e96-4ad0-8695-7e6275068442}</Project>
+      <Name>KTB.DNet.Security.Database.Authorization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Security\KTB.DNet.Security.vbproj">
+      <Project>{17f38c9b-d956-438d-8577-18837c5ae615}</Project>
+      <Name>KTB.DNet.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Utility\KTB.DNet.Utility.vbproj">
+      <Project>{b6de3f6d-8a0e-4693-8204-4ea972dcbf2a}</Project>
+      <Name>KTB.DNet.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.WebApi\KTB.DNet.WebApi.csproj">
+      <Project>{fd632563-2ddd-4f75-b312-90d24fa0fb0a}</Project>
+      <Name>KTB.DNet.WebApi</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\DealerMaster.cs" />
+    <Compile Include="BusinessLogic\PurchaseTransactionMaster.cs" />
+    <Compile Include="BusinessLogic\ServiceHistoryMaster.cs" />
+    <Compile Include="BusinessLogic\SFContacMaster.cs" />
+    <Compile Include="BusinessLogic\TeleSurveyMaster.cs" />
+    <Compile Include="BusinessLogic\VehicleMaster.cs" />
+    <Compile Include="Helpers\Convertions.cs" />
+    <Compile Include="Helpers\GenericHelpers.cs" />
+    <Compile Include="Model\DealerMasterSF.cs" />
+    <Compile Include="Model\ParamUpdateCase.cs" />
+    <Compile Include="Model\ServiceReminder.cs" />
+    <Compile Include="Model\TeleSurveySF.cs" />
+    <Compile Include="Parser\CustomerCaseResponseParser.cs" />
+    <Compile Include="Parser\MainParser.cs" />
+    <Compile Include="Model\VehicleMasterSF.cs" />
+    <Compile Include="Model\SalesForceResult.cs" />
+    <Compile Include="Parser\ServiceReminderParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchedulingNonSF\AlarmWAEmailBroadcastLogic.cs" />
+    <Compile Include="SchedulingNonSF\BabitCognitoLogic.cs" />
+    <Compile Include="SchedulingNonSF\GSRRilisLogic.cs" />
+    <Compile Include="SchedulingNonSF\IndenPartExpiredReminderLogic.cs" />
+    <Compile Include="SchedulingNonSF\MessageSchedule.cs" />
+    <Compile Include="SchedulingNonSF\PDIPKTService.cs" />
+    <Compile Include="SchedulingNonSF\ServiceMessage.cs" />
+    <Compile Include="SchedulingNonSF\PDIPKTEmailBroadcastLogic.cs" />
+    <Compile Include="SchedulingNonSF\SPKNationalEventLogic.cs" />
+    <Compile Include="SchedulingNonSF\MSPRegistrationLogic.cs" />
+    <Compile Include="SchedulingNonSF\ServiceDueDateReminderLogic.cs" />
+    <Compile Include="SchedulingNonSF\SPBackOrderLogic.cs" />
+    <Compile Include="SchedulingNonSF\LeadCustomerLogic.cs" />
+    <Compile Include="SchedulingNonSF\LeadEmailBroadcastLogic.cs" />
+    <Compile Include="SchedulingNonSF\MessageTransactionLogic.cs" />
+    <Compile Include="SchedulingNonSF\DiscountProposalLogic.cs" />
+    <Compile Include="SchedulingNonSF\CBUReturnReminder.cs" />
+    <Compile Include="SchedulingNonSF\PDIExpiredSyncLogic.cs" />
+    <Compile Include="SchedulingNonSF\PKTToSAPLogic.cs" />
+    <Compile Include="SchedulingNonSF\SalesOrderLogic.cs" />
+    <Compile Include="SchedulingNonSF\SparePartMasterPriceLogic.cs" />
+    <Compile Include="BusinessLogic\ServiceReminderMaster.cs" />
+    <Compile Include="SchedulingNonSF\SPBillingLogic.cs" />
+    <Compile Include="SchedulingNonSF\SPLLogic.cs" />
+    <Compile Include="SchedulingNonSF\StallWorkingEmailBroadcastLogic.cs" />
+    <Compile Include="SchedulingNonSF\TOPSPDepositLogic.cs" />
+    <Compile Include="SchedullingSF\CustomerCaseBroadcastNotifLogic.cs" />
+    <Compile Include="SchedullingSF\CustomerCaseResponseLogic.cs" />
+    <Compile Include="SchedullingSF\DealerContactLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SchedullingSF\PurchaseTransactionLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SchedullingSF\ServiceHistoryBookletLogic.cs" />
+    <Compile Include="SchedullingSF\ServiceHistoryLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SchedullingSF\SmartPackageLogic.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SchedullingSF\SparepartHistoryLogic.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReffLibs\EPPlus.dll" />
+    <Content Include="ReffLibs\EPPlus.xml" />
+    <Content Include="ReffLibs\Microsoft.Office.Client.Policy.dll" />
+    <Content Include="ReffLibs\Microsoft.Office.Client.TranslationServices.dll" />
+    <Content Include="ReffLibs\Microsoft.Office.SharePoint.Tools.dll" />
+    <Content Include="ReffLibs\Microsoft.Online.SharePoint.Client.Tenant.dll" />
+    <Content Include="ReffLibs\Microsoft.ProjectServer.Client.dll" />
+    <Content Include="ReffLibs\Microsoft.SharePoint.Client.dll" />
+    <Content Include="ReffLibs\Microsoft.SharePoint.Client.DocumentManagement.dll" />
+    <Content Include="ReffLibs\Microsoft.SharePoint.Client.Publishing.dll" />
+    <Content Include="ReffLibs\Microsoft.SharePoint.Client.Runtime.dll" />
+    <Content Include="ReffLibs\Microsoft.SharePoint.Client.Runtime.Windows.dll" />
+    <Content Include="ReffLibs\Microsoft.SharePoint.Client.Search.Applications.dll" />
+    <Content Include="ReffLibs\Microsoft.SharePoint.Client.Search.dll" />
+    <Content Include="ReffLibs\Microsoft.SharePoint.Client.Taxonomy.dll" />
+    <Content Include="ReffLibs\Microsoft.SharePoint.Client.UserProfiles.dll" />
+    <Content Include="ReffLibs\Microsoft.SharePoint.Client.WorkflowServices.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

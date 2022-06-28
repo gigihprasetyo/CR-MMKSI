@@ -1,0 +1,17 @@
+SELECT 
+	IDRow
+	,company
+	,businessunitcode
+	,InventoryTransactionNo
+	,TransactionDate
+	,TransactionType
+	,ReasonCode
+	,Product
+	,ProductDescription
+	,TransactionUnit
+	,Quantity
+	,UnitCost
+	,TotalCost
+	,msdyn_companycode
+FROM VWI_CRM_PRT_IncomingTransaction WITH (NOLOCK)
+WHERE ID = @Id

@@ -1,0 +1,2 @@
+SELECT COUNT(*)
+FROM VWI_AX_SLS_StockMutation WITH (NOLOCK) {0}

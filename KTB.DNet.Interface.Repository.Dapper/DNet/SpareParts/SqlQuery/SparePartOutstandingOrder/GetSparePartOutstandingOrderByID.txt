@@ -1,0 +1,14 @@
+SELECT 
+	CreatedBy,
+	CreatedTime,
+	DocumentType,
+	ID,
+	LastUpdateBy,
+	LastUpdateTime,
+	OrderType,
+	PODate,
+	RowStatus,
+	SparePartPOID,
+	ValidTo
+FROM SparePartOutstandingOrder
+WHERE ID = @ID

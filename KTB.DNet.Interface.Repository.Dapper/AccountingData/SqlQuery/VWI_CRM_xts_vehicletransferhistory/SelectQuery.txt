@@ -1,0 +1,68 @@
+SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_vehicletransferhistory.company
+	, VWI_CRM_xts_vehicletransferhistory.businessunitcode
+	, VWI_CRM_xts_vehicletransferhistory.createdonbehalfbyyominame
+	, VWI_CRM_xts_vehicletransferhistory.owninguser
+	, VWI_CRM_xts_vehicletransferhistory.xts_transfersourcesiteidname
+	, VWI_CRM_xts_vehicletransferhistory.xts_locking
+	, VWI_CRM_xts_vehicletransferhistory.statecode
+	, VWI_CRM_xts_vehicletransferhistory.xts_businessunitidname
+	, VWI_CRM_xts_vehicletransferhistory.xts_stocknumberinventorynewvehiclename
+	, VWI_CRM_xts_vehicletransferhistory.owneridname
+	, VWI_CRM_xts_vehicletransferhistory.statecodename
+	, VWI_CRM_xts_vehicletransferhistory.xts_vehicleindentificationnumber
+	, VWI_CRM_xts_vehicletransferhistory.createdonbehalfby
+	, VWI_CRM_xts_vehicletransferhistory.xts_transferdestinationsiteid
+	, VWI_CRM_xts_vehicletransferhistory.xts_inventorytransferdetailid
+	, VWI_CRM_xts_vehicletransferhistory.xts_inventorytransferid
+	, VWI_CRM_xts_vehicletransferhistory.importsequencenumber
+	, VWI_CRM_xts_vehicletransferhistory.xts_inventorytransferidname
+	, VWI_CRM_xts_vehicletransferhistory.modifiedbyyominame
+	, VWI_CRM_xts_vehicletransferhistory.xts_transferhistorynumber
+	, VWI_CRM_xts_vehicletransferhistory.timezoneruleversionnumber
+	, VWI_CRM_xts_vehicletransferhistory.utcconversiontimezonecode
+	, VWI_CRM_xts_vehicletransferhistory.createdbyyominame
+	, VWI_CRM_xts_vehicletransferhistory.xts_transfernumber
+	, VWI_CRM_xts_vehicletransferhistory.owningbusinessunit
+	, VWI_CRM_xts_vehicletransferhistory.modifiedbyname
+	, VWI_CRM_xts_vehicletransferhistory.owningteam
+	, VWI_CRM_xts_vehicletransferhistory.xts_inventorytransferdetailidname
+	, VWI_CRM_xts_vehicletransferhistory.modifiedby
+	, VWI_CRM_xts_vehicletransferhistory.createdby
+	, VWI_CRM_xts_vehicletransferhistory.xts_vehicletransferhistoryid
+	, VWI_CRM_xts_vehicletransferhistory.xts_transfersourcesiteid
+	, VWI_CRM_xts_vehicletransferhistory.owneridtype
+	, VWI_CRM_xts_vehicletransferhistory.statuscodename
+	, VWI_CRM_xts_vehicletransferhistory.xts_transferdate
+	, VWI_CRM_xts_vehicletransferhistory.xts_stockid
+	, VWI_CRM_xts_vehicletransferhistory.owneridyominame
+	, VWI_CRM_xts_vehicletransferhistory.modifiedon
+	, VWI_CRM_xts_vehicletransferhistory.xts_stockidname
+	, VWI_CRM_xts_vehicletransferhistory.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_vehicletransferhistory.statuscode
+	, VWI_CRM_xts_vehicletransferhistory.createdbyname
+	, VWI_CRM_xts_vehicletransferhistory.createdon
+	, VWI_CRM_xts_vehicletransferhistory.xts_businessunitid
+	, VWI_CRM_xts_vehicletransferhistory.createdonbehalfbyname
+	, VWI_CRM_xts_vehicletransferhistory.xts_stocknumberinventorynewvehicle
+	, VWI_CRM_xts_vehicletransferhistory.modifiedonbehalfbyname
+	, VWI_CRM_xts_vehicletransferhistory.xts_transferdestinationsiteidname
+	, VWI_CRM_xts_vehicletransferhistory.versionnumber
+	, VWI_CRM_xts_vehicletransferhistory.modifiedonbehalfby
+	, VWI_CRM_xts_vehicletransferhistory.ownerid
+	, VWI_CRM_xts_vehicletransferhistory.overriddencreatedon
+	, VWI_CRM_xts_vehicletransferhistory.RowStatus
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_vehicletransferhistory a WITH(NOLOCK)
+    LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_vehicletransferhistory 

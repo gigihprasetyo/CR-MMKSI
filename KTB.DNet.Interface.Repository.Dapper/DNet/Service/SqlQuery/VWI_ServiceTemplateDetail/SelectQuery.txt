@@ -1,0 +1,123 @@
+SELECT
+/**PagingIndexQuery**/
+VWI_ServiceTemplateDetail.ServiceTemplateHeaderID, 
+VWI_ServiceTemplateDetail.VechileTypeID,
+VWI_ServiceTemplateDetail.KindID, 
+VWI_ServiceTemplateDetail.ServiceTemplate,
+VWI_ServiceTemplateDetail.ServiceTemplateDetail, 
+VWI_ServiceTemplateDetail.ProductType,
+VWI_ServiceTemplateDetail.Product, 
+VWI_ServiceTemplateDetail.ProductDescription,
+VWI_ServiceTemplateDetail.PartCode, 
+VWI_ServiceTemplateDetail.PartCodeDescription,
+VWI_ServiceTemplateDetail.Quantity, 
+VWI_ServiceTemplateDetail.UnitPrice,
+VWI_ServiceTemplateDetail.TotalPrice
+/**EndPagingIndexQuery**/
+FROM
+(
+SELECT
+	'FF' + CONVERT(VARCHAR(12), a.ServiceTemplateFFPartHeaderID) AS ServiceTemplateHeaderID,
+	vt.ID AS VechileTypeID, 
+	'FF' + CONVERT(VARCHAR(12), hd.RecallCategoryID) AS KindID,
+	(sm.ProductType) AS ProductType, 
+	(sm.PartNumber) AS Product,
+	(sm.PartName) AS ProductDescription, 
+	'' AS PartCode, '' AS PartCodeDescription,
+	a.PartQuantity AS Quantity, 
+	0 AS UnitPrice, 
+	0 AS TotalPrice,
+	'FF ' + (rc.RecallRegNo) + ' ' + (vt.VechileTypeCode) AS ServiceTemplate,
+	'FF ' + (rc.RecallRegNo) + ' ' + (vt.VechileTypeCode) AS ServiceTemplateDetail,
+	CONVERT(VARCHAR(12), a.ID) AS ID
+FROM ServiceTemplateFFPartDetail a WITH (NOLOCK) 
+INNER JOIN dbo.ServiceTemplateFFPartHeader hd WITH (NOLOCK) ON hd.ID = a.ServiceTemplateFFPartHeaderID
+INNER JOIN dbo.VechileType vt WITH (NOLOCK) ON hd.Varian = LEFT(vt.VechileTypeCode, 2)
+AND vt.RowStatus = 0
+INNER JOIN dbo.RecallCategory rc WITH (NOLOCK) ON rc.ID = hd.RecallCategoryID
+INNER JOIN dbo.SparePartMaster sm WITH (NOLOCK) ON sm.ID = a.SparePartMasterID
+
+UNION ALL
+SELECT 
+	'FS'+CONVERT(VARCHAR(12), b.ServiceTemplateFSPartHeaderID) AS ServiceTemplateHeaderID,
+	(hd.VechileTypeID) AS VechileTypeID,
+	'FS'+CONVERT(VARCHAR(12),(hd.FSKindID)) AS KindID,
+	sm.ProductType AS ProductType,
+	sm.PartNumber AS Product,
+	sm.PartName AS ProductDescription,
+	'' AS PartCode,
+	'' AS PartCodeDescription,
+	b.PartQuantity AS Quantity,
+	'' AS UnitPrice,
+	b.PartAmount AS TotalPrice,
+	'FS '+(fk.KindCode+' ('+fk.KindDescription+') ')+' '+(vt.VechileTypeCode) AS ServiceTemplate,
+	'FS '+(fk.KindCode+' ('+fk.KindDescription+') ')+' '+(vt.VechileTypeCode) AS ServiceTemplateDetail,
+	CONVERT(VARCHAR(12), b.ID) AS ID
+FROM ServiceTemplateFSPartDetail b WITH (NOLOCK) 
+INNER JOIN dbo.ServiceTemplateFSPartHeader hd WITH (NOLOCK) ON hd.ID = b.ServiceTemplateFSPartHeaderID
+INNER JOIN dbo.SparePartMaster sm WITH (NOLOCK) ON sm.ID = b.SparePartMasterID
+INNER JOIN dbo.FSKind fk WITH (NOLOCK) ON fk.ID = hd.FSKindID
+INNER JOIN dbo.VechileType vt WITH (NOLOCK) ON hd.VechileTypeID = vt.ID
+
+UNION ALL
+SELECT 
+	'PM'+CONVERT(VARCHAR(12), c.ServiceTemplatePMPartHeaderID) AS ServiceTemplateHeaderID,
+	(vt.ID) AS VechileTypeID,
+	'PM'+CONVERT(VARCHAR(12),(hd.PMKindID)) AS KindID,
+	sm.ProductType AS ProductType,
+	sm.PartNumber AS Product,
+	sm.PartName AS ProductDescription,
+	'' AS PartCode,
+	'' AS PartCodeDescription,
+	c.PartQuantity AS Quantity,
+	'' AS UnitPrice,
+	0 AS TotalPrice,
+	'PM '+(fk.KindCode+' ('+fk.KindDescription+') ')+' '+(vt.VechileTypeCode) AS ServiceTemplate,
+	'PM '+(fk.KindCode+' ('+fk.KindDescription+') ')+' '+(vt.VechileTypeCode) AS ServiceTemplateDetail,
+	CONVERT(VARCHAR(12), c.ID) AS ID
+FROM ServiceTemplatePMPartDetail c WITH (NOLOCK) 
+INNER JOIN dbo.ServiceTemplatePMPartHeader hd WITH (NOLOCK) ON hd.ID = c.ServiceTemplatePMPartHeaderID
+INNER JOIN dbo.SparePartMaster sm WITH (NOLOCK) ON sm.ID = c.SparePartMasterID
+INNER JOIN dbo.PMKind fk WITH (NOLOCK) ON fk.ID = hd.PMKindID
+INNER JOIN dbo.VechileType vt WITH (NOLOCK) ON hd.Varian = LEFT(vt.VechileTypeCode, 2)
+
+UNION ALL 
+SELECT TOP(1)
+	'' AS ServiceTemplateHeaderID,
+	e.VechileTypeID AS VechileTypeID,
+	('FS'+CONVERT(VARCHAR(12),e.FSKindID))  AS KindID,
+	('SERVICES') AS ProductType,
+	('LC') AS Product,
+	'' AS ProductDescription,
+	'' AS PartCode,
+	'' AS PartCodeDescription,
+	1 AS Quantity,
+	'' AS UnitPrice,
+	0 AS TotalPrice,
+	'FS '+(fk.KindCode)+' '+(vt.VechileTypeCode) AS ServiceTemplate,
+	'FS '+(fk.KindCode)+' '+(vt.VechileTypeCode) AS ServiceTemplateDetail,
+	CONVERT(VARCHAR(12), e.ID) AS ID
+FROM ServiceTemplateFSLabor e WITH (NOLOCK) 
+INNER JOIN dbo.FSKind fk WITH (NOLOCK) ON fk.ID = e.FSKindID
+INNER JOIN dbo.VechileType vt WITH (NOLOCK) ON e.VechileTypeID = vt.ID
+
+UNION ALL 
+SELECT TOP(1)
+	'' AS ServiceTemplateHeaderID,
+	f.VechileTypeID AS VechileTypeID,
+	('PM'+CONVERT(VARCHAR(12),f.PMKindID))  AS KindID,
+	('SERVICES') AS ProductType,
+	('LC') AS Product,
+	'' AS ProductDescription,
+	'' AS PartCode,
+	'' AS PartCodeDescription,
+	1 AS Quantity,
+	'' AS UnitPrice,
+	0 AS TotalPrice,
+	'PM '+(fk.KindCode)+' '+(vt.VechileTypeCode) AS ServiceTemplate,
+	'PM '+(fk.KindCode)+' '+(vt.VechileTypeCode) AS ServiceTemplateDetail,
+	CONVERT(VARCHAR(12), f.ID) AS ID
+FROM ServiceTemplatePMLabor f WITH (NOLOCK) 
+INNER JOIN dbo.PMKind fk WITH (NOLOCK) ON fk.ID = f.PMKindID
+INNER JOIN dbo.VechileType vt WITH (NOLOCK) ON f.VechileTypeID = vt.ID
+)VWI_ServiceTemplateDetail {0}

@@ -1,0 +1,130 @@
+SELECT  
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_purchaserequisition.company
+	, VWI_CRM_xts_purchaserequisition.businessunitcode
+	, VWI_CRM_xts_purchaserequisition.xts_lastactionbyidyominame
+	, VWI_CRM_xts_purchaserequisition.xts_parentbusinessunitid
+	, VWI_CRM_xts_purchaserequisition.versionnumber
+	, VWI_CRM_xts_purchaserequisition.createdon
+	, VWI_CRM_xts_purchaserequisition.ktb_remarksname
+	, VWI_CRM_xts_purchaserequisition.xts_purchaserequisitionnumber
+	, VWI_CRM_xts_purchaserequisition.xts_purchaserequisitionid
+	, VWI_CRM_xts_purchaserequisition.xts_provinceid
+	, VWI_CRM_xts_purchaserequisition.xts_eventdata
+	, VWI_CRM_xts_purchaserequisition.statuscodename
+	, VWI_CRM_xts_purchaserequisition.xts_exchangeratedate
+	, VWI_CRM_xts_purchaserequisition.xts_status
+	, VWI_CRM_xts_purchaserequisition.xts_description
+	, VWI_CRM_xts_purchaserequisition.modifiedbyyominame
+	, VWI_CRM_xts_purchaserequisition.owneridtype
+	, VWI_CRM_xts_purchaserequisition.xts_totalbaseamount_base
+	, VWI_CRM_xts_purchaserequisition.createdonbehalfby
+	, VWI_CRM_xts_purchaserequisition.ktb_isfailed
+	, VWI_CRM_xts_purchaserequisition.modifiedbyname
+	, VWI_CRM_xts_purchaserequisition.xts_shippingsiteidname
+	, VWI_CRM_xts_purchaserequisition.ktb_isbodypaintname
+	, VWI_CRM_xts_purchaserequisition.ktb_log
+	, VWI_CRM_xts_purchaserequisition.owneridname
+	, VWI_CRM_xts_purchaserequisition.xts_provinceidname
+	, VWI_CRM_xts_purchaserequisition.overriddencreatedon
+	, VWI_CRM_xts_purchaserequisition.xts_address2
+	, VWI_CRM_xts_purchaserequisition.xts_lastactionbyidname
+	, VWI_CRM_xts_purchaserequisition.createdonbehalfbyyominame
+	, VWI_CRM_xts_purchaserequisition.modifiedonbehalfby
+	, VWI_CRM_xts_purchaserequisition.exchangerate
+	, VWI_CRM_xts_purchaserequisition.xts_totalconsumptiontaxamount_base
+	, VWI_CRM_xts_purchaserequisition.ktb_ribbondata
+	, VWI_CRM_xts_purchaserequisition.owningteam
+	, VWI_CRM_xts_purchaserequisition.xts_totalbaseamount
+	, VWI_CRM_xts_purchaserequisition.ktb_purchasetypename
+	, VWI_CRM_xts_purchaserequisition.ktb_ordertype
+	, VWI_CRM_xts_purchaserequisition.xts_shippingsiteid
+	, VWI_CRM_xts_purchaserequisition.xts_totalamount
+	, VWI_CRM_xts_purchaserequisition.xts_totaldiscountamount_base
+	, VWI_CRM_xts_purchaserequisition.statecode
+	, VWI_CRM_xts_purchaserequisition.ktb_pickingticket
+	, VWI_CRM_xts_purchaserequisition.timezoneruleversionnumber
+	, VWI_CRM_xts_purchaserequisition.xts_taxablename
+	, VWI_CRM_xts_purchaserequisition.ktb_chassisno
+	, VWI_CRM_xts_purchaserequisition.xts_exchangerateamount
+	, VWI_CRM_xts_purchaserequisition.xts_prpotypeidname
+	, VWI_CRM_xts_purchaserequisition.xts_totalconsumptiontaxamount
+	, VWI_CRM_xts_purchaserequisition.xts_locking
+	, VWI_CRM_xts_purchaserequisition.xts_prpotypeid
+	, VWI_CRM_xts_purchaserequisition.ktb_chassisnoname
+	, VWI_CRM_xts_purchaserequisition.xts_countryid
+	, VWI_CRM_xts_purchaserequisition.xts_totalamount_base
+	, VWI_CRM_xts_purchaserequisition.createdonbehalfbyname
+	, VWI_CRM_xts_purchaserequisition.createdbyyominame
+	, VWI_CRM_xts_purchaserequisition.xts_handling
+	, VWI_CRM_xts_purchaserequisition.xts_cityid
+	, VWI_CRM_xts_purchaserequisition.xts_exchangeratetypeidname
+	, VWI_CRM_xts_purchaserequisition.utcconversiontimezonecode
+	, VWI_CRM_xts_purchaserequisition.ktb_chassisno_newname
+	, VWI_CRM_xts_purchaserequisition.ktb_purpose
+	, VWI_CRM_xts_purchaserequisition.xts_statusname
+	, VWI_CRM_xts_purchaserequisition.ownerid
+	, VWI_CRM_xts_purchaserequisition.modifiedon
+	, VWI_CRM_xts_purchaserequisition.importsequencenumber
+	, VWI_CRM_xts_purchaserequisition.owneridyominame
+	, VWI_CRM_xts_purchaserequisition.ktb_isfailedname
+	, VWI_CRM_xts_purchaserequisition.xts_countryidname
+	, VWI_CRM_xts_purchaserequisition.ktb_deliverydate
+	, VWI_CRM_xts_purchaserequisition.ktb_ordertypename
+	, VWI_CRM_xts_purchaserequisition.xts_transactiondate
+	, VWI_CRM_xts_purchaserequisition.ktb_parttypename
+	, VWI_CRM_xts_purchaserequisition.ktb_parttype
+	, VWI_CRM_xts_purchaserequisition.ktb_remarks
+	, VWI_CRM_xts_purchaserequisition.createdbyname
+	, VWI_CRM_xts_purchaserequisition.ktb_interfacestatus
+	, VWI_CRM_xts_purchaserequisition.xts_businessunitid
+	, VWI_CRM_xts_purchaserequisition.xts_exchangeratetypeid
+	, VWI_CRM_xts_purchaserequisition.xts_totaldiscountamount
+	, VWI_CRM_xts_purchaserequisition.xts_address3
+	, VWI_CRM_xts_purchaserequisition.xts_cityidname
+	, VWI_CRM_xts_purchaserequisition.xts_handlingname
+	, VWI_CRM_xts_purchaserequisition.ktb_interfacehandling
+	, VWI_CRM_xts_purchaserequisition.xts_postalcode
+	, VWI_CRM_xts_purchaserequisition.transactioncurrencyid
+	, VWI_CRM_xts_purchaserequisition.createdby
+	, VWI_CRM_xts_purchaserequisition.ktb_isinterfaced
+	, VWI_CRM_xts_purchaserequisition.modifiedby
+	, VWI_CRM_xts_purchaserequisition.xts_address1
+	, VWI_CRM_xts_purchaserequisition.ktb_purposename
+	, VWI_CRM_xts_purchaserequisition.xts_exchangerateamount_base
+	, VWI_CRM_xts_purchaserequisition.owninguser
+	, VWI_CRM_xts_purchaserequisition.transactioncurrencyidname
+	, VWI_CRM_xts_purchaserequisition.ktb_purchasepriorityname
+	, VWI_CRM_xts_purchaserequisition.owningbusinessunit
+	, VWI_CRM_xts_purchaserequisition.ktb_isbodypaint
+	, VWI_CRM_xts_purchaserequisition.ktb_isinterfacedname
+	, VWI_CRM_xts_purchaserequisition.xts_parentbusinessunitidname
+	, VWI_CRM_xts_purchaserequisition.ktb_interfacehandlingname
+	, VWI_CRM_xts_purchaserequisition.modifiedonbehalfbyname
+	, VWI_CRM_xts_purchaserequisition.statuscode
+	, VWI_CRM_xts_purchaserequisition.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_purchaserequisition.ktb_purchaserequeisitionno
+	, VWI_CRM_xts_purchaserequisition.xts_lastactiondate
+	, VWI_CRM_xts_purchaserequisition.ktb_interfacestatusname
+	, VWI_CRM_xts_purchaserequisition.xts_taxable
+	, VWI_CRM_xts_purchaserequisition.ktb_chassisno_new
+	, VWI_CRM_xts_purchaserequisition.ktb_purchasetype
+	, VWI_CRM_xts_purchaserequisition.xts_lastactionbyid
+	, VWI_CRM_xts_purchaserequisition.statecodename
+	, VWI_CRM_xts_purchaserequisition.xts_businessunitidname
+	, VWI_CRM_xts_purchaserequisition.ktb_purchasepriority
+	, VWI_CRM_xts_purchaserequisition.RowStatus
+	, VWI_CRM_xts_purchaserequisition.msdyn_companycode
+	/**EndPagingIndexQuery**/
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_purchaserequisition a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    {0}
+) VWI_CRM_xts_purchaserequisition

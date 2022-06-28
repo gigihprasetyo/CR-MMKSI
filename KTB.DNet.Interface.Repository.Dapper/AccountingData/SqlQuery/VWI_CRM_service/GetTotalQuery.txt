@@ -1,0 +1,4 @@
+﻿SELECT 
+	COUNT(1)
+FROM CRM_service as VWI_CRM_service with (nolock)  
+{0}

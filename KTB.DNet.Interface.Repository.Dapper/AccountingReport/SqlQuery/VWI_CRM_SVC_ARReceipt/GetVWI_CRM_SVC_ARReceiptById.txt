@@ -1,0 +1,19 @@
+SELECT 
+	IDRow
+	,businessunitcode
+	,xts_accountreceivableinvoice
+	,xts_type
+	,xts_transactiondate
+	,xts_status
+	,xts_reversing
+	,xts_ordernumber
+	,xts_invoiceamount
+	,xts_customernumber
+	,xts_balance
+	,address1_line1
+	,xts_totalworkamount
+	,xts_totalpartsamount
+	,xts_totalmiscchargeamount
+	,xts_platenumber
+FROM VWI_CRM_SVC_ARReceipt WITH (NOLOCK)
+WHERE ID = @Id

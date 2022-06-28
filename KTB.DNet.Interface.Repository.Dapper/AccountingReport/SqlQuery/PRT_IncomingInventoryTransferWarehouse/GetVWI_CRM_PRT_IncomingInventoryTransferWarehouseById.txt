@@ -1,0 +1,20 @@
+SELECT 
+	IDRow
+	,company
+	,businessunitcode
+	,InventoryTransferNo
+	,TransactionDate
+	,TransactionType
+	,WorkOrderNo
+	,FromSite
+	,FromWarehouse
+	,ToWarehouse
+	,Product
+	,ProductDescription
+	,Quantity
+	,Unit
+	,COGSTrx
+	,msdyn_companycode
+	,xts_inventorytransferdetailid
+FROM VWI_CRM_PRT_IncomingInventoryTransferWarehouse WITH (NOLOCK)
+WHERE ID = @Id

@@ -1,0 +1,14 @@
+SELECT 
+	COUNT(1)
+FROM 
+(
+	select 
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+		, a.*, 
+		b.msdyn_companycode
+	from CRM_xjp_vehiclecostinput a with(nolock)
+	left join CRM_businessunit b with(nolock)
+	on a.xjp_businessunitid = b.businessunitid
+	{0}
+) as VWI_CRM_xjp_vehiclecostinput

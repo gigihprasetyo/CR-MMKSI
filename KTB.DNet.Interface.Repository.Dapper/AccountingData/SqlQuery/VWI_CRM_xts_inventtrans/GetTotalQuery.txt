@@ -1,0 +1,1 @@
+SELECT COUNT(*) FROM CRM_xts_inventtrans VWI_CRM_xts_inventtrans WITH(NOLOCK) {0}

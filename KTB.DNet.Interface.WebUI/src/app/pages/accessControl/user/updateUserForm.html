@@ -1,0 +1,129 @@
+﻿<div class="widgets">
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="{{activePageTitle}}">
+                <uib-tabset active="0">
+                    <uib-tab heading="User Info">
+                        <div ba-panel ba-panel-title="User Info" ba-panel-class="unbox-panel custom-wizard-panel">
+                            <form name="form">
+                                <div class="col-md-6">
+                                    <input-text label="UserName" name="UserName" ng-model="user.UserName" required></input-text>
+                                    <input-text label="Email" name="Email" ng-model="user.Email" required></input-text>
+                                    <input-text label="FirstName" name="FirstName" ng-model="user.FirstName"></input-text>
+                                    <input-text label="LastName" name="LastName" ng-model="user.LastName"></input-text>
+                                    <input-text label="PhoneNumber" name="PhoneNumber" ng-model="user.PhoneNumber"></input-text>
+                                    <input-text label="Street1" name="Street1" ng-model="user.Street1"></input-text>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <input-text label="City" name="City" ng-model="user.City"></input-text>
+                                    <input-text label="State" name="State" ng-model="user.State"></input-text>
+                                    <input-text label="PostalCode" name="PostalCode" ng-model="user.PostalCode"></input-text>
+                                    <input-text label="Country" name="Country" ng-model="user.Country"></input-text>
+                                    <input-text label="Company" name="Company" ng-model="user.Company"></input-text>
+                                </div>
+                                <hr class="col-md-12" />
+                                <div class="col-md-6">
+                                    <standard-select label="Dealer" name="DealerId" ng-model="user.DealerId" options="dealerOptions" value="Id" text="DealerCode"
+                                        required />
+                                </div>
+                                <hr class="col-md-12" />
+                                <div class="col-md-6">
+                                    <input-text label="New Password" name="NewPassword" ng-model="user.NewPassword" type="password"></input-text>
+                                    <input-text label="Confirm Password" name="ConfirmPassword" ng-model="user.ConfirmPassword" type="password"></input-text>
+                                </div>
+                                <div class="col-md-12">
+                                    <switcher label="Is Active" name="IsActive" switcher-style="info" text-on="YES" text-off="NO" ng-model="user.IsActive"></switcher>
+                                </div>
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary m-t-15 waves-effect" ng-click="updateUserInfo()">Save</button>
+                                </div>
+                            </form>
+                        </div>
+                    </uib-tab>
+                    <uib-tab heading="Clients">
+                        <div ba-panel ba-panel-title="Define User Client" ba-panel-class="unbox-panel custom-wizard-panel">
+                            <form name="form">
+                                <div class="col-md-12">
+                                    <multi-select-jquery label="Select Client" all-button="true" name="selectedClientIds" ng-model="entity.selectedClientIds" options="clientOptions"
+                                                         value="ClientId" text="Name" required />
+                                </div>
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary m-t-15 waves-effect" ng-click="updateUserClient()">Save</button>
+                                </div>
+                                <!--<div class="col-md-6 col-xs-12">
+                                    <div class="col-md-12">
+                                        <standard-select label="Select client " name="selectedClient" ng-model="selectedClient.ClientId" options="filteredClientOptions"
+                                            value="ClientId" text="Name" />
+                                    </div>
+                                    <div class="col-md-12 text-right">
+                                        <button class="btn btn-primary m-t-15 waves-effect" ng-click="addClient()">Add</button>
+                                    </div>
+                                </div>-->
+                            </form>
+                            
+                        </div>
+                    </uib-tab>
+                    <uib-tab heading="Roles">
+                        <div ba-panel ba-panel-title="Define User Role" ba-panel-class="unbox-panel custom-wizard-panel">
+                            <form name="form">
+                                <div class="col-md-6 col-xs-12">
+                                    <div class="col-md-12">
+                                        <standard-select label="Select role " name="selectedRole" ng-model="selectedRole.Id" options="filteredRoleOptions" value="Id"
+                                            text="Name" />
+                                    </div>
+                                    <div class="col-md-12 text-right">
+                                        <button class="btn btn-primary m-t-15 waves-effect" ng-click="addRole()">Add</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="col-md-12">
+                                <div general-table offline="true" table-definition="roleTableDefinition"></div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button class="btn btn-primary m-t-15 waves-effect" ng-click="updateUserRole()">Save</button>
+                            </div>
+                        </div>
+                    </uib-tab>
+                    <uib-tab heading="Custom User Permissions">
+                        <div ba-panel ba-panel-title="Define Custom User Permissions" ba-panel-class="unbox-panel custom-wizard-panel">
+                            <form name="form">
+                                <div class="col-md-6 col-xs-12" ng-if="!isPermissionLoaded">
+                                    <div class="col-md-12">
+                                        <standard-select label="Select client " name="selectedClientUser" ng-model="selectedClientUser.Id" options="user.ClientUsers"
+                                            value="Id" text="Client.Name" />
+                                    </div>
+                                    <div class="col-md-12 text-right">
+                                        <button class="btn btn-primary m-t-15 waves-effect" ng-click="loadUserPermissionOptions()">Select</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 text-right" ng-if="isPermissionLoaded">
+                                    <button class="btn btn-info m-t-15 waves-effect" ng-click="selectAnotherClient()">Select Another Client</button>
+                                </div>
+                                <div class="col-md-6 col-xs-12" ng-if="isPermissionLoaded">
+                                    <div class="col-md-12">
+                                        <standard-select label="Select permission " name="selectedPermission" ng-model="selectedPermission.Id" options="filteredPermissionOptions"
+                                            value="Id" text="Name" />
+                                    </div>
+                                    <div class="col-md-12 text-right">
+                                        <button class="btn btn-primary m-t-15 waves-effect" ng-click="addPermission()">Add</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div class="col-md-12" ng-if="isPermissionLoaded">
+                                <div general-table offline="true" table-definition="permissionTableDefinition"></div>
+                            </div>
+                            <div class="col-md-12 text-right" ng-if="isPermissionLoaded">
+                                <button class="btn btn-primary m-t-15 waves-effect" ng-click="updateUserPermission()">Save</button>
+                            </div>
+                        </div>
+                    </uib-tab>
+                </uib-tabset>
+                <div class="col-md-12 text-right">
+                    <a ui-sref="accessControl.user.list" class="btn btn-default-red m-t-15 waves-effect">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

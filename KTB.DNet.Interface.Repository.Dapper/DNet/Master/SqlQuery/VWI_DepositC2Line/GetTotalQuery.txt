@@ -1,0 +1,6 @@
+select
+	count(1)
+from DepositC2Line as VWI_DepositC2Line
+{0}
+
+

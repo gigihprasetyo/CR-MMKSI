@@ -1,0 +1,2094 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>KTB.DNet.Interface.WebApi</name>
+    </assembly>
+    <members>
+        <member name="M:KTB.DNet.Interface.WebApi.App_Start.NinjectWebCommon.Start">
+            <summary>
+            Starts the application
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.App_Start.NinjectWebCommon.Stop">
+            <summary>
+            Stops the application.
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.App_Start.NinjectWebCommon.CreateKernel">
+            <summary>
+            Creates the kernel that will manage your application.
+            </summary>
+            <returns>The created kernel.</returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.App_Start.NinjectWebCommon.RegisterServices(Ninject.IKernel)">
+            <summary>
+            Load your modules or register your services here!
+            </summary>
+            <param name="kernel">The kernel.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,KTB.DNet.Interface.WebApi.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,KTB.DNet.Interface.WebApi.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},KTB.DNet.Interface.WebApi.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(KTB.DNet.Interface.WebApi.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,KTB.DNet.Interface.WebApi.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:KTB.DNet.Interface.WebApi.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:KTB.DNet.Interface.WebApi.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.BankController.Update(KTB.DNet.Interface.Model.BankParameterDto)">
+            <summary>
+            Update Bank entity
+            </summary>
+            <param name="value">Bank Parameter </param>
+            <remarks>Update 'Bank' entity</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.BankController.Create(KTB.DNet.Interface.Model.BankParameterDto)">
+            <summary>
+            Create Bank Data 
+            </summary>
+            <param name="value">Bank Data </param>
+            <remarks>Create Bank Data </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.BankController.Delete(System.Int32)">
+            <summary>
+            Delete 'Bank' data 
+            </summary>
+            <param name="id">Bank Id</param>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.BankController.Filter(KTB.DNet.Interface.Model.BankFilterDto)">
+            <summary>
+            Filter Bank Data 
+            </summary>
+            <param name="filter"></param>
+            <remarks>Filter Bank Data</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.BankController.Get(System.Int32)">
+            <summary>
+            Get Bank By ID
+            </summary>
+            <param name="id">Bank ID</param>
+            <remarks>Get Bank Data By ID </remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.Area1Controller">
+            <summary>
+            Area1 Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.Area1Controller.#ctor">
+            <summary>
+            Area1 controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.Area1Controller.#ctor(KTB.DNET.BusinessLogic.Interfaces.IArea1BL)">
+            <summary>
+            Area1 constructor with parameter
+            </summary>
+            <param name="Area1BL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.Area1Controller.Get(System.Int32)">
+            <summary>
+            Get Area1 by ID
+            </summary>
+            <param name="id">Area1 ID</param>
+            <remarks>Get Area1 by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.Area1Controller.Filter(KTB.DNet.Interface.Model.Area1FilterDto)">
+            <summary>
+            Get Area1 list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.Area1Controller.GetAll">
+            <summary>
+            Get all Area1 list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.Area2Controller">
+            <summary>
+            Area2 Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.Area2Controller.#ctor">
+            <summary>
+            Area2 controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.Area2Controller.#ctor(KTB.DNET.BusinessLogic.Interfaces.IArea2BL)">
+            <summary>
+            Area2 constructor with parameter
+            </summary>
+            <param name="Area2BL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.Area2Controller.Get(System.Int32)">
+            <summary>
+            Get Area2 by ID
+            </summary>
+            <param name="id">Area2 ID</param>
+            <remarks>Get Area2 by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.Area2Controller.Filter(KTB.DNet.Interface.Model.Area2FilterDto)">
+            <summary>
+            Get Area2 list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.Area2Controller.GetAll">
+            <summary>
+            Get all Area2 list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.CampaignController">
+            <summary>
+            Campaign Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CampaignController.#ctor">
+            <summary>
+            Campaign controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CampaignController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IBenefitMasterHeaderBL)">
+            <summary>
+            Campaign Master constructor with parameter
+            </summary>
+            <param name="BenefitMasterHeaderBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CampaignController.Get(System.Int32)">
+            <summary>
+            Get Campaign Master by ID
+            </summary>
+            <param name="id">Benefit Master Header ID</param>
+            <remarks>Get Benefit Master Header by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CampaignController.Filter(KTB.DNet.Interface.Model.BenefitMasterHeaderFilterDto)">
+            <summary>
+            Get SAP Customer list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CampaignController.GetAll">
+            <summary>
+            Get all SAP Customer list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.CategoryController">
+            <summary>
+            Category Controller
+            </summary>
+            <summary>
+            Category Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CategoryController.#ctor">
+            <summary>
+            Category controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CategoryController.#ctor(KTB.DNET.BusinessLogic.Interfaces.ICategoryBL)">
+            <summary>
+            Category constructor with parameter
+            </summary>
+            <param name="CategoryBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CategoryController.Get(System.Int32)">
+            <summary>
+            Get Category by ID
+            </summary>
+            <param name="id">category ID</param>
+            <remarks>Get Category by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CategoryController.Filter(KTB.DNet.Interface.Model.CategoryFilterDto)">
+            <summary>
+            Get Category list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CategoryController.GetAll">
+            <summary>
+            Get all Category list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.ChassisMasterController">
+            <summary>
+            ChassisMaster Controller
+            </summary>
+            <summary>
+            ChassisMaster Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.ChassisMasterController.#ctor">
+            <summary>
+            ChassisMaster controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.ChassisMasterController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IChassisMasterBL,KTB.DNet.Interface.WebApi.Helper.ILoggerService)">
+            <summary>
+            ChassisMaster constructor with parameter
+            </summary>
+            <param name="ChassisMasterBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.ChassisMasterController.Get(System.Int32)">
+            <summary>
+            Get ChassisMaster by ID
+            </summary>
+            <param name="id">chassismaster ID</param>
+            <remarks>Get ChassisMaster by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.ChassisMasterController.Filter(KTB.DNet.Interface.Model.ChassisMasterFilterDto)">
+            <summary>
+            Get ChassisMaster list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.ChassisMasterController.GetAll">
+            <summary>
+            Get all ChassisMaster list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.PKTDateController">
+            <summary>
+            PKTDate Controller
+            </summary>
+            <summary>
+            PKTDate Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PKTDateController.#ctor">
+            <summary>
+            PKTDate controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PKTDateController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IPKTDateBL,KTB.DNet.Interface.WebApi.Helper.ILoggerService)">
+            <summary>
+            PKTDate constructor with parameter
+            </summary>
+            <param name="PKTDateBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PKTDateController.Create(KTB.DNet.Interface.Model.Parameters.PKTDateParameterDto)">
+            <summary>
+            Create PKT Date
+            </summary>
+            <param name="value">PKT Date</param>
+            /// <remarks>Create PKT Date</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PKTDateController.Update(KTB.DNet.Interface.Model.Parameters.PKTDateParameterDto)">
+            <summary>
+            Update PKT Date
+            </summary>
+            <param name="value">PKT Date Data</param>
+            /// <remarks>Update PKT Date</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PKTDateController.Get(System.Int32)">
+            <summary>
+            Get PKT Date by ID
+            </summary>
+            <param name="id">pktdate ID</param>
+            <remarks>Get PKTDate by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PKTDateController.Delete(System.Int32)">
+            <summary>
+            Delete PKT Date
+            </summary>
+            <param name="id">PKT Date ID</param>
+            <remarks>Delete by id</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PKTDateController.Filter(KTB.DNet.Interface.Model.Filter.PKTDateFilterDto)">
+            <summary>
+            Get PKTDate list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PKTDateController.GetAll">
+            <summary>
+            Get all PKTDate list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.PlaygroundController">
+            <summary>
+            Playground API Controller
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PlaygroundController.#ctor">
+            <summary>
+            Playground Constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PlaygroundController.#ctor(KTB.DNET.BusinessLogic.Interfaces.ISPKCustomerBL,KTB.DNet.Interface.WebApi.Helper.ILoggerService)">
+            <summary>
+            playground Constructor with param
+            </summary>
+            <param name="spkCustomerBL"></param>
+            <param name="log"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PlaygroundController.CreateSPKCustomer(KTB.DNet.Interface.Model.SPKCustomerParameterDto)">
+            <summary>
+            Get certain Playground by id
+            </summary>
+            <param name="id">integer id</param>
+            <remarks>Get Playground by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.CityController">
+            <summary>
+            City API Controller
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CityController.#ctor">
+            <summary>
+            City Constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CityController.#ctor(KTB.DNET.BusinessLogic.Interfaces.ICityBL,KTB.DNet.Interface.WebApi.Helper.ILoggerService)">
+            <summary>
+            city Constructor with param
+            </summary>
+            <param name="cityBL"></param>
+            <param name="log"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CityController.Get(System.Int32)">
+            <summary>
+            Get certain City by id
+            </summary>
+            <param name="id">integer id</param>
+            <remarks>Get City by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CityController.Filter(KTB.DNet.Interface.Model.CityFilterDto)">
+            <summary>
+            Filter by Criterias
+            </summary>
+            <param name="filterDto"></param>
+            <remarks>Search City by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.CityController.GetAll">
+            <summary>
+            Get all City list
+            </summary>
+            <remarks>Get all City data</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.DealerBranchController">
+            <summary>
+            DealerBranch Controller
+            </summary>
+            <summary>
+            DealerBranch Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerBranchController.#ctor">
+            <summary>
+            DealerBranch controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerBranchController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IDealerBranchBL)">
+            <summary>
+            DealerBranch constructor with parameter
+            </summary>
+            <param name="DealerBranchBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerBranchController.Get(System.Int32)">
+            <summary>
+            Get DealerBranch by ID
+            </summary>
+            <param name="id">dealerbranch ID</param>
+            <remarks>Get DealerBranch by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerBranchController.Filter(KTB.DNet.Interface.Model.DealerBranchFilterDto)">
+            <summary>
+            Get DealerBranch list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerBranchController.GetAll">
+            <summary>
+            Get all DealerBranch list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.DealerGroupController">
+            <summary>
+            DealerGroup Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerGroupController.#ctor">
+            <summary>
+            DealerGroup controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerGroupController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IDealerGroupBL)">
+            <summary>
+            DealerGroup constructor with parameter
+            </summary>
+            <param name="DealerGroupBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerGroupController.Get(System.Int32)">
+            <summary>
+            Get DealerGroup by ID
+            </summary>
+            <param name="id">DealerGroup ID</param>
+            <remarks>Get DealerGroup by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerGroupController.Filter(KTB.DNet.Interface.Model.DealerGroupFilterDto)">
+            <summary>
+            Get DealerGroup list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerGroupController.GetAll">
+            <summary>
+            Get all DealerGroup list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.EndCustomerController">
+            <summary>
+            EndCustomer Controller
+            </summary>
+            <summary>
+            EndCustomer Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.EndCustomerController.#ctor">
+            <summary>
+            EndCustomer controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.EndCustomerController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IEndCustomerBL)">
+            <summary>
+            EndCustomer constructor with parameter
+            </summary>
+            <param name="EndCustomerBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.EndCustomerController.Get(System.Int32)">
+            <summary>
+            Get EndCustomer by ID
+            </summary>
+            <param name="id">endcustomer ID</param>
+            <remarks>Get EndCustomer by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.EndCustomerController.Filter(KTB.DNet.Interface.Model.EndCustomerFilterDto)">
+            <summary>
+            Get EndCustomer list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.EndCustomerController.GetAll">
+            <summary>
+            Get all EndCustomer list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.FSKindController">
+            <summary>
+            FSKind Controller
+            </summary>
+            <summary>
+            FSKind Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.FSKindController.#ctor">
+            <summary>
+            FSKind controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.FSKindController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IFSKindBL)">
+            <summary>
+            FSKind constructor with parameter
+            </summary>
+            <param name="FSKindBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.FSKindController.Get(System.Int32)">
+            <summary>
+            Get FSKind by ID
+            </summary>
+            <param name="id">fskind ID</param>
+            <remarks>Get FSKind by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.FSKindController.Filter(KTB.DNet.Interface.Model.FSKindFilterDto)">
+            <summary>
+            Get FSKind list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.FSKindController.GetAll">
+            <summary>
+            Get all FSKind list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.LaborMasterController">
+            <summary>
+            LaborMaster Controller
+            </summary>
+            <summary>
+            LaborMaster Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.LaborMasterController.#ctor">
+            <summary>
+            LaborMaster controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.LaborMasterController.#ctor(KTB.DNET.BusinessLogic.Interfaces.ILaborMasterBL)">
+            <summary>
+            LaborMaster constructor with parameter
+            </summary>
+            <param name="LaborMasterBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.LaborMasterController.Get(System.Int32)">
+            <summary>
+            Get LaborMaster by ID
+            </summary>
+            <param name="id">labormaster ID</param>
+            <remarks>Get LaborMaster by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.LaborMasterController.Filter(KTB.DNet.Interface.Model.LaborMasterFilterDto)">
+            <summary>
+            Get LaborMaster list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.LaborMasterController.GetAll">
+            <summary>
+            Get all LaborMaster list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.PaymentMethodController">
+            <summary>
+            PaymentMethod Controller
+            </summary>
+            <summary>
+            PaymentMethod Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PaymentMethodController.#ctor">
+            <summary>
+            PaymentMethod controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PaymentMethodController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IPaymentMethodBL)">
+            <summary>
+            PaymentMethod constructor with parameter
+            </summary>
+            <param name="PaymentMethodBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PaymentMethodController.Get(System.Int32)">
+            <summary>
+            Get PaymentMethod by ID
+            </summary>
+            <param name="id">paymentmethod ID</param>
+            <remarks>Get PaymentMethod by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PaymentMethodController.Filter(KTB.DNet.Interface.Model.PaymentMethodFilterDto)">
+            <summary>
+            Get PaymentMethod list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PaymentMethodController.GetAll">
+            <summary>
+            Get all PaymentMethod list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.PaymentPurposeController">
+            <summary>
+            PaymentPurpose Controller
+            </summary>
+            <summary>
+            PaymentPurpose Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PaymentPurposeController.#ctor">
+            <summary>
+            PaymentPurpose controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PaymentPurposeController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IPaymentPurposeBL)">
+            <summary>
+            PaymentPurpose constructor with parameter
+            </summary>
+            <param name="PaymentPurposeBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PaymentPurposeController.Get(System.Int32)">
+            <summary>
+            Get PaymentPurpose by ID
+            </summary>
+            <param name="id">paymentpurpose ID</param>
+            <remarks>Get PaymentPurpose by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PaymentPurposeController.Filter(KTB.DNet.Interface.Model.PaymentPurposeFilterDto)">
+            <summary>
+            Get PaymentPurpose list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PaymentPurposeController.GetAll">
+            <summary>
+            Get all PaymentPurpose list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.PDIController">
+            <summary>
+            PDI Controller
+            </summary>
+            <summary>
+            PDI Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PDIController.#ctor">
+            <summary>
+            PDI controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PDIController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IPDIBL,KTB.DNet.Interface.WebApi.Helper.ILoggerService)">
+             <summary>
+             PDI constructor with parameter
+             </summary>
+            <param name="pdiBL"></param>
+            <param name="loggerService"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PDIController.Update(KTB.DNet.Interface.Model.PDIParameterDto)">
+            <summary>
+            Update a PDI
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PDIController.Get(System.Int32)">
+            <summary>
+            Get PDI by ID
+            </summary>
+            <param name="id">pdi ID</param>
+            <remarks>Get PDI by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PDIController.Filter(KTB.DNet.Interface.Model.PDIFilterDto)">
+            <summary>
+            Get PDI list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PDIController.GetAll">
+            <summary>
+            Get all PDI list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.PositionWSCController">
+            <summary>
+            PositionWSC Controller
+            </summary>
+            <summary>
+            PositionWSC Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PositionWSCController.#ctor">
+            <summary>
+            PositionWSC controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PositionWSCController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IPositionWSCBL)">
+            <summary>
+            PositionWSC constructor with parameter
+            </summary>
+            <param name="PositionWSCBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PositionWSCController.Get(System.Int32)">
+            <summary>
+            Get PositionWSC by ID
+            </summary>
+            <param name="id">positionwsc ID</param>
+            <remarks>Get PositionWSC by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PositionWSCController.Filter(KTB.DNet.Interface.Model.PositionWSCFilterDto)">
+            <summary>
+            Get PositionWSC list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PositionWSCController.GetAll">
+            <summary>
+            Get all PositionWSC list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.PriceController">
+            <summary>
+            Price Controller
+            </summary>
+            <summary>
+            Price Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PriceController.#ctor">
+            <summary>
+            Price controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PriceController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IPriceBL)">
+            <summary>
+            Price constructor with parameter
+            </summary>
+            <param name="PriceBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PriceController.Get(System.Int32)">
+            <summary>
+            Get Price by ID
+            </summary>
+            <param name="id">price ID</param>
+            <remarks>Get Price by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PriceController.Filter(KTB.DNet.Interface.Model.PriceFilterDto)">
+            <summary>
+            Get Price list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.PriceController.GetAll">
+            <summary>
+            Get all Price list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.ProvinceController">
+            <summary>
+            Province Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.ProvinceController.#ctor">
+            <summary>
+            Province controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.ProvinceController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IProvinceBL)">
+            <summary>
+            Province constructor with parameter
+            </summary>
+            <param name="provinceBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.ProvinceController.Get(System.Int32)">
+            <summary>
+            Get Province by ID
+            </summary>
+            <param name="id">Province ID</param>
+            <remarks>Get Province by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.ProvinceController.Filter(KTB.DNet.Interface.Model.ProvinceFilterDto)">
+            <summary>
+            Get Province list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.ProvinceController.GetAll">
+            <summary>
+            Get all Province list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.DealerController">
+            <summary>
+            Dealer Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerController.#ctor">
+            <summary>
+            Dealer controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IDealerBL)">
+            <summary>
+            Dealer constructor with parameter
+            </summary>
+            <param name="dealerBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerController.Get(System.Int32)">
+            <summary>
+            Get Dealer by ID
+            </summary>
+            <param name="id">Dealer ID</param>
+            <remarks>Get Dealer by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerController.Filter(KTB.DNet.Interface.Model.DealerFilterDto)">
+            <summary>
+            Get Dealer list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.DealerController.GetAll">
+            <summary>
+            Get all Dealer list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.SPKChassisController">
+            <summary>
+            SPK Chassis API Controller
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKChassisController.#ctor">
+            <summary>
+            SPK Chassis Constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKChassisController.#ctor(KTB.DNET.BusinessLogic.Interfaces.ISPKChassisBL,KTB.DNet.Interface.WebApi.Helper.ILoggerService)">
+            <summary>
+            SPK Chassis Constructor with parameter
+            </summary>
+            <param name="spkChassisBL"></param>
+            <param name="loggerService"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKChassisController.Create(KTB.DNet.Interface.Model.SPKChassisParameterDto)">
+            <summary>
+            Create SPK Chassis
+            </summary>
+            <param name="value">SPK Chassis Data</param>
+            <remarks>Create SPK Chassis</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKChassisController.Get(System.Int32)">
+            <summary>
+            Get SPK Chassis by ID
+            </summary>
+            <param name="id">SPK Chassis ID</param>
+            <remarks>Get SPK Chassis by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKChassisController.Delete(System.Int32)">
+            <summary>
+            Delete SPK Chassis by ID
+            </summary>
+            <param name="id">SPK Chassis ID</param>
+            <remarks>Delete by id</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKChassisController.Filter(KTB.DNet.Interface.Model.SPKChassisFilterDto)">
+            <summary>
+            Get SPK Chassis list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKChassisController.GetAll">
+            <summary>
+            Get all SPK Chassis list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.SAPCustomerController">
+            <summary>
+            SAP Customer API Controller
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SAPCustomerController.#ctor">
+            <summary>
+            SAP Customer Cosntructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SAPCustomerController.#ctor(KTB.DNET.BusinessLogic.Interfaces.ISAPCustomerBL,KTB.DNet.Interface.WebApi.Helper.ILoggerService)">
+            <summary>
+            SAP Customer constructor with parameter
+            </summary>
+            <param name="sapCustomerBL"></param>
+            <param name="loggerService"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SAPCustomerController.Create(KTB.DNet.Interface.Model.SAPCustomerParameterDto)">
+            <summary>
+            Create SAP Customer
+            </summary>
+            <param name="value">SAP Customer Data</param>
+            <remarks>Create SAP Customer</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SAPCustomerController.Update(KTB.DNet.Interface.Model.SAPCustomerParameterDto)">
+            <summary>
+            Update SAP Customer
+            </summary>
+            <param name="value">SAP Customer Data</param>
+            <remarks>Update SAP Customer</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SAPCustomerController.Get(System.Int32)">
+            <summary>
+            Get SAP Customer by ID
+            </summary>
+            <param name="id">SAP Customer ID</param>
+            <remarks>Get SAP Customer by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SAPCustomerController.Delete(System.Int32)">
+            <summary>
+            Delete SAP Customer by ID
+            </summary>
+            <param name="id">SAP Customer ID</param>
+            <remarks>Delete by id</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SAPCustomerController.Filter(KTB.DNet.Interface.Model.SAPCustomerFilterDto)">
+            <summary>
+            Get SAP Customer list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SAPCustomerController.GetAll">
+            <summary>
+            Get all SAP Customer list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.SPKController">
+            <summary>
+            SPK API Controller
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKController.#ctor">
+            <summary>
+            SPK Cosntructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKController.#ctor(KTB.DNET.BusinessLogic.Interfaces.ISPKBL,KTB.DNet.Interface.WebApi.Helper.ILoggerService)">
+            <summary>
+            SPK constructor with parameter
+            </summary>
+            <param name="spkBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKController.Create(KTB.DNet.Interface.Model.SPKHeaderParameterDto)">
+            <summary>
+            Create SPK
+            </summary>
+            <param name="value">SPK Data</param>
+            <remarks>Create SPK</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKController.Update(KTB.DNet.Interface.Model.SPKHeaderParameterDto)">
+            <summary>
+            Update SPK
+            </summary>
+            <param name="value">SPK Data</param>
+            <remarks>Update SPK</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.SPKDetailController">
+            <summary>
+            SPK Detail Controller
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKDetailController.#ctor">
+            <summary>
+            SPK Detail Constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKDetailController.#ctor(KTB.DNET.BusinessLogic.Interfaces.ISPKDetailBL,KTB.DNet.Interface.WebApi.Helper.ILoggerService)">
+            <summary>
+            SPK Detail with parameter
+            </summary>
+            <param name="spkDetailBL"></param>
+            <param name="logger"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKDetailController.Create(KTB.DNet.Interface.Model.SPKDetailParameterDto)">
+            <summary>
+            Create SPK Detail
+            </summary>
+            <param name="value">SPK Detail Data</param>
+            <remarks>Create SPK Detail</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.SPKCustomerController">
+            <summary>
+            SPKCustomer Controller
+            </summary>
+            <summary>
+            SPKCustomer Web API
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKCustomerController.#ctor">
+            <summary>
+            SPKCustomer controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKCustomerController.#ctor(KTB.DNET.BusinessLogic.Interfaces.ISPKCustomerBL,KTB.DNet.Interface.WebApi.Helper.ILoggerService)">
+            <summary>
+            SPKCustomer constructor with parameter
+            </summary>
+            <param name="SPKCustomerBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKCustomerController.Get(System.Int32)">
+            <summary>
+            Get SPKCustomer by ID
+            </summary>
+            <param name="id">spkcustomer ID</param>
+            <remarks>Get SPKCustomer by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKCustomerController.Create(KTB.DNet.Interface.Model.SPKCustomerParameterDto)">
+            <summary>
+            Get certain Playground by id
+            </summary>
+            <param name="id">integer id</param>
+            <remarks>Get Playground by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKCustomerController.Update(KTB.DNet.Interface.Model.SPKCustomerParameterDto)">
+            <summary>
+            Get certain Playground by id
+            </summary>
+            <param name="id">integer id</param>
+            <remarks>Get Playground by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKCustomerController.Delete(System.Int32)">
+            <summary>
+            Delete SPKCustomer by ID
+            </summary>
+            <param name="id">spkcustomer ID</param>
+            <remarks>Delete by id</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKCustomerController.Filter(KTB.DNet.Interface.Model.SPKCustomerFilterDto)">
+            <summary>
+            Get SPKCustomer list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.SPKCustomerController.GetAll">
+            <summary>
+            Get all SPKCustomer list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.StandardCodeController.GetAll">
+            <summary>
+            Get All Standard Code
+            </summary>
+            <remarks>Get All Standard Code</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.StandardCodeController.GetById(System.Int32)">
+            <summary>
+            Get Standard Code by ID
+            </summary>
+            <param name="id">Standard Code ID</param>
+            <remarks>Get Standard Code by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.StandardCodeController.GetByCategory(KTB.DNet.Interface.Model.StandardCodeFilterDto)">
+            <summary>
+            Create new Standard Code
+            </summary>
+            <param name="value">Standard Code Data</param>
+            <remarks>Create Standard Code</remarks>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.StandardCodeController.Create(KTB.DNet.Interface.Model.StandardCodeDto)">
+            <summary>
+            Create new Standard Code
+            </summary>
+            <param name="value">Standard Code Data</param>
+            <remarks>Create Standard Code</remarks>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.StandardCodeController.Put(KTB.DNet.Interface.Model.StandardCodeDto)">
+            <summary>
+            Update Standard Code
+            </summary>
+            <param name="id">Standard Code ID</param>
+            <param name="value">Standard Code Data</param>
+            <remarks>Update Standard Code</remarks>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.StandardCodeController.Delete(System.Int32)">
+            <summary>
+            Delete Standard Code
+            </summary>
+            <param name="id">Standard Code ID</param>
+            <remarks>Delete Standard Code</remarks>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.StandardCodeController.GetException">
+            <summary>
+            Get Exception
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.TermOfPaymentController">
+            <summary>
+            TermOfPayment Controller
+            </summary>
+            <summary>
+            TermOfPayment Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.TermOfPaymentController.#ctor">
+            <summary>
+            TermOfPayment controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.TermOfPaymentController.#ctor(KTB.DNET.BusinessLogic.Interfaces.ITermOfPaymentBL)">
+            <summary>
+            TermOfPayment constructor with parameter
+            </summary>
+            <param name="TermOfPaymentBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.TermOfPaymentController.Get(System.Int32)">
+            <summary>
+            Get TermOfPayment by ID
+            </summary>
+            <param name="id">termofpayment ID</param>
+            <remarks>Get TermOfPayment by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.TermOfPaymentController.Filter(KTB.DNet.Interface.Model.TermOfPaymentFilterDto)">
+            <summary>
+            Get TermOfPayment list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.TermOfPaymentController.GetAll">
+            <summary>
+            Get all TermOfPayment list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.VehicleClassController">
+            <summary>
+            VehicleClass Controller
+            </summary>
+            <summary>
+            VehicleClass Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleClassController.#ctor">
+            <summary>
+            VehicleClass controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleClassController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IVehicleClassBL)">
+            <summary>
+            VehicleClass constructor with parameter
+            </summary>
+            <param name="vehicleclassBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleClassController.Get(System.Int32)">
+            <summary>
+            Get VehicleClass by ID
+            </summary>
+            <param name="id">VehicleClass ID</param>
+            <remarks>Get VehicleClass by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleClassController.Filter(KTB.DNet.Interface.Model.VehicleClassFilterDto)">
+            <summary>
+            Get VehicleClass list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleClassController.GetAll">
+            <summary>
+            Get all VehicleClass list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.VehicleColorController">
+            <summary>
+            VehicleColor Controller
+            </summary>
+            <summary>
+            VehicleColor Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleColorController.#ctor">
+            <summary>
+            VehicleColor controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleColorController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IVehicleColorBL)">
+            <summary>
+            VehicleColor constructor with parameter
+            </summary>
+            <param name="vehiclecolorBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleColorController.Get(System.Int32)">
+            <summary>
+            Get VehicleColor by ID
+            </summary>
+            <param name="id">VehicleColor ID</param>
+            <remarks>Get VehicleColor by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleColorController.Filter(KTB.DNet.Interface.Model.VehicleColorFilterDto)">
+            <summary>
+            Get VehicleColor list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleColorController.GetAll">
+            <summary>
+            Get all VehicleColor list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.VehicleKindController">
+            <summary>
+            VehicleKind Controller
+            </summary>
+            <summary>
+            VehicleKind Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleKindController.#ctor">
+            <summary>
+            VehicleKind controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleKindController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IVehicleKindBL)">
+            <summary>
+            VehicleKind constructor with parameter
+            </summary>
+            <param name="vehiclekindBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleKindController.Get(System.Int32)">
+            <summary>
+            Get VehicleKind by ID
+            </summary>
+            <param name="id">VehicleKind ID</param>
+            <remarks>Get VehicleKind by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleKindController.Filter(KTB.DNet.Interface.Model.VehicleKindFilterDto)">
+            <summary>
+            Get VehicleKind list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleKindController.GetAll">
+            <summary>
+            Get all VehicleKind list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.VehicleKindGroupController">
+            <summary>
+            VehicleKindGroup Controller
+            </summary>
+            <summary>
+            VehicleKindGroup Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleKindGroupController.#ctor">
+            <summary>
+            VehicleKindGroup controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleKindGroupController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IVehicleKindGroupBL)">
+            <summary>
+            VehicleKindGroup constructor with parameter
+            </summary>
+            <param name="vehiclekindgroupBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleKindGroupController.Get(System.Int32)">
+            <summary>
+            Get VehicleKindGroup by ID
+            </summary>
+            <param name="id">VehicleKindGroup ID</param>
+            <remarks>Get VehicleKindGroup by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleKindGroupController.Filter(KTB.DNet.Interface.Model.VehicleKindGroupFilterDto)">
+            <summary>
+            Get VehicleKindGroup list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleKindGroupController.GetAll">
+            <summary>
+            Get all VehicleKindGroup list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.VehicleModelController">
+            <summary>
+            VehicleModel Controller
+            </summary>
+            <summary>
+            VehicleModel Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleModelController.#ctor">
+            <summary>
+            VehicleModel controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleModelController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IVehicleModelBL)">
+            <summary>
+            VehicleModel constructor with parameter
+            </summary>
+            <param name="vehiclemodelBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleModelController.Get(System.Int32)">
+            <summary>
+            Get VehicleModel by ID
+            </summary>
+            <param name="id">VehicleModel ID</param>
+            <remarks>Get VehicleModel by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleModelController.Filter(KTB.DNet.Interface.Model.VehicleModelFilterDto)">
+            <summary>
+            Get VehicleModel list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleModelController.GetAll">
+            <summary>
+            Get all VehicleModel list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Controllers.VehicleTypeController">
+            <summary>
+            VehicleType Controller
+            </summary>
+            <summary>
+            VehicleType Web API
+            </summary>    
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleTypeController.#ctor">
+            <summary>
+            VehicleType controller constructor
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleTypeController.#ctor(KTB.DNET.BusinessLogic.Interfaces.IVehicleTypeBL)">
+            <summary>
+            VehicleType constructor with parameter
+            </summary>
+            <param name="vehicletypeBL"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleTypeController.Get(System.Int32)">
+            <summary>
+            Get VehicleType by ID
+            </summary>
+            <param name="id">VehicleType ID</param>
+            <remarks>Get VehicleType by ID</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleTypeController.Filter(KTB.DNet.Interface.Model.VehicleTypeFilterDto)">
+            <summary>
+            Get VehicleType list by Criteria
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Controllers.VehicleTypeController.GetAll">
+            <summary>
+            Get all VehicleType list
+            </summary>
+            <param name="value"></param>
+            <remarks>Search by Criteria</remarks>
+            <returns></returns>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Helper.CustomAttribute.ActionWebApiFilterAttribute">
+            <summary>
+            Action filter attribute to check null parameter on Get By Id Method
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Helper.CustomAttribute.ActionWebApiFilterAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            Check pre-processing action result
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Helper.CustomAttribute.ActionWebApiFilterAttribute.SetNullResponse(System.Web.Http.Controllers.HttpActionContext)">
+            <summary>
+            set response content
+            </summary>
+            <param name="actionContext"></param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Helper.ApiGroupAttribute.#ctor(System.String)">
+            <summary>
+            ApiGroupAttribute
+            </summary>
+            <param name="groupName"></param>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:KTB.DNet.Interface.WebApi.Helper.ApiGroupAttribute.GroupName" -->
+        <member name="T:KTB.DNet.Interface.WebApi.Helper.LoggerService">
+            <summary>
+            Log <see cref="T:System.Exception"/> objects.
+            </summary>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Helper.ILoggerService">
+            <summary>
+            Log <see cref="T:System.Exception"/> objects.
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Helper.ILoggerService.Log(System.Exception)">
+            <summary>
+            Logs the specified exception.
+            </summary>
+            <param name="exception">The exception.</param>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Helper.LoggerService.Log(System.Exception)">
+            <summary>
+            Logs the specified exception.
+            </summary>
+            <param name="exception">The exception.</param>
+        </member>
+        <member name="T:KTB.DNet.Interface.WebApi.Helper.Messages.HttpCodeMessage">
+            <summary>
+            Http code message
+            </summary>
+        </member>
+        <member name="F:KTB.DNet.Interface.WebApi.Helper.Messages.HttpCodeMessage.rm">
+            <summary>
+            Declare resources manager
+            </summary>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Helper.Messages.HttpCodeMessage.GetHttpResponseErrorMessage(System.Collections.Generic.List{KTB.DNet.Interface.Model.MessageBase})">
+            <summary>
+            Get Http Response Message
+            </summary>
+            <param name="messages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Helper.Messages.HttpCodeMessage.GetHttpStatusCode(System.Collections.Generic.List{KTB.DNet.Interface.Model.MessageBase})">
+            <summary>
+            Get Http status code
+            </summary>
+            <param name="messageBases"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Helper.Messages.HttpCodeMessage.BuildErrorResult(System.Collections.Generic.List{KTB.DNet.Interface.Model.MessageBase})">
+            <summary>
+            Set Error result
+            </summary>
+            <param name="messages"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Helper.Messages.HttpCodeMessage.GetErrorMessageCode(System.Collections.Generic.List{KTB.DNet.Interface.Model.MessageBase})">
+            <summary>
+            return message code
+            </summary>
+            <param name="messageBase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Helper.Messages.HttpCodeMessage.GetErrorMessage(System.Web.Http.ModelBinding.ModelStateDictionary)">
+            <summary>
+            
+            </summary>
+            <param name="ModelState"></param>
+            <returns></returns>
+        </member>
+        <member name="M:KTB.DNet.Interface.WebApi.Helper.Messages.HttpCodeMessage.SetMessage(System.Web.Http.ModelBinding.ModelError)">
+            <summary>
+            Set Message
+            </summary>
+            <param name="error"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

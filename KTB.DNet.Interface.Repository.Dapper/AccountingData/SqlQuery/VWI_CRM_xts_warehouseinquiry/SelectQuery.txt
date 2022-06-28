@@ -1,0 +1,81 @@
+﻿SELECT 
+	/**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+	  VWI_CRM_xts_warehouseinquiry.overriddencreatedon
+	, VWI_CRM_xts_warehouseinquiry.xts_productidname
+	, VWI_CRM_xts_warehouseinquiry.xts_styleid
+	, VWI_CRM_xts_warehouseinquiry.statecode
+	, VWI_CRM_xts_warehouseinquiry.xts_unitcost
+	, VWI_CRM_xts_warehouseinquiry.xts_company
+	, VWI_CRM_xts_warehouseinquiry.xts_configurationdescription
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityonworkorder
+	, VWI_CRM_xts_warehouseinquiry.xts_warehouseidname
+	, VWI_CRM_xts_warehouseinquiry.xts_locking
+	, VWI_CRM_xts_warehouseinquiry.xts_interiorcolordescription
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityonhand
+	, VWI_CRM_xts_warehouseinquiry.xts_producttypename
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityphysicalreserved
+	, VWI_CRM_xts_warehouseinquiry.createdonbehalfbyname
+	, VWI_CRM_xts_warehouseinquiry.utcconversiontimezonecode
+	, VWI_CRM_xts_warehouseinquiry.xts_productclassid
+	, VWI_CRM_xts_warehouseinquiry.timezoneruleversionnumber
+	, VWI_CRM_xts_warehouseinquiry.xts_configurationid
+	, VWI_CRM_xts_warehouseinquiry.xts_styledescription
+	, VWI_CRM_xts_warehouseinquiry.xts_unitcost_base
+	, VWI_CRM_xts_warehouseinquiry.modifiedon
+	, VWI_CRM_xts_warehouseinquiry.importsequencenumber
+	, VWI_CRM_xts_warehouseinquiry.xts_exteriorcolorid
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityavailablephysical
+	, VWI_CRM_xts_warehouseinquiry.xts_siteid
+	, VWI_CRM_xts_warehouseinquiry.createdbyname
+	, VWI_CRM_xts_warehouseinquiry.xts_producttype
+	, VWI_CRM_xts_warehouseinquiry.modifiedonbehalfbyname
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityreserved
+	, VWI_CRM_xts_warehouseinquiry.xts_totalcost
+	, VWI_CRM_xts_warehouseinquiry.xts_productid
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityavailable
+	, VWI_CRM_xts_warehouseinquiry.exchangerate
+	, VWI_CRM_xts_warehouseinquiry.modifiedonbehalfby
+	, VWI_CRM_xts_warehouseinquiry.createdonbehalfbyyominame
+	, VWI_CRM_xts_warehouseinquiry.xts_interiorcoloridname
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityonorder
+	, VWI_CRM_xts_warehouseinquiry.xts_exteriorcolordescription
+	, VWI_CRM_xts_warehouseinquiry.xts_warehouseinquiry
+	, VWI_CRM_xts_warehouseinquiry.xts_totalcost_base
+	, VWI_CRM_xts_warehouseinquiry.modifiedbyname
+	, VWI_CRM_xts_warehouseinquiry.createdonbehalfby
+	, VWI_CRM_xts_warehouseinquiry.modifiedbyyominame
+	, VWI_CRM_xts_warehouseinquiry.xts_description
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityonpurchaseorder
+	, VWI_CRM_xts_warehouseinquiry.xts_warehouseid
+	, VWI_CRM_xts_warehouseinquiry.statuscodename
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityintransit
+	, VWI_CRM_xts_warehouseinquiry.createdon
+	, VWI_CRM_xts_warehouseinquiry.versionnumber
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityonsalesorder
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityordered
+	, VWI_CRM_xts_warehouseinquiry.transactioncurrencyid
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityposted
+	, VWI_CRM_xts_warehouseinquiry.createdby
+	, VWI_CRM_xts_warehouseinquiry.modifiedby
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityavailableordered
+	, VWI_CRM_xts_warehouseinquiry.xts_totalphysicalcost_base
+	, VWI_CRM_xts_warehouseinquiry.createdbyyominame
+	, VWI_CRM_xts_warehouseinquiry.transactioncurrencyidname
+	, VWI_CRM_xts_warehouseinquiry.xts_exteriorcoloridname
+	, VWI_CRM_xts_warehouseinquiry.xts_interiorcolorid
+	, VWI_CRM_xts_warehouseinquiry.statuscode
+	, VWI_CRM_xts_warehouseinquiry.modifiedonbehalfbyyominame
+	, VWI_CRM_xts_warehouseinquiry.xts_siteidname
+	, VWI_CRM_xts_warehouseinquiry.organizationid
+	, VWI_CRM_xts_warehouseinquiry.xts_totalphysicalcost
+	, VWI_CRM_xts_warehouseinquiry.xts_quantityorderedreserved
+	, VWI_CRM_xts_warehouseinquiry.statecodename
+	, VWI_CRM_xts_warehouseinquiry.organizationidname
+	, VWI_CRM_xts_warehouseinquiry.xts_configurationidname
+	, VWI_CRM_xts_warehouseinquiry.xts_styleidname
+	, VWI_CRM_xts_warehouseinquiry.xts_productclassidname
+	, VWI_CRM_xts_warehouseinquiry.xts_warehouseinquiryid
+	/**EndPagingIndexQuery**/
+FROM [dbo].[CRM_xts_warehouseinquiry] as VWI_CRM_xts_warehouseinquiry with (nolock) 
+{0}

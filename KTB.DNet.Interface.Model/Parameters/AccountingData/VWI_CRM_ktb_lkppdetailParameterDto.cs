@@ -1,0 +1,51 @@
+﻿#region Summary
+// ===========================================================================
+// AUTHOR        : BSI Code Generator
+// PURPOSE       : VWI_CRM_ktb_benefitParameterDto  class
+// SPECIAL NOTES : DNet WebApi Project
+// ---------------------
+// Copyright  (c) 2018 
+// ---------------------
+// $History      : $
+// Created on 24/02/2020 18:15:44
+//
+// ===========================================================================	
+#endregion
+
+#region Namespace Imports
+using System;
+using Embarr.WebAPI.AntiXss;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+#endregion
+
+namespace KTB.DNet.Interface.Model
+{
+    public class VWI_CRM_ktb_lkppdetailParameterDto : ParameterDtoBase, IValidatableObject
+    {
+        [AntiXss]
+        public Guid ktb_lkppid { get; set; }
+        [AntiXss]
+        public Guid ktb_lkppdetailid { get; set; }
+        [AntiXss]
+        public String msdyn_companycode { get; set; }
+        [AntiXss]
+        public String ktb_kodedealer { get; set; }
+        [AntiXss]
+        public Guid ktb_productid { get; set; }
+        [AntiXss]
+        public int ktb_jumlahunit { get; set; }
+        [AntiXss]
+        public int ktb_sisaunit { get; set; }
+        [AntiXss]
+        public DateTime createdon { get; set; }
+        [AntiXss]
+        public DateTime modifiedon { get; set; }
+
+        public System.Collections.Generic.IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            var results = new List<ValidationResult>();
+            return results;
+        }
+    }
+}

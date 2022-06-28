@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xts_sharedproduct as VWI_CRM_xts_sharedproduct WITH (NOLOCK) 
+{0}

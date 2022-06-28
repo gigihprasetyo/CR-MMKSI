@@ -1,0 +1,2460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>7.10.3077</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E021FE28-84E0-4B1F-804A-180BE4F38F26}</ProjectGuid>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon />
+    <AssemblyKeyContainerName />
+    <AssemblyName>KTB.DNet.DataMapper</AssemblyName>
+    <AssemblyOriginatorKeyFile />
+    <AssemblyOriginatorKeyMode>None</AssemblyOriginatorKeyMode>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionStrict>Off</OptionStrict>
+    <RootNamespace />
+    <StartupObject />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>0.0</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <BaseAddress>285212672</BaseAddress>
+    <ConfigurationOverrideFile />
+    <DefineConstants />
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>none</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QAStaging|x64'">
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|AnyCPU'">
+    <OutputPath>bin\SIT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'SIT|x64'">
+    <OutputPath>bin\x64\SIT\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|AnyCPU'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DMS|x64'">
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|AnyCPU' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DMSTest|x64' ">
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA.DNET.36|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\QA.DNET.36\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA.DNET.36|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod.DNET.36|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Prod.DNET.36\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Prod.DNET.36|x64'">
+    <OutputPath>bin\x64\Prod.DNET.36\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'QA|x64'">
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DEV|x64'">
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|x64'">
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'CR|x64'">
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|AnyCPU'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'MIG|x64'">
+    <OutputPath>bin\</OutputPath>
+    <WarningLevel>0</WarningLevel>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KTB.DNet.DataMapper.Framework\KTB.DNet.DataMapper.Framework.vbproj">
+      <Name>KTB.DNet.DataMapper.Framework</Name>
+      <Project>{CC23FF7E-BC14-4D66-9E96-6E0A51576A34}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain.Search\KTB.DNet.Domain.Search.vbproj">
+      <Name>KTB.DNet.Domain.Search</Name>
+      <Project>{06A29192-8B96-4DFB-9C6C-AA5B4DDF8D36}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <ProjectReference Include="..\KTB.DNet.Domain\KTB.DNet.Domain.vbproj">
+      <Name>KTB.DNet.Domain</Name>
+      <Project>{F4CC7463-4CBB-4336-AEAF-AC8FBC38DD9A}</Project>
+      <Package>{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</Package>
+    </ProjectReference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design">
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Data.Configuration.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.ExceptionHandling, Version=1.1.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.ExceptionHandling.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=e44a2bc38ed2c13c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RefferenceLib\EntLib\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessoriesCategoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AccessoriesSaleDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AllocationRealTimeServiceMapper.vb" />
+    <Compile Include="AllocationRealtimeServiceTemplateMapper.vb" />
+    <Compile Include="AttchPramClaimReasonMapper.vb" />
+    <Compile Include="CityAreaRegionMapper.vb" />
+    <Compile Include="AssistServiceIncomingBPMapper.vb" />
+    <Compile Include="CustomerCaseNotificationPICMapper.vb" />
+    <Compile Include="DealerContactNotificationCaseMapper.vb" />
+    <Compile Include="DealerVehiclePriceDetailMapper.vb" />
+    <Compile Include="DealerVehiclePriceMapper.vb" />
+    <Compile Include="DiscountProposalPricetoParameterMapper.vb" />
+    <Compile Include="FlatRateMasterFieldFixMapper.vb" />
+    <Compile Include="FlatRateMasterFSMapper.vb" />
+    <Compile Include="FlatRateMasterPMMapper.vb" />
+    <Compile Include="FleetGradeDiscountMapper.vb" />
+    <Compile Include="FleetGradeRetentionMapper.vb" />
+    <Compile Include="BabitApprovalDocumentMapper.vb" />
+    <Compile Include="BabitBudgetDetailMapper.vb" />
+    <Compile Include="BabitBudgetHeaderMapper.vb" />
+    <Compile Include="BabitDealerAllocationMapper.vb" />
+    <Compile Include="BabitDisplayCarMapper.vb" />
+    <Compile Include="BabitDocumentMapper.vb" />
+    <Compile Include="BabitEventProposalActivityMapper.vb" />
+    <Compile Include="BabitEventProposalDetailMapper.vb" />
+    <Compile Include="BabitEventProposalDocumentMapper.vb" />
+    <Compile Include="BabitEventProposalHeaderMapper.vb" />
+    <Compile Include="BabitEventReportActivityMapper.vb" />
+    <Compile Include="BabitEventReportApprovalDocMapper.vb" />
+    <Compile Include="BabitEventReportDetailMapper.vb" />
+    <Compile Include="BabitEventReportDocumentMapper.vb" />
+    <Compile Include="BabitEventReportHeaderMapper.vb" />
+    <Compile Include="BabitEventReportJVMapper.vb" />
+    <Compile Include="BabitEventReportJVtoReceiptMapper.vb" />
+    <Compile Include="BabitEventReportReceiptMapper.vb" />
+    <Compile Include="BabitIklanDetailMapper.vb" />
+    <Compile Include="BabitEventDetailMapper.vb" />
+    <Compile Include="BabitHeaderMapper.vb" />
+    <Compile Include="BabitMarketingBoxMapper.vb" />
+    <Compile Include="BabitMasterAdditionalAllocationMapper.vb" />
+    <Compile Include="BabitMasterEventTypeMapper.vb" />
+    <Compile Include="BabitMasterLocationMapper.vb" />
+    <Compile Include="BabitMasterRetailTargetMapper.vb" />
+    <Compile Include="BabitMasterPriceMapper.vb" />
+    <Compile Include="MessageNotificationMapper.vb" />
+    <Compile Include="MessageTemplateMapper.vb" />
+    <Compile Include="NationalEventCityMapper.vb" />
+    <Compile Include="NationalEventDetailDateMapper.vb" />
+    <Compile Include="NationalEventDetailMapper.vb" />
+    <Compile Include="NationalEventMapper.vb" />
+    <Compile Include="NationalEventTypeMapper.vb" />
+    <Compile Include="NationalEventVenueMapper.vb" />
+    <Compile Include="MSPExMaxPMMapper.vb" />
+    <Compile Include="PPNMasterMapper.vb" />
+    <Compile Include="PrefixMSPRegistrationMapper.vb" />
+    <Compile Include="GRKindMapper.vb" />
+    <Compile Include="InterestPPHDetailMapper.vb" />
+    <Compile Include="InterestPPHHeaderMapper.vb" />
+    <Compile Include="MSPExFakturPajakMapper.vb" />
+    <Compile Include="SalesOrderInterestMapper.vb" />
+    <Compile Include="GSRStagingMapper.vb" />
+    <Compile Include="SalesVechileModelMapper.vb" />
+    <Compile Include="ServiceMMSMapper.vb" />
+    <Compile Include="ServiceTemplateGRLaborMapper.vb" />
+    <Compile Include="ServiceTemplateGRPartDetailMapper.vb" />
+    <Compile Include="SAPCustomerProfileMapper.vb" />
+    <Compile Include="SFDCampaignMapper.vb" />
+    <Compile Include="SFDCustomerContactMapper.vb" />
+    <Compile Include="SFDCustomerMapper.vb" />
+    <Compile Include="ServiceDueDateNotificationMapper.vb" />
+    <Compile Include="DocumentCancelMapper.vb" />
+    <Compile Include="MSPExWarrantyMasterMapper.vb" />
+    <Compile Include="OCRFamilyCardMapper.vb" />
+    <Compile Include="SFServiceHistoryBookletMapper.vb" />
+    <Compile Include="SFSparepartHistoryMapper.vb" />
+    <Compile Include="SparePartEDocumentMapper.vb" />
+    <Compile Include="ServiceBookingActivityMapper.vb" />
+    <Compile Include="ServiceBookingMapper.vb" />
+    <Compile Include="ServiceStandardTimeMapper.vb" />
+    <Compile Include="ServiceTemplateFFLaborMapper.vb" />
+    <Compile Include="ServiceTemplateFFPartDetailMapper.vb" />
+    <Compile Include="ServiceTemplateFFPartHeaderMapper.vb" />
+    <Compile Include="ServiceTemplateFSLaborMapper.vb" />
+    <Compile Include="ServiceTemplateFSPartDetailMapper.vb" />
+    <Compile Include="ServiceTemplateFSPartHeaderMapper.vb" />
+    <Compile Include="ServiceTemplatePMLaborMapper.vb" />
+    <Compile Include="ServiceTemplatePMPartDetailMapper.vb" />
+    <Compile Include="ServiceTemplatePMPartHeaderMapper.vb" />
+    <Compile Include="SparePartForecastDetailMapper.vb" />
+    <Compile Include="SparePartForecastHeaderMapper.vb" />
+    <Compile Include="SparePartForecastMasterMapper.vb" />
+    <Compile Include="SparePartForeCastOrderMapper.vb" />
+    <Compile Include="SparePartForecastStockMapper.vb" />
+    <Compile Include="SparepartNotaReturMapper.vb" />
+    <Compile Include="SpClaimDocumentMapper.vb" />
+    <Compile Include="SPKMasterCountryCodePhoneMapper.vb" />
+    <Compile Include="SPSupportClaimDocMapper.vb" />
+    <Compile Include="SstTemplateMapper.vb" />
+    <Compile Include="StallMasterMapper.vb" />
+    <Compile Include="StallWorkingTimeMapper.vb" />
+    <Compile Include="SPKNationalEventMapper.vb" />
+    <Compile Include="TempServiceBookingActivityMapper.vb" />
+    <Compile Include="TOPSPPenaltyDetailMapper.vb" />
+    <Compile Include="TOPSPPenaltyMapper.vb" />
+    <Compile Include="BabitPameranDetailMapper.vb" />
+    <Compile Include="BabitPameranExpenseMapper.vb" />
+    <Compile Include="BabitParameterDetailMapper.vb" />
+    <Compile Include="BabitParameterHeaderMapper.vb" />
+    <Compile Include="BabitReportDocumentMapper.vb" />
+    <Compile Include="BabitReportEventDetailMapper.vb" />
+    <Compile Include="BabitReportHeaderMapper.vb" />
+    <Compile Include="BabitReportJVMapper.vb" />
+    <Compile Include="BabitReportJVtoReceiptMapper.vb" />
+    <Compile Include="BabitReportReceiptMapper.vb" />
+    <Compile Include="BabitRetailTargetToAdditionalAllocationMapper.vb" />
+    <Compile Include="BabitSharePointFileAttributesMapper.vb" />
+    <Compile Include="BabitSpecialCityMapper.vb" />
+    <Compile Include="BabitSpecialProvinceMapper.vb" />
+    <Compile Include="BCPDynamicQueryMapper.vb" />
+    <Compile Include="ChassisMasterClaimDMSReminderMapper.vb" />
+    <Compile Include="ChassisMasterClaimEmailQueueMapper.vb" />
+    <Compile Include="CcAttributeMapper.vb" />
+    <Compile Include="CcComplaintMapper.vb" />
+    <Compile Include="CcCSPerformanceCalculationHistoryMapper.vb" />
+    <Compile Include="CcCSPerformanceClasificationMapper.vb" />
+    <Compile Include="CcCSPerformanceClusterDealerMapper.vb" />
+    <Compile Include="CcCSPerformanceClusterMapper.vb" />
+    <Compile Include="CcCSPerformanceMasterMapper.vb" />
+    <Compile Include="CcCSPerformanceParameterMapper.vb" />
+    <Compile Include="CcCSPerformanceResultHeaderMapper.vb" />
+    <Compile Include="CcCSPerformanceSubParameterAttributeMapper.vb" />
+    <Compile Include="CcCSPerformanceSubParameterMapper.vb" />
+    <Compile Include="CcCSPerformanceSubParameterScoreMapper.vb" />
+    <Compile Include="CcFactorMapper.vb" />
+    <Compile Include="ChassisMasterATAMapper.vb" />
+    <Compile Include="BenefitClaimDeductedHistoryMapper.vb" />
+    <Compile Include="BenefitClaimDeductedMapper.vb" />
+    <Compile Include="ChassisMasterClaimDetailMapper.vb" />
+    <Compile Include="ChassisMasterClaimHeaderMapper.vb" />
+    <Compile Include="ChassisMasterESTOListMapper.vb" />
+    <Compile Include="ChassisMasterLogisticCompanyMapper.vb" />
+    <Compile Include="ContactDealerMapper.vb" />
+    <Compile Include="CODOutstandingMapper.vb" />
+    <Compile Include="CODPaymentMapper.vb" />
+    <Compile Include="DealerFacilityMapper.vb" />
+    <Compile Include="DealerMasterWITHOLDTaxMapper.vb" />
+    <Compile Include="DealerOperationAreaBussinessMapper.vb" />
+    <Compile Include="ClaimDebitNoteMapper.vb" />
+    <Compile Include="ClaimSPBillingReturDetailMapper.vb" />
+    <Compile Include="ClaimSPBillingReturMapper.vb" />
+    <Compile Include="DealerPOTargetMapper.vb" />
+    <Compile Include="DataTrainingWajibMapper.vb" />
+    <Compile Include="DealerSalesOrganizationMapper.vb" />
+    <Compile Include="DealerPaymentMethodMapper.vb" />
+    <Compile Include="DealerSalesTargetMapper.vb" />
+    <Compile Include="BapiLogMapper.vb" />
+    <Compile Include="DocumentUploadMapper.vb" />
+    <Compile Include="DealerStallEquipmentMapper.vb" />
+    <Compile Include="DiscountMasterMapper.vb" />
+    <Compile Include="DiscountProposalDetailApprovalMapper.vb" />
+    <Compile Include="DiscountProposalDetailApprovaltoSPLMapper.vb" />
+    <Compile Include="DiscountProposalDetailCustomerMapper.vb" />
+    <Compile Include="DiscountProposalDetailDocumentMapper.vb" />
+    <Compile Include="DiscountProposalDetailMapper.vb" />
+    <Compile Include="DiscountProposalDetailOwnershipMapper.vb" />
+    <Compile Include="DiscountProposalDetailPriceMapper.vb" />
+    <Compile Include="DiscountProposalEmailUserMapper.vb" />
+    <Compile Include="DiscountProposalHeaderMapper.vb" />
+    <Compile Include="DiscountProposalParameterMapper.vb" />
+    <Compile Include="DiscountProposalProgramRegulerMapper.vb" />
+    <Compile Include="DRMasterGeneralMapper.vb" />
+    <Compile Include="DepositC2InterestDetailMapper.vb" />
+    <Compile Include="DepositC2InterestHeaderMapper.vb" />
+    <Compile Include="DSFLeasingClaimDocumentMapper.vb" />
+    <Compile Include="DSFLeasingClaimMapper.vb" />
+    <Compile Include="FleetCustomerDetailMapper.vb" />
+    <Compile Include="FleetCustomerDetailMappingMapper.vb" />
+    <Compile Include="FleetCustomerHeaderMapper.vb" />
+    <Compile Include="EFakturHeaderMapper.vb" />
+    <Compile Include="EFakturItemMapper.vb" />
+    <Compile Include="FreeServicePartDetailMapper.vb" />
+    <Compile Include="EventCategoryDetailMapper.vb" />
+    <Compile Include="EventCategoryHeaderMapper.vb" />
+    <Compile Include="EventDealerDetailMapper.vb" />
+    <Compile Include="EventDealerDocumentMapper.vb" />
+    <Compile Include="EventDealerHeaderMapper.vb" />
+    <Compile Include="EventDealerRequiredDocumentMapper.vb" />
+    <Compile Include="ESRUTDownloadLogMapper.vb" />
+    <Compile Include="ESRUTHeaderMapper.vb" />
+    <Compile Include="ESRUTItemMapper.vb" />
+    <Compile Include="EnumMasterMapper.vb" />
+    <Compile Include="GlobalUploadMapper.vb" />
+    <Compile Include="IRAccDocNumberMapper.vb" />
+    <Compile Include="JobPositionCategoryAreaMapper.vb" />
+    <Compile Include="JobPositionCategoryMapper.vb" />
+    <Compile Include="JobPositionCategoryToAreaMapper.vb" />
+    <Compile Include="JobPositionToCategoryMapper.vb" />
+    <Compile Include="KaroseriMapper.vb" />
+    <Compile Include="LeasingMapper.vb" />
+    <Compile Include="MasterAccruedMapper.vb" />
+    <Compile Include="MasterCostCenterMapper.vb" />
+    <Compile Include="MasterCostCentertoSubCategoryVehicleMapper.vb" />
+    <Compile Include="MasterInternalOrderMapper.vb" />
+    <Compile Include="MenuControlMapper.vb" />
+    <Compile Include="MessageServiceDataMapper.vb" />
+    <Compile Include="MessageServiceDetailMapper.vb" />
+    <Compile Include="MessageServiceLogMapper.vb" />
+    <Compile Include="MessageServiceMapper.vb" />
+    <Compile Include="MessageTransactionMapper.vb" />
+    <Compile Include="MonthlyDocumentToFakturEvidanceMapper.vb" />
+    <Compile Include="MSPExDebitChargeMapper.vb" />
+    <Compile Include="MSPExDebitMemoMapper.vb" />
+    <Compile Include="MSPExMappingtoFSKindMapper.vb" />
+    <Compile Include="MSPExMasterMapper.vb" />
+    <Compile Include="MSPExPaymentDetailMapper.vb" />
+    <Compile Include="MSPExPaymentMapper.vb" />
+    <Compile Include="MSPExRegistrationMapper.vb" />
+    <Compile Include="MSPExTypeMapper.vb" />
+    <Compile Include="PDILogMapper.vb" />
+    <Compile Include="PDISpecimenMapper.vb" />
+    <Compile Include="PDITemplateMapper.vb" />
+    <Compile Include="PKTSpecimenMapper.vb" />
+    <Compile Include="PKTTemplateMapper.vb" />
+    <Compile Include="PMKindDurationMapper.vb" />
+    <Compile Include="SPLDetailDocumentMapper.vb" />
+    <Compile Include="PKDetailtoDiscountMapper.vb" />
+    <Compile Include="SPLDetailtoSPLMapper.vb" />
+    <Compile Include="StatusChangeHistorySendEmailFlagMapper.vb" />
+    <Compile Include="TOPSPTransferOutstandingMapper.vb" />
+    <Compile Include="VechileTypeGeneralMapper.vb" />
+    <Compile Include="VWI_AllocationRealTimeServiceMapper.vb" />
+    <Compile Include="VWI_ServiceAdvisorMapper.vb" />
+    <Compile Include="VWI_ServiceBookingMapper.vb" />
+    <Compile Include="VWI_ServiceCostEstimationMapper.vb" />
+    <Compile Include="VW_SalesOrderInterestMapper.vb" />
+    <Compile Include="VWI_FinishUnitCeilingMapper.vb" />
+    <Compile Include="VWI_FinishUnitPaymentMapper.vb" />
+    <Compile Include="VW_ServiceTemplateActivityMapper.vb" />
+    <Compile Include="VW_FlatRateMasterMapper.vb" />
+    <Compile Include="VW_ServiceTemplateDetailPartMapper.vb" />
+    <Compile Include="VW_ServiceTemplateHeaderMapper.vb" />
+    <Compile Include="VW_ServiceTemplateLaborMapper.vb" />
+    <Compile Include="V_LogisticPriceAndNationalityMapper.vb" />
+    <Compile Include="RevisionTransferActualMapper.vb" />
+    <Compile Include="SalesmanDSEAllocationMapper.vb" />
+    <Compile Include="SalesmanDSEAssigmentMapper.vb" />
+    <Compile Include="SalesmanDSEMapper.vb" />
+    <Compile Include="SalesmanGradeMapper.vb" />
+    <Compile Include="SalesmanHeaderToDealerMapper.vb" />
+    <Compile Include="ServiceReminderAnomalyMapper.vb" />
+    <Compile Include="ServiceReminderFollowUpMapper.vb" />
+    <Compile Include="ServiceReminderMapper.vb" />
+    <Compile Include="SAPCustomerMappingMapper.vb" />
+    <Compile Include="SFReferenceMapper.vb" />
+    <Compile Include="OTPMapper.vb" />
+    <Compile Include="SparePartMasterPriceMapper.vb" />
+    <Compile Include="SparePartDueDateNotificationMapper.vb" />
+    <Compile Include="SparePartMasterTOPMapper.vb" />
+    <Compile Include="SparePartPOTypeTOPMapper.vb" />
+    <Compile Include="AccessoriesSaleMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ActivityTypeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertCategoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertConfirmationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertGroupMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertModuleMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertSoundMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertStatusMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlokasiStok_viewMapperView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnnouncementDocMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnnualDepositAHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnnualDiscountAchievementHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnnualDiscountAchievementMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AnnualDiscountMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="APPaymentDetailMapper.vb" />
+    <Compile Include="APPaymentMapper.vb" />
+    <Compile Include="AppConfigMapper.vb" />
+    <Compile Include="AppSettingMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ARReceiptDetailMapper.vb" />
+    <Compile Include="ARReceiptMapper.vb" />
+    <Compile Include="AssistCutOffPeriodMapper.vb" />
+    <Compile Include="AssistExpenseServiceMapper.vb" />
+    <Compile Include="AssistExpenseSpareParts.vb" />
+    <Compile Include="AssistKeyUploadMapper.vb" />
+    <Compile Include="AssistMasterModelMapper.vb" />
+    <Compile Include="AssistModuleMapper.vb" />
+    <Compile Include="AssistPartSalesMapper.vb" />
+    <Compile Include="AssistPartStockMapper.vb" />
+    <Compile Include="AssistSalesChannelMapper.vb" />
+    <Compile Include="AssistServiceIncomingMapper.vb" />
+    <Compile Include="AssistServicePlaceMapper.vb" />
+    <Compile Include="AssistServiceTypeMapper.vb" />
+    <Compile Include="AssistUploadLogMapper.vb" />
+    <Compile Include="AssistWorkOrderCategoryMapper.vb" />
+    <Compile Include="AssistWorkOrderTypeMapper.vb" />
+    <Compile Include="BusinessSectorHeaderMapper.vb" />
+    <Compile Include="BusinessSectorDetailMapper.vb" />
+    <Compile Include="CarrosserieDetailMapper.vb" />
+    <Compile Include="CarrosserieHeaderMapper.vb" />
+    <Compile Include="CompetitorMapper.vb" />
+    <Compile Include="CustomerGroupMapper.vb" />
+    <Compile Include="CustomerRequestOCRMapper.vb" />
+    <Compile Include="DMSWOWarrantyClaimMapper.vb" />
+    <Compile Include="FleetCustomerContactMapper.vb" />
+    <Compile Include="FleetCustomerMapper.vb" />
+    <Compile Include="FleetCustomerToCustomerMapper.vb" />
+    <Compile Include="FleetCustomerToDealerMapper.vb" />
+    <Compile Include="FleetHasilSurveyDetailMapper.vb" />
+    <Compile Include="FleetHasilSurveyHeaderMapper.vb" />
+    <Compile Include="FleetMapper.vb" />
+    <Compile Include="Area1Mapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Area2Mapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ATPHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditParameterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditParameterPhotoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditScheduleAuditorMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditScheduleDealerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditScheduleDealerReportFormMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditScheduleDealerReportMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AuditScheduleMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BabitAllocationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BabitMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BabitPaymentMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BabitProposalHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BabitProposalMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BankMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasicProductMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BCPQueryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BCPRolesMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BenefitClaimDetailsMapper.vb" />
+    <Compile Include="BenefitClaimHeaderMapper.vb" />
+    <Compile Include="BenefitClaimJVMapper.vb" />
+    <Compile Include="BenefitClaimReceiptMapper.vb" />
+    <Compile Include="BenefitClaimRecommendationMapper.vb" />
+    <Compile Include="BenefitEventDetailMapper.vb" />
+    <Compile Include="BenefitEventHeaderMapper.vb" />
+    <Compile Include="BenefitMasterDealerMapper.vb" />
+    <Compile Include="BenefitMasterDetailMapper.vb" />
+    <Compile Include="BenefitMasterHeaderMapper.vb" />
+    <Compile Include="BenefitMasterLeasingMapper.vb" />
+    <Compile Include="BenefitMasterVehicleTypeMapper.vb" />
+    <Compile Include="BenefitParticipantMapper.vb" />
+    <Compile Include="BenefitTypeMapper.vb" />
+    <Compile Include="BingoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BingoMatrixMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BPEventMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BPIklanMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BPPameranMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuletinCategoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuletinDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuletinGroupMemberMapper.vb" />
+    <Compile Include="BuletinHistoryMapper.vb" />
+    <Compile Include="BuletinMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuletinMemberMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BuletinOrganizationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BulletinUserGroupDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BusinessAreaMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CaseCategoryMapper.vb" />
+    <Compile Include="CategoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcComplainFollowupDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcComplainFollowupMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcContactMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcCustomerCategoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcPeriodMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcReportDealerLogMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcReportDealerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcReportMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcTemplateMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CcVehicleCategoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CCVehicleOdometerMapper.vb" />
+    <Compile Include="CessieDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CessieMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChassisMasterBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChassisMasterDocumentMapper.vb" />
+    <Compile Include="ChassisMasterLocationMapper.vb" />
+    <Compile Include="ChassisMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChassisMasterProfileHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChassisMasterProfileMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CityMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CityPartMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimCCofLetterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimDealerETAMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimEvidenceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimGoodConditionMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimProgressMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimReasonMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimSignofLetterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimStatusHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ClaimStatusKTBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CompetitorBrandMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CompetitorTypeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ConditionMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContractDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContractHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CostCenterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreditMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CreditMasterSPMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerBusinessMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerCaseMapper.vb" />
+    <Compile Include="CustomerCaseResponseEvidenceMapper.vb" />
+    <Compile Include="CustomerCaseResponseMapper.vb" />
+    <Compile Include="CustomerDealerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerProfileHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerProfileMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerRequestMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerRequestProfileHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerRequestProfileMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomerStatusHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CustomMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DailyPaymentHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DailyPaymentMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataHistoryDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerActivityPlanningMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerAdditionalMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerBankAccountMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerBranchBusinessAreaMapper.vb" />
+    <Compile Include="DealerBranchMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerCategoryMapper.vb" />
+    <Compile Include="DealerGroupMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerLeadTimeMapper.vb" />
+    <Compile Include="DealerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerPajakMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerProfileHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerProfileMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerProfilePhotoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerStockReportDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerStockReportHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DealerSystemsMapper.vb" />
+    <Compile Include="DealerTerritoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DebitNoteMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeliveryCustomerDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeliveryCustomerHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeliveryOrderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepartmentMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositADetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAInterestDMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAInterestHMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAKuitansiPencairanMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAPencairanDMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAPencairanHMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAPencairanMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositAStatusHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositBDebitNoteMapper.vb" />
+    <Compile Include="DepositBDetailMapper.vb" />
+    <Compile Include="DepositBHeaderMapper.vb" />
+    <Compile Include="DepositBInterestDetailMapper.vb" />
+    <Compile Include="DepositBInterestHeaderMapper.vb" />
+    <Compile Include="DepositBKewajibanDetailMapper.vb" />
+    <Compile Include="DepositBKewajibanHeaderMapper.vb" />
+    <Compile Include="DepositBPencairanDetailMapper.vb" />
+    <Compile Include="DepositBPencairanHeaderMapper.vb" />
+    <Compile Include="DepositBPlafonMapper.vb" />
+    <Compile Include="DepositBReceiptMapper.vb" />
+    <Compile Include="DepositBStatusHistoryMapper.vb" />
+    <Compile Include="DepositC2LineMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositC2Mapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositLineMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DepositMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeskripsiKodeKerjaMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DeskripsiKodePosisiMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DetailBOMMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DRReportRankingMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DRReportRankingStatusMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EndCustomerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentSalesDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentSalesHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipmentSalesPayment.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipSPPOAlocationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipSPPOInfoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EquipUserMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EstimationEquipDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EstimationEquipHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EstimationEquipPOMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventActivityMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventActivityTypeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventDocumentMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventEmailReceiverMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventInfoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventLaporanPenjualanMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventParameterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventProposalDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventProposalFileMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventProposalHistoryAgreementMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventProposalHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventProposalMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventReportMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventSalesMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="EventTypeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FactoringMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileUploadAnnualDiscountMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FleetFakturMapper.vb" />
+    <Compile Include="FleetMasterDealerMapper.vb" />
+    <Compile Include="FleetMasterMapper.vb" />
+    <Compile Include="FleetRequestMapper.vb" />
+    <Compile Include="ForumBannedWordMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumCategoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumLastReadPostMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumMemberMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumPMMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumPostMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ForumTopicMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FreePPhMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FreeServiceBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FreeServiceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSCampaignDealerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSCampaignKindMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSCampaignMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSCampaignVehicleMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSChassisCampaignMapper.vb" />
+    <Compile Include="FSKindMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FSKindOnVechileTypeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GLAccountMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HeaderBOMMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartAllocationDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartAllocationHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartPODetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartPOHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IndentPartPOMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InventoryTransactionDetailMapper.vb" />
+    <Compile Include="InventoryTransactionMapper.vb" />
+    <Compile Include="InventoryTransferDetailMapper.vb" />
+    <Compile Include="InventoryTransferMapper.vb" />
+    <Compile Include="InvoiceDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvoiceHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="InvoiceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JaminanDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JaminanMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JobPositionMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JobPositionMenuMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="JobPositionToMenuMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TOPSPAccountingNoMapper.vb" />
+    <Compile Include="TOPTransferControlMapper.vb" />
+    <Compile Include="SPKDetailCustomerMapper.vb" />
+    <Compile Include="SPKDetailCustomerProfileMapper.vb" />
+    <Compile Include="up_RetrieveFreeService_Service_ReminderMapper.vb" />
+    <Compile Include="sp_GetPKAllocationMapper.vb" />
+    <Compile Include="SubCategoryVehicleMapper.vb" />
+    <Compile Include="SubCategoryVehicleToModelMapper.vb" />
+    <Compile Include="TOPCreditAccountMapper.vb" />
+    <Compile Include="VechileColorIsActiveOnPKMapper.vb" />
+    <Compile Include="VWI_DealerMapper.vb" />
+    <Compile Include="VWI_MobileServiceReminderMapper.vb" />
+    <Compile Include="VWI_MSPExMembershipMapper.vb" />
+    <Compile Include="VWI_ServiceReminderMapper.vb" />
+    <Compile Include="VWI_ChassisStatusFakturMapper.vb" />
+    <Compile Include="VWI_CampaignMapper.vb" />
+    <Compile Include="TrAdditionalClassMapper.vb" />
+    <Compile Include="TrBookingClassMapper.vb" />
+    <Compile Include="TrBookingCourseMapper.vb" />
+    <Compile Include="TrCertificateConfigMapper.vb" />
+    <Compile Include="TrCourseCategoryAllocationMapper.vb" />
+    <Compile Include="TrCourseCategoryMapper.vb" />
+    <Compile Include="TrCourseCategoryToJobPositionMapper.vb" />
+    <Compile Include="TrFreePassMapper.vb" />
+    <Compile Include="TrMRTCDealerMapper.vb" />
+    <Compile Include="TrMRTCMapper.vb" />
+    <Compile Include="TrMRTCPICMapper.vb" />
+    <Compile Include="TrBillingDetailMapper.vb" />
+    <Compile Include="TrBillingHeaderMapper.vb" />
+    <Compile Include="TrReplacementDetailMapper.vb" />
+    <Compile Include="TrReplacementHeaderMapper.vb" />
+    <Compile Include="TrTraineeDataLogMapper.vb" />
+    <Compile Include="TrTraineeLevelDetailMapper.vb" />
+    <Compile Include="TrTraineeLevelHeaderMapper.vb" />
+    <Compile Include="TrTraineeLevelMapper.vb" />
+    <Compile Include="TrTraineePaymentDetailMapper.vb" />
+    <Compile Include="TrTraineePaymentHeaderMapper.vb" />
+    <Compile Include="TrTraineeSalesmanHeaderMapper.vb" />
+    <Compile Include="VWI_DealerSettingCreditAccountMapper.vb" />
+    <Compile Include="VWI_FieldFixServicedMapper.vb" />
+    <Compile Include="VWI_InvoiceRevisionMapper.vb" />
+    <Compile Include="VWI_JobPositionPartsMapper.vb" />
+    <Compile Include="VWI_JobPositionSalesMapper.vb" />
+    <Compile Include="VWI_JobPositionServicesMapper.vb" />
+    <Compile Include="VWI_OpenFakturForPDIMapper.vb" />
+    <Compile Include="VWI_ProfileDetailFromHeaderCodeMapper.vb" />
+    <Compile Include="VWI_QuickProductAllMapper.vb" />
+    <Compile Include="VWI_ServicePlaceMapper.vb" />
+    <Compile Include="VWI_PRHistoryPOStatusCancelMapper.vb" />
+    <Compile Include="VWI_ServiceTypeMapper.vb" />
+    <Compile Include="VWI_SFDMobileSalesmanMapper.vb" />
+    <Compile Include="VWI_SparePartPaymentMapper.vb" />
+    <Compile Include="VWI_SparePartPODOHaveBillingDetailMapper.vb" />
+    <Compile Include="VWI_SparePartPODOHaveBillingHeaderDetailMapper.vb" />
+    <Compile Include="VWI_SparePartPODOHaveBillingOneMapper.vb" />
+    <Compile Include="VWI_SPKCustomerHaveRequestMapper.vb" />
+    <Compile Include="VWI_SPKTrackingMapper.vb" />
+    <Compile Include="VWI_VehicleSpecificationMapper.vb" />
+    <Compile Include="VWI_KaroseriMapper.vb" />
+    <Compile Include="KindOfLetterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="KodePostionWSCMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LaborMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LeasingCompanyMapper.vb" />
+    <Compile Include="LeasingFeeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LetterHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LetterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LKPPDealerMapper.vb" />
+    <Compile Include="LKPPDetailMapper.vb" />
+    <Compile Include="LKPPHeaderMapper.vb" />
+    <Compile Include="LockUserMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LogisticDCDetailMapper.vb" />
+    <Compile Include="LogisticDCHeaderMapper.vb" />
+    <Compile Include="LogisticDNMapper.vb" />
+    <Compile Include="LogisticFeeHistoryMapper.vb" />
+    <Compile Include="LogisticFeeMapper.vb" />
+    <Compile Include="LogisticFeeReturnHistoryMapper.vb" />
+    <Compile Include="LogisticPPHDetailMapper.vb" />
+    <Compile Include="LogisticPPHHeaderMapper.vb" />
+    <Compile Include="LogisticPriceMapper.vb" />
+    <Compile Include="MainAreaMapper.vb" />
+    <Compile Include="MainOperationAreaMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainUsageMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ManualDocMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MarketPriceMaper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionAllocationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionGIDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionGIGRMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionGIHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionPeriodMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionPriceHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionRequestDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionRequestMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaterialPromotionStockAdjustmentMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MaxTOPDayMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MCPDealerMapper.vb" />
+    <Compile Include="MCPDetailMapper.vb" />
+    <Compile Include="MCPHeaderMapper.vb" />
+    <Compile Include="MDPDealerDailyStockMapper.vb" />
+    <Compile Include="MDPMasterDealerHistoryMapper.vb" />
+    <Compile Include="MDPMasterDealerMapper.vb" />
+    <Compile Include="MDPMasterVehicleHistoryMapper.vb" />
+    <Compile Include="MDPMasterVehicleMapper.vb" />
+    <Compile Include="MonthlyDocumentMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MSPClaimDocumentMapper.vb" />
+    <Compile Include="MSPClaimMapper.vb" />
+    <Compile Include="MSPCustomerMapper.vb" />
+    <Compile Include="MSPDCMapper.vb" />
+    <Compile Include="MSPDMMapper.vb" />
+    <Compile Include="MSPDurationPMKindMapper.vb" />
+    <Compile Include="MSPMasterMapper.vb" />
+    <Compile Include="MSPRegistrationHistoryMapper.vb" />
+    <Compile Include="MSPRegistrationMapper.vb" />
+    <Compile Include="MSPTransferPaymentDetailMapper.vb" />
+    <Compile Include="MSPTransferPaymentHistoryMapper.vb" />
+    <Compile Include="MSPTransferPaymentMapper.vb" />
+    <Compile Include="MSPTypeMapper.vb" />
+    <Compile Include="PKTDateMapper.vb" />
+    <Compile Include="SFConfigMapper.vb" />
+    <Compile Include="SFContactMapper.vb" />
+    <Compile Include="SFErrorLogMapper.vb" />
+    <Compile Include="SFExecuteTimeMapper.vb" />
+    <Compile Include="SFLastSuccessMapper.vb" />
+    <Compile Include="SFMasterObjectMapper.vb" />
+    <Compile Include="SFPurchaseTransactionMapper.vb" />
+    <Compile Include="SFServiceHistoryMapper.vb" />
+    <Compile Include="SFSmartPackageMapper.vb" />
+    <Compile Include="SFStagingLogMapper.vb" />
+    <Compile Include="SFSynchronizeLogMapper.vb" />
+    <Compile Include="SparePartDeliveryOrderDetailMapper.vb" />
+    <Compile Include="SparePartDeliveryOrderMapper.vb" />
+    <Compile Include="VWI_SparePartPODOHaveBillingMapper.vb" />
+    <Compile Include="VWI_SparePartPriceListMapper.vb" />
+    <Compile Include="SparePartSalesOrderDetailMapper.vb" />
+    <Compile Include="SparePartSalesOrderMapper.vb" />
+    <Compile Include="VWI_SparePartUoMMapper.vb" />
+    <Compile Include="VWI_BusinessSectorMapper.vb" />
+    <Compile Include="VWI_CustomerMapper.vb" />
+    <Compile Include="VWI_CustomerVehicleMapper.vb" />
+    <Compile Include="VWI_CityMapper.vb" />
+    <Compile Include="VWI_DMSWorkOrderWSCStatusMapper.vb" />
+    <Compile Include="VWI_EmployeeServiceMapper.vb" />
+    <Compile Include="VWI_EmployeePartsMapper.vb" />
+    <Compile Include="VWI_EmployeeSalesMapper.vb" />
+    <Compile Include="VWI_FleetMapper.vb" />
+    <Compile Include="VWI_LeadCustomerSalesForceMapper.vb" />
+    <Compile Include="VWI_LeasingMapper.vb" />
+    <Compile Include="VWI_MSPMembershipMapper.vb" />
+    <Compile Include="NationalHolidayMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OCRIdentityMapper.vb" />
+    <Compile Include="OrderRestrictionMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OrganizationPrivilegeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OwnerAgeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PameranDisplayMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParkingFeeDealerInfoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParkingFeeHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParkingFeeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParkingFeeReturnDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParkingFeeReturnHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalPOMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalPriorityDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalPriorityMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartIncidentalUserMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PartShopMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentAssignmentTypeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentAssignmentTypeReffMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentMethodMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentNotifEmailMapper.vb" />
+    <Compile Include="PaymentObligationHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentObligationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentObligationTypeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentPurposeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentRegDocMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentStatusMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PaymentTypeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PCPhisingGuardMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PDIMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PenaltyParkirHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PendingOrderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PengajuanDesignIklanMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PerformanceLogMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PhisingGuardImageMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PKDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PKHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PKProductionPlanMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChassisMasterPKTMapper.vb" />
+    <Compile Include="PKTChangeHistoryMapper.vb" />
+    <Compile Include="PMDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PMHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PMKindMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PMKindReplacementPartMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POOtherVendorDetailMapper.vb" />
+    <Compile Include="POOtherVendorMapper.vb" />
+    <Compile Include="SparePartPRDetailFromVendorMapper.vb" />
+    <Compile Include="SparePartPRFromVendorMapper.vb" />
+    <Compile Include="VWI_CampaignReportMapper.vb" />
+    <Compile Include="VWI_FieldFixListMapper.vb" />
+    <Compile Include="VWI_OpenFakturMapper.vb" />
+    <Compile Include="VWI_PartShopMapper.vb" />
+    <Compile Include="VWI_POEstimateHaveBillingMapper.vb" />
+    <Compile Include="VWI_PRHistoryDOMapper.vb" />
+    <Compile Include="VWI_PRHistoryIndentStatusCancelMapper.vb" />
+    <Compile Include="VWI_PRHistorySOMapper.vb" />
+    <Compile Include="VWI_PODealerMapper.vb" />
+    <Compile Include="PODestinationMapper.vb" />
+    <Compile Include="PODestinationRegionMapper.vb" />
+    <Compile Include="PODetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PODraftDetailMapper.vb" />
+    <Compile Include="PODraftHeaderMapper.vb" />
+    <Compile Include="POHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PositionWSCMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PPhMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PPQtyDeleteHelperMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PPQtyMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRAdditionalInfoBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRAdditionalInfoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRAttachmentBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRAttachmentMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRChangesHistoryBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRChangesHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRDamageCodeBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRDamageCodeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRDetailBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRHeaderBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRPartsCodeBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRPartsCodeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRProfileBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRProfileHistoryBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRProfileHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRProfileMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRQRSBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRQRSMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PQRSolutionReferencesMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PresentationGroupMapper.vb" />
+    <Compile Include="PresentationMapper.vb" />
+    <Compile Include="PriceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrivilegeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProductCategoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProductDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProductMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileGroupMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileHeaderToGroupMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileValueHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProfileValueMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProvinceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PRPCategoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PRPFileMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PRPReceiverInfoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PRPSenderInfoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PRPUserEmailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="QAUserMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReasonMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RecallCategoryDetailMapper.vb" />
+    <Compile Include="RecallCategoryMapper.vb" />
+    <Compile Include="RecallChassisMasterMapper.vb" />
+    <Compile Include="RecallServiceMapper.vb" />
+    <Compile Include="RedemptionCeilingMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RedemptionDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RedemptionHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RedemptionStatusMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReferenceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegularOrderConfirmationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReplecementPartMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RevisionChassisMasterProfileMapper.vb" />
+    <Compile Include="RevisionFakturMapper.vb" />
+    <Compile Include="RevisionPaymentDetailMapper.vb" />
+    <Compile Include="RevisionPaymentHeaderMapper.vb" />
+    <Compile Include="RevisionPriceMapper.vb" />
+    <Compile Include="RevisionSAPDocMapper.vb" />
+    <Compile Include="RevisionSPKFakturMapper.vb" />
+    <Compile Include="RevisionTypeMapper.vb" />
+    <Compile Include="RoleMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RoleOrganizationPrivilegeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanAccomplishMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanAdditionalInfoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanAreaAssignMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanAreaMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanCategoryLevelMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanDealerHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanExperienceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanMasterTrainingMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartCodeHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartPerformanceHistMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartPerformanceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartShopMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartTargetHistMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanPartTargetMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanProfileHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanProfileMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanSalesTargetMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanTrainingMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanTrainingParticipantMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanTrainingTypeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanTurnOverAnalisaMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUnifDistributionMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUnifGuideMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUniformAssignedMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUniformMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUniformOrderDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmanUniformOrderHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesmenLevelMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesOrderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SalesPlanMeetingMapper.vb" />
+    <Compile Include="SampleIklanMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAPCustomerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAPCustomerResponseMapper.vb" />
+    <Compile Include="SAPGradeWeightMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAPPeriodMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAPRegisterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SAPSalesParameterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SettingMaterialBlockMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SMSHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAFDocHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAFDocMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAFDoc_UploadDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPAFDoc_UploadHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartBillingDetailMapper.vb" />
+    <Compile Include="SparePartBillingMapper.vb" />
+    <Compile Include="SparePartDODetailMapper.vb" />
+    <Compile Include="SparePartDOExpeditionMapper.vb" />
+    <Compile Include="SparePartDOMapper.vb" />
+    <Compile Include="SparePartConversionMapper.vb" />
+    <Compile Include="SparePartMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparepartMaxOrderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartOrganizationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartOutstandingOrderDetailMapper.vb" />
+    <Compile Include="SparePartOutstandingOrderMapper.vb" />
+    <Compile Include="SparePartPackingDetailMapper.vb" />
+    <Compile Include="SparePartPackingMapper.vb" />
+    <Compile Include="SparePartPendingOrderMapper.vb" />
+    <Compile Include="SparePartPOBillingRecapMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPODetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPOEstimateDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPOEstimateMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPOMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPOScheduleDealerMapper.vb" />
+    <Compile Include="SparePartPOScheduleMapper.vb" />
+    <Compile Include="SparePartPOScheduleTimeMapper.vb" />
+    <Compile Include="SparePartPOStatusDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SparePartPOStatusMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SpecialItemDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SpecialItemHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SpecialItemPackageMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKCustomerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKCustomerProfileMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKChassisMapper.vb" />
+    <Compile Include="SPKDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKFakturMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPKIndentLogMapper.vb" />
+    <Compile Include="SPKProfileMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPLDealerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPLDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPLMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SPMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_AllocPOMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_CeilingMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_CeilingPOMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_checkInputClaimMapper.vb" />
+    <Compile Include="sp_CreditMasterMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_GetSPKStatusMapper.vb" />
+    <Compile Include="sp_MaxTOPDayMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_PaymentTransferMapper.vb" />
+    <Compile Include="sp_PriceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_RedemptionCeilingMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="sp_SOListMapper.vb" />
+    <Compile Include="StandardCodeCharMapper.vb" />
+    <Compile Include="StandardCodeMapper.vb" />
+    <Compile Include="StatusChangeHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StockActualMapper.vb" />
+    <Compile Include="StockMovementMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StockTargetMapper.vb" />
+    <Compile Include="SysLogMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermOfPaymentMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TOPBlockStatusMapper.vb" />
+    <Compile Include="TOPSPDepositMapper.vb" />
+    <Compile Include="TOPSPDueDateMapper.vb" />
+    <Compile Include="TOPSPTransferActualMapper.vb" />
+    <Compile Include="TOPSPTransferCeilingDetailMapper.vb" />
+    <Compile Include="TOPSPTransferCeilingMapper.vb" />
+    <Compile Include="TOPSPTransferPaymentDetailMapper.vb" />
+    <Compile Include="TOPSPTransferPaymentMapper.vb" />
+    <Compile Include="TrainingAnnoucementMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrainingCode.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrainingConfirmation.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrainingHistoricalMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrainingSalesMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransactionControlHistoryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransactionControlMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TransactionControlPKHistoryMapper.vb" />
+    <Compile Include="TransactionControlPKMapper.vb" />
+    <Compile Include="TransferActualMapper.vb" />
+    <Compile Include="TransferCeilingDetailMapper.vb" />
+    <Compile Include="TransferCeilingMapper.vb" />
+    <Compile Include="TransferControlMapper.vb" />
+    <Compile Include="TransferPaymentDetailMapper.vb" />
+    <Compile Include="TransferPaymentMapper.vb" />
+    <Compile Include="TrCertificateLineMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrClassAllocationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrClassMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrClassNumEvaluationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrClassRegistrationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrCourseEvaluationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrCourseMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouseClassMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouseDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouseEvaluationlMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouseInformationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouseMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrInhouseMemberMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrPreRequireMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrScheduleUploadMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrTraineeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TrUserEmailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformDistributionMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformGuideMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformOrderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformSalesmanMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UniformValidationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserAlertMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserGroupMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserGroupMemberMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserInfoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserOrgAssignmentMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserProfileMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UserRoleMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VAlurInvoiceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDetailInvoiceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDHCustomer.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDHItemMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDHMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VDHServiceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VechileColorMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VechileModelMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VechileTypeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleBodyShapeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleClassMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleKindGroupMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleKindMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehicleOwnershipMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VehiclePurchaseDetailMapper.vb" />
+    <Compile Include="VehiclePurchaseHeaderMapper.vb" />
+    <Compile Include="VehiclePurposeMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view_DealerWSCMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view_DealerWSCMapperBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view_DealerWSCProccessedMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view_DealerWSCProccessedMapperBB.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VIEW_ExtMaterialGroupMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VIEW_PartNumberByExtMaterialGroupMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="view_PKListMapperView.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VInvoiceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VSAPCustomerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VSumDetailInvoiceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VwBCPColumnsMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VWI_ProvinceMapper.vb" />
+    <Compile Include="VWI_QuickProductMapper.vb" />
+    <Compile Include="VWI_ServiceHistoryMapper.vb" />
+    <Compile Include="VWI_ServiceTemplateMapper.vb" />
+    <Compile Include="VWI_SparePartConversionMapper.vb" />
+    <Compile Include="VWI_SPKChassisMatchingMapper.vb" />
+    <Compile Include="VWI_UnmatchSPKChassisMapper.vb" />
+    <Compile Include="VWI_VehicleExteriorColorMapper.vb" />
+    <Compile Include="VWI_VehicleInformationMapper.vb" />
+    <Compile Include="VWI_VehicleTypeMapper.vb" />
+    <Compile Include="VWI_WholeSalesPriceMapper.vb" />
+    <Compile Include="VwRecallCategoryMapper.vb" />
+    <Compile Include="Vw_ChassisMasterMapper.vb" />
+    <Compile Include="vw_TransferPaymentMapper.vb" />
+    <Compile Include="V_AssistEmailUserMapper.vb" />
+    <Compile Include="V_AssistPartStockFlagLastDataMapper.vb" />
+    <Compile Include="V_BenefitClaimDeductedHistoryMapper.vb" />
+    <Compile Include="V_BenefitClaimDeductedMapper.vb" />
+    <Compile Include="V_BabitMasterRetailTargetMapper.vb" />
+    <Compile Include="V_CcComplainFollowUpMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_CcGridContactMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_CessieDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_ClaimDetailMapper.vb" />
+    <Compile Include="V_CMHelperMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_CreditAccountMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_DataSiswaMapper.vb" />
+    <Compile Include="v_DealerOrderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_DealerStockMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_DraftPOTotalDetailMapper.vb" />
+    <Compile Include="v_EquipPOMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_EquipSPPOIndentMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_EventLaporanPenjualanGroupDealerMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_EventProposalAgreementMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_EventProposalDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_EventProposalExcelMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_FreeServiceMapper.vb" />
+    <Compile Include="v_GetTokenExpiredMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_LeasingDaftarDokumenMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_LeasingDaftarKondisiMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_LKPPbyDealerMapper.vb" />
+    <Compile Include="V_MCPbyDealerMapper.vb" />
+    <Compile Include="V_MDPMasterVehicleMapper.vb" />
+    <Compile Include="V_MonthlyReportMapper.vb" />
+    <Compile Include="v_POEffectiveDateMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_POTotalDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_PriceMapper.vb" />
+    <Compile Include="v_ProposedPOMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_RedemptionMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_RekapDOHelperMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_RekapDraftPOMapper.vb" />
+    <Compile Include="V_RekapPOMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_RetrieveDummyFakturMapper.vb" />
+    <Compile Include="V_SalesmanCSTeamMapper.vb" />
+    <Compile Include="V_SalesmanDownloadMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SalesmanPartMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SalesmanPartTargetMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_SOPaidStatusMapper.vb" />
+    <Compile Include="v_SOPaymentDetailMapper.vb" />
+    <Compile Include="v_SOPaymentMapper.vb" />
+    <Compile Include="V_SparePartFlowMapper.vb" />
+    <Compile Include="V_SParepartLeadTimeMapper.vb" />
+    <Compile Include="V_SparePartOrganizationMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SparePartPOSummaryMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SPKChassisMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SPKDetailInfoMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SPKTersediaMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SPK_SalesmanMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SPK_Salesman_Download.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_SpPO_IndentMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_trClassMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="v_TrTraineeRegisteredMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="V_WarrantyActivationMapper.vb" />
+    <Compile Include="WarrantyActivationMapper.vb" />
+    <Compile Include="WarrantyPartAccessoriesMapper.vb" />
+    <Compile Include="WSCDamageRequestPartBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCDamageRequestPartMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCDetailBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCDetailMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCEvidenceBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCEvidenceMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCFormMapper.vb" />
+    <Compile Include="WSCHeaderBBMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCHeaderMapper.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WSCParameterConditionMapper.vb" />
+    <Compile Include="WSCParameterDetailMapper.vb" />
+    <Compile Include="WSCParameterHeaderMapper.vb" />
+    <Compile Include="WSCParameterVehicleMapper.vb" />
+    <Compile Include="WsJSONLogMapper.vb" />
+    <Compile Include="WsLogMapper.vb" />
+    <EmbeddedResource Include="UserGroupMapper.resx">
+      <DependentUpon>UserGroupMapper.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <PropertyGroup>
+    <PreBuildEvent />
+    <PostBuildEvent />
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,29 @@
+﻿SELECT 
+/**PagingIndexQuery**/ 
+	ID, Name, DealerCode, DealerBranchCode, BirthDate, Gender, NoKTP, Email, StartWorkingDate, JobPosition, EducationLevel, Photo, ShirtSize, Status, LastUpdateTime, LastUpdateBy
+/**EndPagingIndexQuery**/
+FROM
+(
+SELECT a.[ID], a.[Name], D1.DealerCode, D2.DealerBranchCode, a.[BirthDate], a.[Gender], a.[NoKTP], a.[Email], a.[StartWorkingDate],  
+    a.[JobPosition] ,  
+    a.[EducationLevel] ,  
+    a.[Photo] ,  
+    a.[ShirtSize] ,  
+    Status = CASE WHEN a.RowStatus = -1 THEN a.RowStatus  
+         ELSE CASE WHEN a.Status <> 1 THEN -1  
+          ELSE 0  
+           END  
+       END ,  
+    a.Status as SalesmanStatusDNET,
+    a.[LastUpdateTime],
+    a.[LastUpdateBy]
+    FROM  [TrTrainee] a WITH ( NOLOCK )  
+    LEFT JOIN Dealer D1 WITH ( NOLOCK ) ON a.DealerID = D1.ID  
+             AND D1.RowStatus = 0  
+    LEFT JOIN DealerBranch D2 WITH ( NOLOCK ) ON a.DealerBranchID = D2.ID  
+             AND D2.RowStatus = 0  
+    JOIN  JobPosition b WITH ( NOLOCK ) ON a.JobPosition = b.Code  
+             AND b.RowStatus = 0  
+             AND b.Category = 2  
+    WHERE b.Category = 2  
+) VWI_EmployeeService {0}

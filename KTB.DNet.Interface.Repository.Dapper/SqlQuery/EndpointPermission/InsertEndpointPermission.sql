@@ -1,0 +1,31 @@
+﻿INSERT INTO [APIEndpointPermission]
+           ([Name]
+           ,[PermissionCode]
+           ,[URI]
+		   ,[EndpointGroup]
+           ,[EndpointType]
+           ,[OperationType]
+           ,[Description]
+           ,[IsScheduled]
+	       ,[IsLogEnabled]
+	       ,[IsRuntimeLogEnabled]
+           ,[CreatedBy]
+           ,[CreatedTime]
+           ,[UpdatedBy]
+           ,[UpdatedTime])
+	 OUTPUT INSERTED.ID
+     VALUES
+           (@Name
+           ,@PermissionCode
+           ,@URI
+		   ,@EndpointGroup
+           ,@EndpointType
+           ,@OperationType
+           ,@Description
+           ,@IsScheduled
+	       ,@IsLogEnabled
+	       ,@IsRuntimeLogEnabled
+           ,@CreatedBy
+           ,@CreatedTime
+           ,@UpdatedBy
+           ,@UpdatedTime)

@@ -1,0 +1,19 @@
+select
+/**PagingIndexQuery**/ 
+	VWI_DepositLine.ID
+	, VWI_DepositLine.DepositID
+	, VWI_DepositLine.DocumentNo
+	, VWI_DepositLine.PostingDate
+	, VWI_DepositLine.ClearingDate
+	, VWI_DepositLine.Debit
+	, VWI_DepositLine.Credit
+	, VWI_DepositLine.ReferenceNo
+	, VWI_DepositLine.InvoiceNo
+	, VWI_DepositLine.Remark
+	, VWI_DepositLine.PaymentType
+	, VWI_DepositLine.LastUpdateTime
+/**EndPagingIndexQuery**/
+from DepositLine as VWI_DepositLine 
+{0}
+
+

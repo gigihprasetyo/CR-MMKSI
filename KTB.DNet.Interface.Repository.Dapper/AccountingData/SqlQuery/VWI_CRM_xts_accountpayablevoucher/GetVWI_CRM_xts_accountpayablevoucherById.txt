@@ -1,0 +1,110 @@
+SELECT 
+        ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,company
+	,businessunitcode
+	,xts_transactiontypename
+	,xts_accountpayablevouchernumber
+	,xts_parentbusinessunitid
+	,versionnumber
+	,createdon
+	,xts_totallandedcost_base
+	,statuscodename
+	,xts_status
+	,xts_paymentamount_base
+	,modifiedbyyominame
+	,ktb_taxinvoiceno
+	,owneridtype
+	,xts_vendorinvoicenumber
+	,xts_totalvariance_base
+	,ktb_invoicedate
+	,createdonbehalfby
+	,modifiedbyname
+	,xts_totalmisccharges
+	,owneridname
+	,overriddencreatedon
+	,xts_documentdate
+	,ktb_kontrabonid
+	,xts_type
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,exchangerate
+	,ktb_description
+	,xts_apvoucherreferencenumberid
+	,xts_paymentamount
+	,xts_balance
+	,statecode
+	,xts_transactiontype
+	,xts_consumptiontax1amount_base
+	,timezoneruleversionnumber
+	,xts_accountpayablevoucherid
+	,xts_apvoucherreferencenumberidname
+	,xts_locking
+	,xts_handling
+	,ktb_say
+	,xts_totalmisccharges_base
+	,xts_totalconsumptiontax_base
+	,xts_totalamount_base
+	,createdonbehalfbyname
+	,ktb_kontrabonidname
+	,utcconversiontimezonecode
+	,xts_totalwitholdingtaxamount
+	,xts_statusname
+	,xts_typename
+	,xts_hasreturnname
+	,ownerid
+	,modifiedon
+	,importsequencenumber
+	,owneridyominame
+	,xts_hasreturn
+	,xts_transactiondate
+	,createdbyname
+	,xts_totallandedcost
+	,xts_businessunitid
+	,modifiedonbehalfbyname
+	,xts_duedate
+	,xts_paymenttermsid
+	,xts_balance_base
+	,xts_totalvariance
+	,xts_handlingname
+	,xts_grandtotal
+	,xts_grandtotal_base
+	,xts_consumptiontax2amount
+	,transactioncurrencyid
+	,owningteam
+	,createdby
+	,modifiedby
+	,xts_parentbusinessunitidname
+	,createdbyyominame
+	,owninguser
+	,transactioncurrencyidname
+	,xts_paymenttermsidname
+	,ktb_prpotypeid
+	,owningbusinessunit
+	,xts_consumptiontax1amount
+	,xts_consumptiontax2amount_base
+	,xts_vendorid
+	,xts_totalamount
+	,statuscode
+	,modifiedonbehalfbyyominame
+	,xts_totalconsumptiontax
+	,xts_vendordescription
+	,xts_totalwitholdingtaxamount_base
+	,ktb_prpotypeidname
+	,statecodename
+	,xts_businessunitidname
+	,xts_vendoridname
+	,RowStatus
+	,ktb_isallowcancel
+	,ktb_externalcode
+	,msdyn_companycode
+FROM (
+	SELECT  
+        b.ktb_bucompany company,
+        b.ktb_dealercode businessunitcode
+        , a.* 
+        , b.msdyn_companycode
+    FROM CRM_xts_accountpayablevoucher a WITH(NOLOCK)
+	LEFT JOIN CRM_businessunit b WITH(NOLOCK) 
+    ON b.businessunitid = a.xts_businessunitid
+    where xts_accountpayablevoucherid = @id
+) VWI_CRM_xts_accountpayablevoucher 

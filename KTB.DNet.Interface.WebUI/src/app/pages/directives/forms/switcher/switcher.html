@@ -1,0 +1,14 @@
+<div class="form-group" ng-class="{ 'has-error': form.{{name}}.$invalid && form.{{name}}.$touched }">
+    <label for="{{name}}">{{label}}</label>
+    <label class="switcher-container" style=" display: block; margin-top: 2px; width: 85px;">
+        <input type="checkbox" name={{name}} ng-model="ngModel" ng-disabled="::ngDisabled">
+        <div class="switcher" ng-class="::switcherStyle">
+            <div class="handle-container">
+                <span class="handle handle-on">{{textOn || 'ON'}}</span>
+                <span class="handle"></span>
+                <span class="handle handle-off">{{textOff|| 'OFF'}}</span>
+            </div>
+        </div>
+    </label>
+    <span ng-show="form.{{name}}.$invalid && form.{{name}}.$touched" class="help-block">{{label}} is required</span>
+</div>

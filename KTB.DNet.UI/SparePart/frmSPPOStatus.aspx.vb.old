@@ -1,0 +1,433 @@
+#Region "Custom Namespace Imports"
+
+Imports KTB.DNet.BusinessFacade
+Imports KTB.DNet.BusinessFacade.General
+Imports KTB.DNet.BusinessFacade.SparePart
+Imports Ktb.DNet.Domain
+Imports KTB.DNet.Domain.Search
+Imports KTB.DNet.Utility
+Imports KTB.DNet.UI.Helper
+Imports KTB.DNet.Security
+#End Region
+
+#Region "DotNet Namespace"
+Imports System.IO
+Imports System.Text
+#End Region
+
+Public Class frmSPPOStatus
+    Inherits System.Web.UI.Page
+
+#Region " Web Form Designer Generated Code "
+
+    'This call is required by the Web Form Designer.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+
+    End Sub
+    Protected WithEvents txtPONumber As System.Web.UI.WebControls.TextBox
+    Protected WithEvents ddlPackingStatus As System.Web.UI.WebControls.DropDownList
+    Protected WithEvents dtgPOStatus As System.Web.UI.WebControls.DataGrid
+    Protected WithEvents btnFind As System.Web.UI.WebControls.Button
+    Protected WithEvents icPODate As Intimedia.WebCC.IntiCalendar
+    Protected WithEvents icPODateTo As Intimedia.WebCC.IntiCalendar
+    Protected WithEvents lblDealerCode As System.Web.UI.WebControls.Label
+    Protected WithEvents lblDealerName As System.Web.UI.WebControls.Label
+    Protected WithEvents lblDealerTerm As System.Web.UI.WebControls.Label
+    Protected WithEvents lblSearchDealer As System.Web.UI.WebControls.Label
+    Protected WithEvents txtDealerCode As System.Web.UI.WebControls.TextBox
+    Protected WithEvents btnGetDealer As System.Web.UI.WebControls.Button
+
+    'NOTE: The following placeholder declaration is required by the Web Form Designer.
+    'Do not delete or move it.
+    Private designerPlaceholderDeclaration As System.Object
+
+    Private Sub Page_Init(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Init
+        'CODEGEN: This method call is required by the Web Form Designer
+        'Do not modify it using the code editor.
+        InitializeComponent()
+    End Sub
+
+#End Region
+
+#Region " Custom Variable Declaration "
+    Private _nDealerID As Integer
+    Private _sessHelper As SessionHelper = New SessionHelper
+    Private _ListPOStatus As ArrayList = New ArrayList
+    Private _isPrintAllowed As Boolean = False
+    Private _isShowDetailAllowed As Boolean = False
+#End Region
+
+#Region " Custom Method "
+
+    Private Sub BindTodtgPOStatus(ByVal pageIndex As Integer)
+
+        If txtDealerCode.Text.Trim <> "" Then
+            Dim objDealerFind As Dealer = New DealerFacade(User).Retrieve(txtDealerCode.Text.Trim)
+            lblDealerName.Text = objDealerFind.DealerName
+            lblDealerTerm.Text = objDealerFind.SearchTerm2
+        End If
+
+        Dim objDealer As Dealer = CType(Session("DEALER"), Dealer)
+        Dim totalRow As Integer = 0
+        Dim criterias As CriteriaComposite = New CriteriaComposite(New Criteria(GetType(SparePartPOStatus), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        If objDealer.Title = EnumDealerTittle.DealerTittle.DEALER Then
+            'criterias.opAnd(New Criteria(GetType(SparePartPOStatus), "SparePartPO.Dealer.ID", MatchType.Exact, CType(Session("DEALER"), Dealer).ID))
+            criterias.opAnd(New Criteria(GetType(SparePartPOStatus), "SparePartPO.Dealer.DealerCode", MatchType.Exact, CType(Session("DEALER"), Dealer).DealerCode))
+        Else
+            criterias.opAnd(New Criteria(GetType(SparePartPOStatus), "SparePartPO.Dealer.DealerCode", MatchType.InSet, "('" & txtDealerCode.Text.Replace(";", "','") & "')"))
+        End If
+
+        If icPODate.Value <= icPODateTo.Value Then
+            criterias.opAnd(New Criteria(GetType(SparePartPOStatus), "SparePartPO.PODate", MatchType.GreaterOrEqual, Format(icPODate.Value, "yyyy/MM/dd")))
+            criterias.opAnd(New Criteria(GetType(SparePartPOStatus), "SparePartPO.PODate", MatchType.LesserOrEqual, Format(icPODateTo.Value, "yyyy/MM/dd")))
+        Else
+            criterias.opAnd(New Criteria(GetType(SparePartPOStatus), "SparePartPO.PODate", MatchType.GreaterOrEqual, Format(Date.Now, "yyyy/MM/dd")))
+            criterias.opAnd(New Criteria(GetType(SparePartPOStatus), "SparePartPO.PODate", MatchType.LesserOrEqual, Format(Date.Now, "yyyy/MM/dd")))
+            icPODate.Value = Date.Now
+            icPODateTo.Value = Date.Now
+        End If
+
+        If txtPONumber.Text.Trim <> String.Empty Then
+            criterias.opAnd(New Criteria(GetType(SparePartPOStatus), "SparePartPO.PONumber", MatchType.Partial, txtPONumber.Text.Trim))
+        End If
+
+
+
+        If ddlPackingStatus.SelectedValue <> "-1" Then criterias.opAnd(New Criteria(GetType(SparePartPOStatus), "PackingStatus", MatchType.Exact, ddlPackingStatus.SelectedValue))
+        _ListPOStatus = New SparePartPOStatusFacade(User).RetrieveActiveList(criterias, pageIndex, dtgPOStatus.PageSize, totalRow, CType(ViewState("currSortColumn"), String), CType(ViewState("currSortTable"), System.Type), CType(ViewState("currSortDirection"), Sort.SortDirection))
+
+        If _ListPOStatus.Count > 0 Then
+            dtgPOStatus.DataSource = _ListPOStatus
+            dtgPOStatus.VirtualItemCount = totalRow
+
+        Else
+            dtgPOStatus.DataSource = New ArrayList
+            If IsPostBack Then
+                MessageBox.Show(SR.DataNotFound("PO Sparepart"))
+            End If
+        End If
+        dtgPOStatus.DataBind()
+    End Sub
+
+
+    Private Sub BindHeader()
+        'checkDealer()
+        Dim ObjMainDealer As Dealer = CType(Session("DEALER"), Dealer)
+        If ObjMainDealer.Title = EnumDealerTittle.DealerTittle.DEALER Then
+            lblDealerCode.Text = ObjMainDealer.DealerCode
+            lblDealerName.Text = ObjMainDealer.DealerName
+            lblDealerTerm.Text = ObjMainDealer.SearchTerm2
+        Else
+            lblDealerCode.Text = ""
+            lblDealerName.Text = ""
+            lblDealerTerm.Text = ""
+        End If
+        BindDDLSPPOPackingStatus()
+    End Sub
+
+    Private Sub BindDDLSPPOPackingStatus()
+        ddlPackingStatus.Items.Add(New ListItem("Silahkan Pilih", "-1"))
+        For Each liOrderType As ListItem In LookUp.ArraySPPackingStatus
+            ddlPackingStatus.Items.Add(New ListItem(liOrderType.Text, liOrderType.Value))
+        Next
+    End Sub
+
+    Private Sub btnFind_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnFind.Click
+        Dim org As Dealer = CType(Session("DEALER"), Dealer)
+        If txtDealerCode.Text.Trim = "" And org.Title = EnumDealerTittle.DealerTittle.KTB Then
+            MessageBox.Show("Kode Dealer tidak boleh kosong")
+        Else
+            dtgPOStatus.CurrentPageIndex = 0
+            BindTodtgPOStatus(1)
+        End If
+
+       
+    End Sub
+
+    Private Function CalculatePOAmount(ByVal arlPODetail As ArrayList) As Decimal
+        Dim nPOAmount As Decimal = 0
+        For Each objSPStatusDetail As SparePartPOStatusDetail In arlPODetail
+            nPOAmount = nPOAmount + objSPStatusDetail.BillingPrice
+        Next
+        Return (nPOAmount)
+    End Function
+
+    Private Sub WriteSPPOData(ByRef sw As StreamWriter, ByVal objSPStatus As SparePartPOStatus)
+
+        Dim tab As Char = Chr(9)  '-- Separator character <Tab>
+        Dim itemLine As StringBuilder = New StringBuilder  '-- SPPO line in file
+
+        '-- Read SPPO header
+        'Dim objSPStatus As SparePartPOStatus = CType(_sessHelper.GetSession("sesSPPOStatus"), SparePartPOStatus)
+        'kode dealer; nama dealer; jenis order; nomor pesanan - tanggal; nomor penjualan ktb - tanggal; nomor faktur - tanggal; total nilai tagihan (rp)
+        If Not IsNothing(objSPStatus) Then
+            itemLine.Remove(0, itemLine.Length)       '-- Empty line
+            itemLine.Append("Kode Dealer:" & tab)
+            itemLine.Append(objSPStatus.SparePartPO.Dealer.DealerCode)  '-- Kode dealer
+            sw.WriteLine(itemLine.ToString())         '-- Write to file
+
+            itemLine.Remove(0, itemLine.Length)  '-- Empty line
+            itemLine.Append("Nama Dealer:" & tab)
+            itemLine.Append(objSPStatus.SparePartPO.Dealer.DealerName & " / " & objSPStatus.SparePartPO.Dealer.SearchTerm2)  '-- Nama dealer
+            sw.WriteLine(itemLine.ToString())    '-- Write to file
+
+            itemLine.Remove(0, itemLine.Length)   '-- Empty line
+            itemLine.Append("Tipe Order:" & tab)
+            itemLine.Append(objSPStatus.SparePartPO.OrderTypeDesc)  '-- Tipe order
+            sw.WriteLine(itemLine.ToString())     '-- Write to file
+
+            itemLine.Remove(0, itemLine.Length)    '-- Empty line
+            itemLine.Append("No Pesanan - Tanggal:" & tab)
+            itemLine.Append(objSPStatus.SparePartPO.PONumber & " - " & objSPStatus.SparePartPO.PODate & tab)  '-- PO number
+            sw.WriteLine(itemLine.ToString())      '-- Write to file
+
+
+
+            itemLine.Remove(0, itemLine.Length)    '-- Empty line
+            itemLine.Append("No Penjualan KTB - Tanggal:" & tab)
+
+            If IsNothing(objSPStatus.SparePartPO) = False AndAlso IsNothing(objSPStatus.SparePartPO.SparePartPOEstimate) = False Then
+                itemLine.Append(objSPStatus.SparePartPO.SparePartPOEstimate.SONumber & " - " & Format(objSPStatus.SparePartPO.SparePartPOEstimate.SODate, "dd/MM/yyyy"))  '-- KTB Number
+            Else
+                itemLine.Append("" & " - " & "")  '-- KTB Number
+            End If
+            sw.WriteLine(itemLine.ToString())      '-- Write to file
+
+            itemLine.Remove(0, itemLine.Length)    '-- Empty line
+            itemLine.Append("No Faktur - Tanggal:" & tab)
+            itemLine.Append(objSPStatus.BillingNumber & " - " & IIf(Format(objSPStatus.BillingDate, "dd/MM/yyyy") = "01/01/1753", "", Format(objSPStatus.BillingDate, "dd/MM/yyyy")))  '-- Faktur Number
+            sw.WriteLine(itemLine.ToString())      '-- Write to file
+
+        End If
+
+        '-- Read SPPO detail
+        Dim criterias As New CriteriaComposite(New Criteria(GetType(KTB.DNet.Domain.SparePartPOStatusDetail), "RowStatus", MatchType.Exact, CType(DBRowStatus.Active, Short)))
+        criterias.opAnd(New Criteria(GetType(KTB.DNet.Domain.SparePartPOStatusDetail), "SparePartPOStatus.ID", MatchType.Exact, objSPStatus.ID))
+
+        Dim arSPStatusDetail As ArrayList = New SparePartPOStatusDetailFacade(User).RetrieveList(criterias)
+
+        If Not IsNothing(arSPStatusDetail) AndAlso arSPStatusDetail.Count <> 0 Then
+
+            itemLine.Remove(0, itemLine.Length)  '-- Empty line
+            itemLine.Append("Total Nilai Tagihan (Rp):" & tab)
+            itemLine.Append(CalculatePOAmount(arSPStatusDetail))  '-- Billing Amount
+            sw.WriteLine(itemLine.ToString())    '-- Write to file
+
+            itemLine.Remove(0, itemLine.Length)  '-- Empty line
+            sw.WriteLine(itemLine.ToString())    '-- Write blank line
+
+            '-- Write column header
+            itemLine.Remove(0, itemLine.Length)  '-- Empty line
+            itemLine.Append("No. Barang" & tab)  '-- Part number
+            itemLine.Append("Nama Brg." & tab)   '-- Part name
+            itemLine.Append("Jumlah Pesanan" & tab)      '-- Quantity
+            itemLine.Append("Jumlah Dipenuhi" & tab)      '-- Quantity
+            itemLine.Append("Harga Jual KTB (Rp)" & tab)  '-- Retail price
+            itemLine.Append("Nilai Pesanan (Rp)" & tab)  '-- Retail price
+            itemLine.Append("Nilai Tagihan (Rp)" & tab)  '-- Retail price
+            sw.WriteLine(itemLine.ToString())      '-- Write header
+
+            For Each sppoLine As SparePartPOStatusDetail In arSPStatusDetail
+
+                itemLine.Remove(0, itemLine.Length)  '-- Empty line
+
+                itemLine.Append(Chr(39) & sppoLine.SparePartMaster.PartNumber & tab)  '-- Part number
+                itemLine.Append(sppoLine.SparePartMaster.PartName & tab)    '-- Part name
+                itemLine.Append(sppoLine.SOQuantity & tab)                  '-- Jumlah Pesanan
+                itemLine.Append(sppoLine.BillingQuantity & tab)             '-- Jumlah Dipenuhi
+                itemLine.Append(sppoLine.NetPrice & tab)                    '-- Harga Jual KTB
+                itemLine.Append(sppoLine.SOPrice & tab)                     '-- Nilai Pesanan
+                itemLine.Append(sppoLine.BillingPrice & tab)                '-- Nilai Tagihan
+
+                sw.WriteLine(itemLine.ToString())  '-- Write Deposit line
+            Next
+
+        End If
+
+    End Sub
+
+    Private Sub download(ByVal idSPPOStatus As Integer)
+        Dim objSPStatus As SparePartPOStatus = New SparePartPOStatusFacade(User).Retrieve(idSPPOStatus)
+
+        Dim sFileName As String  '-- File name
+        If Not IsNothing(objSPStatus) Then
+            sFileName = "Status" & objSPStatus.SparePartPO.PONumber   '-- Set file name as "Status" + "PO number".xls
+        Else
+            sFileName = "SPPOStatus"  '-- Dummy file name
+        End If
+
+        '-- Temp file must be a randomly named file!
+        Dim SPPOStatusData As String = Server.MapPath("") & "\..\DataTemp\" & sFileName & ".xls"
+
+        '-- Impersonation to manipulate file in server
+        Dim _user As String = ConfigurationSettings.AppSettings.Get("User")
+        Dim _password As String = ConfigurationSettings.AppSettings.Get("Password")
+        Dim _webServer As String = ConfigurationSettings.AppSettings.Get("WebServer")
+        Dim imp As SAPImpersonate = New SAPImpersonate(_user, _password, _webServer)
+
+        Try
+            If imp.Start() Then
+
+                Dim finfo As FileInfo = New FileInfo(SPPOStatusData)
+                If finfo.Exists Then
+                    finfo.Delete()  '-- Delete temp file if exists
+                End If
+
+                '-- Create file stream
+                Dim fs As FileStream = New FileStream(SPPOStatusData, FileMode.CreateNew)
+                '-- Create stream writer
+                Dim sw As StreamWriter = New StreamWriter(fs)
+
+                '-- Write data to temp file
+                WriteSPPOData(sw, objSPStatus)
+
+                sw.Close()
+                fs.Close()
+
+                imp.StopImpersonate()
+                imp = Nothing
+
+            End If
+
+            '-- Download invoice data to client!
+            Response.Redirect("../downloadlocal.aspx?file=DataTemp\" & sFileName & ".xls")
+
+        Catch ex As Exception
+            MessageBox.Show("Download data gagal")
+        End Try
+    End Sub
+
+#End Region
+
+#Region " Event Handler"
+
+    Private Sub InitiateAuthorization()
+        Dim ObjMainDealer As Dealer = CType(Session("DEALER"), Dealer)
+
+        If ObjMainDealer.Title = EnumDealerTittle.DealerTittle.DEALER Then
+            If Not SecurityProvider.Authorize(context.User, SR.ViewSPPO_Status_Privilege) Then
+                Server.Transfer("../FrmAccessDenied.aspx?modulName=PEMESANAN - Status Pesanan")
+            End If
+            '--exclude  this privilege from Asra (BA)
+            'Me.btnFind.Visible = SecurityProvider.Authorize(context.User, SR.SearchSPPO_Status_Privilege)
+
+            _isShowDetailAllowed = SecurityProvider.Authorize(context.User, SR.ViewSPPO_StatusDetail_Privilege)
+            If _isPrintAllowed = False And _isShowDetailAllowed = False Then
+                Me.dtgPOStatus.Columns(7).Visible = False
+            End If
+
+            txtDealerCode.Visible = False
+            lblSearchDealer.Visible = False
+            lblDealerCode.Visible = True
+
+        Else
+            If Not SecurityProvider.Authorize(context.User, SR.ENHStatusPemesananKTB_Privilege) Then
+                Server.Transfer("../FrmAccessDenied.aspx?modulName=PEMESANAN - Status Pesanan")
+            End If
+
+            txtDealerCode.Visible = True
+            lblSearchDealer.Visible = True
+            lblDealerCode.Visible = False
+        End If
+    End Sub
+
+    Private Sub Page_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Response.Cache.SetCacheability(HttpCacheability.NoCache)
+        InitiateAuthorization()
+
+        If Not IsPostBack Then
+            icPODate.Value = Date.Today.AddDays(-1)
+            icPODateTo.Value = Date.Today
+            lblSearchDealer.Attributes("onclick") = "ShowPPDealerSelectionOne()"
+            btnGetDealer.Style("display") = "none"
+            ViewState("currSortColumn") = "PODate"
+            ViewState("currSortTable") = GetType(SparePartPO)
+            ViewState("currSortDirection") = Sort.SortDirection.ASC
+            BindHeader()
+            dtgPOStatus.DataSource = New ArrayList
+            dtgPOStatus.DataBind()
+            BindTodtgPOStatus(1)
+        End If
+    End Sub
+
+    Sub dtgPOStatus_ItemDataBound(ByVal sender As Object, ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs)
+        If (e.Item.ItemIndex <> -1) Then
+            Dim objSPPOStatus As SparePartPOStatus
+            objSPPOStatus = CType(_ListPOStatus(e.Item.ItemIndex), SparePartPOStatus)
+            e.Item.Cells(1).Text = (e.Item.ItemIndex + 1 + (dtgPOStatus.PageSize * dtgPOStatus.CurrentPageIndex)).ToString
+            e.Item.Cells(2).Text = objSPPOStatus.SparePartPO.Dealer.DealerCode
+            e.Item.Cells(4).Text = objSPPOStatus.SparePartPO.PONumber
+            e.Item.Cells(5).Text = objSPPOStatus.SONumber
+            e.Item.Cells(6).Text = objSPPOStatus.PackingStatusDesc
+            e.Item.Cells(3).Text = Format(objSPPOStatus.SparePartPO.PODate, "dd/MM/yyyy")
+            e.Item.Cells(7).Text = objSPPOStatus.GetStrDate(objSPPOStatus.DeliveryDate, "dd/MM/yyyy") ' Format(objSPPOStatus.DeliveryDate, "dd/MM/yyyy")
+        End If
+        If e.Item.ItemType = ListItemType.Item Or e.Item.ItemType = ListItemType.AlternatingItem Then
+            SetSPPODetailButton(e)
+        End If
+    End Sub
+
+    Private Sub SetSPPODetailButton(ByVal e As System.Web.UI.WebControls.DataGridItemEventArgs)
+        If Not (_isPrintAllowed = False And _isShowDetailAllowed = False) Then
+            CType(e.Item.FindControl("lblDetail"), Label).Visible = _isShowDetailAllowed
+            CType(e.Item.FindControl("lnkPrint"), LinkButton).Visible = _isPrintAllowed
+            CType(e.Item.FindControl("lblDetail"), Label).Attributes("onclick") = GeneralScript.GetPopUpEventReference( _
+                    "../SparePart/frmSPPOStatusDetail.aspx?SPPOStatusID=" & e.Item.Cells(0).Text + "", "", 600, 800, "null")
+        End If
+
+        Dim org As Dealer = CType(Session("DEALER"), Dealer)
+        If org.Title = EnumDealerTittle.DealerTittle.KTB Then
+            CType(e.Item.FindControl("lblDetail"), Label).Visible = True
+            CType(e.Item.FindControl("lnkPrint"), LinkButton).Visible = False
+            CType(e.Item.FindControl("lblDetail"), Label).Attributes("onclick") = GeneralScript.GetPopUpEventReference( _
+                    "../SparePart/frmSPPOStatusDetail.aspx?SPPOStatusID=" & e.Item.Cells(0).Text + "", "", 600, 800, "null")
+            CType(e.Item.FindControl("lnkDownload"), LinkButton).Visible = False
+        End If
+
+    End Sub
+
+    Private Sub dtgPOStatus_SortCommand(ByVal source As Object, ByVal e As System.Web.UI.WebControls.DataGridSortCommandEventArgs) Handles dtgPOStatus.SortCommand
+        If CType(ViewState("currSortColumn"), String) = e.SortExpression Then
+            Select Case CType(ViewState("currSortDirection"), Sort.SortDirection)
+                Case Sort.SortDirection.ASC
+                    ViewState("currSortDirection") = Sort.SortDirection.DESC
+                Case Sort.SortDirection.DESC
+                    ViewState("currSortDirection") = Sort.SortDirection.ASC
+            End Select
+        Else
+            ViewState("currSortColumn") = e.SortExpression
+            ViewState("currSortDirection") = Sort.SortDirection.ASC
+            Select Case CType(ViewState("currSortColumn"), String)
+                Case "PONumber", "PODate"
+                    ViewState("currSortTable") = GetType(SparePartPO)
+                Case "SONumber", "PackingStatus", "DeliveryDate"
+                    ViewState("currSortTable") = GetType(SparePartPOStatus)
+            End Select
+
+        End If
+        dtgPOStatus.CurrentPageIndex = 0
+        BindTodtgPOStatus(dtgPOStatus.CurrentPageIndex + 1)
+    End Sub
+
+    Private Sub dtgPOStatus_PageIndexChanged(ByVal source As Object, ByVal e As System.Web.UI.WebControls.DataGridPageChangedEventArgs) Handles dtgPOStatus.PageIndexChanged
+        dtgPOStatus.CurrentPageIndex = e.NewPageIndex
+        BindTodtgPOStatus(e.NewPageIndex + 1)
+    End Sub
+
+    Private Sub dtgPOStatus_ItemCommand(ByVal source As Object, ByVal e As System.Web.UI.WebControls.DataGridCommandEventArgs) Handles dtgPOStatus.ItemCommand
+        If e.CommandName = "Download" Then
+            download(e.Item.Cells(0).Text)
+        End If
+    End Sub
+
+    Private Sub btnGetDealer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGetDealer.Click
+        If txtDealerCode.Text.Length > 0 Then
+            Dim ObjDealer As Dealer = New DealerFacade(User).Retrieve(txtDealerCode.Text.Trim())
+            lblDealerName.Text = ObjDealer.DealerName
+            lblDealerTerm.Text = ObjDealer.SearchTerm2
+        End If
+    End Sub
+
+#End Region
+
+End Class

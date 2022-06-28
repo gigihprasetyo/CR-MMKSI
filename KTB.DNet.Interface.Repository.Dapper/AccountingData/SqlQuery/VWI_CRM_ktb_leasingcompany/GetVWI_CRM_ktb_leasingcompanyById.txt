@@ -1,0 +1,41 @@
+SELECT 
+    ROW_NUMBER() OVER (Order by 0) AS IDRow
+	,createdonbehalfbyyominame
+	,owninguser
+	,statecode
+	,ktb_leasingcompanyid
+	,owneridname
+	,statecodename
+	,createdonbehalfby
+	,ktb_leasingname
+	,importsequencenumber
+	,modifiedbyyominame
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,owningbusinessunit
+	,modifiedbyname
+	,owningteam
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,owneridtype
+	,statuscodename
+	,ktb_isinterfaced
+	,owneridyominame
+	,ktb_isinterfacedname
+	,modifiedon
+	,ktb_leasingcode
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,ktb_leasingcompany
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,versionnumber
+	,modifiedonbehalfby
+	,ownerid
+	,overriddencreatedon
+	,RowStatus
+FROM CRM_ktb_leasingcompany as VWI_CRM_ktb_leasingcompany WITH (NOLOCK) 
+where ktb_leasingcompanyid = @Id

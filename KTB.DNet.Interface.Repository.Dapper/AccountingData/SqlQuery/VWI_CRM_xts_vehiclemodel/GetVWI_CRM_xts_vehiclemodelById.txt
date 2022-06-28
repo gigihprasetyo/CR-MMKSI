@@ -1,0 +1,38 @@
+SELECT 
+	ROW_NUMBER() OVER (ORDER BY (SELECT 0)) AS IDRow
+	,createdonbehalfbyyominame
+	,modifiedonbehalfby
+	,xts_locking
+	,statecode
+	,xjp_model
+	,statecodename
+	,createdonbehalfby
+	,xts_manufactureridname
+	,xts_manufacturerid
+	,importsequencenumber
+	,organizationidname
+	,modifiedbyyominame
+	,xts_vehiclemodel
+	,utcconversiontimezonecode
+	,createdbyyominame
+	,modifiedbyname
+	,versionnumber
+	,modifiedby
+	,createdby
+	,timezoneruleversionnumber
+	,statuscodename
+	,xjp_naming
+	,modifiedon
+	,modifiedonbehalfbyyominame
+	,statuscode
+	,createdbyname
+	,createdon
+	,organizationid
+	,createdonbehalfbyname
+	,modifiedonbehalfbyname
+	,xts_vehiclemodelid
+	,overriddencreatedon
+	,xts_description
+	,RowStatus
+FROM CRM_xts_vehiclemodel as VWI_CRM_xts_vehiclemodel WITH (NOLOCK) 
+WHERE xts_vehiclemodelid = @Id

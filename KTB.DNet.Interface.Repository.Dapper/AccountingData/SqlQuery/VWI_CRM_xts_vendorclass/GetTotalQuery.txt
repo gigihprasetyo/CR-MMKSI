@@ -1,0 +1,4 @@
+SELECT 
+	COUNT(1)
+FROM CRM_xts_vendorclass as VWI_CRM_xts_vendorclass WITH (NOLOCK) 
+{0}

@@ -1,0 +1,51 @@
+SELECT 
+    /**PagingIndexQuery**/ 
+	/**RowNumber**/ 
+      VWI_CRM_ktb_benefit.createdonbehalfbyyominame
+    , VWI_CRM_ktb_benefit.modifiedonbehalfby
+    , VWI_CRM_ktb_benefit.ktb_id
+    , VWI_CRM_ktb_benefit.statecode
+    , VWI_CRM_ktb_benefit.ktb_fakturopenend
+    , VWI_CRM_ktb_benefit.statecodename
+    , VWI_CRM_ktb_benefit.ktb_fakturvalidationstart
+    , VWI_CRM_ktb_benefit.ktb_fakturvalidationend
+    , VWI_CRM_ktb_benefit.ktb_nomorsurat
+    , VWI_CRM_ktb_benefit.createdonbehalfby
+    , VWI_CRM_ktb_benefit.ktb_fakturopenstart
+    , VWI_CRM_ktb_benefit.ktb_dealerid
+    , VWI_CRM_ktb_benefit.ktb_vehicletypeid
+    , VWI_CRM_ktb_benefit.importsequencenumber
+    , VWI_CRM_ktb_benefit.organizationidname
+    , VWI_CRM_ktb_benefit.modifiedbyyominame
+    , VWI_CRM_ktb_benefit.ktb_benefitid
+    , VWI_CRM_ktb_benefit.ktb_statusname
+    , VWI_CRM_ktb_benefit.ktb_vehicletypecode
+    , VWI_CRM_ktb_benefit.utcconversiontimezonecode
+    , VWI_CRM_ktb_benefit.createdbyyominame
+    , VWI_CRM_ktb_benefit.ktb_dealercode
+    , VWI_CRM_ktb_benefit.ktb_benefitregno
+    , VWI_CRM_ktb_benefit.modifiedbyname
+    , VWI_CRM_ktb_benefit.versionnumber
+    , VWI_CRM_ktb_benefit.modifiedby
+    , VWI_CRM_ktb_benefit.createdby
+    , VWI_CRM_ktb_benefit.timezoneruleversionnumber
+    , VWI_CRM_ktb_benefit.statuscodename
+    , VWI_CRM_ktb_benefit.ktb_rowstatus
+    , VWI_CRM_ktb_benefit.ktb_detailrowstatusname
+    , VWI_CRM_ktb_benefit.modifiedon
+    , VWI_CRM_ktb_benefit.ktb_status
+    , VWI_CRM_ktb_benefit.ktb_detailrowstatus
+    , VWI_CRM_ktb_benefit.modifiedonbehalfbyyominame
+    , VWI_CRM_ktb_benefit.statuscode
+    , VWI_CRM_ktb_benefit.createdbyname
+    , VWI_CRM_ktb_benefit.createdon
+    , VWI_CRM_ktb_benefit.organizationid
+    , VWI_CRM_ktb_benefit.createdonbehalfbyname
+    , VWI_CRM_ktb_benefit.ktb_remarks
+    , VWI_CRM_ktb_benefit.modifiedonbehalfbyname
+    , VWI_CRM_ktb_benefit.ktb_vehicletypedesc
+    , VWI_CRM_ktb_benefit.overriddencreatedon
+    , VWI_CRM_ktb_benefit.RowStatus
+    /**EndPagingIndexQuery**/
+FROM CRM_ktb_benefit as VWI_CRM_ktb_benefit WITH (NOLOCK) 
+{0}
